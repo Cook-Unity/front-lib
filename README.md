@@ -8,7 +8,13 @@
 ## Install
 
 ```bash
-npm install --save git@gitlab.cookunity.com:cross/front-lib.git
+add "front-lib": "git+ssh://git@gitlab.cookunity.com:cross/front-lib.git#master",
+to your package JSON
+```
+If you are creating a component you can link directly to your local folder:
+```bash
+add "front-lib": "file:../cross/front-lib",
+to your package JSON
 ```
 
 ## Usage
