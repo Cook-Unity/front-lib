@@ -1,7 +1,11 @@
+import React from 'react';
+import { render } from '@testing-library/react';
 import ItemCard from './index';
 
 describe('ItemCard', () => {
-  it('is truthy', () => {
-    expect(ItemCard).toBeTruthy()
-  })
-})
+  it('renders ok', () => {
+    expect(ItemCard).toBeTruthy();
+    const { getByText } = render(<ItemCard />);
+    expect(getByText('Example Card')).toBeInTheDocument();
+  });
+});

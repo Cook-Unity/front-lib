@@ -17,7 +17,7 @@
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
-    "test:lint": "eslint .",
+    "test:lint": "eslint ./src",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && npm install && npm run build",
@@ -35,6 +35,8 @@
     "@storybook/addon-links": "^6.0.21",
     "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^6.0.21",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
@@ -62,5 +64,6 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {}
 }
