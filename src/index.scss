@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Autograf';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+    src: local('Autograf'), url('./fonts/sign.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Gilroy';
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+    src: local('Gilroy'), url('./fonts/gilroy-extrabold-webfont.woff2') format('woff2'), url('./fonts/gilroy-extrabold-webfont.woff') format('woff'), url('./fonts/gilroy.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Reinata';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Reinata'), url('./fonts/Reinata-Regular.otf') format('truetype'), url('./fonts/Reinata-Regular.ttf') format('truetype'), url('./fonts/ReinataSans-Regular.otf') format('truetype'), url('./fonts/ReinataSans-Regular.ttf') format('truetype');
+  }

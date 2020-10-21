@@ -1,0 +1,52 @@
+
+  .specifications {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+
+    @media (max-width: 720px) {
+      flex-direction: row;
+    }
+
+    .imageContainer {
+      width: 48px;
+      height: 48px;
+      border: 1px solid #dddddd;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 10px 0;
+
+      img {
+        max-width: 32px;
+        max-height: 32px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    span {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .image_container {
+        margin: 0 0 10px 0;
+      }
+    }
+  }

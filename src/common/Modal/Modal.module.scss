@@ -1,0 +1,57 @@
+
+
+
+  .newModalOverlay{
+    background-color: rgba(35, 31, 32, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    outline: 0;
+    overflow-y: auto;
+    z-index: 100;
+
+  
+    & > .cookunity__new_modal__content {
+      position: relative;
+      box-sizing: border-box;
+      background: #ffffff;
+      box-shadow: 0 0 64px rgba(0, 67, 32, 0.16), 0 16px 32px rgba(0, 67, 32, 0.06), 0 8px 16px rgba(0, 67, 32, 0.04), 0 4px 8px rgba(0, 67, 32, 0.02);
+      margin: 40px auto;
+      border-radius: 10px;
+      padding: 40px 32px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: fit-content;
+  
+      @media (max-width: 720px) {
+        padding: 40px 20px;
+      }
+  
+      &:focus {
+        outline: none;
+      }
+  
+      & > button.cookunity__new_modal__close {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        border: none;
+        cursor: pointer;
+        background: none;
+        padding: 0;
+  
+        & > img {
+          height: 24px;
+          width: 24px;
+          vertical-align: middle;
+        }
+  
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  

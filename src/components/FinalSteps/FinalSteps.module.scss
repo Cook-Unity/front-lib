@@ -1,0 +1,242 @@
+
+.finalSteps {
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+
+  & > .title-section.loading {
+    margin: 0 0 40px 0;
+    padding: 0;
+    color: transparent;
+    user-select: none;
+    cursor: default;
+    width: 280px;
+  }
+
+  .cookingRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+    }
+
+    .col50 {
+      width: 540px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 32px 0;
+
+      @media (max-width: 720px) {
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: #231f20;
+        margin: 0;
+        max-width: 200px;
+
+        @media (max-width: 720px) {
+          margin: 0 0 20px;
+          max-width: 100%;
+        }
+
+        span {
+          font-family: 'Roboto';
+          font-size: 14px;
+          line-height: 24px;
+          font-weight: bold;
+        }
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .cookingRow .col50:first-child {
+    margin-right: 30px;
+    padding: 32px 0;
+  }
+
+  .cooking {
+    background: #ffffff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+    border-radius: 15px;
+    padding: 24px 24px 32px;
+    @media (max-width: 720px){
+      flex-direction: column;
+      padding: 24px 20px 32px;
+    }
+
+    h3 {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 32px;
+      letter-spacing: 0.2px;
+      color: #231f20;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      border-top: 1px solid #dddddd;
+      padding-top: 32px;
+      width: 100%;
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+      }
+    }
+
+    .microwave,
+    .oven {
+      width: 100%;
+      text-align: left;
+      @media (max-width: 720px) {
+        width: 100%;
+      }
+
+      &.loading > h2 {
+        width: 200px;
+        color: transparent;
+        user-select: none;
+        cursor: default;
+      }
+    }
+
+    .line {
+      border: 1px solid #dddddd;
+      transform: rotate(90deg);
+      width: 252px;
+    }
+
+    h2 {
+      color: black;
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 36px;
+      margin: 0 0 32px;
+    }
+
+    h4 {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      color: #231f20;
+      margin: 0 0 10px;
+
+      span {
+        margin-left: 4px;
+      }
+    }
+
+    .steps {
+      margin: 0 0 32px;
+      p {
+        margin: 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 0.2px;
+        color: #231f20;
+      }
+
+      &.loading > p {
+        margin: 8px 0;
+        line-height: 16px;
+        color: transparent;
+        cursor: default;
+        user-select: none;
+      }
+    }
+  }
+
+  .row {
+    .firstRow {
+      display: flex;
+      align-items: center;
+    }
+
+    &:first-child {
+      display: flex;
+      align-items: center;
+
+      .iceImg {
+        vertical-align: top;
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border: 1px solid lightgray;
+        border-radius: 24px;
+        @media (max-width: 720px) {
+          margin-left: 0;
+        }
+
+        img {
+          width: 70%;
+          height: 70%;
+          margin: 15%;
+        }
+      }
+
+      div {
+        display: inline-block;
+        vertical-align: top;
+        @media (max-width: 720px) {
+          width: calc(100% - 60px);
+          margin-left: 6px;
+        }
+
+        h2 {
+          font-family: 'Gilroy';
+          font-size: 20px;
+          line-height: 28px;
+          display: flex;
+          align-items: center;
+          color: #231f20;
+        }
+
+        p {
+          font-size: 16px;
+          padding: 0 10px;
+          color: #0073c8;
+          margin: 0;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      span {
+        padding: 20px 0;
+        display: block;
+        text-align: left;
+      }
+    }
+  }
+}
