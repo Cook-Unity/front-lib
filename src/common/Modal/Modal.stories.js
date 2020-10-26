@@ -7,11 +7,7 @@ export default {
   component: Modal
 };
 
-const Template = (args) => (
-
-<Modal withCloseIcon isOpen>
-
-</Modal>  
+const Template = (args) => ( <Modal withCloseIcon isOpen><div>hello world!</div></Modal>  
 )
 
 export const Default = Template.bind({});

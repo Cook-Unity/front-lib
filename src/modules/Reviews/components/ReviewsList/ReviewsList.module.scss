@@ -1,0 +1,66 @@
+.productReviews {
+  color: black;
+  margin: 0 auto;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+
+  .review {
+    width: 100%;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: baseline;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .info {
+      background: white;
+
+      .stars {
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .detail {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.2px;
+        margin: 0 0 8px 0;
+      }
+
+      .signature {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.2px;
+        color: #999999;
+      }
+    }
+  }
+
+  .viewAll {
+    margin: 40px 0 80px 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

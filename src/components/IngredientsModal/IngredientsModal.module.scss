@@ -1,5 +1,10 @@
 .productIngredientInfo {
   color: black;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'title title' 'image desc';
+  column-gap: 24px;
 
   h2 {
     font-family: 'Gilroy';
@@ -8,11 +13,14 @@
     font-size: 28px;
     line-height: 36px;
     margin: 0 0 10px 0;
+    grid-area: title;
+    margin-bottom: 40px;
   }
 
   img {
-    width: 250px;
-    height: 250px;
+    grid-area: image;
+    width: 160px;
+    height: 160px;
     display: block;
     object-fit: cover;
     margin: 0 auto 10px auto;

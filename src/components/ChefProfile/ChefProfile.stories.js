@@ -1,4 +1,5 @@
 import React from 'react';
+import { defaultProps } from '../../mocks/mock-mealDetails';
 
 import ChefProfile from './index';
 
@@ -12,5 +13,6 @@ const Template = (args) => <ChefProfile {...args}  />;
 
 export const Default = Template.bind({});
 Default.args = {
-  chef_img: "https://d1ureao5dcqpo4.cloudfront.net/media/avatar/JGV-PERFIL95396.png"
+ ...defaultProps
+
 };

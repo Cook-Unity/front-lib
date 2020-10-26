@@ -1,4 +1,5 @@
 import React from 'react';
+import { defaultProps } from '../../mocks/mock-mealDetails';
 
 import ProductTitle from './index';
 
@@ -10,4 +11,6 @@ export default {
 const Template = (args) => <ProductTitle {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+ ...defaultProps
+};

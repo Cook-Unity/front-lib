@@ -1,0 +1,135 @@
+.macronutrients {
+  color: black;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  padding: 24px 20px;
+
+  h2 {
+    color: black;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 0 32px;
+  }
+
+  .gaugeLegend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: black;
+    margin-top: 40px;
+
+    @media (max-width: 720px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 10px 0 0 0;
+      flex-wrap: wrap;
+    }
+
+    .columnMiniGauge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+
+      @media (max-width: 720px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 36px;
+      }
+
+      .mobileRowGauge {
+        align-items: center;
+        @media (max-width: 720px) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .gaugeValue {
+          font-family: Gilroy;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 36px;
+          line-height: 42px;
+          text-align: center;
+          letter-spacing: -0.5px;
+          color: black;
+          margin: 0 0 18px;
+
+          @media (max-width: 720px) {
+            margin: 10px 0 0px;
+          }
+        }
+
+        & > .legend {
+          display: flex;
+
+          @media (max-width: 720px) {
+            &:not(:last-of-type) {
+              margin-right: 10px;
+            }
+          }
+
+          strong {
+            font-weight: 900;
+          }
+
+          &:not(:last-of-type) {
+            margin-bottom: 14px;
+          }
+
+          .bubble {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            border-radius: 50%;
+
+            &.protein {
+              background-color: green;
+            }
+
+            &.carbs {
+              background-color: rgb(92, 161, 125);
+            }
+
+            &.fat {
+              background-color: rgb(61, 108, 84);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .aditionalInfoGauge {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: black;
+    margin: 42px 0px 0px;
+
+    @media (max-width: 720px) {
+      margin: 0px;
+    }
+
+    span {
+      font-weight: 900;
+    }
+  }
+}

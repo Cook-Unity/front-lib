@@ -3,12 +3,12 @@ import styles from './ChefProfile.module.scss';
 import Chevron from '../../assets/chevron.png'
 
 
-const ChefProfile = (args) => {
+const ChefProfile = ({mealDetail}) => {
   return <div className={styles.chefProfile}>
-        <img src={args.chef_img} alt="chef" />
+        <img src={mealDetail.chef_img} alt="chef" />
         <div>
           <p>
-            Marc Forgione
+            {mealDetail.chef_firstname}  {mealDetail.chef_lastname}
           </p>
           <a>
             View Profile

@@ -1,2 +1,2 @@
 
-export {default as default} from './IngredientsModal';
+export {default} from './IngredientsModal';

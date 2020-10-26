@@ -1,0 +1,83 @@
+.productDetails {
+  color: black;
+  font-weight: normal;
+
+  & > * {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 24px;
+    column-gap: 40px;
+    grid-template-areas: 'image description' 'image chef' 'image story' 'image button';
+    margin-bottom: 40px;
+
+    & > * {
+      margin-bottom: 0;
+    }
+  }
+
+  .productDescription {
+    grid-area: description;
+  }
+
+  .productImage {
+    grid-area: image;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 532px;
+    }
+  }
+
+  .addProduct {
+    grid-area: button;
+
+    & > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 0 20px;
+      z-index: 20;
+
+      & > button {
+        width: 100%;
+      }
+    }
+  }
+
+  &.loading {
+    & > * {
+      color: transparent !important;
+      img,
+      a,
+      p {
+        opacity: 0;
+      }
+      .stars {
+        display: none !important;
+      }
+      animation: shimmer 2s infinite linear;
+      background: linear-gradient(to right, #eff1f3 4%, #e8e8e8 25%, #eff1f3 36%);
+      background-size: 1000px 100%;
+    }
+  }
+}
