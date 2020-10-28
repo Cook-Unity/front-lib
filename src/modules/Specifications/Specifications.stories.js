@@ -12,7 +12,8 @@ const Template = (args) => <Specifications  {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  ...defaultProps
+  ...defaultProps,
+  specificationsDetails: defaultProps.mealDetail.specificationsDetails
 };
 
 

@@ -6,7 +6,7 @@ import styles from './ReviewsList.module.scss';
 
 const ReviewsList = ({
   reviews,
-  // onLoadMore,
+  onLoadMore,
   loadMoreLabel = 'View all reviews',
   max
 }) => {

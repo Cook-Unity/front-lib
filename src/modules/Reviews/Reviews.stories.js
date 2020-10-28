@@ -49,6 +49,5 @@ Default.args = {
     stars: "5.00000000",
     status_id: 1,
     title: "taste "
-  }],
-  handleClick: () => console.log('hola')
+  }]
 };

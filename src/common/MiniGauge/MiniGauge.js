@@ -20,8 +20,7 @@ const center = 36
 const side = 72
 const strokeDasharray = 2 * Math.PI * radius
 
-const MiniGauge = props => {
-  const { progress, unit, className, style } = props
+const MiniGauge = ({ progress, unit, className, style }) => {
   const _progress_ = getProgress(progress)
 
   const strokeDashOffset = strokeDasharray * (_progress_ / 100) || 0

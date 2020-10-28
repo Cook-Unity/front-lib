@@ -1,7 +1,25 @@
-import ProductTitle from './index';
+import * as React from 'react';
+import { render } from '@testing-library/react';
 
-describe('ProductTitle', () => {
-  it('is truthy', () => {
-    expect(ProductTitle).toBeTruthy()
-  })
-})
+import defaultPropsMock from "../../mocks/mealdetail.json";
+import ProductTitle from './ProductTitle';
+
+const defaultProps = {
+  name: defaultPropsMock.mealDetail.name
+};
+
+describe('ProductTitle component', () => {
+
+  describe('Checking texts', () => {
+
+    it(`Check than ${defaultProps.name} is contain in the component`, () => {
+      const renderResult = render(
+        <ProductTitle
+          {...defaultProps}
+        />
+      );
+
+      expect(renderResult.queryByText(defaultProps.name)).toBeInTheDocument();
+    });
+  });
+});

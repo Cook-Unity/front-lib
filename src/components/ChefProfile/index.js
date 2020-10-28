@@ -1,2 +1,2 @@
 
-export {default as default} from './ChefProfile';
+export {default} from './ChefProfile';

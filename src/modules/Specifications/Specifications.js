@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Specifications.module.scss';
 
-
-const Specifications = ({mealDetail, isLoading}) => {
+const Specifications = ({specificationsDetails, isLoading}) => {
 
   return (
-    mealDetail.specificationsDetails ? (
+    specificationsDetails ? (
       <div className={styles.specificationDetailsContainer}>
-        {mealDetail.specificationsDetails.map((detail, i) => {
+        {specificationsDetails.map((detail, i) => {
           return (
             <div
               className={`${styles.specificationDetail} ${isLoading && loading}`} key={i}>
@@ -22,5 +23,6 @@ const Specifications = ({mealDetail, isLoading}) => {
     ) : null
     )
   }
+
 
 export default Specifications;

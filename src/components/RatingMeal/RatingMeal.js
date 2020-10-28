@@ -29,9 +29,7 @@ const RatingMeal = ({mealDetail}) => {
 
         <p
           className={styles.reviewsCount}
-          onClick={() => {
-            console.log(hola)
-          }}>
+          onClick={() => {}}>
           {mealDetail.reviews_count || 0} reviews{' '}
         </p>
   </div>

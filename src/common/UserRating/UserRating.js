@@ -1,10 +1,10 @@
 import React from 'react';
-import BlackStar from '../../assets/black-star.png'
+import PropTypes from 'prop-types';
 
+import BlackStar from '../../assets/black-star.png'
 import styles from './UserRating.module.scss';
 
-const UserRating = ({mealDetail}) => {
-  const user_rating = mealDetail.user_rating
+const UserRating = ({user_rating}) => {
   return (
     <span className={styles.userRating}>
       <img src={BlackStar} alt="star" />
@@ -14,5 +14,14 @@ const UserRating = ({mealDetail}) => {
     </span>
   )
 };
+
+
+UserRating.propTypes = {
+  user_rating: PropTypes.number.isRequired,
+ };
+ 
+ UserRating.defaultProps = {
+   user_rating: ''
+ };
 
 export default UserRating;

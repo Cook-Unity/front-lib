@@ -12,6 +12,7 @@ import ChefProfile from '../../components/ChefProfile'
 import styles from  './MealCard.module.scss'
 
 const MealCard = ({ mealDetail, isLoading, isOrdering, addProduct }) => {
+  
   return (
     <div
       className={`${styles.productDetails} ${isLoading && styles.loading}`}>

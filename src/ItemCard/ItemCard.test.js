@@ -6,6 +6,6 @@ describe('ItemCard', () => {
   it('renders ok', () => {
     expect(ItemCard).toBeTruthy();
     const { getByText } = render(<ItemCard />);
-    expect(getByText('Example Card')).toBeInTheDocument();
+    expect(getByText('Example Card')).toHaveTextContent('Example Card');
   });
 });

@@ -23,7 +23,6 @@ export default ReviewsModal
 const Content = ({ onRequestClose, quantity, product, reviews, handleClick }) => {
 
   const [page, setPage] = useState(1)
-  const [isOnScreen, setIsOnScreen] = useState(false)
 
   const ref = React.createRef()
   const observer = new IntersectionObserver(
@@ -35,9 +34,6 @@ const Content = ({ onRequestClose, quantity, product, reviews, handleClick }) =>
     }
   )
 
-  const setIntersecing = isIntersecting => {
-    isOnScreen = isIntersecting
-  }
 
   const componentDidMount = () => {
     this.observer.observe(ref.current)
@@ -48,7 +44,7 @@ const Content = ({ onRequestClose, quantity, product, reviews, handleClick }) =>
   }
 
   const loadMore = () => {
-    setPage = page + 1
+    setPage(page + 1)
   }
 
   let reviewsToShow = page * 10

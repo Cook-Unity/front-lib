@@ -1,8 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './ProductTitle.module.scss';
 
-const ProductTitle = ({mealDetail}) => {
-  return <div data-testId="productTitle" className={styles.productTitle}>{mealDetail.name}</div>
+const ProductTitle = ({name}) => {
+  return <div className={styles.productTitle}>{name}</div>
+};
+
+
+ProductTitle.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+ProductTitle.defaultProps = {
+  name: ''
 };
 
 export default ProductTitle;

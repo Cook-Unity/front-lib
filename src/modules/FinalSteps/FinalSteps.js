@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types';
 import { pathOr } from 'ramda'
 import classnames from 'classnames'
 
@@ -100,6 +101,17 @@ const FinalSteps = ({ mealDetail, isLoading }) => {
     </div>
   </div>
   )
+};
+
+
+FinalSteps.propTypes = {
+  microwaveSteps: PropTypes.string.isRequired,
+  ovenSteps: PropTypes.string.isRequired
+};
+
+FinalSteps.defaultProps = {
+  microwaveSteps: '',
+  ovenSteps: ''
 };
 
 export default FinalSteps;

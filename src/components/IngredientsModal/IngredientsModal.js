@@ -2,19 +2,21 @@ import React from 'react';
 import Modal from '../../common/Modal'
 import styles from './IngredientsModal.module.scss';
 
-const IngredientModal = ({ isOpen, name, image, component_code, description, onRequestClose }) => {
+const IngredientModal = ({ isOpen, selectedIngredient, onRequestClose }) => {
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+      {selectedIngredient ? (
         <div className={styles.productIngredientInfo}>
-          <h2>{name}</h2>
+          <h2>{selectedIngredient.name}</h2>
 
           <img
-            src={image}
-            alt={component_code}
+            src={selectedIngredient.image}
+            alt={selectedIngredient.component_code}
           />
-          <p>{description}</p>
+          <p>{selectedIngredient.description}</p>
         </div>
+      ) : null}
     </Modal>
   )
 }

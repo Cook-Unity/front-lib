@@ -12,5 +12,6 @@ const Template = (args) => <ProductTitle {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
- ...defaultProps
+  ...defaultProps,
+  name: defaultProps.mealDetail.name
 };

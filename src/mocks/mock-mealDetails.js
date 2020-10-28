@@ -43,7 +43,7 @@ export const defaultProps =  {
         manufacturers: null,
         meal_story: "A salmon meal worthy to make your day diverse! Salmon is a fish you can enjoy because of its low mercury content. The fish and asparagus is oven- baked with garlic and parsley.",
         meat_type: "Turkey",
-        name: "Turkey  Sweet Potato Bolognese Skillet",
+        name: "Turkey Sweet Potato Bolognese Skillet",
         nutritionInfo: {
           calories: 562,
           carbs: 51,
@@ -78,6 +78,11 @@ export const defaultProps =  {
         sku: "SWEET-POTATO-BOLOGNESE-AM",
         specificationsDetails: [{
           id: "19",
+          image: "http://qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
+          label: "Gluten Free"
+        },
+        {
+          id: "20",
           image: "http://qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
           label: "Gluten Free"
         }],
