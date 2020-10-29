@@ -1,15 +1,15 @@
 import React from 'react';
-import Modal from 'react-modal'
+import Modal from 'react-modal';
 
-import Close from '../../assets/xclose.png'
-import classnames from 'classnames'
+import Close from '../../assets/xclose.png';
+import classnames from 'classnames';
 
 import './Modal.css';
 
 // Modal.setAppElement('#root')
-const getParent = () => document.querySelector('#root')
+const getParent = () => document.querySelector('#root');
 
-const CUModal = props => {
+const CUModal = (props) => {
   const {
     overlayClassName,
     className,
@@ -23,14 +23,15 @@ const CUModal = props => {
     smallSize,
     withCloseIcon = true,
     ...rest
-  } = props
+  } = props;
 
-  const contentStyle = style.content || {}
-  const overlayStyle = style.overlay || {}
+  const contentStyle = style.content || {};
+  const overlayStyle = style.overlay || {};
 
   return (
     <Modal
       parentSelector={getParent}
+      ariaHideApp={false}
       overlayClassName={classnames(
         'cookunity__new_modal__overlay',
         overlayClassName,
@@ -50,18 +51,19 @@ const CUModal = props => {
         content: contentStyle,
         overlay: overlayStyle
       }}
-      {...rest}>
+      {...rest}
+    >
       {withCloseIcon && (
         <button
-          className="cookunity__new_modal__close"
-          onClick={props.onRequestClose}>
-          <img src={Close} alt="close" />
+          className='cookunity__new_modal__close'
+          onClick={props.onRequestClose}
+        >
+          <img src={Close} alt='close' />
         </button>
       )}
       {children}
     </Modal>
-  )
-}
+  );
+};
 
-export default CUModal
-
+export default CUModal;

@@ -1,9 +1,8 @@
 import React from 'react';
-import Modal from '../../common/Modal'
+import Modal from '../../common/Modal';
 import styles from './IngredientsModal.module.scss';
 
 const IngredientModal = ({ isOpen, selectedIngredient, onRequestClose }) => {
-
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
       {selectedIngredient ? (
@@ -18,8 +17,7 @@ const IngredientModal = ({ isOpen, selectedIngredient, onRequestClose }) => {
         </div>
       ) : null}
     </Modal>
-  )
-}
+  );
+};
 
-export default IngredientModal
-
+export default IngredientModal;
