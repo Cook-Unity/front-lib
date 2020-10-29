@@ -12,5 +12,7 @@ const Template = (args) => <RatingMeal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  ...defaultProps
+  ...defaultProps,
+  stars: defaultProps.mealDetail.stars,
+  reviews_count: defaultProps.mealDetail.reviews_count
 };

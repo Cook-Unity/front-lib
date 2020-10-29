@@ -4,8 +4,10 @@ import { render } from '@testing-library/react';
 import defaultPropsMock from "../../mocks/mealdetail.json";
 import UserRating from './UserRating';
 
+const user_rating = defaultPropsMock.mealDetail.user_rating
+
 const defaultProps = {
-  user_rating: defaultPropsMock.mealDetail.user_rating
+  user_rating,
 };
 
 describe('UserRating component', () => {
@@ -19,7 +21,7 @@ describe('UserRating component', () => {
         />
       );
 
-      expect(renderResult.queryByText(defaultProps.user_rating)).toBeInTheDocument();
+      expect(renderResult.getByTestId('user-rating').textContent).toBe(defaultProps.user_rating.toString());
     });
   });
 });

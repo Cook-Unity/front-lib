@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './Ingredients.module.scss';
 import IngredientModal from '../../components/IngredientsModal';
+import { IgnorePlugin } from 'webpack';
 
-const Ingredients = ({ mealDetail, isLoading }) => {
+const Ingredients = ({ ingredients, isLoading }) => {
+
   const [ingredientsModalIsOpen, setIngredientsModalIsOpen] = useState(false);
   const [selectedIngredient, setSelectedIngredient] = useState(null);
 
@@ -27,8 +29,8 @@ const Ingredients = ({ mealDetail, isLoading }) => {
       <div className={`${styles.ingredients} ${isLoading ? 'loading' : null}`}>
         <h2>Ingredients</h2>
 
-        <div className={styles.ingredientsContainer}>
-          {mealDetail.ingredients.map((ingredient, i) => {
+        <div data-testid='ingredient' className={styles.ingredientsContainer}>
+          {ingredients.map((ingredient, i) => {
             return (
               <div
                 className={`${styles.ingredient} ${
@@ -55,14 +57,6 @@ const Ingredients = ({ mealDetail, isLoading }) => {
       </div>
     </Fragment>
   );
-};
-
-Ingredients.propTypes = {
-  ingredients: PropTypes.array.isRequired
-};
-
-Ingredients.defaultProps = {
-  ingredients: ''
 };
 
 export default Ingredients;

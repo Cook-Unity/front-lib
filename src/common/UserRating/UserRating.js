@@ -8,7 +8,7 @@ const UserRating = ({user_rating}) => {
   return (
     <span className={styles.userRating}>
       <img src={BlackStar} alt="star" />
-      <span>{parseFloat(+user_rating || 0).toFixed(0)}</span>
+      <span data-testid="user-rating">{parseFloat(+user_rating || 0).toFixed(0)}</span>
       <span className={styles.separator}>|</span>
       <span>YOUR RATING</span>
     </span>

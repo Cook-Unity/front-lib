@@ -5,8 +5,9 @@ import defaultPropsMock from "../../mocks/mealdetail.json";
 import Specifications from './Specifications';
 
 
+const label = defaultPropsMock.mealDetail.specificationsDetails.map((detail, i) => detail.label)
 const defaultProps = {
-  label: defaultPropsMock.mealDetail.specificationsDetails.map((detail, i) => detail.label)
+  label
 };
 
 describe('Specifications component',  () => {
@@ -20,7 +21,7 @@ describe('Specifications component',  () => {
         />
       );
 
-      expect(renderResult.queryByText(defaultProps.label)).toBeInTheDocument();
+      expect(renderResult.queryByTestId(defaultProps.label)).toBeInTheDocument();
     });
   });
 });

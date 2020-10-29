@@ -46,7 +46,7 @@ const Macronutrients = ({ mealDetail }) => {
 
   return (
     <div className={styles.macronutrients}>
-      <h2>Macronutrient Ratios</h2>
+      <h2 data-testid="title-macro">Macronutrient Ratios</h2>
       <Gauge
         protein={protein}
         carbs={carbs}
@@ -59,7 +59,7 @@ const Macronutrients = ({ mealDetail }) => {
           <div className={styles.mobileRowGauge}>
             <div className={styles.legend}>
               <div className={styles.bubbleProtein} />
-              <div className={styles.value}>
+              <div data-testid="protein" className={styles.value}>
                 Protein <strong>({formatProgress(protein || 0)})</strong>
               </div>
             </div>
@@ -74,7 +74,7 @@ const Macronutrients = ({ mealDetail }) => {
           <div className={styles.mobileRowGauge}>
             <div className={styles.legend}>
               <div className={styles.bubbleCarbs} />
-              <div className={styles.value}>
+              <div data-testid="carbs" className={styles.value}>
                 Carbs <strong>({formatProgress(carbs || 0)})</strong>
               </div>
             </div>

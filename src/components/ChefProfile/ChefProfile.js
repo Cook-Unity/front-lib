@@ -9,7 +9,7 @@ const ChefProfile = ({ chef_firstname, chef_lastname, chef_img }) => {
     <div className={styles.chefProfile}>
       <img src={chef_img} alt='chef' />
       <div>
-        <p>
+        <p data-testid="chef-name">
           {chef_firstname} {chef_lastname}
         </p>
         <a>

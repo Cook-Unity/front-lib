@@ -5,18 +5,18 @@ import UserRating from '../../common/UserRating'
 import styles from './RatingMeal.module.scss';
 
 
-const RatingMeal = ({mealDetail}) => {
+const RatingMeal = ({stars, mealDetail, reviews_count }) => {
   return (
   <div className={styles.ratingMeal}>
     <div className={styles.ratings}>
-      <span className={styles.average}>
-        {parseFloat(+mealDetail.stars || 0).toFixed(1)}
+      <span data-testid="stars" className={styles.average}>
+        {parseFloat(+stars || 0).toFixed(1)}
       </span>
       <div className={styles.stars}>
         <StarReviewComponent
           name="rate"
           starCount={5}
-          value={+mealDetail.stars || 0}
+          value={+stars || 0}
           onStarClick={() => {}}
           editing={false}
         />
@@ -28,12 +28,12 @@ const RatingMeal = ({mealDetail}) => {
       </div>
 
         <p
+          data-testid="count"
           className={styles.reviewsCount}
           onClick={() => {}}>
-          {mealDetail.reviews_count || 0} reviews{' '}
+          {reviews_count || 0} reviews{' '}
         </p>
   </div>
   )
 };
-
 export default RatingMeal;

@@ -7,13 +7,16 @@ describe('Macronutrients component', () => {
 
   describe('Checking text', () => {
 
-    it(`Check than "Carbs" is contain in the component`, () => {
-      const { queryByText } = render(
-        <Macronutrients />
+    it(`Check than protein and carbs is contain in the component`, () => {
+      const renderResult = render(
+        <Macronutrients
+        />
       );
 
-      // expect(queryByText('Carbs')).toHaveTextContent('Carbs');
-      expect(queryByText('Protein')).toHaveTextContent('Protein');
+      expect(renderResult.queryAllByTestId('title-macro').tagName).toBe('Macronutrient Ratios');
+      expect(renderResult.queryAllByTestId('carbs').textContent).toBe('Carbs');
+      expect(renderResult.queryAllByTestId('carbs').textContent).toBe('Carbs');
+      expect(renderResult.queryAllByTestId('protein').textContent).toBe('Protein');
     });
   });
 });
