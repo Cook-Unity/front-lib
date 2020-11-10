@@ -1,29 +1,22 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import defaultPropsMock from "../../mocks/mealdetail.json";
-import Specifications from './Specifications';
+import { defaultProps } from './data.mock';
+import Specifications, { replaceLessThanText } from './Specifications';
 
+const specificationsDetails = defaultProps.specificationsDetails;
+const labels = specificationsDetails.map((detail, i) =>
+  replaceLessThanText(detail.label)
+);
 
-const label = defaultPropsMock.mealDetail.specificationsDetails.map((detail, i) => detail.label)
-const defaultProps = {
-  label
-};
+describe('Specifications component', () => {
+  describe('Checking labels', () => {
+    it(`Check than ${labels} is contain in the component`, () => {
+      const renderResult = render(<Specifications {...defaultProps} />);
 
-describe('Specifications component',  () => {
-
-  describe('Checking label', () => {
-
-    it(`Check than ${defaultProps.label} is contain in the component`, () => {
-      const renderResult = render(
-        <Specifications
-          {...defaultProps}
-        />
-      );
-
-      expect(renderResult.queryByTestId(defaultProps.label)).toBeInTheDocument();
+      defaultProps.specificationsDetails.forEach((row) => {
+        expect(renderResult.getByText(row.label)).toBeInTheDocument();
+      });
     });
   });
 });
-
-
