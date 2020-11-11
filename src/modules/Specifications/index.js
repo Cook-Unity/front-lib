@@ -1,2 +1,2 @@
 
-export {default} from './Specifications';
+export { default } from './Specifications';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import defaultPropsMock from "../../mocks/mealdetail.json";
+import defaultPropsMock from "./__mock__.json";
 import ProductDescription from './ProductDescription';
 
 const defaultProps = {
