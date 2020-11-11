@@ -1,4 +1,4 @@
-import Macronutrients from './index';
+import Macronutrients from './index'
 
 describe('Macronutrients', () => {
   it('is truthy', () => {

@@ -1,17 +1,17 @@
-import React from 'react';
-import { defaultProps } from '../../mocks/mock-mealDetails';
+import React from 'react'
+import {defaultProps} from '../../mocks/mock-mealDetails'
 
-import UserRating from './index';
+import UserRating from './index'
 
 export default {
   title: 'UserRating',
   component: UserRating
-};
+}
 
-const Template = (args) => <UserRating {...args} />;
+const Template = args => <UserRating {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   ...defaultProps,
   user_rating: defaultProps.mealDetail.user_rating
-};
+}

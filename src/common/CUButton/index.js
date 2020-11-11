@@ -1,2 +1,1 @@
-
-export { default } from './CUButton';
+export {default} from './CUButton'

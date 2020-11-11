@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import moment from 'moment'
 import StarReviewComponent from '../../../../common/StarReviewComponent'
 
-import styles from './ReviewsList.module.scss';
+import styles from './ReviewsList.module.scss'
 
 const ReviewsList = ({
   reviews,

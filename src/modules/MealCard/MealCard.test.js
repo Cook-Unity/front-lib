@@ -1,4 +1,4 @@
-import MealCard from './index';
+import MealCard from './index'
 
 describe('MealCard', () => {
   it('is truthy', () => {

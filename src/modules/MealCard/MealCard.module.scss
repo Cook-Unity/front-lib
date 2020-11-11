@@ -76,7 +76,12 @@
         display: none !important;
       }
       animation: shimmer 2s infinite linear;
-      background: linear-gradient(to right, #eff1f3 4%, #e8e8e8 25%, #eff1f3 36%);
+      background: linear-gradient(
+        to right,
+        #eff1f3 4%,
+        #e8e8e8 25%,
+        #eff1f3 36%
+      );
       background-size: 1000px 100%;
     }
   }

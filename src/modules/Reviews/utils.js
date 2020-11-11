@@ -29,6 +29,6 @@ export const sortReviews = reviews => {
 export const formatReviews = reviews => {
   return reviews.map(review => {
     const stars = review.stars ? Math.round(+review.stars * 2) / 2 : 0
-    return { ...review, stars }
+    return {...review, stars}
   })
 }

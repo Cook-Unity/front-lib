@@ -1,4 +1,4 @@
-import MealImage from './index';
+import MealImage from './index'
 
 describe('MealImage', () => {
   it('is truthy', () => {

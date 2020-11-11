@@ -1,2 +1,1 @@
-
-export {default} from './StarReviewComponent';
+export {default} from './StarReviewComponent'

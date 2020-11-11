@@ -1,2 +1,1 @@
-
-export {default} from './MealImage';
+export {default} from './MealImage'

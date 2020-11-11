@@ -25,4 +25,4 @@ export const defaultProps = {
       value: 'basil'
     }
   ]
-};
+}

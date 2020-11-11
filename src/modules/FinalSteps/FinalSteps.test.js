@@ -1,4 +1,4 @@
-import FinalSteps from './index';
+import FinalSteps from './index'
 
 describe('FinalSteps', () => {
   it('is truthy', () => {

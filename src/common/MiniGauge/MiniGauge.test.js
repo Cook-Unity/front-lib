@@ -1,4 +1,4 @@
-import MiniGauge from './index';
+import MiniGauge from './index'
 
 describe('MiniGauge', () => {
   it('is truthy', () => {

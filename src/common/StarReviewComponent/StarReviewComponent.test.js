@@ -1,4 +1,4 @@
-import StarReviewComponent from './index';
+import StarReviewComponent from './index'
 
 describe('StarReviewComponent', () => {
   it('is truthy', () => {

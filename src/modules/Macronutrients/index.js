@@ -1,1 +1,1 @@
-export { default } from './Macronutrients';
+export {default} from './Macronutrients'

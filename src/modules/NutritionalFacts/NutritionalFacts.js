@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './NutritionalFacts.module.scss';
+import React from 'react'
+import styles from './NutritionalFacts.module.scss'
 
 const nutritionDetails = [
   {
@@ -49,12 +49,10 @@ const nutritionDetails = [
   }
 ]
 
-
 const NutritionalFacts = ({mealDetail}) => {
-
   if (!mealDetail) return null
 
-  const { nutritionInfo } = mealDetail
+  const {nutritionInfo} = mealDetail
 
   return (
     <div className={styles.nutritionCard}>

@@ -1,23 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './CUButton.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './CUButton.css'
 
 /**
  * Primary UI component for user interaction
  */
-const CUButton = ({ primary, backgroundColor, size, label, children, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+const CUButton = ({
+  primary,
+  backgroundColor,
+  size,
+  label,
+  children,
+  ...props
+}) => {
+  const mode = primary
+    ? 'storybook-button--primary'
+    : 'storybook-button--secondary'
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      className={['storybook-button', `storybook-button--${size}`, mode].join(
+        ' '
+      )}
+      style={backgroundColor && {backgroundColor}}
       {...props}
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
 CUButton.propTypes = {
   /**
@@ -44,14 +55,14 @@ CUButton.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]).isRequired,
-};
+  ]).isRequired
+}
 
 CUButton.defaultProps = {
   backgroundColor: null,
   primary: false,
   size: 'medium',
-  onClick: undefined,
-};
+  onClick: undefined
+}
 
 export default CUButton

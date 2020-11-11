@@ -1,4 +1,4 @@
-import ReviewsList from './index';
+import ReviewsList from './index'
 
 describe('ReviewsList', () => {
   it('is truthy', () => {

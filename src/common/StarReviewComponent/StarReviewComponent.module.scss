@@ -1,4 +1,4 @@
-.starReviewComponent {  
+.starReviewComponent {
   .star {
     background-image: url('../../assets/star.png');
     @media (max-width: 700px) {
@@ -26,7 +26,7 @@
     background-position: center center;
     background-size: contain;
   }
-  
+
   .emptyStar {
     background-image: url('../../assets/empty-star.png');
     @media (max-width: 700px) {

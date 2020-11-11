@@ -9,24 +9,22 @@ import UserRating from '../../common/UserRating'
 import ProductDescription from '../../components/ProductDescription'
 import ChefProfile from '../../components/ChefProfile'
 
-import styles from  './MealCard.module.scss'
+import styles from './MealCard.module.scss'
 
-const MealCard = ({ mealDetail, isLoading, isOrdering, addProduct }) => {
-  
+const MealCard = ({mealDetail, isLoading, isOrdering, addProduct}) => {
   return (
-    <div
-      className={`${styles.productDetails} ${isLoading && styles.loading}`}>
+    <div className={`${styles.productDetails} ${isLoading && styles.loading}`}>
       <div className={styles.productDescription}>
-        <ProductTitle mealDetail={mealDetail}/>
-        <RatingMeal  mealDetail={mealDetail}/>
+        <ProductTitle mealDetail={mealDetail} />
+        <RatingMeal mealDetail={mealDetail} />
       </div>
 
       <div className={styles.productImage}>
         <MealImage mealDetail={mealDetail} />
       </div>
 
-      <ProductDescription  mealDetail={mealDetail} />
-      <ChefProfile mealDetail={mealDetail}  />
+      <ProductDescription mealDetail={mealDetail} />
+      <ChefProfile mealDetail={mealDetail} />
 
       <div className={styles.addProduct}>
         {isOrdering && !isLoading && (

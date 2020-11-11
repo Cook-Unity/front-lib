@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { string, func } from 'prop-types'
+import React, {useState, useEffect} from 'react'
+import {string, func} from 'prop-types'
 
 import NoMealImg from '../../assets/no-image.png'
 
-import './MealImage.css';
+import './MealImage.css'
 
 const MealImage = ({
   mealDetail,
@@ -24,7 +24,7 @@ const MealImage = ({
   }
 
   const image = errorImage ? NoMealImg : mealDetail.imageFullUrl
-  
+
   return errorImage ? (
     <div className={classNameNoImgContainer}>
       <img
