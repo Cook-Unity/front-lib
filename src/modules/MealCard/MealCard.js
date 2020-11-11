@@ -5,7 +5,6 @@ import Button from '../../common/CUButton'
 import MealImage from '../../common/MealImage'
 import RatingMeal from '../../components/RatingMeal'
 import ProductTitle from '../../components/ProductTitle'
-import UserRating from '../../common/UserRating'
 import ProductDescription from '../../components/ProductDescription'
 import ChefProfile from '../../components/ChefProfile'
 
