@@ -5,6 +5,3 @@ describe('Specifications', () => {
     expect(Specifications).toBeTruthy()
   })
 })
-
-
-

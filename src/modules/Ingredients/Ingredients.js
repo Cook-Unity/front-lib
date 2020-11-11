@@ -3,16 +3,18 @@ import React, { Fragment, useState } from 'react';
 import styles from './Ingredients.module.scss';
 import IngredientModal from '../../components/IngredientsModal';
 
-const Ingredients = ({ ingredients, isLoading }) => {
+export const getIngredientNameValue = (ingredient) =>
+  ingredient.name
+    ? ingredient.name
+    : ingredient.componentCode
+    ? ingredient.componentCode
+    : ingredient.value;
 
+const Ingredients = ({ ingredients, isLoading }) => {
   const [ingredientsModalIsOpen, setIngredientsModalIsOpen] = useState(false);
   const [selectedIngredient, setSelectedIngredient] = useState(null);
 
   const toggleIngredientsModal = (selectedIngredient = null) => {
-    // trackEvent('View all ingredients', {
-    //   action: 'Click in View all ingredients'
-    // })
-
     setIngredientsModalIsOpen(!ingredientsModalIsOpen);
     setSelectedIngredient(selectedIngredient);
   };
@@ -41,13 +43,7 @@ const Ingredients = ({ ingredients, isLoading }) => {
                   }
                 }}
               >
-                <p>
-                  {ingredient.name
-                    ? ingredient.name
-                    : ingredient.componentCode
-                    ? ingredient.componentCode
-                    : ingredient.value}
-                </p>
+                <p>{getIngredientNameValue(ingredient)}</p>
               </div>
             );
           })}
@@ -55,6 +51,16 @@ const Ingredients = ({ ingredients, isLoading }) => {
       </div>
     </Fragment>
   );
+};
+
+Ingredients.propTypes = {
+  ingredients: PropTypes.array,
+  isLoading: PropTypes.bool
+};
+
+Ingredients.defaultProps = {
+  ingredients: [],
+  isLoading: false
 };
 
 export default Ingredients;

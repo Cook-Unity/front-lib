@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Gauge from '../../common/Gauge'
-import MiniGauge from '../../common/MiniGauge'
+import Gauge from '../../common/Gauge';
+import MiniGauge from '../../common/MiniGauge';
 
 import styles from './Macronutrients.module.scss';
 
@@ -17,36 +18,34 @@ import {
   getPercentage,
   roundTo100,
   formatProgress
-} from './utils'
+} from './utils';
 
 const Macronutrients = ({ mealDetail }) => {
+  if (!mealDetail) return null;
 
-  if (!mealDetail) return null
+  const nutritionInfo = mealDetail.nutritionInfo;
 
-  const nutritionInfo = mealDetail.nutritionInfo
+  const dailyValue = Math.floor((mealDetail.calories * 100) / 2000);
 
-  const dailyValue = Math.floor((mealDetail.calories * 100) / 2000)
+  const proteinCal = getCalories(nutritionInfo.protein, MACRO_PROTEIN);
 
-  const proteinCal = getCalories(nutritionInfo.protein, MACRO_PROTEIN)
+  const carbsCal = getCalories(nutritionInfo.carbs, MACRO_CARBS);
 
-  const carbsCal = getCalories(nutritionInfo.carbs, MACRO_CARBS)
+  const fatCal = getCalories(nutritionInfo.fat, MACRO_FAT);
 
-  const fatCal = getCalories(nutritionInfo.fat, MACRO_FAT)
+  const calculatedCal = proteinCal + carbsCal + fatCal;
 
-  const calculatedCal = proteinCal + carbsCal + fatCal
+  let protein = getPercentage(proteinCal, calculatedCal);
+  let carbs = getPercentage(carbsCal, calculatedCal);
+  let fat = getPercentage(fatCal, calculatedCal);
 
-  let protein = getPercentage(proteinCal, calculatedCal)
-  let carbs = getPercentage(carbsCal, calculatedCal)
-  let fat = getPercentage(fatCal, calculatedCal)
+  [protein, carbs, fat] = roundTo100([protein, carbs, fat]);
 
-  ;[protein, carbs, fat] = roundTo100([protein, carbs, fat])
-
-  const calories = mealDetail.calories
-
+  const calories = mealDetail.calories;
 
   return (
     <div className={styles.macronutrients}>
-      <h2 data-testid="title-macro">Macronutrient Ratios</h2>
+      <h2 data-testid='title-macro'>Macronutrient Ratios</h2>
       <Gauge
         protein={protein}
         carbs={carbs}
@@ -59,7 +58,7 @@ const Macronutrients = ({ mealDetail }) => {
           <div className={styles.mobileRowGauge}>
             <div className={styles.legend}>
               <div className={styles.bubbleProtein} />
-              <div data-testid="protein" className={styles.value}>
+              <div data-testid='protein' className={styles.value}>
                 Protein <strong>({formatProgress(protein || 0)})</strong>
               </div>
             </div>
@@ -67,14 +66,14 @@ const Macronutrients = ({ mealDetail }) => {
           </div>
           <MiniGauge
             progress={getDietaryValue(nutritionInfo.protein, PROTEIN)}
-            unit="dv"
+            unit='dv'
           />
         </div>
         <div className={styles.columnMiniGauge}>
           <div className={styles.mobileRowGauge}>
             <div className={styles.legend}>
               <div className={styles.bubbleCarbs} />
-              <div data-testid="carbs" className={styles.value}>
+              <div data-testid='carbs' className={styles.value}>
                 Carbs <strong>({formatProgress(carbs || 0)})</strong>
               </div>
             </div>
@@ -82,7 +81,7 @@ const Macronutrients = ({ mealDetail }) => {
           </div>
           <MiniGauge
             progress={getDietaryValue(nutritionInfo.carbs, CARBS)}
-            unit="dv"
+            unit='dv'
           />
         </div>
         <div className={styles.columnMiniGauge}>
@@ -97,7 +96,7 @@ const Macronutrients = ({ mealDetail }) => {
           </div>
           <MiniGauge
             progress={getDietaryValue(nutritionInfo.fat, FAT)}
-            unit="dv"
+            unit='dv'
           />
         </div>
       </div>
@@ -107,7 +106,15 @@ const Macronutrients = ({ mealDetail }) => {
         lower depending on calorie needs.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Macronutrients
+Macronutrients.propTypes = {
+  mealDetail: PropTypes.array
+};
+
+Macronutrients.defaultProps = {
+  mealDetail: []
+};
+
+export default Macronutrients;
