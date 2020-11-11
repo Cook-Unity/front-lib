@@ -73,5 +73,12 @@
     "react-modal": "^3.11.2",
     "react-star-rating-component": "^1.4.1",
     "webpack": "^4.42.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/mocks/**/*",
+      "!<rootDir>/node_modules/"
+    ]
   }
 }
