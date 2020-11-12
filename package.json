@@ -77,8 +77,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/mocks/**/*",
-      "!<rootDir>/node_modules/"
+      "!src/mocks/**/*"
     ]
   }
 }
