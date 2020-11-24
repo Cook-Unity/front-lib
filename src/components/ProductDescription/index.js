@@ -1,2 +1,1 @@
-
-export {default} from './ProductDescription';
+export {default} from './ProductDescription'

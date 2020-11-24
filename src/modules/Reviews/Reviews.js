@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { sortReviews, formatReviews } from './utils'
+import React, {Fragment} from 'react'
+import {sortReviews, formatReviews} from './utils'
 import ReviewsModal from './components/ReviewsModal'
 import ReviewsList from './components/ReviewsList'
 import ReviewsSummary from './components/ReviewsSummary'
@@ -30,9 +30,7 @@ const Reviews = props => {
         onRequestClose={toggleReviewsModal}
       />
 
-      <div
-        className={styles.productReviews}
-        id="product-reviews-container">
+      <div className={styles.productReviews} id="product-reviews-container">
         <h2>Customer Reviews</h2>
 
         {_reviews.length ? (

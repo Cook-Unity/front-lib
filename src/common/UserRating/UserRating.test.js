@@ -1,27 +1,23 @@
-import * as React from 'react';
-import { render } from '@testing-library/react';
+import * as React from 'react'
+import {render} from '@testing-library/react'
 
-import defaultPropsMock from "./__mock__.json";
-import UserRating from './UserRating';
+import defaultPropsMock from './__mock__.json'
+import UserRating from './UserRating'
 
 const user_rating = defaultPropsMock.mealDetail.user_rating
 
 const defaultProps = {
-  user_rating,
-};
+  user_rating
+}
 
 describe('UserRating component', () => {
-
   describe('Checking user rating', () => {
-
     it(`Check than ${defaultProps.user_rating} is contain in the component`, () => {
-      const renderResult = render(
-        <UserRating
-          {...defaultProps}
-        />
-      );
+      const renderResult = render(<UserRating {...defaultProps} />)
 
-      expect(renderResult.getByTestId('user-rating').textContent).toBe(defaultProps.user_rating.toString());
-    });
-  });
-});
+      expect(renderResult.getByTestId('user-rating').textContent).toBe(
+        defaultProps.user_rating.toString()
+      )
+    })
+  })
+})

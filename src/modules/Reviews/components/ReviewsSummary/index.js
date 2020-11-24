@@ -1,2 +1,1 @@
-
-export {default} from './ReviewsSummary';
+export {default} from './ReviewsSummary'

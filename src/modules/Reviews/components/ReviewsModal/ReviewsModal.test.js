@@ -1,4 +1,4 @@
-import ReviewsModal from './index';
+import ReviewsModal from './index'
 
 describe('ReviewsModal', () => {
   it('is truthy', () => {

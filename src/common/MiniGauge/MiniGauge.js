@@ -20,7 +20,7 @@ const center = 36
 const side = 72
 const strokeDasharray = 2 * Math.PI * radius
 
-const MiniGauge = ({ progress, unit, className, style }) => {
+const MiniGauge = ({progress, unit, className, style}) => {
   const _progress_ = getProgress(progress)
 
   const strokeDashOffset = strokeDasharray * (_progress_ / 100) || 0
@@ -28,7 +28,8 @@ const MiniGauge = ({ progress, unit, className, style }) => {
   return (
     <div
       className={classnames('cookunity__radial_gauge', className)}
-      style={style}>
+      style={style}
+    >
       <div className="label">
         <p className="progress">{`${Math.floor(_progress_) || 0}%`}</p>
         <p className="unit">{unit}</p>
@@ -37,7 +38,8 @@ const MiniGauge = ({ progress, unit, className, style }) => {
         className="radial_gauge"
         width={side}
         height={side}
-        viewBox={`0 0 ${side} ${side}`}>
+        viewBox={`0 0 ${side} ${side}`}
+      >
         <circle
           className="progress-bar"
           cx={center}
@@ -60,4 +62,3 @@ const MiniGauge = ({ progress, unit, className, style }) => {
 }
 
 export default MiniGauge
-

@@ -1,4 +1,4 @@
-import ChefProfile from './index';
+import ChefProfile from './index'
 
 describe('ChefProfile', () => {
   it('is truthy', () => {

@@ -1,33 +1,33 @@
-import React from 'react';
+import React from 'react'
 
-import CUButton  from './index';
+import CUButton from './index'
 
 export default {
   title: 'CUButton',
   component: CUButton,
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-};
+    backgroundColor: {control: 'color'}
+  }
+}
 
-const Template = (args) => <CUButton {...args}>Hola</CUButton>;
+const Template = args => <CUButton {...args}>Hola</CUButton>
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-};
+  primary: true
+}
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({})
 Secondary.args = {
-  secondary: true,
-};
+  secondary: true
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
-  size: 'large',
-};
+  size: 'large'
+}
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
-  size: 'small',
-};
+  size: 'small'
+}

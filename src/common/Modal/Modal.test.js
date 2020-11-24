@@ -1,4 +1,4 @@
-import IngredientsModal from './index';
+import IngredientsModal from './index'
 
 describe('IngredientsModal', () => {
   it('is truthy', () => {

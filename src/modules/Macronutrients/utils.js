@@ -14,8 +14,8 @@ export const PROTEIN = 50
 export const getDietaryValue = (grams, k) => (Number(grams) / Number(k)) * 100
 
 export const roundTo100 = arr => {
-  const { indexOfHighest, remaining } = arr.reduce(
-    ({ indexOfHighest, remaining, highest }, curr, i) => {
+  const {indexOfHighest, remaining} = arr.reduce(
+    ({indexOfHighest, remaining, highest}, curr, i) => {
       let newHighest = highest
       let newIndex = indexOfHighest
       const newRemaining = remaining - curr
@@ -31,7 +31,7 @@ export const roundTo100 = arr => {
         remaining: newRemaining
       }
     },
-    { indexOfHighest: 0, remaining: 100, highest: 0 }
+    {indexOfHighest: 0, remaining: 100, highest: 0}
   )
 
   return arr.map((n, i) => {

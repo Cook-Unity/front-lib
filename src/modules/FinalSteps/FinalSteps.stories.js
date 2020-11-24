@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import FinalSteps from './index';
+import FinalSteps from './index'
 import {defaultProps} from '../../mocks/mock-mealDetails'
 
 export default {
   title: 'FinalSteps',
   component: FinalSteps
-};
+}
 
-const Template = (args) => <FinalSteps {...args} />;
+const Template = args => <FinalSteps {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
- ...defaultProps
-};
+  ...defaultProps
+}

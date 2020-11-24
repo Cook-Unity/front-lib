@@ -112,4 +112,4 @@ export const defaultProps = {
     urlPath: 'turkey-sweet-potato-bolognese-skillet',
     user_rating: 5
   }
-};
+}

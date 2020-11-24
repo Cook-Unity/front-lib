@@ -1,4 +1,4 @@
-import Specifications from './index';
+import Specifications from './index'
 
 describe('Specifications', () => {
   it('is truthy', () => {

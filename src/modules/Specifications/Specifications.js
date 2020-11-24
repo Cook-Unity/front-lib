@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import styles from './Specifications.module.scss';
+import styles from './Specifications.module.scss'
 
-export const replaceLessThanText = (label) => label && label.replace('Less Than', '<');
+export const replaceLessThanText = label =>
+  label && label.replace('Less Than', '<')
 
-const Specifications = ({ specificationsDetails }) => {
+const Specifications = ({specificationsDetails}) => {
   return (
     specificationsDetails && (
       <div className={styles.specificationDetailsContainer}>
@@ -17,19 +18,19 @@ const Specifications = ({ specificationsDetails }) => {
               </div>
               <span>{replaceLessThanText(detail.label)}</span>
             </div>
-          );
+          )
         })}
       </div>
     )
-  );
-};
+  )
+}
 
 Specifications.propTypes = {
-  specificationsDetails: PropTypes.array,
-};
+  specificationsDetails: PropTypes.array
+}
 
 Specifications.defaultProps = {
   specificationsDetails: []
-};
+}
 
-export default Specifications;
+export default Specifications

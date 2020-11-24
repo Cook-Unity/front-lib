@@ -1,31 +1,31 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { pathOr } from 'ramda';
-import classnames from 'classnames';
+import React, {Fragment} from 'react'
+import PropTypes from 'prop-types'
+import {pathOr} from 'ramda'
+import classnames from 'classnames'
 
-import Ice from '../../assets/ice.png';
-import CodeQR from '../../assets/code-qr.gif';
-import Enjoy from '../../assets/enjoy.png';
+import Ice from '../../assets/ice.png'
+import CodeQR from '../../assets/code-qr.gif'
+import Enjoy from '../../assets/enjoy.png'
 
-import styles from './FinalSteps.module.scss';
+import styles from './FinalSteps.module.scss'
 
-const FinalSteps = ({ mealDetail, isLoading }) => {
+const FinalSteps = ({mealDetail, isLoading}) => {
   const microwaveSteps = pathOr(
     null,
     ['cookingSteps', 'microwave_steps'],
     mealDetail
-  );
+  )
 
-  const ovenSteps = pathOr(null, ['cookingSteps', 'oven_steps'], mealDetail);
+  const ovenSteps = pathOr(null, ['cookingSteps', 'oven_steps'], mealDetail)
 
-  const formatSteps = (steps) =>
+  const formatSteps = steps =>
     steps
       .split(/\d+\.\s/)
-      .filter((s) => !!s)
-      .map((s) => s.replace('\n', ''));
+      .filter(s => !!s)
+      .map(s => s.replace('\n', ''))
 
   if (!ovenSteps && !microwaveSteps) {
-    return null;
+    return null
   }
 
   return (
@@ -34,7 +34,7 @@ const FinalSteps = ({ mealDetail, isLoading }) => {
         className={(styles.finalSteps, isLoading ? styles.finalSteps : null)}
       >
         <div className={styles.cooking}>
-          <h2 className={classnames({ loading: isLoading })}>
+          <h2 className={classnames({loading: isLoading})}>
             Heating Instructions
           </h2>
           {ovenSteps && (
@@ -74,7 +74,7 @@ const FinalSteps = ({ mealDetail, isLoading }) => {
 
           {!isLoading && (
             <h3>
-              <img src={Enjoy} alt='enjoy' />
+              <img src={Enjoy} alt="enjoy" />
               <b>Enjoy it Warm!</b>
             </h3>
           )}
@@ -85,7 +85,7 @@ const FinalSteps = ({ mealDetail, isLoading }) => {
             <div className={styles.cookingRow}>
               <div className={styles.col50}>
                 <div className={styles.iceImg}>
-                  <img src={Ice} alt='Brrrrr' />
+                  <img src={Ice} alt="Brrrrr" />
                 </div>
                 <div>
                   <p>
@@ -96,7 +96,7 @@ const FinalSteps = ({ mealDetail, isLoading }) => {
               </div>
               <div className={styles.col50}>
                 <div className={styles.iceImg}>
-                  <img src={CodeQR} alt='Brrrrr' />
+                  <img src={CodeQR} alt="Brrrrr" />
                 </div>
                 <div>
                   <p>
@@ -111,17 +111,17 @@ const FinalSteps = ({ mealDetail, isLoading }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 FinalSteps.propTypes = {
   microwaveSteps: PropTypes.string.isRequired,
   ovenSteps: PropTypes.string.isRequired
-};
+}
 
 FinalSteps.defaultProps = {
   microwaveSteps: '',
   ovenSteps: ''
-};
+}
 
-export default FinalSteps;
+export default FinalSteps

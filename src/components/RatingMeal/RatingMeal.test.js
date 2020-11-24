@@ -1,4 +1,4 @@
-import RatingMeal from './index';
+import RatingMeal from './index'
 
 describe('RatingMeal', () => {
   it('is truthy', () => {

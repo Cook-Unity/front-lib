@@ -1,22 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import Gauge from './index';
+import Gauge from './index'
 
 export default {
   title: 'Gauge',
   component: Gauge
-};
+}
 
-const Template = (args) => (
+const Template = args => <Gauge {...args} />
 
-  <Gauge {...args} /> 
-)
-
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   protein: 20,
   carbs: 30,
   fat: 20,
   calories: 29,
-  dv:2
-};
+  dv: 2
+}

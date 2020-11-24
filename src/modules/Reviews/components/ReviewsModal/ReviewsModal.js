@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import Modal from '../../../../common/Modal'
 import ReviewsList from '../ReviewsList'
 import ReviewsSummary from '../ReviewsSummary'
-import './ReviewsModal.css';
+import './ReviewsModal.css'
 
-const ReviewsModal = ({ isOpen, product, reviews, quantity, onRequestClose }) => {
-
+const ReviewsModal = ({isOpen, product, reviews, quantity, onRequestClose}) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
       <Content
@@ -20,11 +19,11 @@ const ReviewsModal = ({ isOpen, product, reviews, quantity, onRequestClose }) =>
 
 export default ReviewsModal
 
-const Content = ({ onRequestClose, quantity, product, reviews, handleClick }) => {
-
+const Content = ({onRequestClose, quantity, product, reviews, handleClick}) => {
   const [page, setPage] = useState(1)
 
   const ref = React.createRef()
+  /*
   const observer = new IntersectionObserver(
     ([entry]) => {
       this.setIntersecing(entry.isIntersecting)
@@ -33,15 +32,17 @@ const Content = ({ onRequestClose, quantity, product, reviews, handleClick }) =>
       rootMargin: '-25px'
     }
   )
+   */
 
-
-  const componentDidMount = () => {
+  /**
+   const componentDidMount = () => {
     this.observer.observe(ref.current)
   }
 
-  const componentWillUnmount = () =>  {
+   const componentWillUnmount = () => {
     this.observer.unobserve(ref.current)
   }
+   */
 
   const loadMore = () => {
     setPage(page + 1)
@@ -71,5 +72,3 @@ const Content = ({ onRequestClose, quantity, product, reviews, handleClick }) =>
     </div>
   )
 }
-
-

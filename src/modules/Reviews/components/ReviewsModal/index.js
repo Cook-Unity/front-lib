@@ -1,2 +1,1 @@
-
-export {default} from './ReviewsModal';
+export {default} from './ReviewsModal'

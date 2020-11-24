@@ -1,21 +1,21 @@
-import React from 'react';
-import StarReviewComponent from '../../common/StarReviewComponent';
-import UserRating from '../../common/UserRating';
+import React from 'react'
+import StarReviewComponent from '../../common/StarReviewComponent'
+import UserRating from '../../common/UserRating'
 
-import styles from './RatingMeal.module.scss';
+import styles from './RatingMeal.module.scss'
 
-export const parseStartToFloat = (stars) => parseFloat(stars || 0).toFixed(1);
+export const parseStartToFloat = stars => parseFloat(stars || 0).toFixed(1)
 
-const RatingMeal = ({ stars, mealDetail, reviews_count: reviewsCount }) => {
+const RatingMeal = ({stars, mealDetail, reviews_count: reviewsCount}) => {
   return (
     <div className={styles.ratingMeal}>
       <div className={styles.ratings}>
-        <span data-testid='stars' className={styles.average}>
+        <span data-testid="stars" className={styles.average}>
           {parseStartToFloat(stars)}
         </span>
         <div className={styles.stars}>
           <StarReviewComponent
-            name='rate'
+            name="rate"
             starCount={5}
             value={+stars || 0}
             onStarClick={() => {}}
@@ -26,10 +26,10 @@ const RatingMeal = ({ stars, mealDetail, reviews_count: reviewsCount }) => {
         {!!mealDetail.user_rating && <UserRating mealDetail={mealDetail} />}
       </div>
 
-      <p data-testid='count' className={styles.reviewsCount} onClick={() => {}}>
+      <p data-testid="count" className={styles.reviewsCount} onClick={() => {}}>
         {reviewsCount || 0} reviews{' '}
       </p>
     </div>
-  );
-};
-export default RatingMeal;
+  )
+}
+export default RatingMeal

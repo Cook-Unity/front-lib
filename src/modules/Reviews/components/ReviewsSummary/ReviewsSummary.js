@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import StarReviewComponent from '../../../../common/StarReviewComponent'
 
-import styles from './ReviewsSummary.module.scss';
+import styles from './ReviewsSummary.module.scss'
 
-const ReviewsSummary = ({ product, quantity }) => {
+const ReviewsSummary = ({product, quantity}) => {
   return (
     <div className={styles.revieCountContainer}>
       <p>{parseFloat(product.stars || 0).toFixed(1)}</p>

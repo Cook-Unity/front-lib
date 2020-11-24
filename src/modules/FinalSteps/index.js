@@ -1,2 +1,1 @@
-
-export {default} from './FinalSteps';
+export {default} from './FinalSteps'

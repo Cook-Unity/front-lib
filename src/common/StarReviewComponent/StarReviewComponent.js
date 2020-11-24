@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import StarRatingComponent from 'react-star-rating-component';
+import StarRatingComponent from 'react-star-rating-component'
 
-import styles from './StarReviewComponent.module.scss';
+import styles from './StarReviewComponent.module.scss'
 
-const StarReviewComponent = ({ onStarClick, value, ...props }) => {
+const StarReviewComponent = ({onStarClick, value, ...props}) => {
   return (
     <div className={styles.starReviewComponent}>
       <StarRatingComponent
@@ -19,7 +19,7 @@ const StarReviewComponent = ({ onStarClick, value, ...props }) => {
           // if (xPos <= 0.5) {
           //   nextValue -= 0.5
           // }
-          onStarClick(nextValue, prevValue, name, e);
+          onStarClick(nextValue, prevValue, name, e)
         }}
         renderStarIcon={(index, value) =>
           index <= value ? (
@@ -33,7 +33,7 @@ const StarReviewComponent = ({ onStarClick, value, ...props }) => {
         )}
       />
     </div>
-  );
-};
+  )
+}
 
-export default StarReviewComponent;
+export default StarReviewComponent

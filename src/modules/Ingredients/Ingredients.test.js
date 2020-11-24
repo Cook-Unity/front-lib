@@ -1,7 +1,7 @@
-import Ingredients from './index';
+import Ingredients from './index'
 
 describe('Ingredients', () => {
   it('is truthy', () => {
-    expect(Ingredients).toBeTruthy();
-  });
-});
+    expect(Ingredients).toBeTruthy()
+  })
+})

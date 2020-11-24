@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { pathOr } from 'ramda'
+import {pathOr} from 'ramda'
 
 import Faia from '../../assets/flame.png'
 import './Gauge.css'
@@ -55,8 +55,8 @@ class Gauge extends React.Component {
   formatProgress = x => `${x}%`
 
   render() {
-    const { protein, carbs, fat, calories, dv, className, style } = this.props
-    const { gaugeWidth } = this.state
+    const {protein, carbs, fat, calories, dv, className, style} = this.props
+    const {gaugeWidth} = this.state
 
     const _gaugeWidth_ = gaugeWidth > 400 ? 350 : gaugeWidth
 
@@ -76,7 +76,8 @@ class Gauge extends React.Component {
       <div
         ref={this.gaugeContainer}
         className={classnames('cookunity__macros_gauge', className)}
-        style={style}>
+        style={style}
+      >
         <div className="label">
           <img src={Faia} alt="calories icon" />
           <p className="calories">{calories || 0}</p>
@@ -87,9 +88,10 @@ class Gauge extends React.Component {
           className="radial_gauge"
           width={_gaugeWidth_}
           height={_gaugeWidth_}
-          viewBox={`0 0 ${_gaugeWidth_ || 0} ${_gaugeWidth_ || 0}`}>
+          viewBox={`0 0 ${_gaugeWidth_ || 0} ${_gaugeWidth_ || 0}`}
+        >
           <circle
-            className={classnames('track', { empty: !Math.floor(dv) })}
+            className={classnames('track', {empty: !Math.floor(dv)})}
             cx={center}
             cy={center}
             r={radius}
@@ -129,4 +131,3 @@ class Gauge extends React.Component {
 }
 
 export default Gauge
-

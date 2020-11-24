@@ -1,2 +1,1 @@
-
-export {default as default} from './NutritionalFacts';
+export {default} from './NutritionalFacts'

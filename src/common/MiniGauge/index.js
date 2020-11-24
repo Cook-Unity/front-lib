@@ -1,1 +1,1 @@
-export { default } from './MiniGauge';
+export {default} from './MiniGauge'

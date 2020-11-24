@@ -1,16 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import MiniGauge from './index';
+import MiniGauge from './index'
 
 export default {
   title: 'MiniGauge',
   component: MiniGauge
-};
+}
 
-const Template = (args) => (
+const Template = args => <MiniGauge {...args} />
 
-  <MiniGauge {...args} /> 
-)
-
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}

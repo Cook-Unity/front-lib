@@ -1,2 +1,1 @@
-
-export {default} from './ReviewsList';
+export {default} from './ReviewsList'

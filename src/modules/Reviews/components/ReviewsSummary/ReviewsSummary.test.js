@@ -1,4 +1,4 @@
-import ReviewsSummary from './index';
+import ReviewsSummary from './index'
 
 describe('ReviewsSummary', () => {
   it('is truthy', () => {

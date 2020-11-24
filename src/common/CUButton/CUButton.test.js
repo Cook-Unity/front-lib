@@ -1,4 +1,4 @@
-import CUButton from './index';
+import CUButton from './index'
 
 describe('CUButton', () => {
   it('is truthy', () => {

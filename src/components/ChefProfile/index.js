@@ -1,2 +1,1 @@
-
-export {default} from './ChefProfile';
+export {default} from './ChefProfile'
