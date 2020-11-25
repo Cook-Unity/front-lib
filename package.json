@@ -69,6 +69,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "moment": "^2.29.1",
+    "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
     "react-modal": "^3.11.2",
     "react-star-rating-component": "^1.4.1",

@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@keyframes expandCartControllers {
+  0% {
+    width: 30px;
+  }
+  100% {
+    width: 90px;
+  }
+}
+
+@keyframes cartFadeIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.meal_card {
+  position: relative;
+  width: 100%;
+  min-width: 286px;
+  height: 360px;
+  background: #ffffff;
+  box-shadow: 0px 8px 16px rgba(35, 31, 32, 0.06);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-family: Roboto, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &.in_cart {
+    border: 2px solid #47d178;
+  }
+
+  &__top {
+    width: 100%;
+    height: 220px;
+    background-position: center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    padding: 10px 16px;
+    border-bottom: 1px solid #eeeeee;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+
+    &_tags {
+      position: absolute;
+      bottom: 8px;
+    }
+  }
+
+  &__tag {
+    padding: 5px 8px;
+    background-color: #ffffffd9;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid #eeeeee;
+    font-size: 11px;
+    font-weight: 800;
+    margin-right: 4px;
+    vertical-align: middle;
+    height: 16px;
+    line-height: 1.7;
+
+    > * {
+      vertical-align: middle;
+    }
+
+    &.featured {
+      color: #ffffff;
+      background-color: #4d4d4f;
+      box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.1);
+    }
+
+    > span {
+      &.star {
+        color: #ffe06c;
+      }
+      &.reviews {
+        color: #999999;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__title {
+    width: 100%;
+    height: 46px;
+    overflow: hidden;
+    line-height: 1.2em;
+    padding: 0 16px;
+    margin: 16px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &_name {
+      max-height: 40px;
+      overflow: hidden;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    &_description {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 600;
+      color: #999999;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &__chef_container {
+    position: relative;
+
+    .all_star_budge {
+      position: absolute;
+      width: 20px;
+      left: 20px;
+      top: -6px;
+    }
+    .chef_name {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      vertical-align: middle;
+      width: 66%;
+    }
+
+    .chef_avatar {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #eeeeee;
+      overflow: hidden;
+      margin-right: 8px;
+      vertical-align: middle;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__add_to_cart_container {
+    .add_to_cart {
+      text-align: right;
+
+      .hiden_cart_controllers {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        animation: fadeIn 500ms;
+      }
+
+      .premium_fee {
+        margin-right: 6px;
+        .no_extra_fee_text {
+          font-size: 12px;
+          margin-bottom: 2px;
+          width: 50px;
+          color: #47d178;
+        }
+        .fee {
+          font-size: 14px;
+          font-weight: 800;
+          &.no_extra_fee {
+            color: #999;
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .cart_controllers {
+        border: 1px solid black;
+        border-radius: 50px;
+        width: 90px;
+        float: right;
+        height: 30px;
+        overflow: hidden;
+
+        animation: expandCartControllers 400ms;
+
+        > span {
+          width: 20px;
+          display: inline-block;
+          text-align: center;
+        }
+
+        > * {
+          animation: cartFadeIn 600ms;
+        }
+      }
+
+      button {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background: white;
+        border: 0px solid;
+        margin: 0 2.5px;
+        cursor: pointer;
+
+        &:focus {
+          outline-color: transparent;
+          outline-style: none;
+        }
+
+        &.unselected {
+          color: #ffffff;
+          background: #000;
+        }
+
+        &.selected {
+          color: #ffffff;
+          border: none;
+          background: #7ad7a7;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    height: 40px;
+    padding: 16px;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+
+    > div {
+      width: 100%;
+    }
+  }
+}
