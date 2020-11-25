@@ -10,11 +10,11 @@ const defaultCallback = () => {}
 
 const MealCard = ({
   meal = {},
+  quantity = 0,
+  noExtraFee = false,
   addItem = defaultCallback,
   removeItem = defaultCallback,
-  handleOnClick = defaultCallback,
-  quantity = 0,
-  noExtraFee = false
+  handleOnClick = defaultCallback
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
 
@@ -29,9 +29,9 @@ const MealCard = ({
     chef_lastname = '',
     full_path_meal_image = null, // set default food image
     full_path_chef_image = null, // set default chef image
-    feature = {},
     is_celebrity_chef = false,
-    premium_fee = null
+    premium_fee = null,
+    feature = {}
   } = meal
 
   const chefFullName = `${chef_firstname} ${chef_lastname}`
@@ -175,9 +175,13 @@ MealCard.propTypes = {
     chef_lastname: PropTypes.string.isRequired,
     full_path_meal_image: PropTypes.string.isRequired,
     full_path_chef_image: PropTypes.string,
-    feature: PropTypes.object,
     is_celebrity_chef: PropTypes.bool,
-    premium_fee: PropTypes.number
+    premium_fee: PropTypes.number,
+    feature: PropTypes.shape({
+      name: PropTypes.string,
+      background: PropTypes.string,
+      color: PropTypes.string
+    }).isRequired
   }),
 
   /**
