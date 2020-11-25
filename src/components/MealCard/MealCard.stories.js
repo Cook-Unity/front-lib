@@ -47,8 +47,18 @@ const mealImage = `${IMAGE_URL}${SAMPLE_MEAL.image_path}${SAMPLE_MEAL.image}`
 const chefImage = `${IMAGE_URL}/media/avatar/${SAMPLE_MEAL.bannerpic}`
 
 export const Default = Template.bind({})
-
 Default.args = {
+  meal: {
+    ...SAMPLE_MEAL,
+    full_path_meal_image: mealImage,
+    full_path_chef_image: chefImage
+  },
+  quantity: 0,
+  noExtraFee: false
+}
+
+export const Selected = Template.bind({})
+Selected.args = {
   meal: {
     ...SAMPLE_MEAL,
     full_path_meal_image: mealImage,
