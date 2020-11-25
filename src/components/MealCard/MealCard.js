@@ -120,7 +120,7 @@ const MealCard = ({
 
         <div className="meal_card__add_to_cart_container">
           <div className="add_to_cart">
-            {showCartControllers && selected ? (
+            {showCartControllers ? (
               <div className="cart_controllers">
                 <button onClick={() => quantity && handleRemoveItem()}>
                   -
@@ -145,9 +145,7 @@ const MealCard = ({
 
                 <button
                   className={`${selected ? 'selected' : 'unselected'}`}
-                  onClick={() =>
-                    selected ? setShowCartControllers(true) : handleAddItem()
-                  }
+                  onClick={() => setShowCartControllers(true)}
                 >
                   {`${quantity || '+'}`}
                 </button>
