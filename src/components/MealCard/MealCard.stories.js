@@ -3,8 +3,7 @@ import MealCard from './MealCard'
 
 export default {
   title: 'MealCard (New)',
-  component: MealCard,
-  argTypes: {addItem: {action: 'clicked'}}
+  component: MealCard
 }
 
 const Template = args => {
