@@ -13,10 +13,10 @@ const Template = args => {
   return (
     <MealCard
       meal={args.meal}
-      addItem={() => setCount(count + 1)}
-      removeItem={() => setCount(count - 1)}
       quantity={count}
       noExtraFee={args.noExtraFee}
+      addItem={() => setCount(count + 1)}
+      removeItem={() => setCount(count - 1)}
     />
   )
 }

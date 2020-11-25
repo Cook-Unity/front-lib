@@ -162,12 +162,41 @@ MealCard.propTypes = {
   /**
    * Meal data
    */
-  meal: PropTypes.object,
+  meal: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    short_description: PropTypes.string.isRequired,
+    calories: PropTypes.number,
+    meat_type: PropTypes.string,
+    reviews: PropTypes.number,
+    stars: PropTypes.number,
+    chef_firstname: PropTypes.string.isRequired,
+    chef_lastname: PropTypes.string.isRequired,
+    full_path_meal_image: PropTypes.string.isRequired,
+    full_path_chef_image: PropTypes.string,
+    feature: PropTypes.object,
+    is_celebrity_chef: PropTypes.bool,
+    premium_fee: PropTypes.number
+  }),
+
+  /**
+   * Quantity selected
+   */
+  quantity: PropTypes.number,
+
+  /**
+   * No extra fee indicator
+   */
+  noExtraFee: PropTypes.bool,
 
   /**
    * Add item callback
    */
-  addItem: PropTypes.func
+  addItem: PropTypes.func.isRequired,
+
+  /**
+   * Remove item callback
+   */
+  removeItem: PropTypes.func.isRequired
 }
 
 export default MealCard
