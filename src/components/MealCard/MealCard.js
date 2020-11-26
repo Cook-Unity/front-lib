@@ -12,7 +12,7 @@ const MealCard = ({
   meal = {},
   startQuantity = 0,
   noExtraFee = false,
-  onChangeQuantity = defaultCallback,
+  onChangeQuantity,
   onClick = defaultCallback
 }) => {
   const [quantity, setQuantity] = useState(startQuantity)
@@ -189,7 +189,7 @@ MealCard.propTypes = {
       name: PropTypes.string,
       background: PropTypes.string,
       color: PropTypes.string
-    }).isRequired
+    })
   }),
 
   /**
@@ -210,7 +210,7 @@ MealCard.propTypes = {
   /**
    * Called when clicking on card
    */
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 }
 
 export default MealCard
