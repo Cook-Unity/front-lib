@@ -10,12 +10,12 @@ const defaultCallback = () => {}
 
 const MealCard = ({
   meal = {},
-  quantity = 0,
+  startQuantity = 0,
   noExtraFee = false,
-  addItem = defaultCallback,
-  removeItem = defaultCallback,
-  handleOnClick = defaultCallback
+  onChangeQuantity = defaultCallback,
+  onClick = defaultCallback
 }) => {
+  const [quantity, setQuantity] = useState(startQuantity)
   const [showCartControllers, setShowCartControllers] = useState(false)
 
   const {
@@ -37,17 +37,20 @@ const MealCard = ({
   const chefFullName = `${chef_firstname} ${chef_lastname}`
   const mealRating = stars && +stars.toFixed(1)
   const premiumFeeString = `+ ${Numeral(premium_fee).format('$0,0.00')}`
-
   const selected = quantity > 0
 
-  const handleAddItem = () => {
+  const handleChangeQuantity = newQuantity => {
     setShowCartControllers(true)
-    addItem()
+    setQuantity(newQuantity)
+    onChangeQuantity(newQuantity)
+  }
+
+  const handleAddItem = () => {
+    handleChangeQuantity(quantity + 1)
   }
 
   const handleRemoveItem = () => {
-    setShowCartControllers(true)
-    removeItem()
+    handleChangeQuantity(quantity - 1)
   }
 
   useEffect(() => {
@@ -63,7 +66,7 @@ const MealCard = ({
     <div className={`meal_card ${selected ? 'in_cart' : ''}`}>
       <div
         className="meal_card__top"
-        onClick={() => handleOnClick()}
+        onClick={() => onClick()}
         style={{backgroundImage: `url(${full_path_meal_image})`}}
       >
         {feature.name && (
@@ -97,7 +100,7 @@ const MealCard = ({
       <div
         className="meal_card__title"
         onClick={() => {
-          handleOnClick()
+          onClick()
         }}
       >
         <div className="meal_card__title_name">{name}</div>
@@ -185,9 +188,9 @@ MealCard.propTypes = {
   }),
 
   /**
-   * Quantity selected
+   * Set quantity start value
    */
-  quantity: PropTypes.number,
+  startQuantity: PropTypes.number,
 
   /**
    * No extra fee indicator
@@ -195,14 +198,14 @@ MealCard.propTypes = {
   noExtraFee: PropTypes.bool,
 
   /**
-   * Add item callback
+   * Selecting more or less quantity
    */
-  addItem: PropTypes.func.isRequired,
+  onChangeQuantity: PropTypes.func.isRequired,
 
   /**
-   * Remove item callback
+   * Clicking meal card
    */
-  removeItem: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 }
 
 export default MealCard

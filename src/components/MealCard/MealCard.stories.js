@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import MealCard from './MealCard'
 
 export default {
@@ -6,19 +6,7 @@ export default {
   component: MealCard
 }
 
-const Template = args => {
-  const [count, setCount] = useState(args.quantity)
-
-  return (
-    <MealCard
-      meal={args.meal}
-      quantity={count}
-      noExtraFee={args.noExtraFee}
-      addItem={() => setCount(count + 1)}
-      removeItem={() => setCount(count - 1)}
-    />
-  )
-}
+const Template = args => <MealCard {...args} />
 
 const SAMPLE_MEAL = {
   name: 'Spicy Roasted Eggplant',
@@ -52,8 +40,14 @@ Default.args = {
     full_path_meal_image: mealImage,
     full_path_chef_image: chefImage
   },
-  quantity: 0,
-  noExtraFee: false
+  startQuantity: 0,
+  noExtraFee: true,
+  onChangeQuantity: quantity => {
+    console.log('new quantity', quantity)
+  },
+  onClick: () => {
+    console.log('meal card clicked')
+  }
 }
 
 export const Selected = Template.bind({})
@@ -63,6 +57,12 @@ Selected.args = {
     full_path_meal_image: mealImage,
     full_path_chef_image: chefImage
   },
-  quantity: 1,
-  noExtraFee: true
+  startQuantity: 1,
+  noExtraFee: true,
+  onChangeQuantity: quantity => {
+    console.log('new quantity', quantity)
+  },
+  onClick: () => {
+    console.log('meal card clicked')
+  }
 }
