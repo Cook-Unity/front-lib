@@ -8,20 +8,21 @@ export default {
 
 const Template = args => <MealCard {...args} />
 
-const SAMPLE_MEAL = {
+const meal = {
   name: 'Spicy Roasted Eggplant',
   short_description: 'with yellow rice and tomatoes',
   calories: 430,
   meat_type: 'Vegan',
   reviews: 1250,
   stars: 4.3715,
-  image: 'w/a/wayan-eggplant.jpeg',
-  image_path: '/media/catalog/product/cache/x600/',
   chef_firstname: 'Jean-Georges',
   chef_lastname: 'Vongerichten',
   is_celebrity_chef: true,
-  bannerpic: 'chef-1x169283.jpg',
   premium_fee: 3.0,
+  full_path_meal_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
+  full_path_chef_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg',
   feature: {
     name: 'NEW',
     background: '#4D4D4F',
@@ -29,17 +30,9 @@ const SAMPLE_MEAL = {
   }
 }
 
-const IMAGE_URL = 'https://d1ureao5dcqpo4.cloudfront.net'
-const mealImage = `${IMAGE_URL}${SAMPLE_MEAL.image_path}${SAMPLE_MEAL.image}`
-const chefImage = `${IMAGE_URL}/media/avatar/${SAMPLE_MEAL.bannerpic}`
-
 export const Default = Template.bind({})
 Default.args = {
-  meal: {
-    ...SAMPLE_MEAL,
-    full_path_meal_image: mealImage,
-    full_path_chef_image: chefImage
-  },
+  meal,
   startQuantity: 0,
   noExtraFee: false,
   onChangeQuantity: quantity => {
@@ -52,11 +45,7 @@ Default.args = {
 
 export const Selected = Template.bind({})
 Selected.args = {
-  meal: {
-    ...SAMPLE_MEAL,
-    full_path_meal_image: mealImage,
-    full_path_chef_image: chefImage
-  },
+  meal,
   startQuantity: 1,
   noExtraFee: true
 }
@@ -64,12 +53,10 @@ Selected.args = {
 export const Christmas = Template.bind({})
 Christmas.args = {
   meal: {
-    ...SAMPLE_MEAL,
+    ...meal,
     feature: {
       name: 'christmas'
-    },
-    full_path_meal_image: mealImage,
-    full_path_chef_image: chefImage
+    }
   },
   startQuantity: 0
 }
