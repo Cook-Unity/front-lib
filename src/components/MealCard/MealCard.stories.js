@@ -13,7 +13,7 @@ const SAMPLE_MEAL = {
   short_description: 'with yellow rice and tomatoes',
   calories: 430,
   meat_type: 'Vegan',
-  reviews: 183,
+  reviews: 1250,
   stars: 4.3715,
   image: 'w/a/wayan-eggplant.jpeg',
   image_path: '/media/catalog/product/cache/x600/',

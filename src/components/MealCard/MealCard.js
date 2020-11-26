@@ -36,6 +36,7 @@ const MealCard = ({
 
   const chefFullName = `${chef_firstname} ${chef_lastname}`
   const mealRating = stars && +stars.toFixed(1)
+  const mealReviews = reviews && (reviews > 999 ? '999+' : `${reviews}`)
   const premiumFeeString = `+ ${Numeral(premium_fee).format('$0,0.00')}`
   const selected = quantity > 0
 
@@ -86,11 +87,11 @@ const MealCard = ({
         )}
 
         <div className="meal_card__top_tags">
-          {reviews && mealRating && (
+          {mealReviews && mealRating && (
             <div className="meal_card__tag">
               <span className="star">★ </span>
               {`${mealRating}`}
-              <span className="reviews">{` (${reviews})`}</span>
+              <span className="reviews">{` (${mealReviews})`}</span>
             </div>
           )}
 
