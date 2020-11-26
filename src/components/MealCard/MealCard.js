@@ -12,7 +12,7 @@ const MealCard = ({
   meal = {},
   startQuantity = 0,
   noExtraFee = false,
-  onChangeQuantity,
+  onChangeQuantity = defaultCallback,
   onClick = defaultCallback
 }) => {
   const [quantity, setQuantity] = useState(startQuantity)
@@ -205,7 +205,7 @@ MealCard.propTypes = {
   /**
    * Called when selecting quantity
    */
-  onChangeQuantity: PropTypes.func.isRequired,
+  onChangeQuantity: PropTypes.func,
 
   /**
    * Called when clicking on card
