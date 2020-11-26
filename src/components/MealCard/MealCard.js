@@ -120,15 +120,7 @@ const MealCard = ({
 
         <div className="meal_card__add_to_cart_container">
           <div className="add_to_cart">
-            {showCartControllers ? (
-              <div className="cart_controllers">
-                <button onClick={() => quantity && handleRemoveItem()}>
-                  -
-                </button>
-                <span>{quantity}</span>
-                <button onClick={() => handleAddItem()}>+</button>
-              </div>
-            ) : (
+            {!showCartControllers || !selected ? (
               <div className="hiden_cart_controllers">
                 {premium_fee && (
                   <div className="premium_fee">
@@ -145,10 +137,20 @@ const MealCard = ({
 
                 <button
                   className={`${selected ? 'selected' : 'unselected'}`}
-                  onClick={() => setShowCartControllers(true)}
+                  onClick={() =>
+                    !selected ? handleAddItem() : setShowCartControllers(true)
+                  }
                 >
                   {`${quantity || '+'}`}
                 </button>
+              </div>
+            ) : (
+              <div className="cart_controllers">
+                <button onClick={() => quantity && handleRemoveItem()}>
+                  -
+                </button>
+                <span>{quantity}</span>
+                <button onClick={() => handleAddItem()}>+</button>
               </div>
             )}
           </div>
