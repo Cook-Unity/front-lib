@@ -39,6 +39,10 @@ const MealCard = ({
   const premiumFeeString = `+ ${Numeral(premium_fee).format('$0,0.00')}`
   const selected = quantity > 0
 
+  if (feature.name) {
+    feature.name = feature.name.toUpperCase()
+  }
+
   const handleChangeQuantity = newQuantity => {
     setShowCartControllers(true)
     setQuantity(newQuantity)

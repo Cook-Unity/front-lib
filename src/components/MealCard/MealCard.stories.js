@@ -41,7 +41,7 @@ Default.args = {
     full_path_chef_image: chefImage
   },
   startQuantity: 0,
-  noExtraFee: true,
+  noExtraFee: false,
   onChangeQuantity: quantity => {
     console.log('new quantity', quantity)
   },
@@ -58,11 +58,18 @@ Selected.args = {
     full_path_chef_image: chefImage
   },
   startQuantity: 1,
-  noExtraFee: true,
-  onChangeQuantity: quantity => {
-    console.log('new quantity', quantity)
+  noExtraFee: true
+}
+
+export const Christmas = Template.bind({})
+Christmas.args = {
+  meal: {
+    ...SAMPLE_MEAL,
+    feature: {
+      name: 'christmas'
+    },
+    full_path_meal_image: mealImage,
+    full_path_chef_image: chefImage
   },
-  onClick: () => {
-    console.log('meal card clicked')
-  }
+  startQuantity: 0
 }
