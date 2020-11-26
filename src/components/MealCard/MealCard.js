@@ -192,7 +192,7 @@ MealCard.propTypes = {
   }),
 
   /**
-   * Set quantity start value
+   * Quantity start value
    */
   startQuantity: PropTypes.number,
 
@@ -202,12 +202,12 @@ MealCard.propTypes = {
   noExtraFee: PropTypes.bool,
 
   /**
-   * Selecting more or less quantity
+   * Called when selecting quantity
    */
   onChangeQuantity: PropTypes.func.isRequired,
 
   /**
-   * Clicking meal card
+   * Called when clicking on card
    */
   onClick: PropTypes.func.isRequired
 }
