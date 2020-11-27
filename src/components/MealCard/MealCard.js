@@ -99,7 +99,7 @@ const MealCard = ({
           )}
 
           {calories && (
-            <div className="meal_card__tag">{`${calories} cals`}</div>
+            <div className="meal_card__tag">{`${calories} cal`}</div>
           )}
 
           {meat_type && <div className="meal_card__tag">{`${meat_type}`}</div>}
