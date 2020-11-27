@@ -47,6 +47,12 @@ Default.args = {
 export const Selected = Template.bind({})
 Selected.args = {
   meal,
+  startQuantity: 1
+}
+
+export const NoExtraFee = Template.bind({})
+NoExtraFee.args = {
+  meal,
   startQuantity: 1,
   noExtraFee: true
 }
@@ -56,7 +62,9 @@ Christmas.args = {
   meal: {
     ...meal,
     feature: {
-      name: 'christmas'
+      name: 'christmas',
+      background: '#CC231E',
+      color: 'white'
     }
   },
   startQuantity: 0

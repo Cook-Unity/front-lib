@@ -32,5 +32,4 @@ describe('MealCard component', () => {
       .toBeVisible()
   })
 
-  it('chef name formatting', () => {})
 })
