@@ -102,7 +102,7 @@ const MealCard = ({
 
         <div className="meal_card__top_tags">
           {mealReviews && mealRating && (
-            <div className="meal_card__tag">
+            <div className="meal_card__tag" data-testid="rating">
               <span className="star">★ </span>
               {`${mealRating}`}
               <span className="reviews">{` (${mealReviews})`}</span>
@@ -128,7 +128,11 @@ const MealCard = ({
       <div className="meal_card__footer">
         <div className="meal_card__chef_container">
           {is_celebrity_chef && full_path_chef_image && (
-            <img src={allStarChefBudge} className="all_star_budge" />
+            <img
+              src={allStarChefBudge}
+              className="all_star_budge"
+              data-testid="celeb-chef-img"
+            />
           )}
           {full_path_chef_image ? (
             <div className="chef_avatar">
