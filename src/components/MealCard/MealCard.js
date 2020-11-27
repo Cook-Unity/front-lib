@@ -27,8 +27,8 @@ const MealCard = ({
     stars = null,
     chef_firstname = '',
     chef_lastname = '',
-    full_path_meal_image = null, // set default food image
-    full_path_chef_image = null, // set default chef image
+    full_path_meal_image = null,
+    full_path_chef_image = null,
     is_celebrity_chef = false,
     premium_fee = null,
     fixed_price = false,
@@ -75,6 +75,7 @@ const MealCard = ({
       <div
         className="meal_card__top"
         onClick={() => onClick()}
+        data-testid="meal-image"
         style={{backgroundImage: `url(${full_path_meal_image})`}}
       >
         {feature.name && (
@@ -121,7 +122,11 @@ const MealCard = ({
           )}
           {full_path_chef_image ? (
             <div className="chef_avatar">
-              <img src={full_path_chef_image} alt={chefFullName} />
+              <img
+                src={full_path_chef_image}
+                data-testid="chef-image"
+                alt={chefFullName}
+              />
             </div>
           ) : (
             ''
@@ -185,7 +190,7 @@ MealCard.propTypes = {
     chef_firstname: PropTypes.string.isRequired,
     chef_lastname: PropTypes.string.isRequired,
     full_path_meal_image: PropTypes.string.isRequired,
-    full_path_chef_image: PropTypes.string,
+    full_path_chef_image: PropTypes.string.isRequired,
     is_celebrity_chef: PropTypes.bool,
     premium_fee: PropTypes.number,
     fixed_price: PropTypes.bool,
