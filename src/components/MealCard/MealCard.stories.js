@@ -62,7 +62,6 @@ Christmas.args = {
   startQuantity: 0
 }
 
-
 export const FixedPrice = Template.bind({})
 FixedPrice.args = {
   meal: {
