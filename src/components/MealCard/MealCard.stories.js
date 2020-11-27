@@ -27,7 +27,8 @@ const meal = {
     name: 'NEW',
     background: '#4D4D4F',
     color: '#FFFFFF'
-  }
+  },
+  fixed_price: false
 }
 
 export const Default = Template.bind({})
@@ -57,6 +58,16 @@ Christmas.args = {
     feature: {
       name: 'christmas'
     }
+  },
+  startQuantity: 0
+}
+
+
+export const FixedPrice = Template.bind({})
+FixedPrice.args = {
+  meal: {
+    ...meal,
+    fixed_price: true
   },
   startQuantity: 0
 }

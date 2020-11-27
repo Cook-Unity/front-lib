@@ -31,14 +31,17 @@ const MealCard = ({
     full_path_chef_image = null, // set default chef image
     is_celebrity_chef = false,
     premium_fee = null,
+    fixed_price = false,
     feature = {}
   } = meal
 
   const chefFullName = `${chef_firstname} ${chef_lastname}`
   const mealRating = stars && +stars.toFixed(1)
   const mealReviews = reviews && (reviews > 999 ? '999+' : `${reviews}`)
-  const premiumFeeString = `+ ${Numeral(premium_fee).format('$0,0.00')}`
   const selected = quantity > 0
+  const premiumFeeString = `${!fixed_price ? '+' : ''} ${Numeral(
+    premium_fee
+  ).format('$0,0.00')}`
 
   if (feature.name) {
     feature.name = feature.name.toUpperCase()
@@ -185,6 +188,7 @@ MealCard.propTypes = {
     full_path_chef_image: PropTypes.string,
     is_celebrity_chef: PropTypes.bool,
     premium_fee: PropTypes.number,
+    fixed_price: PropTypes.bool,
     feature: PropTypes.shape({
       name: PropTypes.string,
       background: PropTypes.string,
