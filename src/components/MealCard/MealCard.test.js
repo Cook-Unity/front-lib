@@ -7,10 +7,8 @@ const meal = {
   short_description: 'with yellow rice and tomatoes',
   chef_firstname: 'Jean-Georges',
   chef_lastname: 'Vongerichten',
-  full_path_meal_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
-  full_path_chef_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg'
+  full_path_meal_image: 'meal-image-url',
+  full_path_chef_image: 'chef-image-url'
 }
 
 describe('MealCard component', () => {
@@ -25,12 +23,14 @@ describe('MealCard component', () => {
       screen.getByText(`${meal.chef_firstname} ${meal.chef_lastname}`)
     ).toBeVisible()
 
-    expect(mealImg).toHaveStyle(
-      `background-image: url(${meal.full_path_meal_image})`
-    )
-    expect(mealImg).toBeVisible()
+    expect(mealImg)
+      .toHaveStyle(`background-image: url(${meal.full_path_meal_image})`)
+      .toBeVisible()
 
-    expect(chefImg).toHaveAttribute('src', meal.full_path_chef_image)
-    expect(chefImg).toBeVisible()
+    expect(chefImg)
+      .toHaveAttribute('src', meal.full_path_chef_image)
+      .toBeVisible()
   })
+
+  it('chef name formatting', () => {})
 })

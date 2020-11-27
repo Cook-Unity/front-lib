@@ -8,6 +8,21 @@ const allStarChefBudge =
 
 const defaultCallback = () => {}
 
+const formatFee = (premium_fee, fixed_price) =>
+  `${!fixed_price ? '+' : ''} ${Numeral(premium_fee).format('$0,0.00')}`
+
+const formatChefName = (firstName, lastName) => `${firstName} ${lastName}`
+
+const formatMealRating = stars => stars && +stars.toFixed(1)
+
+const formatMealReviews = reviews =>
+  reviews && (reviews > 999 ? '999+' : `${reviews}`)
+
+const formatFeature = feature => {
+  if (feature.name) feature.name = feature.name.toUpperCase()
+  return feature
+}
+
 const MealCard = ({
   meal = {},
   startQuantity = 0,
@@ -35,17 +50,12 @@ const MealCard = ({
     feature = {}
   } = meal
 
-  const chefFullName = `${chef_firstname} ${chef_lastname}`
-  const mealRating = stars && +stars.toFixed(1)
-  const mealReviews = reviews && (reviews > 999 ? '999+' : `${reviews}`)
+  const chefFullName = formatChefName(chef_firstname, chef_lastname)
+  const mealRating = formatMealRating(stars)
+  const mealReviews = formatMealReviews(reviews)
+  const premiumFeeString = formatFee(premium_fee, fixed_price)
+  const featureSpecs = formatFeature(feature)
   const selected = quantity > 0
-  const premiumFeeString = `${!fixed_price ? '+' : ''} ${Numeral(
-    premium_fee
-  ).format('$0,0.00')}`
-
-  if (feature.name) {
-    feature.name = feature.name.toUpperCase()
-  }
 
   const handleChangeQuantity = newQuantity => {
     setShowCartControllers(true)
@@ -78,15 +88,15 @@ const MealCard = ({
         data-testid="meal-image"
         style={{backgroundImage: `url(${full_path_meal_image})`}}
       >
-        {feature.name && (
+        {featureSpecs.name && (
           <div
             className="meal_card__tag featured"
             style={{
-              backgroundColor: feature.background,
-              color: feature.color
+              backgroundColor: featureSpecs.background,
+              color: featureSpecs.color
             }}
           >
-            {feature.name}
+            {featureSpecs.name}
           </div>
         )}
 
