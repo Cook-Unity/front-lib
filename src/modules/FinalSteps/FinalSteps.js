@@ -31,7 +31,9 @@ const FinalSteps = ({mealDetail, isLoading}) => {
   return (
     <div className={styles.finalSteps}>
       <div
-        className={(styles.finalSteps, isLoading ? styles.finalSteps : null)}
+        className={classnames(styles.finalSteps, {
+          isLoading: isLoading ? styles.finalSteps : null
+        })}
       >
         <div className={styles.cooking}>
           <h2 className={classnames({loading: isLoading})}>
@@ -39,17 +41,21 @@ const FinalSteps = ({mealDetail, isLoading}) => {
           </h2>
           {ovenSteps && (
             <div
-              className={(styles.oven, isLoading ? styles.finalSteps : null)}
+              className={classnames(styles.oven, {
+                isLoading: isLoading ? styles.finalSteps : null
+              })}
             >
               <h4>
                 In the Oven
                 {!isLoading && <span> (Recommended)</span>}
               </h4>
               <div
-                className={(styles.steps, isLoading ? styles.finalSteps : null)}
+                className={classnames(styles.steps, {
+                  isLoading: isLoading ? styles.finalSteps : null
+                })}
               >
                 {formatSteps(ovenSteps).map((step, i) => (
-                  <p key={i}>{`${i + 1}. ${step}`}</p>
+                  <p key={`ovenStepsP-${i}`}>{`${i + 1}. ${step}`}</p>
                 ))}
               </div>
             </div>
@@ -57,13 +63,15 @@ const FinalSteps = ({mealDetail, isLoading}) => {
 
           {microwaveSteps && (
             <div
-              className={
-                (styles.microwave, isLoading ? styles.finalSteps : null)
-              }
+              className={classnames(styles.microwave, {
+                isLoading: isLoading ? styles.finalSteps : null
+              })}
             >
               <h4>In the Microwave</h4>
               <div
-                className={(styles.steps, isLoading ? styles.finalSteps : null)}
+                className={classnames(styles.steps, {
+                  isLoading: isLoading ? styles.finalSteps : null
+                })}
               >
                 {formatSteps(microwaveSteps).map((step, i) => (
                   <p key={i}>{`${i + 1}. ${step}`}</p>

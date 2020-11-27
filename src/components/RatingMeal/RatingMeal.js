@@ -6,7 +6,7 @@ import styles from './RatingMeal.module.scss'
 
 export const parseStartToFloat = stars => parseFloat(stars || 0).toFixed(1)
 
-const RatingMeal = ({stars, mealDetail, reviews_count: reviewsCount}) => {
+const RatingMeal = ({stars, reviewsCount, userRating}) => {
   return (
     <div className={styles.ratingMeal}>
       <div className={styles.ratings}>
@@ -23,7 +23,7 @@ const RatingMeal = ({stars, mealDetail, reviews_count: reviewsCount}) => {
           />
         </div>
 
-        {!!mealDetail.user_rating && <UserRating mealDetail={mealDetail} />}
+        {!!userRating && <UserRating userRating={userRating} />}
       </div>
 
       <p data-testid="count" className={styles.reviewsCount} onClick={() => {}}>

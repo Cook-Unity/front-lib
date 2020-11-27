@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import BlackStar from '../../assets/black-star.png'
 import styles from './UserRating.module.scss'
 
-const UserRating = ({user_rating: userRating}) => {
+const UserRating = ({userRating}) => {
   return (
     <span className={styles.userRating}>
       <img src={BlackStar} alt="star" />

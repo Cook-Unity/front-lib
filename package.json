@@ -70,8 +70,12 @@
     "classnames": "^2.2.6",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
+    "ramda": "^0.27.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-helmet": "^6.1.0",
     "react-modal": "^3.11.2",
     "react-star-rating-component": "^1.4.1",
+    "react-toastify": "^6.1.0",
     "webpack": "^4.42.0"
   },
   "jest": {

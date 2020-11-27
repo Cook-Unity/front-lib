@@ -4,31 +4,46 @@ import PropTypes from 'prop-types'
 import styles from './ChefProfile.module.scss'
 import Chevron from '../../assets/chevron.png'
 
-const ChefProfile = ({chef_firstname, chef_lastname, chef_img}) => {
+const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
   return (
     <div className={styles.chefProfile}>
-      <img src={chef_img} alt="chef" />
+      <img src={img} alt="chef" />
       <div>
         <p data-testid="chef-name">
-          {chef_firstname} {chef_lastname}
+          {firstname} {lastname}
         </p>
-        <a>
-          View Profile
-          <img src={Chevron} alt="arrow" />
-        </a>
+        {onClick && (
+          <a
+            onClick={() => {
+              if (onClick) {
+                onClick(chefId)
+              }
+            }}
+            className={`${!onClick && 'aWithoutTextDecoration'}`}
+          >
+            {' '}
+            View Profile <img src={Chevron} alt="arrow" />{' '}
+          </a>
+        )}
       </div>
     </div>
   )
 }
 
 ChefProfile.propTypes = {
-  chef_firstname: PropTypes.string.isRequired,
-  chef_lastname: PropTypes.string.isRequired
+  chefId: PropTypes.number,
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
+  img: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 ChefProfile.defaultProps = {
-  chef_firstname: '',
-  chef_lastname: ''
+  chefId: 0,
+  firstname: '',
+  lastname: '',
+  img: '',
+  onClick: null
 }
 
 export default ChefProfile

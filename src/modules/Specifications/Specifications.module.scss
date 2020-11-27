@@ -1,3 +1,6 @@
+@import '../../assets/styles/scss/mixins';
+@import '../../assets/styles/scss/variables';
+
 .specificationDetailsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6,7 +9,7 @@
   row-gap: 16px;
   margin-bottom: 24px;
 
-  @media (max-width: 720px) {
+  @include from(768px) {
     grid-template-columns: repeat(auto-fit, 100px);
     column-gap: 16px;
     margin-bottom: 40px;
@@ -49,12 +52,12 @@
       line-height: 20px;
     }
 
-    @media (max-width: 720px) {
+    @include from(768px) {
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      .imageContainer {
+      .image_container {
         margin: 0 0 10px 0;
       }
     }

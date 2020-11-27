@@ -20,12 +20,10 @@ import {
   formatProgress
 } from './utils'
 
-const Macronutrients = ({mealDetail}) => {
-  if (!mealDetail) return null
+const Macronutrients = ({nutritionInfo, calories}) => {
+  if (!nutritionInfo) return null
 
-  const nutritionInfo = mealDetail.nutritionInfo
-
-  const dailyValue = Math.floor((mealDetail.calories * 100) / 2000)
+  const dailyValue = Math.floor((calories * 100) / 2000)
 
   const proteinCal = getCalories(nutritionInfo.protein, MACRO_PROTEIN)
 
@@ -40,8 +38,6 @@ const Macronutrients = ({mealDetail}) => {
   let fat = getPercentage(fatCal, calculatedCal)
 
   ;[protein, carbs, fat] = roundTo100([protein, carbs, fat])
-
-  const calories = mealDetail.calories
 
   return (
     <div className={styles.macronutrients}>
@@ -110,11 +106,13 @@ const Macronutrients = ({mealDetail}) => {
 }
 
 Macronutrients.propTypes = {
-  mealDetail: PropTypes.array
+  nutritionInfo: PropTypes.object,
+  calories: PropTypes.number
 }
 
 Macronutrients.defaultProps = {
-  mealDetail: []
+  nutritionInfo: null,
+  calories: 0
 }
 
 export default Macronutrients
