@@ -1,10 +1,8 @@
 import React from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import {toast} from 'react-toastify'
-import CopyLink from '../../assets/images/copy-links.png'
-import Facebook from '../../assets/images/facebook.png'
-import Twitter from '../../assets/images/twitter.png'
-import Email from '../../assets/images/email.png'
+
+import images from '../../assets/images'
 
 const Social = props => {
   const {url, title, onClickButton} = props
@@ -21,7 +19,7 @@ const Social = props => {
             url
           )}`}
         >
-          <img src={Facebook} alt="Facebook" className="facebook" />
+          <img src={images.facebook} alt="Facebook" className="facebook" />
         </a>
       </div>
 
@@ -33,7 +31,7 @@ const Social = props => {
           onClick={() => onClickButton('twitter')}
           href={`https://twitter.com/share?url=${encodeURIComponent(url)}`}
         >
-          <img src={Twitter} alt="Twitter" className="twitter" />
+          <img src={images.twitter} alt="Twitter" className="twitter" />
         </a>
       </div>
 
@@ -47,7 +45,7 @@ const Social = props => {
             url
           )}`}
         >
-          <img src={Email} alt="Email" className="email" />
+          <img src={images.email} alt="Email" className="email" />
         </a>
       </div>
 
@@ -59,7 +57,7 @@ const Social = props => {
             toast('Copied on clipboard!')
           }}
         >
-          <img src={CopyLink} alt="Copy link" />
+          <img src={images.copyLink} alt="Copy link" />
         </CopyToClipboard>
       </div>
     </div>

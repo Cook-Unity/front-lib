@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import images from '../../assets/images'
 import styles from './ChefProfile.module.scss'
-import Chevron from '../../assets/chevron.png'
 
 const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
   return (
@@ -22,7 +22,7 @@ const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
             className={`${!onClick && 'aWithoutTextDecoration'}`}
           >
             {' '}
-            View Profile <img src={Chevron} alt="arrow" />{' '}
+            View Profile <img src={images.chevronIcon} alt="arrow" />{' '}
           </a>
         )}
       </div>

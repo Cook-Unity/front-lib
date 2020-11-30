@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
 import classnames from 'classnames'
 
-import Ice from '../../assets/ice.png'
-import CodeQR from '../../assets/code-qr.gif'
-import Enjoy from '../../assets/enjoy.png'
+import images from '../../assets/images'
 
 import styles from './FinalSteps.module.scss'
 
@@ -82,7 +80,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
 
           {!isLoading && (
             <h3>
-              <img src={Enjoy} alt="enjoy" />
+              <img src={images.enjoyImage} alt="enjoy" />
               <b>Enjoy it Warm!</b>
             </h3>
           )}
@@ -93,7 +91,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
             <div className={styles.cookingRow}>
               <div className={styles.col50}>
                 <div className={styles.iceImg}>
-                  <img src={Ice} alt="Brrrrr" />
+                  <img src={images.iceImage} alt="Brrrrr" />
                 </div>
                 <div>
                   <p>
@@ -104,7 +102,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
               </div>
               <div className={styles.col50}>
                 <div className={styles.iceImg}>
-                  <img src={CodeQR} alt="Brrrrr" />
+                  <img src={images.codeQRImage} alt="Brrrrr" />
                 </div>
                 <div>
                   <p>

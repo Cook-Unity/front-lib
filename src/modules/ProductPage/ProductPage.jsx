@@ -13,9 +13,7 @@ import Macronutrients from '../Macronutrients'
 import Reviews from '../Reviews'
 import Specifications from '../Specifications'
 
-import Close from '../../assets/images/back_arrow.png'
-import CloseMobile from '../../assets/images/back_arrow_mobile.png'
-import Share from '../../assets/images/share.png'
+import images from '../../assets/images'
 
 import styles from './ProductPage.module.scss'
 
@@ -25,7 +23,6 @@ const ProductPage = ({
   goBack,
   goBackText,
   openChefProfileHandler,
-  toggleReviewsModalHandler,
   addProductHandler,
   isOrdering
 }) => {
@@ -53,7 +50,7 @@ const ProductPage = ({
         <div className={styles.cookunity__product_detail}>
           <div className={styles.header}>
             <div className={styles.back_button} onClick={goBack}>
-              <img src={Close} alt="close" />
+              <img src={images.close} alt="close" />
               <p>{goBackText}</p>
             </div>
 
@@ -61,7 +58,7 @@ const ProductPage = ({
               className={[styles.back_button, styles.mobile]}
               onClick={goBack}
             >
-              <img src={CloseMobile} alt="close" />
+              <img src={images.closeMobile} alt="close" />
             </div>
 
             {!isLoading && (
@@ -70,7 +67,7 @@ const ProductPage = ({
                   className={[styles.share_button]}
                   onClick={() => setShowSocialInfo(!showSocialInfo)}
                 >
-                  <img src={Share} alt="share" />
+                  <img src={images.share} alt="share" />
                   <p>Share</p>
                 </div>
 

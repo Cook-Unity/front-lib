@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import BlackStar from '../../assets/black-star.png'
+import images from '../../assets/images'
 import styles from './UserRating.module.scss'
 
 const UserRating = ({userRating}) => {
   return (
     <span className={styles.userRating}>
-      <img src={BlackStar} alt="star" />
+      <img src={images.blackStarImage} alt="star" />
       <span data-testid="user-rating">
         {parseFloat(+userRating || 0).toFixed(0)}
       </span>

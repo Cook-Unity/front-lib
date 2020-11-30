@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {string, func} from 'prop-types'
 
-import NoMealImg from '../../assets/no-image.png'
+import images from '../../assets/images'
 
 import './MealImage.css'
 
@@ -23,7 +23,7 @@ const MealImage = ({
     setErrorImage(true)
   }
 
-  const image = errorImage ? NoMealImg : mealDetail.imageFullUrl
+  const image = errorImage ? images.noMealImg : mealDetail.imageFullUrl
 
   return errorImage ? (
     <div className={classNameNoImgContainer}>

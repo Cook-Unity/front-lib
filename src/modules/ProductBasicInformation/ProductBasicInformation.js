@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Plus from '../../assets/plus-white.png'
 import Button from '../../common/Buttons'
 import MealImage from '../../common/MealImage'
 import RatingMeal from '../../components/RatingMeal'
 import ProductTitle from '../../components/ProductTitle'
 import ProductDescription from '../../components/ProductDescription'
 import ChefProfile from '../../components/ChefProfile'
+
+import images from '../../assets/images'
 
 import styles from './ProductBasicInformation.module.scss'
 
@@ -49,7 +50,7 @@ const ProductBasicInformation = ({
       <div className={styles.addProduct}>
         {isOrdering && !isLoading && (
           <Button dark large onClick={addProduct}>
-            <img src={Plus} alt="plus sign" />
+            <img src={images.plusImage} alt="plus sign" />
             <span>Add meal</span>
           </Button>
         )}
