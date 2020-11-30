@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import './Button.scss'
+import styles from './Button.module.scss'
 
 const Button = props => {
   const {
@@ -12,7 +12,6 @@ const Button = props => {
     transparent,
     disabled,
     block,
-    className,
     width,
     style,
     small,
@@ -26,24 +25,21 @@ const Button = props => {
   return (
     <button
       disabled={_disabled_}
-      className={classnames(
-        'cookunity__new_button',
-        {
-          dark,
-          red,
-          transparent,
-          disabled: _disabled_,
-          block,
-          large,
-          gutter,
-          small,
-          loading
-        },
-        className
-      )}
-      style={{ width, ...style }}
-      {...rest}>
-      {loading && <span className="loader"></span>}
+      className={classnames(styles.cookunity__new_button, {
+        [styles.dark]: dark ? styles.dark : null,
+        [styles.red]: red ? styles.red : null,
+        [styles.transparent]: transparent ? styles.transparent : null,
+        [styles.disabled]: _disabled_ ? styles.disabled : null,
+        [styles.block]: block ? styles.block : null,
+        [styles.large]: large ? styles.large : null,
+        [styles.gutter]: gutter ? styles.gutter : null,
+        [styles.small]: small ? styles.small : null,
+        [styles.loading]: small ? styles.loading : null
+      })}
+      style={{width, ...style}}
+      {...rest}
+    >
+      {loading && <span className={styles.loader} />}
       {children}
     </button>
   )
@@ -62,7 +58,6 @@ Button.propTypes = {
   dark: PropTypes.bool,
   disabled: PropTypes.bool,
   block: PropTypes.bool,
-  className: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   style: PropTypes.objectOf(PropTypes.any)
 }

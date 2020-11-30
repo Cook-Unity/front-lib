@@ -32,7 +32,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
     <div className={styles.finalSteps}>
       <div
         className={classnames(styles.finalSteps, {
-          isLoading: isLoading ? styles.finalSteps : null
+          [styles.finalSteps]: isLoading ? styles.finalSteps : null
         })}
       >
         <div className={styles.cooking}>
@@ -42,7 +42,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
           {ovenSteps && (
             <div
               className={classnames(styles.oven, {
-                isLoading: isLoading ? styles.finalSteps : null
+                [styles.finalSteps]: isLoading ? styles.finalSteps : null
               })}
             >
               <h4>
@@ -51,7 +51,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
               </h4>
               <div
                 className={classnames(styles.steps, {
-                  isLoading: isLoading ? styles.finalSteps : null
+                  [styles.finalSteps]: isLoading ? styles.finalSteps : null
                 })}
               >
                 {formatSteps(ovenSteps).map((step, i) => (
@@ -64,13 +64,13 @@ const FinalSteps = ({mealDetail, isLoading}) => {
           {microwaveSteps && (
             <div
               className={classnames(styles.microwave, {
-                isLoading: isLoading ? styles.finalSteps : null
+                [styles.finalSteps]: isLoading ? styles.finalSteps : null
               })}
             >
               <h4>In the Microwave</h4>
               <div
                 className={classnames(styles.steps, {
-                  isLoading: isLoading ? styles.finalSteps : null
+                  [styles.finalSteps]: isLoading ? styles.finalSteps : null
                 })}
               >
                 {formatSteps(microwaveSteps).map((step, i) => (

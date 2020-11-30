@@ -17,7 +17,7 @@ import Close from '../../assets/images/back_arrow.png'
 import CloseMobile from '../../assets/images/back_arrow_mobile.png'
 import Share from '../../assets/images/share.png'
 
-import './ProductPage.scss'
+import styles from './ProductPage.module.scss'
 
 const ProductPage = ({
   productData,
@@ -49,22 +49,25 @@ const ProductPage = ({
 
   return (
     <Fragment>
-      <div className="cookunity__product_detail_container">
-        <div className="cookunity__product_detail">
-          <div className="header">
-            <div className="back_button" onClick={goBack}>
+      <div className={styles.cookunity__product_detail_container}>
+        <div className={styles.cookunity__product_detail}>
+          <div className={styles.header}>
+            <div className={styles.back_button} onClick={goBack}>
               <img src={Close} alt="close" />
               <p>{goBackText}</p>
             </div>
 
-            <div className="back_button mobile" onClick={goBack}>
+            <div
+              className={[styles.back_button, styles.mobile]}
+              onClick={goBack}
+            >
               <img src={CloseMobile} alt="close" />
             </div>
 
             {!isLoading && (
-              <div className="share_container">
+              <div className={[styles.share_container]}>
                 <div
-                  className="share_button"
+                  className={[styles.share_button]}
                   onClick={() => setShowSocialInfo(!showSocialInfo)}
                 >
                   <img src={Share} alt="share" />
@@ -99,18 +102,18 @@ const ProductPage = ({
                 specificationsDetails={productData.specificationsDetails}
               />
 
-              <div className="board">
-                <div className="column">
+              <div className={[styles.board]}>
+                <div className={[styles.column]}>
                   {ingredients}
                   {finalSteps}
                 </div>
 
-                <div className="column">
+                <div className={[styles.column]}>
                   {nutrition}
                   {macronutrients}
                 </div>
 
-                <div className="block">
+                <div className={[styles.block]}>
                   {ingredients}
                   {nutrition}
                   {finalSteps}
