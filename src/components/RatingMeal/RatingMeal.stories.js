@@ -1,7 +1,13 @@
 import React from 'react'
-import {defaultProps} from '../../mocks/mock-mealDetails'
+import mock from './__mock__.json'
 
 import RatingMeal from './index'
+
+const defaultProps = {
+  stars: mock.stars,
+  reviewsCount: mock.reviews_count,
+  userRating: mock.user_rating
+}
 
 export default {
   title: 'RatingMeal',
@@ -12,7 +18,5 @@ const Template = args => <RatingMeal {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps,
-  stars: defaultProps.mealDetail.stars,
-  reviews_count: defaultProps.mealDetail.reviews_count
+  ...defaultProps
 }

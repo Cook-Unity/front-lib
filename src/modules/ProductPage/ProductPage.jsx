@@ -5,7 +5,7 @@ import Skeleton from './skeleton'
 import MetaTags from '../../components/MetaTags'
 import Social from '../../components/SocialShareButton'
 
-import MealCard from '../MealCard'
+import ProductBasicInformation from '../ProductBasicInformation'
 import Ingredients from '../Ingredients'
 import FinalSteps from '../FinalSteps'
 import NutritionalFacts from '../NutritionalFacts'
@@ -17,11 +17,10 @@ import Close from '../../assets/images/back_arrow.png'
 import CloseMobile from '../../assets/images/back_arrow_mobile.png'
 import Share from '../../assets/images/share.png'
 
-import './MealDetail.scss'
+import './ProductPage.scss'
 
-const MealDetail = ({
+const ProductPage = ({
   productData,
-  HeaderComponent,
   isLoading,
   goBack,
   goBackText,
@@ -46,9 +45,10 @@ const MealDetail = ({
     />
   )
 
+  const handleReviews = () => setShowReviewsModal(!showReviewsModal)
+
   return (
     <Fragment>
-      {HeaderComponent && <HeaderComponent />}
       <div className="cookunity__product_detail_container">
         <div className="cookunity__product_detail">
           <div className="header">
@@ -87,15 +87,14 @@ const MealDetail = ({
                 description={productData.meal_story}
               />
 
-              <MealCard
+              <ProductBasicInformation
                 isOrdering={isOrdering}
                 mealDetail={productData}
                 addProduct={addProductHandler}
-                toggleReviewsModal={toggleReviewsModalHandler}
+                onClickReviewCount={handleReviews}
                 onChefClick={openChefProfileHandler}
               />
 
-              {/* <Details data={productData.specificationsDetails} /> */}
               <Specifications
                 specificationsDetails={productData.specificationsDetails}
               />
@@ -125,9 +124,7 @@ const MealDetail = ({
                 quantity={productData.reviews_count}
                 title="Community Reviews"
                 showReviewsModal={showReviewsModal}
-                toggleReviewsModal={() =>
-                  setShowReviewsModal(!showReviewsModal)
-                }
+                toggleReviewsModal={handleReviews}
               />
             </Fragment>
           )}
@@ -137,7 +134,7 @@ const MealDetail = ({
   )
 }
 
-MealDetail.propTypes = {
+ProductPage.propTypes = {
   productData: PropTypes.object.isRequired,
   HeaderComponent: PropTypes.element,
   goBack: PropTypes.func,
@@ -149,7 +146,7 @@ MealDetail.propTypes = {
   isOrdering: PropTypes.bool
 }
 
-MealDetail.defaultProps = {
+ProductPage.defaultProps = {
   productData: {},
   HeaderComponent: null,
   goBack: () => {},
@@ -161,4 +158,4 @@ MealDetail.defaultProps = {
   isOrdering: false
 }
 
-export default MealDetail
+export default ProductPage

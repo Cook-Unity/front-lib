@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react'
-import MealCard from '../MealCard'
+import ProductBasicInformation from '../ProductBasicInformation'
 
-import {mealSkeleton} from '../MealCard/skeleton'
+import {mealSkeleton} from '../ProductBasicInformation/skeleton'
 
 const MealDetailSkeleton = ({preloadedMealDetail}) => {
   return (
     <Fragment>
-      <MealCard
+      <ProductBasicInformation
         isLoading
         order={[]}
         mealDetail={mealSkeleton}

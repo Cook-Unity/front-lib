@@ -15,6 +15,7 @@ const Social = props => {
         <a
           className="facebook"
           target="_blank"
+          rel="noreferrer noopener"
           onClick={() => onClickButton('facebook')}
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
             url
@@ -28,6 +29,7 @@ const Social = props => {
         <a
           className="twitter"
           target="_blank"
+          rel="noreferrer noopener"
           onClick={() => onClickButton('twitter')}
           href={`https://twitter.com/share?url=${encodeURIComponent(url)}`}
         >
@@ -39,6 +41,7 @@ const Social = props => {
         <a
           className="copy-link"
           target="_blank"
+          rel="noreferrer noopener"
           onClick={() => onClickButton('email')}
           href={`mailto:?subject=Enjoy ${title}&body=${encodeURIComponent(
             url

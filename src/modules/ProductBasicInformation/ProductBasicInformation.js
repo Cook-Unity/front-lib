@@ -9,14 +9,15 @@ import ProductTitle from '../../components/ProductTitle'
 import ProductDescription from '../../components/ProductDescription'
 import ChefProfile from '../../components/ChefProfile'
 
-import styles from './MealCard.module.scss'
+import styles from './ProductBasicInformation.module.scss'
 
-const MealCard = ({
+const ProductBasicInformation = ({
   mealDetail,
   isLoading,
   isOrdering,
   addProduct,
-  onChefClick
+  onChefClick,
+  onClickReviewCount
 }) => {
   return (
     <div className={`${styles.productDetails} ${isLoading && styles.loading}`}>
@@ -27,6 +28,7 @@ const MealCard = ({
           stars={mealDetail.stars}
           reviewsCount={mealDetail.reviews_count}
           userRating={mealDetail.user_rating}
+          onClickReviewCount={onClickReviewCount}
         />
       </div>
 
@@ -40,7 +42,7 @@ const MealCard = ({
         img={mealDetail.chef_img}
         firstname={mealDetail.chef_firstname}
         lastname={mealDetail.chef_lastname}
-        chefId={mealDetail.chef_id}
+        chefId={+mealDetail.chef_id}
         onClick={onChefClick}
       />
 
@@ -56,12 +58,22 @@ const MealCard = ({
   )
 }
 
-MealCard.propTypes = {
-  onChefClick: PropTypes.func
+ProductBasicInformation.propTypes = {
+  onChefClick: PropTypes.func,
+  addProduct: PropTypes.func,
+  onClickReviewCount: PropTypes.func,
+  mealDetail: PropTypes.object,
+  isLoading: PropTypes.bool,
+  isOrdering: PropTypes.bool
 }
 
-MealCard.defaultProps = {
-  onChefClick: null
+ProductBasicInformation.defaultProps = {
+  onChefClick: null,
+  addProduct: null,
+  onClickReviewCount: null,
+  mealDetail: null,
+  isLoading: false,
+  isOrdering: false
 }
 
-export default MealCard
+export default ProductBasicInformation
