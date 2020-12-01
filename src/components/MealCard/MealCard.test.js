@@ -1,6 +1,8 @@
 import React from 'react'
-import {render, screen} from '@testing-library/react'
+import {render, screen, waitFor} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import MealCard from './'
+import {MealCardSimple} from './MealCardExtensions'
 
 const meal = {
   name: 'Spicy Roasted Eggplant',
@@ -37,6 +39,10 @@ describe('MealCard component', () => {
     const mealImg = screen.getByTestId('meal-image')
     const chefImg = screen.getByTestId('chef-image')
 
+    expect(screen.getByTestId('quantityBtn'))
+      .toHaveTextContent('+')
+      .toBeVisible()
+    expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(meal.name)).toBeVisible()
     expect(screen.getByText(meal.short_description)).toBeVisible()
     expect(
@@ -52,13 +58,19 @@ describe('MealCard component', () => {
       .toBeVisible()
   })
 
-  it('Extra attributes', () => {
-    render(<MealCard meal={mealExtended} noExtraFee />)
+  it('Extra props', () => {
+    render(<MealCard meal={mealExtended} noExtraFee quantity={1} />)
     const featureElem = screen.getByText('NEW')
 
+    expect(screen.getByTestId('quantityBtn'))
+      .toHaveTextContent('1')
+      .toBeVisible()
+    expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(`${mealExtended.calories} cal`)).toBeVisible()
     expect(screen.getByText(mealExtended.meat_type)).toBeVisible()
-    expect(screen.getByTestId('rating')).toHaveTextContent('★ 4.4 (999+)')
+    expect(screen.getByTestId('rating'))
+      .toHaveTextContent('★ 4.4 (999+)')
+      .toBeVisible()
     expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
@@ -68,5 +80,26 @@ describe('MealCard component', () => {
         color: mealExtras.feature.color
       })
       .toBeVisible()
+  })
+
+  /**
+   * waitFor was failing because an old version of jest in react-scripts:
+   *  https://github.com/testing-library/dom-testing-library/releases/tag/v7.0.0
+   *    ---> "jest-environment-jsdom-sixteen" package installed
+   */
+  it('Add/remove quantities', async () => {
+    render(<MealCardSimple meal={meal} quantity={2} />)
+    userEvent.click(screen.getByTestId('quantityBtn'))
+    userEvent.click(screen.getByText('-'))
+    expect(screen.getByTestId('quantity')).toHaveTextContent('1')
+    userEvent.click(screen.getByText('+'))
+    userEvent.click(screen.getByText('+'))
+    expect(screen.getByTestId('quantity')).toHaveTextContent('3')
+    await waitFor(
+      () => expect(screen.getByTestId('quantityBtn')).toHaveTextContent('3'),
+      {
+        timeout: 3000
+      }
+    )
   })
 })

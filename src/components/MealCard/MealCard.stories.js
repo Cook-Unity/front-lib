@@ -1,12 +1,15 @@
 import React from 'react'
-import MealCard from './MealCard'
+import MealCard from './'
+import {MealCardSimple} from './MealCardExtensions'
 
 export default {
   title: 'MealCard (New)',
   component: MealCard
 }
 
-const Template = args => <MealCard {...args} />
+const Template = args => {
+  return <MealCardSimple {...args} />
+}
 
 const meal = {
   name: 'Spicy Roasted Eggplant',
@@ -34,26 +37,19 @@ const meal = {
 export const Default = Template.bind({})
 Default.args = {
   meal,
-  startQuantity: 0,
-  noExtraFee: false,
-  onChangeQuantity: quantity => {
-    console.log('new quantity', quantity)
-  },
-  onClick: () => {
-    console.log('meal card clicked')
-  }
+  quantity: 0
 }
 
 export const Selected = Template.bind({})
 Selected.args = {
   meal,
-  startQuantity: 1
+  quantity: 1
 }
 
 export const NoExtraFee = Template.bind({})
 NoExtraFee.args = {
   meal,
-  startQuantity: 1,
+  quantity: 1,
   noExtraFee: true
 }
 
@@ -67,7 +63,7 @@ Christmas.args = {
       color: 'white'
     }
   },
-  startQuantity: 0
+  quantity: 0
 }
 
 export const FixedPrice = Template.bind({})
@@ -76,5 +72,5 @@ FixedPrice.args = {
     ...meal,
     fixed_price: true
   },
-  startQuantity: 0
+  quantity: 0
 }
