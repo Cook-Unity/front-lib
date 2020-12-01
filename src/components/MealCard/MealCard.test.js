@@ -95,11 +95,9 @@ describe('MealCard component', () => {
     userEvent.click(screen.getByText('+'))
     userEvent.click(screen.getByText('+'))
     expect(screen.getByTestId('quantity')).toHaveTextContent('3')
-    await waitFor(
-      () => expect(screen.getByTestId('quantityBtn')).toHaveTextContent('3'),
-      {
-        timeout: 3000
-      }
-    )
+    userEvent.click(screen.getByText('-'))
+    userEvent.click(screen.getByText('-'))
+    userEvent.click(screen.getByText('-'))
+    expect(screen.getByTestId('quantityBtn')).toHaveTextContent('+')
   })
 })
