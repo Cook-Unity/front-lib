@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StarReviewComponent from '../../common/StarReviewComponent'
+import StarReview from '../../common/StarReview'
 import UserRating from '../../common/UserRating'
 
 import styles from './RatingMeal.module.scss'
@@ -18,7 +18,7 @@ const RatingMeal = ({stars, reviewsCount, userRating, onClickReviewCount}) => {
           {parseStartToFloat(stars)}
         </span>
         <div className={styles.stars}>
-          <StarReviewComponent
+          <StarReview
             name="rate"
             starCount={5}
             value={+stars || 0}

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import StarReviewComponent from './index'
+import StarReview from './index'
 
 export default {
-  title: 'StarReviewComponent',
-  component: StarReviewComponent
+  title: 'StarReview',
+  component: StarReview
 }
 
-const Template = args => <StarReviewComponent {...args} />
+const Template = args => <StarReview {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

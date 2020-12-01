@@ -1,13 +1,13 @@
 import React from 'react'
 
-import StarRatingComponent from 'react-star-rating-controlled-component'
+import StarRating from 'react-star-rating-controlled-component'
 
-import styles from './StarReviewComponent.module.scss'
+import styles from './StarReview.module.scss'
 
-const StarReviewComponent = ({onStarClick, value, ...props}) => {
+const StarReview = ({onStarClick, value, ...props}) => {
   return (
-    <div className={styles.starReviewComponent}>
-      <StarRatingComponent
+    <div className={styles.starReview}>
+      <StarRating
         {...props}
         value={+value}
         onStarClick={(nextValue, prevValue, name, e) => {
@@ -36,4 +36,4 @@ const StarReviewComponent = ({onStarClick, value, ...props}) => {
   )
 }
 
-export default StarReviewComponent
+export default StarReview

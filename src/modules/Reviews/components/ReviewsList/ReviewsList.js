@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import StarReviewComponent from '../../../../common/StarReviewComponent'
+import StarReview from '../../../../common/StarReview'
 
 import styles from './ReviewsList.module.scss'
 
@@ -16,7 +16,7 @@ const ReviewsList = ({
         <div className={styles.review} key={review.review_id}>
           <div className={styles.info}>
             <div className={styles.stars}>
-              <StarReviewComponent
+              <StarReview
                 name="rate"
                 starCount={5}
                 value={review.stars}
