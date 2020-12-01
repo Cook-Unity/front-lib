@@ -59,7 +59,10 @@ describe('MealCard component', () => {
   })
 
   it('Extra props', () => {
-    render(<MealCard meal={mealExtended} noExtraFee quantity={1} />)
+    const onClick = jest.fn()
+    render(
+      <MealCard meal={mealExtended} noExtraFee quantity={1} onClick={onClick} />
+    )
     const featureElem = screen.getByText('NEW')
 
     expect(screen.getByTestId('quantityBtn'))
@@ -80,6 +83,16 @@ describe('MealCard component', () => {
         color: mealExtras.feature.color
       })
       .toBeVisible()
+
+    userEvent.click(screen.getByTestId('meal-image'))
+    expect(onClick).toHaveBeenCalled()
+  })
+
+  it('Click card', () => {
+    const onClick = jest.fn()
+    render(<MealCard meal={mealExtended} onClick={onClick} />)
+    userEvent.click(screen.getByTestId('meal-image'))
+    expect(onClick).toHaveBeenCalled()
   })
 
   /**
