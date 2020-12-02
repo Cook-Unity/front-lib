@@ -31,7 +31,7 @@ const meal = {
     background: '#4D4D4F',
     color: '#FFFFFF'
   },
-  fixed_price: false
+  stock: 3
 }
 
 export const Default = Template.bind({})

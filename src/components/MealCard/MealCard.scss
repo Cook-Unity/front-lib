@@ -224,6 +224,10 @@
         margin: 0 2.5px;
         cursor: pointer;
 
+        &:disabled {
+          cursor: default;
+        }
+
         &:focus {
           outline-color: transparent;
           outline-style: none;
@@ -231,7 +235,10 @@
 
         &.unselected {
           color: #ffffff;
-          background: #000;
+          background-color: #000;
+          &:disabled {
+            background-color: #666;
+          }
         }
 
         &.selected {

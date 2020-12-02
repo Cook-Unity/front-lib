@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import Numeral from 'numeral'
 import './MealCard.scss'
 
-const allStarChefBudge =
-  'data:image/png;base64,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'
+import  allStarChefBudge from '../../assets/all-star.png'
 
 const CONTROLLERS_OPENED_MS = 2500
 
@@ -31,7 +30,9 @@ const MealCard = ({
   noExtraFee,
   onAddItem,
   onRemoveItem,
-  onClick
+  onClick,
+  isEditable = true,
+  disableAddItem = false,
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
 
@@ -49,7 +50,8 @@ const MealCard = ({
     is_celebrity_chef = false,
     premium_fee = null,
     fixed_price = false,
-    feature = {}
+    feature = {},
+    stock = 0,
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -59,9 +61,12 @@ const MealCard = ({
   const featureSpecs = formatFeature(feature)
   const selected = quantity > 0
 
+  const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
+
   const handleAddItem = () => {
     setShowCartControllers(true)
-    onAddItem()
+    if(isEditable || !disableAddItemBtn)
+      onAddItem()
   }
   const handleRemoveItem = () => {
     setShowCartControllers(true)
@@ -161,16 +166,18 @@ const MealCard = ({
                     </div>
                   </div>
                 )}
-
+                {(isEditable || quantity) ? (
                 <button
                   className={`${selected ? 'selected' : 'unselected'}`}
+                  disabled={!isEditable}
                   onClick={() =>
                     !selected ? handleAddItem() : setShowCartControllers(true)
                   }
                   data-testid="quantityBtn"
                 >
                   {`${quantity || '+'}`}
-                </button>
+                </button> 
+                ) : '' }
               </div>
             ) : (
               <div className="cart_controllers" data-testid="cart-controllers">
@@ -178,7 +185,7 @@ const MealCard = ({
                   -
                 </button>
                 <span data-testid="quantity">{quantity}</span>
-                <button onClick={() => handleAddItem()}>+</button>
+                <button disabled={disableAddItemBtn} onClick={() => handleAddItem()}>+</button>
               </div>
             )}
           </div>
@@ -207,8 +214,12 @@ MealCard.propTypes = {
       name: PropTypes.string,
       background: PropTypes.string,
       color: PropTypes.string
-    })
+    }),
+    stock: PropTypes.number
   }),
+
+  isEditable: PropTypes.bool,
+  disableAddItem: PropTypes.bool,
   quantity: PropTypes.number,
   noExtraFee: PropTypes.bool,
   onAddItem: PropTypes.func,
