@@ -9,7 +9,7 @@ const UserRating = ({userRating}) => {
     <span className={styles.userRating}>
       <img src={images.blackStarImage} alt="star" />
       <span data-testid="user-rating">
-        {parseFloat(+userRating || 0).toFixed(0)}
+        {parseFloat(+userRating).toFixed(0)}
       </span>
       <span className={styles.separator}>|</span>
       <span>YOUR RATING</span>
@@ -18,11 +18,11 @@ const UserRating = ({userRating}) => {
 }
 
 UserRating.propTypes = {
-  user_rating: PropTypes.string
+  userRating: PropTypes.string
 }
 
 UserRating.defaultProps = {
-  user_rating: ''
+  userRating: 0
 }
 
 export default UserRating
