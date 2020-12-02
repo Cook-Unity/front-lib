@@ -95,11 +95,6 @@ describe('MealCard component', () => {
     expect(onClick).toHaveBeenCalled()
   })
 
-  /**
-   * waitFor was failing because an old version of jest in react-scripts:
-   *  https://github.com/testing-library/dom-testing-library/releases/tag/v7.0.0
-   *    ---> "jest-environment-jsdom-sixteen" package installed
-   */
   it('Add/remove quantities', async () => {
     render(<MealCardSimple meal={meal} quantity={2} />)
     userEvent.click(screen.getByTestId('quantityBtn'))
