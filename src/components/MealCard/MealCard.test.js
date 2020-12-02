@@ -25,7 +25,8 @@ const mealExtras = {
     name: 'NEW',
     background: '#4D4D4F',
     color: '#FFFFFF'
-  }
+  },
+  stock: 3
 }
 
 const mealExtended = {
@@ -95,7 +96,19 @@ describe('MealCard component', () => {
     expect(onClick).toHaveBeenCalled()
   })
 
-  it('Add/remove quantities', async () => {
+  it('No editable', () => {
+    render(<MealCardSimple meal={meal} isEditable={false} />)
+    expect(screen.queryByTestId('quantityBtn')).not.toBeInTheDocument()
+  })
+
+  it('Disable add item when theres no stock', () => {
+    render(<MealCardSimple meal={meal} quantity={3} />)
+    userEvent.click(screen.getByTestId('quantityBtn'))
+    userEvent.click(screen.getByText('+'))
+    expect(screen.getByText('+')).toBeDisabled()
+  })
+
+  it.skip('Add/remove quantities', async () => {
     render(<MealCardSimple meal={meal} quantity={2} />)
     userEvent.click(screen.getByTestId('quantityBtn'))
     userEvent.click(screen.getByText('-'))
