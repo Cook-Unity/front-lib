@@ -74,3 +74,16 @@ FixedPrice.args = {
   },
   quantity: 0
 }
+
+export const NoEditable = Template.bind({})
+NoEditable.args = {
+  meal,
+  isEditable: false
+}
+
+export const DisableAddItem = Template.bind({})
+DisableAddItem.args = {
+  meal,
+  quantity: 1,
+  disableAddItem: true
+}
