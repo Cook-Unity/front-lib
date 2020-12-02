@@ -83,11 +83,11 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/mocks/**/*",
       "!src/assets/**/*",
       "!src/**/*.stories.js",
       "!src/**/skeleton.js",
-      "!src/**/data.mock.js"
+      "!src/**/data.mock.js",
+      "!src/test/**"
     ]
   }
 }
