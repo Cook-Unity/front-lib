@@ -31,8 +31,8 @@ const MealCard = ({
   onAddItem,
   onRemoveItem,
   onClick,
-  isEditable = true,
-  disableAddItem = false
+  isEditable,
+  disableAddItem
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
 
@@ -237,6 +237,8 @@ MealCard.defaultProps = {
   meal: {},
   quantity: 0,
   noExtraFee: false,
+  isEditable: true,
+  disableAddItem: false,
   onAddItem: defaultCallback,
   onRemoveItem: defaultCallback,
   onClick: defaultCallback
