@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Numeral from 'numeral'
 import './MealCard.scss'
 
-import  allStarChefBudge from '../../assets/all-star.png'
+import images from '../../assets/images'
 
 const CONTROLLERS_OPENED_MS = 2500
 
@@ -32,7 +32,7 @@ const MealCard = ({
   onRemoveItem,
   onClick,
   isEditable = true,
-  disableAddItem = false,
+  disableAddItem = false
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
 
@@ -51,7 +51,7 @@ const MealCard = ({
     premium_fee = null,
     fixed_price = false,
     feature = {},
-    stock = 0,
+    stock = 0
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -65,8 +65,7 @@ const MealCard = ({
 
   const handleAddItem = () => {
     setShowCartControllers(true)
-    if(isEditable || !disableAddItemBtn)
-      onAddItem()
+    if (isEditable || !disableAddItemBtn) onAddItem()
   }
   const handleRemoveItem = () => {
     setShowCartControllers(true)
@@ -131,7 +130,7 @@ const MealCard = ({
         <div className="meal_card__chef_container">
           {is_celebrity_chef && full_path_chef_image && (
             <img
-              src={allStarChefBudge}
+              src={images.allStarChefBudge}
               className="all_star_budge"
               data-testid="celeb-chef-img"
             />
@@ -166,18 +165,20 @@ const MealCard = ({
                     </div>
                   </div>
                 )}
-                {(isEditable || quantity) ? (
-                <button
-                  className={`${selected ? 'selected' : 'unselected'}`}
-                  disabled={!isEditable}
-                  onClick={() =>
-                    !selected ? handleAddItem() : setShowCartControllers(true)
-                  }
-                  data-testid="quantityBtn"
-                >
-                  {`${quantity || '+'}`}
-                </button> 
-                ) : '' }
+                {isEditable || quantity ? (
+                  <button
+                    className={`${selected ? 'selected' : 'unselected'}`}
+                    disabled={!isEditable}
+                    onClick={() =>
+                      !selected ? handleAddItem() : setShowCartControllers(true)
+                    }
+                    data-testid="quantityBtn"
+                  >
+                    {`${quantity || '+'}`}
+                  </button>
+                ) : (
+                  ''
+                )}
               </div>
             ) : (
               <div className="cart_controllers" data-testid="cart-controllers">
@@ -185,7 +186,12 @@ const MealCard = ({
                   -
                 </button>
                 <span data-testid="quantity">{quantity}</span>
-                <button disabled={disableAddItemBtn} onClick={() => handleAddItem()}>+</button>
+                <button
+                  disabled={disableAddItemBtn}
+                  onClick={() => handleAddItem()}
+                >
+                  +
+                </button>
               </div>
             )}
           </div>

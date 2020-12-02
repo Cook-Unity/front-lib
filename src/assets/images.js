@@ -17,4 +17,5 @@ export default {
   twitter: importCUAssets('twitter.png'),
   email: importCUAssets('email.png'),
   xclose: importCUAssets('xclose.png'),
+  allStarChefBudge: importCUAssets('all-star.png')
 }
