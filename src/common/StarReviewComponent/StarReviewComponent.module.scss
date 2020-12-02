@@ -1,6 +1,6 @@
 .starReviewComponent {
   .star {
-    background-image: url('../../assets/star.png');
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/star.png');
     @media (max-width: 700px) {
       width: 25px;
       height: 25px;
@@ -14,7 +14,7 @@
   }
 
   .halfStar {
-    background-image: url('../../assets/half-star.png');
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/half-star.png');
     @media (max-width: 700px) {
       width: 25px;
       height: 25px;
@@ -28,7 +28,7 @@
   }
 
   .emptyStar {
-    background-image: url('../../assets/empty-star.png');
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/empty-star.png');
     @media (max-width: 700px) {
       width: 25px;
       height: 25px;

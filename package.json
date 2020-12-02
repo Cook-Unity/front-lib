@@ -71,19 +71,29 @@
     "dist"
   ],
   "dependencies": {
+    "@testing-library/user-event": "^12.2.2",
     "classnames": "^2.2.6",
     "moment": "^2.29.1",
     "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
+    "ramda": "^0.27.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-helmet": "^6.1.0",
     "react-modal": "^3.11.2",
     "react-star-rating-component": "^1.4.1",
+    "react-star-rating-controlled-component": "^1.0.1",
+    "react-toastify": "^6.1.0",
     "webpack": "^4.42.0"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!src/**/*.stories.*",
-      "!src/mocks/**/*"
+      "!src/mocks/**/*",
+      "!src/assets/**/*",
+      "!src/**/*.stories.js",
+      "!src/**/skeleton.js",
+      "!src/**/data.mock.js"
     ]
   }
 }

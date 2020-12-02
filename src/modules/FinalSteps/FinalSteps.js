@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
 import classnames from 'classnames'
 
-import Ice from '../../assets/ice.png'
-import CodeQR from '../../assets/code-qr.gif'
-import Enjoy from '../../assets/enjoy.png'
+import images from '../../assets/images'
 
 import styles from './FinalSteps.module.scss'
 
@@ -31,7 +29,9 @@ const FinalSteps = ({mealDetail, isLoading}) => {
   return (
     <div className={styles.finalSteps}>
       <div
-        className={(styles.finalSteps, isLoading ? styles.finalSteps : null)}
+        className={classnames(styles.finalSteps, {
+          [styles.finalSteps]: isLoading ? styles.finalSteps : null
+        })}
       >
         <div className={styles.cooking}>
           <h2 className={classnames({loading: isLoading})}>
@@ -39,17 +39,21 @@ const FinalSteps = ({mealDetail, isLoading}) => {
           </h2>
           {ovenSteps && (
             <div
-              className={(styles.oven, isLoading ? styles.finalSteps : null)}
+              className={classnames(styles.oven, {
+                [styles.finalSteps]: isLoading ? styles.finalSteps : null
+              })}
             >
               <h4>
                 In the Oven
                 {!isLoading && <span> (Recommended)</span>}
               </h4>
               <div
-                className={(styles.steps, isLoading ? styles.finalSteps : null)}
+                className={classnames(styles.steps, {
+                  [styles.finalSteps]: isLoading ? styles.finalSteps : null
+                })}
               >
                 {formatSteps(ovenSteps).map((step, i) => (
-                  <p key={i}>{`${i + 1}. ${step}`}</p>
+                  <p key={`ovenStepsP-${i}`}>{`${i + 1}. ${step}`}</p>
                 ))}
               </div>
             </div>
@@ -57,13 +61,15 @@ const FinalSteps = ({mealDetail, isLoading}) => {
 
           {microwaveSteps && (
             <div
-              className={
-                (styles.microwave, isLoading ? styles.finalSteps : null)
-              }
+              className={classnames(styles.microwave, {
+                [styles.finalSteps]: isLoading ? styles.finalSteps : null
+              })}
             >
               <h4>In the Microwave</h4>
               <div
-                className={(styles.steps, isLoading ? styles.finalSteps : null)}
+                className={classnames(styles.steps, {
+                  [styles.finalSteps]: isLoading ? styles.finalSteps : null
+                })}
               >
                 {formatSteps(microwaveSteps).map((step, i) => (
                   <p key={i}>{`${i + 1}. ${step}`}</p>
@@ -74,7 +80,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
 
           {!isLoading && (
             <h3>
-              <img src={Enjoy} alt="enjoy" />
+              <img src={images.enjoyImage} alt="enjoy" />
               <b>Enjoy it Warm!</b>
             </h3>
           )}
@@ -85,7 +91,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
             <div className={styles.cookingRow}>
               <div className={styles.col50}>
                 <div className={styles.iceImg}>
-                  <img src={Ice} alt="Brrrrr" />
+                  <img src={images.iceImage} alt="Brrrrr" />
                 </div>
                 <div>
                   <p>
@@ -96,7 +102,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
               </div>
               <div className={styles.col50}>
                 <div className={styles.iceImg}>
-                  <img src={CodeQR} alt="Brrrrr" />
+                  <img src={images.codeQRImage} alt="Brrrrr" />
                 </div>
                 <div>
                   <p>

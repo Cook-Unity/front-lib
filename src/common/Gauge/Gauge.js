@@ -2,7 +2,8 @@ import React from 'react'
 import classnames from 'classnames'
 import {pathOr} from 'ramda'
 
-import Faia from '../../assets/flame.png'
+import images from '../../assets/images'
+
 import './Gauge.css'
 
 class Gauge extends React.Component {
@@ -79,7 +80,7 @@ class Gauge extends React.Component {
         style={style}
       >
         <div className="label">
-          <img src={Faia} alt="calories icon" />
+          <img src={images.faiaImage} alt="calories icon" />
           <p className="calories">{calories || 0}</p>
           <p className="calories_label">Calories</p>
           <p className="daily_value">{`${Math.floor(dv || 0)}% DV`}</p>

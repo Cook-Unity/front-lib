@@ -8,9 +8,9 @@ const chef_firstname = defaultPropsMock.mealDetail.chef_firstname
 const chef_lastname = defaultPropsMock.mealDetail.chef_lastname
 
 const defaultProps = {
-  chef_firstname,
-  chef_lastname,
-  chef_img: ''
+  firstname: chef_firstname,
+  lastname: chef_lastname,
+  img: defaultPropsMock.mealDetail.chef_img
 }
 
 describe('ChefProfile component', () => {
@@ -19,7 +19,7 @@ describe('ChefProfile component', () => {
       const renderResult = render(<ChefProfile {...defaultProps} />)
 
       expect(renderResult.getByTestId('chef-name').textContent).toBe(
-        `${defaultProps.chef_firstname} ${defaultProps.chef_lastname}`
+        `${defaultProps.firstname} ${defaultProps.lastname}`
       )
     })
   })

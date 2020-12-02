@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Autograf';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local('Autograf'), url('https://static.cookunity.com/cross/front-lib/fonts/sign.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local('Gilroy'),
+    url('https://static.cookunity.com/cross/front-lib/fonts/gilroy-extrabold-webfont.woff2') format('woff2'),
+    url('https://static.cookunity.com/cross/front-lib/fonts/gilroy-extrabold-webfont.woff') format('woff'),
+    url('https://static.cookunity.com/cross/front-lib/fonts/gilroy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Reinata';
+  font-weight: normal;
+  font-style: normal;
+  src: local('Reinata'), url('https://static.cookunity.com/cross/front-lib/fonts/Reinata-Regular.otf') format('truetype'),
+    url('https://static.cookunity.com/cross/front-lib/fonts/Reinata-Regular.ttf') format('truetype'),
+    url('https://static.cookunity.com/cross/front-lib/fonts/ReinataSans-Regular.otf') format('truetype'),
+    url('https://static.cookunity.com/cross/front-lib/fonts/ReinataSans-Regular.ttf') format('truetype');
+}

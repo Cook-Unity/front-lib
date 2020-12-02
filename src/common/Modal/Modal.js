@@ -1,8 +1,9 @@
 import React from 'react'
 import Modal from 'react-modal'
 
-import Close from '../../assets/xclose.png'
 import classnames from 'classnames'
+
+import images from '../../assets/images'
 
 import './Modal.css'
 
@@ -58,7 +59,7 @@ const CUModal = props => {
           className="cookunity__new_modal__close"
           onClick={props.onRequestClose}
         >
-          <img src={Close} alt="close" />
+          <img src={images.xclose} alt="close" />
         </button>
       )}
       {children}

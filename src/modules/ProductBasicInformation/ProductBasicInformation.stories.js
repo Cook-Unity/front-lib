@@ -1,14 +1,14 @@
 import React from 'react'
 
-import MealCard from './index'
+import ProductBasicInformation from './index'
 import {defaultProps} from '../../mocks/mock-mealDetails'
 
 export default {
-  title: 'MealCard',
-  component: MealCard
+  title: 'ProductBasicInformation',
+  component: ProductBasicInformation
 }
 
-const Template = args => <MealCard {...args} />
+const Template = args => <ProductBasicInformation {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

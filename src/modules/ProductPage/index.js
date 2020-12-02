@@ -1,3 +1,3 @@
 import '../../assets/styles/scss/fontFaces.scss'
 
-export {default} from './FinalSteps'
+export {default} from './ProductPage'

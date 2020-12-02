@@ -1,6 +1,6 @@
 import React from 'react'
 
-import StarRatingComponent from 'react-star-rating-component'
+import StarRatingComponent from 'react-star-rating-controlled-component'
 
 import styles from './StarReviewComponent.module.scss'
 
