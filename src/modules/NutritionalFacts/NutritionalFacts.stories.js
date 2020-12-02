@@ -1,7 +1,7 @@
 import React from 'react'
 
 import NutritionalFacts from './index'
-import {defaultProps} from '../../mocks/mock-mealDetails'
+import mealDetail from '../../test/mocks/mealDetail'
 
 export default {
   title: 'NutritionalFacts',
@@ -12,5 +12,5 @@ const Template = args => <NutritionalFacts {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps
+  mealDetail
 }

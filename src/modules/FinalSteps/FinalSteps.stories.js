@@ -1,7 +1,7 @@
 import React from 'react'
 
 import FinalSteps from './index'
-import {defaultProps} from '../../mocks/mock-mealDetails'
+import mealDetail from '../../test/mocks/mealDetail'
 
 export default {
   title: 'FinalSteps',
@@ -12,5 +12,6 @@ const Template = args => <FinalSteps {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps
+  mealDetail,
+  isLoading: false
 }

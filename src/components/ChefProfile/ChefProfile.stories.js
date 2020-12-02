@@ -1,5 +1,5 @@
 import React from 'react'
-import {defaultProps} from '../../mocks/mock-mealDetails'
+import mealDetail from '../../test/mocks/mealDetail'
 
 import ChefProfile from './index'
 
@@ -12,8 +12,8 @@ const Template = args => <ChefProfile {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps,
-  chef_img: defaultProps.mealDetail.chef_img,
-  chef_firstname: defaultProps.mealDetail.chef_firstname,
-  chef_lastname: defaultProps.mealDetail.chef_lastname
+  chefId: mealDetail.chef_id,
+  img: mealDetail.chef_img,
+  firstname: mealDetail.chef_firstname,
+  lastname: mealDetail.chef_lastname
 }

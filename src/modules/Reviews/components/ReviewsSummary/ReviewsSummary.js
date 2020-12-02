@@ -1,5 +1,5 @@
 import React from 'react'
-import StarReviewComponent from '../../../../common/StarReviewComponent'
+import StarReview from '../../../../common/StarReview'
 
 import styles from './ReviewsSummary.module.scss'
 
@@ -9,7 +9,7 @@ const ReviewsSummary = ({product, quantity}) => {
       <p>{parseFloat(product.stars || 0).toFixed(1)}</p>
       <div className={styles.columnContainer}>
         <div className={styles.stars}>
-          <StarReviewComponent
+          <StarReview
             name="rate"
             starCount={5}
             value={product.stars || 0}
