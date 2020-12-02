@@ -26,12 +26,12 @@ const formatFeature = feature => {
 }
 
 const MealCard = ({
-  meal = {},
-  quantity = 0,
-  noExtraFee = false,
-  onAddItem = defaultCallback,
-  onRemoveItem = defaultCallback,
-  onClick = defaultCallback
+  meal,
+  quantity,
+  noExtraFee,
+  onAddItem,
+  onRemoveItem,
+  onClick
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
 
@@ -189,9 +189,6 @@ const MealCard = ({
 }
 
 MealCard.propTypes = {
-  /**
-   * Meal data
-   */
   meal: PropTypes.shape({
     name: PropTypes.string.isRequired,
     short_description: PropTypes.string.isRequired,
@@ -212,31 +209,20 @@ MealCard.propTypes = {
       color: PropTypes.string
     })
   }),
-
-  /**
-   * Meal quantity
-   */
   quantity: PropTypes.number,
-
-  /**
-   * No extra fee indicator
-   */
   noExtraFee: PropTypes.bool,
-
-  /**
-   * Called when adding a meal
-   */
   onAddItem: PropTypes.func,
-
-  /**
-   * Called when removing a meal
-   */
   onRemoveItem: PropTypes.func,
-
-  /**
-   * Called when clicking on card
-   */
   onClick: PropTypes.func
+}
+
+MealCard.defaultProps = {
+  meal: {},
+  quantity: 0,
+  noExtraFee: false,
+  onAddItem: defaultCallback,
+  onRemoveItem: defaultCallback,
+  onClick: defaultCallback
 }
 
 export default MealCard
