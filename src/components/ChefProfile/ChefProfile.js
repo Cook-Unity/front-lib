@@ -31,10 +31,10 @@ const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
 }
 
 ChefProfile.propTypes = {
-  chefId: PropTypes.number,
-  firstname: PropTypes.string,
-  lastname: PropTypes.string,
-  img: PropTypes.string,
+  chefId: PropTypes.number.isRequired,
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
   onClick: PropTypes.func
 }
 

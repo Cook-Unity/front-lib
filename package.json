@@ -71,7 +71,6 @@
     "dist"
   ],
   "dependencies": {
-    "@testing-library/user-event": "^12.2.2",
     "classnames": "^2.2.6",
     "moment": "^2.29.1",
     "numeral": "^2.0.6",
@@ -88,12 +87,11 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/**/*.stories.*",
-      "!src/mocks/**/*",
       "!src/assets/**/*",
       "!src/**/*.stories.js",
       "!src/**/skeleton.js",
-      "!src/**/data.mock.js"
+      "!src/**/data.mock.js",
+      "!src/test/**"
     ]
   }
 }
