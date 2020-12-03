@@ -198,9 +198,10 @@
       .premium_fee {
         margin-right: 6px;
         .no_extra_fee_text {
-          font-size: 12px;
-          margin-bottom: 2px;
-          width: 50px;
+          font-size: 10px;
+          margin-bottom: 0px;
+          width: 55px;
+          text-transform: uppercase;
           color: $cookunity-green;
         }
         .fee {
@@ -242,6 +243,7 @@
         border: 0px solid;
         margin: 0 2.5px;
         cursor: pointer;
+        font-weight: bolder;
 
         &:disabled {
           cursor: default;
