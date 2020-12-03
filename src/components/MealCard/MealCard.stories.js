@@ -21,7 +21,7 @@ const meal = {
   chef_firstname: 'Jean-Georges',
   chef_lastname: 'Vongerichten',
   is_celebrity_chef: true,
-  premium_fee: 3.0,
+  premium_fee: 3,
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
   full_path_chef_image:
@@ -31,7 +31,37 @@ const meal = {
     background: '#4D4D4F',
     color: '#FFFFFF'
   },
-  stock: 3
+  stock: 3,
+  specifications_detail: [
+    {
+      "label": "Dairy Free",
+      "__typename": "SpecificationsDetails"
+    },
+    {
+      "label": "Gluten Free",
+      "__typename": "SpecificationsDetails"
+    },
+    {
+      "label": "High Fat",
+      "__typename": "SpecificationsDetails"
+    },
+    {
+      "label": "High Protein",
+      "__typename": "SpecificationsDetails"
+    },
+    {
+      "label": "Nuts Free",
+      "__typename": "SpecificationsDetails"
+    },
+    {
+      "label": "Spicy",
+      "__typename": "SpecificationsDetails"
+    },
+    {
+      "label": "Super Foods",
+      "__typename": "SpecificationsDetails"
+    }
+  ]
 }
 
 export const Default = Template.bind({})

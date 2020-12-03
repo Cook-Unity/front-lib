@@ -24,6 +24,9 @@ const formatFeature = feature => {
   return feature
 }
 
+const findSpecificationDetail = (details, tag) => 
+  details.find(d => d && d.label === tag)
+
 const MealCard = ({
   meal,
   quantity,
@@ -51,7 +54,8 @@ const MealCard = ({
     premium_fee = null,
     fixed_price = false,
     feature = {},
-    stock = 0
+    stock = 0,
+    specifications_detail,
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -60,6 +64,8 @@ const MealCard = ({
   const premiumFeeString = formatFee(premium_fee, fixed_price)
   const featureSpecs = formatFeature(feature)
   const selected = quantity > 0
+
+  const isSpicy = findSpecificationDetail(specifications_detail, 'Spicy');
 
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
 
@@ -115,6 +121,17 @@ const MealCard = ({
           )}
 
           {meat_type && <div className="meal_card__tag">{`${meat_type}`}</div>}
+
+          {isSpicy && 
+            <div className="meal_card__tag only_icon">
+              <img src={images.spicyIcon}
+                alt = {isSpicy.label}
+                className="icon_tag"
+                data-testid="spicy-img"
+              />
+            </div>
+          }
+
         </div>
       </div>
       <div
@@ -221,7 +238,8 @@ MealCard.propTypes = {
       background: PropTypes.string,
       color: PropTypes.string
     }),
-    stock: PropTypes.number
+    stock: PropTypes.number,
+    specifications_detail: PropTypes.array
   }),
 
   isEditable: PropTypes.bool,
