@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import Numeral from 'numeral'
-import './MealCard.scss'
+import styles from './MealCard.module.scss'
 
 import images from '../../assets/images'
 
@@ -88,16 +88,16 @@ const MealCard = ({
   }, [quantity, showCartControllers])
 
   return (
-    <div className={`meal_card ${selected ? 'in_cart' : ''}`}>
+    <div className={`${styles.meal_card} ${selected ? styles.in_cart : ''}`}>
       <div
-        className="meal_card__top"
+        className={styles.meal_card__top}
         onClick={() => onClick()}
         data-testid="meal-image"
         style={{backgroundImage: `url(${full_path_meal_image})`}}
       >
         {featureSpecs.name && (
           <div
-            className="meal_card__tag featured"
+            className={`${styles.meal_card__tag} ${styles.featured}`}
             style={{
               backgroundColor: featureSpecs.background,
               color: featureSpecs.color
@@ -107,26 +107,26 @@ const MealCard = ({
           </div>
         )}
 
-        <div className="meal_card__top_tags">
+        <div className={styles.meal_card__top_tags}>
           {mealReviews && mealRating && (
-            <div className="meal_card__tag" data-testid="rating">
-              <span className="star">★ </span>
+            <div className={styles.meal_card__tag} data-testid="rating">
+              <span className={styles.star}>★ </span>
               {`${mealRating}`}
-              <span className="reviews">{` (${mealReviews})`}</span>
+              <span className={styles.reviews}>{` (${mealReviews})`}</span>
             </div>
           )}
 
           {calories && (
-            <div className="meal_card__tag">{`${calories} cal`}</div>
+            <div className={styles.meal_card__tag}>{`${calories} cal`}</div>
           )}
 
-          {meat_type && <div className="meal_card__tag">{`${meat_type}`}</div>}
+          {meat_type && <div className={styles.meal_card__tag}>{`${meat_type}`}</div>}
 
           {isSpicy && 
-            <div className="meal_card__tag only_icon">
+            <div className={`${styles.meal_card__tag} ${styles.only_icon}`}>
               <img src={images.spicyIcon}
                 alt = {isSpicy.label}
-                className="icon_tag"
+                className={styles.icon_tag}
                 data-testid="spicy-img"
               />
             </div>
@@ -135,25 +135,25 @@ const MealCard = ({
         </div>
       </div>
       <div
-        className="meal_card__title"
+        className={styles.meal_card__title}
         onClick={() => {
           onClick()
         }}
       >
-        <div className="meal_card__title_name">{name}</div>
-        <div className="meal_card__title_description">{short_description}</div>
+        <div className={styles.meal_card__title_name}>{name}</div>
+        <div className={styles.meal_card__title_description}>{short_description}</div>
       </div>
-      <div className="meal_card__footer">
-        <div className="meal_card__chef_container">
+      <div className={styles.meal_card__footer}>
+        <div className={styles.meal_card__chef_container}>
           {is_celebrity_chef && full_path_chef_image && (
             <img
               src={images.allStarChefBudge}
-              className="all_star_budge"
+              className={styles.all_star_budge}
               data-testid="celeb-chef-img"
             />
           )}
           {full_path_chef_image ? (
-            <div className="chef_avatar">
+            <div className={styles.chef_avatar}>
               <img
                 src={full_path_chef_image}
                 data-testid="chef-image"
@@ -163,28 +163,28 @@ const MealCard = ({
           ) : (
             ''
           )}
-          <div className="chef_name">{chefFullName}</div>
+          <div className={styles.chef_name}>{chefFullName}</div>
         </div>
 
-        <div className="meal_card__add_to_cart_container">
-          <div className="add_to_cart">
+        <div className={styles.meal_card__add_to_cart_container}>
+          <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
-              <div className="hiden_cart_controllers">
+              <div className={styles.hiden_cart_controllers}>
                 {premium_fee && (
-                  <div className="premium_fee">
+                  <div className={styles.premium_fee}>
                     {noExtraFee && (
-                      <div className="no_extra_fee_text">
+                      <div className={styles.no_extra_fee_text}>
                         No extra fee today
                       </div>
                     )}
-                    <div className={`fee ${noExtraFee ? 'no_extra_fee' : ''}`}>
+                    <div className={`${styles.fee} ${noExtraFee ? styles.no_extra_fee : ''}`}>
                       {premiumFeeString}
                     </div>
                   </div>
                 )}
                 {isEditable || quantity ? (
                   <button
-                    className={`${selected ? 'selected' : 'unselected'}`}
+                    className={`${selected ? styles.selected : styles.unselected}`}
                     disabled={!isEditable}
                     onClick={() =>
                       !selected ? handleAddItem() : setShowCartControllers(true)
@@ -198,7 +198,7 @@ const MealCard = ({
                 )}
               </div>
             ) : (
-              <div className="cart_controllers" data-testid="cart-controllers">
+              <div className={styles.cart_controllers} data-testid="cart-controllers">
                 <button onClick={() => quantity && handleRemoveItem()}>
                   -
                 </button>
