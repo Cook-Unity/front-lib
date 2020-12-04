@@ -23,6 +23,7 @@ const mealExtras = {
   fixed_price: false,
   feature: {
     name: 'NEW',
+    description: 'NEW',
     background: '#4D4D4F',
     color: '#FFFFFF'
   },

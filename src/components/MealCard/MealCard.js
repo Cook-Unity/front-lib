@@ -19,9 +19,9 @@ const formatMealRating = stars => stars && +stars.toFixed(1)
 const formatMealReviews = reviews =>
   reviews && (reviews > 999 ? '999+' : `${reviews}`)
 
-const formatFeature = feature => {
-  if (feature.name) feature.name = feature.name.toUpperCase()
-  return feature
+const formatFeature = (feature) => {
+  if (feature && feature.description) feature.description = feature.description.toUpperCase()
+  return feature || {}
 }
 
 const findSpecificationDetail = (details, tag) => 
@@ -95,7 +95,7 @@ const MealCard = ({
         data-testid="meal-image"
         style={{backgroundImage: `url(${full_path_meal_image})`}}
       >
-        {featureSpecs.name && (
+        {featureSpecs.description && (
           <div
             className={`${styles.meal_card__tag} ${styles.featured}`}
             style={{
@@ -103,7 +103,7 @@ const MealCard = ({
               color: featureSpecs.color
             }}
           >
-            {featureSpecs.name}
+            {featureSpecs.description}
           </div>
         )}
 
@@ -170,7 +170,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {premium_fee && (
+                {premium_fee ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>
@@ -181,7 +181,7 @@ const MealCard = ({
                       {premiumFeeString}
                     </div>
                   </div>
-                )}
+                ) : ''}
                 {isEditable || quantity ? (
                   <button
                     className={`${selected ? styles.selected : styles.unselected}`}
@@ -235,6 +235,7 @@ MealCard.propTypes = {
     fixed_price: PropTypes.bool,
     feature: PropTypes.shape({
       name: PropTypes.string,
+      description: PropTypes.string,
       background: PropTypes.string,
       color: PropTypes.string
     }),

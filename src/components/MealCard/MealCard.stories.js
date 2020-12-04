@@ -27,7 +27,8 @@ const meal = {
   full_path_chef_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg',
   feature: {
-    name: 'NEW',
+    name: 'NEW_MEAL',
+    description: 'NEW',
     background: '#4D4D4F',
     color: '#FFFFFF'
   },
@@ -89,6 +90,7 @@ Christmas.args = {
     ...meal,
     feature: {
       name: 'christmas',
+      description: 'Christmas',
       background: '#CC231E',
       color: 'white'
     }
