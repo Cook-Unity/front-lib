@@ -87,6 +87,7 @@
     vertical-align: middle;
     height: 16px;
     line-height: 1.6;
+    box-sizing: content-box;
 
     .icon_tag {
       height: 25px;
@@ -217,7 +218,7 @@
       .cart_controllers {
         border: 1px solid black;
         border-radius: 50px;
-        width: 90px;
+        width: 95px;
         float: right;
         height: 30px;
         overflow: hidden;
