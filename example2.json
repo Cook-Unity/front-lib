@@ -1,0 +1,75 @@
+{
+  entityId
+  name
+  sku
+  categoryId
+  newMeal
+  newChef
+  chefFirstname
+  chefLastname
+  isCelebrityChef
+  chefId
+  logopic
+  bannerpic
+  countryOfManufacture
+  calories
+  price
+  isPremium
+  premiumFee
+  shortDescription
+  sidedish {
+    id
+    name
+  }
+  image
+  smallImage
+  thumbnail
+  imagePath
+  stock
+  inStock
+  qty
+  meatType
+  reviews
+  userRating
+  rating
+  stars
+  warning
+  warnings {
+    message
+    dietsNotMatching {
+      id
+      name
+    }
+    restrictionsApplied {
+      id
+      name
+    }
+  }
+  weight
+  availableFromDate
+  specificationsDetail {
+    id
+    label
+    image
+    imagePng
+  }
+  nutritionalFacts {
+    calories
+    servingsize
+    fat
+    carbs
+    fiber
+    protein
+    sodium
+    saturatedFat
+    sugar
+  }
+  meatCategory
+  feature {
+  name
+  description
+  icon
+  color
+  background
+  }
+}
