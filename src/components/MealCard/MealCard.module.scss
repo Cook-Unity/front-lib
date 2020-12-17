@@ -1,14 +1,4 @@
 @import '../../assets/styles/scss/variables';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
-@font-face {
-  font-family: 'Gilroy';
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: local("Gilroy"), url("https://static.cookunity.com/cross/front-lib/fonts/gilroy-extrabold-webfont.woff2") format("woff2"), url("https://static.cookunity.com/cross/front-lib/fonts/gilroy-extrabold-webfont.woff") format("woff"), url("https://static.cookunity.com/cross/front-lib/fonts/gilroy.ttf") format("truetype");
-}
 
 @keyframes expandCartControllers {
   0% {
@@ -44,7 +34,7 @@
   position: relative;
   width: 100%;
   min-width: 286px;
-  height: 360px;
+  height: 340px;
   background: $cookunity-white;
   box-shadow: 0px 8px 16px rgba(35, 31, 32, 0.06);
   border: 2px solid transparent;
@@ -61,13 +51,17 @@
     width: 100%;
     height: 220px;
     background-position: center;
-    background-size: 120%;
+    background-size: auto 135%;
     background-repeat: no-repeat;
     padding: 10px 16px;
     border-bottom: 1px solid #eeeeee;
     box-sizing: border-box;
     position: relative;
     cursor: pointer;
+
+    @media (max-width: 720px){
+      background-size: auto 160%;
+    }
 
     &_tags {
       position: absolute;
@@ -85,9 +79,11 @@
     font-weight: 800;
     margin-right: 4px;
     vertical-align: middle;
-    height: 16px;
+    height: 35px;
     line-height: 1.6;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    font-weight: bold;
+    position: relative;
 
     .icon_tag {
       height: 25px;
@@ -96,8 +92,16 @@
     }
 
     &.only_icon {
-      padding: 3px 4px;
-      height: 27px;
+      padding: 4px;
+      .tooltip {
+        display: none;
+      }
+
+      &:hover{
+        .tooltip {
+          display: inline-block;
+        } 
+      }
     }
 
     > * {
@@ -108,38 +112,47 @@
       color: $cookunity-white;
       background-color: #4d4d4f;
       box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.1);
+      height: 24px;
+      padding: 3px 8px;
     }
 
     > span {
       &.star {
         color: $cookunity-secondary-yellow;
+        > img {
+          width: 10px;
+          margin-right: 3px;
+        }
       }
       &.reviews {
         color: $cookunity-gray-2;
-        font-weight: 400;
+        font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+        font-weight: 600;
       }
     }
   }
 
   &__title {
     width: 100%;
-    height: 46px;
+    height: 42px;
     overflow: hidden;
     line-height: 1.2em;
     padding: 0 16px;
     margin: 16px 0;
     box-sizing: border-box;
     cursor: pointer;
+    font-weight: bold;
 
     &_name {
       max-height: 40px;
       overflow: hidden;
       font-size: 18px;
-      font-weight: 800;
+      font-weight: 'bold';
       margin-bottom: 5px;
     }
 
     &_description {
+      font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
       width: 100%;
       font-size: 14px;
       font-weight: 600;
@@ -160,6 +173,7 @@
       top: -6px;
     }
     .chef_name {
+      font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
       display: inline-block;
       font-size: 12px;
       font-weight: 600;
@@ -193,7 +207,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        animation: fadeIn 500ms;
+        animation: fadeIn 250ms;
       }
 
       .premium_fee {
@@ -220,23 +234,26 @@
         border-radius: 50px;
         width: 95px;
         float: right;
-        height: 30px;
+        height: 32px;
         overflow: hidden;
 
-        animation: expandCartControllers 400ms;
+        animation: expandCartControllers 200ms;
 
         > span {
+          font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
           width: 20px;
           display: inline-block;
           text-align: center;
+          font-weight: 600;
         }
 
         > * {
-          animation: cartFadeIn 600ms;
+          animation: cartFadeIn 300ms;
         }
       }
 
       button {
+        font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
         border-radius: 50%;
         width: 30px;
         height: 30px;
@@ -246,9 +263,15 @@
         cursor: pointer;
         font-weight: bolder;
         line-height: 1.5;
+        font-weight: 600;
+
+         > img {
+          width: 11px;
+        }
 
         &:disabled {
           cursor: default;
+          opacity: 0.3;
         }
 
         &:focus {
@@ -267,7 +290,7 @@
         &.selected {
           color: #ffffff;
           border: none;
-          background: #7ad7a7;
+          background: $cookunity-green;
         }
       }
     }
@@ -283,5 +306,30 @@
     > div {
       width: 100%;
     }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #292929;
+  color: #ffffff;
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  top: -30px;
+  font-family: 'Roboto';
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 10px;
+
+  &:after{
+    content: " ";
+    width: 6px;
+    height: 6px;
+    background-color: inherit;
+    position: absolute;
+    bottom: -3px;
+    left: calc(50% - 3px);
+    transform: rotate(45deg);
   }
 }
