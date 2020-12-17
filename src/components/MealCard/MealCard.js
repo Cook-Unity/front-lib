@@ -1,47 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import Numeral from 'numeral'
+
+import {
+  formatFee,
+  formatChefName,
+  formatMealRating,
+  formatMealReviews,
+  formatFeature,
+  findSpecificationDetail,
+  getProteinTag
+} from './utils'
 
 import styles from './MealCard.module.scss'
-
 import images from '../../assets/images'
 
 const CONTROLLERS_OPENED_MS = 2500
-
 const defaultCallback = () => {}
-
-const formatFee = (premium_fee, fixed_price) =>
-  `${!fixed_price ? '+' : ''} ${Numeral(premium_fee).format('$0,0.00')}`
-
-const formatChefName = (firstName, lastName) => `${firstName} ${lastName}`
-
-const formatMealRating = stars => stars && Numeral(stars).format('0.0')
-
-const formatMealReviews = reviews =>
-  reviews && (reviews > 999 ? '999+' : `${reviews}`)
-
-const formatFeature = (feature) => {
-  if (feature && feature.description) feature.description = feature.description.toUpperCase()
-  return feature || {}
-}
-
-const findSpecificationDetail = (details, tag) => 
-  details.find(d => d && d.label === tag)
-
-const getProteinTag = protein_type => {
-  const proteinsMap = {
-    glutenfree: { icon: '', label: 'Gluten Free' },
-    keto: { icon: '', label: 'Keto Diet' },
-    meat: { icon: '', label: 'Meat' },
-    paleo: { icon: '', label: 'Paleo' },
-    poultry: { icon: '', label: 'Poultry' },
-    seafood: { icon: '', label: 'Seafood' },
-    vegan: { icon: '', label: 'Vegan' },
-    vegetarian: { icon: '', label: 'Vegetarian' },
-    whole30: { icon: '', label: 'Whole 30' }
-  }
-  return proteinsMap[protein_type.toLowerCase()]
-}
 
 const MealCard = ({
   meal,
@@ -71,7 +45,7 @@ const MealCard = ({
     fixed_price = false,
     feature = {},
     stock = 0,
-    specifications_detail,
+    specifications_detail = []
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -79,10 +53,9 @@ const MealCard = ({
   const mealReviews = formatMealReviews(reviews)
   const premiumFeeString = formatFee(premium_fee, fixed_price)
   const featureSpecs = formatFeature(feature)
-  const selected = quantity > 0
   const proteinTag = getProteinTag(protein_type)
-
-  const isSpicy = findSpecificationDetail(specifications_detail, 'Spicy');
+  const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
+  const selected = quantity > 0
 
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
 
@@ -128,7 +101,7 @@ const MealCard = ({
           {mealReviews && mealRating && (
             <div className={styles.meal_card__tag} data-testid="rating">
               <span className={styles.star}>
-                <img src={images.star} alt='★'/>
+                <img src={images.star} alt="★" />
               </span>
               <span>{`${mealRating}`}</span>
               <span className={styles.reviews}>{` (${mealReviews})`}</span>
@@ -139,19 +112,23 @@ const MealCard = ({
             <div className={styles.meal_card__tag}>{`${calories} cal`}</div>
           )}
 
-          {proteinTag && <div className={styles.meal_card__tag}>{`${proteinTag.label}`}</div>}
+          {proteinTag && (
+            <div className={styles.meal_card__tag}>{`${proteinTag.label}`}</div>
+          )}
 
-          {isSpicy && 
-            <div className={`${styles.meal_card__tag} ${styles.only_icon} ${styles.spicy}`}>
-              <img src={images.spicyIcon}
-                alt = {isSpicy.label}
+          {isSpicy && (
+            <div
+              className={`${styles.meal_card__tag} ${styles.only_icon} ${styles.spicy}`}
+            >
+              <img
+                src={images.spicyIcon}
+                alt={isSpicy.label}
                 className={styles.icon_tag}
                 data-testid="spicy-img"
               />
               <div className={styles.tooltip}>Spicy</div>
             </div>
-          }
-
+          )}
         </div>
       </div>
       <div
@@ -161,7 +138,9 @@ const MealCard = ({
         }}
       >
         <div className={styles.meal_card__title_name}>{name}</div>
-        <div className={styles.meal_card__title_description}>{short_description}</div>
+        <div className={styles.meal_card__title_description}>
+          {short_description}
+        </div>
       </div>
       <div className={styles.meal_card__footer}>
         <div className={styles.meal_card__chef_container}>
@@ -197,37 +176,48 @@ const MealCard = ({
                         No extra fee today
                       </div>
                     )}
-                    <div className={`${styles.fee} ${noExtraFee ? styles.no_extra_fee : ''}`}>
+                    <div
+                      className={`${styles.fee} ${
+                        noExtraFee ? styles.no_extra_fee : ''
+                      }`}
+                    >
                       {premiumFeeString}
                     </div>
                   </div>
-                ) : ''}
+                ) : (
+                  ''
+                )}
                 {isEditable || quantity ? (
                   <button
-                    className={`${selected ? styles.selected : styles.unselected}`}
+                    className={`${
+                      selected ? styles.selected : styles.unselected
+                    }`}
                     disabled={!isEditable}
                     onClick={() =>
                       !selected ? handleAddItem() : setShowCartControllers(true)
                     }
                     data-testid="quantityBtn"
                   >
-                    {quantity || <img src={images.btnWhitePlus} alt='+' /> }
+                    {quantity || <img src={images.btnWhitePlus} alt="+" />}
                   </button>
                 ) : (
                   ''
                 )}
               </div>
             ) : (
-              <div className={styles.cart_controllers} data-testid="cart-controllers">
+              <div
+                className={styles.cart_controllers}
+                data-testid="cart-controllers"
+              >
                 <button onClick={() => quantity && handleRemoveItem()}>
-                  <img src={images.btnBlackMinus} alt='-' />
+                  <img src={images.btnBlackMinus} alt="-" />
                 </button>
                 <span data-testid="quantity">{quantity}</span>
                 <button
                   disabled={disableAddItemBtn}
                   onClick={() => handleAddItem()}
                 >
-                  <img src={images.btnBlackPlus} alt='+' />
+                  <img src={images.btnBlackPlus} alt="+" />
                 </button>
               </div>
             )}
