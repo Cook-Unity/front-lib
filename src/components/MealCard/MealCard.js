@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 
+import {getProteinTag} from '../../utils/meals'
+
 import {
   formatFee,
   formatChefName,
   formatMealRating,
   formatMealReviews,
   formatFeature,
-  findSpecificationDetail,
-  getProteinTag
+  findSpecificationDetail
 } from './utils'
 
 import styles from './MealCard.module.scss'

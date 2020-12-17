@@ -24,18 +24,3 @@ export const findSpecificationDetail = (details, tag) =>
       typeof d.label === 'string' &&
       d.label.toLowerCase() === tag.toLowerCase()
   )
-
-export const getProteinTag = protein_type => {
-  const proteinsMap = {
-    glutenfree: {icon: '', label: 'Gluten Free'},
-    keto: {icon: '', label: 'Keto Diet'},
-    meat: {icon: '', label: 'Meat'},
-    paleo: {icon: '', label: 'Paleo'},
-    poultry: {icon: '', label: 'Poultry'},
-    seafood: {icon: '', label: 'Seafood'},
-    vegan: {icon: '', label: 'Vegan'},
-    vegetarian: {icon: '', label: 'Vegetarian'},
-    whole30: {icon: '', label: 'Whole 30'}
-  }
-  return proteinsMap[protein_type.toLowerCase()]
-}

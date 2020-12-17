@@ -33,6 +33,7 @@ const meal = {
     color: '#FFFFFF'
   },
   stock: 3,
+  protein_type: 'seafood',
   specifications_detail: [
     {
       label: 'Dairy Free',
