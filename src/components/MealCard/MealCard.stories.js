@@ -35,32 +35,32 @@ const meal = {
   stock: 3,
   specifications_detail: [
     {
-      "label": "Dairy Free",
-      "__typename": "SpecificationsDetails"
+      label: 'Dairy Free',
+      __typename: 'SpecificationsDetails'
     },
     {
-      "label": "Gluten Free",
-      "__typename": "SpecificationsDetails"
+      label: 'Gluten Free',
+      __typename: 'SpecificationsDetails'
     },
     {
-      "label": "High Fat",
-      "__typename": "SpecificationsDetails"
+      label: 'High Fat',
+      __typename: 'SpecificationsDetails'
     },
     {
-      "label": "High Protein",
-      "__typename": "SpecificationsDetails"
+      label: 'High Protein',
+      __typename: 'SpecificationsDetails'
     },
     {
-      "label": "Nuts Free",
-      "__typename": "SpecificationsDetails"
+      label: 'Nuts Free',
+      __typename: 'SpecificationsDetails'
     },
     {
-      "label": "Spicy",
-      "__typename": "SpecificationsDetails"
+      label: 'Spicy',
+      __typename: 'SpecificationsDetails'
     },
     {
-      "label": "Super Foods",
-      "__typename": "SpecificationsDetails"
+      label: 'Super Foods',
+      __typename: 'SpecificationsDetails'
     }
   ]
 }
