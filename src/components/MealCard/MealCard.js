@@ -253,7 +253,6 @@ MealCard.propTypes = {
     stock: PropTypes.number,
     specifications_detail: PropTypes.array
   }),
-
   isEditable: PropTypes.bool,
   disableAddItem: PropTypes.bool,
   quantity: PropTypes.number,

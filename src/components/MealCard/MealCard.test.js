@@ -4,74 +4,17 @@ import userEvent from '@testing-library/user-event'
 import MealCard from './'
 import {MealCardSimple} from './MealCardExtensions'
 
-const meal = {
-  name: 'Spicy Roasted Eggplant',
-  short_description: 'with yellow rice and tomatoes',
-  chef_firstname: 'Jean-Georges',
-  chef_lastname: 'Vongerichten',
-  full_path_meal_image: 'meal-image-url',
-  full_path_chef_image: 'chef-image-url'
-}
-
-const mealExtras = {
-  calories: 430,
-  meat_type: 'Vegan',
-  reviews: 1250,
-  stars: 4.3715,
-  is_celebrity_chef: true,
-  premium_fee: 3,
-  fixed_price: false,
-  feature: {
-    name: 'NEW',
-    description: 'NEW',
-    background: '#4D4D4F',
-    color: '#FFFFFF'
-  },
-  stock: 3
-}
-
-const mealTags = {
-  specifications_detail: [
-    {
-      label: 'Dairy Free',
-      __typename: 'SpecificationsDetails'
-    },
-    {
-      label: 'Gluten Free',
-      __typename: 'SpecificationsDetails'
-    },
-    {
-      label: 'High Fat',
-      __typename: 'SpecificationsDetails'
-    },
-    {
-      label: 'High Protein',
-      __typename: 'SpecificationsDetails'
-    },
-    {
-      label: 'Nuts Free',
-      __typename: 'SpecificationsDetails'
-    },
-    {
-      label: 'Spicy',
-      __typename: 'SpecificationsDetails'
-    },
-    {
-      label: 'Super Foods',
-      __typename: 'SpecificationsDetails'
-    }
-  ]
-}
+import {meal_basic, meal_extras, meal_full} from './__mock__'
 
 const mealExtended = {
-  ...meal,
-  ...mealExtras,
-  ...mealTags
+  ...meal_basic,
+  ...meal_extras,
+  ...meal_full
 }
 
 describe('MealCard component', () => {
   it('Required props', () => {
-    render(<MealCard meal={meal} />)
+    render(<MealCard meal={meal_basic} />)
     const mealImg = screen.getByTestId('meal-image')
     const chefImg = screen.getByTestId('chef-image')
 
@@ -79,18 +22,20 @@ describe('MealCard component', () => {
       .toHaveTextContent('+')
       .toBeVisible()
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
-    expect(screen.getByText(meal.name)).toBeVisible()
-    expect(screen.getByText(meal.short_description)).toBeVisible()
+    expect(screen.getByText(meal_basic.name)).toBeVisible()
+    expect(screen.getByText(meal_basic.short_description)).toBeVisible()
     expect(
-      screen.getByText(`${meal.chef_firstname} ${meal.chef_lastname}`)
+      screen.getByText(
+        `${meal_basic.chef_firstname} ${meal_basic.chef_lastname}`
+      )
     ).toBeVisible()
 
     expect(mealImg)
-      .toHaveStyle(`background-image: url(${meal.full_path_meal_image})`)
+      .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image})`)
       .toBeVisible()
 
     expect(chefImg)
-      .toHaveAttribute('src', meal.full_path_chef_image)
+      .toHaveAttribute('src', meal_basic.full_path_chef_image)
       .toBeVisible()
   })
 
@@ -115,8 +60,8 @@ describe('MealCard component', () => {
     expect(screen.getByText('No extra fee today')).toBeVisible()
     expect(featureElem)
       .toHaveStyle({
-        backgroundColor: mealExtras.feature.background,
-        color: mealExtras.feature.color
+        backgroundColor: mealExtended.feature.background,
+        color: mealExtended.feature.color
       })
       .toBeVisible()
 
@@ -132,19 +77,19 @@ describe('MealCard component', () => {
   })
 
   it('No editable', () => {
-    render(<MealCardSimple meal={meal} isEditable={false} />)
+    render(<MealCardSimple meal={meal_basic} isEditable={false} />)
     expect(screen.queryByTestId('quantityBtn')).not.toBeInTheDocument()
   })
 
   it('Disable add item when theres no stock', () => {
-    render(<MealCardSimple meal={meal} quantity={3} />)
+    render(<MealCardSimple meal={meal_basic} quantity={3} />)
     userEvent.click(screen.getByTestId('quantityBtn'))
     userEvent.click(screen.getByText('+'))
     expect(screen.getByText('+')).toBeDisabled()
   })
 
   it.skip('Add/remove quantities', async () => {
-    render(<MealCardSimple meal={meal} quantity={2} />)
+    render(<MealCardSimple meal={meal_basic} quantity={2} />)
     userEvent.click(screen.getByTestId('quantityBtn'))
     userEvent.click(screen.getByText('-'))
     expect(screen.getByTestId('quantity')).toHaveTextContent('1')
