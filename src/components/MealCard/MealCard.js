@@ -18,6 +18,10 @@ import images from '../../assets/images'
 const CONTROLLERS_OPENED_MS = 2500
 const defaultCallback = () => {}
 
+/**
+ * Case to consider: stock = 0
+ *
+ */
 const MealCard = ({
   meal,
   quantity,
