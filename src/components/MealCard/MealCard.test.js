@@ -2,7 +2,7 @@ import React from 'react'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import MealCard from './'
-import {MealCardSimple} from './MealCardExtensions'
+import {MealCardCase} from './MealCardCase'
 import {formatChefName} from './utils'
 
 import {meal_basic, meal_full} from './__mock__'
@@ -67,18 +67,18 @@ describe('MealCard component', () => {
   })
 
   it('No editable', () => {
-    render(<MealCardSimple meal={meal_full} isEditable={false} />)
+    render(<MealCardCase meal={meal_full} isEditable={false} />)
     expect(screen.queryByTestId('quantity-btn')).not.toBeInTheDocument()
   })
 
   it('Disable add item when theres no stock', () => {
-    render(<MealCardSimple meal={meal_full} quantity={3} />)
+    render(<MealCardCase meal={meal_full} quantity={3} />)
     userEvent.click(screen.getByTestId('quantity-btn'))
     expect(screen.getByTestId('add-btn')).toBeDisabled()
   })
 
   it('Add/remove quantities', async () => {
-    render(<MealCardSimple meal={meal_full} quantity={2} />)
+    render(<MealCardCase meal={meal_full} quantity={2} />)
     userEvent.click(screen.getByTestId('quantity-btn'))
     userEvent.click(screen.getByTestId('remove-btn'))
     expect(screen.getByTestId('quantity')).toHaveTextContent('1')

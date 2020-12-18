@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import MealCard from './MealCard'
 
-export const MealCardSimple = ({quantity: startQuantity = 0, ...props}) => {
+export const MealCardCase = ({quantity: startQuantity = 0, ...props}) => {
   const [quantity, setQuantity] = useState(startQuantity)
 
   const onAddItem = () => {
