@@ -1,7 +1,7 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardSimple} from './MealCardExtensions'
-import {meal_basic, meal_extras, meal_full} from './__mock__'
+import {meal_basic, meal_full} from './__mock__'
 
 export default {
   title: 'MealCard (New)',
@@ -15,12 +15,6 @@ const Template = args => {
 export const Default = Template.bind({})
 Default.args = {
   meal: meal_basic,
-  quantity: 0
-}
-
-export const Extras = Template.bind({})
-Extras.args = {
-  meal: meal_extras,
   quantity: 0
 }
 
