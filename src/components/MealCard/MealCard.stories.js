@@ -30,6 +30,14 @@ Selected.args = {
   quantity: 1
 }
 
+export const LongName = Template.bind({})
+LongName.args = {
+  meal: {
+    ...meal_full,
+    name: 'Fettuccine Alfredo with Blackened Salmon'
+  }
+}
+
 export const NoExtraFee = Template.bind({})
 NoExtraFee.args = {
   meal: meal_full,
