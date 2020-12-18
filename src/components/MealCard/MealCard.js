@@ -57,7 +57,6 @@ const MealCard = ({
   const proteinTag = getProteinTag(protein_type)
   const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
   const selected = quantity > 0
-
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
 
   const handleAddItem = () => {
@@ -125,7 +124,6 @@ const MealCard = ({
                 src={images.spicyIcon}
                 alt={isSpicy.label}
                 className={styles.icon_tag}
-                data-testid="spicy-img"
               />
               <div className={styles.tooltip}>Spicy</div>
             </div>
@@ -197,9 +195,15 @@ const MealCard = ({
                     onClick={() =>
                       !selected ? handleAddItem() : setShowCartControllers(true)
                     }
-                    data-testid="quantityBtn"
+                    data-testid="quantity-btn"
                   >
-                    {quantity || <img src={images.btnWhitePlus} alt="+" />}
+                    {quantity || (
+                      <img
+                        src={images.btnWhitePlus}
+                        alt="+"
+                        data-testid="plus-img"
+                      />
+                    )}
                   </button>
                 ) : (
                   ''
@@ -210,13 +214,17 @@ const MealCard = ({
                 className={styles.cart_controllers}
                 data-testid="cart-controllers"
               >
-                <button onClick={() => quantity && handleRemoveItem()}>
+                <button
+                  onClick={() => quantity && handleRemoveItem()}
+                  data-testid="remove-btn"
+                >
                   <img src={images.btnBlackMinus} alt="-" />
                 </button>
                 <span data-testid="quantity">{quantity}</span>
                 <button
                   disabled={disableAddItemBtn}
                   onClick={() => handleAddItem()}
+                  data-testid="add-btn"
                 >
                   <img src={images.btnBlackPlus} alt="+" />
                 </button>

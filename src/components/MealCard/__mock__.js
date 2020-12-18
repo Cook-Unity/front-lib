@@ -12,7 +12,6 @@ export const meal_basic = {
 export const meal_extras = {
   ...meal_basic,
   calories: 430,
-  meat_type: 'Vegan',
   reviews: 1250,
   stars: 4.3715,
   is_celebrity_chef: true,

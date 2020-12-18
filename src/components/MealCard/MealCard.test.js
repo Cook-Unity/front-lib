@@ -3,32 +3,24 @@ import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import MealCard from './'
 import {MealCardSimple} from './MealCardExtensions'
+import {formatChefName} from './utils'
 
-import {meal_basic, meal_extras, meal_full} from './__mock__'
+import {meal_basic, meal_full} from './__mock__'
 
-const mealExtended = {
-  ...meal_basic,
-  ...meal_extras,
-  ...meal_full
-}
-
-describe.skip('MealCard component', () => {
+describe('MealCard component', () => {
   it('Required props', () => {
     render(<MealCard meal={meal_basic} />)
+    const chefName = formatChefName(
+      meal_basic.chef_firstname,
+      meal_basic.chef_lastname
+    )
     const mealImg = screen.getByTestId('meal-image')
     const chefImg = screen.getByTestId('chef-image')
 
-    expect(screen.getByTestId('quantityBtn'))
-      .toHaveTextContent('+')
-      .toBeVisible()
-    expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(meal_basic.name)).toBeVisible()
     expect(screen.getByText(meal_basic.short_description)).toBeVisible()
-    expect(
-      screen.getByText(
-        `${meal_basic.chef_firstname} ${meal_basic.chef_lastname}`
-      )
-    ).toBeVisible()
+    expect(screen.getByText(chefName)).toBeVisible()
+    expect(screen.getByAltText(chefName)).toBeVisible()
 
     expect(mealImg)
       .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image})`)
@@ -39,66 +31,65 @@ describe.skip('MealCard component', () => {
       .toBeVisible()
   })
 
-  it('Extra props', () => {
-    const onClick = jest.fn()
-    render(
-      <MealCard meal={mealExtended} noExtraFee quantity={1} onClick={onClick} />
-    )
-    const featureElem = screen.getByText('NEW')
+  it('Full props', () => {
+    render(<MealCard meal={meal_full} noExtraFee quantity={1} />)
 
-    expect(screen.getByTestId('quantityBtn'))
+    expect(screen.getByText('NEW'))
+      .toHaveStyle({
+        backgroundColor: meal_full.feature.background,
+        color: meal_full.feature.color
+      })
+      .toBeVisible()
+
+    expect(screen.getByTestId('quantity-btn'))
       .toHaveTextContent('1')
       .toBeVisible()
+
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
-    expect(screen.getByText(`${mealExtended.calories} cal`)).toBeVisible()
-    expect(screen.getByText(mealExtended.meat_type)).toBeVisible()
+    expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
+    expect(screen.getByText('Seafood')).toBeVisible()
+    expect(screen.getByText('Spicy')).toBeVisible()
+    expect(screen.getByAltText('Spicy')).toBeVisible()
     expect(screen.getByTestId('rating'))
-      .toHaveTextContent('★ 4.4 (999+)')
+      .toHaveTextContent('4.4 (999+)')
       .toBeVisible()
     expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
-    expect(featureElem)
-      .toHaveStyle({
-        backgroundColor: mealExtended.feature.background,
-        color: mealExtended.feature.color
-      })
-      .toBeVisible()
-
-    userEvent.click(screen.getByTestId('meal-image'))
-    expect(onClick).toHaveBeenCalled()
   })
 
   it('Click card', () => {
     const onClick = jest.fn()
-    render(<MealCard meal={mealExtended} onClick={onClick} />)
+    render(<MealCard meal={meal_full} onClick={onClick} />)
     userEvent.click(screen.getByTestId('meal-image'))
-    expect(onClick).toHaveBeenCalled()
+    userEvent.click(screen.getByText(meal_full.short_description))
+    expect(onClick.mock.calls.length).toBe(2)
   })
 
   it('No editable', () => {
-    render(<MealCardSimple meal={meal_basic} isEditable={false} />)
-    expect(screen.queryByTestId('quantityBtn')).not.toBeInTheDocument()
+    render(<MealCardSimple meal={meal_full} isEditable={false} />)
+    expect(screen.queryByTestId('quantity-btn')).not.toBeInTheDocument()
   })
 
   it('Disable add item when theres no stock', () => {
-    render(<MealCardSimple meal={meal_basic} quantity={3} />)
-    userEvent.click(screen.getByTestId('quantityBtn'))
-    userEvent.click(screen.getByText('+'))
-    expect(screen.getByText('+')).toBeDisabled()
+    render(<MealCardSimple meal={meal_full} quantity={3} />)
+    userEvent.click(screen.getByTestId('quantity-btn'))
+    expect(screen.getByTestId('add-btn')).toBeDisabled()
   })
 
-  it.skip('Add/remove quantities', async () => {
-    render(<MealCardSimple meal={meal_basic} quantity={2} />)
-    userEvent.click(screen.getByTestId('quantityBtn'))
-    userEvent.click(screen.getByText('-'))
+  it('Add/remove quantities', async () => {
+    render(<MealCardSimple meal={meal_full} quantity={2} />)
+    userEvent.click(screen.getByTestId('quantity-btn'))
+    userEvent.click(screen.getByTestId('remove-btn'))
     expect(screen.getByTestId('quantity')).toHaveTextContent('1')
-    userEvent.click(screen.getByText('+'))
-    userEvent.click(screen.getByText('+'))
+    userEvent.click(screen.getByTestId('add-btn'))
+    userEvent.click(screen.getByTestId('add-btn'))
     expect(screen.getByTestId('quantity')).toHaveTextContent('3')
-    userEvent.click(screen.getByText('-'))
-    userEvent.click(screen.getByText('-'))
-    userEvent.click(screen.getByText('-'))
-    expect(screen.getByTestId('quantityBtn')).toHaveTextContent('+')
+    userEvent.click(screen.getByTestId('remove-btn'))
+    userEvent.click(screen.getByTestId('remove-btn'))
+    userEvent.click(screen.getByTestId('remove-btn'))
+    expect(screen.getByTestId('quantity-btn')).toContainElement(
+      screen.getByTestId('plus-img')
+    )
   })
 })
