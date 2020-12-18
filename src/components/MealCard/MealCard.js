@@ -65,7 +65,7 @@ const MealCard = ({
 
   const handleAddItem = () => {
     setShowCartControllers(true)
-    if (isEditable || !disableAddItemBtn) onAddItem()
+    if (!disableAddItemBtn) onAddItem()
   }
   const handleRemoveItem = () => {
     setShowCartControllers(true)
@@ -195,7 +195,7 @@ const MealCard = ({
                     className={`${
                       selected ? styles.selected : styles.unselected
                     }`}
-                    disabled={!isEditable}
+                    disabled={disableAddItemBtn && quantity < 1}
                     onClick={() =>
                       !selected ? handleAddItem() : setShowCartControllers(true)
                     }
