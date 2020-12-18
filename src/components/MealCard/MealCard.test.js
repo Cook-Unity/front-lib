@@ -71,10 +71,19 @@ describe('MealCard component', () => {
     expect(screen.queryByTestId('quantity-btn')).not.toBeInTheDocument()
   })
 
-  it('Disable add item when theres no stock', () => {
+  it("Disable add item when there's no more stock", () => {
     render(<MealCardCase meal={meal_full} quantity={3} />)
     userEvent.click(screen.getByTestId('quantity-btn'))
     expect(screen.getByTestId('add-btn')).toBeDisabled()
+  })
+
+  it('Meal stock is zero', () => {
+    const meal = {
+      ...meal_full,
+      stock: 0
+    }
+    render(<MealCardCase meal={meal} />)
+    expect(screen.getByTestId('quantity-btn')).toBeDisabled()
   })
 
   it('Add/remove quantities', async () => {
