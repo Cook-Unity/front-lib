@@ -1,7 +1,7 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
-import {meal_basic, meal_full} from './__mock__'
+import {meal_basic, meal_full, meal_long_name} from './__mock__'
 
 export default {
   title: 'MealCard (New)',
@@ -32,10 +32,7 @@ Selected.args = {
 
 export const LongName = Template.bind({})
 LongName.args = {
-  meal: {
-    ...meal_full,
-    name: 'Fettuccine Alfredo with Blackened Salmon'
-  }
+  meal: meal_long_name
 }
 
 export const NoExtraFee = Template.bind({})
