@@ -60,3 +60,8 @@ export const meal_full = {
     }
   ]
 }
+
+export const meal_long_name = {
+  ...meal_full,
+  name: 'Fettuccine Alfredo with Blackened Salmon'
+}

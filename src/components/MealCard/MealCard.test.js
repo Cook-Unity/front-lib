@@ -5,7 +5,7 @@ import MealCard from './'
 import {MealCardCase} from './MealCardCase'
 import {formatChefName} from './utils'
 
-import {meal_basic, meal_full} from './__mock__'
+import {meal_basic, meal_full, meal_long_name} from './__mock__'
 
 describe('MealCard component', () => {
   it('Required props', () => {
@@ -84,6 +84,10 @@ describe('MealCard component', () => {
     }
     render(<MealCardCase meal={meal} />)
     expect(screen.getByTestId('quantity-btn')).toBeDisabled()
+  })
+
+  it.skip('Meal with long name', () => {
+    render(<MealCardCase meal={meal_long_name} />)
   })
 
   it('Add/remove quantities', async () => {
