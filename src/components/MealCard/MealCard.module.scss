@@ -232,10 +232,11 @@
       .cart_controllers {
         border: 1px solid black;
         border-radius: 50px;
-        width: 95px;
+        width: 90px;
         float: right;
-        height: 32px;
+        height: 30px;
         overflow: hidden;
+        white-space: nowrap;
 
         animation: expandCartControllers 200ms;
 
@@ -264,6 +265,7 @@
         font-weight: bolder;
         line-height: 1.5;
         font-weight: 600;
+        text-align: center;
 
          > img {
           width: 11px;
