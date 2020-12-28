@@ -4,7 +4,7 @@ import {pathOr} from 'ramda'
 
 import images from '../../assets/images'
 
-import './Gauge.css'
+// import './Gauge.css'
 
 class Gauge extends React.Component {
   constructor(props) {
