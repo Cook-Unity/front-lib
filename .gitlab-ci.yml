@@ -1,0 +1,35 @@
+image: node:12.18.3
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
+
+stages:
+  - prepare
+  - test
+
+install:
+  stage: prepare
+  script:
+    - npm ci
+  artifacts:
+    paths:
+    - node_modules/
+  only:
+    - merge_requests
+
+unit-test:
+  stage: test
+  script:
+    - npm run test:coverage
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
+  only:
+    - merge_requests
+
+linter:
+  stage: test
+  script:
+    - npm run lint
+  only:
+    - merge_requests
