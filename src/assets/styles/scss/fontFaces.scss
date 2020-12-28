@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 @font-face {
   font-family: 'Autograf';
   font-weight: normal;
@@ -17,6 +19,15 @@
     url('https://static.cookunity.com/cross/front-lib/fonts/gilroy-extrabold-webfont.woff2') format('woff2'),
     url('https://static.cookunity.com/cross/front-lib/fonts/gilroy-extrabold-webfont.woff') format('woff'),
     url('https://static.cookunity.com/cross/front-lib/fonts/gilroy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy Semibold';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: url("https://static.cookunity.com/cross/front-lib/fonts/Gilroy-SemiBold.ttf") format("truetype");
 }
 
 @font-face {

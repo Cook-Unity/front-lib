@@ -17,4 +17,10 @@ export default {
   twitter: importCUAssets('twitter.png'),
   email: importCUAssets('email.png'),
   xclose: importCUAssets('xclose.png'),
+  allStarChefBudge: importCUAssets('all-star.png'),
+  spicyIcon: importCUAssets('icon-spicy.png'),
+  star: importCUAssets('star.png'),
+  btnWhitePlus: importCUAssets('btn-white-plus.png'),
+  btnBlackPlus: importCUAssets('btn-black-plus.png'),
+  btnBlackMinus: importCUAssets('btn-black-minus.png')
 }
