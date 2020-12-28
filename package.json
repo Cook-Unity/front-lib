@@ -14,13 +14,11 @@
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint ./src",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:coverage": "npm run test:unit -- --coverage",
+    "prepare": "npm run build",
+    "lint": "eslint ./src",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
@@ -31,7 +29,9 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
@@ -42,8 +42,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.3.0",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.1.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
@@ -55,19 +53,16 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.1.0",
     "jest-chain": "^1.1.5",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "microbundle-crl": "^0.13.10",
     "node-sass": "^4.14.1",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-is": "^16.13.1",
-    "react-scripts": "^3.4.1",
-    "sass-loader": "^10.0.2",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.44.2"
+    "sass-loader": "^10.1.0"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -84,15 +79,5 @@
   },
   "files": [
     "dist"
-  ],
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/assets/**/*",
-      "!src/**/*.stories.js",
-      "!src/**/skeleton.js",
-      "!src/**/data.mock.js",
-      "!src/test/**"
-    ]
-  }
+  ]
 }
