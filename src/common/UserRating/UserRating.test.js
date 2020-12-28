@@ -13,7 +13,7 @@ describe('UserRating component', () => {
     it(`Check than ${defaultProps.userRating} is contain in the component`, () => {
       const renderResult = render(<UserRating {...defaultProps} />)
 
-      expect(renderResult.getByTestId('user-rating').textContent).toBe(
+      expect(renderResult.getByTestId('user-rating')).toHaveTextContent(
         defaultProps.userRating.toString()
       )
     })

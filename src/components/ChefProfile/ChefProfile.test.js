@@ -18,7 +18,7 @@ describe('ChefProfile component', () => {
     it(`Check than ${defaultProps.chef_firstname} and  ${defaultProps.chef_lastname} is contain in the component`, () => {
       const renderResult = render(<ChefProfile {...defaultProps} />)
 
-      expect(renderResult.getByTestId('chef-name').textContent).toBe(
+      expect(renderResult.getByTestId('chef-name')).toHaveTextContent(
         `${defaultProps.firstname} ${defaultProps.lastname}`
       )
     })
