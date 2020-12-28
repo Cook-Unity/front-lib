@@ -17,7 +17,7 @@ const MealImage = ({
 
   useEffect(() => {
     setErrorImage(mealImage && mealImage.includes('/no-image'))
-  }, [])
+  }, [mealImage])
 
   const handleOnError = () => {
     setErrorImage(true)

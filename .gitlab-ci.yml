@@ -1,0 +1,26 @@
+image: node:12.18.3
+
+stages:
+  - prepare
+  - test
+
+install:
+  stage: prepare
+  script:
+    - npm ci
+  only:
+    - merge_requests
+
+unit-test:
+  stage: test
+  script:
+    - npm run test:coverage
+  only:
+    - merge_requests
+
+linter:
+  stage: test
+  script:
+    - npm run lint
+  only:
+    - merge_requests
