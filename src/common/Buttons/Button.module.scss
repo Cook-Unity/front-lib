@@ -1,0 +1,122 @@
+@import '../../assets/styles/scss/mixins';
+@import '../../assets/styles/scss/variables';
+
+.cookunity__new_button {
+  position: relative;
+  font-family: 'Gilroy', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 200px;
+  padding: 11px 24px;
+  height: 40px;
+  cursor: pointer;
+  color: $cookunity-black;
+  border: 1px solid $cookunity-black;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  user-select: none;
+
+  &.gutter {
+    height: 48px;
+    margin-right: 16px;
+  }
+
+  &.small {
+    padding: 9px 24px;
+    font-size: 12px;
+    line-height: 14px;
+    height: 32px;
+  }
+
+  &.large {
+    padding: 14px 24px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 48px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.transparent {
+    background: none;
+    border: none;
+  }
+
+  &.dark {
+    color: #ffffff;
+    background-color: $cookunity-black;
+  }
+
+  &.red {
+    color: $cookunity-red;
+    border: none;
+    background-color: transparent;
+  }
+
+  &.disabled {
+    cursor: not-allowed !important;
+    color: #ffffff !important;
+    border: 1px solid $cookunity-light-gray !important;
+    background-color: $cookunity-light-gray !important;
+  }
+
+  &.block {
+    display: block;
+  }
+
+  &.loading {
+    color: $cookunity-light-gray !important;
+
+  }
+
+  .loader {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: spinner 1s infinite linear;
+
+    &:before {
+      width: 50%;
+      height: 50%;
+      background: $cookunity-light-gray;
+      border-radius: 100% 0 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+    }
+    &:after {
+      background: $cookunity-light-gray;
+      width: 85%;
+      height: 85%;
+      border-radius: 50%;
+      content: '';
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    @keyframes spinner {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

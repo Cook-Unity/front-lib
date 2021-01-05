@@ -1,0 +1,40 @@
+.chefProfile {
+  grid-area: chef;
+  display: flex;
+  font-family: 'Roboto';
+  font-style: normal;
+
+  & > img {
+    grid-area: chefpic;
+    height: 72px;
+    width: 72px;
+    border: 1px solid #dddddd;
+    border-radius: 100px;
+    margin-right: 16px;
+    object-fit: cover;
+  }
+
+  p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    grid-area: link;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #231f20;
+  }
+
+  .aWithoutTextDecoration {
+    text-decoration: none;
+    cursor: none;
+  }
+}

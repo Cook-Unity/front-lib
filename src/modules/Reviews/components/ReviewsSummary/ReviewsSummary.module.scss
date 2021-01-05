@@ -1,0 +1,49 @@
+.revieCountContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+  .columnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 14px;
+
+    .stars {
+      display: flex;
+      align-items: center;
+
+      label,
+      label > div {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+      }
+    }
+
+    .totalReviews {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0.2px;
+      color: #231f20;
+      margin-top: 10px;
+    }
+  }
+
+  p {
+    font-family: 'Gilroy';
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -0.5px;
+    color: #231f20;
+    margin: 0;
+    text-align: left;
+    @media (max-width: 720px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+}

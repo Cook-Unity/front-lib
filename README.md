@@ -2,8 +2,8 @@
 
 > CookUnity React Library
 
-<!--[![NPM](https://img.shields.io/npm/v/cu-front-lib.svg)](https://www.npmjs.com/package/cu-front-lib)-->
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![pipeline status](https://gitlab.cookunity.com/cross/front-lib/badges/master/pipeline.svg)](https://gitlab.cookunity.com/cross/front-lib/-/commits/master)
+[![coverage report](https://gitlab.cookunity.com/cross/front-lib/badges/master/coverage.svg)](https://gitlab.cookunity.com/cross/front-lib/-/commits/master)
 
 ## Install
 

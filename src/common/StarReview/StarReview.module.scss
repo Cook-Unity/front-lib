@@ -1,0 +1,43 @@
+.starReview {
+  .star {
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/star.png');
+    @media (max-width: 700px) {
+      width: 25px;
+      height: 25px;
+    }
+    width: 24px;
+    height: 24px;
+    margin: 0px 6px 0px 0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  .halfStar {
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/half-star.png');
+    @media (max-width: 700px) {
+      width: 25px;
+      height: 25px;
+    }
+    width: 24px;
+    height: 24px;
+    margin: 0px 6px 0px 0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  .emptyStar {
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/empty-star.png');
+    @media (max-width: 700px) {
+      width: 25px;
+      height: 25px;
+    }
+    width: 24px;
+    height: 24px;
+    margin: 0px 6px 0px 0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}

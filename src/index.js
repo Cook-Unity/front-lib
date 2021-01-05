@@ -1,3 +1,2 @@
-import React from 'react';
-
-export { default as ItemCard } from './ItemCard';
+export {default as MealCard} from './components/MealCard'
+export {default as ProductPage} from './modules/ProductPage'

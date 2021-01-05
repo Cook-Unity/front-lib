@@ -1,5 +1,3 @@
-build/
-dist/
-node_modules/
+src/_example_stories
 .snapshots/
 *.min.js
