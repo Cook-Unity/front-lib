@@ -18,6 +18,7 @@ install:
     - node_modules/
   only:
     - merge_requests
+    - master
 
 unit-test:
   stage: test
@@ -26,6 +27,7 @@ unit-test:
   coverage: /All\sfiles.*?\s+(\d+.\d+)/
   only:
     - merge_requests
+    - master
 
 linter:
   stage: test
@@ -33,3 +35,4 @@ linter:
     - npm run lint
   only:
     - merge_requests
+    - master
