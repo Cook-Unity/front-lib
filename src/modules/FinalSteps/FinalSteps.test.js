@@ -10,7 +10,7 @@ const chefInstructionsStr = `1. ${chefInstructions[0]} 2. ${chefInstructions[1]}
 const fastInstructionsStr = `1. ${fastInstructions[0]} 2. ${fastInstructions[1]}`
 
 describe('Product Page: FinalSteps', () => {
-  const assertStaticText = screen => {
+  const assertStaticText = () => {
     expect(screen.getByText('Chef Instructions:')).toBeVisible()
     expect(screen.getByText('Fast Instructions:')).toBeVisible()
     expect(screen.getByText('Enjoy it Warm!')).toBeVisible()
@@ -59,7 +59,7 @@ describe('Product Page: FinalSteps', () => {
     expect(screen.getByText('1. First chef.')).toBeVisible()
     expect(screen.getByText('2. Second chef.')).toBeVisible()
 
-    assertStaticText(screen)
+    assertStaticText()
   })
 
   it('With multiple steps (string)', () => {
@@ -77,6 +77,6 @@ describe('Product Page: FinalSteps', () => {
     expect(screen.getByText(`1. First fast.`)).toBeVisible()
     expect(screen.getByText(`2. Second fast.`)).toBeVisible()
 
-    assertStaticText(screen)
+    assertStaticText()
   })
 })
