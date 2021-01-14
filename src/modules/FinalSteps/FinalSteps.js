@@ -43,10 +43,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
                 [styles.finalSteps]: isLoading ? styles.finalSteps : null
               })}
             >
-              <h4>
-                In the Oven
-                {!isLoading && <span> (Recommended)</span>}
-              </h4>
+              <h4>Chef Instructions:</h4>
               <div
                 className={classnames(styles.steps, {
                   [styles.finalSteps]: isLoading ? styles.finalSteps : null
@@ -65,7 +62,7 @@ const FinalSteps = ({mealDetail, isLoading}) => {
                 [styles.finalSteps]: isLoading ? styles.finalSteps : null
               })}
             >
-              <h4>In the Microwave</h4>
+              <h4>Fast Instructions:</h4>
               <div
                 className={classnames(styles.steps, {
                   [styles.finalSteps]: isLoading ? styles.finalSteps : null
