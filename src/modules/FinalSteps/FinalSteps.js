@@ -1,130 +1,121 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {pathOr} from 'ramda'
 import classnames from 'classnames'
-
 import images from '../../assets/images'
-
 import styles from './FinalSteps.module.scss'
 
-const FinalSteps = ({mealDetail, isLoading}) => {
-  const microwaveSteps = pathOr(
-    null,
-    ['cookingSteps', 'microwave_steps'],
-    mealDetail
-  )
+const formatSteps = steps => {
+  steps = typeof steps === 'string' ? steps.split(/\d+\.\s/) : steps
 
-  const ovenSteps = pathOr(null, ['cookingSteps', 'oven_steps'], mealDetail)
+  return steps.filter(s => !!s).map(s => s.replace('\n', ''))
+}
 
-  const formatSteps = steps =>
-    steps
-      .split(/\d+\.\s/)
-      .filter(s => !!s)
-      .map(s => s.replace('\n', ''))
-
-  if (!ovenSteps && !microwaveSteps) {
+const FinalSteps = ({chefInstructions, fastInstructions, isLoading}) => {
+  if (!chefInstructions && !fastInstructions) {
     return null
   }
 
   return (
     <div className={styles.finalSteps}>
-      <div
-        className={classnames(styles.finalSteps, {
-          [styles.finalSteps]: isLoading ? styles.finalSteps : null
-        })}
-      >
-        <div className={styles.cooking}>
-          <h2 className={classnames({loading: isLoading})}>
-            Heating Instructions
-          </h2>
-          {ovenSteps && (
+      <div className={styles.cooking}>
+        <h2 className={classnames({[styles.loading]: isLoading})}>
+          Heating Instructions
+        </h2>
+        {chefInstructions && (
+          <div
+            className={classnames(styles.oven, {
+              [styles.loading]: isLoading
+            })}
+          >
+            <h4>Chef Instructions:</h4>
             <div
-              className={classnames(styles.oven, {
-                [styles.finalSteps]: isLoading ? styles.finalSteps : null
+              className={classnames(styles.steps, {
+                [styles.loading]: isLoading
               })}
             >
-              <h4>Chef Instructions:</h4>
-              <div
-                className={classnames(styles.steps, {
-                  [styles.finalSteps]: isLoading ? styles.finalSteps : null
-                })}
-              >
-                {formatSteps(ovenSteps).map((step, i) => (
-                  <p key={`ovenStepsP-${i}`}>{`${i + 1}. ${step}`}</p>
-                ))}
-              </div>
+              {formatSteps(chefInstructions).map((step, i) => (
+                <p key={`ovenStepsP-${i}`}>{`${i + 1}. ${step}`}</p>
+              ))}
             </div>
-          )}
+          </div>
+        )}
 
-          {microwaveSteps && (
+        {fastInstructions && (
+          <div
+            className={classnames(styles.microwave, {
+              [styles.loading]: isLoading
+            })}
+          >
+            <h4>Fast Instructions:</h4>
             <div
-              className={classnames(styles.microwave, {
-                [styles.finalSteps]: isLoading ? styles.finalSteps : null
+              className={classnames(styles.steps, {
+                [styles.loading]: isLoading
               })}
             >
-              <h4>Fast Instructions:</h4>
-              <div
-                className={classnames(styles.steps, {
-                  [styles.finalSteps]: isLoading ? styles.finalSteps : null
-                })}
-              >
-                {formatSteps(microwaveSteps).map((step, i) => (
-                  <p key={i}>{`${i + 1}. ${step}`}</p>
-                ))}
-              </div>
+              {formatSteps(fastInstructions).map((step, i) => (
+                <p key={i}>{`${i + 1}. ${step}`}</p>
+              ))}
             </div>
-          )}
-
-          {!isLoading && (
-            <h3>
-              <img src={images.enjoyImage} alt="enjoy" />
-              <b>Enjoy it Warm!</b>
-            </h3>
-          )}
-        </div>
+          </div>
+        )}
 
         {!isLoading && (
-          <Fragment>
-            <div className={styles.cookingRow}>
-              <div className={styles.col50}>
-                <div className={styles.iceImg}>
-                  <img src={images.iceImage} alt="Brrrrr" />
-                </div>
-                <div>
-                  <p>
-                    <span>Meals are delivered chilled</span> <br />
-                    Containers are oven & microwave safe, lid is not safe.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.col50}>
-                <div className={styles.iceImg}>
-                  <img src={images.codeQRImage} alt="Brrrrr" />
-                </div>
-                <div>
-                  <p>
-                    <span>Scan the QR Code on your meal</span>
-                    <br />
-                    Find Heating instructions, Nutritional info, Expiration date{' '}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Fragment>
+          <h3>
+            <img src={images.enjoyImage} alt="enjoy" />
+            <b>Enjoy it Warm!</b>
+          </h3>
         )}
       </div>
+
+      {!isLoading && (
+        <Fragment>
+          <div className={styles.cookingRow}>
+            <div className={styles.col50}>
+              <div className={styles.iceImg}>
+                <img src={images.iceImage} alt="Brrrrr" />
+              </div>
+              <div>
+                <p>
+                  <span>Meals are delivered chilled</span> <br />
+                  Containers are oven & microwave safe, lid is not safe.
+                </p>
+              </div>
+            </div>
+            <div className={styles.col50}>
+              <div className={styles.iceImg}>
+                <img src={images.codeQRImage} alt="Brrrrr" />
+              </div>
+              <div>
+                <p>
+                  <span>Scan the QR Code on your meal</span>
+                  <br />
+                  Find Heating instructions, Nutritional info, Expiration date{' '}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      )}
     </div>
   )
 }
 
 FinalSteps.propTypes = {
-  microwaveSteps: PropTypes.string.isRequired,
-  ovenSteps: PropTypes.string.isRequired
+  fastInstructions: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]).isRequired,
+  chefInstructions: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]).isRequired,
+  isLoading: PropTypes.bool
 }
 
 FinalSteps.defaultProps = {
-  microwaveSteps: '',
-  ovenSteps: ''
+  fastInstructions: null,
+  chefInstructions: null,
+  isLoading: false
 }
 
 export default FinalSteps
