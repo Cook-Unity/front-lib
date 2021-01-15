@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react'
 import PropTypes from 'prop-types'
+import {pathOr} from 'ramda'
 
 import Skeleton from './skeleton'
 import MetaTags from '../../components/MetaTags'
@@ -17,6 +18,27 @@ import images from '../../assets/images'
 
 import styles from './ProductPage.module.scss'
 
+const getFinalSteps = productData => {
+  const fastInstructions = pathOr(
+    null,
+    ['cookingSteps', 'microwave_steps'],
+    productData
+  )
+
+  const chefInstructions = pathOr(
+    null,
+    ['cookingSteps', 'oven_steps'],
+    productData
+  )
+
+  return (
+    <FinalSteps
+      chefInstructions={chefInstructions}
+      fastInstructions={fastInstructions}
+    />
+  )
+}
+
 const ProductPage = ({
   productData,
   isLoading,
@@ -33,7 +55,7 @@ const ProductPage = ({
     isLoading && `https://www.cookunity.com/${productData.urlPath}`
 
   const ingredients = <Ingredients ingredients={productData.ingredients} />
-  const finalSteps = <FinalSteps mealDetail={productData} />
+  const finalSteps = getFinalSteps(productData)
   const nutrition = <NutritionalFacts mealDetail={productData} />
   const macronutrients = (
     <Macronutrients
