@@ -100,11 +100,11 @@ FinalSteps.propTypes = {
   fastInstructions: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
-  ]).isRequired,
+  ]),
   chefInstructions: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
-  ]).isRequired,
+  ]),
   isLoading: PropTypes.bool
 }
 
