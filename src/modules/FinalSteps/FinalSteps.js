@@ -72,26 +72,22 @@ const FinalSteps = ({chefInstructions, fastInstructions, isLoading}) => {
           <div className={styles.cookingRow}>
             <div className={styles.col50}>
               <div className={styles.iceImg}>
-                <img src={images.iceImage} alt="Brrrrr" />
+                <img src={images.iceImage} alt="Chilled meals" />
               </div>
-              <div>
-                <p>
-                  <span>Meals are delivered chilled</span> <br />
-                  Containers are oven & microwave safe, lid is not safe.
-                </p>
-              </div>
+              <p>
+                <span>Meals are delivered chilled</span> <br />
+                Containers are oven & microwave safe, lid is not safe.
+              </p>
             </div>
             <div className={styles.col50}>
               <div className={styles.iceImg}>
-                <img src={images.codeQRImage} alt="Brrrrr" />
+                <img src={images.codeQRImage} alt="QR code" />
               </div>
-              <div>
-                <p>
-                  <span>Scan the QR Code on your meal</span>
-                  <br />
-                  Find Heating instructions, Nutritional info, Expiration date{' '}
-                </p>
-              </div>
+              <p>
+                <span>Scan the QR Code on your meal</span>
+                <br />
+                Find Heating instructions, Nutritional info, Expiration date
+              </p>
             </div>
           </div>
         </Fragment>
