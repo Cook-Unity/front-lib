@@ -23,7 +23,7 @@ describe('MealCard component', () => {
     expect(screen.getByAltText(chefName)).toBeVisible()
 
     expect(mealImg)
-      .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image})`)
+      .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image}), url(https://static.cookunity.com/cross/front-lib/images/no-image-meal.jpg)`)
       .toBeVisible()
 
     expect(chefImg)
@@ -101,4 +101,14 @@ describe('MealCard component', () => {
       screen.getByTestId('plus-img')
     )
   })
+
+  it('Meal image coming soon', () => {
+    const meal = {
+      ...meal_full,
+      full_path_meal_image: '/no-image'
+    }
+    render(<MealCardCase meal={meal} />)
+    expect(screen.getByText('Image coming soon')).toBeVisible()
+  })
+
 })
