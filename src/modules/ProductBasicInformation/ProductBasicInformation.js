@@ -13,37 +13,38 @@ import images from '../../assets/images'
 import styles from './ProductBasicInformation.module.scss'
 
 const ProductBasicInformation = ({
-  mealDetail,
+  productData,
   isLoading,
   isOrdering,
   addProduct,
   onChefClick,
-  onClickReviewCount
+  onClickReviewCount,
+  hideStars
 }) => {
   return (
     <div className={`${styles.productDetails} ${isLoading && styles.loading}`}>
       <div className={styles.productDescription}>
-        <ProductTitle name={mealDetail.name} />
+        <ProductTitle name={productData.name} />
         <RatingMeal
-          mealDetail={mealDetail}
-          stars={mealDetail.stars}
-          reviewsCount={mealDetail.reviews_count}
-          userRating={mealDetail.user_rating}
+          hideStars={hideStars}
+          stars={productData.stars}
+          reviewsCount={productData.reviews_count}
+          userRating={productData.user_rating}
           onClickReviewCount={onClickReviewCount}
         />
       </div>
 
       <div className={styles.productImage}>
-        <MealImage mealDetail={mealDetail} />
+        <MealImage imageUrl={productData.image_full_url} />
       </div>
 
-      <ProductDescription mealStory={mealDetail.meal_story} />
+      <ProductDescription mealStory={productData.meal_story} />
 
       <ChefProfile
-        img={mealDetail.chef_img}
-        firstname={mealDetail.chef_firstname}
-        lastname={mealDetail.chef_lastname}
-        chefId={+mealDetail.chef_id}
+        img={productData.chef_image_url}
+        firstname={productData.chef_firstname}
+        lastname={productData.chef_lastname}
+        chefId={+productData.chef_id}
         onClick={onChefClick}
       />
 
@@ -63,7 +64,7 @@ ProductBasicInformation.propTypes = {
   onChefClick: PropTypes.func,
   addProduct: PropTypes.func,
   onClickReviewCount: PropTypes.func,
-  mealDetail: PropTypes.object,
+  productData: PropTypes.object,
   isLoading: PropTypes.bool,
   isOrdering: PropTypes.bool
 }
@@ -72,7 +73,7 @@ ProductBasicInformation.defaultProps = {
   onChefClick: null,
   addProduct: null,
   onClickReviewCount: null,
-  mealDetail: null,
+  productData: null,
   isLoading: false,
   isOrdering: false
 }

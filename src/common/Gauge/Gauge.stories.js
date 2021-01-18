@@ -1,5 +1,6 @@
 import React from 'react'
 
+import {PROTEIN, getDietaryValue} from '../../modules/Macronutrients/utils'
 import Gauge from './index'
 
 export default {
@@ -10,10 +11,8 @@ export default {
 const Template = args => <Gauge {...args} />
 
 export const Default = Template.bind({})
+
 Default.args = {
-  protein: 20,
-  carbs: 30,
-  fat: 20,
-  calories: 29,
-  dv: 2
+  progress: getDietaryValue(37, PROTEIN),
+  unit: 'dv'
 }

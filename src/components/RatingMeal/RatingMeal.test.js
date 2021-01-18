@@ -8,8 +8,8 @@ import mockData from './__mock__.json'
 
 const defaultProps = {
   stars: mockData.stars,
-  userRating: mockData.user_rating,
-  reviewsCount: mockData.reviews_count,
+  userRating: mockData.userRating,
+  reviewsCount: mockData.reviewsCount,
   onClickReviewCount: jest.fn()
 }
 

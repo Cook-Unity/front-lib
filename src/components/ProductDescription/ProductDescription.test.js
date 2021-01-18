@@ -5,7 +5,7 @@ import defaultPropsMock from './__mock__.json'
 import ProductDescription from './ProductDescription'
 
 const defaultProps = {
-  mealStory: defaultPropsMock.mealDetail.meal_story
+  mealStory: defaultPropsMock.mealDetail.mealStory
 }
 
 describe('ProductDescription component', () => {

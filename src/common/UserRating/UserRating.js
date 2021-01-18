@@ -18,7 +18,7 @@ const UserRating = ({userRating}) => {
 }
 
 UserRating.propTypes = {
-  userRating: PropTypes.string
+  userRating: PropTypes.number
 }
 
 UserRating.defaultProps = {

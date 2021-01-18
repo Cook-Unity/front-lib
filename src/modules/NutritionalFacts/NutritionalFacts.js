@@ -4,7 +4,7 @@ import styles from './NutritionalFacts.module.scss'
 const nutritionDetails = [
   {
     label: 'Portion Size',
-    key: 'servingSize',
+    key: 'servingsize',
     unit: 'g'
   },
   {
@@ -19,7 +19,7 @@ const nutritionDetails = [
   },
   {
     label: 'Saturated fat',
-    key: 'saturatedFat',
+    key: 'saturated_fat',
     unit: 'g'
   },
   {
@@ -49,19 +49,17 @@ const nutritionDetails = [
   }
 ]
 
-const NutritionalFacts = ({mealDetail}) => {
-  if (!mealDetail) return null
-
-  const {nutritionInfo} = mealDetail
+const NutritionalFacts = ({nutritionalFacts}) => {
+  if (!nutritionalFacts) return null
 
   return (
     <div className={styles.nutritionCard}>
       <h2>Nutrition Info</h2>
       {nutritionDetails.map((detail, i) => (
-        <div className={styles.table_row} key={i}>
+        <div className={styles.table_row} key={`nutritionalFacts-${i}`}>
           <p className={styles.label}>{detail.label}</p>
           <p className={styles.value}>
-            {nutritionInfo[detail.key]}
+            {nutritionalFacts[detail.key]}
             {detail.unit}
           </p>
         </div>

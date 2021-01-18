@@ -13,5 +13,5 @@ const Template = args => <Specifications {...args} />
 export const Default = Template.bind({})
 Default.args = {
   ...defaultProps,
-  specificationsDetails: defaultProps.specificationsDetails
+  specificationsDetail: defaultProps.specificationsDetail
 }

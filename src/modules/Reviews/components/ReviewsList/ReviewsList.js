@@ -12,8 +12,8 @@ const ReviewsList = ({
 }) => {
   return (
     <section className={styles.productReviews}>
-      {reviews.slice(0, max).map(review => (
-        <div className={styles.review} key={review.review_id}>
+      {reviews.slice(0, max).map((review, index) => (
+        <div className={styles.review} key={`reviewId-${index}`}>
           <div className={styles.info}>
             <div className={styles.stars}>
               <StarReview

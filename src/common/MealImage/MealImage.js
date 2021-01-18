@@ -6,24 +6,23 @@ import images from '../../assets/images'
 import './MealImage.css'
 
 const MealImage = ({
-  mealDetail,
+  imageUrl,
   onMealClick,
   classNameImage,
   classNameNoImgContainer,
-  withoutText,
-  mealImage
+  withoutText
 }) => {
   const [errorImage, setErrorImage] = useState(false)
 
   useEffect(() => {
-    setErrorImage(mealImage && mealImage.includes('/no-image'))
-  }, [mealImage])
+    setErrorImage(imageUrl && imageUrl.includes('/no-image'))
+  }, [imageUrl])
 
   const handleOnError = () => {
     setErrorImage(true)
   }
 
-  const image = errorImage ? images.noMealImg : mealDetail.imageFullUrl
+  const image = errorImage ? images.noMealImg : imageUrl
 
   return errorImage ? (
     <div className={classNameNoImgContainer}>
@@ -55,7 +54,7 @@ MealImage.defaultProps = {
 }
 
 MealImage.propTypes = {
-  mealImage: string,
+  imageUrl: string,
   onMealClick: func,
   classNameImage: string,
   classNameNoImgContainer: string

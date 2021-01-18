@@ -1,7 +1,7 @@
 import React from 'react'
-
 import classnames from 'classnames'
-import './MiniGauge.css'
+
+import styles from './Gauge.module.scss'
 
 const getProgress = x => {
   const progress = Math.abs(x)
@@ -20,35 +20,36 @@ const center = 36
 const side = 72
 const strokeDasharray = 2 * Math.PI * radius
 
-const MiniGauge = ({progress, unit, className, style}) => {
+const Gauge = props => {
+  const {progress, unit, className, style} = props
   const _progress_ = getProgress(progress)
 
   const strokeDashOffset = strokeDasharray * (_progress_ / 100) || 0
 
   return (
     <div
-      className={classnames('cookunity__radial_gauge', className)}
+      className={classnames(styles.cookunity__radial_gauge, className)}
       style={style}
     >
-      <div className="label">
-        <p className="progress">{`${Math.floor(_progress_) || 0}%`}</p>
-        <p className="unit">{unit}</p>
+      <div className={styles.label}>
+        <p className={styles.progress}>{`${Math.floor(_progress_) || 0}%`}</p>
+        <p className={styles.unit}>{unit}</p>
       </div>
       <svg
-        className="radial_gauge"
+        className={styles.radial_gauge}
         width={side}
         height={side}
         viewBox={`0 0 ${side} ${side}`}
       >
         <circle
-          className="progress-bar"
+          className={styles['progress-bar']}
           cx={center}
           cy={center}
           r={radius}
           fill="none"
         />
         <circle
-          className="track"
+          className={styles.track}
           cx={center}
           cy={center}
           r={radius}
@@ -61,4 +62,4 @@ const MiniGauge = ({progress, unit, className, style}) => {
   )
 }
 
-export default MiniGauge
+export default Gauge

@@ -13,7 +13,8 @@ const Reviews = props => {
     quantity,
     isChef,
     showReviewsModal,
-    toggleReviewsModal
+    toggleReviewsModal,
+    reviewModalContainerId
   } = props
 
   if (!reviews || !product) return null
@@ -28,6 +29,7 @@ const Reviews = props => {
         reviews={_reviews}
         isOpen={showReviewsModal}
         onRequestClose={toggleReviewsModal}
+        reviewModalContainerId={reviewModalContainerId}
       />
 
       <div className={styles.productReviews} id="product-reviews-container">

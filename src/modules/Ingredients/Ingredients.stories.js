@@ -12,6 +12,5 @@ const Template = args => <Ingredients {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps,
-  ingredients: defaultProps.ingredients
+  ...defaultProps
 }

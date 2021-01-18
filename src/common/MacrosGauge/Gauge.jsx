@@ -4,7 +4,7 @@ import {pathOr} from 'ramda'
 
 import images from '../../assets/images'
 
-import './Gauge.css'
+import styles from './Gauge.module.scss'
 
 class Gauge extends React.Component {
   constructor(props) {
@@ -76,30 +76,32 @@ class Gauge extends React.Component {
     return (
       <div
         ref={this.gaugeContainer}
-        className={classnames('cookunity__macros_gauge', className)}
+        className={classnames(styles.cookunity__macros_gauge, className)}
         style={style}
       >
-        <div className="label">
+        <div className={styles.label}>
           <img src={images.faiaImage} alt="calories icon" />
-          <p className="calories">{calories || 0}</p>
-          <p className="calories_label">Calories</p>
-          <p className="daily_value">{`${Math.floor(dv || 0)}% DV`}</p>
+          <p className={styles.calories}>{calories || 0}</p>
+          <p className={styles.calories_label}>Calories</p>
+          <p className={styles.daily_value}>{`${Math.floor(dv || 0)}% DV`}</p>
         </div>
         <svg
-          className="radial_gauge"
+          className={styles.radial_gauge}
           width={_gaugeWidth_}
           height={_gaugeWidth_}
           viewBox={`0 0 ${_gaugeWidth_ || 0} ${_gaugeWidth_ || 0}`}
         >
           <circle
-            className={classnames('track', {empty: !Math.floor(dv)})}
+            className={classnames(styles.track, {empty: !Math.floor(dv)})}
             cx={center}
             cy={center}
             r={radius}
             fill="none"
           />
           <circle
-            className="progress-bar protein"
+            className={classnames(styles['progress-bar'], {
+              [styles.protein]: styles.protein
+            })}
             cx={center}
             cy={center}
             r={radius}
@@ -108,7 +110,9 @@ class Gauge extends React.Component {
             strokeDashoffset={proteinOffset}
           />
           <circle
-            className="progress-bar carbs"
+            className={classnames(styles['progress-bar'], {
+              [styles.carbs]: styles.carbs
+            })}
             cx={center}
             cy={center}
             r={radius}
@@ -117,7 +121,9 @@ class Gauge extends React.Component {
             strokeDashoffset={carbsOffset}
           />
           <circle
-            className="progress-bar fat"
+            className={classnames(styles['progress-bar'], {
+              [styles.fat]: styles.fat
+            })}
             cx={center}
             cy={center}
             r={radius}

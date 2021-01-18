@@ -12,7 +12,7 @@ const Template = args => <FinalSteps {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  chefInstructions: mealDetail.cookingSteps.oven_steps,
-  fastInstructions: mealDetail.cookingSteps.microwave_steps,
+  chefInstructions: mealDetail.cooking_steps.oven_steps,
+  fastInstructions: mealDetail.cooking_steps.microwave_steps,
   isLoading: false
 }

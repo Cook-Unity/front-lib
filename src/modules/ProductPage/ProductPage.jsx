@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react'
+import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
 
@@ -21,13 +22,13 @@ import styles from './ProductPage.module.scss'
 const getFinalSteps = productData => {
   const fastInstructions = pathOr(
     null,
-    ['cookingSteps', 'microwave_steps'],
+    ['cooking_steps', 'microwave_steps'],
     productData
   )
 
   const chefInstructions = pathOr(
     null,
-    ['cookingSteps', 'oven_steps'],
+    ['cooking_steps', 'oven_steps'],
     productData
   )
 
@@ -46,47 +47,52 @@ const ProductPage = ({
   goBackText,
   openChefProfileHandler,
   addProductHandler,
-  isOrdering
+  isOrdering,
+  reviewModalContainerId
 }) => {
   const [showReviewsModal, setShowReviewsModal] = useState(false)
   const [showSocialInfo, setShowSocialInfo] = useState(false)
 
-  const mealUrl =
-    isLoading && `https://www.cookunity.com/${productData.urlPath}`
-
-  const ingredients = <Ingredients ingredients={productData.ingredients} />
+  const ingredients = <Ingredients ingredients={productData.ingredients_data} />
   const finalSteps = getFinalSteps(productData)
-  const nutrition = <NutritionalFacts mealDetail={productData} />
+  const nutrition = (
+    <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
+  )
   const macronutrients = (
     <Macronutrients
-      nutritionInfo={productData.nutritionInfo}
+      nutritionalFacts={productData.nutritional_facts}
       calories={productData.calories}
     />
   )
 
   const handleReviews = () => setShowReviewsModal(!showReviewsModal)
-
   return (
     <Fragment>
       <div className={styles.cookunity__product_detail_container}>
         <div className={styles.cookunity__product_detail}>
           <div className={styles.header}>
             <div className={styles.back_button} onClick={goBack}>
-              <img src={images.close} alt="close" />
-              <p>{goBackText}</p>
+              {goBack && (
+                <>
+                  <img src={images.close} alt="close" />
+                  <p>{goBackText}</p>
+                </>
+              )}
             </div>
 
             <div
-              className={[styles.back_button, styles.mobile]}
+              className={classnames(styles.back_button, {
+                [styles.mobile]: styles.mobile
+              })}
               onClick={goBack}
             >
-              <img src={images.closeMobile} alt="close" />
+              {goBack && <img src={images.closeMobile} alt="close" />}
             </div>
 
             {!isLoading && (
-              <div className={[styles.share_container]}>
+              <div className={styles.share_container}>
                 <div
-                  className={[styles.share_button]}
+                  className={styles.share_button}
                   onClick={() => setShowSocialInfo(!showSocialInfo)}
                 >
                   <img src={images.share} alt="share" />
@@ -94,14 +100,20 @@ const ProductPage = ({
                 </div>
 
                 {showSocialInfo && (
-                  <Social url={mealUrl} title={productData.name} />
+                  <Social
+                    url={productData.url_path}
+                    title={productData.name}
+                    customStyles={{
+                      socialLinks: styles.socialLinks
+                    }}
+                  />
                 )}
               </div>
             )}
           </div>
 
           {isLoading ? (
-            <Skeleton />
+            <Skeleton hideStars />
           ) : (
             <Fragment>
               <MetaTags
@@ -111,28 +123,28 @@ const ProductPage = ({
 
               <ProductBasicInformation
                 isOrdering={isOrdering}
-                mealDetail={productData}
+                productData={productData}
                 addProduct={addProductHandler}
                 onClickReviewCount={handleReviews}
                 onChefClick={openChefProfileHandler}
               />
 
               <Specifications
-                specificationsDetails={productData.specificationsDetails}
+                specificationsDetail={productData.specifications_detail}
               />
 
-              <div className={[styles.board]}>
-                <div className={[styles.column]}>
+              <div className={styles.board}>
+                <div className={styles.column}>
                   {ingredients}
                   {finalSteps}
                 </div>
 
-                <div className={[styles.column]}>
+                <div className={styles.column}>
                   {nutrition}
                   {macronutrients}
                 </div>
 
-                <div className={[styles.block]}>
+                <div className={styles.block}>
                   {ingredients}
                   {nutrition}
                   {finalSteps}
@@ -142,11 +154,12 @@ const ProductPage = ({
 
               <Reviews
                 product={productData}
-                reviews={productData.reviews}
+                reviews={productData.reviews_data}
                 quantity={productData.reviews_count}
                 title="Community Reviews"
                 showReviewsModal={showReviewsModal}
                 toggleReviewsModal={handleReviews}
+                reviewModalContainerId={reviewModalContainerId}
               />
             </Fragment>
           )}
@@ -165,19 +178,21 @@ ProductPage.propTypes = {
   addProductHandler: PropTypes.func,
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
-  isOrdering: PropTypes.bool
+  isOrdering: PropTypes.bool,
+  reviewModalContainerId: PropTypes.string
 }
 
 ProductPage.defaultProps = {
   productData: {},
   HeaderComponent: null,
-  goBack: () => {},
+  goBack: null,
   openChefProfileHandler: null,
   toggleReviewsModalHandler: () => {},
   addProductHandler: () => {},
   goBackText: 'Back',
   isLoading: false,
-  isOrdering: false
+  isOrdering: false,
+  reviewModalContainerId: null
 }
 
 export default ProductPage

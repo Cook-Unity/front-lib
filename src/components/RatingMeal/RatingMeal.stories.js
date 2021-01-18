@@ -5,8 +5,8 @@ import RatingMeal from './index'
 
 const defaultProps = {
   stars: mock.stars,
-  reviewsCount: mock.reviews_count,
-  userRating: mock.user_rating
+  reviewsCount: mock.reviewsCount,
+  userRating: mock.userRating
 }
 
 export default {

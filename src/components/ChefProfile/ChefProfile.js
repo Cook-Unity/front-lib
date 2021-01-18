@@ -8,7 +8,7 @@ const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
   return (
     <div className={styles.chefProfile}>
       <img src={img} alt="chef" />
-      <div>
+      <div className={styles.chefProfileDataContainer}>
         <p data-testid="chef-name">
           {firstname} {lastname}
         </p>
@@ -19,7 +19,7 @@ const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
                 onClick(chefId)
               }
             }}
-            className={`${!onClick && 'aWithoutTextDecoration'}`}
+            className={`${!onClick && styles.aWithoutTextDecoration}`}
           >
             {' '}
             View Profile <img src={images.chevronIcon} alt="arrow" />{' '}

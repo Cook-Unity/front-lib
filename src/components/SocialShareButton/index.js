@@ -1,17 +1,30 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import {toast} from 'react-toastify'
 
 import images from '../../assets/images'
 
+import styles from './SocialShareButton.module.scss'
+
 const Social = props => {
-  const {url, title, onClickButton} = props
+  const {url, title, onClickButton, customStyles} = props
+  const socialLinks = customStyles.socialLinks
+  const socialLink = customStyles.socialLink
+  const facebook = customStyles.facebook
+  const copyLink = customStyles.copyLink
 
   return (
-    <div className="social-links">
-      <div className="social-link facebook">
+    <div className={classnames([styles.socialLinks, socialLinks], {})}>
+      <div
+        className={classnames(styles.socialLink, {
+          socialLink,
+          facebook
+        })}
+      >
         <a
-          className="facebook"
+          className={classnames([styles.facebook, facebook], {})}
           target="_blank"
           rel="noreferrer noopener"
           onClick={() => onClickButton('facebook')}
@@ -19,25 +32,29 @@ const Social = props => {
             url
           )}`}
         >
-          <img src={images.facebook} alt="Facebook" className="facebook" />
+          <img
+            src={images.facebook}
+            alt="Facebook"
+            className={styles.facebook}
+          />
         </a>
       </div>
 
-      <div className="social-link">
+      <div className={classnames([styles.socialLink, socialLink], {})}>
         <a
-          className="twitter"
+          className={styles.twitter}
           target="_blank"
           rel="noreferrer noopener"
           onClick={() => onClickButton('twitter')}
           href={`https://twitter.com/share?url=${encodeURIComponent(url)}`}
         >
-          <img src={images.twitter} alt="Twitter" className="twitter" />
+          <img src={images.twitter} alt="Twitter" className={styles.twitter} />
         </a>
       </div>
 
-      <div className="social-link ">
+      <div className={classnames([styles.socialLink, socialLink], {})}>
         <a
-          className="copy-link"
+          className={classnames([styles.copyLink, copyLink], {})}
           target="_blank"
           rel="noreferrer noopener"
           onClick={() => onClickButton('email')}
@@ -45,11 +62,11 @@ const Social = props => {
             url
           )}`}
         >
-          <img src={images.email} alt="Email" className="email" />
+          <img src={images.email} alt="Email" className={styles.email} />
         </a>
       </div>
 
-      <div className="social-link ">
+      <div className={classnames([styles.socialLink, socialLink], {})}>
         <CopyToClipboard
           text={url}
           onCopy={() => {
@@ -62,6 +79,21 @@ const Social = props => {
       </div>
     </div>
   )
+}
+
+Social.propTypes = {
+  onClickButton: PropTypes.func,
+  customStyles: PropTypes.object
+}
+
+Social.defaultProps = {
+  onClickButton: () => {},
+  customStyles: {
+    socialLinks: '',
+    socialLink: '',
+    facebook: '',
+    copyLink: ''
+  }
 }
 
 export default Social

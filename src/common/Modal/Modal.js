@@ -5,10 +5,10 @@ import classnames from 'classnames'
 
 import images from '../../assets/images'
 
-import './Modal.css'
+import styles from './Modal.module.scss'
 
 // Modal.setAppElement('#root')
-const getParent = () => document.querySelector('#root')
+const getParent = (id = 'root') => document.querySelector(`#${id}`)
 
 const CUModal = props => {
   const {
@@ -31,22 +31,29 @@ const CUModal = props => {
 
   return (
     <Modal
-      parentSelector={getParent}
+      parentSelector={() => getParent(props.modalContainerId)}
       ariaHideApp={false}
       overlayClassName={classnames(
-        'cookunity__new_modal__overlay',
+        styles.cookunity__new_modal__overlay,
         overlayClassName,
         {
-          medium_size: mediumSize,
-          large_size: !mediumSize
+          medium_size: mediumSize ? styles.medium_size : null,
+          large_size: mediumSize ? styles.large_size : null
         }
       )}
-      className={classnames('cookunity__new_modal__content', className, {
-        medium_size: mediumSize,
-        large_size: !mediumSize && !plusSize,
-        plus_size: !mediumSize && plusSize,
-        medium_plus_size: !mediumSize && !plusSize && mediumPlusSize,
-        small_size: !mediumSize && !plusSize && !mediumPlusSize && smallSize
+      className={classnames(styles.cookunity__new_modal__content, className, {
+        [styles.medium_size]: mediumSize ? styles.medium_size : null,
+        [styles.large_size]:
+          !mediumSize && !plusSize ? styles.large_size : null,
+        [styles.plus_size]: !mediumSize && plusSize ? styles.plus_size : null,
+        [styles.medium_plus_size]:
+          !mediumSize && !plusSize && mediumPlusSize
+            ? styles.medium_plus_size
+            : null,
+        [styles.small_size]:
+          !mediumSize && !plusSize && !mediumPlusSize && smallSize
+            ? styles.small_size
+            : null
       })}
       style={{
         content: contentStyle,
@@ -56,7 +63,7 @@ const CUModal = props => {
     >
       {withCloseIcon && (
         <button
-          className="cookunity__new_modal__close"
+          className={styles.cookunity__new_modal__close}
           onClick={props.onRequestClose}
         >
           <img src={images.xclose} alt="close" />
