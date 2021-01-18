@@ -7,9 +7,9 @@ const MealDetailSkeleton = ({preloadedMealDetail}) => {
   return (
     <Fragment>
       <ProductBasicInformation
+        hideStars
         isLoading
-        order={[]}
-        mealDetail={mealSkeleton}
+        productData={mealSkeleton}
         preloadedMealDetail={preloadedMealDetail}
       />
     </Fragment>

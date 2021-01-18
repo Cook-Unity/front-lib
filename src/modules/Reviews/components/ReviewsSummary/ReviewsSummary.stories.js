@@ -25,7 +25,7 @@ Default.args = {
       entity_id: 1,
       entity_pk_value: 3169,
       image:
-        'http://qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png',
+        'http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png',
       nickname: 'Daniel Dorga',
       rating: '100.0000',
       review_id: 70662,
@@ -43,7 +43,7 @@ Default.args = {
       entity_id: 1,
       entity_pk_value: 3169,
       image:
-        'http://qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png',
+        'http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png',
       nickname: 'Victor Kuo',
       rating: '100.0000',
       review_id: 68797,

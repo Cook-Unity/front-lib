@@ -1,7 +1,11 @@
 import React from 'react'
 
 import ProductBasicInformation from './index'
-import mealDetail from '../../test/mocks/mealDetail'
+import mockData from './__mock__.json'
+
+const props = {
+  productData: mockData.meal
+}
 
 export default {
   title: 'ProductBasicInformation',
@@ -12,7 +16,7 @@ const Template = args => <ProductBasicInformation {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  mealDetail,
+  ...props,
   onChefClick: () => console.log('onChefClick'),
   isLoading: false,
   isOrdering: false,

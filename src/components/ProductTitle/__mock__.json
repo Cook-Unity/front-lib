@@ -3,10 +3,10 @@
     "bannerpic": "ED1_56602498751913.jpg",
     "calories": 562,
     "category": 8,
-    "chef_firstname": "Ali",
-    "chef_lastname": "Maffucci",
-    "chef_id": "73841",
-    "chef_img": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar/ED1_56602498751913.jpg",
+    "chefFirstname": "Ali",
+    "chefLastname": "Maffucci",
+    "chefId": "73841",
+    "chefImageUrl": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar/ED1_56602498751913.jpg",
     "compdesi": "Ali Maffucci is the founder of the culinary brand Inspiralized, the ultimate resource for cooking creatively, healthfully and deliciously with the spiralizer, the kitchen tool that turns vegetables and fruits into noodles. Recently, she expanded her recipe content to include other inventive ways to transform vegetables, continually inspiring people to love and to eat more vegetables. In June of 2013, Ali quit her corporate job to pursue Inspiralized, starting first with her blog, Inspiralized.com. Since then, Maffucci has been referred to as a &ldquo;digitally savvy millennial entrepreneur&rdquo;, as well as the creator of a &ldquo;spiral empire&rdquo; by Food &amp; Wine. Maffucci has authored New York Times best-selling cookbooks (Inspiralized and Inspiralize Everything) and her latest cookbook, Inspiralized and Beyond is following suit. Maffucci launched her branded spiralizer called the Inspiralizer and continues to provide daily free recipes on her food blog and through her iOS mobile app. She currently lives in Jersey City, NJ with her husband, Lu, her son, Luca and her daughter, Roma.",
     "cookingSteps": [
       {
@@ -19,7 +19,7 @@
     "id": 3169,
     "image": "/t/u/turkey_sweet.jpg",
     "imageFullUrl": "https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/t/u/turkey_sweet.jpg",
-    "ingredients": [
+    "ingredientsData": [
       {
         "componentCode": "Coconut Milk",
         "description": "Coconut milk is a vegan, lactose-free, environmentally friendly beverage that can substitute dairy milk. It contains almost the same amount of protein per serving and has a creamy special savory taste that enriches every dish without adding any cholesterol. Calcium enriched options are great for vegans to help maintain bones and teeth healthy!",
@@ -43,7 +43,7 @@
     ],
     "logopic": "inspiralized-logo-428360.jpg",
     "manufacturers": null,
-    "meal_story": "A salmon meal worthy to make your day diverse! Salmon is a fish you can enjoy because of its low mercury content. The fish and asparagus is oven- baked with garlic and parsley.",
+    "mealStory": "A salmon meal worthy to make your day diverse! Salmon is a fish you can enjoy because of its low mercury content. The fish and asparagus is oven- baked with garlic and parsley.",
     "meat_type": "Turkey",
     "name": "Turkey Sweet Potato Bolognese Skillet",
     "nutritionInfo": [
@@ -69,7 +69,7 @@
         "detail_id": 69525,
         "entity_id": 1,
         "entity_pk_value": 3169,
-        "image": "http://qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png",
+        "image": "http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png",
         "nickname": "Daniel Dorga",
         "rating": "100.0000",
         "review_id": "70662",
@@ -79,24 +79,24 @@
         "title": "Very delicious and filling! "
       }
     ],
-    "reviews_count": 81,
-    "short_description": null,
+    "reviewsCount": 81,
+    "shortDescription": null,
     "sku": "SWEET-POTATO-BOLOGNESE-AM",
-    "specificationsDetails": [
+    "specificationsDetail": [
       {
         "id": "19",
-        "image": "http://qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
+        "image": "http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
         "label": "Gluten Free"
       },
       {
         "id": "20",
-        "image": "http://qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
+        "image": "http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
         "label": "Keto"
       }
     ],
     "stars": 4.0865,
     "stock": 200,
     "urlPath": "turkey-sweet-potato-bolognese-skillet",
-    "user_rating": 5
+    "userRating": 5
   }
 }

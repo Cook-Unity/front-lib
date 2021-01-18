@@ -5,7 +5,7 @@ import defaultPropsMock from './__mock__.json'
 import UserRating from './UserRating'
 
 const defaultProps = {
-  userRating: defaultPropsMock.mealDetail.user_rating
+  userRating: defaultPropsMock.mealDetail.userRating
 }
 
 describe('UserRating component', () => {

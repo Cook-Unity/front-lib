@@ -1,12 +1,15 @@
-.macronutrients {
-  color: black;
+@import '../../assets/styles/scss/mixins';
+@import '../../assets/styles/scss/variables';
+
+.cookunity__macronutrients_card {
+  color: $cookunity-black;
   background-color: #ffffff;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.07);
   border-radius: 15px;
   padding: 24px 20px;
 
   h2 {
-    color: black;
+    color: $cookunity-black;
     font-family: Gilroy;
     font-style: normal;
     font-weight: 800;
@@ -15,7 +18,7 @@
     margin: 0 0 32px;
   }
 
-  .gaugeLegend {
+  .gauge_legend {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,10 +28,10 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-    color: black;
+    color: $cookunity-black;
     margin-top: 40px;
 
-    @media (max-width: 720px) {
+    @include mobile {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -36,13 +39,13 @@
       flex-wrap: wrap;
     }
 
-    .columnMiniGauge {
+    .column_mini-gauge {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 0;
 
-      @media (max-width: 720px) {
+      @include mobile {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -50,15 +53,15 @@
         margin-bottom: 36px;
       }
 
-      .mobileRowGauge {
+      .mobile-row_gauge {
         align-items: center;
-        @media (max-width: 720px) {
+        @include mobile {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
         }
 
-        .gaugeValue {
+        .gauge_value {
           font-family: Gilroy;
           font-style: normal;
           font-weight: 800;
@@ -66,10 +69,10 @@
           line-height: 42px;
           text-align: center;
           letter-spacing: -0.5px;
-          color: black;
+          color: $cookunity-black;
           margin: 0 0 18px;
 
-          @media (max-width: 720px) {
+          @include mobile {
             margin: 10px 0 0px;
           }
         }
@@ -77,7 +80,7 @@
         & > .legend {
           display: flex;
 
-          @media (max-width: 720px) {
+          @include mobile {
             &:not(:last-of-type) {
               margin-right: 10px;
             }
@@ -98,7 +101,7 @@
             border-radius: 50%;
 
             &.protein {
-              background-color: green;
+              background-color: $cookunity-primary-green;
             }
 
             &.carbs {
@@ -114,17 +117,17 @@
     }
   }
 
-  .aditionalInfoGauge {
+  .aditional-info_gauge {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 0.2px;
-    color: black;
+    color: $cookunity-black;
     margin: 42px 0px 0px;
 
-    @media (max-width: 720px) {
+    @include mobile {
       margin: 0px;
     }
 

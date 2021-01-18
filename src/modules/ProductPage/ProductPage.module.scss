@@ -73,7 +73,7 @@
       .share_container {
         position: relative;
 
-        & > .social-links {
+        & > .socialLinks {
           position: absolute;
           right: 0;
           top: 10px;
@@ -146,29 +146,6 @@
           }
         }
       }
-
-      // & > .block {
-
-      // }
     }
-  }
-}
-
-.social-links {
-  display: flex;
-  background: #ffffff;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
-  border-radius: 4px;
-  margin-top: 16px;
-  padding: 12px 0;
-  box-sizing: border-box;
-  height: 48px;
-  justify-content: center;
-  @include mobile {
-  }
-
-  .social-link {
-    padding: 0 16px;
-    cursor: pointer;
   }
 }

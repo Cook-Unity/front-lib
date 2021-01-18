@@ -12,11 +12,11 @@ const ProductDescription = ({mealStory}) => {
 }
 
 ProductDescription.propTypes = {
-  meal_story: PropTypes.string.isRequired
+  mealStory: PropTypes.string.isRequired
 }
 
 ProductDescription.defaultProps = {
-  meal_story: ''
+  mealStory: ''
 }
 
 export default ProductDescription

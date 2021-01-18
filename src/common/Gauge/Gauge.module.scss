@@ -1,0 +1,50 @@
+@import '../../assets/styles/scss/mixins';
+@import '../../assets/styles/scss/variables';
+
+.cookunity__radial_gauge {
+  width: 72px;
+  height: 72px;
+  position: relative;
+
+  & > .radial_gauge {
+    transform: rotate(90deg);
+
+    & > .track {
+      stroke: $cookunity-light-gray;
+      stroke-width: 4;
+    }
+
+    & > .progress-bar {
+      stroke: $cookunity-primary-green;
+      stroke-width: 4;
+    }
+  }
+
+  & > .label {
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+    & > p {
+      font-family: Roboto, sans-serif;
+      margin: 0;
+      text-transform: uppercase;
+
+      &.progress {
+        color: $cookunity-black;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 900;
+      }
+
+      &.unit {
+        color: $cookunity-gray-1;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+}

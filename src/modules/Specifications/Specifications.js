@@ -6,11 +6,11 @@ import styles from './Specifications.module.scss'
 export const replaceLessThanText = label =>
   label && label.replace('Less Than', '<')
 
-const Specifications = ({specificationsDetails}) => {
+const Specifications = ({specificationsDetail}) => {
   return (
-    specificationsDetails && (
+    specificationsDetail && (
       <div className={styles.specificationDetailsContainer}>
-        {specificationsDetails.map((detail, i) => {
+        {specificationsDetail.map((detail, i) => {
           return (
             <div className={styles.specificationDetail} key={`sDetail-${i}`}>
               <div className={styles.imageContainer}>
@@ -26,11 +26,11 @@ const Specifications = ({specificationsDetails}) => {
 }
 
 Specifications.propTypes = {
-  specificationsDetails: PropTypes.array
+  specificationsDetail: PropTypes.array
 }
 
 Specifications.defaultProps = {
-  specificationsDetails: []
+  specificationsDetail: []
 }
 
 export default Specifications

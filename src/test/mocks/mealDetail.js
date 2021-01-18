@@ -9,7 +9,7 @@ export default {
   chef_lastname: 'Maffucci',
   compdesi:
     'Ali Maffucci is the founder of the culinary brand Inspiralized, the ultimate resource for cooking creatively, healthfully and deliciously with the spiralizer, the kitchen tool that turns vegetables and fruits into noodles. Recently, she expanded her recipe content to include other inventive ways to transform vegetables, continually inspiring people to love and to eat more vegetables. In June of 2013, Ali quit her corporate job to pursue Inspiralized, starting first with her blog, Inspiralized.com. Since then, Maffucci has been referred to as a &ldquo;digitally savvy millennial entrepreneur&rdquo;, as well as the creator of a &ldquo;spiral empire&rdquo; by Food &amp; Wine. Maffucci has authored New York Times best-selling cookbooks (Inspiralized and Inspiralize Everything) and her latest cookbook, Inspiralized and Beyond is following suit. Maffucci launched her branded spiralizer called the Inspiralizer and continues to provide daily free recipes on her food blog and through her iOS mobile app. She currently lives in Jersey City, NJ with her husband, Lu, her son, Luca and her daughter, Roma.',
-  cookingSteps: {
+  cooking_steps: {
     microwave_steps:
       '1. Remove sleeve and peel corner of film to vent. Microwave for 2-4 mins or until heated through. Remove film.',
     microwave_steps_without_sealing: null,
@@ -75,7 +75,7 @@ export default {
       entity_id: 1,
       entity_pk_value: 3169,
       image:
-        'http://qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png',
+        'http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png',
       nickname: 'Daniel Dorga',
       rating: '100.0000',
       review_id: 70662,
@@ -92,13 +92,13 @@ export default {
     {
       id: '19',
       image:
-        'http://qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg',
+        'http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg',
       label: 'Gluten Free'
     },
     {
       id: '20',
       image:
-        'http://qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg',
+        'http://mage.qa.cookunity.com/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg',
       label: 'Gluten Free'
     }
   ],

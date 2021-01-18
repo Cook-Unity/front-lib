@@ -8,10 +8,17 @@ export default {
   component: ProductPage
 }
 
-const Template = args => <ProductPage {...args} />
+const Template = args => (
+  <div id="storyBookRootContainer">
+    <ProductPage {...args} reviewModalContainerId="storyBookRootContainer" />
+  </div>
+)
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps,
-  isOrdering: true
+  productData: {
+    ...defaultProps.meal
+  },
+  isOrdering: true,
+  goBack: () => {}
 }

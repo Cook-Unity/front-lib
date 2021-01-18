@@ -1,11 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
-import Gauge from '../../common/Gauge'
-import MiniGauge from '../../common/MiniGauge'
-
-import styles from './Macronutrients.module.scss'
-
+import classnames from 'classnames'
+import Gauge from '../../common/MacrosGauge'
+import MiniGauge from '../../common/Gauge'
 import {
   MACRO_CARBS,
   MACRO_FAT,
@@ -20,16 +16,20 @@ import {
   formatProgress
 } from './utils'
 
-const Macronutrients = ({nutritionInfo, calories}) => {
-  if (!nutritionInfo) return null
+import styles from './Macronutrients.module.scss'
 
-  const dailyValue = Math.floor((calories * 100) / 2000)
+const Macronutrients = props => {
+  if (!props.nutritionalFacts) return null
 
-  const proteinCal = getCalories(nutritionInfo.protein, MACRO_PROTEIN)
+  const nutritionalFacts = props.nutritionalFacts
 
-  const carbsCal = getCalories(nutritionInfo.carbs, MACRO_CARBS)
+  const dailyValue = Math.floor((props.calories * 100) / 2000)
 
-  const fatCal = getCalories(nutritionInfo.fat, MACRO_FAT)
+  const proteinCal = getCalories(nutritionalFacts.protein, MACRO_PROTEIN)
+
+  const carbsCal = getCalories(nutritionalFacts.carbs, MACRO_CARBS)
+
+  const fatCal = getCalories(nutritionalFacts.fat, MACRO_FAT)
 
   const calculatedCal = proteinCal + carbsCal + fatCal
 
@@ -39,9 +39,11 @@ const Macronutrients = ({nutritionInfo, calories}) => {
 
   ;[protein, carbs, fat] = roundTo100([protein, carbs, fat])
 
+  const calories = props.calories
+
   return (
-    <div className={styles.macronutrients}>
-      <h2 data-testid="title-macro">Macronutrient Ratios</h2>
+    <div className={styles.cookunity__macronutrients_card}>
+      <h2>Macronutrient Ratios</h2>
       <Gauge
         protein={protein}
         carbs={carbs}
@@ -49,70 +51,72 @@ const Macronutrients = ({nutritionInfo, calories}) => {
         calories={calories}
         dv={dailyValue}
       />
-      <div className={styles.gaugeLegend}>
-        <div className={styles.columnMiniGauge}>
-          <div className={styles.mobileRowGauge}>
+      <div className={styles.gauge_legend}>
+        <div className={styles['column_mini-gauge']}>
+          <div className={styles['mobile-row_gauge']}>
             <div className={styles.legend}>
-              <div className={styles.bubbleProtein} />
-              <div data-testid="protein" className={styles.value}>
+              <div
+                className={classnames(styles.bubble, {
+                  [styles.protein]: styles.protein
+                })}
+              />
+              <div className={styles.value}>
                 Protein <strong>({formatProgress(protein || 0)})</strong>
               </div>
             </div>
-            <p className={styles.gauge_value}>{nutritionInfo.protein}g</p>
+            <p className={styles.gauge_value}>{nutritionalFacts.protein}g</p>
           </div>
           <MiniGauge
-            progress={getDietaryValue(nutritionInfo.protein, PROTEIN)}
+            progress={getDietaryValue(nutritionalFacts.protein, PROTEIN)}
             unit="dv"
           />
         </div>
-        <div className={styles.columnMiniGauge}>
-          <div className={styles.mobileRowGauge}>
+        <div className={styles['column_mini-gauge']}>
+          <div className={styles['mobile-row_gauge']}>
             <div className={styles.legend}>
-              <div className={styles.bubbleCarbs} />
-              <div data-testid="carbs" className={styles.value}>
+              <div
+                className={classnames(styles.bubble, {
+                  [styles.carbs]: styles.carbs
+                })}
+              />
+              <div className={styles.value}>
                 Carbs <strong>({formatProgress(carbs || 0)})</strong>
               </div>
             </div>
-            <p className={styles.gaugeValue}>{nutritionInfo.carbs}g</p>
+            <p className={styles.gauge_value}>{nutritionalFacts.carbs}g</p>
           </div>
           <MiniGauge
-            progress={getDietaryValue(nutritionInfo.carbs, CARBS)}
+            progress={getDietaryValue(nutritionalFacts.carbs, CARBS)}
             unit="dv"
           />
         </div>
-        <div className={styles.columnMiniGauge}>
-          <div className={styles.mobileRowGauge}>
+        <div className={styles['column_mini-gauge']}>
+          <div className={styles['mobile-row_gauge']}>
             <div className={styles.legend}>
-              <div className={`${styles.bubble} ${styles.fat}`} />
+              <div
+                className={classnames(styles.bubble, {
+                  [styles.fat]: styles.fat
+                })}
+              />
               <div className={styles.value}>
                 Fat <strong>({formatProgress(fat || 0)})</strong>
               </div>
             </div>
-            <p className={styles.gaugeValue}>{nutritionInfo.fat}g</p>
+            <p className={styles.gauge_value}>{nutritionalFacts.fat}g</p>
           </div>
           <MiniGauge
-            progress={getDietaryValue(nutritionInfo.fat, FAT)}
+            progress={getDietaryValue(nutritionalFacts.fat, FAT)}
             unit="dv"
           />
         </div>
       </div>
-      <p className={styles.aditionalInfoGauge}>
+      <p className={styles['aditional-info_gauge']}>
         <span>* % Daily Value</span> (DV) tells you how much food contributes to
         a 2K calorie based diet for healthy adults. Your DVs may be higher or
         lower depending on calorie needs.
       </p>
     </div>
   )
-}
-
-Macronutrients.propTypes = {
-  nutritionInfo: PropTypes.object,
-  calories: PropTypes.number
-}
-
-Macronutrients.defaultProps = {
-  nutritionInfo: null,
-  calories: 0
 }
 
 export default Macronutrients

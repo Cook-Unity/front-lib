@@ -4,9 +4,20 @@ import ReviewsList from '../ReviewsList'
 import ReviewsSummary from '../ReviewsSummary'
 import './ReviewsModal.css'
 
-const ReviewsModal = ({isOpen, product, reviews, quantity, onRequestClose}) => {
+const ReviewsModal = ({
+  isOpen,
+  product,
+  reviews,
+  quantity,
+  onRequestClose,
+  reviewModalContainerId
+}) => {
   return (
-    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      modalContainerId={reviewModalContainerId}
+    >
       <Content
         product={product}
         quantity={quantity}

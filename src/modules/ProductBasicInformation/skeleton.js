@@ -1,9 +1,9 @@
 export const mealSkeleton = {
   imageFullUrl:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/p/a/paprika-salmon-actual-raymundo.jpeg',
-  chef_img:
+  chefImageUrl:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/IMG_805115793.jpg',
-  stars: '4.377500000',
+  stars: 0,
   entity_id: '1161',
   entity_type_id: '4',
   attribute_set_id: '4',
@@ -57,10 +57,10 @@ export const mealSkeleton = {
   moleskine_active: '0',
   country: null,
   qty: '45.0000',
-  chef_firstname: 'Raymundo',
-  chef_lastname: ' Agrazal',
+  chefFirstname: 'Raymundo',
+  chefLastname: ' Agrazal',
   chef_created_at: '2016-06-22 00:03:26',
-  chef_id: '14414',
+  chefId: '14414',
   locations: null,
   reviews: '53',
   rating: '87.55',
@@ -79,7 +79,7 @@ export const mealSkeleton = {
   stock_100001: '2',
   stock_1010: '0',
   consolidated_stock: '45',
-  name: 'Paprika Salmon',
+  name: '',
   sidedish: null,
   specifications: '17,19,3315,50,14,3260,15,12,11,3404',
   cooking_video_id: null,
@@ -160,8 +160,8 @@ export const mealSkeleton = {
   special_price: null,
   msrp: null,
   description: null,
-  short_description: 'and Green Beans',
-  meal_story:
+  shortDescription: 'and Green Beans',
+  mealStory:
     'Healthy scrumptious straight out from the oven, enjoy this healthy paleo salmon like a champ. Definitely one of my fave heathy recipe. ',
   oven_steps:
     '1. Preheat to 350F.\r\n2. Remove sleeve and peel back film.\r\n3. Heat up for 10 mins or until heated \r\n through.\r\n4. Pour sauce on top',
