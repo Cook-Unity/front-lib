@@ -62,6 +62,7 @@ const MealCard = ({
   const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
   const selected = quantity > 0
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
+  const imageComingSoon = /no_selection|no-image|null|undefined/.test(full_path_meal_image)
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -84,10 +85,10 @@ const MealCard = ({
   return (
     <div className={`${styles.meal_card} ${selected ? styles.in_cart : ''}`}>
       <div
-        className={styles.meal_card__top}
+        className={`${styles.meal_card__top} ${imageComingSoon ? styles.no_image : ''}`}
         onClick={() => onClick()}
         data-testid="meal-image"
-        style={{backgroundImage: `url(${full_path_meal_image})`}}
+        style={{backgroundImage: `url(${imageComingSoon ? images.noMealImage : full_path_meal_image})`}}
       >
         {featureSpecs.description && (
           <div
@@ -98,6 +99,12 @@ const MealCard = ({
             }}
           >
             {featureSpecs.description}
+          </div>
+        )}
+
+        {imageComingSoon && (
+          <div className={styles.no_image_text}>
+            Image coming soon
           </div>
         )}
 

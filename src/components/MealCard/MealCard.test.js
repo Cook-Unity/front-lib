@@ -101,4 +101,14 @@ describe('MealCard component', () => {
       screen.getByTestId('plus-img')
     )
   })
+
+  it('Meal image coming soon', () => {
+    const meal = {
+      ...meal_full,
+      full_path_meal_image: 'undefined'
+    }
+    render(<MealCardCase meal={meal} />)
+    expect(screen.getByText('Image coming soon')).toBeVisible()
+  })
+
 })
