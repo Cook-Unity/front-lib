@@ -84,10 +84,10 @@ DisableAddItem.args = {
   disableAddItem: true
 }
 
-export const onLikeMeal = Template.bind({})
-onLikeMeal.args = {
+export const buttonLike = Template.bind({})
+buttonLike.args = {
   meal: meal_full,
-  onLikeMeal: true
+  buttonLike: true
 }
 
 export const onWarnings = Template.bind({})

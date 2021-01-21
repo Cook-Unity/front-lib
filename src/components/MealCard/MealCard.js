@@ -31,7 +31,7 @@ const MealCard = ({
   onClick,
   isEditable,
   disableAddItem,
-  onLikeMeal,
+  buttonLike,
   onWarnings
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
@@ -160,7 +160,7 @@ const MealCard = ({
           </>
         )}
 
-        {onLikeMeal ? (
+        {buttonLike && (
           <div className={styles.button__like} onClick={() => toggleWishList()}>
             <img
               className={styles.meal_image_heart}
@@ -168,7 +168,7 @@ const MealCard = ({
               alt="heart"
             />
           </div>
-        ) : null}
+        )}
 
         {imageComingSoon && (
           <div className={styles.no_image_text}>Image coming soon</div>
@@ -348,7 +348,7 @@ MealCard.propTypes = {
   onAddItem: PropTypes.func,
   onRemoveItem: PropTypes.func,
   onClick: PropTypes.func,
-  onLikeMeal: PropTypes.bool,
+  buttonLike: PropTypes.bool,
   onWarnings: PropTypes.bool
 }
 
@@ -358,7 +358,7 @@ MealCard.defaultProps = {
   noExtraFee: false,
   isEditable: true,
   disableAddItem: false,
-  onLikeMeal: false,
+  buttonLike: false,
   onWarnings: false,
   onAddItem: defaultCallback,
   onRemoveItem: defaultCallback,
