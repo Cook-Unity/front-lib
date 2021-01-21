@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import {getProteinTag} from '../../utils/meals'
 
@@ -30,9 +31,13 @@ const MealCard = ({
   onRemoveItem,
   onClick,
   isEditable,
-  disableAddItem
+  disableAddItem,
+  buttonLike,
+  onWarnings
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
+  const [likeMeal, setLikeMeal] = useState(false)
+  const [showWarnings, setShowWarning] = useState(false)
 
   const {
     name = '',
@@ -50,7 +55,10 @@ const MealCard = ({
     fixed_price = false,
     feature = {},
     stock = 0,
-    specifications_detail = []
+    specifications_detail = [],
+    user_rating = 0,
+    warning = '',
+    allergens = []
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -62,6 +70,9 @@ const MealCard = ({
   const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
   const selected = quantity > 0
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
+  const imageComingSoon = /no_selection|no-image|null|undefined/.test(
+    full_path_meal_image
+  )
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -70,6 +81,17 @@ const MealCard = ({
   const handleRemoveItem = () => {
     setShowCartControllers(true)
     onRemoveItem()
+  }
+
+  const toggleWishList = () => {
+    setLikeMeal(!likeMeal)
+  }
+
+  const openWarning = () => {
+    setShowWarning(true)
+    setTimeout(() => {
+      setShowWarning(false)
+    }, CONTROLLERS_OPENED_MS)
   }
 
   useEffect(() => {
@@ -82,23 +104,80 @@ const MealCard = ({
   }, [quantity, showCartControllers])
 
   return (
-    <div className={`${styles.meal_card} ${selected ? styles.in_cart : ''}`}>
+    <div
+      className={classnames(styles.meal_card, selected ? styles.in_cart : '')}
+    >
       <div
-        className={styles.meal_card__top}
+        className={`${styles.meal_card__top} ${
+          imageComingSoon ? styles.no_image : ''
+        }`}
         onClick={() => onClick()}
         data-testid="meal-image"
-        style={{backgroundImage: `url(${full_path_meal_image})`}}
+        style={{
+          backgroundImage: `url(${
+            imageComingSoon ? images.noMealImage : full_path_meal_image
+          })`
+        }}
       >
-        {featureSpecs.description && (
-          <div
-            className={`${styles.meal_card__tag} ${styles.featured}`}
-            style={{
-              backgroundColor: featureSpecs.background,
-              color: featureSpecs.color
-            }}
-          >
-            {featureSpecs.description}
+        {user_rating === 5 ? (
+          <div className={styles.user_stars_container}>
+            <span className={styles.user_rating}>you rated 5</span>
+            <img
+              className={styles.user_star}
+              src={images.blackStar}
+              alt="star"
+            />
           </div>
+        ) : (
+          !warning &&
+          featureSpecs.description && (
+            <div
+              className={classnames(styles.meal_card__tag, styles.featured)}
+              style={{
+                backgroundColor: featureSpecs.background,
+                color: featureSpecs.color
+              }}
+            >
+              {featureSpecs.description}
+            </div>
+          )
+        )}
+
+        {onWarnings && warning && (
+          <>
+            <div
+              className={styles.meal_card__warning_container}
+              onClick={() => openWarning()}
+            >
+              <img src={images.iconAlert} alt="alert" />
+              <div className={`${styles.separator}`} />
+              <p>{allergens.length} allergens</p>
+            </div>
+            {showWarnings ? (
+              <div
+                className={classnames(
+                  styles.fade_out,
+                  styles.warning__tooltip_container
+                )}
+              >
+                <span>{warning}</span>
+              </div>
+            ) : null}
+          </>
+        )}
+
+        {buttonLike && (
+          <div className={styles.button__like} onClick={() => toggleWishList()}>
+            <img
+              className={styles.meal_image_heart}
+              src={likeMeal ? images.blackHeart : images.emptyHeart}
+              alt="heart"
+            />
+          </div>
+        )}
+
+        {imageComingSoon && (
+          <div className={styles.no_image_text}>Image coming soon</div>
         )}
 
         <div className={styles.meal_card__top_tags}>
@@ -122,7 +201,11 @@ const MealCard = ({
 
           {isSpicy && (
             <div
-              className={`${styles.meal_card__tag} ${styles.only_icon} ${styles.spicy}`}
+              className={classnames([
+                styles.meal_card__tag,
+                styles.only_icon,
+                styles.spicy
+              ])}
             >
               <img
                 src={images.spicyIcon}
@@ -180,9 +263,10 @@ const MealCard = ({
                       </div>
                     )}
                     <div
-                      className={`${styles.fee} ${
+                      className={classnames(
+                        styles.fee,
                         noExtraFee ? styles.no_extra_fee : ''
-                      }`}
+                      )}
                     >
                       {premiumFeeString}
                     </div>
@@ -192,9 +276,9 @@ const MealCard = ({
                 )}
                 {isEditable || quantity ? (
                   <button
-                    className={`${
+                    className={classnames(
                       selected ? styles.selected : styles.unselected
-                    }`}
+                    )}
                     disabled={disableAddItemBtn && quantity < 1}
                     onClick={() =>
                       !selected ? handleAddItem() : setShowCartControllers(true)
@@ -263,7 +347,10 @@ MealCard.propTypes = {
       color: PropTypes.string
     }),
     stock: PropTypes.number,
-    specifications_detail: PropTypes.array
+    specifications_detail: PropTypes.array,
+    warning: PropTypes.string,
+    allergens: PropTypes.array,
+    user_rating: PropTypes.number
   }),
   isEditable: PropTypes.bool,
   disableAddItem: PropTypes.bool,
@@ -271,7 +358,9 @@ MealCard.propTypes = {
   noExtraFee: PropTypes.bool,
   onAddItem: PropTypes.func,
   onRemoveItem: PropTypes.func,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  buttonLike: PropTypes.bool,
+  onWarnings: PropTypes.bool
 }
 
 MealCard.defaultProps = {
@@ -280,6 +369,8 @@ MealCard.defaultProps = {
   noExtraFee: false,
   isEditable: true,
   disableAddItem: false,
+  buttonLike: false,
+  onWarnings: false,
   onAddItem: defaultCallback,
   onRemoveItem: defaultCallback,
   onClick: defaultCallback
