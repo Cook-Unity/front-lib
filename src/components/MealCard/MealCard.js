@@ -342,7 +342,7 @@ MealCard.propTypes = {
     specifications_detail: PropTypes.array,
     warning: PropTypes.string,
     allergens: PropTypes.array,
-    user_rating: PropTypes.array
+    user_rating: PropTypes.number
   }),
   isEditable: PropTypes.bool,
   disableAddItem: PropTypes.bool,
@@ -361,6 +361,8 @@ MealCard.defaultProps = {
   noExtraFee: false,
   isEditable: true,
   disableAddItem: false,
+  onLikeMeal: false,
+  onWarnings: false,
   onAddItem: defaultCallback,
   onRemoveItem: defaultCallback,
   onClick: defaultCallback

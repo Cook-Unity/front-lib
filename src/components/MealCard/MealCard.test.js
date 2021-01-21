@@ -4,8 +4,9 @@ import userEvent from '@testing-library/user-event'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
 import {formatChefName} from './utils'
+import images from '../../assets/images'
 
-import {meal_basic, meal_full} from './__mock__'
+import {meal_basic, meal_full, withUserRating, withWarnings} from './__mock__'
 
 describe('MealCard component', () => {
   it('Required props', () => {
@@ -21,6 +22,7 @@ describe('MealCard component', () => {
     expect(screen.getByText(meal_basic.short_description)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
     expect(screen.getByAltText(chefName)).toBeVisible()
+    expect(screen.queryByTestId('heart')).not.toBeInTheDocument()
 
     expect(mealImg)
       .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image})`)
@@ -109,5 +111,28 @@ describe('MealCard component', () => {
     }
     render(<MealCardCase meal={meal} />)
     expect(screen.getByText('Image coming soon')).toBeVisible()
+  })
+
+  it('Favourite meal', () => {
+    render(<MealCard meal={meal_basic} onLikeMeal />)
+    const heart = screen.getByAltText('heart')
+    expect(heart).toHaveAttribute('src', images.emptyHeart).toBeVisible()
+    userEvent.click(heart)
+    expect(heart).toHaveAttribute('src', images.blackHeart).toBeVisible()
+  })
+
+  it('With warnings', () => {
+    const alertText = withWarnings.warning
+    render(<MealCard meal={withWarnings} onWarnings />)
+    expect(screen.getByText('3 allergens')).toBeVisible()
+    expect(screen.queryByText(alertText)).not.toBeInTheDocument()
+    userEvent.click(screen.getByAltText('alert'))
+    expect(screen.getByText('3 allergens')).toBeVisible()
+    expect(screen.getByText(alertText)).toBeVisible()
+  })
+
+  it('With User Rating', () => {
+    render(<MealCard meal={withUserRating} />)
+    expect(screen.getByText('you rated 5')).toBeVisible()
   })
 })

@@ -1,7 +1,13 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
-import {meal_basic, meal_full, meal_long_name} from './__mock__'
+import {
+  meal_basic,
+  meal_full,
+  meal_long_name,
+  withWarnings,
+  withUserRating
+} from './__mock__'
 
 export default {
   title: 'MealCard (New)',
@@ -86,28 +92,11 @@ onLikeMeal.args = {
 
 export const onWarnings = Template.bind({})
 onWarnings.args = {
-  meal: {
-    ...meal_full,
-    warning: 'Contains: Gluten, Nuts, Shellfish',
-    allergens: [
-      {
-        name: 'Gluten'
-      },
-      {
-        name: 'Nuts'
-      },
-      {
-        name: 'Shellfish'
-      }
-    ]
-  },
+  meal: withWarnings,
   onWarnings: true
 }
 
 export const userRating = Template.bind({})
 userRating.args = {
-  meal: {
-    ...meal_full,
-    user_rating: 5
-  }
+  meal: withUserRating
 }
