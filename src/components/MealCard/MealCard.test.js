@@ -114,7 +114,7 @@ describe('MealCard component', () => {
   })
 
   it('Favourite meal', () => {
-    render(<MealCard meal={meal_basic} onLikeMeal />)
+    render(<MealCard meal={meal_basic} buttonLike />)
     const heart = screen.getByAltText('heart')
     expect(heart).toHaveAttribute('src', images.emptyHeart).toBeVisible()
     userEvent.click(heart)
