@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import {getProteinTag} from '../../utils/meals'
 
@@ -103,7 +104,9 @@ const MealCard = ({
   }, [quantity, showCartControllers])
 
   return (
-    <div className={`${styles.meal_card} ${selected ? styles.in_cart : ''}`}>
+    <div
+      className={classnames(styles.meal_card, selected ? styles.in_cart : '')}
+    >
       <div
         className={`${styles.meal_card__top} ${
           imageComingSoon ? styles.no_image : ''
@@ -120,7 +123,7 @@ const MealCard = ({
           <div className={styles.user_stars_container}>
             <span className={styles.user_rating}>you rated 5</span>
             <img
-              className={`${styles.user_star}`}
+              className={styles.user_star}
               src={images.blackStar}
               alt="star"
             />
@@ -129,7 +132,7 @@ const MealCard = ({
           !warning &&
           featureSpecs.description && (
             <div
-              className={`${styles.meal_card__tag} ${styles.featured}`}
+              className={classnames(styles.meal_card__tag, styles.featured)}
               style={{
                 backgroundColor: featureSpecs.background,
                 color: featureSpecs.color
@@ -152,7 +155,10 @@ const MealCard = ({
             </div>
             {showWarnings ? (
               <div
-                className={`${styles.fade_out} ${styles.warning__tooltip_container}`}
+                className={classnames(
+                  styles.fade_out,
+                  styles.warning__tooltip_container
+                )}
               >
                 <span>{warning}</span>
               </div>
@@ -195,7 +201,11 @@ const MealCard = ({
 
           {isSpicy && (
             <div
-              className={`${styles.meal_card__tag} ${styles.only_icon} ${styles.spicy}`}
+              className={classnames([
+                styles.meal_card__tag,
+                styles.only_icon,
+                styles.spicy
+              ])}
             >
               <img
                 src={images.spicyIcon}
@@ -253,9 +263,10 @@ const MealCard = ({
                       </div>
                     )}
                     <div
-                      className={`${styles.fee} ${
+                      className={classnames(
+                        styles.fee,
                         noExtraFee ? styles.no_extra_fee : ''
-                      }`}
+                      )}
                     >
                       {premiumFeeString}
                     </div>
@@ -265,9 +276,9 @@ const MealCard = ({
                 )}
                 {isEditable || quantity ? (
                   <button
-                    className={`${
+                    className={classnames(
                       selected ? styles.selected : styles.unselected
-                    }`}
+                    )}
                     disabled={disableAddItemBtn && quantity < 1}
                     onClick={() =>
                       !selected ? handleAddItem() : setShowCartControllers(true)
