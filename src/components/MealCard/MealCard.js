@@ -117,8 +117,8 @@ const MealCard = ({
         }}
       >
         {user_rating === 5 ? (
-          <div className={`${styles.user_stars_container}`}>
-            <span className={`${styles.user_rating}`}>you rated 5</span>
+          <div className={styles.user_stars_container}>
+            <span className={styles.user_rating}>you rated 5</span>
             <img
               className={`${styles.user_star}`}
               src={images.blackStar}
@@ -143,7 +143,7 @@ const MealCard = ({
         {onWarnings && warning && (
           <>
             <div
-              className={`${styles.meal_card__warning_container}`}
+              className={styles.meal_card__warning_container}
               onClick={() => openWarning()}
             >
               <img src={images.iconAlert} alt="alert" />
@@ -161,12 +161,9 @@ const MealCard = ({
         )}
 
         {onLikeMeal ? (
-          <div
-            className={`${styles.button__like}`}
-            onClick={() => toggleWishList()}
-          >
+          <div className={styles.button__like} onClick={() => toggleWishList()}>
             <img
-              className={`${styles.meal_image_heart}`}
+              className={styles.meal_image_heart}
               src={likeMeal ? images.blackHeart : images.emptyHeart}
               alt="heart"
             />
