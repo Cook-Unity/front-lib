@@ -22,7 +22,7 @@ describe('MealCard component', () => {
     expect(screen.getByText(meal_basic.short_description)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
     expect(screen.getByAltText(chefName)).toBeVisible()
-    expect(screen.queryByTestId('heart')).not.toBeInTheDocument()
+    expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
 
     expect(mealImg)
       .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image})`)
