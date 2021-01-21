@@ -24,4 +24,8 @@ export default {
   btnBlackPlus: importCUAssets('btn-black-plus.png'),
   btnBlackMinus: importCUAssets('btn-black-minus.png'),
   noMealImage: importCUAssets('no-image-meal.jpg'),
+  blackStar: importCUAssets('black_star.png'), 
+  blackHeart: importCUAssets('black_heart.png'), 
+  emptyHeart: importCUAssets('empty_heart.png'), 
+  iconAlert: importCUAssets('icon_alert.png')
 }

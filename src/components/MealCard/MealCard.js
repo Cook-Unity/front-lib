@@ -30,9 +30,13 @@ const MealCard = ({
   onRemoveItem,
   onClick,
   isEditable,
-  disableAddItem
-}) => {
-  const [showCartControllers, setShowCartControllers] = useState(false)
+  disableAddItem,
+  onLikeMeal, 
+  onWarnings
+}) => { 
+  const [showCartControllers, setShowCartControllers] = useState(false) 
+  const [likeMeal, setLikeMeal] = useState(false) 
+  const [showWarnings, setShowWarning] = useState(false)
 
   const {
     name = '',
@@ -50,7 +54,10 @@ const MealCard = ({
     fixed_price = false,
     feature = {},
     stock = 0,
-    specifications_detail = []
+    specifications_detail = [],
+    user_rating = 0, 
+    warning = '',
+    allergens = []
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -73,6 +80,17 @@ const MealCard = ({
     onRemoveItem()
   }
 
+  const toggleWishList = () => { 
+    setLikeMeal(!likeMeal) 
+  }
+
+  const openWarning = () => { 
+    setShowWarning(true)
+    setTimeout(() => { 
+      setShowWarning(false) 
+    }, 5000) 
+  }
+
   useEffect(() => {
     const cartTimer = setTimeout(() => {
       setShowCartControllers(false)
@@ -90,17 +108,44 @@ const MealCard = ({
         data-testid="meal-image"
         style={{backgroundImage: `url(${imageComingSoon ? images.noMealImage : full_path_meal_image})`}}
       >
-        {featureSpecs.description && (
-          <div
-            className={`${styles.meal_card__tag} ${styles.featured}`}
-            style={{
-              backgroundColor: featureSpecs.background,
-              color: featureSpecs.color
-            }}
-          >
-            {featureSpecs.description}
-          </div>
+        
+        {user_rating === 5 ? ( 
+          <div className={`${styles.user_stars_container}`}> 
+            <span className={`${styles.user_rating}`}>you rated 5</span> 
+            <img className={`${styles.user_star}`} src={images.blackStar} alt="star" /> 
+          </div> 
+          ) : !warning && featureSpecs.description && ( 
+            <div
+              className={`${styles.meal_card__tag} ${styles.featured}`}
+              style={{
+                backgroundColor: featureSpecs.background,
+                color: featureSpecs.color
+              }}
+            >
+              {featureSpecs.description}
+            </div>
         )}
+
+        {onWarnings && warning && ( 
+          <> 
+            <div className={`${styles.meal_card__warning_container}`} onClick={()=> openWarning()}> 
+              <img src={images.iconAlert} alt="alert" /> 
+              <div className={`${styles.separator}`} /> 
+              <p>{allergens.length} allergens</p> 
+            </div> 
+            {showWarnings ? 
+              <div className={`${styles.fade_out} ${styles.warning__tooltip_container}`}> 
+                <span>{warning}</span> 
+              </div> 
+            : null} 
+          </> 
+        )}
+
+        {onLikeMeal ? ( 
+          <div className={`${styles.button__like}`} onClick={() => toggleWishList()}> 
+            <img className={`${styles.meal_image_heart}`} src={likeMeal ? images.blackHeart : images.emptyHeart} alt="heart" /> 
+          </div> 
+        ) : null}
 
         {imageComingSoon && (
           <div className={styles.no_image_text}>
@@ -270,7 +315,10 @@ MealCard.propTypes = {
       color: PropTypes.string
     }),
     stock: PropTypes.number,
-    specifications_detail: PropTypes.array
+    specifications_detail: PropTypes.array,
+    warning: PropTypes.string, 
+    allergens: PropTypes.array,
+    user_rating: PropTypes.array
   }),
   isEditable: PropTypes.bool,
   disableAddItem: PropTypes.bool,
@@ -278,7 +326,9 @@ MealCard.propTypes = {
   noExtraFee: PropTypes.bool,
   onAddItem: PropTypes.func,
   onRemoveItem: PropTypes.func,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  onLikeMeal: PropTypes.bool, 
+  onWarnings: PropTypes.bool
 }
 
 MealCard.defaultProps = {
