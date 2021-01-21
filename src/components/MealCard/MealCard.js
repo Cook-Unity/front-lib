@@ -31,11 +31,11 @@ const MealCard = ({
   onClick,
   isEditable,
   disableAddItem,
-  onLikeMeal, 
+  onLikeMeal,
   onWarnings
-}) => { 
-  const [showCartControllers, setShowCartControllers] = useState(false) 
-  const [likeMeal, setLikeMeal] = useState(false) 
+}) => {
+  const [showCartControllers, setShowCartControllers] = useState(false)
+  const [likeMeal, setLikeMeal] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
 
   const {
@@ -55,7 +55,7 @@ const MealCard = ({
     feature = {},
     stock = 0,
     specifications_detail = [],
-    user_rating = 0, 
+    user_rating = 0,
     warning = '',
     allergens = []
   } = meal
@@ -69,7 +69,9 @@ const MealCard = ({
   const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
   const selected = quantity > 0
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
-  const imageComingSoon = /no_selection|no-image|null|undefined/.test(full_path_meal_image)
+  const imageComingSoon = /no_selection|no-image|null|undefined/.test(
+    full_path_meal_image
+  )
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -80,15 +82,15 @@ const MealCard = ({
     onRemoveItem()
   }
 
-  const toggleWishList = () => { 
-    setLikeMeal(!likeMeal) 
+  const toggleWishList = () => {
+    setLikeMeal(!likeMeal)
   }
 
-  const openWarning = () => { 
+  const openWarning = () => {
     setShowWarning(true)
-    setTimeout(() => { 
-      setShowWarning(false) 
-    }, 5000) 
+    setTimeout(() => {
+      setShowWarning(false)
+    }, CONTROLLERS_OPENED_MS)
   }
 
   useEffect(() => {
@@ -103,18 +105,29 @@ const MealCard = ({
   return (
     <div className={`${styles.meal_card} ${selected ? styles.in_cart : ''}`}>
       <div
-        className={`${styles.meal_card__top} ${imageComingSoon ? styles.no_image : ''}`}
+        className={`${styles.meal_card__top} ${
+          imageComingSoon ? styles.no_image : ''
+        }`}
         onClick={() => onClick()}
         data-testid="meal-image"
-        style={{backgroundImage: `url(${imageComingSoon ? images.noMealImage : full_path_meal_image})`}}
+        style={{
+          backgroundImage: `url(${
+            imageComingSoon ? images.noMealImage : full_path_meal_image
+          })`
+        }}
       >
-        
-        {user_rating === 5 ? ( 
-          <div className={`${styles.user_stars_container}`}> 
-            <span className={`${styles.user_rating}`}>you rated 5</span> 
-            <img className={`${styles.user_star}`} src={images.blackStar} alt="star" /> 
-          </div> 
-          ) : !warning && featureSpecs.description && ( 
+        {user_rating === 5 ? (
+          <div className={`${styles.user_stars_container}`}>
+            <span className={`${styles.user_rating}`}>you rated 5</span>
+            <img
+              className={`${styles.user_star}`}
+              src={images.blackStar}
+              alt="star"
+            />
+          </div>
+        ) : (
+          !warning &&
+          featureSpecs.description && (
             <div
               className={`${styles.meal_card__tag} ${styles.featured}`}
               style={{
@@ -124,33 +137,44 @@ const MealCard = ({
             >
               {featureSpecs.description}
             </div>
+          )
         )}
 
-        {onWarnings && warning && ( 
-          <> 
-            <div className={`${styles.meal_card__warning_container}`} onClick={()=> openWarning()}> 
-              <img src={images.iconAlert} alt="alert" /> 
-              <div className={`${styles.separator}`} /> 
-              <p>{allergens.length} allergens</p> 
-            </div> 
-            {showWarnings ? 
-              <div className={`${styles.fade_out} ${styles.warning__tooltip_container}`}> 
-                <span>{warning}</span> 
-              </div> 
-            : null} 
-          </> 
+        {onWarnings && warning && (
+          <>
+            <div
+              className={`${styles.meal_card__warning_container}`}
+              onClick={() => openWarning()}
+            >
+              <img src={images.iconAlert} alt="alert" />
+              <div className={`${styles.separator}`} />
+              <p>{allergens.length} allergens</p>
+            </div>
+            {showWarnings ? (
+              <div
+                className={`${styles.fade_out} ${styles.warning__tooltip_container}`}
+              >
+                <span>{warning}</span>
+              </div>
+            ) : null}
+          </>
         )}
 
-        {onLikeMeal ? ( 
-          <div className={`${styles.button__like}`} onClick={() => toggleWishList()}> 
-            <img className={`${styles.meal_image_heart}`} src={likeMeal ? images.blackHeart : images.emptyHeart} alt="heart" /> 
-          </div> 
+        {onLikeMeal ? (
+          <div
+            className={`${styles.button__like}`}
+            onClick={() => toggleWishList()}
+          >
+            <img
+              className={`${styles.meal_image_heart}`}
+              src={likeMeal ? images.blackHeart : images.emptyHeart}
+              alt="heart"
+            />
+          </div>
         ) : null}
 
         {imageComingSoon && (
-          <div className={styles.no_image_text}>
-            Image coming soon
-          </div>
+          <div className={styles.no_image_text}>Image coming soon</div>
         )}
 
         <div className={styles.meal_card__top_tags}>
@@ -316,7 +340,7 @@ MealCard.propTypes = {
     }),
     stock: PropTypes.number,
     specifications_detail: PropTypes.array,
-    warning: PropTypes.string, 
+    warning: PropTypes.string,
     allergens: PropTypes.array,
     user_rating: PropTypes.array
   }),
@@ -327,7 +351,7 @@ MealCard.propTypes = {
   onAddItem: PropTypes.func,
   onRemoveItem: PropTypes.func,
   onClick: PropTypes.func,
-  onLikeMeal: PropTypes.bool, 
+  onLikeMeal: PropTypes.bool,
   onWarnings: PropTypes.bool
 }
 

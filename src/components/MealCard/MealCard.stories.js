@@ -79,35 +79,35 @@ DisableAddItem.args = {
 }
 
 export const onLikeMeal = Template.bind({})
-onLikeMeal.args = { 
-  meal: meal_full, 
+onLikeMeal.args = {
+  meal: meal_full,
   onLikeMeal: true
 }
 
 export const onWarnings = Template.bind({})
-onWarnings.args = { 
-  meal: { 
-    ... meal_full, 
-    warning: 'Contains: Gluten, Nuts, Shellfish' ,
-    allergens :[
+onWarnings.args = {
+  meal: {
+    ...meal_full,
+    warning: 'Contains: Gluten, Nuts, Shellfish',
+    allergens: [
       {
-        'name' : 'Gluten'
+        name: 'Gluten'
       },
       {
-        'name' : 'Nuts'
+        name: 'Nuts'
       },
       {
-        'name' : 'Shellfish'
+        name: 'Shellfish'
       }
-    ],
-  }, 
-  onWarnings: true,
+    ]
+  },
+  onWarnings: true
 }
 
 export const userRating = Template.bind({})
-userRating.args = { 
-  meal: { 
-    ...meal_full, 
-    user_rating: 5 
-  } 
+userRating.args = {
+  meal: {
+    ...meal_full,
+    user_rating: 5
+  }
 }
