@@ -5,32 +5,140 @@
 [![pipeline status](https://gitlab.cookunity.com/cross/front-lib/badges/master/pipeline.svg)](https://gitlab.cookunity.com/cross/front-lib/-/commits/master)
 [![coverage report](https://gitlab.cookunity.com/cross/front-lib/badges/master/coverage.svg)](https://gitlab.cookunity.com/cross/front-lib/-/commits/master)
 
-## Install
+## Create new release (tag)
+
+After merging your feature branch into master run the following:
 
 ```bash
-add "front-lib": "git+ssh://git@gitlab.cookunity.com:cross/front-lib.git#master",
-to your package JSON
+npm version [TAG] -m "New feature description"
 ```
-If you are creating a component you can link directly to your local folder:
+
+For example:
 ```bash
-add "front-lib": "file:../cross/front-lib",
-to your package JSON
+npm version 0.3.0 -m "New meal card"
 ```
+
+This will create a new commit with your comment and the tag "v0.3.0" pointing to it.
+Then push the changes (including the new tag):
+
+```bash
+git pull origin master --tags
+```
+
+## Install in your project
+
+```bash
+npm install git+https://gitlab-CI-read:zBNenyUg64tnXWRiJxy1@gitlab.cookunity.com/cross/front-lib.git#[TAG]
+```
+*Update the [TAG] placeholder with the tag previously created in the library repository.*
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+...
 
-import {MyComponent} from 'front-lib'
+import { MyComponent } from 'front-lib'
 import 'front-lib/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const Comp = ()= {
+  ...
+  return <MyLibComponent />
 }
 ```
+
+## Development
+
+### Storybook
+
+You can develop your component running [Storybook](https://storybook.js.org/).
+
+Run storybook locally:
+
+```bash
+npm run storybook
+```
+
+### Integrate locally
+
+When you want to test the integration of the new component with your project you can also run everything locally:
+
+Run the following in the root of the library:
+
+```bash
+npm link
+```
+
+The run the following in the root of the project you want to test the library:
+
+```bash
+npm link front-lib
+```
+*Here we are supposing the library's local repository is in a folder called "front-lib"*
+
+We need to run the following in the library root's folder (let's suppose both  the library and the project are at the same level and that the project's folder is called "my-project"):
+
+```bash
+npm link ../my-project/node_modules/react
+```
+*This is a workaround until we find a better solution. More info [here](https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react)*
+
+Finally run the library locally:
+```bash
+npm start
+```
+
+Now run your project in development mode and changes into the library should be automatically visible.
+
+## Tests
+
+You have basically there commands available into the npm list of commands:
+
+To run the test once:
+
+Simple:
+```bash
+npm run test
+```
+
+Watch (for writing the tests)
+```bash
+npm run test:watch
+```
+
+With code coverage
+```bash
+npm run test:coverage
+```
+
+Then you can add jest options with each of the commands, for example:
+
+Coverage
+```bash
+npm run test -- --coverage
+```
+
+Verbose
+```bash
+npm run test -- --verbose
+```
+
+**Coverage**
+
+Besides getting code coverage on the screen you get an html page with much more detail. Open the following file with your browser after running the tests with the coverage option:
+
+`
+./coverage/lcov-report/index.html
+`
+
+**Pipeline**
+
+Whenever a MR is created the library's pipeline runs thw following two jobs:
+
+- Linter
+- Unit tests
+
+When the pipeline fails, you can retry any failed jobs, or push new commits to fix the failure. Only after the pipeline runs successfully the MR becomes mergeable.
+
 
 ## License
 
