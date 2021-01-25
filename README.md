@@ -133,7 +133,7 @@ Besides getting code coverage on the screen you get an html page with much more 
 ./coverage/lcov-report/index.html
 `
 
-**Pipeline**
+## Pipelines
 
 Whenever a MR is created the library's pipeline runs the following two jobs:
 
