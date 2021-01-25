@@ -7,7 +7,7 @@
 
 ## Create new release (tag)
 
-After merging your feature branch into master run the following:
+After merging your feature branch into master run the following (in master):
 
 ```bash
 npm version [TAG] -m "New feature description"
@@ -30,7 +30,7 @@ git pull origin master --tags
 ```bash
 npm install git+https://gitlab-CI-read:zBNenyUg64tnXWRiJxy1@gitlab.cookunity.com/cross/front-lib.git#[TAG]
 ```
-*Update the [TAG] placeholder with the tag previously created in the library repository.*
+*Update the [TAG] placeholder with the tag (v0.3.0) previously created in the library repository.*
 
 ## Usage
 
@@ -52,7 +52,7 @@ const Comp = ()= {
 
 You can develop your component running [Storybook](https://storybook.js.org/).
 
-Run storybook locally:
+Run storybook:
 
 ```bash
 npm run storybook
@@ -68,14 +68,14 @@ Run the following in the root of the library:
 npm link
 ```
 
-The run the following in the root of the project you want to test the library:
+Then run the following command into the root of the project you want to test the library with:
 
 ```bash
 npm link front-lib
 ```
 *Here we are supposing the library's local repository is in a folder called "front-lib"*
 
-We need to run the following in the library root's folder (let's suppose both  the library and the project are at the same level and that the project's folder is called "my-project"):
+We need to run the following in the library root's folder (let's suppose both  the library and the project are at the same level and that the project's folder is called "my-project").
 
 ```bash
 npm link ../my-project/node_modules/react
@@ -87,32 +87,30 @@ Finally run the library locally:
 npm start
 ```
 
-Now run your project in development mode and changes into the library should be automatically visible.
+Now you can run your project in development mode and changes into the library should be automatically visible.
 
 ## Tests
 
-You have basically there commands available into the npm list of commands:
-
-To run the test once:
+You have basically there commands available within the npm commands list:
 
 Simple:
 ```bash
 npm run test
 ```
 
-Watch (for writing the tests)
+Watch (for writing the tests):
 ```bash
 npm run test:watch
 ```
 
-With code coverage
+With code coverage:
 ```bash
 npm run test:coverage
 ```
 
-Then you can add jest options with each of the commands, for example:
+Then you can combine jest options with each of the commands, for example:
 
-Coverage
+With code coverage generation:
 ```bash
 npm run test -- --coverage
 ```
@@ -120,6 +118,11 @@ npm run test -- --coverage
 Verbose
 ```bash
 npm run test -- --verbose
+```
+
+Watch verbose
+```bash
+npm run test:watch -- --verbose
 ```
 
 **Coverage**
@@ -132,7 +135,7 @@ Besides getting code coverage on the screen you get an html page with much more 
 
 **Pipeline**
 
-Whenever a MR is created the library's pipeline runs thw following two jobs:
+Whenever a MR is created the library's pipeline runs the following two jobs:
 
 - Linter
 - Unit tests
