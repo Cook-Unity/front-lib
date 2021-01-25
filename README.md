@@ -22,7 +22,7 @@ This will create a new commit with your comment and the tag "v0.3.0" pointing to
 Then push the changes (including the new tag):
 
 ```bash
-git pull origin master --tags
+git push origin master v0.3.0
 ```
 
 ## Install in your project
