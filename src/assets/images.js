@@ -23,5 +23,5 @@ export default {
   btnWhitePlus: importCUAssets('btn-white-plus.png'),
   btnBlackPlus: importCUAssets('btn-black-plus.png'),
   btnBlackMinus: importCUAssets('btn-black-minus.png'),
-  noMealImage: importCUAssets('no-image-meal.jpg'),
+  noMealImage: importCUAssets('no-image-meal.jpg')
 }

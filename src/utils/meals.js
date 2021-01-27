@@ -1,6 +1,5 @@
 export const getProteinTag = proteinType => {
-if(!proteinType)
-  return
+  if (!proteinType) return
 
   const proteinsMap = {
     glutenfree: {icon: '', label: 'Gluten Free'},

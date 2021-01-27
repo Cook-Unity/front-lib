@@ -1,7 +1,7 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
-import {meal_basic, meal_full, meal_long_name} from './__mock__'
+import {meal_basic, meal_full, meal_long_name, meal_no_image} from './__mock__'
 
 export default {
   title: 'MealCard (New)',
@@ -76,4 +76,9 @@ DisableAddItem.args = {
   meal: meal_full,
   quantity: 3,
   disableAddItem: true
+}
+
+export const ComingSoon = Template.bind({})
+ComingSoon.args = {
+  meal: meal_no_image
 }

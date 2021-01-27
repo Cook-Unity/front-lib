@@ -110,5 +110,4 @@ describe('MealCard component', () => {
     render(<MealCardCase meal={meal} />)
     expect(screen.getByText('Image coming soon')).toBeVisible()
   })
-
 })
