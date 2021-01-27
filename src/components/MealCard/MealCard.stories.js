@@ -102,8 +102,3 @@ export const userRating = Template.bind({})
 userRating.args = {
   meal: withUserRating
 }
-
-export const ComingSoon = Template.bind({})
-ComingSoon.args = {
-  meal: meal_no_image
-}

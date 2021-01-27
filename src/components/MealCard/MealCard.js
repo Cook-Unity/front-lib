@@ -328,7 +328,7 @@ const MealCard = ({
 MealCard.propTypes = {
   meal: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    short_description: PropTypes.string.isRequired,
+    short_description: PropTypes.string,
     calories: PropTypes.number,
     protein_type: PropTypes.string,
     reviews: PropTypes.number,
