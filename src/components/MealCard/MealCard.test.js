@@ -6,7 +6,13 @@ import {MealCardCase} from './MealCardCase'
 import {formatChefName} from './utils'
 import images from '../../assets/images'
 
-import {meal_basic, meal_full, withUserRating, withWarnings} from './__mock__'
+import {
+  meal_basic,
+  meal_full,
+  withUserRating,
+  withWarnings,
+  meal_no_image
+} from './__mock__'
 
 describe('MealCard component', () => {
   it('Required props', () => {
@@ -105,11 +111,7 @@ describe('MealCard component', () => {
   })
 
   it('Meal image coming soon', () => {
-    const meal = {
-      ...meal_full,
-      full_path_meal_image: 'undefined'
-    }
-    render(<MealCardCase meal={meal} />)
+    render(<MealCardCase meal={meal_no_image} />)
     expect(screen.getByText('Image coming soon')).toBeVisible()
   })
 

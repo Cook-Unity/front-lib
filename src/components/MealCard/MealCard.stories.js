@@ -1,6 +1,7 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
+<<<<<<< HEAD
 import {
   meal_basic,
   meal_full,
@@ -8,6 +9,9 @@ import {
   withWarnings,
   withUserRating
 } from './__mock__'
+=======
+import {meal_basic, meal_full, meal_long_name, meal_no_image} from './__mock__'
+>>>>>>> ch-1733-meal-card-component
 
 export default {
   title: 'MealCard (New)',
@@ -99,4 +103,9 @@ onWarnings.args = {
 export const userRating = Template.bind({})
 userRating.args = {
   meal: withUserRating
+}
+
+export const ComingSoon = Template.bind({})
+ComingSoon.args = {
+  meal: meal_no_image
 }

@@ -335,7 +335,7 @@ MealCard.propTypes = {
     stars: PropTypes.number,
     chef_firstname: PropTypes.string.isRequired,
     chef_lastname: PropTypes.string.isRequired,
-    full_path_meal_image: PropTypes.string.isRequired,
+    full_path_meal_image: PropTypes.string,
     full_path_chef_image: PropTypes.string.isRequired,
     is_celebrity_chef: PropTypes.bool,
     premium_fee: PropTypes.number,

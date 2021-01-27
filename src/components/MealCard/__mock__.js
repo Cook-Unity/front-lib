@@ -86,3 +86,8 @@ export const withUserRating = {
   ...meal_full,
   user_rating: 5
 }
+
+export const meal_no_image = {
+  ...meal_basic,
+  full_path_meal_image: null
+}
