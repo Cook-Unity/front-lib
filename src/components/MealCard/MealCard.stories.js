@@ -1,17 +1,15 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
-<<<<<<< HEAD
+
 import {
   meal_basic,
   meal_full,
   meal_long_name,
   withWarnings,
-  withUserRating
+  withUserRating,
+  meal_no_image
 } from './__mock__'
-=======
-import {meal_basic, meal_full, meal_long_name, meal_no_image} from './__mock__'
->>>>>>> ch-1733-meal-card-component
 
 export default {
   title: 'MealCard (New)',
