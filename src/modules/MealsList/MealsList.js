@@ -16,8 +16,12 @@ const MealsList = ({meals, title, subtitle}) => {
 
   return (
     <div>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+      {title && (
+        <>
+          <h2 className={styles.title}>{title}</h2>
+          {subtitle && <p>{subtitle}</p>}
+        </>
+      )}
       <div className={styles['meals-list']}>
         {meals &&
           mealsReduce.map((meal, i) => (

@@ -15,9 +15,15 @@ Default.args = {
   meals
 }
 
-export const WithTitle = Template.bind({})
-WithTitle.args = {
+export const OnlyTitle = Template.bind({})
+OnlyTitle.args = {
+  meals,
+  title: 'Meals'
+}
+
+export const Full = Template.bind({})
+Full.args = {
   meals,
   title: 'Meals',
-  subtitle: 'Only the best'
+  subtitle: 'Available Now'
 }
