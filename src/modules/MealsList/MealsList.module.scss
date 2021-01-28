@@ -1,0 +1,58 @@
+@import '../../assets/styles/scss/mixins';
+@import '../../assets/styles/scss/variables';
+
+// .cookunity__available-meals-container {
+//   width: 100%;
+//   padding: 10px 0 20px 0;
+
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-column-gap: 8px;
+//   grid-row-gap: 16px;
+
+//   @include tablet-only {
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-column-gap: 8px;
+//     grid-row-gap: 16px;
+//   }
+
+//   @include mobile {
+//     padding: 0 0 24px 0;
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-column-gap: 8px;
+//     grid-row-gap: 16px;
+//   }
+
+//   .mealcard {
+//     justify-self: center;
+//     min-width: 50px;
+
+//     @include mobile {
+//       margin-right: 8px;
+//       flex-shrink: 0;
+//       max-width: 160px;
+//     }
+//   }
+
+//   .hidden {
+//     min-width: 1px;
+//   }
+// }
+
+// .view-more {
+//   border: none;
+//   background: transparent;
+//   margin-top: 20px;
+//   font-family: Roboto;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 16px;
+//   line-height: 24px;
+//   outline: none;
+//   text-decoration: underline;
+//   cursor: pointer;
+
+//   &:hover {
+//     font-size: 17px;
+//   }
+// }
