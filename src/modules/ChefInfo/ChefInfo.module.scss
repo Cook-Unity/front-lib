@@ -1,7 +1,260 @@
 @import '../../assets/styles/scss/mixins';
 @import '../../assets/styles/scss/variables';
 
-.chef-info {
+.chef-info  {
   margin: 0 auto;
   max-width: 1280px;
+
+  @include tablet-only {
+    padding: 30px;
+  }
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  .col-50 {
+    width: 540px;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .is-desktop {
+    display: block;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .is-mobile {
+    display: none;
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .chef-intro {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    @include mobile {
+      margin: 0;
+    }
+
+    h2 {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -0.5px;
+      color: $cookunity-black;
+      margin: 0;
+      height: auto;
+    }
+
+    .row-chef {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 100%;
+      @include mobile {
+        flex-direction: column;
+      }
+
+    }
+
+    .row-space {
+      justify-content: space-between;
+      margin-bottom: 100px;
+
+      @include mobile {
+        margin-bottom: 60px;
+      }
+    }
+
+    .chef-img {
+      border: 1px solid $cookunity-gray-3;
+      border-radius: 300px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+      height: 400px;
+      width: 400px;
+      position: relative;
+
+      @include mobile {
+        height: 260px;
+        width: 260px;
+      }
+
+      .all-star-img {
+        width: 60px;
+        height: 57.54px;
+        right: 10px;
+        position: absolute;
+        top: 40px;
+
+        @include mobile {
+          width: 40px;
+          height: 38.36px;
+          top: 24px;
+        }
+      }
+    }
+
+    .autograph-container {
+      display: flex;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      position: relative;
+      @include mobile {
+        margin-top: 0;
+      }
+
+      h4 {
+        font-family: Reinata;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 160px;
+        line-height: 55px;
+        text-align: center;
+        letter-spacing: -0.764178px;
+        color: $cookunity-black;
+        margin: -40px 0 0px;
+        position: absolute;
+
+        @include mobile {
+          font-size: 100px;
+          line-height: 36px;
+          margin: -28px 0 0px;
+        }
+      }
+    }
+
+    .chef-banner {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: stretch;
+
+      @include mobile {
+        flex-direction: column;
+        padding: 0;
+        margin-left: 0;
+      }
+
+      .logopic-container {
+        display: flex;
+        align-items: center;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        margin: 12px 0 16px;
+
+        .logopic-img {
+          max-height: 64px;
+          max-width: 112px;
+          margin-left: 10px;
+          background: #FFFFFF;
+          box-shadow: 0 0 32px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06);
+          border-radius: 4px;
+        }
+      }
+
+      .main-cuisines {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 36px;
+
+        p {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 22px;
+          letter-spacing: 0.2px;
+          color: $cookunity-black;
+          margin: 0 18px 10px 0;
+        }
+
+        .countries {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 14px;
+          height: 5px;
+          border-radius: 50px;
+          align-items: center;
+          display: flex;
+          padding: 20px;
+          border: solid 1px $cookunity-gray-3;
+          margin: 0px 10px 10px 0px;
+        }
+      }
+
+      .rating-meal {
+        margin: 12px 0;
+      }
+    }
+
+    .chef-description {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: .2px;
+      color: $cookunity-black;
+      margin-top: 30px;
+      text-align: justify;
+
+      .compact {
+        \-webkit-box-orient: vertical !important;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 5;
+      }
+
+      .read-more {
+        border: none;
+        background: transparent;
+        margin-top: 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        outline: none;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+
+        &:hover {
+          font-size: 17px;
+        }
+      }
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0;
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
 }
+

@@ -5,78 +5,108 @@ import styles from './ChefInfo.module.scss'
 
 import RatingMeal from '../../components/RatingMeal'
 
+import {stripHtml} from '../../utils/string'
+
 const ChefInfo = ({chef, review}) => {
   const [showMoreDescription, setShowMoreDescription] = useState(false)
 
   return (
-    <div className={classnames(styles['chef-info'], 'row-chef row-space')}>
-      <div className="row-chef">
-        <div className="col-50 is-desktop">
-          <div
-            className="chef-img "
-            style={{
-              backgroundImage: `url(${chef.image_url})`
-            }}
-          />
-          <div className="autograph-container">
-            <h4>{chef.firstname && chef.firstname.replace('-', ' ')}</h4>
-          </div>
-        </div>
-        <div className="chef-banner col-50">
-          <div className="chef-banner-item">
-            <h2>{chef.firstname + ' ' + chef.lastname}</h2>
-          </div>
-          {chef.is_celebrity_chef && chef.logopic_url && (
-            <div className="logopic-container">
-              of{' '}
-              <img
-                className="logopic-img"
-                src={chef.logopic_url}
-                alt="logopic"
-              />
-            </div>
-          )}
-          <div>
-            <RatingMeal stars={review.stars} reviewsCount={review.count} />
-            <div className="col-50 is-mobile">
+    <section className={styles['chef-info']}>
+      <div className={styles['chef-intro']}>
+        <div className={classnames(styles['row-chef'], styles['row-space'])}>
+          <div className={styles['row-chef']}>
+            <div className={classnames(styles['col-50'], styles['is-desktop'])}>
               <div
-                className="chef-img is-mobile"
+                className={styles['chef-img']}
                 style={{
                   backgroundImage: `url(${chef.image_url})`
                 }}
               />
-              <div className="autograph-container is-mobile">
-                <h4>{chef.firstname}</h4>
+              <div className={styles['autograph-container']}>
+                <h4>{chef.firstname && chef.firstname.replace('-', ' ')}</h4>
               </div>
             </div>
-          </div>
-          <div className="chef-description">
-            <span
-              dangerouslySetInnerHTML={{__html: chef.compdesi}}
-              className={showMoreDescription ? '' : 'compact'}
-            />
-            {!showMoreDescription && (
-              <button
-                className="read-more"
-                onClick={() => setShowMoreDescription(!showMoreDescription)}
-              >
-                Read more
-              </button>
-            )}
-          </div>
-          {chef.countries && chef.countries.length ? (
-            <div className="main_cuisines">
-              <p>Main Cuisines</p>
-              {chef.countries.map(country => (
-                <div key={country.key} className="div_countrie">
-                  {country.label}
+            <div
+              className={classnames(styles['chef-banner'], styles['col-50'])}
+            >
+              <div className={styles['chef-banner-item']}>
+                <h2>{chef.firstname + ' ' + chef.lastname}</h2>
+              </div>
+              {chef.is_celebrity_chef && chef.logopic_url && (
+                <div className={styles['logopic-container']}>
+                  of{' '}
+                  <img
+                    className={styles['logopic-img']}
+                    src={chef.logopic_url}
+                    alt="logopic"
+                  />
                 </div>
-              ))}
+              )}
+              <div>
+                <div className={styles['rating-meal']}>
+                  <RatingMeal
+                    stars={review.stars}
+                    reviewsCount={review.count}
+                  />
+                </div>
+                <div
+                  className={classnames(styles['is-mobile'], styles['col-50'])}
+                >
+                  <div
+                    className={classnames(
+                      styles['chef-img'],
+                      styles['is-mobile']
+                    )}
+                    style={{
+                      backgroundImage: `url(${chef.image_url})`
+                    }}
+                  />
+                  <div
+                    className={classnames(
+                      styles['autograph-container'],
+                      styles['is-mobile']
+                    )}
+                  >
+                    <h4>{chef.firstname}</h4>
+                  </div>
+                </div>
+              </div>
+              <div className={styles['chef-description']}>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: stripHtml(chef.compdesi).replace(
+                      /\n(\s?)/g,
+                      '<br/>'
+                    )
+                  }}
+                  className={classnames({
+                    [styles.compact]: !showMoreDescription
+                  })}
+                />
+                {!showMoreDescription && (
+                  <button
+                    className={styles['read-more']}
+                    onClick={() => setShowMoreDescription(!showMoreDescription)}
+                  >
+                    Read more
+                  </button>
+                )}
+              </div>
+              {chef.countries && chef.countries.length ? (
+                <div className={styles['main-cuisines']}>
+                  <p>Main Cuisines</p>
+                  {chef.countries.map(country => (
+                    <div key={country.key} className={styles.countries}>
+                      {country.label}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </div>
-          ) : null}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
