@@ -1,4 +1,4 @@
-import React, {useState, useCallback, Fragment} from 'react'
+import React, {useState, useCallback} from 'react'
 import PropTypes from 'prop-types'
 
 import MealCard from '../../components/MealCard'
@@ -15,19 +15,25 @@ const MealsList = ({meals, title, subtitle}) => {
   }, [setViewMore, viewMore])
 
   return (
-    <>
+    <div>
       <h2>{title}</h2>
       <p>{subtitle}</p>
-      <div className="cookunity__available-meals-container">
+      <div className={styles['meals-list']}>
         {meals &&
-          mealsReduce.map((meal, i) => <MealCard key={i} meal={meal} />)}
+          mealsReduce.map((meal, i) => (
+            <MealCard key={i} meal={meal} isEditable={false} />
+          ))}
       </div>
       {meals && meals.length > SHOW_FIRST && (
-        <button className="view-more" type="button" onClick={handleOnCLick}>
+        <button
+          className={styles['view-more']}
+          type="button"
+          onClick={handleOnCLick}
+        >
           {viewMore ? 'View less' : 'View all Meals'}
         </button>
       )}
-    </>
+    </div>
   )
 }
 
