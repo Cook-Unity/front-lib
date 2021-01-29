@@ -5,8 +5,6 @@ import ChefInfo from '../ChefInfo'
 import MealsList from '../MealsList'
 import Reviews from '../Reviews'
 
-import styles from './ChefPage.module.scss'
-
 const ChefPage = ({chef, meals, reviews, reviews_count}) => {
   return (
     <div className="chef-page">
