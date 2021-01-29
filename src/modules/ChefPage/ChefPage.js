@@ -8,10 +8,11 @@ import Reviews from '../Reviews'
 // import styles from './ChefPage.module.scss'
 
 const ChefPage = ({chef, meals, reviews, reviews_count}) => {
+  const mealsTitle = `${chef.firstname}’ Meals`
   return (
     <div className="chef-page">
       <ChefInfo chef={chef} />
-      <Meals meals={meals} title={chef.firstname} subtitle="Available Now" />
+      <Meals meals={meals} title={mealsTitle} subtitle="Available Now" />
       <Reviews
         reviews={reviews}
         product={{stars: chef.stars}}

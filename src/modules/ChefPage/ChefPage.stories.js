@@ -1,7 +1,7 @@
 import React from 'react'
 import ChefPage from './'
 
-import {chef, meals, reviews} from './__mock__'
+import {chef, celebrity_chef, meals, reviews} from './__mock__'
 
 export default {
   title: 'ChefPage',
@@ -15,6 +15,13 @@ const Template = args => {
 export const Default = Template.bind({})
 Default.args = {
   chef,
+  meals,
+  reviews
+}
+
+export const CelebrityChef = Template.bind({})
+CelebrityChef.args = {
+  chef: celebrity_chef,
   meals,
   reviews
 }
