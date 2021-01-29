@@ -5,7 +5,7 @@ import ChefInfo from '../ChefInfo'
 import Meals from '../Meals'
 import Reviews from '../Reviews'
 
-import styles from './ChefPage.module.scss'
+// import styles from './ChefPage.module.scss'
 
 const ChefPage = ({chef, meals, reviews, reviews_count}) => {
   return (
@@ -15,7 +15,7 @@ const ChefPage = ({chef, meals, reviews, reviews_count}) => {
       <Reviews
         reviews={reviews}
         product={{stars: chef.stars}}
-        quantity={reviews_count}
+        quantity={reviews.length}
         isChef
       />
     </div>
@@ -25,15 +25,13 @@ const ChefPage = ({chef, meals, reviews, reviews_count}) => {
 ChefPage.propTypes = {
   chef: PropTypes.object,
   meals: PropTypes.arrayOf(PropTypes.object),
-  reviews: PropTypes.arrayOf(PropTypes.object),
-  reviews_count: PropTypes.number
+  reviews: PropTypes.arrayOf(PropTypes.object)
 }
 
 ChefPage.defaultProps = {
   chef: {},
   meals: [],
-  reviews: [],
-  reviews_count: null
+  reviews: []
 }
 
 export default ChefPage

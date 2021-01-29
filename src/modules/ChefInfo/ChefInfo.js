@@ -44,10 +44,7 @@ const ChefInfo = ({chef}) => {
               )}
               <div>
                 <div className={styles['rating-meal']}>
-                  <RatingMeal
-                    stars={chef.stars}
-                    reviewsCount={chef.total_reviews}
-                  />
+                  <RatingMeal stars={chef.stars} reviewsCount={chef.reviews} />
                 </div>
                 <div
                   className={classnames(styles['is-mobile'], styles['col-50'])}

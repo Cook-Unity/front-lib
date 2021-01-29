@@ -3,7 +3,7 @@ export const chef = {
   firstname: 'Jean-Georges',
   lastname: 'Vongerichten',
   stars: '3.4',
-  total_reviews: '325',
+  reviews: '325',
   image_url:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/JGV-PERFIL97967.png',
   compdesi: `

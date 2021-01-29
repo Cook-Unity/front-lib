@@ -11,11 +11,10 @@ export default {
 const Template = args => {
   return <ChefPage {...args} />
 }
-console.log('reviews:', reviews)
+
 export const Default = Template.bind({})
 Default.args = {
   chef,
   meals,
-  reviews,
-  reviews_count: 125
+  reviews
 }
