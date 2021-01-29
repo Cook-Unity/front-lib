@@ -7,8 +7,7 @@ import {
   meal_full,
   meal_long_name,
   withWarnings,
-  withUserRating,
-  meal_no_image
+  withUserRating
 } from './__mock__'
 
 export default {
