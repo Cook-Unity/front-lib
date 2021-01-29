@@ -7,7 +7,7 @@ import RatingMeal from '../../components/RatingMeal'
 
 import {stripHtml} from '../../utils/string'
 
-const ChefInfo = ({chef, review}) => {
+const ChefInfo = ({chef}) => {
   const [showMoreDescription, setShowMoreDescription] = useState(false)
 
   return (
@@ -45,8 +45,8 @@ const ChefInfo = ({chef, review}) => {
               <div>
                 <div className={styles['rating-meal']}>
                   <RatingMeal
-                    stars={review.stars}
-                    reviewsCount={review.count}
+                    stars={chef.stars}
+                    reviewsCount={chef.total_reviews}
                   />
                 </div>
                 <div
@@ -115,6 +115,8 @@ ChefInfo.propTypes = {
     firstname: PropTypes.string.isRequired,
     lastname: PropTypes.string.isRequired,
     image_url: PropTypes.string.isRequired,
+    starts: PropTypes.string,
+    total_reviews: PropTypes.string,
     compdesi: PropTypes.string,
     is_celebrity_chef: PropTypes.string,
     logopic_url: PropTypes.string,
@@ -124,16 +126,11 @@ ChefInfo.propTypes = {
         label: PropTypes.string
       })
     )
-  }),
-  review: {
-    starts: PropTypes.string,
-    count: PropTypes.string
-  }
+  })
 }
 
 ChefInfo.defaultProps = {
-  chef: {},
-  review: {}
+  chef: {}
 }
 
 export default ChefInfo

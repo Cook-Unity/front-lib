@@ -2,6 +2,8 @@
 export const chef = {
   firstname: 'Jean-Georges',
   lastname: 'Vongerichten',
+  stars: '3.4',
+  total_reviews: '325',
   image_url:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/JGV-PERFIL97967.png',
   compdesi: `
@@ -44,9 +46,4 @@ export const celebrity_chef = {
   is_celebrity_chef: '1',
   logopic_url:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/JGV-Perry-Logo-241800.png'
-}
-
-export const review = {
-  stars: '3.4',
-  count: '123'
 }
