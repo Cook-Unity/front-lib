@@ -1,14 +1,14 @@
 import React from 'react'
-import MealsList from './'
+import Meals from '.'
 
 import {meals} from './__mock__'
 
 export default {
-  title: 'MealsList',
-  component: MealsList
+  title: 'Meals',
+  component: Meals
 }
 
-const Template = args => <MealsList {...args} />
+const Template = args => <Meals {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

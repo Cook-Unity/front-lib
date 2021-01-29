@@ -2,9 +2,9 @@ import React, {useState, useCallback} from 'react'
 import PropTypes from 'prop-types'
 
 import MealCard from '../../components/MealCard'
-import styles from './MealsList.module.scss'
+import styles from './Meals.module.scss'
 
-const SHOW_FIRST = 8
+const SHOW_FIRST = 12
 
 const MealsList = ({meals, title, subtitle}) => {
   const [viewMore, setViewMore] = useState(false)
@@ -15,14 +15,14 @@ const MealsList = ({meals, title, subtitle}) => {
   }, [setViewMore, viewMore])
 
   return (
-    <div>
+    <>
       {title && (
         <>
           <h2 className={styles.title}>{title}</h2>
           {subtitle && <p>{subtitle}</p>}
         </>
       )}
-      <div className={styles['meals-list']}>
+      <div className={styles.meals}>
         {meals &&
           mealsReduce.map((meal, i) => (
             <MealCard key={i} meal={meal} isEditable={false} />
@@ -37,7 +37,7 @@ const MealsList = ({meals, title, subtitle}) => {
           {viewMore ? 'View less' : 'View all Meals'}
         </button>
       )}
-    </div>
+    </>
   )
 }
 

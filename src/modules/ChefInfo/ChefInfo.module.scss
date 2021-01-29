@@ -1,7 +1,7 @@
 @import '../../assets/styles/scss/mixins';
 @import '../../assets/styles/scss/variables';
 
-.chef-info  {
+.chef-info {
   margin: 0 auto;
   max-width: 1280px;
 
@@ -67,7 +67,6 @@
       @include mobile {
         flex-direction: column;
       }
-
     }
 
     .row-space {
@@ -166,8 +165,9 @@
           max-height: 64px;
           max-width: 112px;
           margin-left: 10px;
-          background: #FFFFFF;
-          box-shadow: 0 0 32px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06);
+          background: #ffffff;
+          box-shadow: 0 0 32px rgba(0, 0, 0, 0.04),
+            0 8px 16px rgba(0, 0, 0, 0.06);
           border-radius: 4px;
         }
       }
@@ -216,7 +216,7 @@
       font-weight: normal;
       font-size: 16px;
       line-height: 24px;
-      letter-spacing: .2px;
+      letter-spacing: 0.2px;
       color: $cookunity-black;
       margin-top: 30px;
       text-align: justify;
@@ -257,4 +257,3 @@
     }
   }
 }
-

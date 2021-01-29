@@ -2,18 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ChefInfo from '../ChefInfo'
-import MealsList from '../MealsList'
+import Meals from '../Meals'
 import Reviews from '../Reviews'
+
+import styles from './ChefPage.module.scss'
 
 const ChefPage = ({chef, meals, reviews, reviews_count}) => {
   return (
     <div className="chef-page">
       <ChefInfo chef={chef} />
-      <MealsList
-        meals={meals}
-        title={chef.firstname}
-        subtitle="Available Now"
-      />
+      <Meals meals={meals} title={chef.firstname} subtitle="Available Now" />
       <Reviews
         reviews={reviews}
         product={{stars: chef.stars}}
