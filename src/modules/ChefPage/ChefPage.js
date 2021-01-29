@@ -5,12 +5,12 @@ import ChefInfo from '../ChefInfo'
 import Meals from '../Meals'
 import Reviews from '../Reviews'
 
-// import styles from './ChefPage.module.scss'
+import styles from './ChefPage.module.scss'
 
 const ChefPage = ({chef, meals, reviews, reviews_count}) => {
   const mealsTitle = `${chef.firstname}’ Meals`
   return (
-    <div className="chef-page">
+    <div className={styles['chef-page']}>
       <ChefInfo chef={chef} />
       <Meals meals={meals} title={mealsTitle} subtitle="Available Now" />
       <Reviews
