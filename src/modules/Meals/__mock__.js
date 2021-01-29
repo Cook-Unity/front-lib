@@ -1,3 +1,3 @@
-import {meal_full} from '../../components/MealCard/__mock__'
+import {meal_no_fee} from '../../components/MealCard/__mock__'
 
-export const meals = [...Array(20).keys()].map(() => meal_full)
+export const meals = [...Array(20).keys()].map(() => meal_no_fee)
