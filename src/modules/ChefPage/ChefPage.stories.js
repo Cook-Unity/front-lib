@@ -25,3 +25,9 @@ CelebrityChef.args = {
   meals,
   reviews
 }
+
+export const NoReviews = Template.bind({})
+NoReviews.args = {
+  chef: celebrity_chef,
+  meals
+}
