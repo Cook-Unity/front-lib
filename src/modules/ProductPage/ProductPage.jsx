@@ -73,10 +73,10 @@ const ProductPage = ({
           <div className={styles.header}>
             <div className={styles.back_button} onClick={goBack}>
               {goBack && (
-                <>
+                <Fragment>
                   <img src={images.close} alt="close" />
                   <p>{goBackText}</p>
-                </>
+                </Fragment>
               )}
             </div>
 

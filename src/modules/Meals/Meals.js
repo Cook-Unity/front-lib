@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react'
+import React, {Fragment, useState, useCallback} from 'react'
 import PropTypes from 'prop-types'
 
 import MealCard from '../../components/MealCard'
@@ -17,10 +17,10 @@ const Meals = ({meals, title, subtitle}) => {
   return (
     <div>
       {title && (
-        <>
+        <Fragment>
           <h2 className={styles.title}>{title}</h2>
           {subtitle && <p>{subtitle}</p>}
-        </>
+        </Fragment>
       )}
       <div className={styles.meals}>
         {meals &&

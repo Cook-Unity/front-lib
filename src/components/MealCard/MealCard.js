@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
@@ -144,7 +144,7 @@ const MealCard = ({
         )}
 
         {onWarnings && warning && (
-          <>
+          <Fragment>
             <div
               className={styles.meal_card__warning_container}
               onClick={() => openWarning()}
@@ -163,7 +163,7 @@ const MealCard = ({
                 <span>{warning}</span>
               </div>
             ) : null}
-          </>
+          </Fragment>
         )}
 
         {buttonLike && (
