@@ -6,7 +6,7 @@ import styles from './Meals.module.scss'
 
 const SHOW_FIRST = 12
 
-const MealsList = ({meals, title, subtitle}) => {
+const Meals = ({meals, title, subtitle}) => {
   const [viewMore, setViewMore] = useState(false)
   const mealsReduce = viewMore ? meals : meals.slice(0, SHOW_FIRST)
 
@@ -41,16 +41,16 @@ const MealsList = ({meals, title, subtitle}) => {
   )
 }
 
-MealsList.propTypes = {
+Meals.propTypes = {
   meals: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string,
   subtitle: PropTypes.string
 }
 
-MealsList.defaultProps = {
+Meals.defaultProps = {
   meals: [{}],
   title: null,
   subtitle: null
 }
 
-export default MealsList
+export default Meals
