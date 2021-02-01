@@ -12,95 +12,81 @@ const ChefInfo = ({chef}) => {
 
   return (
     <section className={styles['chef-info']}>
-      <div className={styles['chef-intro']}>
-        <div className={classnames(styles['row-chef'], styles['row-space'])}>
-          <div className={styles['row-chef']}>
-            <div className={classnames(styles['col-50'], styles['is-desktop'])}>
+      <div className={styles['row-chef']}>
+        <div className={classnames(styles['col-50'], styles['is-desktop'])}>
+          <div
+            className={styles['chef-img']}
+            style={{
+              backgroundImage: `url(${chef.image_url})`
+            }}
+          />
+          <div className={styles['autograph-container']}>
+            <h4>{chef.firstname && chef.firstname.replace('-', ' ')}</h4>
+          </div>
+        </div>
+        <div className={classnames(styles['chef-banner'], styles['col-50'])}>
+          <div className={styles['chef-banner-item']}>
+            <h2>{chef.firstname + ' ' + chef.lastname}</h2>
+          </div>
+          {chef.is_celebrity_chef && chef.logopic_url && (
+            <div className={styles['logopic-container']}>
+              of{' '}
+              <img
+                className={styles['logopic-img']}
+                src={chef.logopic_url}
+                alt="logopic"
+              />
+            </div>
+          )}
+          <div>
+            <div className={styles['rating-meal']}>
+              <RatingMeal stars={chef.stars} reviewsCount={chef.reviews} />
+            </div>
+            <div className={classnames(styles['is-mobile'], styles['col-50'])}>
               <div
-                className={styles['chef-img']}
+                className={classnames(styles['chef-img'], styles['is-mobile'])}
                 style={{
                   backgroundImage: `url(${chef.image_url})`
                 }}
               />
-              <div className={styles['autograph-container']}>
-                <h4>{chef.firstname && chef.firstname.replace('-', ' ')}</h4>
-              </div>
-            </div>
-            <div
-              className={classnames(styles['chef-banner'], styles['col-50'])}
-            >
-              <div className={styles['chef-banner-item']}>
-                <h2>{chef.firstname + ' ' + chef.lastname}</h2>
-              </div>
-              {chef.is_celebrity_chef && chef.logopic_url && (
-                <div className={styles['logopic-container']}>
-                  of{' '}
-                  <img
-                    className={styles['logopic-img']}
-                    src={chef.logopic_url}
-                    alt="logopic"
-                  />
-                </div>
-              )}
-              <div>
-                <div className={styles['rating-meal']}>
-                  <RatingMeal stars={chef.stars} reviewsCount={chef.reviews} />
-                </div>
-                <div
-                  className={classnames(styles['is-mobile'], styles['col-50'])}
-                >
-                  <div
-                    className={classnames(
-                      styles['chef-img'],
-                      styles['is-mobile']
-                    )}
-                    style={{
-                      backgroundImage: `url(${chef.image_url})`
-                    }}
-                  />
-                  <div
-                    className={classnames(
-                      styles['autograph-container'],
-                      styles['is-mobile']
-                    )}
-                  >
-                    <h4>{chef.firstname}</h4>
-                  </div>
-                </div>
-              </div>
-              <div className={styles['chef-description']}>
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: stripHtml(chef.compdesi).replace(
-                      /\n(\s?)/g,
-                      '<br/>'
-                    )
-                  }}
-                  className={classnames({
-                    [styles.compact]: !showMoreDescription
-                  })}
-                />
-                {!showMoreDescription && (
-                  <button
-                    className={styles['read-more']}
-                    onClick={() => setShowMoreDescription(!showMoreDescription)}
-                  >
-                    Read more
-                  </button>
+              <div
+                className={classnames(
+                  styles['autograph-container'],
+                  styles['is-mobile']
                 )}
+              >
+                <h4>{chef.firstname}</h4>
               </div>
-              {chef.countries && chef.countries.length ? (
-                <div className={styles['main-cuisines']}>
-                  <p>Main Cuisines</p>
-                  {chef.countries.map(country => (
-                    <div key={country.key} className={styles.countries}>
-                      {country.label}
-                    </div>
-                  ))}
-                </div>
-              ) : null}
             </div>
           </div>
+          <div className={styles['chef-description']}>
+            <span
+              dangerouslySetInnerHTML={{
+                __html: stripHtml(chef.compdesi).replace(/\n(\s?)/g, '<br/>')
+              }}
+              className={classnames({
+                [styles.compact]: !showMoreDescription
+              })}
+            />
+            {!showMoreDescription && (
+              <button
+                className={styles['read-more']}
+                onClick={() => setShowMoreDescription(!showMoreDescription)}
+              >
+                Read more
+              </button>
+            )}
+          </div>
+          {chef.countries && chef.countries.length ? (
+            <div className={styles['main-cuisines']}>
+              <p>Main Cuisines</p>
+              {chef.countries.map(country => (
+                <div key={country.key} className={styles.countries}>
+                  {country.label}
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
