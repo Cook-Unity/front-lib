@@ -32,6 +32,8 @@ npm install git+https://gitlab-CI-read:zBNenyUg64tnXWRiJxy1@gitlab.cookunity.com
 ```
 *Update the [TAG] placeholder with the tag (v0.3.0) previously created in the library repository.*
 
+Updating the library version using it with git like we do can be tricky. Always verify that the package-lock file gets updated with the corresponding new library version. For the moment you can first do "npm remove front-lib", then restore the library in the package.json file, and then finally run "npm install". If the package-lock file does not get updated with the new version then it won't be install when deploying.
+
 ## Usage
 
 ```jsx
