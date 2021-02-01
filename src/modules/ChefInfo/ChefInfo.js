@@ -11,7 +11,7 @@ const ChefInfo = ({chef}) => {
   const [showMoreDescription, setShowMoreDescription] = useState(false)
 
   return (
-    <section className={styles['chef-info']}>
+    <div className={styles['chef-info']}>
       <div className={styles['row-chef']}>
         <div className={classnames(styles['col-50'], styles['is-desktop'])}>
           <div
@@ -89,7 +89,7 @@ const ChefInfo = ({chef}) => {
           ) : null}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

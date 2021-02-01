@@ -15,7 +15,7 @@ const MealsList = ({meals, title, subtitle}) => {
   }, [setViewMore, viewMore])
 
   return (
-    <>
+    <div>
       {title && (
         <>
           <h2 className={styles.title}>{title}</h2>
@@ -37,7 +37,7 @@ const MealsList = ({meals, title, subtitle}) => {
           {viewMore ? 'View less' : 'View all Meals'}
         </button>
       )}
-    </>
+    </div>
   )
 }
 
