@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Reviews from '..'
 
-const ReviewsUseCase = props => {
+const ReviewsBasic = props => {
   const [showReviewsModal, setShowReviewsModal] = useState(false)
   const toggleReviewsModal = () => setShowReviewsModal(!showReviewsModal)
 
@@ -14,4 +14,4 @@ const ReviewsUseCase = props => {
   return <Reviews {...props} />
 }
 
-export default ReviewsUseCase
+export default ReviewsBasic

@@ -1,14 +1,14 @@
 import React from 'react'
 
 import {reviews} from './__mock__'
-import Reviews from './components/ReviewsUseCase'
+import ReviewsBasic from './components/ReviewsBasic'
 
 export default {
   title: 'Reviews',
-  component: Reviews
+  component: ReviewsBasic
 }
 
-const Template = args => <Reviews {...args} />
+const Template = args => <ReviewsBasic {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

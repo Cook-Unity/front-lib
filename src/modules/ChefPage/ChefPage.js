@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 import ChefInfo from '../ChefInfo'
 import Meals from '../Meals'
-import Reviews from '../Reviews'
+import Reviews from '../Reviews/components/ReviewsBasic'
 
 import styles from './ChefPage.module.scss'
 
-const ChefPage = ({chef, meals, reviews, reviews_count}) => {
+const ChefPage = ({chef, meals, reviews}) => {
   const mealsTitle = `${chef.firstname}’ Meals`
+
   return (
     <div className={styles['chef-page']}>
       <ChefInfo chef={chef} />
