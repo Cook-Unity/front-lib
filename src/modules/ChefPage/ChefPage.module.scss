@@ -2,11 +2,11 @@
 @import '../../assets/styles/scss/variables';
 
 .chef-page {
-  margin: 0 auto;
-  max-width: 1280px;
-
   > div {
     margin-bottom: 50px;
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 }
 

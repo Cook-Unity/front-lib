@@ -17,7 +17,7 @@ const ChefPage = ({chef, meals, reviews}) => {
       <Reviews
         reviews={reviews}
         product={{stars: chef.stars}}
-        quantity={reviews.length}
+        quantity={reviews && reviews.length}
         isChef
       />
     </div>

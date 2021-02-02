@@ -196,8 +196,8 @@
     line-height: 24px;
     letter-spacing: 0.2px;
     color: $cookunity-black;
-    margin-top: 30px;
     text-align: justify;
+    margin-top: 50px;
 
     .compact {
       \-webkit-box-orient: vertical !important;
@@ -219,6 +219,7 @@
       text-decoration: underline;
       cursor: pointer;
       padding: 0;
+      color: $cookunity-black;
 
       &:hover {
         font-size: 17px;
