@@ -7,6 +7,7 @@ import styles from './Meals.module.scss'
 const SHOW_FIRST = 12
 
 const Meals = ({meals, title, subtitle}) => {
+  meals = meals || []
   const [viewMore, setViewMore] = useState(false)
   const mealsReduce = viewMore ? meals : meals.slice(0, SHOW_FIRST)
 
@@ -15,29 +16,31 @@ const Meals = ({meals, title, subtitle}) => {
   }, [setViewMore, viewMore])
 
   return (
-    <div>
-      {title && (
-        <Fragment>
-          <h2 className={styles.title}>{title}</h2>
-          {subtitle && <p>{subtitle}</p>}
-        </Fragment>
-      )}
-      <div className={styles.meals}>
-        {meals &&
-          mealsReduce.map((meal, i) => (
+    (meals.length && (
+      <div>
+        {title && (
+          <Fragment>
+            <h2 className={styles.title}>{title}</h2>
+            {subtitle && <p>{subtitle}</p>}
+          </Fragment>
+        )}
+        <div className={styles.meals}>
+          {mealsReduce.map((meal, i) => (
             <MealCard key={i} meal={meal} isEditable={false} />
           ))}
+        </div>
+        {meals.length > SHOW_FIRST && (
+          <button
+            className={styles['view-more']}
+            type="button"
+            onClick={handleOnCLick}
+          >
+            {viewMore ? 'View less' : 'View all Meals'}
+          </button>
+        )}
       </div>
-      {meals && meals.length > SHOW_FIRST && (
-        <button
-          className={styles['view-more']}
-          type="button"
-          onClick={handleOnCLick}
-        >
-          {viewMore ? 'View less' : 'View all Meals'}
-        </button>
-      )}
-    </div>
+    )) ||
+    null
   )
 }
 
@@ -48,7 +51,7 @@ Meals.propTypes = {
 }
 
 Meals.defaultProps = {
-  meals: [{}],
+  meals: [],
   title: null,
   subtitle: null
 }
