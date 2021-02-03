@@ -2,13 +2,22 @@
 @import '../../assets/styles/scss/variables';
 
 .chef-page {
+  position: relative;
+  width:100%;
+
   > div {
     margin-bottom: 30px;
   }
 
-  .socialLinks {
+  .share {
     position: absolute;
     right: 0;
-    top: 10px;
+
+    .socialLinks {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
   }
+
 }

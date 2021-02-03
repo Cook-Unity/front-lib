@@ -15,13 +15,15 @@ const ChefPage = ({chef, meals, reviews, share_url}) => {
   return (
     <div className={styles['chef-page']}>
       {share_url && (
-        <Share
-          url={share_url}
-          title={shareTitle}
-          customStyles={{
-            socialLinks: styles.socialLinks
-          }}
-        />
+        <div className={styles.share}>
+          <Share
+            url={share_url}
+            title={shareTitle}
+            customStyles={{
+              socialLinks: styles.socialLinks
+            }}
+          />
+        </div>
       )}
       <ChefInfo chef={chef} />
       <Meals meals={meals} title={mealsTitle} subtitle="Available Now" />
