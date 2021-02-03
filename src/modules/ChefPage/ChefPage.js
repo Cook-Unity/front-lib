@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import images from '../../assets/images'
-import SocialShare from '../../components/SocialShareButton'
+import Share from '../../components/Share'
 import ChefInfo from '../ChefInfo'
 import Meals from '../Meals'
 import Reviews from '../Reviews/components/ReviewsBasic'
@@ -10,32 +9,19 @@ import Reviews from '../Reviews/components/ReviewsBasic'
 import styles from './ChefPage.module.scss'
 
 const ChefPage = ({chef, meals, reviews, share_url}) => {
-  const [showSocialInfo, setShowSocialInfo] = useState(false)
   const mealsTitle = `${chef.firstname}’ Meals`
   const shareTitle = 'Take a look at this chef'
 
   return (
     <div className={styles['chef-page']}>
       {share_url && (
-        <div className={styles.share_container}>
-          <div
-            className={styles.share_button}
-            onClick={() => setShowSocialInfo(!showSocialInfo)}
-          >
-            <img src={images.share} alt="share" />
-            <p>Share</p>
-          </div>
-
-          {showSocialInfo && (
-            <SocialShare
-              url={share_url}
-              title={shareTitle}
-              customStyles={{
-                socialLinks: styles.socialLinks
-              }}
-            />
-          )}
-        </div>
+        <Share
+          url={share_url}
+          title={shareTitle}
+          customStyles={{
+            socialLinks: styles.socialLinks
+          }}
+        />
       )}
       <ChefInfo chef={chef} />
       <Meals meals={meals} title={mealsTitle} subtitle="Available Now" />
