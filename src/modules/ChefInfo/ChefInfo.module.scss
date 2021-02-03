@@ -220,10 +220,6 @@
       cursor: pointer;
       padding: 0;
       color: $cookunity-black;
-
-      &:hover {
-        font-size: 17px;
-      }
     }
 
     @include mobile {
