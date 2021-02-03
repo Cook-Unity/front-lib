@@ -31,7 +31,7 @@ const ChefPage = ({chef, meals, reviews, share_url}) => {
         <Reviews
           reviews={reviews}
           product={{stars: chef.stars}}
-          quantity={reviews && reviews.length}
+          quantity={chef.reviews}
           isChef
         />
       </div>
