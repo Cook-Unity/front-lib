@@ -5,7 +5,7 @@ import {pathOr} from 'ramda'
 
 import Skeleton from './skeleton'
 import MetaTags from '../../components/MetaTags'
-import Social from '../../components/SocialShareButton'
+import Share from '../../components/Share'
 
 import ProductBasicInformation from '../ProductBasicInformation'
 import Ingredients from '../Ingredients'
@@ -51,7 +51,6 @@ const ProductPage = ({
   reviewModalContainerId
 }) => {
   const [showReviewsModal, setShowReviewsModal] = useState(false)
-  const [showSocialInfo, setShowSocialInfo] = useState(false)
 
   const ingredients = <Ingredients ingredients={productData.ingredients_data} />
   const finalSteps = getFinalSteps(productData)
@@ -91,23 +90,13 @@ const ProductPage = ({
 
             {!isLoading && (
               <div className={styles.share_container}>
-                <div
-                  className={styles.share_button}
-                  onClick={() => setShowSocialInfo(!showSocialInfo)}
-                >
-                  <img src={images.share} alt="share" />
-                  <p>Share</p>
-                </div>
-
-                {showSocialInfo && (
-                  <Social
-                    url={productData.url_path}
-                    title={`Enjoy ${productData.name}`}
-                    customStyles={{
-                      socialLinks: styles.socialLinks
-                    }}
-                  />
-                )}
+                <Share
+                  url={productData.url_path}
+                  title={`Enjoy ${productData.name}`}
+                  customStyles={{
+                    socialLinks: styles.socialLinks
+                  }}
+                />
               </div>
             )}
           </div>
