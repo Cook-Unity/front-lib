@@ -25,14 +25,16 @@ const ChefPage = ({chef, meals, reviews, share_url}) => {
           />
         </div>
       )}
-      <ChefInfo chef={chef} />
-      <Meals meals={meals} title={mealsTitle} subtitle="Available Now" />
-      <Reviews
-        reviews={reviews}
-        product={{stars: chef.stars}}
-        quantity={reviews && reviews.length}
-        isChef
-      />
+      <div className={styles.content}>
+        <ChefInfo chef={chef} />
+        <Meals meals={meals} title={mealsTitle} subtitle="Available Now" />
+        <Reviews
+          reviews={reviews}
+          product={{stars: chef.stars}}
+          quantity={reviews && reviews.length}
+          isChef
+        />
+      </div>
     </div>
   )
 }
