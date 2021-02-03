@@ -102,7 +102,7 @@ const ProductPage = ({
                 {showSocialInfo && (
                   <Social
                     url={productData.url_path}
-                    title={productData.name}
+                    title={`Enjoy ${productData.name}`}
                     customStyles={{
                       socialLinks: styles.socialLinks
                     }}

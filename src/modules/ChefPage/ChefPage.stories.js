@@ -8,6 +8,8 @@ export default {
   component: ChefPage
 }
 
+const share_url = 'https://www.cookunity.com/chef'
+
 const Template = args => {
   return <ChefPage {...args} />
 }
@@ -16,18 +18,20 @@ export const Default = Template.bind({})
 Default.args = {
   chef,
   meals,
-  reviews
+  reviews,
+  share_url
 }
 
 export const CelebrityChef = Template.bind({})
 CelebrityChef.args = {
   chef: celebrity_chef,
   meals,
-  reviews
+  reviews,
+  share_url
 }
 
-export const NoReviews = Template.bind({})
-NoReviews.args = {
+export const NoReviewsAndNoShare = Template.bind({})
+NoReviewsAndNoShare.args = {
   chef: celebrity_chef,
   meals
 }
