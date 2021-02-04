@@ -130,6 +130,10 @@
       margin-left: 0;
     }
 
+    @include tablet {
+      padding: 15px;
+    }
+
     .logopic-container {
       display: flex;
       align-items: center;
