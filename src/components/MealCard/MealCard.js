@@ -181,7 +181,7 @@ const MealCard = ({
         )}
 
         <div className={styles.meal_card__top_tags}>
-          {mealReviews && mealRating && (
+          {parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
             <div className={styles.meal_card__tag} data-testid="rating">
               <span className={styles.star}>
                 <img src={images.star} alt="★" />
@@ -255,7 +255,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {premium_fee ? (
+                {premium_fee > 0 ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>
