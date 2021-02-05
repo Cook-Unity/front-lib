@@ -69,17 +69,19 @@ export const meal_long_name = {
 export const withWarnings = {
   ...meal_full,
   warning: 'Contains: Gluten, Nuts, Shellfish',
-  allergens: [
-    {
-      name: 'Gluten'
-    },
-    {
-      name: 'Nuts'
-    },
-    {
-      name: 'Shellfish'
-    }
-  ]
+  warnings: {
+    restrictions_applied:  [
+      {
+        name: 'Gluten'
+      },
+      {
+        name: 'Nuts'
+      },
+      {
+        name: 'Shellfish'
+      }
+    ]
+  }
 }
 
 export const withUserRating = {
