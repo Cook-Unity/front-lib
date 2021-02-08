@@ -4,6 +4,8 @@ import ReviewsList from '../ReviewsList'
 import ReviewsSummary from '../ReviewsSummary'
 import './ReviewsModal.css'
 
+const REVIEWS_PER_VIEW_MORE = 10
+
 const ReviewsModal = ({
   isOpen,
   product,
@@ -59,7 +61,7 @@ const Content = ({onRequestClose, quantity, product, reviews, handleClick}) => {
     setPage(page + 1)
   }
 
-  let reviewsToShow = page * 10
+  let reviewsToShow = page * REVIEWS_PER_VIEW_MORE
 
   reviewsToShow =
     reviewsToShow >= reviews.length ? reviews.length : reviewsToShow

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
@@ -144,7 +144,7 @@ const MealCard = ({
         )}
 
         {onWarnings && warning && (
-          <>
+          <Fragment>
             <div
               className={styles.meal_card__warning_container}
               onClick={() => openWarning()}
@@ -163,7 +163,7 @@ const MealCard = ({
                 <span>{warning}</span>
               </div>
             ) : null}
-          </>
+          </Fragment>
         )}
 
         {buttonLike && (
@@ -181,7 +181,7 @@ const MealCard = ({
         )}
 
         <div className={styles.meal_card__top_tags}>
-          {mealReviews && mealRating && (
+          {parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
             <div className={styles.meal_card__tag} data-testid="rating">
               <span className={styles.star}>
                 <img src={images.star} alt="★" />
@@ -255,7 +255,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {premium_fee ? (
+                {premium_fee > 0 ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>

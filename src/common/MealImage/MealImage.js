@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {string, func} from 'prop-types'
+import classnames from 'classnames'
 
 import images from '../../assets/images'
 
-import './MealImage.css'
+import styles from './MealImage.module.scss'
 
 const MealImage = ({
   imageUrl,
@@ -25,7 +26,7 @@ const MealImage = ({
   const image = errorImage ? images.noMealImg : imageUrl
 
   return errorImage ? (
-    <div className={classNameNoImgContainer}>
+    <div className={styles['no-img-container']}>
       <img
         src={image}
         className={classNameImage}
@@ -34,7 +35,7 @@ const MealImage = ({
         onError={handleOnError}
       />
       {errorImage && !withoutText && (
-        <p className="txt-noimage heading-3">Image coming soon</p>
+        <p className={classnames(styles['txt-noimage'])}>Image coming soon</p>
       )}
     </div>
   ) : (
@@ -49,15 +50,16 @@ const MealImage = ({
 }
 
 MealImage.defaultProps = {
-  classNameNoImgContainer: 'no-img-container',
+  imageUrl: '',
+  onMealClick: () => {},
+  classNameImage: '',
   withoutText: false
 }
 
 MealImage.propTypes = {
   imageUrl: string,
   onMealClick: func,
-  classNameImage: string,
-  classNameNoImgContainer: string
+  classNameImage: string
 }
 
 export default MealImage
