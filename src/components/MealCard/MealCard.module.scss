@@ -30,7 +30,41 @@
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 .meal_card {
   position: relative;
@@ -54,7 +88,12 @@
     border: 1px solid #DDDDDD;
   }
 
- 
+  &.loading {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #eff1f3 4%, #e8e8e8 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    cursor: default;
+  }
 
   &__top {
     width: 100%;
@@ -368,32 +407,7 @@
     -ms-animation: fadeOut ease 8s;
   }
 
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
 
-  @-moz-keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @-webkit-keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
 
   &__add_to_cart_container {
     .add_to_cart {

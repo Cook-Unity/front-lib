@@ -100,3 +100,9 @@ export const userRating = Template.bind({})
 userRating.args = {
   meal: withUserRating
 }
+
+export const isLoading = Template.bind({})
+isLoading.args = {
+  meal: meal_full,
+  isLoading: true
+}

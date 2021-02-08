@@ -39,7 +39,8 @@ const MealCard = ({
   onMealClick,
   onChefClick,
   noSelected,
-  pastOrder
+  pastOrder,
+  isLoading
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [likeMeal, setLikeMeal] = useState(false)
@@ -86,8 +87,6 @@ const MealCard = ({
   const noStock = stock === 0 && !selected
   const allergens = warnings.restrictions_applied
 
-  console.log(meal)
-
   const handleAddItem = () => {
     setShowCartControllers(true)
     if (!disableAddItemBtn) onAddItem()
@@ -116,6 +115,31 @@ const MealCard = ({
       clearTimeout(cartTimer)
     }
   }, [quantity, showCartControllers])
+
+  if (isLoading) {
+    return (
+      <div className={classnames(`${styles.meal_card} ${styles.loading}`)}>
+        <div
+          className={classnames(
+            `${styles.meal_image_container} ${styles.loading}`
+          )}
+        >
+          <div
+            className={classnames(`${styles.meal_image} ${styles.loading}`)}
+          />
+        </div>
+
+        <div className={styles.bottom_info}>
+          <div className={styles.meal_name}>
+            <div className={classnames(`${styles.title} ${styles.loading}`)} />
+            <div
+              className={classnames(`${styles.subtitle} ${styles.loading}`)}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div
