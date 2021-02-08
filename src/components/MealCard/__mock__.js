@@ -91,3 +91,8 @@ export const meal_no_image = {
   ...meal_basic,
   full_path_meal_image: null
 }
+
+export const meal_no_fee = {
+  ...meal_full,
+  premium_fee: null
+}

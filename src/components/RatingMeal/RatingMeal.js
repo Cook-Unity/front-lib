@@ -56,8 +56,8 @@ const RatingMeal = ({
 }
 
 RatingMeal.propTypes = {
-  stars: PropTypes.number,
-  reviewsCount: PropTypes.number,
+  stars: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  reviewsCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   userRating: PropTypes.number,
   onClickReviewCount: PropTypes.func,
   hideStars: PropTypes.bool

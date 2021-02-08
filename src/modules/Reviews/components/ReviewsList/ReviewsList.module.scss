@@ -1,3 +1,6 @@
+@import '../../../../assets/styles/scss/mixins';
+@import '../../../../assets/styles/scss/variables';
+
 .productReviews {
   color: black;
   margin: 0 auto;
@@ -51,6 +54,31 @@
         color: #999999;
       }
     }
+
+    .dish {
+      display: flex;
+      align-items: center;
+      img {
+        object-fit: cover;
+        border-radius: 100%;
+        margin-right: 4px;
+        width: 80px;
+        height: 80px;
+
+        @include mobile {
+          margin-left: -20px;
+        }
+      }
+      p {
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        color: #231F20;
+      }
+    }
+
   }
 
   .viewAll {

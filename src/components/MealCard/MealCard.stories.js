@@ -11,7 +11,7 @@ import {
 } from './__mock__'
 
 export default {
-  title: 'MealCard (New)',
+  title: 'MealCard',
   component: MealCard
 }
 
