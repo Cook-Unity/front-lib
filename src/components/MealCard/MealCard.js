@@ -42,7 +42,9 @@ const MealCard = ({
   onChefClick,
   noSelected,
   pastOrder,
-  isLoading
+  isLoading,
+  showPrice,
+  compact
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
@@ -88,7 +90,7 @@ const MealCard = ({
   )
 
   const noStock = stock === 0 && !selected
-  const allergens = warnings.restrictions_applied
+  const allergens = warnings && warnings.restrictions_applied
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -347,8 +349,8 @@ const MealCard = ({
                   ''
                 )}
 
-                {included ||
-                  (extra && (
+                {compact && included ||
+                  extra && (
                     <div className="checkout_info">
                       {included &&
                         includedDay &&
@@ -363,26 +365,29 @@ const MealCard = ({
                       {!includedDay && <span>{price}</span>}
                       {extra && !included && <span>{price_plan}</span>}
                     </div>
-                  ))}
+                  )}
                 {isEditable || quantity ? (
-                  <button
-                    className={classnames(
-                      selected ? styles.selected : styles.unselected
-                    )}
-                    disabled={disableAddItemBtn && quantity < 1}
-                    onClick={() =>
-                      !selected ? handleAddItem() : setShowCartControllers(true)
-                    }
-                    data-testid="quantity-btn"
-                  >
-                    {quantity || (
-                      <img
-                        src={images.btnWhitePlus}
-                        alt="+"
-                        data-testid="plus-img"
-                      />
-                    )}
-                  </button>
+                  <Fragment>
+                    {showPrice && <span className="price">+ {price}</span>}
+                    <button
+                      className={classnames(
+                        selected ? styles.selected : styles.unselected
+                      )}
+                      disabled={disableAddItemBtn && quantity < 1}
+                      onClick={() =>
+                        !selected ? handleAddItem() : setShowCartControllers(true)
+                      }
+                      data-testid="quantity-btn"
+                    >
+                      {quantity || (
+                        <img
+                          src={images.btnWhitePlus}
+                          alt="+"
+                          data-testid="plus-img"
+                        />
+                      )}
+                    </button>
+                  </Fragment>
                 ) : (
                   ''
                 )}
@@ -454,7 +459,8 @@ MealCard.propTypes = {
   buttonLike: bool,
   onWarnings: bool,
   isLikeMarked: bool,
-  onLikeMeal: func
+  onLikeMeal: func,
+  compact: bool
 }
 
 MealCard.defaultProps = {
