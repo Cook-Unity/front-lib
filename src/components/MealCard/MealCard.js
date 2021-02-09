@@ -1,5 +1,5 @@
-import React, {useState, useEffect, Fragment} from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect, Fragment } from 'react'
+import { bool, string, func, number, array, shape } from 'prop-types'
 import classnames from 'classnames'
 
 import {getProteinTag} from '../../utils/meals'
@@ -33,11 +33,13 @@ const MealCard = ({
   isEditable,
   disableAddItem,
   buttonLike,
-  onWarnings
+  onWarnings,
+  isLikeMarked,
+  onLikeMeal
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
-  const [likeMeal, setLikeMeal] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
+  const [disabledLikeMeal, setDisabledLikeMeal ] = useState(false)
 
   const {
     name = '',
@@ -58,7 +60,8 @@ const MealCard = ({
     specifications_detail = [],
     user_rating = 0,
     warning = '',
-    allergens = []
+    allergens = [],
+    magentoId = null
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -83,15 +86,19 @@ const MealCard = ({
     onRemoveItem()
   }
 
-  const toggleWishList = () => {
-    setLikeMeal(!likeMeal)
-  }
-
   const openWarning = () => {
     setShowWarning(true)
     setTimeout(() => {
       setShowWarning(false)
     }, CONTROLLERS_OPENED_MS)
+  }
+
+  const handleOnLikeMeal = (magentoId) => {
+    onLikeMeal(magentoId)
+    setDisabledLikeMeal(true)
+    setTimeout(() => {
+      setDisabledLikeMeal(false)
+    }, 2500)
   }
 
   useEffect(() => {
@@ -105,12 +112,10 @@ const MealCard = ({
 
   return (
     <div
-      className={classnames(styles.meal_card, selected ? styles.in_cart : '')}
+      className={classnames(styles.meal_card, { [styles.in_cart]: selected })}
     >
       <div
-        className={`${styles.meal_card__top} ${
-          imageComingSoon ? styles.no_image : ''
-        }`}
+        className={classnames(styles.meal_card__top, { [styles.no_image]: imageComingSoon })}
         onClick={() => onClick()}
         data-testid="meal-image"
         style={{
@@ -150,7 +155,7 @@ const MealCard = ({
               onClick={() => openWarning()}
             >
               <img src={images.iconAlert} alt="alert" />
-              <div className={`${styles.separator}`} />
+              <div className={styles.separator} />
               <p>{allergens.length} allergens</p>
             </div>
             {showWarnings ? (
@@ -167,10 +172,15 @@ const MealCard = ({
         )}
 
         {buttonLike && (
-          <div className={styles.button__like} onClick={() => toggleWishList()}>
+          <div
+            className={classnames(styles.button__like, {
+              [styles.disabled]: disabledLikeMeal
+            })}
+            onClick={() => handleOnLikeMeal(magentoId)}
+          >
             <img
               className={styles.meal_image_heart}
-              src={likeMeal ? images.blackHeart : images.emptyHeart}
+              src={isLikeMarked ? images.blackHeart : images.emptyHeart}
               alt="heart"
             />
           </div>
@@ -186,7 +196,7 @@ const MealCard = ({
               <span className={styles.star}>
                 <img src={images.star} alt="★" />
               </span>
-              <span>{`${mealRating}`}</span>
+              <span>{mealRating}</span>
               <span className={styles.reviews}>{` (${mealReviews})`}</span>
             </div>
           )}
@@ -263,10 +273,9 @@ const MealCard = ({
                       </div>
                     )}
                     <div
-                      className={classnames(
-                        styles.fee,
-                        noExtraFee ? styles.no_extra_fee : ''
-                      )}
+                      className={classnames(styles.fee, {
+                        [styles.no_extra_fee]: noExtraFee
+                      })}
                     >
                       {premiumFeeString}
                     </div>
@@ -326,41 +335,43 @@ const MealCard = ({
 }
 
 MealCard.propTypes = {
-  meal: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    short_description: PropTypes.string.isRequired,
-    calories: PropTypes.number,
-    protein_type: PropTypes.string,
-    reviews: PropTypes.number,
-    stars: PropTypes.number,
-    chef_firstname: PropTypes.string.isRequired,
-    chef_lastname: PropTypes.string.isRequired,
-    full_path_meal_image: PropTypes.string.isRequired,
-    full_path_chef_image: PropTypes.string.isRequired,
-    is_celebrity_chef: PropTypes.bool,
-    premium_fee: PropTypes.number,
-    fixed_price: PropTypes.bool,
-    feature: PropTypes.shape({
-      name: PropTypes.string,
-      description: PropTypes.string,
-      background: PropTypes.string,
-      color: PropTypes.string
+  meal: shape({
+    name: string.isRequired,
+    short_description: string.isRequired,
+    calories: number,
+    protein_type: string,
+    reviews: number,
+    stars: number,
+    chef_firstname: string.isRequired,
+    chef_lastname: string.isRequired,
+    full_path_meal_image: string.isRequired,
+    full_path_chef_image: string.isRequired,
+    is_celebrity_chef: bool,
+    premium_fee: number,
+    fixed_price: bool,
+    feature: shape({
+      name: string,
+      description: string,
+      background: string,
+      color: string
     }),
-    stock: PropTypes.number,
-    specifications_detail: PropTypes.array,
-    warning: PropTypes.string,
-    allergens: PropTypes.array,
-    user_rating: PropTypes.number
+    stock: number,
+    specifications_detail: array,
+    warning: string,
+    allergens: array,
+    user_rating: number
   }),
-  isEditable: PropTypes.bool,
-  disableAddItem: PropTypes.bool,
-  quantity: PropTypes.number,
-  noExtraFee: PropTypes.bool,
-  onAddItem: PropTypes.func,
-  onRemoveItem: PropTypes.func,
-  onClick: PropTypes.func,
-  buttonLike: PropTypes.bool,
-  onWarnings: PropTypes.bool
+  isEditable: bool,
+  disableAddItem: bool,
+  quantity: number,
+  noExtraFee: bool,
+  onAddItem: func,
+  onRemoveItem: func,
+  onClick: func,
+  buttonLike: bool,
+  onWarnings: bool,
+  isLikeMarked: bool,
+  onLikeMeal: func
 }
 
 MealCard.defaultProps = {
