@@ -27,5 +27,7 @@ export default {
   blackStar: importCUAssets('black_star.png'),
   blackHeart: importCUAssets('black_heart.png'),
   emptyHeart: importCUAssets('empty_heart.png'),
-  iconAlert: importCUAssets('icon_alert.png')
+  iconAlert: importCUAssets('icon_alert.png'),
+  veganIcon: importCUAssets('vegan.png'),
+  vegetarianIcon: importCUAssets('vegetarian.png')
 }
