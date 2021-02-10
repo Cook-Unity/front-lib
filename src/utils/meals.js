@@ -1,4 +1,3 @@
-
 import images from '../assets/images'
 
 export const getProteinTag = protein_type => {
