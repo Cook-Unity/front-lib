@@ -146,10 +146,7 @@
     font-family: Gilroy;
     font-style: normal;
     font-weight: 800;
-    font-size: 14px;
-    @media (max-width: 720px) {
-      font-size: 12px;
-    }
+    font-size: 12px;
   }
 
   &__icon_tag {
@@ -452,9 +449,8 @@
           color: $cookunity-green;
         }
         .fee {
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 800;
-          line-height: 22px;
           &.no_extra_fee {
             color: $cookunity-gray-2;
             text-decoration: line-through;
