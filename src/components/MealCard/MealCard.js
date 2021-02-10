@@ -363,7 +363,7 @@ const MealCard = ({
                           <span className={styles.included}>Included</span>
                         ))}
                       {!includedDay && (
-                        <span className={styles.price}> {price}</span>
+                        <span className={styles.priceNoExtra}>+ $ {price}</span>
                       )}
                       {extra && !included && (
                         <span className={styles.price}> {price_plan}</span>
