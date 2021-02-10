@@ -181,7 +181,7 @@ const MealCard = ({
           !warning &&
           featureSpecs.description && (
             <div
-              className={classnames(styles.meal_card__tag, styles.featured)}
+              className={styles.meal_card__featured}
               style={{
                 backgroundColor: featureSpecs.background,
                 color: featureSpecs.color
