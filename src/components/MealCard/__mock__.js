@@ -70,7 +70,7 @@ export const withWarnings = {
   ...meal_full,
   warning: 'Contains: Gluten, Nuts, Shellfish',
   warnings: {
-    restrictions_applied:  [
+    restrictions_applied: [
       {
         name: 'Gluten'
       },
