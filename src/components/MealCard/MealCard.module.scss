@@ -117,18 +117,11 @@
       opacity: 0.2;
     }
 
-    &.no_image {
+    .no_image_text {
       background-color: #efefef;
-      .no_image_text {
-        position: absolute;
-        top: calc(50% - 10px);
-        text-align: center;
-        left: 0;
-        width: 100%;
-      }
     }
 
-    .no_stock_text {
+    .no_stock_text, .no_image_text {
       position: absolute;
       top: calc(50% - 10px);
       text-align: center;
@@ -153,26 +146,9 @@
     font-family: Gilroy;
     font-style: normal;
     font-weight: 800;
-    font-size: 24px;
-    line-height: 24px;
-    @media (max-width: 720px) {
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-
-  .checkout_info {
-    font-family: Roboto, sans-serif;
-    text-align: right;
-    margin-top: 14px;
     font-size: 14px;
-    line-height: 22px;
-    font-weight: bold;
-
     @media (max-width: 720px) {
-      margin-top: 12px;
       font-size: 12px;
-      line-height: 20px;
     }
   }
 
@@ -429,6 +405,7 @@
     justify-content: center;
     box-sizing: border-box;
     top: 10px;
+    margin-left: 10px;
 
     .user_star {
       margin-left: 3.19px;

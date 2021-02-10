@@ -44,7 +44,8 @@ const MealCard = ({
   pastOrder,
   isLoading,
   showPrice,
-  compact
+  compact,
+  extra
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
@@ -71,7 +72,6 @@ const MealCard = ({
     warning = '',
     magentoId = null,
     warnings = {},
-    extra = false,
     price_plan = '',
     price = ''
   } = meal
@@ -366,14 +366,14 @@ const MealCard = ({
                         <span className={styles.price}> {price}</span>
                       )}
                       {extra && !included && (
-                        <span className={styles.price}> + {price_plan}</span>
+                        <span className={styles.price}> {price_plan}</span>
                       )}
                     </div>
                   ))}
                 {isEditable || quantity ? (
                   <Fragment>
                     {showPrice && !premium_fee && (
-                      <span className={styles.price}>+ {price}</span>
+                      <span className={styles.price}> {price}</span>
                     )}
                     <button
                       className={classnames(
