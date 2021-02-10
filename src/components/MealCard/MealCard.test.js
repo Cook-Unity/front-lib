@@ -59,7 +59,7 @@ describe('MealCard component', () => {
     expect(screen.getByTestId('rating'))
       .toHaveTextContent('4.4 (999+)')
       .toBeVisible()
-    expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
+    expect(screen.queryByTestId('celeb-chef-img')).not.toBeInTheDocument()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
   })
@@ -134,5 +134,10 @@ describe('MealCard component', () => {
   it('With User Rating', () => {
     render(<MealCard meal={withUserRating} />)
     expect(screen.getByText('you rated 5')).toBeVisible()
+  })
+
+  it('With Celebrity chef features', () => {
+    render(<MealCard meal={meal_full} enableCelebrityFeatures />)
+    expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
   })
 })

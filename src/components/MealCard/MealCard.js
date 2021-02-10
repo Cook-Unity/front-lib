@@ -33,7 +33,8 @@ const MealCard = ({
   isEditable,
   disableAddItem,
   buttonLike,
-  onWarnings
+  onWarnings,
+  enableCelebrityFeatures
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [likeMeal, setLikeMeal] = useState(false)
@@ -230,13 +231,15 @@ const MealCard = ({
       </div>
       <div className={styles.meal_card__footer}>
         <div className={styles.meal_card__chef_container}>
-          {is_celebrity_chef && full_path_chef_image && (
-            <img
-              src={images.allStarChefBudge}
-              className={styles.all_star_budge}
-              data-testid="celeb-chef-img"
-            />
-          )}
+          {enableCelebrityFeatures &&
+            is_celebrity_chef &&
+            full_path_chef_image && (
+              <img
+                src={images.allStarChefBudge}
+                className={styles.all_star_budge}
+                data-testid="celeb-chef-img"
+              />
+            )}
           {full_path_chef_image ? (
             <div className={styles.chef_avatar}>
               <img
@@ -360,7 +363,8 @@ MealCard.propTypes = {
   onRemoveItem: PropTypes.func,
   onClick: PropTypes.func,
   buttonLike: PropTypes.bool,
-  onWarnings: PropTypes.bool
+  onWarnings: PropTypes.bool,
+  enableCelebrityFeatures: PropTypes.bool
 }
 
 MealCard.defaultProps = {
@@ -373,7 +377,8 @@ MealCard.defaultProps = {
   onWarnings: false,
   onAddItem: defaultCallback,
   onRemoveItem: defaultCallback,
-  onClick: defaultCallback
+  onClick: defaultCallback,
+  enableCelebrityFeatures: false
 }
 
 export default MealCard
