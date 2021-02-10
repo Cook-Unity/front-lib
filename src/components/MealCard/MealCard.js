@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import { bool, string, func, number, array, shape } from 'prop-types'
+import React, {useState, useEffect, Fragment} from 'react'
+import {bool, string, func, number, array, shape} from 'prop-types'
 import classnames from 'classnames'
 
 import {getProteinTag} from '../../utils/meals'
@@ -48,7 +48,7 @@ const MealCard = ({
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
-  const [disabledLikeMeal, setDisabledLikeMeal ] = useState(false)
+  const [disabledLikeMeal, setDisabledLikeMeal] = useState(false)
 
   const {
     name = '',
@@ -108,7 +108,7 @@ const MealCard = ({
     }, CONTROLLERS_OPENED_MS)
   }
 
-  const handleOnLikeMeal = (magentoId) => {
+  const handleOnLikeMeal = magentoId => {
     onLikeMeal(magentoId)
     setDisabledLikeMeal(true)
     setTimeout(() => {
@@ -349,33 +349,41 @@ const MealCard = ({
                   ''
                 )}
 
-                {compact && included ||
-                  extra && (
-                    <div className="checkout_info">
+                {(compact && included) ||
+                  (extra && (
+                    <div className={styles.checkout_info}>
                       {included &&
                         includedDay &&
                         (extra ? (
                           <span>
-                            <span className="included">Included</span>
-                            <span>{price}</span>
+                            <span className={styles.included}>Included</span>
+                            <span className={styles.price}>{price}</span>
                           </span>
                         ) : (
-                          <span className="included">Included</span>
+                          <span className={styles.included}>Included</span>
                         ))}
-                      {!includedDay && <span>{price}</span>}
-                      {extra && !included && <span>{price_plan}</span>}
+                      {!includedDay && (
+                        <span className={styles.price}> {price}</span>
+                      )}
+                      {extra && !included && (
+                        <span className={styles.price}> + {price_plan}</span>
+                      )}
                     </div>
-                  )}
+                  ))}
                 {isEditable || quantity ? (
                   <Fragment>
-                    {showPrice && <span className="price">+ {price}</span>}
+                    {showPrice && !premium_fee && (
+                      <span className={styles.price}>+ {price}</span>
+                    )}
                     <button
                       className={classnames(
                         selected ? styles.selected : styles.unselected
                       )}
                       disabled={disableAddItemBtn && quantity < 1}
                       onClick={() =>
-                        !selected ? handleAddItem() : setShowCartControllers(true)
+                        !selected
+                          ? handleAddItem()
+                          : setShowCartControllers(true)
                       }
                       data-testid="quantity-btn"
                     >
