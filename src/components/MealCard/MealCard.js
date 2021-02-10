@@ -363,9 +363,9 @@ const MealCard = ({
                           <span className={styles.included}>Included</span>
                         ))}
                       {!includedDay && (
-                        <span className={styles.price}> {price}</span>
+                        <span className={styles.priceNoExtra}>+ $ {price}</span>
                       )}
-                      {extra && !included && (
+                      {extra && !included && price_plan &&(
                         <span className={styles.price}> + {price_plan}</span>
                       )}
                     </div>
@@ -373,7 +373,7 @@ const MealCard = ({
                 {isEditable || quantity ? (
                   <Fragment>
                     {showPrice && !premium_fee && (
-                      <span className={styles.price}>+ {price}</span>
+                      <span className={styles.priceNoExtra}>+ ${price}</span>
                     )}
                     <button
                       className={classnames(

@@ -161,6 +161,15 @@
     }
   }
 
+  .priceNoExtra {
+    font-family: Gilroy;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 22px;
+    margin-right: 8px;
+  }
+
   .checkout_info {
     font-family: Roboto, sans-serif;
     text-align: right;
@@ -464,6 +473,7 @@
         .fee {
           font-size: 14px;
           font-weight: 800;
+          line-height: 22px;
           &.no_extra_fee {
             color: $cookunity-gray-2;
             text-decoration: line-through;
