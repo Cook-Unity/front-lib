@@ -254,7 +254,7 @@ const MealCard = ({
             <div className={styles.meal_card__tag}>{`${calories} cal`}</div>
           )}
 
-          {proteinTag && (
+          {proteinTag && proteinTag.icon && (
             <div
               className={classnames(
                 styles.meal_card__tag,
