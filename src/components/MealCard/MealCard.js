@@ -232,10 +232,6 @@ const MealCard = ({
           <div className={styles.no_stock_text}>Out of stock</div>
         )}
 
-        {imageComingSoon && (
-          <div className={styles.no_image_text}>Image coming soon</div>
-        )}
-
         <div className={styles.meal_card__top_tags}>
           {parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
             <div className={styles.meal_card__tag} data-testid="rating">
