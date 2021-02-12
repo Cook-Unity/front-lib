@@ -2,6 +2,8 @@ export const meal_basic = {
   name: 'Spicy Roasted Eggplant',
   chef_firstname: 'Jean-Georges',
   chef_lastname: 'Vongerichten',
+  short_description: 'with yellow rice and tomatoes',
+  magentoId: 1212,
   full_path_chef_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg'
 }
@@ -24,9 +26,16 @@ export const meal_extras = {
   protein_type: 'seafood'
 }
 
+export const meal_no_image = {
+  name: 'Spicy Roasted Eggplant',
+  chef_firstname: 'Jean-Georges',
+  chef_lastname: 'Vongerichten',
+  magentoId: 1212,
+  full_path_meal_image: null
+}
+
 export const meal_full = {
   ...meal_extras,
-  short_description: 'with yellow rice and tomatoes',
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
   specifications_detail: [

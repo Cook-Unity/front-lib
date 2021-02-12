@@ -37,7 +37,7 @@ describe('MealCard component', () => {
 
     expect(screen.getByText(meal_full.short_description)).toBeVisible()
     expect(screen.getByTestId('meal-image'))
-      .toHaveStyle(`background-image: url(${meal_full.full_path_meal_image})`)
+      .toHaveAttribute('src', meal_full.full_path_meal_image)
       .toBeVisible()
 
     expect(screen.getByText('NEW'))
@@ -53,7 +53,6 @@ describe('MealCard component', () => {
 
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
-    expect(screen.getByText('Seafood')).toBeVisible()
     expect(screen.getByText('Spicy')).toBeVisible()
     expect(screen.getByAltText('Spicy')).toBeVisible()
     expect(screen.getByTestId('rating'))
@@ -110,15 +109,25 @@ describe('MealCard component', () => {
 
   it('Meal image coming soon', () => {
     render(<MealCardCase meal={meal_no_image} />)
-    expect(screen.getByText('Image coming soon')).toBeVisible()
+    expect(screen.getAllByText('Image coming soon')).toBeVisible()
   })
 
-  it('Favourite meal', () => {
-    render(<MealCard meal={meal_basic} buttonLike />)
+  it('Favourite meal not marked', () => {
+    render(<MealCard meal={meal_basic} buttonLike isLikeMarked={false} />)
     const heart = screen.getByAltText('heart')
+    const button = screen.getByTestId('button-like')
+  
     expect(heart).toHaveAttribute('src', images.emptyHeart).toBeVisible()
-    userEvent.click(heart)
+    userEvent.click(button)
+  })
+
+  it('Favourite meal marked', () => {
+    render(<MealCard meal={meal_basic} buttonLike isLikeMarked />)
+    const heart = screen.getByAltText('heart')
+    const button = screen.getByTestId('button-like')
+  
     expect(heart).toHaveAttribute('src', images.blackHeart).toBeVisible()
+    userEvent.click(button)
   })
 
   it('With warnings', () => {

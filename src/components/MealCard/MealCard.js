@@ -215,6 +215,7 @@ const MealCard = ({
               [styles.disabled]: disabledLikeMeal
             })}
             onClick={() => handleOnLikeMeal(magentoId)}
+            data-testid="button-like"
           >
             <img
               className={styles.meal_image_heart}
