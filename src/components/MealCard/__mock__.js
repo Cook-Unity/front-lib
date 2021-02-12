@@ -1,10 +1,7 @@
 export const meal_basic = {
   name: 'Spicy Roasted Eggplant',
-  short_description: 'with yellow rice and tomatoes',
   chef_firstname: 'Jean-Georges',
   chef_lastname: 'Vongerichten',
-  full_path_meal_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
   full_path_chef_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg'
 }
@@ -29,6 +26,9 @@ export const meal_extras = {
 
 export const meal_full = {
   ...meal_extras,
+  short_description: 'with yellow rice and tomatoes',
+  full_path_meal_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
   specifications_detail: [
     {
       label: 'Dairy Free',

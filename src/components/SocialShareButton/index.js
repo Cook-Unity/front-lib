@@ -58,9 +58,7 @@ const Social = props => {
           target="_blank"
           rel="noreferrer noopener"
           onClick={() => onClickButton('email')}
-          href={`mailto:?subject=Enjoy ${title}&body=${encodeURIComponent(
-            url
-          )}`}
+          href={`mailto:?subject=${title}&body=${encodeURIComponent(url)}`}
         >
           <img src={images.email} alt="Email" className={styles.email} />
         </a>

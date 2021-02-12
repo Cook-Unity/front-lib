@@ -45,7 +45,8 @@ const MealCard = ({
   isLoading,
   showPrice,
   compact,
-  extra
+  extra,
+  enableCelebrityFeatures
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
@@ -239,8 +240,12 @@ const MealCard = ({
           <div className={styles.no_stock_text}>Out of stock</div>
         )}
 
+        {imageComingSoon && (
+          <div className={styles.no_image_text}>Image coming soon</div>
+        )}
+
         <div className={styles.meal_card__top_tags}>
-          {mealReviews && mealRating && (
+          {parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
             <div className={styles.meal_card__tag} data-testid="rating">
               <span className={styles.star}>
                 <img src={images.star} alt="★" />
@@ -305,13 +310,15 @@ const MealCard = ({
           className={styles.meal_card__chef_container}
           onClick={() => onChefClick()}
         >
-          {is_celebrity_chef && full_path_chef_image && (
-            <img
-              src={images.allStarChefBudge}
-              className={styles.all_star_budge}
-              data-testid="celeb-chef-img"
-            />
-          )}
+          {enableCelebrityFeatures &&
+            is_celebrity_chef &&
+            full_path_chef_image && (
+              <img
+                src={images.allStarChefBudge}
+                className={styles.all_star_budge}
+                data-testid="celeb-chef-img"
+              />
+            )}
           {full_path_chef_image ? (
             <div className={styles.chef_avatar}>
               <img
@@ -330,7 +337,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {premium_fee ? (
+                {premium_fee > 0 ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>
@@ -468,7 +475,8 @@ MealCard.propTypes = {
   onWarnings: bool,
   isLikeMarked: bool,
   onLikeMeal: func,
-  compact: bool
+  compact: bool,
+  enableCelebrityFeatures: bool
 }
 
 MealCard.defaultProps = {
@@ -483,7 +491,8 @@ MealCard.defaultProps = {
   onRemoveItem: defaultCallback,
   onClick: defaultCallback,
   onMealClick: defaultCallback,
-  onChefClick: defaultCallback
+  onChefClick: defaultCallback,
+  enableCelebrityFeatures: false
 }
 
 export default MealCard

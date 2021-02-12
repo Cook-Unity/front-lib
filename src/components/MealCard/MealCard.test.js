@@ -6,7 +6,17 @@ import {MealCardCase} from './MealCardCase'
 import {formatChefName} from './utils'
 import images from '../../assets/images'
 
+<<<<<<< HEAD
 import {meal_basic, meal_full, withUserRating, withWarnings} from './__mock__'
+=======
+import {
+  meal_basic,
+  meal_full,
+  withUserRating,
+  withWarnings,
+  meal_no_image
+} from './__mock__'
+>>>>>>> master
 
 describe('MealCard component', () => {
   it('Required props', () => {
@@ -15,26 +25,24 @@ describe('MealCard component', () => {
       meal_basic.chef_firstname,
       meal_basic.chef_lastname
     )
-    const mealImg = screen.getByTestId('meal-image')
-    const chefImg = screen.getByTestId('chef-image')
 
     expect(screen.getByText(meal_basic.name)).toBeVisible()
-    expect(screen.getByText(meal_basic.short_description)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
     expect(screen.getByAltText(chefName)).toBeVisible()
     expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
 
-    expect(mealImg)
-      .toHaveStyle(`background-image: url(${meal_basic.full_path_meal_image})`)
-      .toBeVisible()
-
-    expect(chefImg)
+    expect(screen.getByTestId('chef-image'))
       .toHaveAttribute('src', meal_basic.full_path_chef_image)
       .toBeVisible()
   })
 
   it('Full props', () => {
     render(<MealCard meal={meal_full} noExtraFee quantity={1} />)
+
+    expect(screen.getByText(meal_full.short_description)).toBeVisible()
+    expect(screen.getByTestId('meal-image'))
+      .toHaveStyle(`background-image: url(${meal_full.full_path_meal_image})`)
+      .toBeVisible()
 
     expect(screen.getByText('NEW'))
       .toHaveStyle({
@@ -55,7 +63,7 @@ describe('MealCard component', () => {
     expect(screen.getByTestId('rating'))
       .toHaveTextContent('4.4 (999+)')
       .toBeVisible()
-    expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
+    expect(screen.queryByTestId('celeb-chef-img')).not.toBeInTheDocument()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
   })
@@ -105,11 +113,7 @@ describe('MealCard component', () => {
   })
 
   it('Meal image coming soon', () => {
-    const meal = {
-      ...meal_full,
-      full_path_meal_image: 'undefined'
-    }
-    render(<MealCardCase meal={meal} />)
+    render(<MealCardCase meal={meal_no_image} />)
     expect(screen.getByText('Image coming soon')).toBeVisible()
   })
 
@@ -135,4 +139,12 @@ describe('MealCard component', () => {
     render(<MealCard meal={withUserRating} />)
     expect(screen.getByText('you rated 5')).toBeVisible()
   })
+<<<<<<< HEAD
+=======
+
+  it('With Celebrity chef features', () => {
+    render(<MealCard meal={meal_full} enableCelebrityFeatures />)
+    expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
+  })
+>>>>>>> master
 })
