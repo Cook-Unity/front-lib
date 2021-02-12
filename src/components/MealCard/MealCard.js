@@ -483,7 +483,8 @@ MealCard.defaultProps = {
   onRemoveItem: defaultCallback,
   onClick: defaultCallback,
   onMealClick: defaultCallback,
-  onChefClick: defaultCallback
+  onChefClick: defaultCallback,
+  onLikeMeal: defaultCallback
 }
 
 export default MealCard
