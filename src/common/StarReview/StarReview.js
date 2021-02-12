@@ -4,7 +4,7 @@ import StarRating from 'react-star-rating-controlled-component'
 
 import styles from './StarReview.module.scss'
 
-const StarReview = ({onStarClick, value, ...props}) => {
+const StarReview = ({onStarClick = () => {}, value, ...props}) => {
   return (
     <div className={styles.starReview}>
       <StarRating

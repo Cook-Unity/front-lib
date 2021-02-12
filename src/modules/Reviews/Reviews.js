@@ -6,6 +6,8 @@ import ReviewsSummary from './components/ReviewsSummary'
 
 import styles from './Reviews.module.scss'
 
+const PREVIEW_MAX = 4
+
 const Reviews = props => {
   const {
     product,
@@ -14,7 +16,7 @@ const Reviews = props => {
     isChef,
     showReviewsModal,
     toggleReviewsModal,
-    reviewModalContainerId
+    reviewModalContainerId = 'reviews-container'
   } = props
 
   if (!reviews || !product) return null
@@ -32,8 +34,8 @@ const Reviews = props => {
         reviewModalContainerId={reviewModalContainerId}
       />
 
-      <div className={styles.productReviews} id="product-reviews-container">
-        <h2>Customer Reviews</h2>
+      <div className={styles.productReviews} id="reviews-container">
+        <h2>{isChef ? 'Meal Reviews' : 'Customer Reviews'}</h2>
 
         {_reviews.length ? (
           <Fragment>
@@ -45,7 +47,7 @@ const Reviews = props => {
 
             <ReviewsList
               reviews={_reviews}
-              max={4}
+              max={PREVIEW_MAX}
               onLoadMore={toggleReviewsModal}
             />
           </Fragment>

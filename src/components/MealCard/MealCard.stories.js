@@ -1,6 +1,7 @@
 import React from 'react'
 import MealCard from './'
 import {MealCardCase} from './MealCardCase'
+
 import {
   meal_basic,
   meal_full,
@@ -10,7 +11,7 @@ import {
 } from './__mock__'
 
 export default {
-  title: 'MealCard (New)',
+  title: 'MealCard',
   component: MealCard
 }
 
@@ -105,4 +106,10 @@ export const isLoading = Template.bind({})
 isLoading.args = {
   meal: meal_full,
   isLoading: true
+}
+
+export const witCelebrityFeatures = Template.bind({})
+witCelebrityFeatures.args = {
+  meal: meal_full,
+  enableCelebrityFeatures: true
 }

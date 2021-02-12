@@ -71,45 +71,14 @@
       }
 
       .share_container {
-        position: relative;
+        position: absolute;
+        right: 0;
 
-        & > .socialLinks {
+        .socialLinks {
           position: absolute;
           right: 0;
           top: 10px;
-        }
-      }
-
-      .share_button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-
-        img {
-          width: 20px;
-          height: 20px;
-          margin-right: 10px;
-          display: block;
-
-          @include mobile {
-            width: 24px;
-            height: 24px;
-          }
-        }
-
-        p {
-          margin: 0;
-          font-family: 'Gilroy';
-          font-size: 14px;
-          line-height: 22px;
-          display: flex;
-          align-items: center;
-          text-align: right;
-          color: #231f20;
-          @include mobile {
-            display: none;
-          }
+          min-width: 250px;
         }
       }
     }

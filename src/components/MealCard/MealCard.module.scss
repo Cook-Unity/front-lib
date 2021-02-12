@@ -194,6 +194,7 @@
       &.star {
         color: $cookunity-secondary-yellow;
         > img {
+          display: inline;
           width: 10px;
           margin-right: 3px;
         }
@@ -205,8 +206,6 @@
       }
     }
   }
-
-
 
   .button__like { 
     z-index: 2; 
@@ -425,8 +424,6 @@
     -o-animation: fadeOut ease 8s;
     -ms-animation: fadeOut ease 8s;
   }
-
-
 
   &__add_to_cart_container {
     .add_to_cart {
