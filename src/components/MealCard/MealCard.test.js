@@ -6,9 +6,6 @@ import {MealCardCase} from './MealCardCase'
 import {formatChefName} from './utils'
 import images from '../../assets/images'
 
-<<<<<<< HEAD
-import {meal_basic, meal_full, withUserRating, withWarnings} from './__mock__'
-=======
 import {
   meal_basic,
   meal_full,
@@ -16,7 +13,6 @@ import {
   withWarnings,
   meal_no_image
 } from './__mock__'
->>>>>>> master
 
 describe('MealCard component', () => {
   it('Required props', () => {
@@ -139,12 +135,9 @@ describe('MealCard component', () => {
     render(<MealCard meal={withUserRating} />)
     expect(screen.getByText('you rated 5')).toBeVisible()
   })
-<<<<<<< HEAD
-=======
 
   it('With Celebrity chef features', () => {
     render(<MealCard meal={meal_full} enableCelebrityFeatures />)
     expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
   })
->>>>>>> master
 })
