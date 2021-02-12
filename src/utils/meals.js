@@ -1,7 +1,8 @@
 import images from '../assets/images'
 
-export const getProteinTag = protein_type => {
-  if (!protein_type) return
+export const getProteinTag = proteinType => {
+  if (!proteinType) return
+
   const proteinsMap = {
     glutenfree: {icon: '', label: 'Gluten Free'},
     keto: {icon: '', label: 'Keto Diet'},
@@ -13,5 +14,5 @@ export const getProteinTag = protein_type => {
     vegetarian: {icon: images.vegetarianIcon, label: 'Vegetarian'},
     whole30: {icon: '', label: 'Whole 30'}
   }
-  return proteinsMap[protein_type.toLowerCase()]
+  return proteinsMap[proteinType.toLowerCase()]
 }
