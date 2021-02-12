@@ -128,23 +128,16 @@ const MealCard = ({
 
   if (isLoading) {
     return (
-      <div className={classnames(`${styles.meal_card} ${styles.loading}`)}>
+      <div className={classnames(styles.meal_card, styles.loading)}>
         <div
-          className={classnames(
-            `${styles.meal_image_container} ${styles.loading}`
-          )}
+          className={classnames(styles.meal_image_container, styles.loading)}
         >
-          <div
-            className={classnames(`${styles.meal_image} ${styles.loading}`)}
-          />
+          <div className={classnames(styles.meal_image, styles.loading)} />
         </div>
-
         <div className={styles.bottom_info}>
           <div className={styles.meal_name}>
-            <div className={classnames(`${styles.title} ${styles.loading}`)} />
-            <div
-              className={classnames(`${styles.subtitle} ${styles.loading}`)}
-            />
+            <div className={classnames(styles.title, styles.loading)} />
+            <div className={classnames(styles.subtitle, styles.loading)} />
           </div>
         </div>
       </div>
@@ -153,15 +146,14 @@ const MealCard = ({
 
   return (
     <div
-      className={classnames(
-        styles.meal_card,
-        selected && !noSelected ? styles.in_cart : '',
-        pastOrder ? styles.in_past_order : ' '
-      )}
+      className={classnames(styles.meal_card, {
+        [styles.in_cart]: selected && !noSelected,
+        [styles.in_past_order]: pastOrder
+      })}
     >
       <div className={styles.meal_card__top}>
         <img
-          className={`${styles.main_meal_image} 
+          className={`${styles.main_meal_image}
           ${
             noStock ? styles.no__stock : imageComingSoon ? styles.no_image : ''
           }`}
