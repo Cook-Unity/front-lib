@@ -108,15 +108,16 @@ describe('MealCard component', () => {
   })
 
   it('Meal image coming soon', () => {
-    render(<MealCardCase meal={meal_no_image} />)
-    expect(screen.getAllByText('Image coming soon')).toBeVisible()
+    render(<MealCard meal={meal_no_image} />)
+    // expect(screen.getAllByText('Image coming soon')).toBeVisible()
+    expect(screen.getByText('Image coming soon')).toBeVisible()
   })
 
   it('Favourite meal not marked', () => {
     render(<MealCard meal={meal_basic} buttonLike isLikeMarked={false} />)
     const heart = screen.getByAltText('heart')
     const button = screen.getByTestId('button-like')
-  
+
     expect(heart).toHaveAttribute('src', images.emptyHeart).toBeVisible()
     userEvent.click(button)
   })
@@ -125,7 +126,7 @@ describe('MealCard component', () => {
     render(<MealCard meal={meal_basic} buttonLike isLikeMarked />)
     const heart = screen.getByAltText('heart')
     const button = screen.getByTestId('button-like')
-  
+
     expect(heart).toHaveAttribute('src', images.blackHeart).toBeVisible()
     userEvent.click(button)
   })
