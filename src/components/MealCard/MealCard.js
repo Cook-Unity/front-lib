@@ -298,6 +298,7 @@ const MealCard = ({
         <div
           className={styles.meal_card__chef_container}
           onClick={() => onChefClick()}
+          data-testid="container-chef-image"
         >
           {enableCelebrityFeatures &&
             is_celebrity_chef &&

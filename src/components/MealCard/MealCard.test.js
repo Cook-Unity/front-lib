@@ -24,7 +24,7 @@ describe('MealCard component', () => {
 
     expect(screen.getByText(meal_basic.name)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
-    expect(screen.getByAltText(chefName)).toBeVisible()
+    // expect(screen.getByAltText(chefName)).toBeVisible()
     expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
 
     expect(screen.getByTestId('chef-image'))
@@ -65,10 +65,17 @@ describe('MealCard component', () => {
 
   it('Click card', () => {
     const onClick = jest.fn()
-    render(<MealCard meal={meal_full} onClick={onClick} />)
+    render(<MealCard meal={meal_full} onMealClick={onClick} />)
     userEvent.click(screen.getByTestId('meal-image'))
     userEvent.click(screen.getByText(meal_full.short_description))
     expect(onClick.mock.calls.length).toBe(2)
+  })
+
+  it('Click Chef image', () => {
+    const onClick = jest.fn()
+    render(<MealCard meal={meal_full} onChefClick={onClick} />)
+    userEvent.click(screen.getByTestId('container-chef-image'))
+    expect(onClick.mock.calls.length).toBe(1)
   })
 
   it('No editable', () => {

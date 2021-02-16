@@ -5,7 +5,9 @@ export const meal_basic = {
   short_description: 'with yellow rice and tomatoes',
   magentoId: 1212,
   full_path_meal_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg'
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg',
+  full_path_chef_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jp'
 }
 
 export const meal_extras = {
@@ -28,13 +30,15 @@ export const meal_extras = {
 
 export const meal_no_image = {
   ...meal_basic,
-  full_path_meal_image: null
+  full_path_meal_image: '/no_selection'
 }
 
 export const meal_full = {
   ...meal_extras,
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
+  full_path_chef_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jp',
   specifications_detail: [
     {
       label: 'Dairy Free',
