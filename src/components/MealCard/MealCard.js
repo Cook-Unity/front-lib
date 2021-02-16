@@ -10,7 +10,8 @@ import {
   formatMealRating,
   formatMealReviews,
   formatFeature,
-  findSpecificationDetail
+  findSpecificationDetail,
+  getLoadingContainer
 } from './utils'
 
 import styles from './MealCard.module.scss'
@@ -127,21 +128,7 @@ const MealCard = ({
   }, [quantity, showCartControllers])
 
   if (isLoading) {
-    return (
-      <div className={classnames(styles.meal_card, styles.loading)}>
-        <div
-          className={classnames(styles.meal_image_container, styles.loading)}
-        >
-          <div className={classnames(styles.meal_image, styles.loading)} />
-        </div>
-        <div className={styles.bottom_info}>
-          <div className={styles.meal_name}>
-            <div className={classnames(styles.title, styles.loading)} />
-            <div className={classnames(styles.subtitle, styles.loading)} />
-          </div>
-        </div>
-      </div>
-    )
+    return getLoadingContainer()
   }
 
   return (

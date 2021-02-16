@@ -78,6 +78,11 @@ describe('MealCard component', () => {
     expect(onClick.mock.calls.length).toBe(1)
   })
 
+  it('Is loading meal card', () => {
+    render(<MealCard meal={meal_full} isLoading />)
+    expect(screen.getByTestId('loading-container')).toBeVisible()
+  })
+
   it('No editable', () => {
     render(<MealCardCase meal={meal_full} isEditable={false} />)
     expect(screen.queryByTestId('quantity-btn')).not.toBeInTheDocument()
