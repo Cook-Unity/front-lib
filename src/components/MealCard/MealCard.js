@@ -179,9 +179,7 @@ const MealCard = ({
               className={styles.meal_card__warning_container}
               onClick={() => openWarning()}
             >
-              <img src={images.iconAlert} alt="alert" />
-              <div className={styles.separator} />
-              <p>{allergens.length} allergens</p>
+              <img src={images.warningRedIcon} alt="alert" />
             </button>
             {showWarnings ? (
               <div
