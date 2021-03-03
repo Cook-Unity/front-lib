@@ -73,7 +73,6 @@ const MealCard = ({
     user_rating = 0,
     warning = '',
     magentoId = null,
-    warnings = {},
     price_plan = '',
     price = ''
   } = meal
@@ -92,7 +91,6 @@ const MealCard = ({
   )
 
   const noStock = stock === 0 && !selected
-  const allergens = warnings && warnings.restrictions_applied
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -179,9 +177,7 @@ const MealCard = ({
               className={styles.meal_card__warning_container}
               onClick={() => openWarning()}
             >
-              <img src={images.iconAlert} alt="alert" />
-              <div className={styles.separator} />
-              <p>{allergens.length} allergens</p>
+              <img src={images.warningRedIcon} alt="alert" />
             </button>
             {showWarnings ? (
               <div

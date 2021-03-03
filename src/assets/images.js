@@ -29,5 +29,6 @@ export default {
   emptyHeart: importCUAssets('empty_heart.png'),
   iconAlert: importCUAssets('icon_alert.png'),
   veganIcon: importCUAssets('vegan.png'),
-  vegetarianIcon: importCUAssets('vegetarian.png')
+  vegetarianIcon: importCUAssets('vegetarian.png'),
+  warningRedIcon: importCUAssets('alert-circle.png')
 }
