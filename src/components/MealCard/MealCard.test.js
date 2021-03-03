@@ -146,10 +146,8 @@ describe('MealCard component', () => {
   it('With warnings', () => {
     const alertText = withWarnings.warning
     render(<MealCard meal={withWarnings} onWarnings />)
-    expect(screen.getByText('3 allergens')).toBeVisible()
     expect(screen.queryByText(alertText)).not.toBeInTheDocument()
     userEvent.click(screen.getByAltText('alert'))
-    expect(screen.getByText('3 allergens')).toBeVisible()
     expect(screen.getByText(alertText)).toBeVisible()
   })
 
