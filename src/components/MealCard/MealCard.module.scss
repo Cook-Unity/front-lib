@@ -30,6 +30,42 @@
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .meal_card {
   position: relative;
   width: 100%;
@@ -37,7 +73,7 @@
   height: 340px;
   background: $cookunity-white;
   box-shadow: 0px 8px 16px rgba(35, 31, 32, 0.06);
-  border: 2px solid transparent;
+  // border: 2px solid transparent;
   border-radius: 8px;
   font-family: Gilroy, Roboto, sans-serif;
   overflow: hidden;
@@ -47,27 +83,51 @@
     border: 2px solid $cookunity-green;
   }
 
+  &.in_past_order {
+    margin-right: 16px;
+    border: 1px solid #DDDDDD;
+  }
+
+  &.loading {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #eff1f3 4%, #e8e8e8 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    cursor: default;
+  }
+
   &__top {
     width: 100%;
     height: 220px;
     background-position: center;
     background-size: auto 135%;
     background-repeat: no-repeat;
-    padding: 10px 16px;
+    // padding: 10px 16px;
     border-bottom: 1px solid #eeeeee;
     box-sizing: border-box;
     position: relative;
     cursor: pointer;
 
-    &.no_image {
+    .main_meal_image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .no__stock {
+      opacity: 0.2;
+    }
+
+    .no_image_text {
       background-color: #efefef;
-      .no_image_text {
-        position: absolute;
-        top: calc(50% - 10px);
-        text-align: center;
-        left: 0;
-        width: 100%;
-      }
+    }
+
+    .no_stock_text, .no_image_text {
+      position: absolute;
+      top: calc(50% - 10px);
+      text-align: center;
+      left: 0;
+      width: 100%;
+      text-transform: uppercase;
     }
 
     @media (max-width: 720px) {
@@ -77,7 +137,20 @@
     &_tags {
       position: absolute;
       bottom: 8px;
+      margin: 0 10px;
     }
+  }
+
+
+  .price {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  &__icon_tag {
+    padding: 4px !important;
   }
 
   &__tag {
@@ -97,8 +170,8 @@
     position: relative;
 
     .icon_tag {
-      height: 25px;
-      width: 25px;
+      height: 24px;
+      width: 24px;
       object-fit: cover;
     }
 
@@ -115,13 +188,7 @@
       }
     }
 
-    &.featured {
-      color: $cookunity-white;
-      background-color: #4d4d4f;
-      box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.1);
-      height: 24px;
-      padding: 3px 8px;
-    }
+   
 
     > span {
       &.star {
@@ -140,16 +207,20 @@
     }
   }
 
-  .button__like {
-    z-index: 2;
-    position: absolute;
-    right: 0;
-    top: 0px;
-    margin: 6px 20px 0 0;
-    border-radius: 30px;
-    width: 20px;
-    height: 17px;
+  .button__like { 
+    z-index: 2; 
+    position: absolute; 
+    right: 0; 
+    top: 0px; 
+    margin: 6px 20px 0 0; 
+    border-radius: 30px; 
+    width: 20px; 
+    height: 17px; 
     cursor: pointer;
+
+    &.disabled {
+      pointer-events: none;
+    }
 
     @media (max-width: 720px) {
       margin: 6px 15px 0 0;
@@ -196,6 +267,7 @@
 
   &__chef_container {
     position: relative;
+    cursor: pointer;
 
     .all_star_budge {
       position: absolute;
@@ -230,6 +302,23 @@
     }
   }
 
+  &__featured {
+    color: $cookunity-white;
+    background-color: #4d4d4f;
+    box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.1);
+    height: 24px;
+    font-size: 11px;
+    padding: 3px 8px;
+    box-sizing: border-box;
+    top: 12px;
+    margin: 0 10px;
+    position: absolute;
+    box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
   &__warning_container:hover {
     background: linear-gradient(
         0deg,
@@ -250,6 +339,9 @@
     align-items: center;
     box-sizing: border-box;
     top: 12px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
 
     img {
       width: 13.33px;
@@ -284,6 +376,7 @@
     padding: 16px;
     position: absolute;
     top: 40px;
+    z-index: 9;
 
     span {
       font-family: Gilroy;
@@ -308,6 +401,7 @@
     justify-content: center;
     box-sizing: border-box;
     top: 10px;
+    margin-left: 10px;
 
     .user_star {
       margin-left: 3.19px;
@@ -331,33 +425,6 @@
     -ms-animation: fadeOut ease 8s;
   }
 
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @-moz-keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @-webkit-keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
   &__add_to_cart_container {
     .add_to_cart {
       text-align: right;
@@ -379,7 +446,7 @@
           color: $cookunity-green;
         }
         .fee {
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 800;
           &.no_extra_fee {
             color: $cookunity-gray-2;

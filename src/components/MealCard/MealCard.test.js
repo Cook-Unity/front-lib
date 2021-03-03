@@ -24,7 +24,7 @@ describe('MealCard component', () => {
 
     expect(screen.getByText(meal_basic.name)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
-    expect(screen.getByAltText(chefName)).toBeVisible()
+    // expect(screen.getByAltText(chefName)).toBeVisible()
     expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
 
     expect(screen.getByTestId('chef-image'))
@@ -37,7 +37,7 @@ describe('MealCard component', () => {
 
     expect(screen.getByText(meal_full.short_description)).toBeVisible()
     expect(screen.getByTestId('meal-image'))
-      .toHaveStyle(`background-image: url(${meal_full.full_path_meal_image})`)
+      .toHaveAttribute('src', meal_full.full_path_meal_image)
       .toBeVisible()
 
     expect(screen.getByText('NEW'))
@@ -53,7 +53,6 @@ describe('MealCard component', () => {
 
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
-    expect(screen.getByText('Seafood')).toBeVisible()
     expect(screen.getByText('Spicy')).toBeVisible()
     expect(screen.getByAltText('Spicy')).toBeVisible()
     expect(screen.getByTestId('rating'))
@@ -66,10 +65,22 @@ describe('MealCard component', () => {
 
   it('Click card', () => {
     const onClick = jest.fn()
-    render(<MealCard meal={meal_full} onClick={onClick} />)
+    render(<MealCard meal={meal_full} onMealClick={onClick} />)
     userEvent.click(screen.getByTestId('meal-image'))
     userEvent.click(screen.getByText(meal_full.short_description))
     expect(onClick.mock.calls.length).toBe(2)
+  })
+
+  it('Click Chef image', () => {
+    const onClick = jest.fn()
+    render(<MealCard meal={meal_full} onChefClick={onClick} />)
+    userEvent.click(screen.getByTestId('container-chef-image'))
+    expect(onClick.mock.calls.length).toBe(1)
+  })
+
+  it('Is loading meal card', () => {
+    render(<MealCard meal={meal_full} isLoading />)
+    expect(screen.getByTestId('loading-container')).toBeVisible()
   })
 
   it('No editable', () => {
@@ -109,16 +120,27 @@ describe('MealCard component', () => {
   })
 
   it('Meal image coming soon', () => {
-    render(<MealCardCase meal={meal_no_image} />)
+    render(<MealCard meal={meal_no_image} />)
+    // expect(screen.getAllByText('Image coming soon')).toBeVisible()
     expect(screen.getByText('Image coming soon')).toBeVisible()
   })
 
-  it('Favourite meal', () => {
-    render(<MealCard meal={meal_basic} buttonLike />)
+  it('Favourite meal not marked', () => {
+    render(<MealCard meal={meal_basic} buttonLike isLikeMarked={false} />)
     const heart = screen.getByAltText('heart')
+    const button = screen.getByTestId('button-like')
+
     expect(heart).toHaveAttribute('src', images.emptyHeart).toBeVisible()
-    userEvent.click(heart)
+    userEvent.click(button)
+  })
+
+  it('Favourite meal marked', () => {
+    render(<MealCard meal={meal_basic} buttonLike isLikeMarked />)
+    const heart = screen.getByAltText('heart')
+    const button = screen.getByTestId('button-like')
+
     expect(heart).toHaveAttribute('src', images.blackHeart).toBeVisible()
+    userEvent.click(button)
   })
 
   it('With warnings', () => {

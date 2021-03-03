@@ -2,8 +2,12 @@ export const meal_basic = {
   name: 'Spicy Roasted Eggplant',
   chef_firstname: 'Jean-Georges',
   chef_lastname: 'Vongerichten',
+  short_description: 'with yellow rice and tomatoes',
+  magentoId: 1212,
+  full_path_meal_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg',
   full_path_chef_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/chef-1x169283.jpg'
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jp'
 }
 
 export const meal_extras = {
@@ -24,11 +28,17 @@ export const meal_extras = {
   protein_type: 'seafood'
 }
 
+export const meal_no_image = {
+  ...meal_basic,
+  full_path_meal_image: '/no_selection'
+}
+
 export const meal_full = {
   ...meal_extras,
-  short_description: 'with yellow rice and tomatoes',
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
+  full_path_chef_image:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jp',
   specifications_detail: [
     {
       label: 'Dairy Free',
@@ -69,30 +79,22 @@ export const meal_long_name = {
 export const withWarnings = {
   ...meal_full,
   warning: 'Contains: Gluten, Nuts, Shellfish',
-  allergens: [
-    {
-      name: 'Gluten'
-    },
-    {
-      name: 'Nuts'
-    },
-    {
-      name: 'Shellfish'
-    }
-  ]
+  warnings: {
+    restrictions_applied: [
+      {
+        name: 'Gluten'
+      },
+      {
+        name: 'Nuts'
+      },
+      {
+        name: 'Shellfish'
+      }
+    ]
+  }
 }
 
 export const withUserRating = {
   ...meal_full,
   user_rating: 5
-}
-
-export const meal_no_image = {
-  ...meal_basic,
-  full_path_meal_image: null
-}
-
-export const meal_no_fee = {
-  ...meal_full,
-  premium_fee: null
 }

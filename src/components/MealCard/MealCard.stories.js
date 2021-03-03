@@ -102,6 +102,12 @@ userRating.args = {
   meal: withUserRating
 }
 
+export const isLoading = Template.bind({})
+isLoading.args = {
+  meal: meal_full,
+  isLoading: true
+}
+
 export const witCelebrityFeatures = Template.bind({})
 witCelebrityFeatures.args = {
   meal: meal_full,

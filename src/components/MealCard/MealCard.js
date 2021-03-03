@@ -1,5 +1,5 @@
-import React, {Fragment, useState, useEffect} from 'react'
-import PropTypes from 'prop-types'
+import React, {useState, useEffect, Fragment} from 'react'
+import {bool, string, func, number, array, shape} from 'prop-types'
 import classnames from 'classnames'
 
 import {getProteinTag} from '../../utils/meals'
@@ -10,7 +10,8 @@ import {
   formatMealRating,
   formatMealReviews,
   formatFeature,
-  findSpecificationDetail
+  findSpecificationDetail,
+  getLoadingContainer
 } from './utils'
 
 import styles from './MealCard.module.scss'
@@ -30,15 +31,27 @@ const MealCard = ({
   onAddItem,
   onRemoveItem,
   onClick,
+  included,
+  includedDay,
   isEditable,
   disableAddItem,
   buttonLike,
   onWarnings,
+  isLikeMarked,
+  onLikeMeal,
+  onMealClick,
+  onChefClick,
+  noSelected,
+  pastOrder,
+  isLoading,
+  showPrice,
+  compact,
+  extra,
   enableCelebrityFeatures
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
-  const [likeMeal, setLikeMeal] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
+  const [disabledLikeMeal, setDisabledLikeMeal] = useState(false)
 
   const {
     name = '',
@@ -59,7 +72,10 @@ const MealCard = ({
     specifications_detail = [],
     user_rating = 0,
     warning = '',
-    allergens = []
+    magentoId = null,
+    warnings = {},
+    price_plan = '',
+    price = ''
   } = meal
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
@@ -75,6 +91,9 @@ const MealCard = ({
     full_path_meal_image
   )
 
+  const noStock = stock === 0 && !selected
+  const allergens = warnings && warnings.restrictions_applied
+
   const handleAddItem = () => {
     setShowCartControllers(true)
     if (!disableAddItemBtn) onAddItem()
@@ -84,15 +103,19 @@ const MealCard = ({
     onRemoveItem()
   }
 
-  const toggleWishList = () => {
-    setLikeMeal(!likeMeal)
-  }
-
   const openWarning = () => {
     setShowWarning(true)
     setTimeout(() => {
       setShowWarning(false)
     }, CONTROLLERS_OPENED_MS)
+  }
+
+  const handleOnLikeMeal = magentoId => {
+    onLikeMeal(magentoId)
+    setDisabledLikeMeal(true)
+    setTimeout(() => {
+      setDisabledLikeMeal(false)
+    }, 2500)
   }
 
   useEffect(() => {
@@ -104,22 +127,27 @@ const MealCard = ({
     }
   }, [quantity, showCartControllers])
 
+  if (isLoading) {
+    return getLoadingContainer()
+  }
+
   return (
     <div
-      className={classnames(styles.meal_card, selected ? styles.in_cart : '')}
+      className={classnames(styles.meal_card, {
+        [styles.in_cart]: selected && !noSelected,
+        [styles.in_past_order]: pastOrder
+      })}
     >
-      <div
-        className={`${styles.meal_card__top} ${
-          imageComingSoon ? styles.no_image : ''
-        }`}
-        onClick={() => onClick()}
-        data-testid="meal-image"
-        style={{
-          backgroundImage: `url(${
-            imageComingSoon ? images.noMealImage : full_path_meal_image
-          })`
-        }}
-      >
+      <div className={styles.meal_card__top}>
+        <img
+          className={`${styles.main_meal_image}
+          ${
+            noStock ? styles.no__stock : imageComingSoon ? styles.no_image : ''
+          }`}
+          onClick={() => onMealClick()}
+          data-testid="meal-image"
+          src={`${imageComingSoon ? images.noMealImage : full_path_meal_image}`}
+        />
         {user_rating === 5 ? (
           <div className={styles.user_stars_container}>
             <span className={styles.user_rating}>you rated 5</span>
@@ -133,7 +161,7 @@ const MealCard = ({
           !warning &&
           featureSpecs.description && (
             <div
-              className={classnames(styles.meal_card__tag, styles.featured)}
+              className={styles.meal_card__featured}
               style={{
                 backgroundColor: featureSpecs.background,
                 color: featureSpecs.color
@@ -146,14 +174,15 @@ const MealCard = ({
 
         {onWarnings && warning && (
           <Fragment>
-            <div
+            <button
+              type="button"
               className={styles.meal_card__warning_container}
               onClick={() => openWarning()}
             >
               <img src={images.iconAlert} alt="alert" />
-              <div className={`${styles.separator}`} />
+              <div className={styles.separator} />
               <p>{allergens.length} allergens</p>
-            </div>
+            </button>
             {showWarnings ? (
               <div
                 className={classnames(
@@ -168,10 +197,16 @@ const MealCard = ({
         )}
 
         {buttonLike && (
-          <div className={styles.button__like} onClick={() => toggleWishList()}>
+          <div
+            className={classnames(styles.button__like, {
+              [styles.disabled]: disabledLikeMeal
+            })}
+            onClick={() => handleOnLikeMeal(magentoId)}
+            data-testid="button-like"
+          >
             <img
               className={styles.meal_image_heart}
-              src={likeMeal ? images.blackHeart : images.emptyHeart}
+              src={isLikeMarked ? images.blackHeart : images.emptyHeart}
               alt="heart"
             />
           </div>
@@ -181,13 +216,17 @@ const MealCard = ({
           <div className={styles.no_image_text}>Image coming soon</div>
         )}
 
+        {!quantity && noStock && (
+          <div className={styles.no_stock_text}>Out of stock</div>
+        )}
+
         <div className={styles.meal_card__top_tags}>
           {parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
             <div className={styles.meal_card__tag} data-testid="rating">
               <span className={styles.star}>
                 <img src={images.star} alt="★" />
               </span>
-              <span>{`${mealRating}`}</span>
+              <span>{mealRating}</span>
               <span className={styles.reviews}>{` (${mealReviews})`}</span>
             </div>
           )}
@@ -196,8 +235,21 @@ const MealCard = ({
             <div className={styles.meal_card__tag}>{`${calories} cal`}</div>
           )}
 
-          {proteinTag && (
-            <div className={styles.meal_card__tag}>{`${proteinTag.label}`}</div>
+          {proteinTag && proteinTag.icon && (
+            <div
+              className={classnames(
+                styles.meal_card__tag,
+                styles.meal_card__icon_tag,
+                styles.only_icon
+              )}
+            >
+              <img
+                src={proteinTag.icon}
+                alt={`${proteinTag.label}`}
+                className={styles.icon_tag}
+              />
+              <div className={styles.tooltip}>{`${proteinTag.label}`}</div>
+            </div>
           )}
 
           {isSpicy && (
@@ -221,7 +273,7 @@ const MealCard = ({
       <div
         className={styles.meal_card__title}
         onClick={() => {
-          onClick()
+          onMealClick()
         }}
       >
         <div className={styles.meal_card__title_name}>{name}</div>
@@ -230,7 +282,11 @@ const MealCard = ({
         </div>
       </div>
       <div className={styles.meal_card__footer}>
-        <div className={styles.meal_card__chef_container}>
+        <div
+          className={styles.meal_card__chef_container}
+          onClick={() => onChefClick()}
+          data-testid="container-chef-image"
+        >
           {enableCelebrityFeatures &&
             is_celebrity_chef &&
             full_path_chef_image && (
@@ -266,10 +322,9 @@ const MealCard = ({
                       </div>
                     )}
                     <div
-                      className={classnames(
-                        styles.fee,
-                        noExtraFee ? styles.no_extra_fee : ''
-                      )}
+                      className={classnames(styles.fee, {
+                        [styles.no_extra_fee]: noExtraFee
+                      })}
                     >
                       {premiumFeeString}
                     </div>
@@ -277,25 +332,54 @@ const MealCard = ({
                 ) : (
                   ''
                 )}
+
+                {(compact && included) ||
+                  (extra && (
+                    <div className={styles.checkout_info}>
+                      {included &&
+                        includedDay &&
+                        (extra ? (
+                          <span>
+                            <span className={styles.included}>Included</span>
+                            <span className={styles.price}> {price}</span>
+                          </span>
+                        ) : (
+                          <span className={styles.included}>Included</span>
+                        ))}
+                      {!includedDay && (
+                        <span className={styles.price}> {price}</span>
+                      )}
+                      {extra && !included && (
+                        <span className={styles.price}> {price_plan}</span>
+                      )}
+                    </div>
+                  ))}
                 {isEditable || quantity ? (
-                  <button
-                    className={classnames(
-                      selected ? styles.selected : styles.unselected
+                  <Fragment>
+                    {showPrice && !premium_fee && (
+                      <span className={styles.price}> + $ {price}</span>
                     )}
-                    disabled={disableAddItemBtn && quantity < 1}
-                    onClick={() =>
-                      !selected ? handleAddItem() : setShowCartControllers(true)
-                    }
-                    data-testid="quantity-btn"
-                  >
-                    {quantity || (
-                      <img
-                        src={images.btnWhitePlus}
-                        alt="+"
-                        data-testid="plus-img"
-                      />
-                    )}
-                  </button>
+                    <button
+                      className={classnames(
+                        selected ? styles.selected : styles.unselected
+                      )}
+                      disabled={disableAddItemBtn && quantity < 1}
+                      onClick={() =>
+                        !selected
+                          ? handleAddItem()
+                          : setShowCartControllers(true)
+                      }
+                      data-testid="quantity-btn"
+                    >
+                      {quantity || (
+                        <img
+                          src={images.btnWhitePlus}
+                          alt="+"
+                          data-testid="plus-img"
+                        />
+                      )}
+                    </button>
+                  </Fragment>
                 ) : (
                   ''
                 )}
@@ -329,42 +413,47 @@ const MealCard = ({
 }
 
 MealCard.propTypes = {
-  meal: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    short_description: PropTypes.string,
-    calories: PropTypes.number,
-    protein_type: PropTypes.string,
-    reviews: PropTypes.number,
-    stars: PropTypes.number,
-    chef_firstname: PropTypes.string.isRequired,
-    chef_lastname: PropTypes.string.isRequired,
-    full_path_meal_image: PropTypes.string,
-    full_path_chef_image: PropTypes.string.isRequired,
-    is_celebrity_chef: PropTypes.bool,
-    premium_fee: PropTypes.number,
-    fixed_price: PropTypes.bool,
-    feature: PropTypes.shape({
-      name: PropTypes.string,
-      description: PropTypes.string,
-      background: PropTypes.string,
-      color: PropTypes.string
+  meal: shape({
+    name: string.isRequired,
+    short_description: string.isRequired,
+    calories: number,
+    protein_type: string,
+    reviews: number,
+    stars: number,
+    chef_firstname: string.isRequired,
+    chef_lastname: string.isRequired,
+    full_path_meal_image: string.isRequired,
+    full_path_chef_image: string.isRequired,
+    is_celebrity_chef: bool,
+    premium_fee: number,
+    fixed_price: bool,
+    feature: shape({
+      name: string,
+      description: string,
+      background: string,
+      color: string
     }),
-    stock: PropTypes.number,
-    specifications_detail: PropTypes.array,
-    warning: PropTypes.string,
-    allergens: PropTypes.array,
-    user_rating: PropTypes.number
+    stock: number,
+    specifications_detail: array,
+    warning: string,
+    allergens: array,
+    user_rating: number
   }),
-  isEditable: PropTypes.bool,
-  disableAddItem: PropTypes.bool,
-  quantity: PropTypes.number,
-  noExtraFee: PropTypes.bool,
-  onAddItem: PropTypes.func,
-  onRemoveItem: PropTypes.func,
-  onClick: PropTypes.func,
-  buttonLike: PropTypes.bool,
-  onWarnings: PropTypes.bool,
-  enableCelebrityFeatures: PropTypes.bool
+  isEditable: bool,
+  disableAddItem: bool,
+  quantity: number,
+  noExtraFee: bool,
+  onAddItem: func,
+  onRemoveItem: func,
+  onClick: func,
+  onMealClick: func,
+  onChefClick: func,
+  buttonLike: bool,
+  onWarnings: bool,
+  isLikeMarked: bool,
+  onLikeMeal: func,
+  compact: bool,
+  enableCelebrityFeatures: bool
 }
 
 MealCard.defaultProps = {
@@ -378,6 +467,9 @@ MealCard.defaultProps = {
   onAddItem: defaultCallback,
   onRemoveItem: defaultCallback,
   onClick: defaultCallback,
+  onMealClick: defaultCallback,
+  onChefClick: defaultCallback,
+  onLikeMeal: defaultCallback,
   enableCelebrityFeatures: false
 }
 
