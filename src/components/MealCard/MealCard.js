@@ -73,7 +73,6 @@ const MealCard = ({
     user_rating = 0,
     warning = '',
     magentoId = null,
-    warnings = {},
     price_plan = '',
     price = ''
   } = meal
@@ -92,7 +91,6 @@ const MealCard = ({
   )
 
   const noStock = stock === 0 && !selected
-  const allergens = warnings && warnings.restrictions_applied
 
   const handleAddItem = () => {
     setShowCartControllers(true)
