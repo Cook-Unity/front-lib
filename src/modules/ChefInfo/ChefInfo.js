@@ -80,16 +80,6 @@ const ChefInfo = ({chef}) => {
               </button>
             )}
           </div>
-          {chef.countries && chef.countries.length ? (
-            <div className={styles['main-cuisines']}>
-              <p>Main Cuisines</p>
-              {chef.countries.map(country => (
-                <div key={country.key} className={styles.countries}>
-                  {country.label}
-                </div>
-              ))}
-            </div>
-          ) : null}
         </div>
       </div>
     </div>
@@ -105,13 +95,7 @@ ChefInfo.propTypes = {
     total_reviews: PropTypes.string,
     compdesi: PropTypes.string,
     is_celebrity_chef: PropTypes.string,
-    logopic_url: PropTypes.string,
-    countries: PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.string,
-        label: PropTypes.string
-      })
-    )
+    logopic_url: PropTypes.string
   })
 }
 
