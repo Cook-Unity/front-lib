@@ -7,6 +7,9 @@ import RatingMeal from '../../components/RatingMeal'
 
 import {stripHtml} from '../../utils/string'
 
+const isCelebrity = chef =>
+  !(!chef.is_celebrity_chef || chef.is_celebrity_chef === '0')
+
 const ChefInfo = ({chef}) => {
   const [showMoreDescription, setShowMoreDescription] = useState(false)
 
@@ -28,7 +31,7 @@ const ChefInfo = ({chef}) => {
           <div className={styles['chef-banner-item']}>
             <h2>{chef.firstname + ' ' + chef.lastname}</h2>
           </div>
-          {chef.is_celebrity_chef && chef.logopic_url && (
+          {isCelebrity(chef) && chef.logopic_url && (
             <div className={styles['logopic-container']}>
               of{' '}
               <img

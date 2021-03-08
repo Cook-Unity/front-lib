@@ -4,6 +4,9 @@ export const chef = {
   lastname: 'Vongerichten',
   stars: '3.4',
   reviews: '325',
+  is_celebrity_chef: '0',
+  logopic_url:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/JGV-Perry-Logo-241800.png',
   image_url:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/JGV-PERFIL97967.png',
   compdesi: `
