@@ -6,8 +6,10 @@ import {
   meal_basic,
   meal_full,
   meal_long_name,
-  withWarnings,
-  withUserRating
+  with_warnings,
+  with_user_rating,
+  out_of_stock,
+  meal_no_image
 } from './__mock__'
 
 export default {
@@ -21,14 +23,30 @@ const Template = args => {
 
 export const Default = Template.bind({})
 Default.args = {
-  meal: meal_basic,
-  quantity: 0
+  meal: meal_basic
 }
 
 export const Full = Template.bind({})
 Full.args = {
   meal: meal_full,
   quantity: 0
+}
+
+export const NoEditable = Template.bind({})
+NoEditable.args = {
+  meal: out_of_stock,
+  isEditable: false
+}
+
+export const OutOfStock = Template.bind({})
+OutOfStock.args = {
+  meal: out_of_stock,
+  quantity: 0
+}
+
+export const NoMealImage = Template.bind({})
+NoMealImage.args = {
+  meal: meal_no_image
 }
 
 export const Selected = Template.bind({})
@@ -72,12 +90,6 @@ FixedPrice.args = {
   quantity: 0
 }
 
-export const NoEditable = Template.bind({})
-NoEditable.args = {
-  meal: meal_full,
-  isEditable: false
-}
-
 export const DisableAddItem = Template.bind({})
 DisableAddItem.args = {
   meal: meal_full,
@@ -93,13 +105,13 @@ buttonLike.args = {
 
 export const onWarnings = Template.bind({})
 onWarnings.args = {
-  meal: withWarnings,
+  meal: with_warnings,
   onWarnings: true
 }
 
 export const userRating = Template.bind({})
 userRating.args = {
-  meal: withUserRating
+  meal: with_user_rating
 }
 
 export const isLoading = Template.bind({})
@@ -108,8 +120,8 @@ isLoading.args = {
   isLoading: true
 }
 
-export const witCelebrityFeatures = Template.bind({})
-witCelebrityFeatures.args = {
+export const withCelebrityFeatures = Template.bind({})
+withCelebrityFeatures.args = {
   meal: meal_full,
   enableCelebrityFeatures: true
 }

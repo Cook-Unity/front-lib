@@ -19,11 +19,9 @@ import images from '../../assets/images'
 
 const CONTROLLERS_OPENED_MS = 2500
 const defaultCallback = () => {}
+const TEXT_OUT_OF_STOCK = 'Out of stock'
+const TEXT_COMING_SOON = 'Image coming soon'
 
-/**
- * Case to consider: stock = 0
- *
- */
 const MealCard = ({
   meal,
   quantity,
@@ -85,12 +83,11 @@ const MealCard = ({
   const proteinTag = getProteinTag(protein_type)
   const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
   const selected = quantity > 0
+  const noStock = isEditable && !selected && stock === 0
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
   const imageComingSoon = /no_selection|no-image|null|undefined/.test(
     full_path_meal_image
   )
-
-  const noStock = stock === 0 && !selected
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -208,12 +205,12 @@ const MealCard = ({
           </div>
         )}
 
-        {imageComingSoon && (
-          <div className={styles.no_image_text}>Image coming soon</div>
+        {noStock && (
+          <div className={styles.no_stock_text}>{TEXT_OUT_OF_STOCK}</div>
         )}
 
-        {!quantity && noStock && (
-          <div className={styles.no_stock_text}>Out of stock</div>
+        {!noStock && imageComingSoon && (
+          <div className={styles.no_image_text}>{TEXT_COMING_SOON}</div>
         )}
 
         <div className={styles.meal_card__top_tags}>
@@ -310,7 +307,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {premium_fee > 0 ? (
+                {isEditable && premium_fee > 0 ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>
@@ -411,7 +408,7 @@ const MealCard = ({
 MealCard.propTypes = {
   meal: shape({
     name: string.isRequired,
-    short_description: string.isRequired,
+    short_description: string,
     calories: number,
     protein_type: string,
     reviews: number,
