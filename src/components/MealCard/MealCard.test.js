@@ -9,9 +9,10 @@ import images from '../../assets/images'
 import {
   meal_basic,
   meal_full,
-  withUserRating,
-  withWarnings,
-  meal_no_image
+  with_user_rating,
+  with_warnings,
+  meal_no_image,
+  out_of_stock
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -24,15 +25,16 @@ describe('MealCard component', () => {
 
     expect(screen.getByText(meal_basic.name)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
-    // expect(screen.getByAltText(chefName)).toBeVisible()
-    expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
+    expect(screen.getByText('Out of stock')).toBeVisible()
 
     expect(screen.getByTestId('chef-image'))
       .toHaveAttribute('src', meal_basic.full_path_chef_image)
       .toBeVisible()
+
+    expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
   })
 
-  it('Full props', () => {
+  it('Full selected', () => {
     render(<MealCard meal={meal_full} noExtraFee quantity={1} />)
 
     expect(screen.getByText(meal_full.short_description)).toBeVisible()
@@ -84,8 +86,10 @@ describe('MealCard component', () => {
   })
 
   it('No editable', () => {
-    render(<MealCardCase meal={meal_full} isEditable={false} />)
+    render(<MealCardCase meal={out_of_stock} isEditable={false} />)
     expect(screen.queryByTestId('quantity-btn')).not.toBeInTheDocument()
+    expect(screen.queryByText('Out of stock')).not.toBeInTheDocument()
+    expect(screen.queryByText('+ $3.00')).not.toBeInTheDocument()
   })
 
   it("Disable add item when there's no more stock", () => {
@@ -94,13 +98,17 @@ describe('MealCard component', () => {
     expect(screen.getByTestId('add-btn')).toBeDisabled()
   })
 
-  it('Meal stock is zero', () => {
-    const meal = {
-      ...meal_full,
-      stock: 0
-    }
-    render(<MealCardCase meal={meal} />)
+  it('Out of stock', () => {
+    render(<MealCardCase meal={out_of_stock} />)
     expect(screen.getByTestId('quantity-btn')).toBeDisabled()
+    expect(screen.getByText('Out of stock')).toBeVisible()
+    expect(screen.queryByText('Image coming soon')).not.toBeInTheDocument()
+  })
+
+  it('Meal image coming soon', () => {
+    render(<MealCard meal={meal_no_image} />)
+    expect(screen.getByText('Image coming soon')).toBeVisible()
+    expect(screen.queryByText('Out of stock')).not.toBeInTheDocument()
   })
 
   it('Add/remove quantities', async () => {
@@ -117,12 +125,6 @@ describe('MealCard component', () => {
     expect(screen.getByTestId('quantity-btn')).toContainElement(
       screen.getByTestId('plus-img')
     )
-  })
-
-  it('Meal image coming soon', () => {
-    render(<MealCard meal={meal_no_image} />)
-    // expect(screen.getAllByText('Image coming soon')).toBeVisible()
-    expect(screen.getByText('Image coming soon')).toBeVisible()
   })
 
   it('Favourite meal not marked', () => {
@@ -144,15 +146,15 @@ describe('MealCard component', () => {
   })
 
   it('With warnings', () => {
-    const alertText = withWarnings.warning
-    render(<MealCard meal={withWarnings} onWarnings />)
+    const alertText = with_warnings.warning
+    render(<MealCard meal={with_warnings} onWarnings />)
     expect(screen.queryByText(alertText)).not.toBeInTheDocument()
     userEvent.click(screen.getByAltText('alert'))
     expect(screen.getByText(alertText)).toBeVisible()
   })
 
   it('With User Rating', () => {
-    render(<MealCard meal={withUserRating} />)
+    render(<MealCard meal={with_user_rating} />)
     expect(screen.getByText('you rated 5')).toBeVisible()
   })
 
