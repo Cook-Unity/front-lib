@@ -18,18 +18,22 @@ export const meal_extras = {
   is_celebrity_chef: true,
   premium_fee: 3,
   fixed_price: false,
+  stock: 3,
+  protein_type: 'seafood'
+}
+
+export const meal_new = {
+  ...meal_basic,
   feature: {
     name: 'NEW',
     description: 'NEW',
     background: '#4D4D4F',
     color: '#FFFFFF'
-  },
-  stock: 3,
-  protein_type: 'seafood'
+  }
 }
-
 export const meal_full = {
   ...meal_extras,
+  ...meal_new,
   specifications_detail: [
     {
       label: 'Dairy Free',

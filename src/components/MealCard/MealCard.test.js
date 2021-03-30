@@ -12,7 +12,8 @@ import {
   with_user_rating,
   with_warnings,
   meal_no_image,
-  out_of_stock
+  out_of_stock,
+  meal_extras
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -35,7 +36,7 @@ describe('MealCard component', () => {
   })
 
   it('Full selected', () => {
-    render(<MealCard meal={meal_full} noExtraFee quantity={1} />)
+    render(<MealCard meal={meal_full} noExtraFee quantity={1} isNew={false} />)
 
     expect(screen.getByText(meal_full.short_description)).toBeVisible()
     expect(screen.getByTestId('meal-image'))
@@ -57,9 +58,6 @@ describe('MealCard component', () => {
     expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
     expect(screen.getByText('Spicy')).toBeVisible()
     expect(screen.getByAltText('Spicy')).toBeVisible()
-    expect(screen.getByTestId('rating'))
-      .toHaveTextContent('4.4 (999+)')
-      .toBeVisible()
     expect(screen.queryByTestId('celeb-chef-img')).not.toBeInTheDocument()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
@@ -83,6 +81,13 @@ describe('MealCard component', () => {
   it('Is loading meal card', () => {
     render(<MealCard meal={meal_full} isLoading />)
     expect(screen.getByTestId('loading-container')).toBeVisible()
+  })
+
+  it('not new meal', () => {
+    render(<MealCard meal={meal_extras} />)
+    expect(screen.getByTestId('rating'))
+      .toHaveTextContent('4.4 (999+)')
+      .toBeVisible()
   })
 
   it('No editable', () => {
