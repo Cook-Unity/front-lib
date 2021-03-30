@@ -88,6 +88,7 @@ const MealCard = ({
   const imageComingSoon = /no_selection|no-image|null|undefined/.test(
     full_path_meal_image
   )
+  const isNew = featureSpecs.description === 'NEW'
 
   const handleAddItem = () => {
     setShowCartControllers(true)
@@ -214,7 +215,7 @@ const MealCard = ({
         )}
 
         <div className={styles.meal_card__top_tags}>
-          {parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
+          {!isNew && parseInt(mealReviews) > 0 && parseInt(mealRating) > 0 && (
             <div className={styles.meal_card__tag} data-testid="rating">
               <span className={styles.star}>
                 <img src={images.star} alt="★" />
