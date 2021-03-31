@@ -46,7 +46,7 @@ describe('MealCard component', () => {
   })
 
   it('Full selected', () => {
-    render(<MealCard meal={meal_full} noExtraFee quantity={1} />)
+    render(<MealCard meal={meal_full} noExtraFee quantity={1} isNew={false} />)
 
     expect(screen.getByText(meal_full.short_description)).toBeVisible()
     expect(screen.getByTestId('meal-image'))
@@ -57,13 +57,14 @@ describe('MealCard component', () => {
       .toHaveTextContent('1')
       .toBeVisible()
 
+    expect(screen.getByTestId('rating'))
+      .toHaveTextContent('4.4 (999+)')
+      .toBeVisible()
+
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
     expect(screen.getByText('Spicy')).toBeVisible()
     expect(screen.getByAltText('Spicy')).toBeVisible()
-    expect(screen.getByTestId('rating'))
-      .toHaveTextContent('4.4 (999+)')
-      .toBeVisible()
     expect(screen.queryByTestId('celeb-chef-img')).not.toBeInTheDocument()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
