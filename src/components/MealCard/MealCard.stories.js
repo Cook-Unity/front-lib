@@ -32,6 +32,20 @@ Full.args = {
   quantity: 0
 }
 
+export const NewTag = Template.bind({})
+NewTag.args = {
+  meal: {
+    ...meal_full,
+    feature: {
+      name: 'NEW',
+      description: 'NEW',
+      background: '#4D4D4F',
+      color: '#FFFFFF'
+    }
+  },
+  quantity: 0
+}
+
 export const NoEditable = Template.bind({})
 NoEditable.args = {
   meal: out_of_stock,
