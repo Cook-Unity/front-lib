@@ -12,7 +12,8 @@ import {
   with_user_rating,
   with_warnings,
   meal_no_image,
-  out_of_stock
+  out_of_stock,
+  meal_new
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -34,19 +35,22 @@ describe('MealCard component', () => {
     expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
   })
 
+  it('New meal', () => {
+    render(<MealCard meal={meal_new} noExtraFee quantity={1} />)
+    expect(screen.getByText('NEW'))
+      .toHaveStyle({
+        backgroundColor: meal_new.feature.background,
+        color: meal_new.feature.color
+      })
+      .toBeVisible()
+  })
+
   it('Full selected', () => {
     render(<MealCard meal={meal_full} noExtraFee quantity={1} />)
 
     expect(screen.getByText(meal_full.short_description)).toBeVisible()
     expect(screen.getByTestId('meal-image'))
       .toHaveAttribute('src', meal_full.full_path_meal_image)
-      .toBeVisible()
-
-    expect(screen.getByText('NEW'))
-      .toHaveStyle({
-        backgroundColor: meal_full.feature.background,
-        color: meal_full.feature.color
-      })
       .toBeVisible()
 
     expect(screen.getByTestId('quantity-btn'))
