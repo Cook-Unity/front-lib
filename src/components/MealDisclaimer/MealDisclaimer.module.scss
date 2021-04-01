@@ -1,4 +1,7 @@
 #mealDisclaimer {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 16px;
   border: 1px dashed #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
@@ -9,9 +12,12 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
+    margin: 0px;
   }
 
   img {
-    background-color: black;
+    width: 14px;
+    height: 14px;
+    margin: 3px 8px 0px 2px;
   }
 }

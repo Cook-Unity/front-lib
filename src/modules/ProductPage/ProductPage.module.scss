@@ -48,11 +48,11 @@
           margin-right: 10px;
           display: block;
         }
-         p {
+        p {
           &:hover {
             text-decoration: underline;
           }
-         }
+        }
 
         @include mobile {
           display: none;
@@ -90,10 +90,12 @@
         display: none;
       }
 
-      & > .block {
-        & > *:not(:last-child) {
-          margin-bottom: 32px;
-        }
+      & > *:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      & > .blockAlways {
+        grid-column: span 2;
       }
 
       @include from($tablet + 1px) {
@@ -109,10 +111,14 @@
         & > .column {
           display: block;
           min-width: 0;
+        }
 
-          & > *:not(:last-child) {
-            margin-bottom: 32px;
-          }
+        & > *:not(:last-child) {
+          margin-bottom: 32px;
+        }
+
+        & .mealDisclaimer {
+          margin-top: -32px;
         }
       }
     }

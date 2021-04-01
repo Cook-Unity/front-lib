@@ -1,6 +1,10 @@
 const imageUrl = filename =>
   `https://static.cookunity.com/cross/front-lib/images/${filename}`
 
+const iconAlertBlack = imageUrl('icon-alert-black.png')
+
+export {iconAlertBlack}
+
 export default {
   plusImage: imageUrl('plus-white.png'),
   chevronIcon: imageUrl('chevron.png'),
@@ -32,5 +36,5 @@ export default {
   veganIcon: imageUrl('vegan.png'),
   vegetarianIcon: imageUrl('vegetarian.png'),
   warningRedIcon: imageUrl('alert-circle.png'),
-  iconAlertBlack: imageUrl('icon_alert_black.png')
+  iconAlertBlack
 }
