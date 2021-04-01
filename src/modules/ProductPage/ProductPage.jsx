@@ -143,7 +143,7 @@ const ProductPage = ({
                 </div>
 
                 <div
-                  className={`${styles.blockAlways} ${styles.mealDisclaimer}`}
+                  className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
                 >
                   {mealDisclaimer}
                 </div>

@@ -84,23 +84,29 @@
     }
 
     .board {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
 
       & > .column {
         display: none;
       }
 
-      & > *:not(:last-child) {
-        margin-bottom: 32px;
+      & > .block {
+        & > * {
+          margin-bottom: 32px;
+        }
       }
 
-      & > .blockAlways {
+      & > .fix {
         grid-column: span 2;
       }
 
       @include from($tablet + 1px) {
         & > .block {
           display: none;
+        }
+
+        & > .fix {
+          display: block;
         }
 
         display: grid;
@@ -111,14 +117,10 @@
         & > .column {
           display: block;
           min-width: 0;
-        }
 
-        & > *:not(:last-child) {
-          margin-bottom: 32px;
-        }
-
-        & .mealDisclaimer {
-          margin-top: -32px;
+          & > * {
+            margin-bottom: 32px;
+          }
         }
       }
     }
