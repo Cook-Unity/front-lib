@@ -12,6 +12,7 @@ import Ingredients from '../Ingredients'
 import FinalSteps from '../FinalSteps'
 import NutritionalFacts from '../NutritionalFacts'
 import Macronutrients from '../Macronutrients'
+import MealDisclaimer from '../../components/MealDisclaimer'
 import Reviews from '../Reviews'
 import Specifications from '../Specifications'
 
@@ -63,6 +64,7 @@ const ProductPage = ({
       calories={productData.calories}
     />
   )
+  const mealDisclaimer = <MealDisclaimer />
 
   const handleReviews = () => setShowReviewsModal(!showReviewsModal)
   return (
@@ -138,6 +140,12 @@ const ProductPage = ({
                   {nutrition}
                   {finalSteps}
                   {macronutrients}
+                </div>
+
+                <div
+                  className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
+                >
+                  {mealDisclaimer}
                 </div>
               </div>
 

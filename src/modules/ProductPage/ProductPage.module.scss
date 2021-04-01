@@ -48,11 +48,11 @@
           margin-right: 10px;
           display: block;
         }
-         p {
+        p {
           &:hover {
             text-decoration: underline;
           }
-         }
+        }
 
         @include mobile {
           display: none;
@@ -84,21 +84,29 @@
     }
 
     .board {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
 
       & > .column {
         display: none;
       }
 
       & > .block {
-        & > *:not(:last-child) {
+        & > * {
           margin-bottom: 32px;
         }
+      }
+
+      & > .fix {
+        grid-column: span 2;
       }
 
       @include from($tablet + 1px) {
         & > .block {
           display: none;
+        }
+
+        & > .fix {
+          display: block;
         }
 
         display: grid;
@@ -110,7 +118,7 @@
           display: block;
           min-width: 0;
 
-          & > *:not(:last-child) {
+          & > * {
             margin-bottom: 32px;
           }
         }
