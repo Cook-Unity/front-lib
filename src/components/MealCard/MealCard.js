@@ -45,7 +45,8 @@ const MealCard = ({
   showPrice,
   compact,
   extra,
-  enableCelebrityFeatures
+  enableCelebrityFeatures,
+  hideCartControllers
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarnings, setShowWarning] = useState(false)
@@ -91,10 +92,12 @@ const MealCard = ({
   const isNew = featureSpecs.description === 'NEW'
 
   const handleAddItem = () => {
+    if (hideCartControllers) return
     setShowCartControllers(true)
     if (!disableAddItemBtn) onAddItem()
   }
   const handleRemoveItem = () => {
+    if (hideCartControllers) return
     setShowCartControllers(true)
     onRemoveItem()
   }
@@ -358,11 +361,13 @@ const MealCard = ({
                         selected ? styles.selected : styles.unselected
                       )}
                       disabled={disableAddItemBtn && quantity < 1}
-                      onClick={() =>
-                        !selected
-                          ? handleAddItem()
-                          : setShowCartControllers(true)
-                      }
+                      onClick={() => {
+                        if (!hideCartControllers) {
+                          !selected
+                            ? handleAddItem()
+                            : setShowCartControllers(true)
+                        }
+                      }}
                       data-testid="quantity-btn"
                     >
                       {quantity || (
@@ -447,7 +452,8 @@ MealCard.propTypes = {
   isLikeMarked: bool,
   onLikeMeal: func,
   compact: bool,
-  enableCelebrityFeatures: bool
+  enableCelebrityFeatures: bool,
+  hideCartControllers: bool
 }
 
 MealCard.defaultProps = {
@@ -464,7 +470,8 @@ MealCard.defaultProps = {
   onMealClick: defaultCallback,
   onChefClick: defaultCallback,
   onLikeMeal: defaultCallback,
-  enableCelebrityFeatures: false
+  enableCelebrityFeatures: false,
+  hideCartControllers: false
 }
 
 export default MealCard
