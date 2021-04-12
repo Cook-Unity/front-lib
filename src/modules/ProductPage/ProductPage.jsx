@@ -147,7 +147,6 @@ const ProductPage = ({
                 product={productData}
                 reviews={productData.reviews_data}
                 quantity={productData.reviews_count}
-                title="Community Reviews"
                 showReviewsModal={showReviewsModal}
                 toggleReviewsModal={handleReviews}
                 reviewModalContainerId={reviewModalContainerId}
