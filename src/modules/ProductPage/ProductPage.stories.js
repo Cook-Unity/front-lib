@@ -1,5 +1,5 @@
 import React from 'react'
-import defaultProps from './__mock__'
+import {meal} from './__mock__'
 
 import ProductPage from './index'
 
@@ -16,9 +16,7 @@ const Template = args => (
 
 export const Default = Template.bind({})
 Default.args = {
-  productData: {
-    ...defaultProps.meal
-  },
+  productData: meal,
   isOrdering: true,
   goBack: () => {}
 }

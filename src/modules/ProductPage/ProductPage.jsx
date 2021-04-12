@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
 
 import Skeleton from './skeleton'
-import MetaTags from '../../components/MetaTags'
 import Share from '../../components/Share'
 
 import ProductBasicInformation from '../ProductBasicInformation'
@@ -107,11 +106,6 @@ const ProductPage = ({
             <Skeleton hideStars />
           ) : (
             <Fragment>
-              <MetaTags
-                title={productData.name + ' ' + productData.short_description}
-                description={productData.meal_story}
-              />
-
               <ProductBasicInformation
                 isOrdering={isOrdering}
                 productData={productData}
