@@ -27,3 +27,8 @@ inModal.args = {
     console.log('modal close')
   }
 }
+
+export const isLoading = Template.bind({})
+isLoading.args = {
+  isLoading: true
+}
