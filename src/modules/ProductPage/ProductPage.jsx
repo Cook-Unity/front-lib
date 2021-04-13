@@ -43,16 +43,21 @@ const getFinalSteps = productData => {
 const ProductPage = ({
   productData,
   isLoading,
-  closeModalHandler,
-  openChefProfileHandler,
-  addProductHandler,
+  onCloseModal,
+  onChefClick,
+  onAddProduct,
   openInModal,
   isOrdering,
   reviewModalContainerId
 }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(openInModal)
   const [showReviewsModal, setShowReviewsModal] = useState(false)
-
   const handleReviews = () => setShowReviewsModal(!showReviewsModal)
+
+  const closeModal = () => {
+    onCloseModal()
+    setModalIsOpen(false)
+  }
 
   const ingredients = <Ingredients ingredients={productData.ingredients_data} />
   const finalSteps = getFinalSteps(productData)
@@ -69,23 +74,22 @@ const ProductPage = ({
 
   const header = (
     <div className={styles.header}>
-      <div className={styles.back_button} onClick={closeModalHandler}>
-        {openInModal && (
-          <Fragment>
+      {modalIsOpen && (
+        <Fragment>
+          <div className={styles.back_button} onClick={closeModal}>
             <img src={images.close} alt="close" />
             <p>Back</p>
-          </Fragment>
-        )}
-      </div>
-
-      <div
-        className={classnames(styles.back_button, {
-          [styles.mobile]: styles.mobile
-        })}
-        onClick={closeModalHandler}
-      >
-        {openInModal && <img src={images.closeMobile} alt="close" />}
-      </div>
+          </div>
+          <div
+            className={classnames(styles.back_button, {
+              [styles.mobile]: styles.mobile
+            })}
+            onClick={closeModal}
+          >
+            <img src={images.closeMobile} alt="close" />
+          </div>
+        </Fragment>
+      )}
 
       {!isLoading && (
         <div className={styles.share_container}>
@@ -106,9 +110,9 @@ const ProductPage = ({
       <ProductBasicInformation
         isOrdering={isOrdering}
         productData={productData}
-        addProduct={addProductHandler}
+        addProduct={onAddProduct}
         onClickReviewCount={handleReviews}
-        onChefClick={openChefProfileHandler}
+        onChefClick={onChefClick}
       />
 
       <Specifications
@@ -161,12 +165,12 @@ const ProductPage = ({
   )
 
   return (
-    (openInModal && (
+    (modalIsOpen && (
       <Modal
-        isOpen={openInModal}
-        onRequestClose={closeModalHandler}
+        isOpen={modalIsOpen}
         className={styles.modalContent}
         overlayClassName={styles.modalOverlay}
+        ariaHideApp={false}
       >
         {content}
       </Modal>
@@ -177,10 +181,9 @@ const ProductPage = ({
 
 ProductPage.propTypes = {
   productData: PropTypes.object.isRequired,
-  closeModalHandler: PropTypes.func,
-  openChefProfileHandler: PropTypes.func,
-  toggleReviewsModalHandler: PropTypes.func,
-  addProductHandler: PropTypes.func,
+  onCloseModal: PropTypes.func,
+  onChefClick: PropTypes.func,
+  onAddProduct: PropTypes.func,
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
   openInModal: PropTypes.bool,
@@ -190,12 +193,11 @@ ProductPage.propTypes = {
 
 ProductPage.defaultProps = {
   productData: {},
-  openChefProfileHandler: () => {},
-  toggleReviewsModalHandler: () => {},
-  addProductHandler: () => {},
-  closeModalHandler: () => {},
   isLoading: false,
   openInModal: false,
+  onCloseModal: () => {},
+  onAddProduct: () => {},
+  onChefClick: null,
   isOrdering: false,
   reviewModalContainerId: null
 }

@@ -22,11 +22,8 @@ Default.args = {
 export const inModal = Template.bind({})
 inModal.args = {
   productData: meal,
-  openInModal: true
-}
-
-export const Ordering = Template.bind({})
-Ordering.args = {
-  productData: meal,
-  isOrdering: true
+  openInModal: true,
+  onCloseModal: () => {
+    console.log('modal close')
+  }
 }
