@@ -16,6 +16,11 @@ const Template = args => (
 
 export const Default = Template.bind({})
 Default.args = {
+  productData: meal
+}
+
+export const Ordering = Template.bind({})
+Ordering.args = {
   productData: meal,
   isOrdering: true,
   goBack: () => {}

@@ -4,19 +4,18 @@ import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
 
 import Skeleton from './skeleton'
-import Share from '../../components/Share'
-
 import ProductBasicInformation from '../ProductBasicInformation'
-import Ingredients from '../Ingredients'
-import FinalSteps from '../FinalSteps'
-import NutritionalFacts from '../NutritionalFacts'
-import Macronutrients from '../Macronutrients'
-import MealDisclaimer from '../../components/MealDisclaimer'
 import Reviews from '../Reviews'
-import Specifications from '../Specifications'
+
+import Share from '../../components/Share'
+import Ingredients from '../../components/Ingredients'
+import NutritionalFacts from '../../components/NutritionalFacts'
+import FinalSteps from '../../components/FinalSteps'
+import Macronutrients from '../../components/Macronutrients'
+import MealDisclaimer from '../../components/MealDisclaimer'
+import Specifications from '../../components/Specifications'
 
 import images from '../../assets/images'
-
 import styles from './ProductPage.module.scss'
 
 const getFinalSteps = productData => {
@@ -52,6 +51,8 @@ const ProductPage = ({
 }) => {
   const [showReviewsModal, setShowReviewsModal] = useState(false)
 
+  const handleReviews = () => setShowReviewsModal(!showReviewsModal)
+
   const ingredients = <Ingredients ingredients={productData.ingredients_data} />
   const finalSteps = getFinalSteps(productData)
   const nutrition = (
@@ -64,43 +65,45 @@ const ProductPage = ({
     />
   )
   const mealDisclaimer = <MealDisclaimer />
+  const header = (
+    <div className={styles.header}>
+      <div className={styles.back_button} onClick={goBack}>
+        {goBack && (
+          <Fragment>
+            <img src={images.close} alt="close" />
+            <p>{goBackText}</p>
+          </Fragment>
+        )}
+      </div>
 
-  const handleReviews = () => setShowReviewsModal(!showReviewsModal)
+      <div
+        className={classnames(styles.back_button, {
+          [styles.mobile]: styles.mobile
+        })}
+        onClick={goBack}
+      >
+        {goBack && <img src={images.closeMobile} alt="close" />}
+      </div>
+
+      {!isLoading && (
+        <div className={styles.share_container}>
+          <Share
+            url={productData.url_path}
+            title={`Enjoy ${productData.name}`}
+            customStyles={{
+              socialLinks: styles.socialLinks
+            }}
+          />
+        </div>
+      )}
+    </div>
+  )
+
   return (
     <Fragment>
       <div className={styles.cookunity__product_detail_container}>
         <div className={styles.cookunity__product_detail}>
-          <div className={styles.header}>
-            <div className={styles.back_button} onClick={goBack}>
-              {goBack && (
-                <Fragment>
-                  <img src={images.close} alt="close" />
-                  <p>{goBackText}</p>
-                </Fragment>
-              )}
-            </div>
-
-            <div
-              className={classnames(styles.back_button, {
-                [styles.mobile]: styles.mobile
-              })}
-              onClick={goBack}
-            >
-              {goBack && <img src={images.closeMobile} alt="close" />}
-            </div>
-
-            {!isLoading && (
-              <div className={styles.share_container}>
-                <Share
-                  url={productData.url_path}
-                  title={`Enjoy ${productData.name}`}
-                  customStyles={{
-                    socialLinks: styles.socialLinks
-                  }}
-                />
-              </div>
-            )}
-          </div>
+          {header}
 
           {isLoading ? (
             <Skeleton hideStars />

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {render} from '@testing-library/react'
 
-import {PROTEIN, getDietaryValue} from '../../modules/Macronutrients/utils'
+import {PROTEIN, getDietaryValue} from '../../components/Macronutrients/utils'
 
 import Gauge from './Gauge'
 
