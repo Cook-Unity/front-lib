@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
+import Modal from 'react-modal'
 
 import Skeleton from './skeleton'
 import ProductBasicInformation from '../ProductBasicInformation'
@@ -42,10 +43,10 @@ const getFinalSteps = productData => {
 const ProductPage = ({
   productData,
   isLoading,
-  goBack,
-  goBackText,
+  closeModalHandler,
   openChefProfileHandler,
   addProductHandler,
+  openInModal,
   isOrdering,
   reviewModalContainerId
 }) => {
@@ -65,13 +66,14 @@ const ProductPage = ({
     />
   )
   const mealDisclaimer = <MealDisclaimer />
+
   const header = (
     <div className={styles.header}>
-      <div className={styles.back_button} onClick={goBack}>
-        {goBack && (
+      <div className={styles.back_button} onClick={closeModalHandler}>
+        {openInModal && (
           <Fragment>
             <img src={images.close} alt="close" />
-            <p>{goBackText}</p>
+            <p>Back</p>
           </Fragment>
         )}
       </div>
@@ -80,9 +82,9 @@ const ProductPage = ({
         className={classnames(styles.back_button, {
           [styles.mobile]: styles.mobile
         })}
-        onClick={goBack}
+        onClick={closeModalHandler}
       >
-        {goBack && <img src={images.closeMobile} alt="close" />}
+        {openInModal && <img src={images.closeMobile} alt="close" />}
       </div>
 
       {!isLoading && (
@@ -99,91 +101,101 @@ const ProductPage = ({
     </div>
   )
 
-  return (
+  const body = (
     <Fragment>
-      <div className={styles.cookunity__product_detail_container}>
-        <div className={styles.cookunity__product_detail}>
-          {header}
+      <ProductBasicInformation
+        isOrdering={isOrdering}
+        productData={productData}
+        addProduct={addProductHandler}
+        onClickReviewCount={handleReviews}
+        onChefClick={openChefProfileHandler}
+      />
 
-          {isLoading ? (
-            <Skeleton hideStars />
-          ) : (
-            <Fragment>
-              <ProductBasicInformation
-                isOrdering={isOrdering}
-                productData={productData}
-                addProduct={addProductHandler}
-                onClickReviewCount={handleReviews}
-                onChefClick={openChefProfileHandler}
-              />
+      <Specifications
+        specificationsDetail={productData.specifications_detail}
+      />
 
-              <Specifications
-                specificationsDetail={productData.specifications_detail}
-              />
+      <div className={styles.board}>
+        <div className={styles.column}>
+          {ingredients}
+          {finalSteps}
+        </div>
 
-              <div className={styles.board}>
-                <div className={styles.column}>
-                  {ingredients}
-                  {finalSteps}
-                </div>
+        <div className={styles.column}>
+          {nutrition}
+          {macronutrients}
+        </div>
 
-                <div className={styles.column}>
-                  {nutrition}
-                  {macronutrients}
-                </div>
+        <div className={styles.block}>
+          {ingredients}
+          {nutrition}
+          {finalSteps}
+          {macronutrients}
+        </div>
 
-                <div className={styles.block}>
-                  {ingredients}
-                  {nutrition}
-                  {finalSteps}
-                  {macronutrients}
-                </div>
-
-                <div
-                  className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
-                >
-                  {mealDisclaimer}
-                </div>
-              </div>
-
-              <Reviews
-                product={productData}
-                reviews={productData.reviews_data}
-                quantity={productData.reviews_count}
-                showReviewsModal={showReviewsModal}
-                toggleReviewsModal={handleReviews}
-                reviewModalContainerId={reviewModalContainerId}
-              />
-            </Fragment>
-          )}
+        <div
+          className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
+        >
+          {mealDisclaimer}
         </div>
       </div>
+
+      <Reviews
+        product={productData}
+        reviews={productData.reviews_data}
+        quantity={productData.reviews_count}
+        showReviewsModal={showReviewsModal}
+        toggleReviewsModal={handleReviews}
+        reviewModalContainerId={reviewModalContainerId}
+      />
     </Fragment>
+  )
+
+  const content = (
+    <div className={styles.cookunity__product_detail_container}>
+      <div className={styles.cookunity__product_detail}>
+        {header}
+        {isLoading ? <Skeleton hideStars /> : body}
+      </div>
+    </div>
+  )
+
+  return (
+    (openInModal && (
+      <Modal
+        isOpen={openInModal}
+        onRequestClose={closeModalHandler}
+        className={styles.modalContent}
+        overlayClassName={styles.modalOverlay}
+      >
+        {content}
+      </Modal>
+    )) ||
+    content
   )
 }
 
 ProductPage.propTypes = {
   productData: PropTypes.object.isRequired,
-  HeaderComponent: PropTypes.element,
-  goBack: PropTypes.func,
+  closeModalHandler: PropTypes.func,
   openChefProfileHandler: PropTypes.func,
   toggleReviewsModalHandler: PropTypes.func,
   addProductHandler: PropTypes.func,
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
+  openInModal: PropTypes.bool,
   isOrdering: PropTypes.bool,
   reviewModalContainerId: PropTypes.string
 }
 
 ProductPage.defaultProps = {
   productData: {},
-  HeaderComponent: null,
-  goBack: null,
-  openChefProfileHandler: null,
+  openChefProfileHandler: () => {},
   toggleReviewsModalHandler: () => {},
   addProductHandler: () => {},
-  goBackText: 'Back',
+  closeModalHandler: () => {},
   isLoading: false,
+  openInModal: false,
   isOrdering: false,
   reviewModalContainerId: null
 }

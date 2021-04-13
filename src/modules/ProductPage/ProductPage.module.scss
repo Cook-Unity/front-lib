@@ -1,6 +1,24 @@
 @import '../../assets/styles/scss/mixins';
 @import '../../assets/styles/scss/variables';
 
+.modalOverlay {
+  position: fixed;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: $z-index-error-modal-overlay;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mobile {
+    padding: 0;
+  }
+}
+
 .cookunity__product_detail_container {
   display: flex;
   flex-direction: column;
@@ -27,7 +45,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 40px 0 16px 0;
+      margin: 20px 0 16px 0;
 
       @include mobile {
         margin: 20px 0;

@@ -19,9 +19,14 @@ Default.args = {
   productData: meal
 }
 
+export const inModal = Template.bind({})
+inModal.args = {
+  productData: meal,
+  openInModal: true
+}
+
 export const Ordering = Template.bind({})
 Ordering.args = {
   productData: meal,
-  isOrdering: true,
-  goBack: () => {}
+  isOrdering: true
 }
