@@ -20,7 +20,6 @@
   border: none;
   max-width: 1400px !important;
   max-height: 100% !important;
-  position: relative;
   border-radius: 0;
   background-color: #fafafa;
   position: absolute;
@@ -28,6 +27,7 @@
   background: rgb(255, 255, 255);
   overflow: auto;
   border-radius: 4px;
+  padding: 0 10px;
 }
 
 .cookunity__product_detail_container {
@@ -46,7 +46,7 @@
     box-sizing: border-box;
 
     @include mobile {
-      padding: 0 25px;
+      padding: 0 10px;
       margin-bottom: 24px;
       align-items: center;
     }

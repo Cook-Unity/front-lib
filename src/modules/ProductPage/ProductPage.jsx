@@ -91,17 +91,15 @@ const ProductPage = ({
         </Fragment>
       )}
 
-      {!isLoading && (
-        <div className={styles.share_container}>
-          <Share
-            url={productData.url_path}
-            title={`Enjoy ${productData.name}`}
-            customStyles={{
-              socialLinks: styles.socialLinks
-            }}
-          />
-        </div>
-      )}
+      <div className={styles.share_container}>
+        <Share
+          url={productData.url_path}
+          title={`Enjoy ${productData.name}`}
+          customStyles={{
+            socialLinks: styles.socialLinks
+          }}
+        />
+      </div>
     </div>
   )
 
