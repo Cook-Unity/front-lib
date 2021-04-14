@@ -45,7 +45,9 @@ const ProductBasicInformation = ({
         onClick={onChefClick}
       />
 
-      {isOrdering && <OrderButtons {...isOrdering} />}
+      {isOrdering && (
+        <OrderButtons {...isOrdering} className={styles.addProduct} />
+      )}
     </div>
   )
 }
