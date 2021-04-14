@@ -1,21 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Button from '../../common/Buttons'
 import MealImage from '../../common/MealImage'
 import RatingMeal from '../../components/RatingMeal'
 import ProductTitle from '../../components/ProductTitle'
 import ProductDescription from '../../components/ProductDescription'
 import ChefProfile from '../../components/ChefProfile'
-
-import images from '../../assets/images'
+import OrderButtons from '../../components/OrderButtons'
 
 import styles from './ProductBasicInformation.module.scss'
 
 const ProductBasicInformation = ({
   productData,
   isLoading,
-  isOrdering,
   addProduct,
   onChefClick,
   onClickReviewCount,
@@ -48,14 +45,13 @@ const ProductBasicInformation = ({
         onClick={onChefClick}
       />
 
-      <div className={styles.addProduct}>
-        {isOrdering && !isLoading && (
-          <Button dark large onClick={addProduct}>
-            <img src={images.plusImage} alt="plus sign" />
-            <span>Add meal</span>
-          </Button>
-        )}
-      </div>
+      {!isLoading && (
+        <OrderButtons
+          total={2}
+          onAdd={addProduct}
+          className={styles.addProduct}
+        />
+      )}
     </div>
   )
 }
@@ -65,8 +61,7 @@ ProductBasicInformation.propTypes = {
   addProduct: PropTypes.func,
   onClickReviewCount: PropTypes.func,
   productData: PropTypes.object,
-  isLoading: PropTypes.bool,
-  isOrdering: PropTypes.bool
+  isLoading: PropTypes.bool
 }
 
 ProductBasicInformation.defaultProps = {
@@ -74,8 +69,7 @@ ProductBasicInformation.defaultProps = {
   addProduct: null,
   onClickReviewCount: null,
   productData: null,
-  isLoading: false,
-  isOrdering: false
+  isLoading: false
 }
 
 export default ProductBasicInformation

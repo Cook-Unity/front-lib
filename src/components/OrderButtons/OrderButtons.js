@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import Button from '../../common/Buttons'
 import styles from './OrderButtons.module.scss'
 
-const OrderButtons = ({ordered, total, onRemove, onAdd}) => {
+const OrderButtons = ({ordered, total, onRemove, onAdd, className}) => {
   const minusEnabled = ordered > 0
   const plusEnabled = ordered < total
 
   return (
-    <section className={styles.orderButton}>
+    <section className={`${styles.orderButton} ${className}`}>
       {ordered > 0 ? (
         <div className={styles.buttonsContainer}>
           <div className={styles.buttonContainer}>
@@ -44,14 +44,16 @@ OrderButtons.propTypes = {
   ordered: PropTypes.number,
   total: PropTypes.number,
   onRemove: PropTypes.func,
-  onAdd: PropTypes.func
+  onAdd: PropTypes.func,
+  className: PropTypes.string
 }
 
 OrderButtons.defaultProps = {
   ordered: 0,
   total: 0,
   onRemove: () => {},
-  onAdd: () => {}
+  onAdd: () => {},
+  className: null
 }
 
 export default OrderButtons
