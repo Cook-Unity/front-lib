@@ -19,27 +19,6 @@ import Specifications from '../../components/Specifications'
 import images from '../../assets/images'
 import styles from './ProductPage.module.scss'
 
-const getFinalSteps = productData => {
-  const fastInstructions = pathOr(
-    null,
-    ['cooking_steps', 'microwave_steps'],
-    productData
-  )
-
-  const chefInstructions = pathOr(
-    null,
-    ['cooking_steps', 'oven_steps'],
-    productData
-  )
-
-  return (
-    <FinalSteps
-      chefInstructions={chefInstructions}
-      fastInstructions={fastInstructions}
-    />
-  )
-}
-
 const ProductPage = ({
   productData,
   isLoading,
@@ -59,7 +38,7 @@ const ProductPage = ({
     setModalIsOpen(false)
   }
 
-  const header = (
+  const header = () => (
     <div className={styles.header}>
       {modalIsOpen && (
         <Fragment>
@@ -90,20 +69,42 @@ const ProductPage = ({
     </div>
   )
 
-  const ingredients = <Ingredients ingredients={productData.ingredients_data} />
-  const finalSteps = getFinalSteps(productData)
-  const nutrition = (
+  const ingredients = () => (
+    <Ingredients ingredients={productData.ingredients_data} />
+  )
+  const finalSteps = () => () => {
+    const fastInstructions = pathOr(
+      null,
+      ['cooking_steps', 'microwave_steps'],
+      productData
+    )
+
+    const chefInstructions = pathOr(
+      null,
+      ['cooking_steps', 'oven_steps'],
+      productData
+    )
+
+    return (
+      <FinalSteps
+        chefInstructions={chefInstructions}
+        fastInstructions={fastInstructions}
+      />
+    )
+  }
+
+  const nutrition = () => (
     <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
   )
-  const macronutrients = (
+  const macronutrients = () => (
     <Macronutrients
       nutritionalFacts={productData.nutritional_facts}
       calories={productData.calories}
     />
   )
-  const mealDisclaimer = <MealDisclaimer />
+  const mealDisclaimer = () => <MealDisclaimer />
 
-  const body = (
+  const body = () => (
     <Fragment>
       <ProductBasicInformation
         productData={productData}
@@ -119,26 +120,26 @@ const ProductPage = ({
 
       <div className={styles.board}>
         <div className={styles.column}>
-          {ingredients}
-          {finalSteps}
+          {ingredients()}
+          {finalSteps()}
         </div>
 
         <div className={styles.column}>
-          {nutrition}
-          {macronutrients}
+          {nutrition()}
+          {macronutrients()}
         </div>
 
         <div className={styles.block}>
-          {ingredients}
-          {nutrition}
-          {finalSteps}
-          {macronutrients}
+          {ingredients()}
+          {nutrition()}
+          {finalSteps()}
+          {macronutrients()}
         </div>
 
         <div
           className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
         >
-          {mealDisclaimer}
+          {mealDisclaimer()}
         </div>
       </div>
 
@@ -160,7 +161,7 @@ const ProductPage = ({
           <Skeleton hideStars />
         ) : (
           <Fragment>
-            {header} {body}
+            {header()} {body()}
           </Fragment>
         )}
       </div>
