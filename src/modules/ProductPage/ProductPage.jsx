@@ -47,8 +47,8 @@ const ProductPage = ({
   onChefClick,
   onAddProduct,
   openInModal,
-  isOrdering,
-  reviewModalContainerId
+  reviewModalContainerId,
+  isOrdering
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(openInModal)
   const [showReviewsModal, setShowReviewsModal] = useState(false)
@@ -58,19 +58,6 @@ const ProductPage = ({
     onCloseModal()
     setModalIsOpen(false)
   }
-
-  const ingredients = <Ingredients ingredients={productData.ingredients_data} />
-  const finalSteps = getFinalSteps(productData)
-  const nutrition = (
-    <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
-  )
-  const macronutrients = (
-    <Macronutrients
-      nutritionalFacts={productData.nutritional_facts}
-      calories={productData.calories}
-    />
-  )
-  const mealDisclaimer = <MealDisclaimer />
 
   const header = (
     <div className={styles.header}>
@@ -103,14 +90,27 @@ const ProductPage = ({
     </div>
   )
 
+  const ingredients = <Ingredients ingredients={productData.ingredients_data} />
+  const finalSteps = getFinalSteps(productData)
+  const nutrition = (
+    <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
+  )
+  const macronutrients = (
+    <Macronutrients
+      nutritionalFacts={productData.nutritional_facts}
+      calories={productData.calories}
+    />
+  )
+  const mealDisclaimer = <MealDisclaimer />
+
   const body = (
     <Fragment>
       <ProductBasicInformation
-        isOrdering={isOrdering}
         productData={productData}
         addProduct={onAddProduct}
         onClickReviewCount={handleReviews}
         onChefClick={onChefClick}
+        isOrdering={isOrdering}
       />
 
       <Specifications
@@ -190,8 +190,8 @@ ProductPage.propTypes = {
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
   openInModal: PropTypes.bool,
-  isOrdering: PropTypes.bool,
-  reviewModalContainerId: PropTypes.string
+  reviewModalContainerId: PropTypes.string,
+  isOrdering: PropTypes.object
 }
 
 ProductPage.defaultProps = {
@@ -201,8 +201,8 @@ ProductPage.defaultProps = {
   onCloseModal: () => {},
   onAddProduct: () => {},
   onChefClick: null,
-  isOrdering: false,
-  reviewModalContainerId: null
+  reviewModalContainerId: null,
+  isOrdering: null
 }
 
 export default ProductPage

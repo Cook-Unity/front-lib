@@ -23,6 +23,9 @@ export const inModal = Template.bind({})
 inModal.args = {
   productData: meal,
   openInModal: true,
+  isOrdering: {
+    total: 2
+  },
   onCloseModal: () => {
     console.log('modal close')
   }

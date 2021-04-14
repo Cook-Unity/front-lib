@@ -58,7 +58,7 @@
       p {
         opacity: 0;
       }
-      .stars {
+      .stars, button {
         display: none !important;
       }
       animation: shimmer 2s infinite linear;

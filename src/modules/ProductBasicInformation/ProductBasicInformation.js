@@ -13,10 +13,10 @@ import styles from './ProductBasicInformation.module.scss'
 const ProductBasicInformation = ({
   productData,
   isLoading,
-  addProduct,
   onChefClick,
   onClickReviewCount,
-  hideStars
+  hideStars,
+  isOrdering
 }) => {
   return (
     <div className={`${styles.productDetails} ${isLoading && styles.loading}`}>
@@ -45,13 +45,7 @@ const ProductBasicInformation = ({
         onClick={onChefClick}
       />
 
-      {!isLoading && (
-        <OrderButtons
-          total={2}
-          onAdd={addProduct}
-          className={styles.addProduct}
-        />
-      )}
+      {isOrdering && <OrderButtons {...isOrdering} />}
     </div>
   )
 }
@@ -61,7 +55,8 @@ ProductBasicInformation.propTypes = {
   addProduct: PropTypes.func,
   onClickReviewCount: PropTypes.func,
   productData: PropTypes.object,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  isOrdering: PropTypes.object
 }
 
 ProductBasicInformation.defaultProps = {
@@ -69,7 +64,8 @@ ProductBasicInformation.defaultProps = {
   addProduct: null,
   onClickReviewCount: null,
   productData: null,
-  isLoading: false
+  isLoading: false,
+  isOrdering: null
 }
 
 export default ProductBasicInformation
