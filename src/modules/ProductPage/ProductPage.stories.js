@@ -19,8 +19,8 @@ Default.args = {
   productData: meal
 }
 
-export const inModal = Template.bind({})
-inModal.args = {
+export const Ordering = Template.bind({})
+Ordering.args = {
   productData: meal,
   openInModal: true,
   isOrdering: {
@@ -31,13 +31,13 @@ inModal.args = {
   }
 }
 
-export const isLoading = Template.bind({})
-isLoading.args = {
+export const Loading = Template.bind({})
+Loading.args = {
   isLoading: true
 }
 
-export const isLoadingInModal = Template.bind({})
-isLoadingInModal.args = {
+export const LoadingInModal = Template.bind({})
+LoadingInModal.args = {
   openInModal: true,
   isLoading: true
 }
