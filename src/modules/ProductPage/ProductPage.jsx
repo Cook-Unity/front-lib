@@ -24,7 +24,6 @@ const ProductPage = ({
   isLoading,
   onCloseModal,
   onChefClick,
-  onAddProduct,
   openInModal,
   modalContainer,
   isOrdering
@@ -111,7 +110,6 @@ const ProductPage = ({
       <Fragment>
         <ProductBasicInformation
           productData={productData}
-          addProduct={onAddProduct}
           onClickReviewCount={handleReviews}
           onChefClick={onChefClick}
           isOrdering={isOrdering}
@@ -192,7 +190,6 @@ ProductPage.propTypes = {
   productData: PropTypes.object,
   onCloseModal: PropTypes.func,
   onChefClick: PropTypes.func,
-  onAddProduct: PropTypes.func,
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
   openInModal: PropTypes.bool,
@@ -205,7 +202,6 @@ ProductPage.defaultProps = {
   isLoading: false,
   openInModal: false,
   onCloseModal: () => {},
-  onAddProduct: () => {},
   onChefClick: null,
   modalContainer: 'root',
   isOrdering: null

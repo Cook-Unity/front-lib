@@ -54,7 +54,6 @@ const ProductBasicInformation = ({
 
 ProductBasicInformation.propTypes = {
   onChefClick: PropTypes.func,
-  addProduct: PropTypes.func,
   onClickReviewCount: PropTypes.func,
   productData: PropTypes.object,
   isLoading: PropTypes.bool,
@@ -63,7 +62,6 @@ ProductBasicInformation.propTypes = {
 
 ProductBasicInformation.defaultProps = {
   onChefClick: null,
-  addProduct: null,
   onClickReviewCount: null,
   productData: null,
   isLoading: false,
