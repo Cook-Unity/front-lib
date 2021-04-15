@@ -26,7 +26,7 @@ const ProductPage = ({
   onChefClick,
   onAddProduct,
   openInModal,
-  reviewModalContainerId,
+  modalContainer,
   isOrdering
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(openInModal)
@@ -152,7 +152,7 @@ const ProductPage = ({
           quantity={productData.reviews_count}
           showReviewsModal={showReviewsModal}
           toggleReviewsModal={handleReviews}
-          reviewModalContainerId={reviewModalContainerId}
+          reviewModalContainerId={modalContainer}
         />
       </Fragment>
     )
@@ -179,6 +179,7 @@ const ProductPage = ({
         className={styles.modalContent}
         overlayClassName={styles.modalOverlay}
         ariaHideApp={false}
+        parentSelector={() => document.querySelector(`#${modalContainer}`)}
       >
         {content}
       </Modal>
@@ -195,7 +196,7 @@ ProductPage.propTypes = {
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
   openInModal: PropTypes.bool,
-  reviewModalContainerId: PropTypes.string,
+  modalContainer: PropTypes.string,
   isOrdering: PropTypes.object
 }
 
@@ -206,7 +207,7 @@ ProductPage.defaultProps = {
   onCloseModal: () => {},
   onAddProduct: () => {},
   onChefClick: null,
-  reviewModalContainerId: null,
+  modalContainer: 'root',
   isOrdering: null
 }
 
