@@ -69,90 +69,94 @@ const ProductPage = ({
     </div>
   )
 
-  const ingredients = () => (
-    <Ingredients ingredients={productData.ingredients_data} />
-  )
-  const finalSteps = () => () => {
-    const fastInstructions = pathOr(
-      null,
-      ['cooking_steps', 'microwave_steps'],
-      productData
+  const body = () => {
+    const ingredients = (
+      <Ingredients ingredients={productData.ingredients_data} />
+    )
+    const finalSteps = (() => {
+      const fastInstructions = pathOr(
+        null,
+        ['cooking_steps', 'microwave_steps'],
+        productData
+      )
+
+      const chefInstructions = pathOr(
+        null,
+        ['cooking_steps', 'oven_steps'],
+        productData
+      )
+
+      return (
+        <FinalSteps
+          chefInstructions={chefInstructions}
+          fastInstructions={fastInstructions}
+        />
+      )
+    })()
+
+    const nutrition = (
+      <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
     )
 
-    const chefInstructions = pathOr(
-      null,
-      ['cooking_steps', 'oven_steps'],
-      productData
+    const macronutrients = (
+      <Macronutrients
+        nutritionalFacts={productData.nutritional_facts}
+        calories={productData.calories}
+      />
     )
+
+    const mealDisclaimer = <MealDisclaimer />
 
     return (
-      <FinalSteps
-        chefInstructions={chefInstructions}
-        fastInstructions={fastInstructions}
-      />
+      <Fragment>
+        <ProductBasicInformation
+          productData={productData}
+          addProduct={onAddProduct}
+          onClickReviewCount={handleReviews}
+          onChefClick={onChefClick}
+          isOrdering={isOrdering}
+        />
+
+        <Specifications
+          specificationsDetail={productData.specifications_detail}
+        />
+
+        <div className={styles.board}>
+          <div className={styles.column}>
+            {ingredients}
+            {finalSteps}
+          </div>
+
+          <div className={styles.column}>
+            {nutrition}
+            {macronutrients}
+          </div>
+
+          <div className={styles.block}>
+            {ingredients}
+            {nutrition}
+            {finalSteps}
+            {macronutrients}
+          </div>
+
+          <div
+            className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
+          >
+            {mealDisclaimer}
+          </div>
+        </div>
+
+        <Reviews
+          product={productData}
+          reviews={productData.reviews_data}
+          quantity={productData.reviews_count}
+          showReviewsModal={showReviewsModal}
+          toggleReviewsModal={handleReviews}
+          reviewModalContainerId={reviewModalContainerId}
+        />
+      </Fragment>
     )
   }
-
-  const nutrition = () => (
-    <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
-  )
-  const macronutrients = () => (
-    <Macronutrients
-      nutritionalFacts={productData.nutritional_facts}
-      calories={productData.calories}
-    />
-  )
-  const mealDisclaimer = () => <MealDisclaimer />
-
-  const body = () => (
-    <Fragment>
-      <ProductBasicInformation
-        productData={productData}
-        addProduct={onAddProduct}
-        onClickReviewCount={handleReviews}
-        onChefClick={onChefClick}
-        isOrdering={isOrdering}
-      />
-
-      <Specifications
-        specificationsDetail={productData.specifications_detail}
-      />
-
-      <div className={styles.board}>
-        <div className={styles.column}>
-          {ingredients()}
-          {finalSteps()}
-        </div>
-
-        <div className={styles.column}>
-          {nutrition()}
-          {macronutrients()}
-        </div>
-
-        <div className={styles.block}>
-          {ingredients()}
-          {nutrition()}
-          {finalSteps()}
-          {macronutrients()}
-        </div>
-
-        <div
-          className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
-        >
-          {mealDisclaimer()}
-        </div>
-      </div>
-
-      <Reviews
-        product={productData}
-        reviews={productData.reviews_data}
-        quantity={productData.reviews_count}
-        showReviewsModal={showReviewsModal}
-        toggleReviewsModal={handleReviews}
-        reviewModalContainerId={reviewModalContainerId}
-      />
-    </Fragment>
-  )
 
   const content = (
     <div className={styles.cookunity__product_detail_container}>
@@ -184,7 +188,7 @@ const ProductPage = ({
 }
 
 ProductPage.propTypes = {
-  productData: PropTypes.object.isRequired,
+  productData: PropTypes.object,
   onCloseModal: PropTypes.func,
   onChefClick: PropTypes.func,
   onAddProduct: PropTypes.func,
