@@ -160,7 +160,7 @@ const ProductPage = ({
     <div className={styles.cookunity__product_detail_container}>
       <div className={styles.cookunity__product_detail}>
         {isLoading ? (
-          <Skeleton hideStars />
+          <Skeleton />
         ) : (
           <Fragment>
             {header()} {body()}

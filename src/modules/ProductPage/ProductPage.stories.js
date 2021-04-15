@@ -35,3 +35,9 @@ export const isLoading = Template.bind({})
 isLoading.args = {
   isLoading: true
 }
+
+export const isLoadingInModal = Template.bind({})
+isLoadingInModal.args = {
+  openInModal: true,
+  isLoading: true
+}
