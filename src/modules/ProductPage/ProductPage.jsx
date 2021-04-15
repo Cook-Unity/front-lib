@@ -56,15 +56,17 @@ const ProductPage = ({
         </Fragment>
       )}
 
-      <div className={styles.share_container}>
-        <Share
-          url={productData.url_path}
-          title={`Enjoy ${productData.name}`}
-          customStyles={{
-            socialLinks: styles.socialLinks
-          }}
-        />
-      </div>
+      {!isLoading && !isOrdering && (
+        <div className={styles.share_container}>
+          <Share
+            url={productData.url_path}
+            title={`Enjoy ${productData.name}`}
+            customStyles={{
+              socialLinks: styles.socialLinks
+            }}
+          />
+        </div>
+      )}
     </div>
   )
 
@@ -159,13 +161,8 @@ const ProductPage = ({
   const content = (
     <div className={styles.cookunity__product_detail_container}>
       <div className={styles.cookunity__product_detail}>
-        {isLoading ? (
-          <Skeleton />
-        ) : (
-          <Fragment>
-            {header()} {body()}
-          </Fragment>
-        )}
+        {header()}
+        {isLoading ? <Skeleton /> : body()}
       </div>
     </div>
   )
