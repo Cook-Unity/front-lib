@@ -43,13 +43,11 @@ const ProductPage = ({
   }
 
   useEffect(() => {
-    console.log('didmount')
-    window.history.pushState(null, document.title, window.location.href)
-    window.addEventListener('popstate', close)
+    if (openInModal) {
+      window.history.pushState(null, document.title, window.location.href)
+      window.addEventListener('popstate', close)
 
-    return () => {
-      console.log('didUmount')
-      window.removeEventListener('popstate', close)
+      return () => window.removeEventListener('popstate', close)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
