@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
@@ -22,7 +22,7 @@ import styles from './ProductPage.module.scss'
 const ProductPage = ({
   productData,
   isLoading,
-  onCloseModal,
+  onClose,
   onChefClick,
   openInModal,
   modalContainer,
@@ -32,10 +32,27 @@ const ProductPage = ({
   const [showReviewsModal, setShowReviewsModal] = useState(false)
   const handleReviews = () => setShowReviewsModal(!showReviewsModal)
 
-  const closeModal = () => {
-    onCloseModal()
+  const close = () => {
     setModalIsOpen(false)
+    onClose()
   }
+
+  const closeModal = () => {
+    window.history.back()
+    close()
+  }
+
+  useEffect(() => {
+    console.log('didmount')
+    window.history.pushState(null, document.title, window.location.href)
+    window.addEventListener('popstate', close)
+
+    return () => {
+      console.log('didUmount')
+      window.removeEventListener('popstate', close)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const header = () => (
     <div className={styles.header}>
