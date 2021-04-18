@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Ingredients from './index'
-import {defaultProps} from './data.mock'
+import {ingredients} from './data.mock'
 
 export default {
   title: 'Ingredients',
@@ -12,5 +12,17 @@ const Template = args => <Ingredients {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...defaultProps
+  ingredients
+}
+
+export const IsLoading = Template.bind({})
+IsLoading.args = {
+  ingredients,
+  isLoading: true
+}
+
+export const WithoutDetails = Template.bind({})
+WithoutDetails.args = {
+  ingredients,
+  withDetails: false
 }

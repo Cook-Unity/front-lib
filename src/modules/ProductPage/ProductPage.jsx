@@ -87,7 +87,10 @@ const ProductPage = ({
 
   const body = () => {
     const ingredients = (
-      <Ingredients ingredients={productData.ingredients_data} />
+      <Ingredients
+        ingredients={productData.ingredients_data}
+        withDetails={false}
+      />
     )
     const finalSteps = (() => {
       const fastInstructions = pathOr(

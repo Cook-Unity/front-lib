@@ -1,4 +1,4 @@
-import Ingredients from './index'
+import Ingredients from './'
 
 describe('Ingredients', () => {
   it('is truthy', () => {
