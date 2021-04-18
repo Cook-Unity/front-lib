@@ -26,8 +26,10 @@ const Ingredients = ({ingredients, isLoading, withDetails}) => {
         isOpen={isModalOpen}
         onRequestClose={() => toggleModal()}
         selectedIngredient={selectedIngredient}
+        modalContainerId="ingredients"
       />
       <div
+        id="ingredients"
         className={`${styles.ingredients} ${isLoading ? styles.loading : ''}`}
       >
         <h2>Ingredients</h2>
