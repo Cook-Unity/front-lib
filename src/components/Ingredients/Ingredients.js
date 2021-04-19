@@ -11,7 +11,7 @@ export const getIngredientNameValue = ingredient =>
     ? ingredient.componentCode
     : ingredient.value
 
-const Ingredients = ({ingredients, isLoading, withDetails}) => {
+const Ingredients = ({ingredients, isLoading, withDetails, modalContainer}) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedIngredient, setSelectedIngredient] = useState(null)
 
@@ -26,6 +26,7 @@ const Ingredients = ({ingredients, isLoading, withDetails}) => {
         isOpen={isModalOpen}
         onRequestClose={() => toggleModal()}
         selectedIngredient={selectedIngredient}
+        modalContainerId={modalContainer}
       />
       <div
         className={`${styles.ingredients} ${isLoading ? styles.loading : ''}`}
@@ -59,13 +60,15 @@ const Ingredients = ({ingredients, isLoading, withDetails}) => {
 Ingredients.propTypes = {
   ingredients: PropTypes.array,
   isLoading: PropTypes.bool,
-  withDetails: PropTypes.bool
+  withDetails: PropTypes.bool,
+  modalContainer: PropTypes.string
 }
 
 Ingredients.defaultProps = {
   ingredients: [],
   isLoading: false,
-  withDetails: true
+  withDetails: true,
+  modalContainer: 'root'
 }
 
 export default Ingredients
