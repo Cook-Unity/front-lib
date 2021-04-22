@@ -10,7 +10,6 @@ const getParent = (id = 'root') => document.querySelector(`#${id}`)
 
 const CUModal = props => {
   const {
-    type = 'content',
     overlayClassName,
     className,
     children,
@@ -20,6 +19,7 @@ const CUModal = props => {
     mediumPlusSize,
     smallSize,
     withCloseIcon = true,
+    notification,
     ...rest
   } = props
 
@@ -35,14 +35,14 @@ const CUModal = props => {
         [styles.large_size]: !mediumSize && !plusSize && !smallSize,
         [styles.medium_size]: mediumSize,
         [styles.small_size]: smallSize,
-        [styles.notificationOverlay]: type === 'notification'
+        [styles.notificationOverlay]: notification
       })}
       className={classnames(styles.content, className, {
         [styles.plus_size]: plusSize,
         [styles.large_size]: !mediumSize && !plusSize && !smallSize,
         [styles.medium_size]: mediumSize,
         [styles.small_size]: smallSize,
-        [styles.notificationContent]: type === 'notification'
+        [styles.notificationContent]: notification
       })}
       style={{
         content: contentStyle,

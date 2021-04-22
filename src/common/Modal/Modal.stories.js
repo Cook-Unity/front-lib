@@ -39,7 +39,7 @@ Notification.args = {
 
 export const NotificationNoBorder = Template.bind({})
 NotificationNoBorder.args = {
-  type: 'notification',
+  notification: true,
   smallSize: true,
   style: {content: {'border-radius': 0}}
 }
