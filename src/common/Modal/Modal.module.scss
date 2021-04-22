@@ -14,13 +14,13 @@
   overflow-y: auto;
   z-index: 200;
 }
-@media screen and (max-width: 600px) {
-  .overlay.medium_size {
+@media screen and (max-width: 768px) {
+  .overlay.plus_size:not(.notificationOverlay) {
     background-color: #ffffff;
   }
 }
-@media screen and (max-width: 768px) {
-  .overlay.large_size {
+@media screen and (max-width: 600px) {
+  .overlay:not(.notificationOverlay) {
     background-color: #ffffff;
   }
 }
@@ -45,9 +45,7 @@
 .overlay > .content:focus {
   outline: none;
 }
-.overlay
-  > .content
-  > button.close {
+.overlay > .content > button.close {
   position: absolute;
   right: 16px;
   top: 16px;
@@ -55,18 +53,13 @@
   cursor: pointer;
   background: none;
   padding: 0;
-}
-.overlay
-  > .content
-  > button.close
   > img {
-  height: 24px;
-  width: 24px;
-  vertical-align: middle;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+  }
 }
-.overlay
-  > .content
-  > button.close:focus {
+.overlay > .content > button.close:focus {
   outline: none;
 }
 .overlay > .content.medium_size {
@@ -132,7 +125,7 @@
     border-radius: 0;
     margin: 0;
     box-shadow: none;
-    padding-top: 84px;
+    padding-top: 64px;
   }
   .overlay
     > .content.plus_size
@@ -144,18 +137,19 @@
   }
 }
 .overlay > .content.small_size {
-  width: 430px;
+  width: 520px;
 }
+
 @media screen and (max-width: 430px) {
-  .overlay > .content.small_size {
+  .overlay > .content.small_size:not(.notificationContent) {
     width: 100%;
     border-radius: 0;
     margin: 0;
     box-shadow: none;
-    padding-top: 84px;
+    padding-top: 64px;
   }
   .overlay
-    > .content.small_size
+    > .content.small_size:not(.notificationContent)
     > button.close {
     top: 20px;
     left: 20px;
@@ -163,53 +157,11 @@
     justify-content: flex-start;
   }
 }
-.overlay > .content.plus_size {
-  width: 966px;
-}
-@media screen and (max-width: 966px) {
-  .overlay > .content.plus_size {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    padding-top: 84px;
-  }
-  .overlay
-    > .content.plus_size
-    > button.close {
-    top: 20px;
-    left: 20px;
-  }
-}
-.overlay
-  > .content.small_remove_size {
-  width: 430px;
-}
+
 @media screen and (max-width: 430px) {
   .overlay
-    > .content.small_remove_size {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    padding-top: 84px;
-  }
-  .overlay
-    > .content.small_remove_size
-    > button.close {
-    top: 20px;
-    left: 20px;
-  }
-}
-.notificationOverlay {
-  @include mobile {
-    background-color: none;
-    padding-top: 84px;
-    margin: 0;
-  }
-}
-.notificationContent {
-  @include mobile {
-    border-radius: 10px;
+    > .content.small_size.notificationContent {
+    width: 90%;
+    padding-top: 40px;
   }
 }

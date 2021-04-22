@@ -31,13 +31,15 @@ SmallSize.args = {
   smallSize: true
 }
 
-export const WithoutCloseIcon = Template.bind({})
-WithoutCloseIcon.args = {
-  withCloseIcon: false
-}
-
-export const SmallNotification = Template.bind({})
-SmallNotification.args = {
+export const Notification = Template.bind({})
+Notification.args = {
   type: 'notification',
   smallSize: true
+}
+
+export const NotificationNoBorder = Template.bind({})
+NotificationNoBorder.args = {
+  type: 'notification',
+  smallSize: true,
+  style: {content: {'border-radius': 0}}
 }
