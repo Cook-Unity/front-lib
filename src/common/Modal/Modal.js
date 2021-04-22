@@ -34,6 +34,7 @@ const CUModal = props => {
         [styles.plus_size]: plusSize,
         [styles.large_size]: !mediumSize && !plusSize && !smallSize,
         [styles.medium_size]: mediumSize,
+        [styles.small_size]: smallSize,
         [styles.notificationOverlay]: type === 'notification'
       })}
       className={classnames(styles.content, className, {

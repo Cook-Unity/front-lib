@@ -1,6 +1,20 @@
 @import '../../assets/styles/scss/mixins';
 @import '../../assets/styles/scss/variables';
 
+@mixin full-screen {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+  padding-top: 64px;
+  > button.close {
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
 .overlay {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -14,20 +28,11 @@
   overflow-y: auto;
   z-index: 200;
 }
-@media screen and (max-width: 768px) {
-  .overlay.plus_size:not(.notificationOverlay) {
-    background-color: #ffffff;
-  }
-}
-@media screen and (max-width: 600px) {
-  .overlay:not(.notificationOverlay) {
-    background-color: #ffffff;
-  }
-}
+
 .overlay > .content {
   position: relative;
   box-sizing: border-box;
-  background: #ffffff;
+  background: $cookunity-white-color;
   box-shadow: 0 0 64px rgba(0, 67, 32, 0.16), 0 16px 32px rgba(0, 67, 32, 0.06),
     0 8px 16px rgba(0, 67, 32, 0.04), 0 4px 8px rgba(0, 67, 32, 0.02);
   margin: 40px auto;
@@ -62,105 +67,57 @@
 .overlay > .content > button.close:focus {
   outline: none;
 }
-.overlay > .content.medium_size {
-  width: 600px;
-}
-@media screen and (max-width: 600px) {
-  .overlay > .content.medium_size {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    padding-top: 84px;
-  }
-}
-@media screen and (max-width: 600px) and (max-width: 767px) {
-  .overlay > .content.medium_size {
-    padding-top: 64px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .overlay
-    > .content.medium_size
-    > button.close {
-    top: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: flex-start;
-  }
-}
-.overlay > .content.large_size {
-  width: 768px;
-}
-@media screen and (max-width: 768px) {
-  .overlay > .content.large_size {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    padding-top: 84px;
-  }
-}
-@media screen and (max-width: 768px) and (max-width: 767px) {
-  .overlay > .content.large_size {
-    padding-top: 64px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .overlay
-    > .content.large_size
-    > button.close {
-    top: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: flex-start;
-  }
-}
+
 .overlay > .content.plus_size {
   width: 966px;
 }
 @media screen and (max-width: 966px) {
-  .overlay > .content.plus_size {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    padding-top: 64px;
+  .overlay.plus_size {
+    background-color: $cookunity-white-color;
   }
-  .overlay
-    > .content.plus_size
-    > button.close {
-    top: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: flex-start;
+  .overlay > .content.plus_size {
+    @include full-screen
   }
 }
+
+.overlay > .content.large_size {
+  width: 768px;
+}
+@media screen and (max-width: 768px) {
+  .overlay.large_size {
+    background-color: $cookunity-white-color;
+  }
+  .overlay > .content.large_size {
+    @include full-screen
+  }
+}
+
+.overlay > .content.medium_size {
+  width: 600px;
+}
+@media screen and (max-width: 600px) {
+  .overlay.medium_size {
+    background-color: $cookunity-white-color;
+  }
+  .overlay > .content.medium_size {
+    @include full-screen
+  }
+}
+
 .overlay > .content.small_size {
   width: 520px;
 }
-
-@media screen and (max-width: 430px) {
-  .overlay > .content.small_size:not(.notificationContent) {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    padding-top: 64px;
+@media screen and (max-width: 520px) {
+  .overlay.small_size:not(.notificationOverlay) {
+    background-color: $cookunity-white-color;
   }
-  .overlay
-    > .content.small_size:not(.notificationContent)
-    > button.close {
-    top: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: flex-start;
+  .overlay > .content.small_size:not(.notificationContent) {
+    @include full-screen
   }
 }
 
-@media screen and (max-width: 430px) {
-  .overlay
-    > .content.small_size.notificationContent {
+@media screen and (max-width: 520px) {
+  .overlay > .content.small_size.notificationContent {
     width: 90%;
     padding-top: 40px;
   }
