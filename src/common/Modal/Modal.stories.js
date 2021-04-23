@@ -33,7 +33,7 @@ SmallSize.args = {
 
 export const Notification = Template.bind({})
 Notification.args = {
-  type: 'notification',
+  notification: true,
   smallSize: true
 }
 
