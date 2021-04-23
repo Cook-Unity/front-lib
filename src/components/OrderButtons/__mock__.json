@@ -2,26 +2,31 @@
     "meal": {
       "entity_id": 3153,
       "name": "Sweet Potato Curry",
+      "sku": "SWEET-POTATO-CURRY",
+      "category_id": 8,
+      "new_meal": false,
+      "new_chef": null,
       "chef_firstname": "Marc",
       "chef_lastname": "Forgione",
       "is_celebrity_chef": true,
       "chef_id": 71062,
       "logopic": "Marc-Forgione-Logo17045.jpg",
+      "bannerpic": "Forgione10147.jpg",
+      "country_of_manufacture": "TH",
       "calories": 468,
       "price": 13.3,
+      "is_premium": false,
+      "premium_fee": 0,
+      "short_description": "with Laotian Rice",
+      "sidedish": null,
       "image": "/3/1/3153.jpeg",
+      "small_image": "/3/1/3153.jpeg",
+      "thumbnail": "/3/1/3153.jpeg",
+      "image_path": "/media/catalog/product/cache/x600/",
       "stock": null,
       "inStock": null,
+      "qty": 75,
       "meat_type": "Vegetarian",
-      "user_rating": null,
-      "rating": 89.03,
-      "stars": 4.4515,
-      "weight": null,
-      "reviews_count": 2,
-      "cooking_steps": {
-        "oven_steps": "1. Preheat to 350F.\r\n2. Remove sleeve and film.\r\n3. Heat up for 20 mins or until heated thoroughly.",
-        "microwave_steps": "1. Remove sleeve and peel corner of\r\n    film to vent.\r\n2. Microwave for 5 mins. with medium\r\n    heat. \r\n3. Remove film."
-      },
       "reviews_data": [
         {
           "review_id": 77322,
@@ -568,6 +573,13 @@
           "image": "https://mage.qa.cookunity.com/skin/frontend/rwd/default/images/brocoli.png"
         }
       ],
+      "user_rating": null,
+      "rating": 89.03,
+      "stars": 4.4515,
+      "warning": null,
+      "warnings": null,
+      "weight": null,
+      "available_from_date": null,
       "specifications_detail": [
         {
           "id": "50",
@@ -893,6 +905,11 @@
           "image": "https://d1ureao5dcqpo4.cloudfront.net/media/Ingredients/yellow-onion.jpg",
           "manufacturer": "Satur Farms"
         }
-      ]
+      ],
+      "reviews_count": 2,
+      "cooking_steps": {
+        "oven_steps": "1. Preheat to 350F.\r\n2. Remove sleeve and film.\r\n3. Heat up for 20 mins or until heated thoroughly.",
+        "microwave_steps": "1. Remove sleeve and peel corner of\r\n    film to vent.\r\n2. Microwave for 5 mins. with medium\r\n    heat. \r\n3. Remove film."
+      }
     }
 }

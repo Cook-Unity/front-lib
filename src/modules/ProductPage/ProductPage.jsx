@@ -1,195 +1,225 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import {pathOr} from 'ramda'
+import Modal from 'react-modal'
 
 import Skeleton from './skeleton'
-import MetaTags from '../../components/MetaTags'
-import Share from '../../components/Share'
-
 import ProductBasicInformation from '../ProductBasicInformation'
-import Ingredients from '../Ingredients'
-import FinalSteps from '../FinalSteps'
-import NutritionalFacts from '../NutritionalFacts'
-import Macronutrients from '../Macronutrients'
-import MealDisclaimer from '../../components/MealDisclaimer'
 import Reviews from '../Reviews'
-import Specifications from '../Specifications'
+
+import Share from '../../components/Share'
+import Ingredients from '../../components/Ingredients'
+import NutritionalFacts from '../../components/NutritionalFacts'
+import FinalSteps from '../../components/FinalSteps'
+import Macronutrients from '../../components/Macronutrients'
+import MealDisclaimer from '../../components/MealDisclaimer'
+import Specifications from '../../components/Specifications'
 
 import images from '../../assets/images'
-
 import styles from './ProductPage.module.scss'
-
-const getFinalSteps = productData => {
-  const fastInstructions = pathOr(
-    null,
-    ['cooking_steps', 'microwave_steps'],
-    productData
-  )
-
-  const chefInstructions = pathOr(
-    null,
-    ['cooking_steps', 'oven_steps'],
-    productData
-  )
-
-  return (
-    <FinalSteps
-      chefInstructions={chefInstructions}
-      fastInstructions={fastInstructions}
-    />
-  )
-}
 
 const ProductPage = ({
   productData,
   isLoading,
-  goBack,
-  goBackText,
-  openChefProfileHandler,
-  addProductHandler,
-  isOrdering,
-  reviewModalContainerId
+  onClose,
+  onChefClick,
+  openInModal,
+  modalContainer,
+  isOrdering
 }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(openInModal)
   const [showReviewsModal, setShowReviewsModal] = useState(false)
-
-  const ingredients = <Ingredients ingredients={productData.ingredients_data} />
-  const finalSteps = getFinalSteps(productData)
-  const nutrition = (
-    <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
-  )
-  const macronutrients = (
-    <Macronutrients
-      nutritionalFacts={productData.nutritional_facts}
-      calories={productData.calories}
-    />
-  )
-  const mealDisclaimer = <MealDisclaimer />
-
   const handleReviews = () => setShowReviewsModal(!showReviewsModal)
-  return (
-    <Fragment>
-      <div className={styles.cookunity__product_detail_container}>
-        <div className={styles.cookunity__product_detail}>
-          <div className={styles.header}>
-            <div className={styles.back_button} onClick={goBack}>
-              {goBack && (
-                <Fragment>
-                  <img src={images.close} alt="close" />
-                  <p>{goBackText}</p>
-                </Fragment>
-              )}
-            </div>
 
-            <div
-              className={classnames(styles.back_button, {
-                [styles.mobile]: styles.mobile
-              })}
-              onClick={goBack}
-            >
-              {goBack && <img src={images.closeMobile} alt="close" />}
-            </div>
+  const close = () => {
+    setModalIsOpen(false)
+    onClose()
+  }
 
-            {!isLoading && (
-              <div className={styles.share_container}>
-                <Share
-                  url={productData.url_path}
-                  title={`Enjoy ${productData.name}`}
-                  customStyles={{
-                    socialLinks: styles.socialLinks
-                  }}
-                />
-              </div>
-            )}
+  const closeModal = () => {
+    window.history.back()
+    close()
+  }
+
+  useEffect(() => {
+    if (openInModal) {
+      window.history.pushState(null, document.title, window.location.href)
+      window.addEventListener('popstate', close)
+
+      return () => window.removeEventListener('popstate', close)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const header = () => (
+    <div className={styles.header}>
+      {modalIsOpen && (
+        <Fragment>
+          <div className={styles.back_button} onClick={closeModal}>
+            <img src={images.close} alt="close" />
+            <p>Back</p>
+          </div>
+          <div
+            className={classnames(styles.back_button, {
+              [styles.mobile]: styles.mobile
+            })}
+            onClick={closeModal}
+          >
+            <img src={images.closeMobile} alt="close" />
+          </div>
+        </Fragment>
+      )}
+
+      {!isLoading && !isOrdering && (
+        <div className={styles.share_container}>
+          <Share
+            url={productData.url_path}
+            title={`Enjoy ${productData.name}`}
+            customStyles={{
+              socialLinks: styles.socialLinks
+            }}
+          />
+        </div>
+      )}
+    </div>
+  )
+
+  const body = () => {
+    const ingredients = (
+      <Ingredients
+        ingredients={productData.ingredients_data}
+        withDetails={false}
+      />
+    )
+    const finalSteps = (() => {
+      const fastInstructions = pathOr(
+        null,
+        ['cooking_steps', 'microwave_steps'],
+        productData
+      )
+
+      const chefInstructions = pathOr(
+        null,
+        ['cooking_steps', 'oven_steps'],
+        productData
+      )
+
+      return (
+        <FinalSteps
+          chefInstructions={chefInstructions}
+          fastInstructions={fastInstructions}
+        />
+      )
+    })()
+
+    const nutrition = (
+      <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
+    )
+
+    const macronutrients = (
+      <Macronutrients
+        nutritionalFacts={productData.nutritional_facts}
+        calories={productData.calories}
+      />
+    )
+
+    const mealDisclaimer = <MealDisclaimer />
+
+    return (
+      <Fragment>
+        <ProductBasicInformation
+          productData={productData}
+          onClickReviewCount={handleReviews}
+          onChefClick={onChefClick}
+          isOrdering={isOrdering}
+        />
+
+        <Specifications
+          specificationsDetail={productData.specifications_detail}
+        />
+
+        <div className={styles.board}>
+          <div className={styles.column}>
+            {ingredients}
+            {finalSteps}
           </div>
 
-          {isLoading ? (
-            <Skeleton hideStars />
-          ) : (
-            <Fragment>
-              <MetaTags
-                title={productData.name + ' ' + productData.short_description}
-                description={productData.meal_story}
-              />
+          <div className={styles.column}>
+            {nutrition}
+            {macronutrients}
+          </div>
 
-              <ProductBasicInformation
-                isOrdering={isOrdering}
-                productData={productData}
-                addProduct={addProductHandler}
-                onClickReviewCount={handleReviews}
-                onChefClick={openChefProfileHandler}
-              />
+          <div className={styles.block}>
+            {ingredients}
+            {nutrition}
+            {finalSteps}
+            {macronutrients}
+          </div>
 
-              <Specifications
-                specificationsDetail={productData.specifications_detail}
-              />
-
-              <div className={styles.board}>
-                <div className={styles.column}>
-                  {ingredients}
-                  {finalSteps}
-                </div>
-
-                <div className={styles.column}>
-                  {nutrition}
-                  {macronutrients}
-                </div>
-
-                <div className={styles.block}>
-                  {ingredients}
-                  {nutrition}
-                  {finalSteps}
-                  {macronutrients}
-                </div>
-
-                <div
-                  className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
-                >
-                  {mealDisclaimer}
-                </div>
-              </div>
-
-              <Reviews
-                product={productData}
-                reviews={productData.reviews_data}
-                quantity={productData.reviews_count}
-                title="Community Reviews"
-                showReviewsModal={showReviewsModal}
-                toggleReviewsModal={handleReviews}
-                reviewModalContainerId={reviewModalContainerId}
-              />
-            </Fragment>
-          )}
+          <div
+            className={`${styles.block} ${styles.fix} ${styles.mealDisclaimer}`}
+          >
+            {mealDisclaimer}
+          </div>
         </div>
+
+        <Reviews
+          product={productData}
+          reviews={productData.reviews_data}
+          quantity={productData.reviews_count}
+          showReviewsModal={showReviewsModal}
+          toggleReviewsModal={handleReviews}
+          reviewModalContainerId={modalContainer}
+        />
+      </Fragment>
+    )
+  }
+
+  const content = (
+    <div className={styles.cookunity__product_detail_container}>
+      <div className={styles.cookunity__product_detail}>
+        {header()}
+        {isLoading ? <Skeleton /> : body()}
       </div>
-    </Fragment>
+    </div>
+  )
+
+  return (
+    (modalIsOpen && (
+      <Modal
+        isOpen={modalIsOpen}
+        className={styles.modalContent}
+        overlayClassName={styles.modalOverlay}
+        ariaHideApp={false}
+        parentSelector={() => document.querySelector(`#${modalContainer}`)}
+      >
+        {content}
+      </Modal>
+    )) ||
+    content
   )
 }
 
 ProductPage.propTypes = {
-  productData: PropTypes.object.isRequired,
-  HeaderComponent: PropTypes.element,
-  goBack: PropTypes.func,
-  openChefProfileHandler: PropTypes.func,
-  toggleReviewsModalHandler: PropTypes.func,
-  addProductHandler: PropTypes.func,
+  productData: PropTypes.object,
+  onCloseModal: PropTypes.func,
+  onChefClick: PropTypes.func,
   goBackText: PropTypes.string,
   isLoading: PropTypes.bool,
-  isOrdering: PropTypes.bool,
-  reviewModalContainerId: PropTypes.string
+  openInModal: PropTypes.bool,
+  modalContainer: PropTypes.string,
+  isOrdering: PropTypes.object
 }
 
 ProductPage.defaultProps = {
   productData: {},
-  HeaderComponent: null,
-  goBack: null,
-  openChefProfileHandler: null,
-  toggleReviewsModalHandler: () => {},
-  addProductHandler: () => {},
-  goBackText: 'Back',
   isLoading: false,
-  isOrdering: false,
-  reviewModalContainerId: null
+  openInModal: false,
+  onCloseModal: () => {},
+  onChefClick: null,
+  modalContainer: 'root',
+  isOrdering: null
 }
 
 export default ProductPage

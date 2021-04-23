@@ -1,5 +1,4 @@
 import React, {Fragment, useState} from 'react'
-
 import PropTypes from 'prop-types'
 
 import styles from './Ingredients.module.scss'
@@ -12,36 +11,39 @@ export const getIngredientNameValue = ingredient =>
     ? ingredient.componentCode
     : ingredient.value
 
-const Ingredients = ({ingredients, isLoading}) => {
-  const [ingredientsModalIsOpen, setIngredientsModalIsOpen] = useState(false)
+const Ingredients = ({ingredients, isLoading, withDetails, modalContainer}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedIngredient, setSelectedIngredient] = useState(null)
 
-  const toggleIngredientsModal = (selectedIngredient = null) => {
-    setIngredientsModalIsOpen(!ingredientsModalIsOpen)
+  const toggleModal = (selectedIngredient = null) => {
+    setIsModalOpen(!isModalOpen)
     setSelectedIngredient(selectedIngredient)
   }
 
   return (
     <Fragment>
       <IngredientModal
-        isOpen={ingredientsModalIsOpen}
-        onRequestClose={() => toggleIngredientsModal()}
+        isOpen={isModalOpen}
+        onRequestClose={() => toggleModal()}
         selectedIngredient={selectedIngredient}
+        modalContainerId={modalContainer}
       />
-      <div className={`${styles.ingredients} ${isLoading ? 'loading' : null}`}>
+      <div
+        className={`${styles.ingredients} ${isLoading ? styles.loading : ''}`}
+      >
         <h2>Ingredients</h2>
 
-        <div data-testid="ingredient" className={styles.ingredientsContainer}>
+        <div className={styles.ingredientsContainer}>
           {ingredients.map((ingredient, i) => {
             return (
               <div
-                className={`${styles.ingredient} ${
-                  isLoading ? 'loading' : null
-                }`}
+                className={`${styles.ingredient}
+                  ${withDetails ? styles.withDetails : ''}
+                `}
                 key={`${i}-${ingredient.componentCode}-${ingredient.id}`}
                 onClick={() => {
-                  if (!isLoading) {
-                    toggleIngredientsModal(ingredient)
+                  if (!isLoading && withDetails) {
+                    toggleModal(ingredient)
                   }
                 }}
               >
@@ -57,12 +59,16 @@ const Ingredients = ({ingredients, isLoading}) => {
 
 Ingredients.propTypes = {
   ingredients: PropTypes.array,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  withDetails: PropTypes.bool,
+  modalContainer: PropTypes.string
 }
 
 Ingredients.defaultProps = {
   ingredients: [],
-  isLoading: false
+  isLoading: false,
+  withDetails: true,
+  modalContainer: 'root'
 }
 
 export default Ingredients

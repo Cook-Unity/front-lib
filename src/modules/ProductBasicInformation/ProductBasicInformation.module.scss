@@ -37,30 +37,16 @@
   }
 
   .addProduct {
-    grid-area: button;
-
-    & > button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-    }
-
     @media screen and (max-width: 767px) {
       position: fixed;
       bottom: 0;
       right: 0;
       left: 0;
-      padding: 0 20px;
+      padding: 0;
       z-index: 20;
-
-      & > button {
-        width: 100%;
-      }
+      background: none;
+      box-shadow: none;
+      margin-bottom: 20px;
     }
   }
 
@@ -72,7 +58,7 @@
       p {
         opacity: 0;
       }
-      .stars {
+      .stars, button {
         display: none !important;
       }
       animation: shimmer 2s infinite linear;
