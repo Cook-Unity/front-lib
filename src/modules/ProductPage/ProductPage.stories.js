@@ -1,5 +1,5 @@
 import React from 'react'
-import defaultProps from './__mock__'
+import {meal} from './__mock__'
 
 import ProductPage from './index'
 
@@ -16,9 +16,28 @@ const Template = args => (
 
 export const Default = Template.bind({})
 Default.args = {
-  productData: {
-    ...defaultProps.meal
+  productData: meal
+}
+
+export const Ordering = Template.bind({})
+Ordering.args = {
+  productData: meal,
+  openInModal: true,
+  isOrdering: {
+    total: 2
   },
-  isOrdering: true,
-  goBack: () => {}
+  onCloseModal: () => {
+    console.log('modal close')
+  }
+}
+
+export const Loading = Template.bind({})
+Loading.args = {
+  isLoading: true
+}
+
+export const LoadingInModal = Template.bind({})
+LoadingInModal.args = {
+  openInModal: true,
+  isLoading: true
 }

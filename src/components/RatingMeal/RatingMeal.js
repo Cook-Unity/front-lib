@@ -17,6 +17,7 @@ const RatingMeal = ({
   onClickReviewCount,
   hideStars
 }) => {
+  if (!reviewsCount) return null
   return (
     <div className={styles.ratingMeal}>
       <div className={styles.ratings}>

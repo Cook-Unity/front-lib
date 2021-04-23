@@ -4,12 +4,12 @@ import userEvent from '@testing-library/user-event'
 
 import RatingMeal from './index'
 import {parseStartToFloat, showTextCountedReviews} from './RatingMeal'
-import mockData from './__mock__.json'
+import {full} from './__mock__'
 
 const defaultProps = {
-  stars: mockData.stars,
-  userRating: mockData.userRating,
-  reviewsCount: mockData.reviewsCount,
+  stars: full.stars,
+  userRating: full.userRating,
+  reviewsCount: full.reviewsCount,
   onClickReviewCount: jest.fn()
 }
 

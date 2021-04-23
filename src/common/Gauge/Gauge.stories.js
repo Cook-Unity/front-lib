@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {PROTEIN, getDietaryValue} from '../../modules/Macronutrients/utils'
+import {PROTEIN, getDietaryValue} from '../../components/Macronutrients/utils'
 import Gauge from './index'
 
 export default {

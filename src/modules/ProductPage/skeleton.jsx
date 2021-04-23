@@ -1,17 +1,10 @@
 import React, {Fragment} from 'react'
 import ProductBasicInformation from '../ProductBasicInformation'
 
-import {mealSkeleton} from '../ProductBasicInformation/skeleton'
-
-const MealDetailSkeleton = ({preloadedMealDetail}) => {
+const MealDetailSkeleton = () => {
   return (
     <Fragment>
-      <ProductBasicInformation
-        hideStars
-        isLoading
-        productData={mealSkeleton}
-        preloadedMealDetail={preloadedMealDetail}
-      />
+      <ProductBasicInformation hideStars isLoading productData={{}} />
     </Fragment>
   )
 }

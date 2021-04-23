@@ -1,10 +1,8 @@
 import * as React from 'react'
 import {render} from '@testing-library/react'
 
-import defaultPropsMock from './__mock__.json'
+import selectedIngredient from './data.mock'
 import IngredientsModal from './IngredientsModal'
-
-const selectedIngredient = defaultPropsMock.mealDetail.ingredientsData[0]
 
 const defaultProps = {
   selectedIngredient,
