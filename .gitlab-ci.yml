@@ -1,10 +1,3 @@
-image: node:12.18.3
-
-cache:
-  key: $CI_COMMIT_REF_SLUG
-  paths:
-    - node_modules/
-
 stages:
   - prepare
   - test
@@ -17,6 +10,13 @@ variables:
   DEPLOY_IMAGE: 'amazon/aws-cli:2.1.22'
   GIT_DEPTH: 10
   SENTRY_RELEASE: acquisition-web@${CI_PIPELINE_ID}
+
+image: node:12.18.3
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
 
 install:
   stage: prepare
