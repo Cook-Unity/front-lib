@@ -5,6 +5,12 @@
 [![pipeline status](https://gitlab.cookunity.com/cross/front-lib/badges/master/pipeline.svg)](https://gitlab.cookunity.com/cross/front-lib/-/commits/master)
 [![coverage report](https://gitlab.cookunity.com/cross/front-lib/badges/master/coverage.svg)](https://gitlab.cookunity.com/cross/front-lib/-/commits/master)
 
+
+## Browse library
+
+Latest published version in:
+https://static.cookunity.com/cross/front-lib/storybook/index.html
+
 ## Create new release (tag)
 
 After merging your feature branch into master run the following (in master):
