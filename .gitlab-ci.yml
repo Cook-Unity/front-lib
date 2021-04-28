@@ -28,7 +28,6 @@ install:
   only:
     - merge_requests
     - master
-    - publish-storybook-to-s3-on-pipeline
 
 unit-test:
   stage: test
@@ -38,7 +37,6 @@ unit-test:
   only:
     - merge_requests
     - master
-    - publish-storybook-to-s3-on-pipeline
 
 linter:
   stage: test
@@ -47,7 +45,6 @@ linter:
   only:
     - merge_requests
     - master
-    - publish-storybook-to-s3-on-pipeline
 
 build-storybook:
   stage: build
@@ -58,14 +55,11 @@ build-storybook:
     - storybook-static/
   only:
     - master
-    - publish-storybook-to-s3-on-pipeline
 
 publish-storybook:
   stage: deploy
   image: amazon/aws-cli:2.1.22
   script:
-    - ls -la
     - aws s3 sync --acl public-read --cache-control "max-age=0" ./storybook-static/ s3://cu-statics/cross/front-lib/storybook/
   only:
     - master
-    - publish-storybook-to-s3-on-pipeline
