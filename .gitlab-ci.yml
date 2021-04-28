@@ -63,9 +63,8 @@ build-storybook:
 publish-storybook:
   stage: deploy
   image: amazon/aws-cli:2.1.22
-  dependencies:
-    - build
   script:
+    - ls -la
     - aws s3 sync --acl public-read --cache-control "max-age=0" ./build-storybook/ s3://cu-statics/cross/front-lib/storybook/
   only:
     - master
