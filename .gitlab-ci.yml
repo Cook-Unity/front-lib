@@ -1,13 +1,22 @@
+stages:
+  - prepare
+  - test
+  - build
+  - deploy
+
+variables:
+  PROJECT_NAME: acquisition-web
+  NODE_IMAGE: 'node:12.18.3'
+  DEPLOY_IMAGE: 'amazon/aws-cli:2.1.22'
+  GIT_DEPTH: 10
+  SENTRY_RELEASE: acquisition-web@${CI_PIPELINE_ID}
+
 image: node:12.18.3
 
 cache:
   key: $CI_COMMIT_REF_SLUG
   paths:
     - node_modules/
-
-stages:
-  - prepare
-  - test
 
 install:
   stage: prepare
@@ -35,4 +44,22 @@ linter:
     - npm run lint
   only:
     - merge_requests
+    - master
+
+build-storybook:
+  stage: build
+  script:
+    - npm run build-storybook
+  artifacts:
+    paths:
+    - storybook-static/
+  only:
+    - master
+
+publish-storybook:
+  stage: deploy
+  image: amazon/aws-cli:2.1.22
+  script:
+    - aws s3 sync --acl public-read --cache-control "max-age=0" ./storybook-static/ s3://cu-statics/cross/front-lib/storybook/
+  only:
     - master
