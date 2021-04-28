@@ -68,7 +68,7 @@ publish-storybook:
   dependencies:
     - build-storybook
   script:
-    - aws s3 sync --acl public-read --cache-control "max-age=2592000" ./build-storybook/ s3://cu-statics/cross/front-lib/storybook/
+    - aws s3 sync --acl public-read --cache-control "max-age=0" ./build-storybook/ s3://cu-statics/cross/front-lib/storybook/
   only:
     - master
     - publish-storybook-to-s3-on-pipeline
