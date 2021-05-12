@@ -92,6 +92,7 @@ const MealCard = ({
   const isNew = featureSpecs.description === 'NEW'
   const showWarning = onWarnings && warning
   const showFeature = !isNew && !showWarning && featureSpecs.description
+  const showUserRating = user_rating === 5
 
   const handleAddItem = () => {
     if (hideCartControllers) return
@@ -172,7 +173,7 @@ const MealCard = ({
           </Fragment>
         )}
 
-        {!showWarning && user_rating === 5 ? (
+        {!showWarning && showUserRating ? (
           <div className={styles.user_stars_container}>
             <span className={styles.user_rating}>you rated 5</span>
             <img
