@@ -159,12 +159,19 @@ describe('MealCard component', () => {
     userEvent.click(button)
   })
 
-  it('With warnings', () => {
+  it('With warnings (has Priority)', () => {
     const alertText = with_warnings.warning
-    render(<MealCard meal={with_warnings} onWarnings />)
+    render(
+      <MealCard
+        meal={{...with_warnings, ...with_user_rating, ...meal_featured}}
+        onWarnings
+      />
+    )
     expect(screen.queryByText(alertText)).not.toBeInTheDocument()
     userEvent.click(screen.getByAltText('alert'))
     expect(screen.getByText(alertText)).toBeVisible()
+    expect(screen.queryByText('you rated 5')).not.toBeInTheDocument()
+    expect(screen.queryByText('CHRISTMAS')).not.toBeInTheDocument()
   })
 
   it('With User Rating', () => {
