@@ -28,12 +28,6 @@ Default.args = {
   meal: meal_basic
 }
 
-export const Full = Template.bind({})
-Full.args = {
-  meal: meal_full,
-  quantity: 0
-}
-
 export const NewTag = Template.bind({})
 NewTag.args = {
   meal: meal_new,
@@ -124,4 +118,18 @@ export const withCelebrityFeatures = Template.bind({})
 withCelebrityFeatures.args = {
   meal: meal_full,
   enableCelebrityFeatures: true
+}
+
+export const Full = Template.bind({})
+Full.args = {
+  meal: {
+    ...meal_full,
+    ...meal_featured,
+    ...with_warnings,
+    ...with_user_rating
+  },
+  quantity: 3,
+  buttonLike: true,
+  enableCelebrityFeatures: true,
+  noExtraFee: true
 }
