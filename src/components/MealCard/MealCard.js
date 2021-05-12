@@ -48,10 +48,6 @@ const MealCard = ({
   enableCelebrityFeatures,
   hideCartControllers
 }) => {
-  const [showCartControllers, setShowCartControllers] = useState(false)
-  const [showWarnings, setShowWarning] = useState(false)
-  const [disabledLikeMeal, setDisabledLikeMeal] = useState(false)
-
   const {
     name = '',
     short_description = '',
@@ -76,6 +72,10 @@ const MealCard = ({
     price = ''
   } = meal
 
+  const [showCartControllers, setShowCartControllers] = useState(false)
+  const [showWarningDescription, setShowWarningDescription] = useState(false)
+  const [disabledLikeMeal, setDisabledLikeMeal] = useState(false)
+
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
   const mealRating = formatMealRating(stars)
   const mealReviews = formatMealReviews(reviews)
@@ -90,6 +90,9 @@ const MealCard = ({
     full_path_meal_image
   )
   const isNew = featureSpecs.description === 'NEW'
+  const showWarning = onWarnings && warning
+  const showFeature = !isNew && !showWarning && featureSpecs.description
+  const showUserRating = user_rating === 5
 
   const handleAddItem = () => {
     if (hideCartControllers) return
@@ -103,9 +106,9 @@ const MealCard = ({
   }
 
   const openWarning = () => {
-    setShowWarning(true)
+    setShowWarningDescription(true)
     setTimeout(() => {
-      setShowWarning(false)
+      setShowWarningDescription(false)
     }, CONTROLLERS_OPENED_MS)
   }
 
@@ -147,31 +150,8 @@ const MealCard = ({
           data-testid="meal-image"
           src={`${imageComingSoon ? images.noMealImage : full_path_meal_image}`}
         />
-        {user_rating === 5 ? (
-          <div className={styles.user_stars_container}>
-            <span className={styles.user_rating}>you rated 5</span>
-            <img
-              className={styles.user_star}
-              src={images.blackStar}
-              alt="star"
-            />
-          </div>
-        ) : (
-          !warning &&
-          featureSpecs.description && (
-            <div
-              className={styles.meal_card__featured}
-              style={{
-                backgroundColor: featureSpecs.background,
-                color: featureSpecs.color
-              }}
-            >
-              {featureSpecs.description}
-            </div>
-          )
-        )}
 
-        {onWarnings && warning && (
+        {showWarning && (
           <Fragment>
             <button
               type="button"
@@ -180,7 +160,7 @@ const MealCard = ({
             >
               <img src={images.warningRedIcon} alt="alert" />
             </button>
-            {showWarnings ? (
+            {showWarningDescription ? (
               <div
                 className={classnames(
                   styles.fade_out,
@@ -191,6 +171,29 @@ const MealCard = ({
               </div>
             ) : null}
           </Fragment>
+        )}
+
+        {!showWarning && showUserRating ? (
+          <div className={styles.user_stars_container}>
+            <span className={styles.user_rating}>you rated 5</span>
+            <img
+              className={styles.user_star}
+              src={images.blackStar}
+              alt="star"
+            />
+          </div>
+        ) : (
+          showFeature && (
+            <div
+              className={styles.meal_card__featured}
+              style={{
+                backgroundColor: featureSpecs.background,
+                color: featureSpecs.color
+              }}
+            >
+              {featureSpecs.description}
+            </div>
+          )
         )}
 
         {buttonLike && (
@@ -225,6 +228,14 @@ const MealCard = ({
               </span>
               <span>{mealRating}</span>
               <span className={styles.reviews}>{` (${mealReviews})`}</span>
+            </div>
+          )}
+
+          {isNew && (
+            <div
+              className={classnames(styles.meal_card__tag, styles.highlight)}
+            >
+              NEW
             </div>
           )}
 

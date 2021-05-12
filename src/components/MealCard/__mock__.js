@@ -22,16 +22,6 @@ export const meal_extras = {
   protein_type: 'seafood'
 }
 
-export const meal_new = {
-  ...meal_basic,
-  feature: {
-    name: 'NEW',
-    description: 'NEW',
-    background: '#4D4D4F',
-    color: '#FFFFFF'
-  }
-}
-
 export const meal_full = {
   ...meal_extras,
   specifications_detail: [
@@ -64,6 +54,26 @@ export const meal_full = {
       __typename: 'SpecificationsDetails'
     }
   ]
+}
+
+export const meal_new = {
+  ...meal_full,
+  feature: {
+    name: 'NEW',
+    description: 'NEW',
+    background: '#4D4D4F',
+    color: '#FFFFFF'
+  }
+}
+
+export const meal_featured = {
+  ...meal_full,
+  feature: {
+    name: 'christmas',
+    description: 'Christmas',
+    background: '#CC231E',
+    color: 'white'
+  }
 }
 
 export const meal_no_image = {

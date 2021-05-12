@@ -188,7 +188,9 @@
       }
     }
 
-   
+   &.highlight {
+    background-color: $cookunity-secondary-yellow;
+   }
 
     > span {
       &.star {
@@ -207,15 +209,15 @@
     }
   }
 
-  .button__like { 
-    z-index: 2; 
-    position: absolute; 
-    right: 0; 
-    top: 0px; 
-    margin: 6px 20px 0 0; 
-    border-radius: 30px; 
-    width: 20px; 
-    height: 17px; 
+  .button__like {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    margin: 6px 20px 0 0;
+    border-radius: 30px;
+    width: 20px;
+    height: 17px;
     cursor: pointer;
 
     &.disabled {

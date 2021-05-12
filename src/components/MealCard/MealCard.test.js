@@ -13,7 +13,8 @@ import {
   with_warnings,
   meal_no_image,
   out_of_stock,
-  meal_new
+  meal_new,
+  meal_featured
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -35,16 +36,6 @@ describe('MealCard component', () => {
     expect(screen.queryByAltText('heart')).not.toBeInTheDocument()
   })
 
-  it('New meal', () => {
-    render(<MealCard meal={meal_new} noExtraFee quantity={1} />)
-    expect(screen.getByText('NEW'))
-      .toHaveStyle({
-        backgroundColor: meal_new.feature.background,
-        color: meal_new.feature.color
-      })
-      .toBeVisible()
-  })
-
   it('Full selected', () => {
     render(<MealCard meal={meal_full} noExtraFee quantity={1} isNew={false} />)
 
@@ -61,6 +52,8 @@ describe('MealCard component', () => {
       .toHaveTextContent('4.4 (999+)')
       .toBeVisible()
 
+    expect(screen.queryByText('NEW')).not.toBeInTheDocument()
+
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
     expect(screen.getByText('Spicy')).toBeVisible()
@@ -68,6 +61,22 @@ describe('MealCard component', () => {
     expect(screen.queryByTestId('celeb-chef-img')).not.toBeInTheDocument()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
+  })
+
+  it('New meal', () => {
+    render(<MealCard meal={meal_new} />)
+    expect(screen.getByText('NEW')).toBeVisible()
+    expect(screen.queryByTestId('rating')).not.toBeInTheDocument()
+  })
+
+  it('Featured', () => {
+    render(<MealCard meal={meal_featured} />)
+    expect(screen.getByText('CHRISTMAS'))
+      .toHaveStyle({
+        backgroundColor: meal_featured.feature.background,
+        color: meal_featured.feature.color
+      })
+      .toBeVisible()
   })
 
   it('Click card', () => {
@@ -150,12 +159,19 @@ describe('MealCard component', () => {
     userEvent.click(button)
   })
 
-  it('With warnings', () => {
+  it('With warnings (has Priority)', () => {
     const alertText = with_warnings.warning
-    render(<MealCard meal={with_warnings} onWarnings />)
+    render(
+      <MealCard
+        meal={{...with_warnings, ...with_user_rating, ...meal_featured}}
+        onWarnings
+      />
+    )
     expect(screen.queryByText(alertText)).not.toBeInTheDocument()
     userEvent.click(screen.getByAltText('alert'))
     expect(screen.getByText(alertText)).toBeVisible()
+    expect(screen.queryByText('you rated 5')).not.toBeInTheDocument()
+    expect(screen.queryByText('CHRISTMAS')).not.toBeInTheDocument()
   })
 
   it('With User Rating', () => {
