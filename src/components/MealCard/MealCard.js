@@ -90,6 +90,7 @@ const MealCard = ({
     full_path_meal_image
   )
   const isNew = featureSpecs.description === 'NEW'
+  const showFeature = !isNew && !warning
 
   const handleAddItem = () => {
     if (hideCartControllers) return
@@ -157,7 +158,7 @@ const MealCard = ({
             />
           </div>
         ) : (
-          !warning &&
+          showFeature &&
           featureSpecs.description && (
             <div
               className={styles.meal_card__featured}
@@ -225,6 +226,14 @@ const MealCard = ({
               </span>
               <span>{mealRating}</span>
               <span className={styles.reviews}>{` (${mealReviews})`}</span>
+            </div>
+          )}
+
+          {isNew && (
+            <div
+              className={classnames(styles.meal_card__tag, styles.highlight)}
+            >
+              NEW
             </div>
           )}
 

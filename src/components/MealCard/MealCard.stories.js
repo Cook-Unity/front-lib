@@ -5,11 +5,13 @@ import {MealCardCase} from './MealCardCase'
 import {
   meal_basic,
   meal_full,
+  meal_new,
   meal_long_name,
   with_warnings,
   with_user_rating,
   out_of_stock,
-  meal_no_image
+  meal_no_image,
+  meal_featured
 } from './__mock__'
 
 export default {
@@ -34,15 +36,7 @@ Full.args = {
 
 export const NewTag = Template.bind({})
 NewTag.args = {
-  meal: {
-    ...meal_full,
-    feature: {
-      name: 'NEW',
-      description: 'NEW',
-      background: '#4D4D4F',
-      color: '#FFFFFF'
-    }
-  },
+  meal: meal_new,
   quantity: 0
 }
 
@@ -83,15 +77,7 @@ NoExtraFee.args = {
 
 export const Christmas = Template.bind({})
 Christmas.args = {
-  meal: {
-    ...meal_full,
-    feature: {
-      name: 'christmas',
-      description: 'Christmas',
-      background: '#CC231E',
-      color: 'white'
-    }
-  },
+  meal: meal_featured,
   quantity: 0
 }
 
