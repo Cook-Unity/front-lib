@@ -15,7 +15,7 @@ export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
 export const formatMealReviews = reviews =>
   reviews && (reviews > 999 ? '999+' : `${reviews}`)
 
-export const formatFeature = feature => {
+export const formatFeature = (feature = null) => {
   if (feature && feature.description)
     feature.description = feature.description.toUpperCase()
   return feature || {}

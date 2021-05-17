@@ -69,8 +69,8 @@ NoExtraFee.args = {
   noExtraFee: true
 }
 
-export const Christmas = Template.bind({})
-Christmas.args = {
+export const Thanksgiving = Template.bind({})
+Thanksgiving.args = {
   meal: meal_featured,
   quantity: 0
 }
