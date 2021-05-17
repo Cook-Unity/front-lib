@@ -14,7 +14,8 @@ import {
   meal_no_image,
   out_of_stock,
   meal_new,
-  meal_featured
+  meal_featured,
+  new_chef
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -71,12 +72,18 @@ describe('MealCard component', () => {
 
   it('Featured', () => {
     render(<MealCard meal={meal_featured} />)
-    expect(screen.getByText('CHRISTMAS'))
+    expect(screen.getByText('THANKSGIVING'))
       .toHaveStyle({
         backgroundColor: meal_featured.feature.background,
         color: meal_featured.feature.color
       })
       .toBeVisible()
+  })
+
+  it('New chef', () => {
+    render(<MealCard meal={new_chef} />)
+    expect(screen.queryByText('NEW')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('rating')).toBeInTheDocument()
   })
 
   it('Click card', () => {

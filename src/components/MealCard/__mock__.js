@@ -59,7 +59,7 @@ export const meal_full = {
 export const meal_new = {
   ...meal_full,
   feature: {
-    name: 'NEW',
+    name: 'NEW_RECIPE',
     description: 'NEW',
     background: '#4D4D4F',
     color: '#FFFFFF'
@@ -69,10 +69,20 @@ export const meal_new = {
 export const meal_featured = {
   ...meal_full,
   feature: {
-    name: 'christmas',
-    description: 'Christmas',
+    name: 'THANKSGIVING',
+    description: 'THANKSGIVING',
     background: '#CC231E',
-    color: 'white'
+    color: '#FFFFFF'
+  }
+}
+
+export const new_chef = {
+  ...meal_full,
+  feature: {
+    name: 'NEW_AUTHOR',
+    description: 'NEW',
+    background: '#4D4D4F',
+    color: '#FFFFFF'
   }
 }
 

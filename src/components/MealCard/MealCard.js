@@ -89,9 +89,11 @@ const MealCard = ({
   const imageComingSoon = /no_selection|no-image|null|undefined/.test(
     full_path_meal_image
   )
-  const isNew = featureSpecs.description === 'NEW'
+  const isNew = featureSpecs.name === 'NEW_RECIPE'
+  const isNewChef = featureSpecs.name === 'NEW_AUTHOR'
   const showWarning = onWarnings && warning
-  const showFeature = !isNew && !showWarning && featureSpecs.description
+  const showFeature =
+    !isNew && !isNewChef && !showWarning && feature.description
   const showUserRating = user_rating === 5
 
   const handleAddItem = () => {
@@ -304,7 +306,7 @@ const MealCard = ({
                 data-testid="celeb-chef-img"
               />
             )}
-          {full_path_chef_image ? (
+          {full_path_chef_image && (
             <div className={styles.chef_avatar}>
               <img
                 src={full_path_chef_image}
@@ -312,8 +314,6 @@ const MealCard = ({
                 alt={chefFullName}
               />
             </div>
-          ) : (
-            ''
           )}
           <div className={styles.chef_name}>{chefFullName}</div>
         </div>
