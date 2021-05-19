@@ -93,7 +93,7 @@ const MealCard = ({
   const isNewChef = featureSpecs.name === 'NEW_AUTHOR'
   const showWarning = onWarnings && warning
   const showFeature =
-    !isNew && !isNewChef && !showWarning && feature.description
+    !isNew && !isNewChef && !showWarning && featureSpecs.description
   const showUserRating = user_rating === 5
 
   const handleAddItem = () => {

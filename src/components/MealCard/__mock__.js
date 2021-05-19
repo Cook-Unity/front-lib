@@ -19,7 +19,8 @@ export const meal_extras = {
   premium_fee: 3,
   fixed_price: false,
   stock: 3,
-  protein_type: 'seafood'
+  protein_type: 'seafood',
+  feature: null
 }
 
 export const meal_full = {
