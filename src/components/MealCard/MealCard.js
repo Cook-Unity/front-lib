@@ -155,7 +155,11 @@ const MealCard = ({
           }`}
           onClick={() => onMealClick()}
           data-testid="meal-image"
-          src={`${(imageComingSoon || errorImage) ? images.noMealImage : full_path_meal_image}`}
+          src={`${
+            imageComingSoon || errorImage
+              ? images.noMealImage
+              : full_path_meal_image
+          }`}
           onError={handleOnErrorImage}
         />
 
