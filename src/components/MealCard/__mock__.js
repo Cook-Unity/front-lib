@@ -124,3 +124,7 @@ export const out_of_stock = {
   ...meal_full,
   stock: 0
 }
+ export const meal_error_image = {
+   ...meal_basic,
+   full_path_meal_image: 'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/c/h/chef_esther_choi_mushroom_bipimbap_1.jpg'
+ }

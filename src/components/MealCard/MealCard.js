@@ -75,6 +75,7 @@ const MealCard = ({
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarningDescription, setShowWarningDescription] = useState(false)
   const [disabledLikeMeal, setDisabledLikeMeal] = useState(false)
+  const [errorImage, setErrorImage] = useState(false)
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
   const mealRating = formatMealRating(stars)
@@ -122,6 +123,10 @@ const MealCard = ({
     }, 2500)
   }
 
+  const handleOnErrorImage = () => {
+    setErrorImage(true)
+  }
+
   useEffect(() => {
     const cartTimer = setTimeout(() => {
       setShowCartControllers(false)
@@ -150,7 +155,8 @@ const MealCard = ({
           }`}
           onClick={() => onMealClick()}
           data-testid="meal-image"
-          src={`${imageComingSoon ? images.noMealImage : full_path_meal_image}`}
+          src={`${(imageComingSoon || errorImage) ? images.noMealImage : full_path_meal_image}`}
+          onError={handleOnErrorImage}
         />
 
         {showWarning && (
@@ -218,7 +224,7 @@ const MealCard = ({
           <div className={styles.no_stock_text}>{TEXT_OUT_OF_STOCK}</div>
         )}
 
-        {!noStock && imageComingSoon && (
+        {!noStock && (imageComingSoon || errorImage) && (
           <div className={styles.no_image_text}>{TEXT_COMING_SOON}</div>
         )}
 
