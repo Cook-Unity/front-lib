@@ -11,7 +11,8 @@ import {
   with_user_rating,
   out_of_stock,
   meal_no_image,
-  meal_featured
+  meal_featured,
+  meal_error_image
 } from './__mock__'
 
 export default {
@@ -132,4 +133,9 @@ Full.args = {
   buttonLike: true,
   enableCelebrityFeatures: true,
   noExtraFee: true
+}
+
+export const ErrorMealImage = Template.bind({})
+NoMealImage.args = {
+  meal: meal_error_image
 }
