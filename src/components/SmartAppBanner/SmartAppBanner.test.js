@@ -4,24 +4,22 @@ import userEvent from '@testing-library/user-event'
 
 import SmartAppBanner from './index'
 
-describe('Specifications', () => {
+describe('SmartAppBanner', () => {
   const handleOnClickMock = () => 'ok'
 
-  it('Render ok', () => {
+  it('Required props', () => {
     render(
       <SmartAppBanner
         title="CookUnity iOS App"
-        subTitle="Eat well without effort"
         textButton="Use"
         handleOnClick={handleOnClickMock}
       />
     )
     expect(screen.getByText('CookUnity iOS App')).toBeVisible()
-    expect(screen.getByText('Eat well without effort')).toBeVisible()
     expect(screen.getByText('Use')).toBeVisible()
   })
 
-  it('Click close', () => {
+  it('Close banner by clicking button', () => {
     render(
       <SmartAppBanner
         title="CookUnity iOS App"
