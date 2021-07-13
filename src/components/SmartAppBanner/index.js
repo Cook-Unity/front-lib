@@ -10,12 +10,14 @@ const SmartAppBanner = ({
   subTitle,
   handleOnClick,
   textButton,
-  className
+  className,
+  handleOnClickClose
 }) => {
   const [isOpen, setIsOpen] = useState(true)
 
-  const handleOnClickClose = () => {
+  const onClickClose = () => {
     setIsOpen(!isOpen)
+    handleOnClickClose && handleOnClickClose()
   }
 
   return isOpen ? (
@@ -24,7 +26,7 @@ const SmartAppBanner = ({
       data-testid="smart-app-banner"
     >
       <img
-        onClick={handleOnClickClose}
+        onClick={onClickClose}
         src={images.xcloseWhite}
         className={styles.icon_close}
         alt="icon close"
@@ -50,13 +52,15 @@ SmartAppBanner.propTypes = {
   subTitle: string,
   handleOnClick: func.isRequired,
   textButton: string.isRequired,
-  className: string
+  className: string,
+  handleOnClickClose: func
 }
 
 SmartAppBanner.defaultProps = {
   icon: null,
   subTitle: null,
-  className: ''
+  className: '',
+  handleOnClickClose: null
 }
 
 export default SmartAppBanner
