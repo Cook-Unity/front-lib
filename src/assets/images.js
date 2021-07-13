@@ -22,6 +22,7 @@ export default {
   twitter: imageUrl('twitter.png'),
   email: imageUrl('email.png'),
   xclose: imageUrl('xclose.png'),
+  xcloseWhite: imageUrl('xclose-white.png'),
   allStarChefBudge: imageUrl('all-star.png'),
   spicyIcon: imageUrl('icon-spicy.png'),
   star: imageUrl('star.png'),
@@ -36,5 +37,6 @@ export default {
   veganIcon: imageUrl('vegan.png'),
   vegetarianIcon: imageUrl('vegetarian.png'),
   warningRedIcon: imageUrl('alert-circle.png'),
-  iconAlertBlack
+  iconAlertBlack,
+  logoCu: imageUrl('logo-cu.png')
 }
