@@ -4,7 +4,14 @@ import images from '../../assets/images'
 
 import styles from './SmartAppBanner.module.scss'
 
-const SmartAppBanner = ({icon, title, subTitle, handleOnClick, textButton}) => {
+const SmartAppBanner = ({
+  icon,
+  title,
+  subTitle,
+  handleOnClick,
+  textButton,
+  className
+}) => {
   const [isOpen, setIsOpen] = useState(true)
 
   const handleOnClickClose = () => {
@@ -12,7 +19,10 @@ const SmartAppBanner = ({icon, title, subTitle, handleOnClick, textButton}) => {
   }
 
   return isOpen ? (
-    <div className={styles.container} data-testid="smart-app-banner">
+    <div
+      className={`${styles.container} ${className}`}
+      data-testid="smart-app-banner"
+    >
       <img
         onClick={handleOnClickClose}
         src={images.xcloseWhite}
@@ -39,12 +49,14 @@ SmartAppBanner.propTypes = {
   title: string.isRequired,
   subTitle: string,
   handleOnClick: func.isRequired,
-  textButton: string.isRequired
+  textButton: string.isRequired,
+  className: string
 }
 
 SmartAppBanner.defaultProps = {
   icon: null,
-  subTitle: null
+  subTitle: null,
+  className: ''
 }
 
 export default SmartAppBanner
