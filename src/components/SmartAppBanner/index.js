@@ -20,6 +20,11 @@ const SmartAppBanner = ({
     handleOnClickClose && handleOnClickClose()
   }
 
+  const onClik = () => {
+    setIsOpen(!isOpen)
+    handleOnClick && handleOnClick()
+  }
+
   return isOpen ? (
     <div
       className={`${styles.container} ${className}`}
@@ -39,7 +44,7 @@ const SmartAppBanner = ({
           <span className={styles.sub_title}>{subTitle}</span>
         </div>
       </div>
-      <button className={styles.btn_action} onClick={handleOnClick}>
+      <button className={styles.btn_action} onClick={onClik}>
         {textButton}
       </button>
     </div>
