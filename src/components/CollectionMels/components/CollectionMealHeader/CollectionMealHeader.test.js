@@ -11,14 +11,7 @@ describe('CollectionMealHeader', () => {
   const handleOnClickMock = callback => callback()
 
   it('Required props', () => {
-    render(
-      <CollectionMealHeader
-        title="From the Sea"
-        image={IMAGE}
-        backgroundColor="#F6E1D6"
-        updatedWeekly
-      />
-    )
+    render(<CollectionMealHeader title="From the Sea" image={IMAGE} />)
     expect(screen.getByText('From')).toBeVisible()
     expect(screen.getByText('the Sea')).toBeVisible()
   })
