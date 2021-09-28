@@ -1,15 +1,16 @@
 import React from 'react'
 
-import CollectionMealsCard from './index'
+import CollectionMealsHeader from './index'
 
 export default {
-  title: 'CollectionMealsCard',
-  component: CollectionMealsCard
+  title: 'CollectionMealsHeader',
+  component: CollectionMealsHeader
 }
 
-const IMAGE = "https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg"
+const IMAGE =
+  'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg'
 
-const Template = args => <CollectionMealsCard {...args} />
+const Template = args => <CollectionMealsHeader {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
@@ -19,7 +20,7 @@ Default.args = {
 
 export const Small = Template.bind({})
 Small.args = {
-  title: 'From the Sea',
+  title: 'New This Week',
   size: 'small',
   image: IMAGE,
   backgroundColor: '#F6E1D6',
