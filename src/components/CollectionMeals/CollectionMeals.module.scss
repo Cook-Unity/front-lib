@@ -30,12 +30,12 @@
   height: 340px;
 }
 
-.container_collection_header {
+.container_collection_icon {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 
-  .container_collection_header_title {
+  .container_collection_icon_title {
     display: flex;
     align-items: flex-end;
   
@@ -117,4 +117,34 @@
   border-bottom: 8px solid;
   width: 63px;
   height: calc(66px - 8px);
+}
+
+.container_collection_header {
+  display: flex;
+
+  .image_header {
+    width: 240px;
+    height: 240px;
+    margin-right: 34px;
+  }
+
+  .tag_collection {
+    position: absolute;
+    left: 146px;
+  }
+
+  .container_title_header {
+    display: flex;
+    align-items: flex-end;
+
+    .description_header {
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
 }

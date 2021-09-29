@@ -2,7 +2,7 @@ import React from 'react'
 import {string, func, bool, oneOf} from 'prop-types'
 
 import {getFirstAndSecondPhraseTitle} from '../../utils'
-import styles from '../../CollectionMealsCard.module.scss'
+import styles from '../../CollectionMeals.module.scss'
 
 const CollectionMealsCard = ({
   image,

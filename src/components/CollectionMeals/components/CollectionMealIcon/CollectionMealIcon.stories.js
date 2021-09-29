@@ -1,16 +1,16 @@
 import React from 'react'
 
-import CollectionMealsHeader from './index'
+import CollectionMealIcon from './index'
 
 export default {
-  title: 'CollectionMealsHeader',
-  component: CollectionMealsHeader
+  title: 'CollectionMealIcon',
+  component: CollectionMealIcon
 }
 
 const IMAGE =
   'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg'
 
-const Template = args => <CollectionMealsHeader {...args} />
+const Template = args => <CollectionMealIcon {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

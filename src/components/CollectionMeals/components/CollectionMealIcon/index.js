@@ -3,9 +3,9 @@ import {string, func, bool, oneOf} from 'prop-types'
 import classnames from 'classnames'
 
 import {getFirstAndSecondPhraseTitle} from '../../utils'
-import styles from '../../CollectionMealsCard.module.scss'
+import styles from '../../CollectionMeals.module.scss'
 
-const CollectionMealsHeader = ({
+const CollectionMealIcon = ({
   image,
   title,
   size,
@@ -17,10 +17,10 @@ const CollectionMealsHeader = ({
   const {firstPhrase, secondPhrase} =
     title && getFirstAndSecondPhraseTitle(title)
   return (
-    <div className={styles.container_collection_header}>
+    <div className={styles.container_collection_icon}>
       <div
-        className={styles.container_collection_header_title}
-        data-testid="collection-meals-header"
+        className={styles.container_collection_icon_title}
+        data-testid="collection-meals-icon"
         onClick={handleOnClick}
       >
         <img
@@ -28,7 +28,7 @@ const CollectionMealsHeader = ({
             [styles.image_collection_border]: isSmallVersion
           })}
           style={{borderBottomColor: backgroundColor}}
-          data-testid="image-meal-header"
+          data-testid="image-meal-icon"
           src={image}
           alt="icon"
         />
@@ -71,7 +71,7 @@ const CollectionMealsHeader = ({
   )
 }
 
-CollectionMealsHeader.propTypes = {
+CollectionMealIcon.propTypes = {
   image: string.isRequired,
   title: string.isRequired,
   size: oneOf(['small', 'large']),
@@ -80,10 +80,10 @@ CollectionMealsHeader.propTypes = {
   updatedWeekly: bool
 }
 
-CollectionMealsHeader.defaultProps = {
+CollectionMealIcon.defaultProps = {
   size: 'large',
   handleOnClick: null,
   backgroundColor: '#FFF'
 }
 
-export default CollectionMealsHeader
+export default CollectionMealIcon
