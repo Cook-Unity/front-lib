@@ -1,24 +1,27 @@
 import React from 'react'
-import {string, func, bool} from 'prop-types'
+import {string, bool} from 'prop-types'
+import classnames from 'classnames'
 
-import {getFirstAndSecondPhraseTitle} from '../../utils'
-import styles from '../../CollectionMeals.module.scss'
+import TitleHeader from './components/TitleHeader'
+
+import styles from './CollectionMealHeader.module.scss'
+import stylesCommon from '../../CollectionMeals.module.scss'
 
 const CollectionMealHeader = ({
   image,
   title,
-  handleOnClick,
   backgroundColor,
   updatedWeekly,
   description,
   countMeals,
-  author,
-  imgAuthor
+  imgAuthor,
+  className
 }) => {
-  const {firstPhrase, secondPhrase} =
-    title && getFirstAndSecondPhraseTitle(title)
   return (
-    <div className={styles.container_collection_header}>
+    <div
+      className={classnames(styles.container_collection_header, className)}
+      style={{backgroundColor: backgroundColor}}
+    >
       <img
         className={styles.image_header}
         data-testid="image-meal-header"
@@ -26,36 +29,36 @@ const CollectionMealHeader = ({
         alt="icon"
       />
       {updatedWeekly && (
-        <span className={styles.tag_collection}>UPDATED WEEKLY</span>
+        <span
+          className={classnames(
+            stylesCommon.tag_collection,
+            styles.tag_collection
+          )}
+        >
+          UPDATED WEEKLY
+        </span>
       )}
-      <div className={styles.container_title_header}>
-        <div className={styles.container_title}>
-          <h1 className={styles.title}>{firstPhrase}</h1>
-          <h1 className={styles.title}>{secondPhrase}</h1>
-          <span className={styles.description_header}>{description}</span>
-        </div>
-        <div className={styles.container_author}>
-          <h1>CURATED BY</h1>
-          <img src={imgAuthor} />
-          <hr className={styles.separator} />
-          <span>{countMeals} Meals</span>
-        </div>
-      </div>
+      <TitleHeader
+        title={title}
+        description={description}
+        countMeals={countMeals}
+        imgAuthor={imgAuthor}
+      />
     </div>
   )
 }
 
 CollectionMealHeader.propTypes = {
   image: string.isRequired,
+  imgAuthor: string,
   title: string.isRequired,
-  handleOnClick: func,
   backgroundColor: string,
-  updatedWeekly: bool
+  updatedWeekly: bool,
+  className: string
 }
 
 CollectionMealHeader.defaultProps = {
-  handleOnClick: null,
-  backgroundColor: '#FFF'
+  backgroundColor: '#D9EDFE'
 }
 
 export default CollectionMealHeader

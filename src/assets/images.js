@@ -38,5 +38,6 @@ export default {
   vegetarianIcon: imageUrl('vegetarian.png'),
   warningRedIcon: imageUrl('alert-circle.png'),
   iconAlertBlack,
-  logoCu: imageUrl('logo-cu.png')
+  logoCu: imageUrl('logo-cu.png'),
+  iconLogoCu: imageUrl('icon_logo_cu.png')
 }

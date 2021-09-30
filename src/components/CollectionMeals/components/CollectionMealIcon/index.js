@@ -11,13 +11,14 @@ const CollectionMealIcon = ({
   size,
   handleOnClick,
   backgroundColor,
-  updatedWeekly
+  updatedWeekly,
+  className
 }) => {
   const isSmallVersion = size === 'small'
   const {firstPhrase, secondPhrase} =
     title && getFirstAndSecondPhraseTitle(title)
   return (
-    <div className={styles.container_collection_icon}>
+    <div className={classnames(styles.container_collection_icon, className)}>
       <div
         className={styles.container_collection_icon_title}
         data-testid="collection-meals-icon"
@@ -77,7 +78,8 @@ CollectionMealIcon.propTypes = {
   size: oneOf(['small', 'large']),
   handleOnClick: func,
   backgroundColor: string,
-  updatedWeekly: bool
+  updatedWeekly: bool,
+  className: string
 }
 
 CollectionMealIcon.defaultProps = {

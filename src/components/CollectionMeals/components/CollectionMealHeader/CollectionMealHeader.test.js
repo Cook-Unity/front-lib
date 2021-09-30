@@ -2,13 +2,11 @@ import {render, screen} from '@testing-library/react'
 import React from 'react'
 
 import CollectionMealIcon from './index'
-
-const IMAGE =
-  'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg'
+import {IMAGE_COLLECTION} from '../../constants'
 
 describe('CollectionMealIcon', () => {
   it('Required props', () => {
-    render(<CollectionMealIcon title="From the Sea" image={IMAGE} />)
+    render(<CollectionMealIcon title="From the Sea" image={IMAGE_COLLECTION} />)
     expect(screen.getByText('From')).toBeVisible()
     expect(screen.getByText('the Sea')).toBeVisible()
   })
@@ -17,7 +15,7 @@ describe('CollectionMealIcon', () => {
     render(
       <CollectionMealIcon
         title="From the Sea"
-        image={IMAGE}
+        image={IMAGE_COLLECTION}
         backgroundColor="#F6E1D6"
         updatedWeekly
       />

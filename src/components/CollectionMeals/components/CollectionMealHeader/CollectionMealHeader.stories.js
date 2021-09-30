@@ -1,21 +1,20 @@
 import React from 'react'
 
 import CollectionMealHeader from './index'
+import {IMAGE_COLLECTION} from '../../constants'
 
 export default {
   title: 'CollectionMealHeader',
   component: CollectionMealHeader
 }
 
-const IMAGE =
-  'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg'
-
 const Template = args => <CollectionMealHeader {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
   title: 'New This Week',
-  image: IMAGE,
+  image: IMAGE_COLLECTION,
+  countMeals: 8,
   backgroundColor: '#F6E1D6',
   updatedWeekly: true,
   description:
