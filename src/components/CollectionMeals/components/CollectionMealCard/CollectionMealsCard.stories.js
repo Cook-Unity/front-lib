@@ -33,3 +33,12 @@ Large.args = {
   backgroundColor: '#D9EDFE',
   updatedWeekly: true
 }
+
+export const ExtraLarge = Template.bind({})
+ExtraLarge.args = {
+  title: 'Plant Based Asian',
+  image: IMAGE_COLLECTION,
+  size: 'extra_large',
+  backgroundColor: '#D9EDFE',
+  updatedWeekly: true
+}

@@ -45,7 +45,7 @@ const CollectionMealsCard = ({
 CollectionMealsCard.propTypes = {
   image: string.isRequired,
   title: string.isRequired,
-  size: oneOf(['small', 'large']),
+  size: oneOf(['small', 'large', 'extra_large']),
   handleOnClick: func,
   backgroundColor: string,
   updatedWeekly: bool

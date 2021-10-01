@@ -4,10 +4,11 @@
   display: flex;
   flex-direction: column;
   max-width: 280px;
+  position: relative;
 
   .tag_collection {
     position: absolute;
-    left: 185px;
+    right: 0;
   }
 
   .image_collection {
@@ -27,6 +28,11 @@
 }
 
 .container_large {
+  height: 340px;
+}
+
+.container_extra_large {
+  max-width: 580px;
   height: 340px;
 }
 
