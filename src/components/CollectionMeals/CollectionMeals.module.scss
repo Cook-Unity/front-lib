@@ -45,6 +45,8 @@
     display: flex;
     align-items: flex-end;
     position: relative;
+    min-width: 180px;
+    cursor: pointer;
   
     .image_collection {
       width: 64px;
@@ -108,7 +110,7 @@
   text-align: left;
   color: #FFF;
   background-color: #7AD7A7;
-  padding: 8px 10px;
+  padding: 5px 10px;
   border-radius: 0px 8px;
 }
 
