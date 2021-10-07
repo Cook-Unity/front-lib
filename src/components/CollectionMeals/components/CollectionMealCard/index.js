@@ -10,7 +10,8 @@ const CollectionMealsCard = ({
   size,
   handleOnClick,
   backgroundColor,
-  updatedWeekly
+  updatedWeekly,
+  className
 }) => {
   const {firstPhrase, secondPhrase} =
     title && getFirstAndSecondPhraseTitle(title)
@@ -18,7 +19,7 @@ const CollectionMealsCard = ({
     <div
       className={`${styles.container_collection_card} ${
         styles[`container_${size}`]
-      }`}
+      } ${className}`}
       data-testid="collection-meals-card"
       onClick={handleOnClick}
     >
@@ -48,7 +49,8 @@ CollectionMealsCard.propTypes = {
   size: oneOf(['small', 'large', 'extra_large']),
   handleOnClick: func,
   backgroundColor: string,
-  updatedWeekly: bool
+  updatedWeekly: bool,
+  className: string
 }
 
 CollectionMealsCard.defaultProps = {

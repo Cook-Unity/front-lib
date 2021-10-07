@@ -3,7 +3,7 @@
 .container_collection_card {
   display: flex;
   flex-direction: column;
-  max-width: 280px;
+  width: 286px;
   position: relative;
 
   .tag_collection {
@@ -20,6 +20,7 @@
 
   .container_title {
     padding: 12px 20px 12px;
+    height: 78px;
   }  
 }
 
@@ -32,7 +33,7 @@
 }
 
 .container_extra_large {
-  max-width: 580px;
+  width: 586px;
   height: 340px;
 }
 

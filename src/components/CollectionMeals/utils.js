@@ -1,6 +1,7 @@
 export const getFirstAndSecondPhraseTitle = title => {
   const firstBreak = title.indexOf(' ')
-  const firstPhrase = title.slice(0, firstBreak)
-  const secondPhrase = title.slice(firstBreak + 1, title.length)
+  const firstPhrase = firstBreak > 0 ? title.slice(0, firstBreak) : title
+  const secondPhrase =
+    firstBreak > 0 ? title.slice(firstBreak + 1, title.length) : null
   return {firstPhrase, secondPhrase}
 }

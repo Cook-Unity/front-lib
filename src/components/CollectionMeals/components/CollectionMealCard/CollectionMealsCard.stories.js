@@ -12,7 +12,7 @@ const Template = args => <CollectionMealsCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  title: 'New This Week',
+  title: 'New',
   image: IMAGE_COLLECTION
 }
 
