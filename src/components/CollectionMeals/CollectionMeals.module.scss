@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 286px;
   position: relative;
+  cursor: pointer;
 
   .tag_collection {
     position: absolute;
@@ -25,7 +26,7 @@
 }
 
 .container_small {
-  height: 158px;
+  height: 162px;
 }
 
 .container_large {
@@ -59,6 +60,7 @@
     .container_title {
       margin-right: 15px;
       padding: 0px 0px 0px 10px;
+      height: 45px;
     }
   }
 
@@ -128,3 +130,5 @@
   width: 63px;
   height: calc(66px - 8px);
 }
+
+
