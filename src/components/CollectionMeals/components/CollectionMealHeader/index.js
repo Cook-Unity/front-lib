@@ -1,5 +1,5 @@
 import React from 'react'
-import {string, bool} from 'prop-types'
+import {string, bool, number} from 'prop-types'
 import classnames from 'classnames'
 
 import TitleHeader from './components/TitleHeader'
@@ -8,12 +8,12 @@ import styles from './CollectionMealHeader.module.scss'
 import stylesCommon from '../../CollectionMeals.module.scss'
 
 const CollectionMealHeader = ({
-  image,
   title,
+  description,
+  image,
+  countMeals,
   backgroundColor,
   updatedWeekly,
-  description,
-  countMeals,
   imgAuthor,
   className
 }) => {
@@ -49,16 +49,19 @@ const CollectionMealHeader = ({
 }
 
 CollectionMealHeader.propTypes = {
-  image: string.isRequired,
-  imgAuthor: string,
   title: string.isRequired,
+  description: string.isRequired,
+  image: string.isRequired,
+  countMeals: number.isRequired,
+  imgAuthor: string,
   backgroundColor: string,
   updatedWeekly: bool,
   className: string
 }
 
 CollectionMealHeader.defaultProps = {
-  backgroundColor: '#D9EDFE'
+  backgroundColor: '#D9EDFE',
+  updatedWeekly: false
 }
 
 export default CollectionMealHeader

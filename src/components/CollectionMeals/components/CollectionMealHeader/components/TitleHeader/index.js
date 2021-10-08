@@ -1,5 +1,5 @@
 import React from 'react'
-import {string} from 'prop-types'
+import {number, string} from 'prop-types'
 
 import images from '../../../../../../assets/images'
 import {getFirstAndSecondPhraseTitle} from '../../../../utils'
@@ -27,8 +27,8 @@ const TitleHeader = ({title, description, countMeals, imgAuthor}) => {
 
 TitleHeader.propTypes = {
   title: string.isRequired,
-  description: string,
-  countMeals: string,
+  description: string.isRequired,
+  countMeals: number.isRequired,
   imgAuthor: string
 }
 

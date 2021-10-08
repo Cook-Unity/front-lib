@@ -3,7 +3,7 @@
     height: 180px;
     margin-top: 60px;
     padding: 18px 30px 30px 0px;
-    
+
     .image_header {
       width: 240px;
       height: 240px;
@@ -12,16 +12,16 @@
       top: -59px;
       border-radius: 10px;
     }
-  
+
     .tag_collection {
       position: absolute;
       left: 145px;
       top: 35px;
     }
-  
+
     .container_title_header {
       display: flex;
-  
+
       .container_title {
         display: flex;
         flex-direction: column;
@@ -54,12 +54,12 @@
           \-webkit-box-orient: vertical !important;
         }
       }
-  
+
       .container_author {
         align-items: flex-end;
         display: flex;
         flex-direction: column;
-  
+
         .title_curated {
           font-family: Roboto;
           font-size: 12px;
@@ -70,11 +70,11 @@
           color: #979797;
           margin: 5px 0px;
         }
-  
+
         img {
           height: 16px;
         }
-  
+
         span {
           font-family: Roboto;
           font-size: 14px;
@@ -83,7 +83,7 @@
           line-height: 18px;
           letter-spacing: 0px;
         }
-  
+
         .separator {
           width: 70px;
           margin: 8px 0px 5px;
