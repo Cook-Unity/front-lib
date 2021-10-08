@@ -28,8 +28,8 @@ Small.args = {
 export const Large = Template.bind({})
 Large.args = {
   title: 'Plant Based Asian',
-  image: IMAGE_COLLECTION,
   size: 'large',
+  image: IMAGE_COLLECTION,
   backgroundColor: '#D9EDFE',
   updatedWeekly: true
 }

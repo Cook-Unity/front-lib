@@ -1,4 +1,5 @@
 @import '../../assets/styles/scss/variables';
+@import '../../assets/styles/scss/mixins';
 
 .container_collection_card {
   display: flex;
@@ -22,7 +23,7 @@
   .container_title {
     padding: 12px 20px 12px;
     height: 78px;
-  }  
+  }
 }
 
 .container_small {
@@ -49,18 +50,17 @@
     position: relative;
     min-width: 180px;
     cursor: pointer;
-  
+
     .image_collection {
       width: 64px;
       height: 64px;
       border-radius: 6px;
       object-fit: cover;
     }
-  
+
     .container_title {
       margin-right: 15px;
       padding: 0px 0px 0px 10px;
-      height: 45px;
     }
   }
 
@@ -74,6 +74,10 @@
 
     &:hover {
       text-decoration: underline;
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 }
@@ -111,15 +115,16 @@
   line-height: 14px;
   letter-spacing: 0px;
   text-align: left;
-  color: #FFF;
-  background-color: #7AD7A7;
+  color: #fff;
+  background-color: #7ad7a7;
   padding: 5px 10px;
-  border-radius: 0px 8px;
+  border-radius: 0px 6px;
+  margin-bottom: 4px;
 }
 
 .tag_collection_small {
   background: transparent;
-  color: #47D178;
+  color: #47d178;
   position: absolute;
   top: 0px;
   left: 65px;
@@ -130,5 +135,3 @@
   width: 63px;
   height: calc(66px - 8px);
 }
-
-
