@@ -4,7 +4,7 @@ import CollectionMealHeader from './index'
 import {IMAGE_COLLECTION} from '../../constants'
 
 export default {
-  title: 'CollectionMealHeader',
+  title: 'CollectionMeals/CollectionMealHeader',
   component: CollectionMealHeader
 }
 

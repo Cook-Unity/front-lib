@@ -4,7 +4,7 @@ import CollectionMealsCard from './index'
 import {IMAGE_COLLECTION} from '../../constants'
 
 export default {
-  title: 'CollectionMealsCard',
+  title: 'CollectionMeals/CollectionMealCard',
   component: CollectionMealsCard
 }
 
