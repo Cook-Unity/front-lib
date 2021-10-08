@@ -36,8 +36,8 @@ const CollectionMealsCard = ({
         className={styles.container_title}
         style={{backgroundColor: backgroundColor}}
       >
-        <h1 className={styles.title}>{firstPhrase}</h1>
-        <h1 className={styles.title}>{secondPhrase}</h1>
+        <h2 className={styles.title}>{firstPhrase}</h2>
+        <h2 className={styles.title}>{secondPhrase}</h2>
       </div>
     </div>
   )

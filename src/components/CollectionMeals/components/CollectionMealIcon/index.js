@@ -34,20 +34,20 @@ const CollectionMealIcon = ({
           alt="icon"
         />
         <div className={styles.container_title}>
-          <h1
+          <h2
             className={classnames(styles.title, {
               [styles.title_small]: isSmallVersion
             })}
           >
             {firstPhrase}
-          </h1>
-          <h1
+          </h2>
+          <h2
             className={classnames(styles.title, {
               [styles.title_small]: isSmallVersion
             })}
           >
             {secondPhrase}
-          </h1>
+          </h2>
         </div>
         {updatedWeekly && (
           <span

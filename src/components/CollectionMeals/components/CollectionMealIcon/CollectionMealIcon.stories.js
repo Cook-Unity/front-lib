@@ -4,7 +4,7 @@ import CollectionMealIcon from './index'
 import {IMAGE_COLLECTION} from '../../constants'
 
 export default {
-  title: 'CollectionMealIcon',
+  title: 'CollectionMeals/CollectionMealIcon',
   component: CollectionMealIcon
 }
 
