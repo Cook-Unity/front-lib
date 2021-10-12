@@ -43,6 +43,7 @@ const CollectionMealHeader = ({
         description={description}
         countMeals={countMeals}
         imgAuthor={imgAuthor}
+        backgroundColor={backgroundColor}
       />
     </div>
   )
@@ -53,9 +54,9 @@ CollectionMealHeader.propTypes = {
   description: string.isRequired,
   image: string.isRequired,
   countMeals: number.isRequired,
-  imgAuthor: string,
   backgroundColor: string,
   updatedWeekly: bool,
+  imgAuthor: string,
   className: string
 }
 

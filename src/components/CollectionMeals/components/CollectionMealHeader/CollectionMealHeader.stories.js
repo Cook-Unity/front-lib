@@ -5,7 +5,10 @@ import {IMAGE_COLLECTION} from '../../constants'
 
 export default {
   title: 'CollectionMeals/CollectionMealHeader',
-  component: CollectionMealHeader
+  component: CollectionMealHeader,
+  parameters: {
+    layout: 'fullscreen'
+  }
 }
 
 const Template = args => <CollectionMealHeader {...args} />
