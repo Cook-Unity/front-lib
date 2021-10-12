@@ -3,6 +3,7 @@
 
 .container_collection_header {
   display: flex;
+  flex-direction: row;
   position: relative;
 
   @include mobile {
@@ -20,7 +21,6 @@
       margin: 0;
       padding: 0;
       width: 100vw;
-      z-index: 50;
     }
 
     @include from($tablet) {
@@ -52,7 +52,6 @@
       padding: 30px 16px 24px;
       border-radius: 20px;
       margin-top: -20px;
-      z-index: 500;
     }
 
     .container_count_meals {
