@@ -9,7 +9,7 @@
   margin-bottom: 60px;
 
   @include from($tablet) {
-    height: 180px;
+    height: 100%;
     margin-top: 60px;
     padding: 18px 30px 30px 30px;
   }
@@ -24,6 +24,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
+    max-height: 180px;
 
     @include mobile {
       flex-direction: column;
@@ -49,8 +50,8 @@
 
     .tag_collection {
       position: absolute;
-      top: -41px;
-      left: 139px;
+      top: -60px;
+      left: 140px;
 
       @include mobile {
         display: none;
@@ -62,6 +63,7 @@
       display: flex;
       justify-content: space-between;
       flex-grow: 2;
+      max-height: 180px;
 
       @include mobile {
         flex-direction: column;
