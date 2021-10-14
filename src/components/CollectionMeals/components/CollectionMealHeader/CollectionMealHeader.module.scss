@@ -27,6 +27,7 @@
       position: relative;
       width: 240px;
       height: 240px;
+      margin-left: 10px;
       margin-right: 34px;
       top: -59px;
       border-radius: 10px;
@@ -46,6 +47,8 @@
   .container_title_header {
     position: relative;
     display: flex;
+    justify-content: space-between;
+    flex-grow: 2;
 
     @include mobile {
       flex-direction: column;
@@ -64,7 +67,7 @@
       border: 1px solid #ffffff;
       box-sizing: border-box;
       border-radius: 3px;
-      background-color: #E5E5E5;
+      background-color: #e5e5e5;
       text-align: center;
 
       @include from($tablet) {
@@ -150,8 +153,8 @@
     }
 
     .container_author_desktop {
-      align-items: flex-end;
       display: flex;
+      align-items: flex-end;
       flex-direction: column;
 
       @include mobile {

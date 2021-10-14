@@ -43,3 +43,14 @@ LongDescription.args = {
   backgroundColor: '#F6E1D6',
   updatedWeekly: true
 }
+
+export const ShortDescription = Template.bind({})
+ShortDescription.args = {
+  title: 'New This Week',
+  description:
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  image: IMAGE_COLLECTION,
+  countMeals: 8,
+  backgroundColor: '#F6E1D6',
+  updatedWeekly: true
+}
