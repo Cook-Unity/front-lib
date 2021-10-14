@@ -22,29 +22,31 @@ const CollectionMealHeader = ({
       className={classnames(styles.container_collection_header, className)}
       style={{backgroundColor: backgroundColor}}
     >
-      <img
-        className={styles.image_header}
-        data-testid="image-meal-header"
-        src={image}
-        alt="icon"
-      />
-      {updatedWeekly && (
-        <span
-          className={classnames(
-            stylesCommon.tag_collection,
-            styles.tag_collection
-          )}
-        >
-          UPDATED WEEKLY
-        </span>
-      )}
-      <TitleHeader
-        title={title}
-        description={description}
-        countMeals={countMeals}
-        imgAuthor={imgAuthor}
-        backgroundColor={backgroundColor}
-      />
+      <div className={styles.collection_header_content}>
+        <img
+          className={styles.image_header}
+          data-testid="image-meal-header"
+          src={image}
+          alt="icon"
+        />
+        {updatedWeekly && (
+          <span
+            className={classnames(
+              stylesCommon.tag_collection,
+              styles.tag_collection
+            )}
+          >
+            UPDATED WEEKLY
+          </span>
+        )}
+        <TitleHeader
+          title={title}
+          description={description}
+          countMeals={countMeals}
+          imgAuthor={imgAuthor}
+          backgroundColor={backgroundColor}
+        />
+      </div>
     </div>
   )
 }
