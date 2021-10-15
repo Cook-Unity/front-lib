@@ -1,0 +1,138 @@
+@import '../../assets/styles/scss/variables';
+@import '../../assets/styles/scss/mixins';
+
+.container_collection_card {
+  display: flex;
+  flex-direction: column;
+  width: 286px;
+  position: relative;
+  cursor: pointer;
+
+  .tag_collection {
+    position: absolute;
+    right: 0;
+  }
+
+  .image_collection {
+    height: calc(100% - 80px);
+    object-fit: cover;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  .container_title {
+    padding: 12px 20px 12px;
+    height: 78px;
+  }
+}
+
+.container_small {
+  height: 162px;
+}
+
+.container_large {
+  height: 340px;
+}
+
+.container_extra_large {
+  width: 586px;
+  height: 340px;
+}
+
+.container_collection_icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .container_collection_icon_title {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    min-width: 180px;
+    cursor: pointer;
+
+    .image_collection {
+      width: 64px;
+      height: 64px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .container_title {
+      margin-right: 15px;
+      padding: 0px 0px 0px 10px;
+      min-height: 45px;
+    }
+  }
+
+  .view_all {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.container_title {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  .title {
+    font-family: Gilroy;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 27px;
+    letter-spacing: 0px;
+    margin: 0px;
+  }
+
+  .title_small {
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23px;
+    letter-spacing: 0px;
+    margin: 0px;
+  }
+}
+
+.tag_collection {
+  font-family: Gilroy;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #fff;
+  background-color: #7ad7a7;
+  padding: 5px 10px;
+  border-radius: 0px 6px;
+  margin-bottom: 4px;
+}
+
+.tag_collection_small {
+  background: transparent;
+  color: #47d178;
+  position: absolute;
+  top: 0px;
+  left: 65px;
+}
+
+.image_collection_border {
+  border-bottom: 8px solid;
+  width: 63px;
+  height: calc(66px - 8px);
+}
