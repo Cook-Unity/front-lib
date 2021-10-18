@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import {number, string} from 'prop-types'
 
 import images from '../../../../../../assets/images'
@@ -15,30 +15,33 @@ const TitleHeader = ({
   const {firstPhrase, secondPhrase} =
     title && getFirstAndSecondPhraseTitle(title)
   return (
-    <div
-      className={styles.container_title_header}
-      style={{backgroundColor: backgroundColor}}
-    >
-      <div className={styles.container_count_meals}>
-        <span className={styles.count_meals}>{countMeals} meals</span>
-      </div>
-      <div className={styles.container_title}>
-        <div className={styles.title_desktop}>
-          <h1 className={styles.title}>{firstPhrase}</h1>
-          <span className={styles.title}>{secondPhrase}</span>
+    <Fragment>
+      <div
+        className={styles.container_title_header}
+        style={{backgroundColor: backgroundColor}}
+      >
+        <div className={styles.container_count_meals}>
+          <span className={styles.count_meals}>{countMeals} meals</span>
         </div>
-        <div className={styles.title_mobile}>
-          <h1 className={styles.title}>{title}</h1>
+        <div className={styles.container_title}>
+          <div className={styles.title_desktop}>
+            <h1 className={styles.title}>{firstPhrase}</h1>
+            <span className={styles.title}>{secondPhrase}</span>
+          </div>
+          <div className={styles.title_mobile}>
+            <h1 className={styles.title}>{title}</h1>
+          </div>
+          <span className={styles.description_header}>{description}</span>
         </div>
-        <span className={styles.description_header}>{description}</span>
+        <div className={styles.container_author_desktop}>
+          <span className={styles.title_curated}>CURATED BY</span>
+          <img src={imgAuthor || images.iconLogoCu} />
+          <hr className={styles.separator} />
+          <span>{countMeals} Meals</span>
+        </div>
       </div>
-      <div className={styles.container_author_desktop}>
-        <span className={styles.title_curated}>CURATED BY</span>
-        <img src={imgAuthor || images.iconLogoCu} />
-        <hr className={styles.separator} />
-        <span>{countMeals} Meals</span>
-      </div>
-    </div>
+      <div className={styles.footer_mobile} />
+    </Fragment>
   )
 }
 

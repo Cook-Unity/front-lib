@@ -16,6 +16,7 @@
 
   @include mobile {
     padding: 0px;
+    margin-bottom: 5px;
   }
 
   .collection_header_content {
@@ -90,12 +91,9 @@
         }
 
         .count_meals {
-          display: inline-block;
-          vertical-align: middle;
           font-family: Roboto;
           font-weight: 500;
           font-size: 14px;
-          line-height: normal;
           color: #231f20;
         }
       }
@@ -208,5 +206,18 @@
         }
       }
     }
+  }
+}
+
+.footer_mobile {
+  @include from($tablet) {
+    display: none;
+  }
+
+  @include mobile {
+    border-radius: 20px 20px 0 0;
+    color: white;
+    background-color: #ffffff;
+    height: 20px;
   }
 }
