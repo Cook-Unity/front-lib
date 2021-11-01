@@ -6,7 +6,8 @@ export const meal_basic = {
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
   full_path_chef_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jpg'
+    'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jpg',
+  specifications_detail: null
 }
 
 export const meal_extras = {
