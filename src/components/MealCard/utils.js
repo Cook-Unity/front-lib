@@ -22,6 +22,7 @@ export const formatFeature = (feature = null) => {
 }
 
 export const findSpecificationDetail = (details, tag) =>
+  Array.isArray(details) &&
   details.find(
     d =>
       d &&
