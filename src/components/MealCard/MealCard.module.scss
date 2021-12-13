@@ -269,7 +269,6 @@
 
   &__chef_container {
     position: relative;
-    cursor: pointer;
 
     .all_star_budge {
       position: absolute;
@@ -277,6 +276,7 @@
       left: 20px;
       top: -6px;
     }
+
     .chef_name {
       font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
       display: inline-block;
@@ -302,6 +302,10 @@
         object-fit: cover;
       }
     }
+  }
+
+  &__chef_container.linkable {
+    cursor: pointer;
   }
 
   &__featured {

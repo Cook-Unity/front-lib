@@ -1,7 +1,6 @@
 import React from 'react'
-import MealCard from './'
+import MealCard from '.'
 import {MealCardCase} from './MealCardCase'
-
 import {
   meal_basic,
   meal_full,
@@ -138,4 +137,16 @@ Full.args = {
 export const ErrorMealImage = Template.bind({})
 NoMealImage.args = {
   meal: meal_error_image
+}
+
+export const WithoutOnChefClick = Template.bind({})
+WithoutOnChefClick.args = {
+  meal: meal_basic,
+  onChefClick: undefined
+}
+
+export const WithOnChefClick = Template.bind({})
+WithOnChefClick.args = {
+  meal: meal_basic,
+  onChefClick: () => {}
 }

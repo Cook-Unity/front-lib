@@ -140,6 +140,17 @@ const MealCard = ({
     return getLoadingContainer()
   }
 
+  const chefProps = {
+    className: styles.meal_card__chef_container
+  }
+
+  if (typeof onChefClick === 'function') {
+    chefProps.onClick = () => onChefClick()
+    chefProps.className = classnames(styles.meal_card__chef_container, {
+      [styles.linkable]: !!onChefClick
+    })
+  }
+
   return (
     <div
       className={classnames(styles.meal_card, {
@@ -302,11 +313,7 @@ const MealCard = ({
         </div>
       </div>
       <div className={styles.meal_card__footer}>
-        <div
-          className={styles.meal_card__chef_container}
-          onClick={() => onChefClick()}
-          data-testid="container-chef-image"
-        >
+        <div data-testid="container-chef-image" {...chefProps}>
           {enableCelebrityFeatures &&
             is_celebrity_chef &&
             full_path_chef_image && (
@@ -489,7 +496,7 @@ MealCard.defaultProps = {
   onRemoveItem: defaultCallback,
   onClick: defaultCallback,
   onMealClick: defaultCallback,
-  onChefClick: defaultCallback,
+  onChefClick: null,
   onLikeMeal: defaultCallback,
   enableCelebrityFeatures: false,
   hideCartControllers: false
