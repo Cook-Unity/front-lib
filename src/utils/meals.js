@@ -11,8 +11,7 @@ export const getProteinTag = proteinType => {
     poultry: {icon: '', label: 'Poultry'},
     seafood: {icon: '', label: 'Seafood'},
     vegan: {icon: images.veganIcon, label: 'Vegan'},
-    vegetarian: {icon: images.vegetarianIcon, label: 'Vegetarian'},
-    whole30: {icon: '', label: 'Whole 30'}
+    vegetarian: {icon: images.vegetarianIcon, label: 'Vegetarian'}
   }
   return proteinsMap[proteinType.toLowerCase()]
 }
