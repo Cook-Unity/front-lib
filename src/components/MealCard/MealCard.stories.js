@@ -150,3 +150,11 @@ WithOnChefClick.args = {
   meal: meal_basic,
   onChefClick: () => {}
 }
+
+export const WithChefSpecial = Template.bind({})
+WithChefSpecial.args = {
+  meal: {
+    ...meal_full,
+    premium_special: 'chef_special'
+  }
+}
