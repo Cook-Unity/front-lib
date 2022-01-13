@@ -15,7 +15,8 @@ import {
   out_of_stock,
   meal_new,
   meal_featured,
-  new_chef
+  new_chef,
+  with_chef_special
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -54,7 +55,6 @@ describe('MealCard component', () => {
       .toBeVisible()
 
     expect(screen.queryByText('NEW')).not.toBeInTheDocument()
-
     expect(screen.queryByTestId('cart-controllers')).not.toBeInTheDocument()
     expect(screen.getByText(`${meal_full.calories} cal`)).toBeVisible()
     expect(screen.getByText('Spicy')).toBeVisible()
@@ -62,6 +62,7 @@ describe('MealCard component', () => {
     expect(screen.queryByTestId('celeb-chef-img')).not.toBeInTheDocument()
     expect(screen.getByText('+ $3.00')).toBeVisible()
     expect(screen.getByText('No extra fee today')).toBeVisible()
+    expect(screen.queryByText('Chef Specials')).not.toBeInTheDocument()
   })
 
   it('New meal', () => {
@@ -189,5 +190,11 @@ describe('MealCard component', () => {
   it('With Celebrity chef features', () => {
     render(<MealCard meal={meal_full} enableCelebrityFeatures />)
     expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
+  })
+
+  it('With Chef Specials', () => {
+    render(<MealCard meal={with_chef_special} />)
+    expect(screen.getByText('Chef Specials')).toBeVisible()
+    expect(screen.getByText('+ $3.00')).toBeVisible()
   })
 })

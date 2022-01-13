@@ -4,7 +4,7 @@ export const meal_basic = {
   chef_lastname: 'Vongerichten',
   magentoId: 1212,
   full_path_meal_image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/w/a/wayan-eggplant.jpeg',
+    'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/s/h/shrimp-fra-diavolo-johndl.jpeg',
   full_path_chef_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/avatar/esther-choi-bw24437.jpg',
   specifications_detail: null
@@ -17,6 +17,8 @@ export const meal_extras = {
   reviews: 1250,
   stars: 4.3715,
   is_celebrity_chef: true,
+  is_premium: true,
+  premium_special: null,
   premium_fee: 3,
   fixed_price: false,
   stock: 3,
@@ -129,4 +131,8 @@ export const meal_error_image = {
   ...meal_basic,
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/c/h/chef_nico_cook_1.jpg'
+}
+export const with_chef_special = {
+  ...meal_full,
+  premium_special: 'chef_special'
 }

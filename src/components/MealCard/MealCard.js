@@ -61,6 +61,7 @@ const MealCard = ({
     full_path_chef_image = null,
     is_celebrity_chef = false,
     premium_fee = null,
+    premium_special = null,
     fixed_price = false,
     feature = {},
     stock = 0,
@@ -158,7 +159,11 @@ const MealCard = ({
         [styles.in_past_order]: pastOrder
       })}
     >
-      <div className={styles.meal_card__top}>
+      <div
+        className={classnames(styles.meal_card__top, {
+          [styles.meal_card__top_special]: premium_special
+        })}
+      >
         <img
           className={`${styles.main_meal_image}
           ${
@@ -301,6 +306,15 @@ const MealCard = ({
           )}
         </div>
       </div>
+
+      {premium_special && (
+        <div className={styles.premium_special}>
+          <img src={images.diamond} alt="" />
+          <span>Chef Specials</span>
+          <span className={styles.price}>{premiumFeeString}</span>
+        </div>
+      )}
+
       <div
         className={styles.meal_card__title}
         onClick={() => {
@@ -339,7 +353,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {isEditable && premium_fee > 0 ? (
+                {isEditable && premium_fee > 0 && !premium_special ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>
@@ -464,7 +478,8 @@ MealCard.propTypes = {
     specifications_detail: array,
     warning: string,
     allergens: array,
-    user_rating: number
+    user_rating: number,
+    premium_special: string
   }),
   isEditable: bool,
   disableAddItem: bool,

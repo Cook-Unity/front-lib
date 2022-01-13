@@ -149,8 +149,3 @@ Whenever a MR is created the library's pipeline runs the following two jobs:
 - Unit tests
 
 When the pipeline fails, you can retry any failed jobs, or push new commits to fix the failure. Only after the pipeline runs successfully the MR becomes mergeable.
-
-
-## License
-
-MIT © [Luis Giribone](https://gitlab.cookunity.com)

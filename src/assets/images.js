@@ -39,5 +39,6 @@ export default {
   warningRedIcon: imageUrl('alert-circle.png'),
   iconAlertBlack,
   logoCu: imageUrl('logo-cu.png'),
-  iconLogoCu: imageUrl('icon_logo_cu.png')
+  iconLogoCu: imageUrl('icon_logo_cu.png'),
+  diamond: imageUrl('diamond.png')
 }
