@@ -11,7 +11,8 @@ import {
   out_of_stock,
   meal_no_image,
   meal_featured,
-  meal_error_image
+  meal_error_image,
+  with_chef_special
 } from './__mock__'
 
 export default {
@@ -153,8 +154,5 @@ WithOnChefClick.args = {
 
 export const WithChefSpecial = Template.bind({})
 WithChefSpecial.args = {
-  meal: {
-    ...meal_full,
-    premium_special: 'chef_special'
-  }
+  meal: with_chef_special
 }

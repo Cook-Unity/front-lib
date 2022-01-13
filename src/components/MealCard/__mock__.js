@@ -132,3 +132,7 @@ export const meal_error_image = {
   full_path_meal_image:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/c/h/chef_nico_cook_1.jpg'
 }
+export const with_chef_special = {
+  ...meal_full,
+  premium_special: 'chef_special'
+}
