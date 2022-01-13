@@ -353,7 +353,7 @@ const MealCard = ({
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
               <div className={styles.hiden_cart_controllers}>
-                {isEditable && premium_fee > 0 ? (
+                {isEditable && premium_fee > 0 && !premium_special ? (
                   <div className={styles.premium_fee}>
                     {noExtraFee && (
                       <div className={styles.no_extra_fee_text}>
