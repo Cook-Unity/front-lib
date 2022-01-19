@@ -310,7 +310,11 @@ const MealCard = ({
       {premium_special && (
         <div className={styles.premium_special}>
           <img src={images.diamond} alt="" />
-          <span>Chef Specials</span>
+          <span>
+            {premium_special === 'vegetarian_special'
+              ? 'Vegetarian Special'
+              : 'Chef Special'}
+          </span>
           <span className={styles.price}>{premiumFeeString}</span>
         </div>
       )}
