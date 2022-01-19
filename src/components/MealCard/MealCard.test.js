@@ -16,7 +16,8 @@ import {
   meal_new,
   meal_featured,
   new_chef,
-  with_chef_special
+  with_chef_special,
+  with_vegetarian_special
 } from './__mock__'
 
 describe('MealCard component', () => {
@@ -192,9 +193,15 @@ describe('MealCard component', () => {
     expect(screen.getByTestId('celeb-chef-img')).toBeVisible()
   })
 
-  it('With Chef Specials', () => {
+  it('With Vegetarian Special', () => {
+    render(<MealCard meal={with_vegetarian_special} />)
+    expect(screen.getByText('Vegetarian Special')).toBeVisible()
+    expect(screen.getByText('+ $3.00')).toBeVisible()
+  })
+
+  it('With Chef Special', () => {
     render(<MealCard meal={with_chef_special} />)
-    expect(screen.getByText('Chef Specials')).toBeVisible()
+    expect(screen.getByText('Chef Special')).toBeVisible()
     expect(screen.getByText('+ $3.00')).toBeVisible()
   })
 })

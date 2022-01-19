@@ -136,3 +136,7 @@ export const with_chef_special = {
   ...meal_full,
   premium_special: 'chef_special'
 }
+export const with_vegetarian_special = {
+  ...meal_full,
+  premium_special: 'vegetarian_special'
+}
