@@ -14,7 +14,7 @@ import {
   meal_error_image,
   with_chef_special,
   with_vegetarian_special,
-  meal_premium,
+  meal_premium
 } from './__mock__'
 
 export default {
@@ -168,5 +168,5 @@ export const Premium = Template.bind({})
 Premium.args = {
   meal: meal_premium,
   premium_special: true,
-  premium_fee: null,
+  premium_fee: null
 }

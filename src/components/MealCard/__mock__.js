@@ -143,5 +143,5 @@ export const with_vegetarian_special = {
 export const meal_premium = {
   ...meal_full,
   premium_special: 'chef_special',
-  premium_fee: null,
+  premium_fee: null
 }
