@@ -315,7 +315,7 @@ const MealCard = ({
               ? 'Vegetarian Special'
               : 'Chef Special'}
           </span>
-          <span className={styles.price}>{premiumFeeString}</span>
+          { premium_fee && <span className={styles.price}>{premiumFeeString}</span> }
         </div>
       )}
 
