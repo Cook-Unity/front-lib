@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import './slider.css'
 import {
   Wrapper,
   WrapperContent,
@@ -7,15 +7,38 @@ import {
   ArrowRight,
   ArrowLeft,
   Title,
-  SeeAll
+  SeeAll,
+  WrapperSlide,
+  GradientEnd,
+  GradientStart
 } from './styled'
-import Slider from './Slider'
+
+import MealCard from '../MealCard'
+import {meals} from '../__mock__'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 const PremiumMealCarrouselDesktop = () => {
+  const [showEndGradient, setShowEndGradient] = useState(false)
+  const [showStartGradient, setShowStartGradient] = useState(false)
   const imageBaseUrl = 'https://cu-product-media.s3.amazonaws.com/media'
 
-  const navigationPrevRef = React.useRef(null)
-  const navigationNextRef = React.useRef(null)
+  const checkGradientStatus = swiper => {
+    if (swiper.isEnd) {
+      setShowEndGradient(false)
+    } else {
+      setShowEndGradient(true)
+    }
+
+    if (swiper.isBeginning) {
+      setShowStartGradient(false)
+    } else {
+      setShowStartGradient(true)
+    }
+  }
+
+  const swiperRef = React.useRef(null)
 
   return (
     <Wrapper>
@@ -23,20 +46,39 @@ const PremiumMealCarrouselDesktop = () => {
         <Title>Lot of special ingredients you will love</Title>
         <WrapperNavigation>
           <ArrowLeft
-            ref={navigationPrevRef}
             src={imageBaseUrl + '/icons/arrow-circle-left.png'}
+            onClick={() => swiperRef.current.swiper.slidePrev()}
           />
           <ArrowRight
-            ref={navigationNextRef}
             src={imageBaseUrl + '/icons/arrow-circle-right.png'}
+            onClick={() => swiperRef.current.swiper.slideNext()}
           />
         </WrapperNavigation>
         <SeeAll>See them all </SeeAll>
       </WrapperContent>
-      <Slider
-        pre={navigationPrevRef}
-        next={navigationNextRef}
-      />
+      <WrapperSlide>
+        <Swiper
+          ref={swiperRef}
+          spaceBetween={17}
+          slidesPerView="auto"
+          centeredSlides
+          centeredSlidesBounds
+          slidesPerColumn={1}
+          onSlideChange={swiper => checkGradientStatus(swiper)}
+          onSwiper={swiper => {
+            setShowEndGradient(true)
+            setShowStartGradient(false)
+          }}
+        >
+          {showStartGradient && <GradientStart />}
+          {meals.map(meal => (
+            <SwiperSlide key={meal.entity_id}>
+              <MealCard {...meal} />
+            </SwiperSlide>
+          ))}
+          {showEndGradient && <GradientEnd />}
+        </Swiper>
+      </WrapperSlide>
     </Wrapper>
   )
 }
