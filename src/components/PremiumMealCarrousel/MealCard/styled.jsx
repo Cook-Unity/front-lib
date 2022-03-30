@@ -51,7 +51,7 @@ export const WrapperAction = styled.div`
 `
 
 export const StarWrapper = styled.div`
-  width: 63px;
+  width: 307px;
   height: 32px;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid #eeeeee;
@@ -94,7 +94,7 @@ export const ExtraPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 39px;
+  width: 100%;
   height: 32px;
   font-family: 'Gilroy';
   font-style: normal;
@@ -102,7 +102,6 @@ export const ExtraPrice = styled.div`
   font-size: 12px;
   line-height: 24px;
   color: #231f20;
-  padding-left: 48px;
   padding-right: 6px;
 `
 export const Button = styled.button`
@@ -138,5 +137,67 @@ export const MealTitle = styled.div`
 `
 
 export const ImagenCTA = styled.img`
+  width: 11px;
+`
+
+export const MealCartActionsWrapper = styled.div`
+  display: flex;
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 380px;
+  float: right;
+  height: 30px;
+  margin-right: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+`
+
+export const MealCartActionRemove = styled.button`
+  font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 0px solid;
+  margin: 0 2.5px;
+  cursor: pointer;
+  font-weight: bolder;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+`
+
+export const MealCartActionAdd = styled.button`
+  font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 0px solid;
+  margin: 0 2.5px;
+  cursor: pointer;
+  font-weight: bolder;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+`
+
+export const MealCartActionQuantity = styled.span`
+  font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const ImgMinus = styled.img`
+  width: 11px;
+`
+export const ImgMore = styled.img`
   width: 11px;
 `

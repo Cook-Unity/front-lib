@@ -1,6 +1,6 @@
 import React from 'react'
 import images from '../../../assets/images'
-
+import Numeral from 'numeral'
 import {
   Wrapper,
   WrapperTop,
@@ -17,30 +17,51 @@ import {
   ImagenCTA,
   StarWrapper,
   StarImg,
-  RatingText
+  RatingText,
+  MealCartActionsWrapper,
+  MealCartActionRemove,
+  MealCartActionQuantity,
+  MealCartActionAdd,
+  ImgMinus,
+  ImgMore
 } from './styled'
+
+export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
 
 const MealCard = meal => {
   return (
     <Wrapper>
       <WrapperTop>
-        <ChefImage src={meal.logopic} />
+        <ChefImage src={meal.cheffImageFullPath} />
         <WarningMessage text={meal.warning}>
           <WarningImage src="https://cu-product-media.s3.amazonaws.com/media/icons/info_white.png" />
         </WarningMessage>
-        <MealPicture src={meal.bannerpic} />
+        {/* <MealPicture src={meal.bannerpic} /> */}
+        {
+          <MealPicture src="https://cu-product-media.s3.amazonaws.com/media/catalog/product/b/a/Bay+Scallops-Fennel-Citrus1219+1.jpeg" />
+        }
       </WrapperTop>
 
       <WrapperFooter>
         <WrapperAction>
           <StarWrapper>
             <StarImg src={images.star} alt="★" />
-            <RatingText>{meal.rating}</RatingText>
+            <RatingText>{formatMealRating(meal.stars)}</RatingText>
           </StarWrapper>
           <ExtraPrice>+ {meal.premium_fee}</ExtraPrice>
-          <Button>
+
+          <MealCartActionsWrapper>
+            <MealCartActionRemove>
+              <ImgMinus src={images.btnBlackMinus} />
+            </MealCartActionRemove>
+            <MealCartActionQuantity>1</MealCartActionQuantity>
+            <MealCartActionAdd>
+              <ImgMore src={images.btnBlackPlus} />
+            </MealCartActionAdd>
+          </MealCartActionsWrapper>
+          {/*<Button>
             <ImagenCTA src="https://static.cookunity.com/cross/front-lib/images/btn-white-plus.png" />
-          </Button>
+      </Button */}
         </WrapperAction>
         <WrapperContent>
           <MealTitle>

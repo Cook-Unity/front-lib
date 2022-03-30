@@ -6,9 +6,8 @@ import 'swiper/swiper.min.css'
 import {Wrapper} from './styled'
 import MealCard from '../../MealCard'
 
-import {meals} from '../../__mock__'
-
-const Slider = () => {
+const Slider = props => {
+  console.log(props)
   return (
     <Wrapper>
       <Swiper
@@ -20,11 +19,13 @@ const Slider = () => {
         onSlideChange={() => console.log('slide change')}
         onSwiper={swiper => console.log(swiper)}
       >
-        {meals.map(meal => (
-          <SwiperSlide key={meal.entity_id}>
-            <MealCard {...meal} />
-          </SwiperSlide>
-        ))}
+        {props.meals &&
+          props.meals.length > 0 &&
+          props.meals.map(meal => (
+            <SwiperSlide key={meal.entity_id}>
+              <MealCard {...meal} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </Wrapper>
   )

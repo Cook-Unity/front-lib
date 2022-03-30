@@ -4,17 +4,13 @@ import {Wrapper} from './styled'
 import PremiumMealCarrouselMobile from './PremiumMealCarrouselMobile'
 import PremiumMealCarrouselDesktop from './PremiumMealCarrouselDesktop'
 
-const PremiumMealCarrousel = () => {
-  const isMobileDevice = () => {
-    return false
-  }
-
+const PremiumMealCarrousel = props => {
   return (
     <Wrapper>
-      {isMobileDevice() ? (
-        <PremiumMealCarrouselMobile />
+      {props.isMobile ? (
+        <PremiumMealCarrouselMobile meals={props.meals} />
       ) : (
-        <PremiumMealCarrouselDesktop />
+        <PremiumMealCarrouselDesktop meals={props.meals} />
       )}
     </Wrapper>
   )

@@ -14,12 +14,11 @@ import {
 } from './styled'
 
 import MealCard from '../MealCard'
-import {meals} from '../__mock__'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 
-const PremiumMealCarrouselDesktop = () => {
+const PremiumMealCarrouselDesktop = props => {
   const [showEndGradient, setShowEndGradient] = useState(false)
   const [showStartGradient, setShowStartGradient] = useState(false)
   const imageBaseUrl = 'https://cu-product-media.s3.amazonaws.com/media'
@@ -71,11 +70,13 @@ const PremiumMealCarrouselDesktop = () => {
           }}
         >
           {showStartGradient && <GradientStart />}
-          {meals.map(meal => (
-            <SwiperSlide key={meal.entity_id}>
-              <MealCard {...meal} />
-            </SwiperSlide>
-          ))}
+          {props.meals &&
+            props.meals.length > 0 &&
+            props.meals.map(meal => (
+              <SwiperSlide key={meal.entity_id}>
+                <MealCard {...meal} />
+              </SwiperSlide>
+            ))}
           {showEndGradient && <GradientEnd />}
         </Swiper>
       </WrapperSlide>
