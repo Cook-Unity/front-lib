@@ -13,6 +13,7 @@ const PremiumMealCarrousel = props => {
           onAddItem={props.onAddItem}
           onRemoveItem={props.onRemoveItem}
           onMealClick={props.onMealClick}
+          onSeeAllClick={props.onSeeAllClick}
           onShowTracking={props.onShowTracking}
           onClickTracking={props.onClickTracking}
           onAddTracking={props.onAddTracking}
@@ -25,6 +26,7 @@ const PremiumMealCarrousel = props => {
           onAddItem={props.onAddItem}
           onRemoveItem={props.onRemoveItem}
           onMealClick={props.onMealClick}
+          onSeeAllClick={props.onSeeAllClick}
           onShowTracking={props.onShowTracking}
           onClickTracking={props.onClickTracking}
           onAddTracking={props.onAddTracking}

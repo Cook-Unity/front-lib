@@ -8,6 +8,7 @@ const PremiumMealCarrouselMobile = props => {
 
   const handleOnSeeAll = () => {
     props.onSeeAllTracking(1, MODULE_NAME)
+    props.onSeeAllClick()
   }
 
   return (

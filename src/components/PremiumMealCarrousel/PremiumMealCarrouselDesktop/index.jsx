@@ -40,6 +40,7 @@ const PremiumMealCarrouselDesktop = props => {
 
   const handleSeeAllClick = () => {
     props.onSeeAllTracking(1, MODULE_NAME)
+    props.onSeeAllClick()
   }
 
   const swiperRef = React.useRef(null)
