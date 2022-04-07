@@ -8,9 +8,29 @@ const PremiumMealCarrousel = props => {
   return (
     <Wrapper>
       {props.isMobile ? (
-        <PremiumMealCarrouselMobile meals={props.meals} />
+        <PremiumMealCarrouselMobile
+          meals={props.meals}
+          onAddItem={props.onAddItem}
+          onRemoveItem={props.onRemoveItem}
+          onMealClick={props.onMealClick}
+          onShowTracking={props.onShowTracking}
+          onClickTracking={props.onClickTracking}
+          onAddTracking={props.onAddTracking}
+          onSwipeTracking={props.onSwipeTracking}
+          onSeeAllTracking={props.onSeeAllTracking}
+        />
       ) : (
-        <PremiumMealCarrouselDesktop meals={props.meals} />
+        <PremiumMealCarrouselDesktop
+          meals={props.meals}
+          onAddItem={props.onAddItem}
+          onRemoveItem={props.onRemoveItem}
+          onMealClick={props.onMealClick}
+          onShowTracking={props.onShowTracking}
+          onClickTracking={props.onClickTracking}
+          onAddTracking={props.onAddTracking}
+          onClickArrowTracking={props.onClickArrowTracking}
+          onSeeAllTracking={props.onSeeAllTracking}
+        />
       )}
     </Wrapper>
   )

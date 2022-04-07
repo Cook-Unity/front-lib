@@ -79,7 +79,9 @@
     "react-modal": "^3.11.2",
     "react-star-rating-component": "^1.4.1",
     "react-star-rating-controlled-component": "^1.0.1",
-    "react-toastify": "^6.1.0"
+    "react-toastify": "^6.1.0",
+    "styled-components": "^5.3.5",
+    "swiper": "^6.8.4"
   },
   "files": [
     "dist"

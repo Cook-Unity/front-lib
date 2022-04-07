@@ -7,7 +7,7 @@ import {Wrapper} from './styled'
 import MealCard from '../../MealCard'
 
 const Slider = props => {
-  console.log(props)
+  const MODULE_NAME = 'premium-row'
   return (
     <Wrapper>
       <Swiper
@@ -16,19 +16,30 @@ const Slider = props => {
         slidesPerColumn={1}
         centeredSlides
         centeredSlidesBounds
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={swiper => console.log(swiper)}
+        onSlideChange={() => props.onSwipeTracking(1, MODULE_NAME)}
+        onSwiper={() => {
+          props.onShowTracking(1, 'premium-line')
+        }}
       >
-        {props.meals &&
-          props.meals.length > 0 &&
-          props.meals.map(meal => (
-            <SwiperSlide key={meal.entity_id}>
-              <MealCard {...meal} />
-            </SwiperSlide>
-          ))}
+        {props.meals.map(meal => (
+          <SwiperSlide key={meal.entity_id}>
+            <MealCard
+              meal={meal}
+              onAddItem={props.onAddItem}
+              onRemoveItem={props.onRemoveItem}
+              onMealClick={props.onMealClick}
+              onClickTracking={props.onClickTracking}
+              onAddTracking={props.onAddTracking}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Wrapper>
   )
+}
+
+Slider.defaultProps = {
+  meals: []
 }
 
 export default Slider

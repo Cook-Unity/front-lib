@@ -1,4 +1,13 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+const expandCartControllers = keyframes`
+  0% {
+    width: 30px;
+  }
+  100% {
+    width: 74px;
+  }
+`
 
 export const Wrapper = styled.div`
   box-shadow: 0px 8px 16px rgba(35, 31, 32, 0.06);
@@ -6,6 +15,10 @@ export const Wrapper = styled.div`
   height: 340px;
   width: 222px;
   color: black;
+
+  &.in-cart {
+    border: 2px solid #47d178;
+  }
 `
 
 export const WrapperTop = styled.div`
@@ -50,8 +63,16 @@ export const WrapperAction = styled.div`
   display: flex;
 `
 
+export const PriceActionsWrapper = styled.div`
+  display: flex;
+  width: 139px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+`
+
 export const StarWrapper = styled.div`
-  width: 307px;
+  width: 65px;
   height: 32px;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid #eeeeee;
@@ -82,19 +103,18 @@ export const RatingText = styled.span`
 export const WrapperContent = styled.div`
   max-width: 155px;
 `
-
 export const MealPicture = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  cursor: pointer;
 `
 export const ExtraPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 100%;
   height: 32px;
   font-family: 'Gilroy';
   font-style: normal;
@@ -134,6 +154,7 @@ export const MealTitle = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
+  cursor: pointer;
 `
 
 export const ImagenCTA = styled.img`
@@ -144,12 +165,11 @@ export const MealCartActionsWrapper = styled.div`
   display: flex;
   border: 1px solid black;
   border-radius: 50px;
-  width: 380px;
-  float: right;
+  width: 74px;
   height: 30px;
-  margin-right: 16px;
   overflow: hidden;
   white-space: nowrap;
+  animation: ${expandCartControllers} 200ms;
 `
 
 export const MealCartActionRemove = styled.button`
@@ -185,7 +205,7 @@ export const MealCartActionAdd = styled.button`
 `
 
 export const MealCartActionQuantity = styled.span`
-  font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+  font-family: 'Gilroy Semibold';
   width: 20px;
   display: inline-block;
   text-align: center;
@@ -198,6 +218,24 @@ export const MealCartActionQuantity = styled.span`
 export const ImgMinus = styled.img`
   width: 11px;
 `
+
 export const ImgMore = styled.img`
   width: 11px;
+`
+
+export const ButtonQuantity = styled.button`
+  font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+  color: #ffffff;
+  border: none;
+  background: #47d178;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 2.5px;
+  cursor: pointer;
+  font-weight: bolder;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
 `

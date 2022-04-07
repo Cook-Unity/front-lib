@@ -19,7 +19,8 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 
 const PremiumMealCarrouselDesktop = props => {
-  const [showEndGradient, setShowEndGradient] = useState(false)
+  const MODULE_NAME = 'premium-row'
+  const [showEndGradient, setShowEndGradient] = useState(true)
   const [showStartGradient, setShowStartGradient] = useState(false)
   const imageBaseUrl = 'https://cu-product-media.s3.amazonaws.com/media'
 
@@ -35,6 +36,10 @@ const PremiumMealCarrouselDesktop = props => {
     } else {
       setShowStartGradient(true)
     }
+  }
+
+  const handleSeeAllClick = () => {
+    props.onSeeAllTracking(1, MODULE_NAME)
   }
 
   const swiperRef = React.useRef(null)
@@ -53,20 +58,23 @@ const PremiumMealCarrouselDesktop = props => {
             onClick={() => swiperRef.current.swiper.slideNext()}
           />
         </WrapperNavigation>
-        <SeeAll>See them all </SeeAll>
+        <SeeAll onClick={() => handleSeeAllClick()}>See them all </SeeAll>
       </WrapperContent>
       <WrapperSlide>
         <Swiper
           ref={swiperRef}
+          allowTouchMove={false}
           spaceBetween={17}
           slidesPerView="auto"
           centeredSlides
           centeredSlidesBounds
           slidesPerColumn={1}
-          onSlideChange={swiper => checkGradientStatus(swiper)}
-          onSwiper={swiper => {
-            setShowEndGradient(true)
-            setShowStartGradient(false)
+          onSlideChange={swiper => {
+            checkGradientStatus(swiper)
+            props.onClickArrowTracking(1, MODULE_NAME)
+          }}
+          onSwiper={() => {
+            props.onShowTracking(1, 'premium-line')
           }}
         >
           {showStartGradient && <GradientStart />}
@@ -74,7 +82,14 @@ const PremiumMealCarrouselDesktop = props => {
             props.meals.length > 0 &&
             props.meals.map(meal => (
               <SwiperSlide key={meal.entity_id}>
-                <MealCard {...meal} />
+                <MealCard
+                  meal={meal}
+                  onAddItem={props.onAddItem}
+                  onRemoveItem={props.onRemoveItem}
+                  onMealClick={props.onMealClick}
+                  onClickTracking={props.onClickTracking}
+                  onAddTracking={props.onAddTracking}
+                />
               </SwiperSlide>
             ))}
           {showEndGradient && <GradientEnd />}
