@@ -74,7 +74,7 @@ const PremiumMealCarrouselDesktop = props => {
             props.onClickArrowTracking(1, MODULE_NAME)
           }}
           onSwiper={() => {
-            props.onShowTracking(1, 'premium-line')
+            props.onShowTracking(1, MODULE_NAME)
           }}
         >
           {showStartGradient && <GradientStart />}
