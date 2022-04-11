@@ -30,7 +30,7 @@ describe('MealCard component', () => {
 
     expect(screen.getByText(meal_basic.name)).toBeVisible()
     expect(screen.getByText(chefName)).toBeVisible()
-    expect(screen.getByText('Out of stock')).toBeVisible()
+    expect(screen.getByText('Sold out')).toBeVisible()
 
     expect(screen.getByTestId('chef-image'))
       .toHaveAttribute('src', meal_basic.full_path_chef_image)
@@ -124,7 +124,7 @@ describe('MealCard component', () => {
   it('Out of stock', () => {
     render(<MealCardCase meal={out_of_stock} />)
     expect(screen.getByTestId('quantity-btn')).toBeDisabled()
-    expect(screen.getByText('Out of stock')).toBeVisible()
+    expect(screen.getByText('Sold out')).toBeVisible()
     expect(screen.queryByText('Image coming soon')).not.toBeInTheDocument()
   })
 
