@@ -69,7 +69,6 @@
     "react-dom": "^16.13.1",
     "sass-loader": "^10.1.0",
     "style-loader": "^3.3.1",
-    "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-dev-server": "^4.8.1"
@@ -89,9 +88,6 @@
     "styled-components": "^5.3.5",
     "swiper": "^6.8.4"
   },
-  "resolutions": {
-    "webpack": "5.72.0"
-},
   "files": [
     "dist"
   ]
