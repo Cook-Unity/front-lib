@@ -89,6 +89,9 @@
     "styled-components": "^5.3.5",
     "swiper": "^6.8.4"
   },
+  "resolutions": {
+    "webpack": "5.72.0"
+},
   "files": [
     "dist"
   ]
