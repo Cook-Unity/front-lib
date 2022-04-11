@@ -10,6 +10,7 @@ const PremiumMealCarrousel = props => {
       {props.isMobile ? (
         <PremiumMealCarrouselMobile
           meals={props.meals}
+          collections={props.collections}
           onAddItem={props.onAddItem}
           onRemoveItem={props.onRemoveItem}
           onMealClick={props.onMealClick}
@@ -23,6 +24,7 @@ const PremiumMealCarrousel = props => {
       ) : (
         <PremiumMealCarrouselDesktop
           meals={props.meals}
+          collections={props.collections}
           onAddItem={props.onAddItem}
           onRemoveItem={props.onRemoveItem}
           onMealClick={props.onMealClick}

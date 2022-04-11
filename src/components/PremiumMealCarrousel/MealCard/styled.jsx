@@ -125,6 +125,7 @@ export const ExtraPrice = styled.div`
   padding-right: 6px;
 `
 export const Button = styled.button`
+  box-sizing: revert;
   background-color: #000;
   border-radius: 50%;
   width: 30px;
