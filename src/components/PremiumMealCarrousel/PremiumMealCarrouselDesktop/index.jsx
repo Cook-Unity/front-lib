@@ -22,6 +22,7 @@ const PremiumMealCarrouselDesktop = props => {
   const MODULE_NAME = 'premium-row'
   const [showEndGradient, setShowEndGradient] = useState(true)
   const [showStartGradient, setShowStartGradient] = useState(false)
+  const PREMIUM_LINE_COLLECTION_ID = 17
   const imageBaseUrl = 'https://cu-product-media.s3.amazonaws.com/media'
 
   const checkGradientStatus = swiper => {
@@ -45,6 +46,15 @@ const PremiumMealCarrouselDesktop = props => {
 
   const swiperRef = React.useRef(null)
 
+  const validateSeeAllLink = () => {
+    if (!props.collections || props.collections.length === 0) return false
+    return (
+      props.collections.findIndex(
+        collection => collection.id === PREMIUM_LINE_COLLECTION_ID
+      ) !== -1
+    )
+  }
+
   return (
     <Wrapper>
       <WrapperContent>
@@ -59,7 +69,9 @@ const PremiumMealCarrouselDesktop = props => {
             onClick={() => swiperRef.current.swiper.slideNext()}
           />
         </WrapperNavigation>
-        <SeeAll onClick={() => handleSeeAllClick()}>See them all </SeeAll>
+        {validateSeeAllLink() && (
+          <SeeAll onClick={() => handleSeeAllClick()}>See them all </SeeAll>
+        )}
       </WrapperContent>
       <WrapperSlide>
         <Swiper
