@@ -5,8 +5,18 @@ import Slider from './Slider'
 
 const PremiumMealCarrouselMobile = props => {
   const MODULE_NAME = 'premium-row'
+  const PREMIUM_LINE_COLLECTION_ID = 17
 
-  const handleOnSeeAll = () => {
+  const validateSeeAllLink = () => {
+    if (!props.collections || props.collections.length === 0) return false
+    return (
+      props.collections.findIndex(
+        collection => collection.id === PREMIUM_LINE_COLLECTION_ID
+      ) !== -1
+    )
+  }
+
+  const handleSeeAllClick = () => {
     props.onSeeAllTracking(1, MODULE_NAME)
     props.onSeeAllClick()
   }
@@ -15,7 +25,9 @@ const PremiumMealCarrouselMobile = props => {
     <Wrapper>
       <WrapperContent>
         <Title>Lot of special ingredients you will love</Title>
-        <SeeAll onClick={() => handleOnSeeAll()}>See them all </SeeAll>
+        {validateSeeAllLink() && (
+          <SeeAll onClick={() => handleSeeAllClick()}>See them all </SeeAll>
+        )}
       </WrapperContent>
       <Slider
         meals={props.meals}
