@@ -19,7 +19,7 @@ import images from '../../assets/images'
 
 const CONTROLLERS_OPENED_MS = 2500
 const defaultCallback = () => {}
-const TEXT_OUT_OF_STOCK = 'Out of stock'
+const TEXT_OUT_OF_STOCK = 'Sold Out'
 const TEXT_COMING_SOON = 'Image coming soon'
 
 const MealCard = ({
