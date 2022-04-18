@@ -61,10 +61,12 @@ const PremiumMealCarrouselDesktop = props => {
         <Title>Lot of special ingredients you will love</Title>
         <WrapperNavigation>
           <ArrowLeft
+            className={!showStartGradient ? 'disabled' : ''}
             src={imageBaseUrl + '/icons/arrow-circle-left.png'}
             onClick={() => swiperRef.current.swiper.slidePrev()}
           />
           <ArrowRight
+            className={!showEndGradient ? 'disabled' : ''}
             src={imageBaseUrl + '/icons/arrow-circle-right.png'}
             onClick={() => swiperRef.current.swiper.slideNext()}
           />

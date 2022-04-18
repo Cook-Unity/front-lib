@@ -25,13 +25,17 @@ import {
   ImgMinus,
   ImgMore,
   PriceActionsWrapper,
-  ButtonQuantity
+  ButtonQuantity,
+  WarningTextWrapper,
+  WarningText
 } from './styled'
 
 export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
 const MODULE_NAME = 'premium-row'
+
 const MealCard = props => {
   const [showActions, setShowActions] = useState(false)
+  const [showWarnings, setShowWarnings] = useState(false)
 
   const handleAddItem = () => {
     props.onAddTracking(props.meal, props.meal.quantiy, MODULE_NAME)
@@ -57,6 +61,19 @@ const MealCard = props => {
     props.onMealClick(meal)
   }
 
+  const handleShowWarningMessage = () => {
+    setShowWarnings(true)
+  }
+
+  useEffect(() => {
+    const showWarningTimer = setTimeout(() => {
+      setShowWarnings(false)
+    }, 2500)
+    return () => {
+      clearTimeout(showWarningTimer)
+    }
+  }, [props.meal.warning, showWarnings])
+
   useEffect(() => {
     const cartTimer = setTimeout(() => {
       setShowActions(false)
@@ -65,14 +82,20 @@ const MealCard = props => {
       clearTimeout(cartTimer)
     }
   }, [props.meal.quantity, showActions])
-
   return (
     <Wrapper className={props.meal.quantity > 0 ? 'in-cart' : ''}>
       <WrapperTop>
         <ChefImage src={props.meal.cheffImageFullPath} />
-        <WarningMessage text={props.meal.warning}>
-          <WarningImage src="https://cu-product-media.s3.amazonaws.com/media/icons/info_white.png" />
-        </WarningMessage>
+        {props.meal.warning && (
+          <WarningMessage onClick={() => handleShowWarningMessage()}>
+            <WarningImage src="https://cu-product-media.s3.amazonaws.com/media/icons/info_white.png" />
+          </WarningMessage>
+        )}
+        {showWarnings && (
+          <WarningTextWrapper>
+            <WarningText>{props.meal.warning}</WarningText>
+          </WarningTextWrapper>
+        )}
         <MealPicture
           src={props.meal.imageUrl}
           onClick={() => {
@@ -88,7 +111,7 @@ const MealCard = props => {
             <RatingText>{formatMealRating(props.meal.stars)}</RatingText>
           </StarWrapper>
           <PriceActionsWrapper>
-            <ExtraPrice>+ {props.meal.premium_fee}</ExtraPrice>
+            <ExtraPrice>+ ${props.meal.premium_fee}</ExtraPrice>
             {showActions && (
               <MealCartActionsWrapper>
                 <MealCartActionRemove onClick={() => handleRemoveItem()}>

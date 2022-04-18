@@ -84,9 +84,8 @@ export const StarWrapper = styled.div`
 `
 
 export const StarImg = styled.img`
-  width: 13.3px;
-  height: 12.67px;
-  padding-left: 14px;
+  height: 13px;
+  padding-left: 10px;
 `
 
 export const RatingText = styled.span`
@@ -239,4 +238,28 @@ export const ButtonQuantity = styled.button`
   font-weight: 600;
   text-align: center;
   padding: 0;
+`
+
+export const WarningTextWrapper = styled.div`
+  width: 150px;
+  background: #ffffff;
+  box-shadow: 0px 8px 16px rgb(35 31 32 / 6%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  margin-left: 10px;
+`
+
+export const WarningText = styled.span`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  color: #231f20;
 `

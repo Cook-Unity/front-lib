@@ -40,10 +40,17 @@ export const WrapperNavigation = styled.div`
 export const ArrowLeft = styled.img`
   cursor: pointer;
   padding-right: 12px;
+  &.disabled {
+    opacity: 0.5;
+  }
 `
 
 export const ArrowRight = styled.img`
   cursor: pointer;
+
+  &.disabled {
+    opacity: 0.5;
+  }
 `
 
 export const WrapperSlide = styled.div`
