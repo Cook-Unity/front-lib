@@ -39,7 +39,7 @@ const MealCard = props => {
 
   const handleAddItem = () => {
     props.onAddTracking(props.meal, props.meal.quantiy, MODULE_NAME)
-    props.onAddItem(props.meal)
+    props.onAddItem(props.meal, false)
   }
 
   const handleRemoveItem = () => {
