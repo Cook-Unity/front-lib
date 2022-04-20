@@ -24,7 +24,7 @@ const PremiumMealCarrouselMobile = props => {
   return (
     <Wrapper>
       <WrapperContent>
-        <Title>Lot of special ingredients you will love</Title>
+        <Title>Dine fine with Chef Specials</Title>
         {validateSeeAllLink() && (
           <SeeAll onClick={() => handleSeeAllClick()}>See them all </SeeAll>
         )}

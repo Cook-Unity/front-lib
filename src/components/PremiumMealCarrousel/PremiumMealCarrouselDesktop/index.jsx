@@ -58,7 +58,7 @@ const PremiumMealCarrouselDesktop = props => {
   return (
     <Wrapper>
       <WrapperContent>
-        <Title>Lot of special ingredients you will love</Title>
+        <Title>Dine fine with Chef Specials</Title>
         <WrapperNavigation>
           <ArrowLeft
             className={!showStartGradient ? 'disabled' : ''}
