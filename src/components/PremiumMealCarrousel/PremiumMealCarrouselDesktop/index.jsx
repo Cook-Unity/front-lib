@@ -58,7 +58,7 @@ const PremiumMealCarrouselDesktop = props => {
   return (
     <Wrapper>
       <WrapperContent>
-        <Title>Lot of special ingredients you will love</Title>
+        <Title>Dine fine with Chef Specials</Title>
         <WrapperNavigation>
           <ArrowLeft
             className={!showStartGradient ? 'disabled' : ''}
@@ -78,7 +78,6 @@ const PremiumMealCarrouselDesktop = props => {
       <WrapperSlide>
         <Swiper
           ref={swiperRef}
-          allowTouchMove={false}
           spaceBetween={17}
           slidesPerView="auto"
           centeredSlides
