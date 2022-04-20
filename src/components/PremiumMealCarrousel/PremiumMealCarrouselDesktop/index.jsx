@@ -78,7 +78,6 @@ const PremiumMealCarrouselDesktop = props => {
       <WrapperSlide>
         <Swiper
           ref={swiperRef}
-          allowTouchMove={false}
           spaceBetween={17}
           slidesPerView="auto"
           centeredSlides

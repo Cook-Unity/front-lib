@@ -106,11 +106,13 @@ const MealCard = props => {
 
       <WrapperFooter>
         <WrapperAction>
-          <StarWrapper>
-            <StarImg src={images.star} alt="★" />
-            <RatingText>{formatMealRating(props.meal.stars)}</RatingText>
-          </StarWrapper>
-          <PriceActionsWrapper>
+          {props.meal.stars && (
+            <StarWrapper>
+              <StarImg src={images.star} alt="★" />
+              <RatingText>{formatMealRating(props.meal.stars)}</RatingText>
+            </StarWrapper>
+          )}
+          <PriceActionsWrapper className={!props.meal.stars ? 'large' : ''}>
             <ExtraPrice>+ ${props.meal.premium_fee}</ExtraPrice>
             {showActions && (
               <MealCartActionsWrapper>

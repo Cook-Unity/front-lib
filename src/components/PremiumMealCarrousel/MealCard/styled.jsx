@@ -69,6 +69,9 @@ export const PriceActionsWrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding-right: 16px;
+  &.large {
+    padding-left: 55px;
+  }
 `
 
 export const StarWrapper = styled.div`
