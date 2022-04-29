@@ -52,7 +52,7 @@ const MealCard = props => {
   const handleShowActions = () => {
     if (props.meal.quantity === 0) {
       props.onAddItem(props.meal, false)
-      props.onAddTracking(props.meal, props.meal.quantiy, MODULE_NAME)
+      props.onAddTracking(props.meal, props.meal.quantity, MODULE_NAME)
     }
     setShowActions(true)
   }
