@@ -85,7 +85,8 @@ const PremiumMealCarrouselDesktop = props => {
           slidesPerColumn={1}
           onSlideChange={swiper => {
             checkGradientStatus(swiper)
-            props.onClickArrowTracking(1, MODULE_NAME)
+            if (swiper.activeIndex !== 1)
+              props.onClickArrowTracking(1, MODULE_NAME)
           }}
           onSwiper={() => {
             props.onShowTracking(1, MODULE_NAME)
