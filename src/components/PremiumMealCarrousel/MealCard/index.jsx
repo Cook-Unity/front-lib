@@ -38,7 +38,7 @@ const MealCard = props => {
   const [showWarnings, setShowWarnings] = useState(false)
 
   const handleAddItem = () => {
-    props.onAddTracking(props.meal, props.meal.quantiy, MODULE_NAME)
+    props.onAddTracking(props.meal, props.meal.quantity, MODULE_NAME)
     props.onAddItem(props.meal, false)
   }
 
@@ -51,14 +51,15 @@ const MealCard = props => {
 
   const handleShowActions = () => {
     if (props.meal.quantity === 0) {
-      props.onAddItem(props.meal)
+      props.onAddItem(props.meal, false)
+      props.onAddTracking(props.meal, props.meal.quantity, MODULE_NAME)
     }
     setShowActions(true)
   }
 
   const handleClickItem = meal => {
     props.onClickTracking(meal, MODULE_NAME)
-    props.onMealClick(meal)
+    props.onMealClick(meal, false)
   }
 
   const handleShowWarningMessage = () => {
