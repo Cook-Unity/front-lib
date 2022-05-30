@@ -46,7 +46,8 @@ const MealCard = ({
   compact,
   extra,
   enableCelebrityFeatures,
-  hideCartControllers
+  hideCartControllers,
+  debugging
 }) => {
   const {
     name = '',
@@ -70,7 +71,8 @@ const MealCard = ({
     warning = '',
     magentoId = null,
     price_plan = '',
-    price = ''
+    price = '',
+    weight = ''
   } = meal
 
   const [showCartControllers, setShowCartControllers] = useState(false)
@@ -354,7 +356,9 @@ const MealCard = ({
           )}
           <div className={styles.chef_name}>{chefFullName}</div>
         </div>
-
+        {debugging && debugging.showSortingWeight && (
+          <div className={styles.chef_name}>Menu sorting weight: {weight}</div>
+        )}
         <div className={styles.meal_card__add_to_cart_container}>
           <div className={styles.add_to_cart}>
             {!showCartControllers || !selected ? (
@@ -502,7 +506,10 @@ MealCard.propTypes = {
   onLikeMeal: func,
   compact: bool,
   enableCelebrityFeatures: bool,
-  hideCartControllers: bool
+  hideCartControllers: bool,
+  debugging: shape({
+    showSortingWeight: bool
+  })
 }
 
 MealCard.defaultProps = {
@@ -520,7 +527,10 @@ MealCard.defaultProps = {
   onChefClick: null,
   onLikeMeal: defaultCallback,
   enableCelebrityFeatures: false,
-  hideCartControllers: false
+  hideCartControllers: false,
+  debugging: {
+    showSortingWeight: false
+  }
 }
 
 export default MealCard
