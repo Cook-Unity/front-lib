@@ -170,3 +170,12 @@ Premium.args = {
   premium_special: true,
   premium_fee: null
 }
+
+export const HideCartControllers = Template.bind({})
+HideCartControllers.args = {
+  meal: {
+    ...meal_full
+  },
+  hideCartControllers: true,
+  quantity: 1
+}
