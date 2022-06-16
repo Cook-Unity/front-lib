@@ -465,9 +465,6 @@
         align-items: center;
         justify-content: flex-end;
         animation: fadeIn 250ms;
-        button {
-          cursor: default;
-        }
       }
 
       .premium_fee {
@@ -554,6 +551,10 @@
           color: #ffffff;
           border: none;
           background: $cookunity-green;
+        }
+
+        &.isnoteditable {
+          cursor: default;
         }
       }
     }
