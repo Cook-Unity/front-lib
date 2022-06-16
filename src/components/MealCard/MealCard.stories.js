@@ -177,5 +177,6 @@ HideCartControllers.args = {
     ...meal_full
   },
   hideCartControllers: true,
+  isEditable: false,
   quantity: 1
 }

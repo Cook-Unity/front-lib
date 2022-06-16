@@ -410,7 +410,8 @@ const MealCard = ({
                     )}
                     <button
                       className={classnames(
-                        selected ? styles.selected : styles.unselected
+                        selected ? styles.selected : styles.unselected,
+                        !isEditable && styles.isnoteditable
                       )}
                       disabled={disableAddItemBtn && quantity < 1}
                       onClick={() => {
