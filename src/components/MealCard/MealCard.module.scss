@@ -555,6 +555,9 @@
 
         &.isnoteditable {
           cursor: default;
+          background-color: transparent;
+          border: 1px solid #4D4D4F;
+          color: #4D4D4F;
         }
       }
     }
