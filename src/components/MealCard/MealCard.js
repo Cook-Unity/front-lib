@@ -88,7 +88,7 @@ const MealCard = ({
   const proteinTag = getProteinTag(protein_type)
   const isSpicy = findSpecificationDetail(specifications_detail, 'spicy')
   const selected = quantity > 0
-  const noStock = isEditable && !selected && stock === 0
+  const noStock = isEditable && !selected && stock <= 0
   const disableAddItemBtn = disableAddItem || !isEditable || quantity >= stock
   const imageComingSoon = /no_selection|no-image|null|undefined/.test(
     full_path_meal_image
