@@ -180,3 +180,11 @@ HideCartControllers.args = {
   isEditable: false,
   quantity: 1
 }
+
+export const ShowShareButton = Template.bind({})
+ShowShareButton.args = {
+  meal: {
+    ...meal_full
+  },
+  showShareButton: true
+}
