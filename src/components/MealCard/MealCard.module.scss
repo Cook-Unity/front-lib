@@ -561,6 +561,22 @@
         }
       }
     }
+
+    button.share_button {
+      width: 30px;
+      height: 30px;
+      background: #231F20;
+      border: 2px solid #231F20;
+      border-radius: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
 
   &__footer {

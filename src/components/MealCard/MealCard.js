@@ -47,7 +47,9 @@ const MealCard = ({
   extra,
   enableCelebrityFeatures,
   hideCartControllers,
-  debugging
+  debugging,
+  showShareButton,
+  onShareClick
 }) => {
   const {
     name = '',
@@ -382,6 +384,17 @@ const MealCard = ({
                   ''
                 )}
 
+                {showShareButton && (
+                  <button
+                    onClick={() => {
+                      onShareClick(meal)
+                    }}
+                    className={styles.share_button}
+                  >
+                    <img src={images.share} alt="share" />
+                  </button>
+                )}
+
                 {(compact && included) ||
                   (extra && (
                     <div className={styles.checkout_info}>
@@ -510,7 +523,9 @@ MealCard.propTypes = {
   hideCartControllers: bool,
   debugging: shape({
     showSortingWeight: bool
-  })
+  }),
+  onShareClick: func,
+  showShareButton: bool
 }
 
 MealCard.defaultProps = {
@@ -531,7 +546,8 @@ MealCard.defaultProps = {
   hideCartControllers: false,
   debugging: {
     showSortingWeight: false
-  }
+  },
+  showShareButton: false
 }
 
 export default MealCard
