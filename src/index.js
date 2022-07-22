@@ -10,3 +10,4 @@ export {default as CollectionMealHeader} from './components/CollectionMeals/comp
 export {default as SmartAppBanner} from './components/SmartAppBanner'
 export {default as PremiumMealCarrousel} from './components/PremiumMealCarrousel'
 export {default as CategoryCover} from './components/CategoryCover'
+export {default as AddMeals} from './components/AddMeals'

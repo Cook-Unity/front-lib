@@ -49,7 +49,9 @@ const MealCard = ({
   hideCartControllers,
   debugging,
   showShareButton,
-  onShareClick
+  onShareClick,
+  showAddMealToCart,
+  handleAddMealToCart
 }) => {
   const {
     name = '',
@@ -416,6 +418,18 @@ const MealCard = ({
                       )}
                     </div>
                   ))}
+                {showAddMealToCart && (
+                  <button
+                    className={styles.unselected}
+                    onClick={handleAddMealToCart}
+                  >
+                    <img
+                      src={images.btnWhitePlus}
+                      alt="+"
+                      data-testid="plus-img"
+                    />
+                  </button>
+                )}
                 {isEditable || quantity ? (
                   <Fragment>
                     {showPrice && !premium_fee && (
@@ -525,7 +539,9 @@ MealCard.propTypes = {
     showSortingWeight: bool
   }),
   onShareClick: func,
-  showShareButton: bool
+  showShareButton: bool,
+  showAddMealToCart: bool.isRequired,
+  handleAddMealToCart: func.isRequired
 }
 
 MealCard.defaultProps = {
@@ -547,7 +563,9 @@ MealCard.defaultProps = {
   debugging: {
     showSortingWeight: false
   },
-  showShareButton: false
+  showShareButton: false,
+  showAddMealToCart: false,
+  handleAddMealToCart: null
 }
 
 export default MealCard
