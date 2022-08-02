@@ -23,11 +23,11 @@ const AddMeals = ({mealName, mealPhoto, weeks, subtitle, description, addCallbac
         {
           mealStatus === MEAL_STATUS.AVAILABLE
           && (orderStatus === ORDER_STATUS.SCHEDULED)
-          && <Button onClick={addCallback}>+ Add to order</Button>}
+          && <Button onClick={() => addCallback(date)}>+ Add to order</Button>}
         {
          mealStatus === MEAL_STATUS.AVAILABLE
           && (orderStatus === ORDER_STATUS.SKIP)
-          && <Button onClick={unskipAndAddCallback}>Unskip & Add</Button>}
+          && <Button onClick={() => unskipAndAddCallback(date)}>Unskip & Add</Button>}
         {
           mealStatus === MEAL_STATUS.AVAILABLE
           && (orderStatus === ORDER_STATUS.CONFIRMED)
