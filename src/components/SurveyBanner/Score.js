@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import classnames from 'classnames'
 import CUButton from '../../common/CUButton'
 import images from '../../assets/images'
 import styles from './SurveyBanner.module.scss'
@@ -15,7 +16,8 @@ const Score = ({
   const [showComments, setShowComments] = useState(false)
   const [comment, setComment] = useState('')
 
-  if (!showScore) return null
+  const scoreShowClass = showScore ? '' : styles.hide
+  const commentShowClass = showComments ? '' : styles.hide
 
   const handleScoreClick = newScore => {
     setScore(newScore)
@@ -34,9 +36,9 @@ const Score = ({
   }
 
   return (
-    <div id="score">
-      <h4>{title}</h4>
-      <div className={styles.facesContainer}>
+    <div id="score" className={scoreShowClass}>
+      <h4 className={scoreShowClass}>{title}</h4>
+      <div className={classnames(styles.facesContainer, scoreShowClass)}>
         <img
           src={images.face1}
           alt="angry"
@@ -69,25 +71,23 @@ const Score = ({
         />
       </div>
 
-      {showComments && (
-        <div className={styles.commentsContainer}>
-          <div className={styles.center}>
-            <textarea
-              className={styles.comments}
-              rows="4"
-              placeholder={commentsPlaceholder}
-              value={comment}
-              onChange={handleChangeComment}
-            />
-          </div>
-
-          <div className={styles.center}>
-            <CUButton onClick={handleSubmitScore} label="Submit" primary>
-              Submit
-            </CUButton>
-          </div>
+      <div className={classnames(styles.commentsContainer, commentShowClass)}>
+        <div className={styles.center}>
+          <textarea
+            className={styles.comments}
+            rows="4"
+            placeholder={commentsPlaceholder}
+            value={comment}
+            onChange={handleChangeComment}
+          />
         </div>
-      )}
+
+        <div className={styles.center}>
+          <CUButton onClick={handleSubmitScore} label="Submit" primary>
+            Submit
+          </CUButton>
+        </div>
+      </div>
     </div>
   )
 }

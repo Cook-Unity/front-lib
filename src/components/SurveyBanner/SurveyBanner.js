@@ -15,6 +15,7 @@ const surveyDefaults = {
 
 const SurveyBanner = ({
   showSurvey,
+  isMobile,
   handleSubmit,
   handleClose,
   welcomeTitle = surveyDefaults.welcomeTitle,
@@ -52,16 +53,19 @@ const SurveyBanner = ({
     >
       <Welcome
         showWelcome={showWelcomeMessage}
+        isMobile={isMobile}
         title={welcomeTitle}
         subtitle={welcomeSubtitle}
         setShowScore={setShowScore}
       />
 
-      <Score
-        showScore={showScore}
-        title={welcomeTitle}
-        handleSubmit={handleSubmitSurvey}
-      />
+      {!showThanks && (
+        <Score
+          showScore={showScore}
+          title={welcomeTitle}
+          handleSubmit={handleSubmitSurvey}
+        />
+      )}
 
       <Thanks
         showThanks={showThanks}
