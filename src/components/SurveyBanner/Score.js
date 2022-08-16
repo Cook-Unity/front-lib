@@ -43,6 +43,7 @@ const Score = ({
           src={images.face1}
           alt="angry"
           onClick={() => handleScoreClick(1)}
+          data-testid="angry-score-button"
           className={score === 1 ? styles.selected : null}
         />
         <img
@@ -71,7 +72,10 @@ const Score = ({
         />
       </div>
 
-      <div className={classnames(styles.commentsContainer, commentShowClass)}>
+      <div
+        className={classnames(styles.commentsContainer, commentShowClass)}
+        data-testid="comments-section"
+      >
         <div className={styles.center}>
           <textarea
             className={styles.comments}
@@ -83,7 +87,12 @@ const Score = ({
         </div>
 
         <div className={styles.center}>
-          <CUButton onClick={handleSubmitScore} label="Submit" primary>
+          <CUButton
+            onClick={handleSubmitScore}
+            label="Submit"
+            primary
+            data-testid="comment-button"
+          >
             Submit
           </CUButton>
         </div>

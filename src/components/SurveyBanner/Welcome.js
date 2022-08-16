@@ -9,12 +9,17 @@ const Welcome = ({showWelcome, isMobile, title, subtitle, setShowScore}) => {
     <div className={styles.welcomeContainer}>
       <h4
         className={styles.title}
+        data-testid="welcome-title"
         onClick={() => isMobile && setShowScore(true)}
       >
         {title}
       </h4>
-      <div className={styles.subtitleContainer}>
-        <b className={styles.subtitle} onClick={() => setShowScore(true)}>
+      <div className={styles.subtitleContainer} data-testid="welcome-subtitle">
+        <b
+          className={styles.subtitle}
+          onClick={() => setShowScore(true)}
+          data-testid="show-score-link"
+        >
           {subtitle} <img src={images.arrowRight} alt="arrow" />
         </b>
       </div>

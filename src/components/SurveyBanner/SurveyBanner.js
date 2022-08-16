@@ -46,6 +46,7 @@ const SurveyBanner = ({
 
   return (
     <div
+      data-testid="SurveyBanner"
       className={classnames(styles.surveyCard, {
         [styles.surveyStart]: showWelcomeMessage,
         [styles.surveyColor]: !showWelcomeMessage
