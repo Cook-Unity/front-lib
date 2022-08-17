@@ -1,0 +1,144 @@
+@import '../../assets/styles/scss/mixins';
+
+.surveyCard {
+  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.06),
+    0px 0px 32px rgba(0, 0, 0, 0.04);
+  border-radius: 20px 20px 0px 0px;
+  padding: 20px;
+
+  &.surveyStart {
+    background: #59c6e7;
+    color: white;
+  }
+
+  &.surveyColor {
+    background: white;
+    color: black;
+  }
+
+  h4 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .welcomeContainer {
+    .title {
+      @include mobile {
+        text-decoration-line: underline;
+        cursor: pointer;
+        margin: 0;
+      }
+    }
+
+    .subtitleContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        display: none;
+      }
+
+      .subtitle {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 170%;
+        text-align: center;
+        text-decoration-line: underline;
+        cursor: pointer;
+
+        & > img {
+          width: 14px;
+          margin: -3px 2px;
+        }
+      }
+    }
+  }
+
+  .facesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    max-height: 50px;
+    transition: max-height 0.3s ease, opacity 0.5s ease-in;
+
+    & > img {
+      width: 40px;
+      margin: 2px 15px;
+      cursor: pointer;
+
+      &.selected,
+      &:hover {
+        filter: invert(70%) sepia(64%) saturate(532%) hue-rotate(160deg)
+          brightness(97%) contrast(87%);
+      }
+    }
+  }
+
+  .commentsContainer {
+    max-height: 200px;
+    transition: max-height 0.5s ease, opacity 1s ease-in;
+
+    .comments {
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      resize: none;
+      width: 40%;
+      border: 1px solid lightgray;
+      font-family: 'Roboto';
+      font-size: 14px;
+      line-height: 18px;
+      margin: 15px;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+
+  .thanksContainer {
+    z-index: 10;
+
+    .subtitleContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .subtitle {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #4d4d4f;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    }
+  }
+
+  .hide {
+    max-height: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -10;
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

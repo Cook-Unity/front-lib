@@ -16,6 +16,7 @@ export default {
   faiaImage: imageUrl('flame.png'),
   close: imageUrl('back_arrow.png'),
   closeMobile: imageUrl('back_arrow_mobile.png'),
+  arrowRight: imageUrl('arrow-right-white.png'),
   share: imageUrl('share.png'),
   copyLink: imageUrl('copy-links.png'),
   facebook: imageUrl('facebook.png'),
@@ -40,5 +41,10 @@ export default {
   iconAlertBlack,
   logoCu: imageUrl('logo-cu.png'),
   iconLogoCu: imageUrl('icon_logo_cu.png'),
-  diamond: imageUrl('diamond.png')
+  diamond: imageUrl('diamond.png'),
+  face1: imageUrl('face1.png'),
+  face2: imageUrl('face2.png'),
+  face3: imageUrl('face3.png'),
+  face4: imageUrl('face4.png'),
+  face5: imageUrl('face5.png')
 }
