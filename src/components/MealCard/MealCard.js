@@ -312,7 +312,6 @@ const MealCard = ({
           )}
         </div>
       </div>
-
       {premium_special && (
         <div className={styles.premium_special}>
           <img src={images.diamond} alt="" />
@@ -323,7 +322,6 @@ const MealCard = ({
           </span>
         </div>
       )}
-
       <div
         className={styles.meal_card__title}
         onClick={() => {
@@ -427,13 +425,13 @@ const MealCard = ({
                     />
                   </button>
                 )}
+                {premium_special && premium_fee && (
+                  <span className={styles.price}>{premiumFeeString}</span>
+                )}
                 {isEditable || quantity ? (
                   <Fragment>
                     {showPrice && !premium_fee && (
                       <span className={styles.price}> $ {price} </span>
-                    )}
-                    {showPrice && premium_fee > 0 && (
-                      <span className={styles.price}>{premiumFeeString} </span>
                     )}
                     <button
                       className={classnames(
