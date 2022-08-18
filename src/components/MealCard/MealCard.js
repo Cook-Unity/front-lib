@@ -321,9 +321,6 @@ const MealCard = ({
               ? 'Vegetarian Special'
               : 'Chef Special'}
           </span>
-          {premium_fee && (
-            <span className={styles.price}>{premiumFeeString}</span>
-          )}
         </div>
       )}
 
@@ -433,7 +430,10 @@ const MealCard = ({
                 {isEditable || quantity ? (
                   <Fragment>
                     {showPrice && !premium_fee && (
-                      <span className={styles.price}> + $ {price}</span>
+                      <span className={styles.price}> $ {price} </span>
+                    )}
+                    {showPrice && premium_fee > 0 && (
+                      <span className={styles.price}>{premiumFeeString} </span>
                     )}
                     <button
                       className={classnames(
