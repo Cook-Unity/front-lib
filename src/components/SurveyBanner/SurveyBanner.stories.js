@@ -1,6 +1,9 @@
 import React from 'react'
 
 import SurveyBanner from './index'
+import mobileAndTabletCheck from '../../utils/mobileAndTabletCheck'
+
+const isMobileDevice = () => mobileAndTabletCheck()
 
 const props = {
   showSurvey: true,
@@ -21,5 +24,6 @@ const Template = args => <SurveyBanner {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  ...props
+  ...props,
+  isMobile: isMobileDevice()
 }
