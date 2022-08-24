@@ -7,7 +7,7 @@ const Thanks = ({showThanks, title, subtitle, handleClose}) => {
 
   return (
     <div className={styles.thanksContainer} data-testid="thanks-message">
-      <h4>{title}</h4>
+      <h4 className={styles.title}>{title}</h4>
       <div className={styles.subtitleContainer}>
         <b className={styles.subtitle}>{subtitle}</b>
       </div>

@@ -6,7 +6,7 @@ import Thanks from './Thanks'
 import Welcome from './Welcome'
 
 const surveyDefaults = {
-  welcomeTitle: 'How happy were you with Menu variaty?',
+  welcomeTitle: 'How happy were you with Menu variety?',
   welcomeSubtitle: 'Help us to improve our service',
   subtitleIcon: 'arrow-right',
   thanksTitle: 'Thank you!',
@@ -16,6 +16,7 @@ const surveyDefaults = {
 const SurveyBanner = ({
   showSurvey,
   isMobile,
+  handleStartSurvey = null,
   handleSubmit,
   handleClose,
   welcomeTitle = surveyDefaults.welcomeTitle,
@@ -44,6 +45,13 @@ const SurveyBanner = ({
     handleClose()
   }
 
+  const startSurvey = () => {
+    setShowScore(true)
+    if (handleStartSurvey) {
+      handleStartSurvey()
+    }
+  }
+
   return (
     <div
       data-testid="SurveyBanner"
@@ -57,7 +65,7 @@ const SurveyBanner = ({
         isMobile={isMobile}
         title={welcomeTitle}
         subtitle={welcomeSubtitle}
-        setShowScore={setShowScore}
+        setShowScore={startSurvey}
       />
 
       {!showThanks && (
