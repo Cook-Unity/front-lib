@@ -425,9 +425,15 @@ const MealCard = ({
                     />
                   </button>
                 )}
-                {premium_special && premium_fee && (
+                {premium_special && premium_fee > 0 && (
                   <span className={styles.price}>{premiumFeeString} </span>
                 )}
+                {!isEditable &&
+                  showPrice &&
+                  !premium_special &&
+                  premium_fee > 0 && (
+                    <span className={styles.price}>{premiumFeeString} </span>
+                  )}
                 {isEditable || quantity ? (
                   <Fragment>
                     {showPrice && !premium_fee && (
