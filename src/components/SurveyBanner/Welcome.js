@@ -10,14 +10,14 @@ const Welcome = ({showWelcome, isMobile, title, subtitle, setShowScore}) => {
       <h4
         className={styles.title}
         data-testid="welcome-title"
-        onClick={() => isMobile && setShowScore(true)}
+        onClick={() => isMobile && setShowScore()}
       >
         {title}
       </h4>
       <div className={styles.subtitleContainer} data-testid="welcome-subtitle">
         <b
           className={styles.subtitle}
-          onClick={() => setShowScore(true)}
+          onClick={setShowScore}
           data-testid="show-score-link"
         >
           {subtitle} <img src={images.arrowRight} alt="arrow" />
