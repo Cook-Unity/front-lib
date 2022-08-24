@@ -426,7 +426,7 @@ const MealCard = ({
                   </button>
                 )}
                 {premium_special && premium_fee && (
-                  <span className={styles.price}>{premiumFeeString}</span>
+                  <span className={styles.price}>{premiumFeeString} </span>
                 )}
                 {isEditable || quantity ? (
                   <Fragment>
