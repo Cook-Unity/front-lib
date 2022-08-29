@@ -6,7 +6,7 @@ import Thanks from './Thanks'
 import Welcome from './Welcome'
 
 const surveyDefaults = {
-  welcomeTitle: 'How happy were you with Menu variety?',
+  welcomeTitle: 'Rate your satisfaction with this week’s meals',
   welcomeSubtitle: 'Help us to improve our service',
   subtitleIcon: 'arrow-right',
   thanksTitle: 'Thank you!',
@@ -15,7 +15,7 @@ const surveyDefaults = {
 
 const SurveyBanner = ({
   showSurvey,
-  isMobile,
+  isMobile = false,
   handleStartSurvey = null,
   handleSubmit,
   handleClose,
@@ -25,7 +25,7 @@ const SurveyBanner = ({
   thanksSubtitle = surveyDefaults.thanksSubtitle,
   isLoading
 }) => {
-  const [showScore, setShowScore] = useState(false)
+  const [showScore, setShowScore] = useState(!isMobile)
   const [showThanks, setShowThanks] = useState(false)
 
   if (isLoading) return null
@@ -40,7 +40,7 @@ const SurveyBanner = ({
   }
 
   const handleCloseSurvey = () => {
-    setShowScore(false)
+    setShowScore(!isMobile)
     setShowThanks(false)
     handleClose()
   }
