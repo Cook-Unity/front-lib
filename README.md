@@ -34,7 +34,7 @@ git push origin master v0.3.0
 ## Install in your project
 
 ```bash
-npm install git+https://gitlab-CI-read:zBNenyUg64tnXWRiJxy1@gitlab.cookunity.com/cross/front-lib.git#[TAG]
+npm install git+https://gitlab-CI-read:vhbbqhogaApHdETsPNi7@gitlab.cookunity.com/cross/front-lib.git#[TAG]
 ```
 *Update the [TAG] placeholder with the tag (v0.3.0) previously created in the library repository.*
 
