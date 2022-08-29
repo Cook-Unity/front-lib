@@ -5,23 +5,6 @@ import userEvent from '@testing-library/user-event'
 import SurveyBanner from './index'
 
 describe('SurveyBanner', () => {
-  it('Show Survey with Welcome message', () => {
-    const title = 'T!tl3'
-    const subtitle = '5u8t!tl3'
-
-    render(
-      <SurveyBanner
-        welcomeTitle={title}
-        welcomeSubtitle={subtitle}
-        showSurvey
-      />
-    )
-    expect(screen.queryByTestId('SurveyBanner')).toBeVisible()
-
-    expect(screen.getByTestId('welcome-title')).toHaveTextContent(title)
-    expect(screen.getByTestId('welcome-subtitle')).toHaveTextContent(subtitle)
-  })
-
   it('Hide Survey', () => {
     const title = 'T!tl3'
     const subtitle = '5u8t!tl3'
@@ -34,26 +17,6 @@ describe('SurveyBanner', () => {
       />
     )
     expect(screen.queryByTestId('SurveyBanner')).not.toBeInTheDocument()
-  })
-
-  it('Show score input after welcome', () => {
-    const welcomeTitle = 'T!tl3'
-    const welcomeSubtitle = '5u8t!tl3'
-
-    render(
-      <SurveyBanner
-        welcomeTitle={welcomeTitle}
-        welcomeSubtitle={welcomeSubtitle}
-        showSurvey
-      />
-    )
-    expect(screen.queryByTestId('SurveyBanner')).toBeVisible()
-    userEvent.click(screen.queryByTestId('show-score-link'))
-
-    expect(screen.queryByTestId('angry-score-button')).toBeVisible()
-    userEvent.click(screen.queryByTestId('angry-score-button'))
-
-    expect(screen.queryByTestId('comments-section')).toBeVisible()
   })
 
   it('Close banner by clicking button', () => {
@@ -79,8 +42,6 @@ describe('SurveyBanner', () => {
         showSurvey
       />
     )
-    expect(screen.queryByTestId('SurveyBanner')).toBeVisible()
-    userEvent.click(screen.queryByTestId('show-score-link'))
 
     expect(screen.queryByTestId('angry-score-button')).toBeVisible()
     userEvent.click(screen.queryByTestId('angry-score-button'))
@@ -94,5 +55,64 @@ describe('SurveyBanner', () => {
 
     userEvent.click(screen.queryByTestId('close-button'))
     expect(screen.queryByTestId('thanks-message')).not.toBeInTheDocument()
+  })
+
+  describe('Mobile', () => {
+    it('Show Survey with Welcome message', () => {
+      const title = 'T!tl3'
+      const subtitle = '5u8t!tl3'
+
+      render(
+        <SurveyBanner
+          welcomeTitle={title}
+          welcomeSubtitle={subtitle}
+          isMobile
+          showSurvey
+        />
+      )
+      expect(screen.queryByTestId('SurveyBanner')).toBeVisible()
+
+      expect(screen.getByTestId('welcome-title')).toHaveTextContent(title)
+      expect(screen.getByTestId('welcome-subtitle')).toHaveTextContent(subtitle)
+    })
+
+    it('Show score input after welcome', () => {
+      const welcomeTitle = 'T!tl3'
+      const welcomeSubtitle = '5u8t!tl3'
+
+      render(
+        <SurveyBanner
+          welcomeTitle={welcomeTitle}
+          welcomeSubtitle={welcomeSubtitle}
+          isMobile
+          showSurvey
+        />
+      )
+      expect(screen.queryByTestId('SurveyBanner')).toBeVisible()
+      userEvent.click(screen.queryByTestId('show-score-link'))
+
+      expect(screen.queryByTestId('angry-score-button')).toBeVisible()
+      userEvent.click(screen.queryByTestId('angry-score-button'))
+
+      expect(screen.queryByTestId('comments-section')).toBeVisible()
+    })
+  })
+
+  describe('Web', () => {
+    it('Show Survey without Welcome message', () => {
+      const title = 'T!tl3'
+      const subtitle = '5u8t!tl3'
+
+      render(
+        <SurveyBanner
+          welcomeTitle={title}
+          welcomeSubtitle={subtitle}
+          isMobile={false}
+          showSurvey
+        />
+      )
+      expect(screen.queryByTestId('SurveyBanner')).toBeVisible()
+      expect(screen.queryByTestId('angry-score-button')).toBeVisible()
+    })
   })
 })
