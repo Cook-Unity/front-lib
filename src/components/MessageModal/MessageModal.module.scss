@@ -65,12 +65,8 @@
 }
 
 .messageModal {
-  border-color: blue;
-
   @media (max-width: 720px) {
     max-height: 578px;
-    border-color: red;
-    border-style: dotted;
     border-radius: 10px 10px 0px 0px;
     top: auto;
   }
