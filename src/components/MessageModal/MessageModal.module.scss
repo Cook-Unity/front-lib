@@ -1,0 +1,83 @@
+.messageContainer {
+  color: black;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'image title' 'image desc' 'image button';
+  column-gap: 24px;
+
+  h2 {
+    grid-area: title;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+
+  img {
+    grid-area: image;
+    width: 160px;
+    height: 160px;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto 10px auto;
+  }
+
+  p {
+    grid-area: desc;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .buttonContainer{
+    grid-area: button;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    display: initial;
+
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 16px;
+    }
+    img {
+      max-width: 346px;
+      max-height: 496px;
+      margin-bottom: 16px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 170%;
+    }
+  }
+}
+
+.messageModal {
+  border-color: blue;
+
+  @media (max-width: 720px) {
+    max-height: 578px;
+    border-color: red;
+    border-style: dotted;
+    border-radius: 10px 10px 0px 0px;
+    top: auto;
+  }
+}
+
+.messageModalInner {
+  @media (max-width: 720px) {
+    padding: 24px 16px !important;
+  }
+}
