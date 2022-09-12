@@ -1,5 +1,4 @@
 .userRating {
-  display: flex;
   align-items: center;
   border-radius: 4px;
   background-color: #ffe06c;
@@ -11,14 +10,51 @@
   padding: 8px;
   margin-left: 16px;
   width: 111px;
+  display: grid;
+  grid-template-columns: 12px 5px 18px;
+  grid-template-rows: auto;
+  grid-template-areas: 'image rating separator text';
 
   .separator {
+    grid-area: separator;
     margin: 0 8px;
   }
 
+  .rating {
+    grid-area: rating;
+  }
+
+  .text {
+    grid-area: text;
+  }
+
   img {
+    grid-area: image;
     width: 8px;
     height: 8px;
     margin-right: 4px;
+  }
+}
+
+.userRatingMinimal {
+  grid-template-areas: 'text rating image';
+  grid-template-columns: auto;
+  margin-left: 0;
+  padding: 7px 2px 7px 8px;
+  width: 95px;
+
+  .text {
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  .rating {
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  img {
+    height: 10px;
+    width: 10px;
   }
 }
