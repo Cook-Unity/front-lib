@@ -5,7 +5,7 @@ import MealImage from '../../common/MealImage'
 import props from './data.mock'
 
 export default {
-  title: 'MessageModal',
+  title: 'MenuBy/MessageModal',
   component: MessageModal
 }
 

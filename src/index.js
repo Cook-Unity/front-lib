@@ -12,4 +12,5 @@ export {default as PremiumMealCarrousel} from './components/PremiumMealCarrousel
 export {default as CategoryCover} from './components/CategoryCover'
 export {default as AddMeals} from './components/AddMeals'
 export {default as SurveyBanner} from './components/SurveyBanner'
-export {default as MessageModal} from './components/MessageModal'
+export {default as MessageModal} from './modules/MessageModal'
+export {default as MenuEmptyState} from './modules/MenuEmptyState'

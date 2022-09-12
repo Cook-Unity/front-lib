@@ -4,7 +4,7 @@ import props from './__mock__'
 import MenuEmptyState from './index'
 
 export default {
-  title: 'Modules/MenuEmptyState',
+  title: 'MenuBy/MenuEmptyState',
   component: MenuEmptyState
 }
 
