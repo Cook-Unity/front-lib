@@ -24,3 +24,9 @@ Favorite.args = {
   ...props,
   isFavorite: true
 }
+
+export const TopRated = Template.bind({})
+TopRated.args = {
+  ...props,
+  isTopRated: true
+}

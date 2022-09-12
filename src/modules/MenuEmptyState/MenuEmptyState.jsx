@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import CUButton from '../../common/CUButton'
+import UserRating from '../../common/UserRating'
 import images from '../../assets/images'
 import styles from './MenuEmptyState.module.scss'
 
@@ -21,8 +22,11 @@ const MenuEmptyState = ({
         <img
           src={images.favorites}
           alt="frown"
-          className={isFavorite ? `${styles.isFavorite}` : `${styles.hide}`}
+          className={isFavorite ? styles.isFavorite : styles.hide}
         />
+      </div>
+      <div className={isTopRated ? styles.starsContainer : styles.hide}>
+        <UserRating userRating="5" youRated />
       </div>
       <h2 data-testid="title">{title}</h2>
       <h4 data-testid="subtitle">{subtitle}</h4>
