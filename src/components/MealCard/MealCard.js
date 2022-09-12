@@ -2,6 +2,7 @@ import React, {useState, useEffect, Fragment} from 'react'
 import {bool, string, func, number, array, shape} from 'prop-types'
 import classnames from 'classnames'
 
+import UserRating from '../../common/UserRating'
 import {getProteinTag} from '../../utils/meals'
 
 import {
@@ -209,12 +210,7 @@ const MealCard = ({
 
         {!showWarning && showUserRating ? (
           <div className={styles.user_stars_container}>
-            <span className={styles.user_rating}>you rated 5</span>
-            <img
-              className={styles.user_star}
-              src={images.blackStar}
-              alt="star"
-            />
+            <UserRating userRating="5" youRated />
           </div>
         ) : (
           showFeature && (
