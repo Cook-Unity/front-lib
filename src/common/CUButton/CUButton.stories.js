@@ -6,7 +6,8 @@ export default {
   title: 'CUButton',
   component: CUButton,
   argTypes: {
-    backgroundColor: {control: 'color'}
+    backgroundColor: {control: 'color'},
+    borderColor: {control: 'color'}
   }
 }
 

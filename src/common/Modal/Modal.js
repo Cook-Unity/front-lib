@@ -19,6 +19,7 @@ const CUModal = props => {
     mediumPlusSize,
     smallSize,
     withCloseIcon = true,
+    closeIconRight = false,
     notification,
     ...rest
   } = props
@@ -51,7 +52,12 @@ const CUModal = props => {
       {...rest}
     >
       {withCloseIcon && (
-        <button className={styles.close} onClick={props.onRequestClose}>
+        <button
+          className={classnames(styles.close, {
+            [styles.close_right]: !!closeIconRight
+          })}
+          onClick={props.onRequestClose}
+        >
           <img src={images.xclose} alt="close" />
         </button>
       )}
