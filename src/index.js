@@ -12,3 +12,4 @@ export {default as PremiumMealCarrousel} from './components/PremiumMealCarrousel
 export {default as CategoryCover} from './components/CategoryCover'
 export {default as AddMeals} from './components/AddMeals'
 export {default as SurveyBanner} from './components/SurveyBanner'
+export {default as HPModal} from './modules/HPModal'

@@ -44,7 +44,7 @@ CUButton.propTypes = {
    */
   backgroundColor: PropTypes.string,
   /**
-   * What background color to use
+   * What border color to use
    */
   borderColor: PropTypes.string,
   /**
