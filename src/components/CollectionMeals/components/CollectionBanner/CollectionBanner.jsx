@@ -15,13 +15,15 @@ const CollectionBanner = ({title, image, isNew, onClick}) => (
 )
 
 CollectionBanner.propTypes = {
-  title: string.isRequired,
+  title: string,
   image: string,
   isNew: bool,
   onClick: func
 }
 
 CollectionBanner.defaultProps = {
+  title: '',
+  image: '',
   isNew: true,
   onClick: () => null
 }

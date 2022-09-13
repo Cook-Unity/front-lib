@@ -13,5 +13,5 @@ Default.args = {
   isNew: true,
   title: 'Create your own perfect meal',
   image:
-    'https://previews.123rf.com/images/romastudio/romastudio1603/romastudio160300203/54088672-healthy-food-background-studio-photo-of-different-fruits-and-vegetables-on-white-wooden-table-high-r.jpg'
+    'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/popular-picks-1.jpg'
 }
