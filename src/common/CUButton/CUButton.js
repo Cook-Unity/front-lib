@@ -8,6 +8,7 @@ import './CUButton.css'
 const CUButton = ({
   primary,
   backgroundColor,
+  borderColor,
   size,
   label,
   children,
@@ -22,7 +23,10 @@ const CUButton = ({
       className={['storybook-button', `storybook-button--${size}`, mode].join(
         ' '
       )}
-      style={backgroundColor && {backgroundColor}}
+      style={{
+        backgroundColor: backgroundColor || null,
+        boxShadow: borderColor ? `${borderColor} 0px 0px 0px 1px inset` : null
+      }}
       {...props}
     >
       {children}
@@ -39,6 +43,10 @@ CUButton.propTypes = {
    * What background color to use
    */
   backgroundColor: PropTypes.string,
+  /**
+   * What background color to use
+   */
+  borderColor: PropTypes.string,
   /**
    * How large should the button be?
    */
