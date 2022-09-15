@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
   height: 290px;
   width: 200px;
   color: black;
+  border: 2px solid white;
 
   &.in-cart {
     border: 2px solid #47d178;
@@ -138,6 +139,7 @@ export const Button = styled.button`
   font-weight: 600;
   text-align: center;
   padding-left: 6px;
+  z-index: 2;
 `
 
 export const MealTitle = styled.div`

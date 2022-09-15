@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
       : "url('https://static.cookunity.com/cross/front-lib/images/sidesbg.png')"};
   background-repeat: no-repeat;
   background-size: contain;
+  border-radius: 8px;
 `
 export const WrapperContent = styled.div`
   float: left;
@@ -69,6 +70,7 @@ export const ArrowRight = styled.img`
 export const WrapperSlide = styled.div`
   height: 290px;
   padding-top: 24px;
+  margin-right: 20px;
 `
 
 export const GradientEnd = styled.div`
@@ -80,22 +82,24 @@ export const GradientEnd = styled.div`
   background: ${({theme}) =>
     theme === 'dark'
       ? 'linear-gradient(270deg, #231f20 0%, rgba(35, 31, 32, 0) 100%)'
-      : 'none'};
+      : 'linear-gradient(270deg, #e6fbf0 0%, rgba(35, 31, 32, 0) 100%)'};
   opacity: 0.7;
   z-index: 1;
+  pointer-events: none;
 `
 export const GradientStart = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: 113px;
+  width: 70px;
   background: ${({theme}) =>
     theme === 'dark'
       ? 'linear-gradient(270deg, #231f20 0%, rgba(35, 31, 32, 0) 100%)'
-      : 'none'};
+      : 'linear-gradient(270deg, #e6fbf0 0%, rgba(35, 31, 32, 0) 100%)'};
   opacity: 0.7;
   transform: rotate(-180deg);
-  opacity: 0.7;
+  opacity: 0.6;
   z-index: 1;
+  pointer-events: none;
 `
