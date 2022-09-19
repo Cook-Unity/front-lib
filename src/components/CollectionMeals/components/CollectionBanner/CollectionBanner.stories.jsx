@@ -10,8 +10,10 @@ const Template = args => <CollectionBanner {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  isNew: true,
-  title: 'Create your own perfect meal',
+  title: 'Customize your Meals',
+  description: 'Create perfect meals with à-la-carte eats.',
+  buttonText: 'Get Started',
   image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/popular-picks-1.jpg'
+    'https://d1ureao5dcqpo4.cloudfront.net/media/orders/banner_desktop.png',
+  isNew: true
 }
