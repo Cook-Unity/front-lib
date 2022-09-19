@@ -10,6 +10,7 @@ export {default as CollectionMealIcon} from './components/CollectionMeals/compon
 export {default as CollectionMealHeader} from './components/CollectionMeals/components/CollectionMealHeader'
 export {default as SmartAppBanner} from './components/SmartAppBanner'
 export {default as PremiumMealCarrousel} from './components/PremiumMealCarrousel'
+export {default as MealCarrousel} from './components/MealCarrousel'
 export {default as CategoryCover} from './components/CategoryCover'
 export {default as AddMeals} from './components/AddMeals'
 export {default as SurveyBanner} from './components/SurveyBanner'
