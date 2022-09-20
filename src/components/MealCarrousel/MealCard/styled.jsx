@@ -139,7 +139,6 @@ export const Button = styled.button`
   font-weight: 600;
   text-align: center;
   padding-left: 6px;
-  z-index: 2;
 `
 
 export const MealTitle = styled.div`

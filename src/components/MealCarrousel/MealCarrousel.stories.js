@@ -17,7 +17,16 @@ Premium.args = {
   title: 'Dine fine with Chef Specials',
   type: 'premium',
   moduleName: 'premium-row',
-  moduleId: 1
+  moduleId: 1,
+  onAddItem: () => {},
+  onRemoveItem: () => {},
+  onMealClick: () => {},
+  onSeeAllClick: () => {},
+  onShowTracking: () => {},
+  onClickTracking: () => {},
+  onAddTracking: () => {},
+  onSwipeTracking: () => {},
+  onSeeAllTracking: () => {}
 }
 
 export const Sides = Template.bind({})
@@ -28,5 +37,14 @@ Sides.args = {
   title: 'Create your own perfect meal',
   type: 'sides',
   moduleName: 'sides-row',
-  moduleId: 2
+  moduleId: 2,
+  onAddItem: () => {},
+  onRemoveItem: () => {},
+  onMealClick: () => {},
+  onSeeAllClick: () => {},
+  onShowTracking: () => {},
+  onClickTracking: () => {},
+  onAddTracking: () => {},
+  onSwipeTracking: () => {},
+  onSeeAllTracking: () => {}
 }

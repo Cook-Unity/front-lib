@@ -123,7 +123,7 @@ const MealCard = props => {
                 <ExtraPrice> ${props.meal.price}</ExtraPrice>
               )}
             {showActions && (
-              <MealCartActionsWrapper>
+              <MealCartActionsWrapper className='swiper-no-swiping'>
                 <MealCartActionRemove onClick={() => handleRemoveItem()}>
                   <ImgMinus src={images.btnBlackMinus} />
                 </MealCartActionRemove>
@@ -136,12 +136,18 @@ const MealCard = props => {
               </MealCartActionsWrapper>
             )}
             {!showActions && props.meal.quantity === 0 && (
-              <Button onClick={() => handleShowActions()}>
+              <Button
+                onClick={() => handleShowActions()}
+                className="swiper-no-swiping"
+              >
                 <ImagenCTA src="https://static.cookunity.com/cross/front-lib/images/btn-white-plus.png" />
               </Button>
             )}
             {!showActions && props.meal.quantity > 0 && (
-              <ButtonQuantity onClick={() => handleShowActions()}>
+              <ButtonQuantity
+                onClick={() => handleShowActions()}
+                className="swiper-no-swiping"
+              >
                 {props.meal.quantity}
               </ButtonQuantity>
             )}

@@ -73,7 +73,11 @@ const MealCarrouselDesktop = props => {
                 ? imageBaseUrl + '/icons/arrow-circle-left.png'
                 : images.arrowLeftBlack
             }
-            onClick={() => swiperRef.current.swiper.slidePrev()}
+            onClick={() => {
+              swiperRef.current.swiper.slidePrev()
+              showStartGradient &&
+                props.onClickArrowTracking(props.moduleId, props.moduleName)
+            }}
           />
           <ArrowRight
             className={!showEndGradient ? 'disabled' : ''}
@@ -82,7 +86,11 @@ const MealCarrouselDesktop = props => {
                 ? imageBaseUrl + '/icons/arrow-circle-right.png'
                 : images.arrowRightBlack
             }
-            onClick={() => swiperRef.current.swiper.slideNext()}
+            onClick={() => {
+              swiperRef.current.swiper.slideNext()
+              showEndGradient &&
+                props.onClickArrowTracking(props.moduleId, props.moduleName)
+            }}
           />
         </WrapperNavigation>
         {validateSeeAllLink() && (
@@ -98,11 +106,10 @@ const MealCarrouselDesktop = props => {
           slidesPerColumn={1}
           onSlideChange={swiper => {
             checkGradientStatus(swiper)
-            if (swiper.activeIndex !== 1)
-              props.onClickArrowTracking(props.moduleId, props.moduleName)
           }}
           onSwiper={() => {
-            props.onShowTracking && props.onShowTracking(props.moduleId, props.moduleName)
+            props.onShowTracking &&
+              props.onShowTracking(props.moduleId, props.moduleName)
           }}
         >
           {showStartGradient && <GradientStart theme={props.theme} />}
