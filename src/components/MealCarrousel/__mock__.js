@@ -11,7 +11,8 @@ export const meals = [
     premium_fee: 3.23,
     short_description: 'with sticky rice, wok veggies',
     warning: 'Contains fat',
-    rating: 3.9
+    rating: 3.9,
+    quantity: 0
   },
   {
     entity_id: 2,
@@ -24,7 +25,8 @@ export const meals = [
     premium_fee: 3.63,
     short_description: 'and Roasted Potatoes',
     warning: 'Contains fat',
-    rating: 3.9
+    rating: 3.9,
+    quantity: 0
   },
   {
     entity_id: 3,
@@ -37,7 +39,8 @@ export const meals = [
     premium_fee: 6,
     short_description: 'with Red Potatoes',
     warning: 'Contains fat',
-    rating: 3.9
+    rating: 3.9,
+    quantity: 0
   },
   {
     entity_id: 4,
@@ -51,7 +54,8 @@ export const meals = [
     premium_fee: 6,
     short_description: 'and Roasted Potatoes',
     warning: 'Contains fat',
-    rating: 3.9
+    rating: 3.9,
+    quantity: 0
   },
   {
     entity_id: 5,
@@ -65,7 +69,8 @@ export const meals = [
     premium_fee: 6,
     short_description: 'and Roasted Potatoes',
     warning: 'Contains fat',
-    rating: 3.9
+    rating: 3.9,
+    quantity: 0
   },
   {
     entity_id: 6,
@@ -79,6 +84,7 @@ export const meals = [
     premium_fee: 6,
     short_description: 'and Roasted Potatoes',
     warning: 'Contains fat',
-    rating: 3.9
+    rating: 3.9,
+    quantity: 0
   }
 ]
