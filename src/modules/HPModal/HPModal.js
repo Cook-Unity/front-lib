@@ -28,7 +28,6 @@ const HPModal = ({
     <Modal
       isOpen={isOpen}
       onRequestClose={handleClose}
-      modalContainerId={hpModalContainerId}
       closeIconRight
       style={customStyles}
       mediumSize
@@ -46,12 +45,22 @@ const HPModal = ({
           <h3 className={classnames(styles.hp_title)}>{title}</h3>
           <div className={classnames(styles.hp_description)}>{description}</div>
           <div className={classnames(styles.hp_action)}>
-            <CUButton size="small" borderColor="#000" onClick={handleCancel}>
+            <CUButton
+              label={btnCancelText}
+              size={btnSize}
+              borderColor="#000"
+              onClick={handleCancel}
+            >
               <span className={classnames(styles.hp_action_link)}>
                 {btnCancelText}
               </span>
             </CUButton>
-            <CUButton primary size={btnSize} onclick={handleConfirm}>
+            <CUButton
+              primary
+              label={btnConfirmText}
+              size={btnSize}
+              onClick={handleConfirm}
+            >
               {btnConfirmText}
             </CUButton>
           </div>
