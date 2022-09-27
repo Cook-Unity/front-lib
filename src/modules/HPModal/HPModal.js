@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import styles from './HPModal.module.scss'
 import Modal from '../../common/Modal'
-import CUButton from '../../common/CUButton'
+import Button from '../../common/Buttons'
 
 const HPModal = ({
   isOpen,
@@ -46,14 +46,8 @@ const HPModal = ({
           <h3 className={classnames(styles.hp_title)}>{title}</h3>
           <div className={classnames(styles.hp_description)}>{description}</div>
           <div className={classnames(styles.hp_action)}>
-            <CUButton size="small" borderColor="#000" onClick={handleCancel}>
-              <span className={classnames(styles.hp_action_link)}>
-                {btnCancelText}
-              </span>
-            </CUButton>
-            <CUButton primary size={btnSize} onclick={handleConfirm}>
-              {btnConfirmText}
-            </CUButton>
+            <Button link onClick={handleCancel}>{btnCancelText}</Button>
+            <Button dark onClick={handleConfirm}>{btnConfirmText}</Button>
           </div>
         </div>
       </div>

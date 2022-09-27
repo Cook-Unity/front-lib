@@ -50,6 +50,13 @@
     background-color: $cookunity-black;
   }
 
+  &.link {
+    background: transparent;
+    color: $cookunity-black;
+    border: 0;
+    text-decoration: underline;
+  }
+
   &.red {
     color: $cookunity-red;
     border: none;
