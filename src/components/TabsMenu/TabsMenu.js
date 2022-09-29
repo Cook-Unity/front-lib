@@ -28,6 +28,7 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
               className={classnames(styles.item, {
                 [styles.scrolling]: isScrolling
               })}
+              data-testid="tab-item"
               onClick={() => onClickItem(tabItem)}
             >
               <img
@@ -38,6 +39,7 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
                 })}
               />
               <span
+                data-testid="span-item"
                 className={classnames(styles.name, {
                   [styles.selected]: isSelected(tabItem)
                 })}

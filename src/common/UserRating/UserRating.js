@@ -29,7 +29,7 @@ UserRating.propTypes = {
   userRating: PropTypes.number,
   text: PropTypes.string,
   alternativeText: PropTypes.string,
-  youRated: PropTypes.boolean
+  youRated: PropTypes.bool
 }
 
 UserRating.defaultProps = {

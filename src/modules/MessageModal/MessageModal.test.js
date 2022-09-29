@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {render} from '@testing-library/react'
 
-import props from './data.mock'
+import props from './__mock__'
 import MessageModal from './MessageModal'
 
 const defaultProps = {
@@ -28,6 +28,33 @@ describe('Message modal', () => {
       expect(renderResult.getByTestId('cu-button')).toHaveTextContent(
         defaultProps.buttonText
       )
+    })
+  })
+
+  describe('Props includes subtitle', () => {
+    it(`should render subtitle`, () => {
+      const subtitle = 'Th!5 !5 4 5u8T!t13'
+      const renderResult = render(
+        <div id="root">
+          <MessageModal {...defaultProps} subtitle={subtitle} />
+        </div>
+      )
+
+      expect(renderResult.getByTestId('subtitle')).toHaveTextContent(
+        subtitle.toString()
+      )
+    })
+  })
+
+  describe('Props does not include buttonText', () => {
+    it('should not render button', () => {
+      const renderResult = render(
+        <div id="root">
+          <MessageModal {...defaultProps} buttonText="" />
+        </div>
+      )
+
+      expect(renderResult.queryByTestId('cu-button')).not.toBeInTheDocument()
     })
   })
 })

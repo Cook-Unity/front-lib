@@ -1,26 +1,54 @@
 import * as React from 'react'
 import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
-import defaultPropsMock from './__mock__.json'
+import dataMock from './__mock__.json'
 import TabsMenu from './TabsMenu'
 
-const chefFirstname = defaultPropsMock.mealDetail.chefFirstname
-const chefLastname = defaultPropsMock.mealDetail.chefLastname
-
 const defaultProps = {
-  firstname: chefFirstname,
-  lastname: chefLastname,
-  img: defaultPropsMock.mealDetail.chefImageUrl
+  tabsItems: dataMock.all,
+  selectedTab: dataMock.all[0]
 }
 
 describe('TabsMenu component', () => {
-  describe('Checking chef name', () => {
-    it(`Check than ${defaultProps.chefFirstname} and  ${defaultProps.chefLastname} is contain in the component`, () => {
+  describe('When sending a tabItems prop', () => {
+    it('should render all the elements in the props', () => {
       const renderResult = render(<TabsMenu {...defaultProps} />)
 
-      expect(renderResult.getByTestId('chef-name')).toHaveTextContent(
-        `${defaultProps.firstname} ${defaultProps.lastname}`
+      const itemsToTest = renderResult.getAllByTestId('tab-item')
+      expect(itemsToTest).toHaveLength(dataMock.all.length)
+
+      itemsToTest.forEach((item, index) => {
+        const images = item.getElementsByTagName('img')
+        expect(item).toHaveTextContent(dataMock.all[index].name)
+        expect(images[0]).toHaveAttribute('src', dataMock.all[index].image)
+      })
+    })
+  })
+
+  describe('When clicking on a tab item', () => {
+    it('should call the OnClick callback', () => {
+      const clickMock = jest.fn()
+      const renderResult = render(
+        <TabsMenu {...defaultProps} handleOnClick={clickMock} />
       )
+
+      const items = renderResult.getAllByTestId('tab-item')
+
+      userEvent.click(items[0])
+      expect(clickMock).toHaveBeenCalled()
+    })
+  })
+
+  describe('When including the selectedTab prop', () => {
+    it('should set the item to selected', () => {
+      const index = 2
+      const renderResult = render(
+        <TabsMenu {...defaultProps} selectedTab={dataMock.all[index]} />
+      )
+
+      const items = renderResult.getAllByTestId('span-item')
+      expect(items[index]).toHaveClass('selected')
     })
   })
 })

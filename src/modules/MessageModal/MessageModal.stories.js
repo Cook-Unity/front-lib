@@ -2,7 +2,7 @@ import React from 'react'
 import MessageModal from '.'
 import MealImage from '../../common/MealImage'
 
-import props from './data.mock'
+import props from './__mock__'
 
 export default {
   title: 'MenuBy/MessageModal',

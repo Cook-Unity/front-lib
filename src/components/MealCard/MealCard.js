@@ -210,7 +210,7 @@ const MealCard = ({
 
         {!showWarning && showUserRating ? (
           <div className={styles.user_stars_container}>
-            <UserRating userRating="5" youRated />
+            <UserRating userRating={5} youRated />
           </div>
         ) : (
           showFeature && (
@@ -565,7 +565,7 @@ MealCard.defaultProps = {
   },
   showShareButton: false,
   showAddMealToCart: false,
-  handleAddMealToCart: null
+  handleAddMealToCart: defaultCallback
 }
 
 export default MealCard

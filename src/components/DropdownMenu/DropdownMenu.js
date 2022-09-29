@@ -20,6 +20,7 @@ const DropdownMenu = ({menuItems, handleOnClick, handleClose}) => {
         {menuItems.map(menuItem => (
           <li
             key={menuItem.id}
+            data-testid="menu-item"
             className={styles.item}
             onClick={() => onClickItem(menuItem)}
           >

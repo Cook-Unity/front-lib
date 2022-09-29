@@ -20,13 +20,17 @@ const MenuEmptyState = ({
       <div className={styles.imageContainer}>
         <img src={image} className={styles.imageEmpty} alt="Image" />
         <img
+          data-testid="favorite-img"
           src={images.favorites}
           alt="frown"
           className={isFavorite ? styles.isFavorite : styles.hide}
         />
       </div>
-      <div className={isTopRated ? styles.starsContainer : styles.hide}>
-        <UserRating userRating="5" youRated />
+      <div
+        data-testid="top-rated"
+        className={isTopRated ? styles.starsContainer : styles.hide}
+      >
+        <UserRating userRating={5} youRated />
       </div>
       <h2 data-testid="title">{title}</h2>
       <h4 data-testid="subtitle">{subtitle}</h4>
@@ -52,7 +56,7 @@ MenuEmptyState.propTypes = {
   subtitle: PropTypes.string,
   image: PropTypes.string,
   buttonText: PropTypes.string,
-  handleButtonClick: PropTypes.function,
+  handleButtonClick: PropTypes.func,
   isFavorite: PropTypes.bool,
   isTopRated: PropTypes.bool
 }
