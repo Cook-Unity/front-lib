@@ -46,8 +46,12 @@ const HPModal = ({
           <h3 className={classnames(styles.hp_title)}>{title}</h3>
           <div className={classnames(styles.hp_description)}>{description}</div>
           <div className={classnames(styles.hp_action)}>
-            <Button link onClick={handleCancel}>{btnCancelText}</Button>
-            <Button dark onClick={handleConfirm}>{btnConfirmText}</Button>
+            <Button link onClick={handleCancel}>
+              {btnCancelText}
+            </Button>
+            <Button dark onClick={handleConfirm}>
+              {btnConfirmText}
+            </Button>
           </div>
         </div>
       </div>
