@@ -80,6 +80,10 @@
       line-height: 44px;
     }
 
+    &_title_end {
+      color: $cookunity-primary-green;
+    }
+
     &_subtitle {
       font-family: 'Roboto';
       font-style: normal;
@@ -93,7 +97,6 @@
 
       @include mobile {
         width: 90%;
-        text-align: justify;
       }
     }
   }

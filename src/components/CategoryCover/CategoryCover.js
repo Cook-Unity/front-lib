@@ -6,7 +6,13 @@ import {getLoadingContainer} from './utils'
 import styles from './CategoryCover.module.scss'
 import images from '../../assets/images'
 
-const CategoryCover = ({title, subtitle, coverImagePath, isLoading}) => {
+const CategoryCover = ({
+  title,
+  titleEnd,
+  subtitle,
+  coverImagePath,
+  isLoading
+}) => {
   const [errorImage, setErrorImage] = useState(false)
 
   if (isLoading) {
@@ -29,7 +35,12 @@ const CategoryCover = ({title, subtitle, coverImagePath, isLoading}) => {
       </div>
 
       <div className={styles.category_cover__text}>
-        <div className={styles.category_cover__text_title}>{title}</div>
+        <div className={styles.category_cover__text_title}>
+          <span>{title}</span>
+          <span className={styles.category_cover__text_title_end}>
+            {titleEnd}
+          </span>
+        </div>
         <div className={styles.category_cover__text_subtitle}>{subtitle}</div>
       </div>
     </div>
@@ -38,6 +49,7 @@ const CategoryCover = ({title, subtitle, coverImagePath, isLoading}) => {
 
 CategoryCover.propTypes = {
   title: string,
+  titleEnd: string,
   subtitle: string,
   coverImagePath: string,
   isLoading: bool
@@ -45,6 +57,7 @@ CategoryCover.propTypes = {
 
 CategoryCover.defaultProps = {
   title: '',
+  titleEnd: '',
   subtitle: '',
   coverImagePath: '',
   isLoading: false
