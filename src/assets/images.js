@@ -48,6 +48,8 @@ export default {
   face3: imageUrl('face3.png'),
   face4: imageUrl('face4.png'),
   face5: imageUrl('face5.png'),
+  arrowRightBlack: imageUrl('arrow-circle-right-black.svg'),
+  arrowLeftBlack: imageUrl('arrow-circle-left-black.png'),
   favorites: imageUrl('favorites.svg'),
   menu: {
     all: {

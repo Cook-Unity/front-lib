@@ -150,6 +150,7 @@
           display: -webkit-box;
           overflow: auto;
           overflow-x: hidden;
+          margin-top: 8px;
 
           @include mobile {
             font-weight: normal;

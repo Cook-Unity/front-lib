@@ -8,6 +8,7 @@ const Button = props => {
   const {
     children,
     dark,
+    link,
     red,
     transparent,
     disabled,
@@ -27,6 +28,7 @@ const Button = props => {
       disabled={_disabled_}
       className={classnames(styles.cookunity__new_button, {
         [styles.dark]: dark ? styles.dark : null,
+        [styles.link]: link ? styles.link : null,
         [styles.red]: red ? styles.red : null,
         [styles.transparent]: transparent ? styles.transparent : null,
         [styles.disabled]: _disabled_ ? styles.disabled : null,

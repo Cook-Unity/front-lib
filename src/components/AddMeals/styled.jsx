@@ -22,7 +22,7 @@ Wrapper.displayName = 'Wrapper'
 export const Header = styled.div`
   display: flex;
   margin-bottom: 38px;
-  align-items: end;
+  align-items: center;
 `
 Header.displayName = 'Header'
 
@@ -43,7 +43,8 @@ export const Photo = styled.img.attrs(({src}) => {
   box-shadow: 0px 0px 6px rgba(35, 31, 32, 0.1), 0px 2px 6px rgba(35, 31, 32, 0.05);
   border-radius: 12px;
   height: 73px;
-  width: 66px;
+  width: 30%;
+  max-width: 100px;
 `
 Photo.displayName = 'Photo'
 
