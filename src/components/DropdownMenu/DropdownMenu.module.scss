@@ -21,6 +21,18 @@
     margin-block-end: 0;
     width: 315px;
     background-color: white;
+    box-shadow: 0px 0px 12px rgba(35, 31, 32, 0.1), 0px 12px 12px rgba(35, 31, 32, 0.07);
+    border-radius: 8px;
+
+    @include mobile {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      box-shadow: initial;
+      border-radius: 20px 20px 0px 0px;
+      padding-top: 24px;
+    }
 
     .item {
       display: inline-flex;
@@ -68,15 +80,6 @@
       @include mobile {
         display: block;
       }
-    }
-
-    @include mobile {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      border-radius: 20px 20px 0px 0px;
-      padding-top: 24px;
     }
   }
 }

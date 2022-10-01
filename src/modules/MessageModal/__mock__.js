@@ -5,6 +5,5 @@ export default {
   handleButtonClick: () => {
     console.log('Button Click')
   },
-  image:
-    'https://d1ureao5dcqpo4.cloudfront.net/media/Ingredients/323743_1100.jpg'
+  image: 'https://d1ureao5dcqpo4.cloudfront.net/media/menu/newMenu-web.png'
 }

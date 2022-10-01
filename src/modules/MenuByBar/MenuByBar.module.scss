@@ -1,0 +1,41 @@
+@import '../../assets/styles/scss/mixins';
+@import '../../assets/styles/scss/variables';
+
+.menuByContainer {
+  width: 100%;
+
+  .menuBar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+
+    @include mobile {
+      position: initial;
+    }
+
+    .primaryText {
+      color: $cookunity-black;
+    }
+
+    .secondaryText {
+      color: $cookunity-secondary-dark-green;
+      margin-left: 3px;
+      cursor: pointer;
+
+      img {
+        width: 10px;
+        margin-left: 5px;
+      }
+
+      .arrowUp {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

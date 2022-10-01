@@ -1,18 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import styles from './TabsMenu.module.scss'
 
 const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
-  const [selectedItem, setSelectedItem] = useState(selectedTab)
-
-  const onClickItem = item => {
-    setSelectedItem(item)
-    handleOnClick(item)
-  }
-
-  const isSelected = item => item.id === selectedItem.id
+  const isSelected = item => item.id === selectedTab.id
 
   return (
     <div>
@@ -29,7 +22,7 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
                 [styles.scrolling]: isScrolling
               })}
               data-testid="tab-item"
-              onClick={() => onClickItem(tabItem)}
+              onClick={() => handleOnClick(tabItem)}
             >
               <img
                 src={tabItem.image}
