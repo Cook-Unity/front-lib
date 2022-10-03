@@ -17,6 +17,7 @@ export default {
   close: imageUrl('back_arrow.png'),
   closeMobile: imageUrl('back_arrow_mobile.png'),
   arrowRight: imageUrl('arrow-right-white.png'),
+  greenArrow: imageUrl('green-arrow.png'),
   share: imageUrl('share.png'),
   copyLink: imageUrl('copy-links.png'),
   facebook: imageUrl('facebook.png'),
@@ -48,5 +49,14 @@ export default {
   face4: imageUrl('face4.png'),
   face5: imageUrl('face5.png'),
   arrowRightBlack: imageUrl('arrow-circle-right-black.svg'),
-  arrowLeftBlack: imageUrl('arrow-circle-left-black.png')
+  arrowLeftBlack: imageUrl('arrow-circle-left-black.png'),
+  favorites: imageUrl('favorites.svg'),
+  menu: {
+    all: {
+      all: imageUrl('menu/all/all.svg'),
+      favorites: imageUrl('menu/all/favorites.svg'),
+      topRated: imageUrl('menu/all/toprated.svg'),
+      youveTried: imageUrl('menu/all/youvetried.svg')
+    }
+  }
 }

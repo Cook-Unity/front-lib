@@ -14,3 +14,9 @@ export const Default = Template.bind({})
 Default.args = {
   userRating: mealDetail.user_rating
 }
+
+export const YouRated = Template.bind({})
+YouRated.args = {
+  userRating: mealDetail.user_rating,
+  youRated: true
+}

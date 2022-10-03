@@ -421,12 +421,7 @@
   }
 
   .user_stars_container {
-    padding: 5px 0px;
     position: absolute;
-    width: 106px;
-    height: 26px;
-    background: #ffe06c;
-    box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.1);
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -434,19 +429,6 @@
     box-sizing: border-box;
     top: 10px;
     margin-left: 10px;
-
-    .user_star {
-      margin-left: 3.19px;
-    }
-
-    .user_rating {
-      font-family: Gilroy;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #231f20;
-    }
   }
 
   .fade_out {

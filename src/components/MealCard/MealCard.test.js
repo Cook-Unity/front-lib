@@ -179,13 +179,14 @@ describe('MealCard component', () => {
     expect(screen.queryByText(alertText)).not.toBeInTheDocument()
     userEvent.click(screen.getByAltText('alert'))
     expect(screen.getByText(alertText)).toBeVisible()
-    expect(screen.queryByText('you rated 5')).not.toBeInTheDocument()
+    expect(screen.queryByText('YOU RATED')).not.toBeInTheDocument()
     expect(screen.queryByText('CHRISTMAS')).not.toBeInTheDocument()
   })
 
   it('With User Rating', () => {
     render(<MealCard meal={with_user_rating} />)
-    expect(screen.getByText('you rated 5')).toBeVisible()
+    expect(screen.getByText('YOU RATED')).toBeVisible()
+    expect(screen.getByTestId('user-rating')).toHaveTextContent('5')
   })
 
   it('With Celebrity chef features', () => {

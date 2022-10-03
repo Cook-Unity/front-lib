@@ -16,6 +16,18 @@ describe('UserRating component', () => {
       expect(renderResult.getByTestId('user-rating')).toHaveTextContent(
         defaultProps.userRating.toString()
       )
+      expect(renderResult.getByText('YOUR RATING')).toBeVisible()
+    })
+  })
+
+  describe('If youRated flag is sent', () => {
+    it(`Check than the component includes the "YOU RATED" text`, () => {
+      const renderResult = render(<UserRating {...defaultProps} youRated />)
+
+      expect(renderResult.getByTestId('user-rating')).toHaveTextContent(
+        defaultProps.userRating.toString()
+      )
+      expect(renderResult.getByText('YOU RATED')).toBeVisible()
     })
   })
 })
