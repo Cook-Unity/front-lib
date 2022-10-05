@@ -36,7 +36,7 @@ const MealCard = props => {
   const [showActions, setShowActions] = useState(false)
   const [showWarnings, setShowWarnings] = useState(false)
 
-  const MEAL_CATEGORY_ID = 0
+  const MEAL_PLAN_CATEGORY_ID = 3
 
   const handleAddItem = () => {
     props.onAddTracking(props.meal, props.meal.quantity, props.moduleName)
@@ -118,12 +118,11 @@ const MealCard = props => {
             {props.meal.premium_fee > 0 && (
               <ExtraPrice> + ${props.meal.premium_fee}</ExtraPrice>
             )}
-            {props.meal.menu_category_id >= 0 &&
-              props.meal.menu_category_id !== MEAL_CATEGORY_ID && (
-                <ExtraPrice> ${props.meal.price}</ExtraPrice>
-              )}
+            {props.meal.category_id !== MEAL_PLAN_CATEGORY_ID && (
+              <ExtraPrice> ${props.meal.price}</ExtraPrice>
+            )}
             {showActions && (
-              <MealCartActionsWrapper className='swiper-no-swiping'>
+              <MealCartActionsWrapper className="swiper-no-swiping">
                 <MealCartActionRemove onClick={() => handleRemoveItem()}>
                   <ImgMinus src={images.btnBlackMinus} />
                 </MealCartActionRemove>
