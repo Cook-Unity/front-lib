@@ -14,7 +14,7 @@
     overflow: auto;
     white-space: nowrap;
     overflow-x: scroll;
-    height: 115px;
+    height: max-content;
 
     &.scrolling{
       height: 81px;

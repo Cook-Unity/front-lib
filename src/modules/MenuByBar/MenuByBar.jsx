@@ -22,12 +22,13 @@ const MenuByBar = ({
     setMenuOpen(false)
     setMenuSelected(item)
     setTabSelected(item.tabs[0])
+    handleTabClick(item.id, item.name, item.tabs[0])
   }
 
   const handleTabSelected = item => {
     if (item.id !== tabSelected.id) {
       setTabSelected(item)
-      handleTabClick(item)
+      handleTabClick(menuSelected.id, menuSelected.name, item)
     }
   }
 
