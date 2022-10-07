@@ -3,7 +3,7 @@
 
 .tabsContainer {
   overflow: hidden;
-  height: 105px;
+  height: max-content;
 
   .tabs {
     padding-inline-start: 0;
@@ -11,9 +11,8 @@
     margin-block-end: 0;
     width: 100%;
     background-color: white;
-    overflow: auto;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow: auto;
     height: max-content;
 
     &.scrolling{
