@@ -19,8 +19,35 @@ Default.args = {
   isOpen: true,
   btnConfirmText: 'Set preferences',
   btnCancelText: 'Continue Ordering',
-  btnSize: 'small',
   handleClose: () => console.log('closed!'),
   handleCancel: () => console.log('canceled!'),
-  handleClick: () => console.log('hi!')
+  handleConfirm: () => console.log('hi!')
+}
+
+export const CheckRecommendation = Template.bind({})
+CheckRecommendation.args = {
+  title: 'You got your first recommendation!',
+  image:
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/preferences_modal.png',
+  description:
+    'Brief explain about how the reco & Autopilot works, and reforce the idea of setting prefrences to recieve a reco focus on your needs.',
+  isOpen: true,
+  btnConfirmText: 'Check Recommendation',
+  handleClose: () => console.log('closed!'),
+  handleConfirm: () => console.log('hi!')
+}
+
+export const Flexibility = Template.bind({})
+Flexibility.args = {
+  title: 'Choose your plan',
+  image:
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/preferences_modal.png',
+  description:
+    'Learn about our plans and find the one that best suits your needs, without having to skip or pause. You can choose between all our plans and between 350 meals.',
+  isOpen: true,
+  btnConfirmText: 'Change Plan',
+  btnCancelText: 'Continue Ordering',
+  handleClose: () => console.log('closed!'),
+  handleCancel: () => console.log('canceled!'),
+  handleConfirm: () => console.log('hi!')
 }

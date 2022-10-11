@@ -1,6 +1,6 @@
 {
   "name": "front-lib",
-  "version": "1.14.1",
+  "version": "1.14.3",
   "description": "CookUnity React Library",
   "author": "Luis Giribone",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "npm run build",
     "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
