@@ -15,8 +15,7 @@ const HPModal = ({
   title,
   description,
   btnConfirmText,
-  btnCancelText,
-  btnSize
+  btnCancelText
 }) => {
   const customStyles = {
     content: {
@@ -46,9 +45,11 @@ const HPModal = ({
           <h3 className={classnames(styles.hp_title)}>{title}</h3>
           <div className={classnames(styles.hp_description)}>{description}</div>
           <div className={classnames(styles.hp_action)}>
-            <Button link onClick={handleCancel}>
-              {btnCancelText}
-            </Button>
+            {btnCancelText && (
+              <Button link onClick={handleCancel}>
+                {btnCancelText}
+              </Button>
+            )}
             <Button dark onClick={handleConfirm}>
               {btnConfirmText}
             </Button>
@@ -59,17 +60,22 @@ const HPModal = ({
   )
 }
 
+HPModal.default = {
+  handleCancel: null,
+  btnCancelText: ''
+}
+
 HPModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  handleCancel: PropTypes.func.isRequired,
+  handleCancel: PropTypes.func,
   handleConfirm: PropTypes.func.isRequired,
   hpModalContainerId: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   btnConfirmText: PropTypes.string.isRequired,
-  btnCancelText: PropTypes.string.isRequired,
+  btnCancelText: PropTypes.string,
   btnSize: PropTypes.oneOf(['small', 'medium', 'large']).isRequired
 }
 
