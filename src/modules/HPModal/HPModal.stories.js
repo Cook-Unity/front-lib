@@ -21,7 +21,7 @@ Default.args = {
   btnCancelText: 'Continue Ordering',
   handleClose: () => console.log('closed!'),
   handleCancel: () => console.log('canceled!'),
-  handleClick: () => console.log('hi!')
+  handleConfirm: () => console.log('hi!')
 }
 
 export const CheckRecommendation = Template.bind({})
@@ -34,6 +34,5 @@ CheckRecommendation.args = {
   isOpen: true,
   btnConfirmText: 'Check Recommendation',
   handleClose: () => console.log('closed!'),
-  handleCancel: () => console.log('canceled!'),
-  handleClick: () => console.log('hi!')
+  handleConfirm: () => console.log('hi!')
 }

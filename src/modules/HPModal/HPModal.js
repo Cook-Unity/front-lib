@@ -62,7 +62,8 @@ const HPModal = ({
 
 HPModal.default = {
   handleCancel: null,
-  btnCancelText: ''
+  btnCancelText: null,
+  hpModalContainerId: 'root'
 }
 
 HPModal.propTypes = {
@@ -70,13 +71,12 @@ HPModal.propTypes = {
   handleClose: PropTypes.func.isRequired,
   handleCancel: PropTypes.func,
   handleConfirm: PropTypes.func.isRequired,
-  hpModalContainerId: PropTypes.string.isRequired,
+  hpModalContainerId: PropTypes.string,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   btnConfirmText: PropTypes.string.isRequired,
-  btnCancelText: PropTypes.string,
-  btnSize: PropTypes.oneOf(['small', 'medium', 'large']).isRequired
+  btnCancelText: PropTypes.string
 }
 
 export default HPModal
