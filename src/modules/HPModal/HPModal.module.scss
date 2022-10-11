@@ -57,10 +57,8 @@
         }
         .hp_action {
             margin-bottom: 39px;
-            display: grid;
-            grid-template-columns: 50% 50%;
-            justify-items: center;
-    
+            display: block;
+            text-align: center;
             .hp_action_link {
                 font-family: Gilroy;
                 font-size: 16px;
@@ -69,7 +67,6 @@
                 letter-spacing: 0px;
                 text-align: center;
                 text-decoration-line: underline;
-    
             }
         }
     }

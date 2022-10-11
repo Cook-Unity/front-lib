@@ -19,7 +19,20 @@ Default.args = {
   isOpen: true,
   btnConfirmText: 'Set preferences',
   btnCancelText: 'Continue Ordering',
-  btnSize: 'small',
+  handleClose: () => console.log('closed!'),
+  handleCancel: () => console.log('canceled!'),
+  handleClick: () => console.log('hi!')
+}
+
+export const CheckRecommendation = Template.bind({})
+CheckRecommendation.args = {
+  title: 'You got your first recommendation!',
+  image:
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/preferences_modal.png',
+  description:
+    'Brief explain about how the reco & Autopilot works, and reforce the idea of setting prefrences to recieve a reco focus on your needs.',
+  isOpen: true,
+  btnConfirmText: 'Check Recommendation',
   handleClose: () => console.log('closed!'),
   handleCancel: () => console.log('canceled!'),
   handleClick: () => console.log('hi!')
