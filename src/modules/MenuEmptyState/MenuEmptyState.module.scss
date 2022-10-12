@@ -5,12 +5,8 @@
   display: grid;
   text-align: center;
   margin: 0;
-  position: absolute;
-  top: 30%;
   right: 0;
   left: 0;
-  -ms-transform: translateY(-30%);
-  transform: translateY(-30%);
 
   .imageContainer {
     -webkit-mask-image: linear-gradient(black 50%, transparent 90%);
