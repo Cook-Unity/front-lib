@@ -5,7 +5,7 @@
     grid-template-columns: 30% 70%;
     @media screen and (max-width: 768px) {
         grid-template-columns: 100%;
-        grid-template-rows: 100% 20%;
+        grid-template-rows: 390px auto;
     }
 
     .hp_image {
@@ -22,43 +22,43 @@
     }
 
     .hp_content {
+        padding: 71px 30px 47px;
         @media screen and (max-width: 768px) {
             margin-top: -23px;
             background-color: #FFF;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
+            padding: 36px 16px;
         }
 
         .hp_title {
             text-align: center;
-            margin-top: 71px;
             font-family: Gilroy;
             font-weight: 800;
             font-size: 28px;
             line-height: 36px;
+            margin: 0;
             @media screen and (max-width: 768px) {
-                margin-top: 30px;
                 margin-bottom: 0px;
             }
         }
         .hp_description {
-            max-width: 80%;
             margin: 53px auto 58px;
             font-family: Roboto;
             line-height: 24px;
             font-weight: 400;
             text-align: center;
+            letter-spacing: -0.3px;
 
             @media screen and (max-width: 768px) {
-                max-width: 90%;
-                margin: 16px auto 20px;
+                margin: 16px 0;
                 font-size: 16px;
             }
         }
         .hp_action {
-            margin-bottom: 39px;
-            display: block;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+
             .hp_action_link {
                 font-family: Gilroy;
                 font-size: 16px;

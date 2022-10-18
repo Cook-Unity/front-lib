@@ -46,9 +46,7 @@ const HPModal = ({
           <div className={classnames(styles.hp_description)}>{description}</div>
           <div className={classnames(styles.hp_action)}>
             {btnCancelText && (
-              <Button link onClick={handleCancel}>
-                {btnCancelText}
-              </Button>
+              <Button onClick={handleCancel}>{btnCancelText}</Button>
             )}
             <Button dark onClick={handleConfirm}>
               {btnConfirmText}

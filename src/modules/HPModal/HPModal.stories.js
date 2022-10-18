@@ -13,9 +13,9 @@ export const Default = Template.bind({})
 Default.args = {
   title: 'Let’s get personal.',
   image:
-    'https://cu-product-media.s3.amazonaws.com/media/happy-path/preferences_modal.png',
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/set-preferences-modal-mobile.png',
   description:
-    'Setting your preferenecs helps us personalize your menus. Let us know what you like — and don’t — and we’ll make sure the right meals make it to your table. ',
+    'Set your preferences so we know what you love — and what you don’t. We’ll use your info to offer recommendations based on the foods you actually want.',
   isOpen: true,
   btnConfirmText: 'Set preferences',
   btnCancelText: 'Continue Ordering',
@@ -39,13 +39,28 @@ CheckRecommendation.args = {
 
 export const Flexibility = Template.bind({})
 Flexibility.args = {
-  title: 'Choose your plan',
+  title: 'Flexible plans, no commitments.',
   image:
-    'https://cu-product-media.s3.amazonaws.com/media/happy-path/preferences_modal.png',
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/flexibility-modal-mobile.png',
   description:
-    'Learn about our plans and find the one that best suits your needs, without having to skip or pause. You can choose between all our plans and between 350 meals.',
+    'Our weekly plans are flexible and easy to change. Just head to your account settings to make changes anytime you need to.',
   isOpen: true,
-  btnConfirmText: 'Change Plan',
+  btnConfirmText: 'My account ',
+  btnCancelText: 'Continue Ordering',
+  handleClose: () => console.log('closed!'),
+  handleCancel: () => console.log('canceled!'),
+  handleConfirm: () => console.log('hi!')
+}
+
+export const Rating = Template.bind({})
+Rating.args = {
+  title: 'How did everything taste?',
+  image:
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/rating-modal-mobile.png',
+  description:
+    'Our chefs rely on your feedback to make their meals exceptional. Go ahead and tell them how they did. They’re chefs — they can take the heat.',
+  isOpen: true,
+  btnConfirmText: 'Rate your meals',
   btnCancelText: 'Continue Ordering',
   handleClose: () => console.log('closed!'),
   handleCancel: () => console.log('canceled!'),
