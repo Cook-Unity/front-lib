@@ -43,7 +43,7 @@
             }
         }
         .hp_description {
-            margin: 53px auto 58px;
+            margin: 21px auto 66px;
             font-family: Roboto;
             line-height: 24px;
             font-weight: 400;
@@ -51,14 +51,16 @@
             letter-spacing: -0.3px;
 
             @media screen and (max-width: 768px) {
-                margin: 16px 0;
+                margin: 28px 0 42px;
                 font-size: 16px;
             }
         }
         .hp_action {
             display: flex;
-            justify-content: space-between;
-
+            justify-content: center;
+            & > :last-child {
+                margin-left: 21px;
+            }
             .hp_action_link {
                 font-family: Gilroy;
                 font-size: 16px;
