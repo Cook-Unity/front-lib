@@ -38,6 +38,7 @@
             font-size: 28px;
             line-height: 36px;
             margin: 0;
+            white-space: pre-wrap;
             @media screen and (max-width: 768px) {
                 margin-bottom: 0px;
             }
@@ -58,8 +59,8 @@
         .hp_action {
             display: flex;
             justify-content: center;
-            & > :last-child {
-                margin-left: 21px;
+            & > :not(:last-child) {
+                margin-right: 21px;
             }
             .hp_action_link {
                 font-family: Gilroy;
