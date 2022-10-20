@@ -28,7 +28,7 @@ export const CheckRecommendation = Template.bind({})
 CheckRecommendation.args = {
   title: 'We filled your cart for you',
   image:
-    'https://cu-product-media.s3.amazonaws.com/media/happy-path/preferences_modal.png',
+    'https://cu-product-media.s3.amazonaws.com/media/happy-path/autopilot-modal-desktop.png',
   description:
     'Your ordering window is closing soon, so we filled your cart for you. You can still edit and confirm your order until <time>. Happy eating!',
   isOpen: true,
