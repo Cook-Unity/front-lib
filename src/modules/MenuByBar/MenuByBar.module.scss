@@ -19,8 +19,22 @@
       position: initial;
     }
 
+    &.scrolling {
+      width: 45px;
+      height: 50px;
+      top: 10px;
+      float: left;
+      display: inline-flex;
+      border-right: 1px solid #DDDDDD;
+      justify-content: center;
+    }
+
     .primaryText {
       color: $cookunity-black;
+
+      &.scrolling {
+        display: none;
+      }
     }
 
     .secondaryText {
@@ -31,11 +45,21 @@
       img {
         width: 10px;
         margin-left: 5px;
+
+        &.scrolling {
+          margin-left: 0;
+        }
       }
 
       .arrowUp {
         transform: rotate(180deg);
       }
+    }
+  }
+
+  .tabsContainer {
+    &.scrolling {
+      margin-left: 51px;
     }
   }
 }
