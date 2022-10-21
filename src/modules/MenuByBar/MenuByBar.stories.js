@@ -18,3 +18,9 @@ export const Default = Template.bind({})
 Default.args = {
   ...data
 }
+
+export const Scrolling = Template.bind({})
+Scrolling.args = {
+  ...data,
+  isScrolling: true
+}

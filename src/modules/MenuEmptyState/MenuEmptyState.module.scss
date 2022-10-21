@@ -9,6 +9,7 @@
   left: 0;
 
   .imageContainer {
+    position: relative;
     -webkit-mask-image: linear-gradient(black 50%, transparent 90%);
     mask-image: linear-gradient(black 50%, transparent 90%);
 
@@ -21,7 +22,7 @@
 
     .isFavorite {
       position: absolute;
-      top: 30px;
+      top: 15px;
       left: 50%;
       padding-left: 100px;
     }
@@ -29,7 +30,7 @@
 
   .starsContainer {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 50%;
     padding-right: 14px;
   }

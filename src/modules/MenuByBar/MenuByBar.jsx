@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import DropdownMenu from '../../components/DropdownMenu'
 import TabsMenu from '../../components/TabsMenu'
@@ -12,6 +13,7 @@ const MenuByBar = ({
   menuTextSecondary,
   menuItems,
   isOpen,
+  isScrolling,
   handleTabClick
 }) => {
   const [isMenuOpen, setMenuOpen] = useState(isOpen)
@@ -32,23 +34,41 @@ const MenuByBar = ({
     }
   }
 
+  const getMenuText = () => {
+    return `${menuTextSecondary} ${menuSelected.name}`
+  }
+
   return (
     <div className={styles.menuByContainer}>
-      <div className={styles.menuBar}>
-        <span className={styles.primaryText}>{menuText}</span>
+      <div
+        className={classnames(styles.menuBar, {
+          [styles.scrolling]: isScrolling
+        })}
+      >
+        <span
+          className={classnames(styles.primaryText, {
+            [styles.scrolling]: isScrolling
+          })}
+        >
+          {menuText}
+        </span>
         <span
           className={styles.secondaryText}
           onClick={() => {
             setMenuOpen(!isMenuOpen)
           }}
         >
-          {menuTextSecondary} {menuSelected.name}
+          {isScrolling ? '' : getMenuText()}
           <img
             src={images.greenArrow}
             alt="menu-icon"
-            className={isMenuOpen ? styles.arrowUp : styles.arrowDown}
+            className={classnames({
+              [styles.arrowUp]: isMenuOpen,
+              [styles.scrolling]: isScrolling
+            })}
           />
         </span>
+
         {isMenuOpen && (
           <DropdownMenu
             menuItems={menuItems}
@@ -60,11 +80,18 @@ const MenuByBar = ({
         )}
       </div>
 
-      <TabsMenu
-        selectedTab={tabSelected}
-        tabsItems={menuSelected.tabs}
-        handleOnClick={handleTabSelected}
-      />
+      <div
+        className={classnames(styles.tabsContainer, {
+          [styles.scrolling]: isScrolling
+        })}
+      >
+        <TabsMenu
+          selectedTab={tabSelected}
+          tabsItems={menuSelected.tabs}
+          handleOnClick={handleTabSelected}
+          isScrolling={isScrolling}
+        />
+      </div>
     </div>
   )
 }
@@ -74,6 +101,7 @@ MenuByBar.propTypes = {
   menuTextSecondary: PropTypes.string,
   isOpen: PropTypes.bool,
   menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isScrolling: PropTypes.bool,
   handleTabClick: PropTypes.func
 }
 
@@ -88,6 +116,7 @@ MenuByBar.defaultProps = {
       image: ''
     }
   ],
+  isScrolling: false,
   handleTabClick: () => {}
 }
 
