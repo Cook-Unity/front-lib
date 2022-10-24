@@ -58,5 +58,6 @@ export default {
       topRated: imageUrl('menu/all/toprated.svg'),
       youveTried: imageUrl('menu/all/youvetried.svg')
     }
-  }
+  },
+  infoBlack: imageUrl('info-black.png')
 }

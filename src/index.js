@@ -1,5 +1,6 @@
 export {default as Button} from './common/Buttons'
 export {default as MealCard} from './components/MealCard'
+export {default as MealCardExperiment} from './components/MealCardExperiment'
 export {default as MealDisclaimer} from './components/MealDisclaimer'
 export {default as ProductPage} from './modules/ProductPage'
 export {default as ChefPage} from './modules/ChefPage'
