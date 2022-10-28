@@ -3,7 +3,12 @@
 
 .tabsContainer {
   overflow: hidden;
-  height: max-content;
+  height: 110px;
+
+  &.scrolling{
+    height: 77px;
+  }
+
 
   .tabs {
     padding-inline-start: 0;
@@ -13,20 +18,29 @@
     background-color: white;
     white-space: nowrap;
     overflow: auto;
-    height: max-content;
+    height: 120px;
 
     &.scrolling{
-      height: 77px;
+      height: 90px;
     }
 
     .item {
       display: inline-grid;
       margin: 16px 16px 0 16px;
-      padding-bottom: 2px;
+      padding: 5px 5px 10px 5px;
       cursor: pointer;
 
+      &:hover{
+        background-color: #f5f5f5;
+      }
+
       &.scrolling{
-        margin: 8px 16px 0 16px;
+        margin: 4px 16px 0 16px;
+        padding: 2px 2px 5px 2px;
+      }
+
+      &.selected {
+        border-bottom: 2px solid $cookunity-black;
       }
 
       .name {
@@ -36,11 +50,6 @@
         font-size: 12px;
         line-height: 15px;
         text-align: center;
-
-        &.selected {
-          padding-bottom: 8px;
-          border-bottom: 2px solid $cookunity-black;
-        }
       }
 
       .image {
@@ -62,7 +71,7 @@
 
 .divider {
   border: 1px solid $cookunity-gray-3;
-  margin-top: -4px;
+  margin-top: -2px;
 
   &.scrolling{
     display: none;

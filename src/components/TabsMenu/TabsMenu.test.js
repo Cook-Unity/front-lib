@@ -47,7 +47,7 @@ describe('TabsMenu component', () => {
         <TabsMenu {...defaultProps} selectedTab={dataMock.all[index]} />
       )
 
-      const items = renderResult.getAllByTestId('span-item')
+      const items = renderResult.getAllByTestId('tab-item')
       expect(items[index]).toHaveClass('selected')
     })
   })

@@ -46,29 +46,31 @@ const MenuByBar = ({
           [styles.scrolling]: isScrolling
         })}
       >
-        <span
-          className={classnames(styles.primaryText, {
-            [styles.scrolling]: isScrolling
-          })}
-        >
-          {menuText}
-        </span>
-        <span
-          className={styles.secondaryText}
-          onClick={() => {
-            setMenuOpen(!isMenuOpen)
-          }}
-        >
-          {isScrolling ? '' : getMenuText()}
-          <img
-            src={images.greenArrow}
-            alt="menu-icon"
-            className={classnames({
-              [styles.arrowUp]: isMenuOpen,
+        <div className={styles.menuBarText}>
+          <span
+            className={classnames(styles.primaryText, {
               [styles.scrolling]: isScrolling
             })}
-          />
-        </span>
+          >
+            {menuText}
+          </span>
+          <span
+            className={styles.secondaryText}
+            onClick={() => {
+              setMenuOpen(!isMenuOpen)
+            }}
+          >
+            {isScrolling ? '' : getMenuText()}
+            <img
+              src={images.greenArrow}
+              alt="menu-icon"
+              className={classnames({
+                [styles.arrowUp]: isMenuOpen,
+                [styles.scrolling]: isScrolling
+              })}
+            />
+          </span>
+        </div>
 
         {isMenuOpen && (
           <DropdownMenu
