@@ -9,28 +9,29 @@ import images from '../../assets/images'
 import styles from './MenuByBar.module.scss'
 
 const MenuByBar = ({
-  menuText,
-  menuTextSecondary,
-  menuItems,
   isOpen,
+  menuItems,
+  menuSelected,
+  tabSelected,
+  setMenuSelected,
+  setTabSelected,
   isScrolling,
-  handleTabClick
+  menuText,
+  menuTextSecondary
 }) => {
   const [isMenuOpen, setMenuOpen] = useState(isOpen)
-  const [menuSelected, setMenuSelected] = useState(menuItems[0])
-  const [tabSelected, setTabSelected] = useState(menuItems[0].tabs[0])
 
   const handleMenuSelected = item => {
     setMenuOpen(false)
-    setMenuSelected(item)
-    setTabSelected(item.tabs[0])
-    handleTabClick(item.id, item.name, item.tabs[0])
+    if (item.id !== menuSelected.id) {
+      setMenuSelected(item.id, item.name, item.tabs[0])
+    }
   }
 
-  const handleTabSelected = item => {
-    if (item.id !== tabSelected.id) {
-      setTabSelected(item)
-      handleTabClick(menuSelected.id, menuSelected.name, item)
+  const handleTabSelected = tab => {
+    setMenuOpen(false)
+    if (tab.id !== tabSelected.id) {
+      setTabSelected(tab)
     }
   }
 
@@ -45,29 +46,31 @@ const MenuByBar = ({
           [styles.scrolling]: isScrolling
         })}
       >
-        <span
-          className={classnames(styles.primaryText, {
-            [styles.scrolling]: isScrolling
-          })}
-        >
-          {menuText}
-        </span>
-        <span
-          className={styles.secondaryText}
-          onClick={() => {
-            setMenuOpen(!isMenuOpen)
-          }}
-        >
-          {isScrolling ? '' : getMenuText()}
-          <img
-            src={images.greenArrow}
-            alt="menu-icon"
-            className={classnames({
-              [styles.arrowUp]: isMenuOpen,
+        <div className={styles.menuBarText}>
+          <span
+            className={classnames(styles.primaryText, {
               [styles.scrolling]: isScrolling
             })}
-          />
-        </span>
+          >
+            {menuText}
+          </span>
+          <span
+            className={styles.secondaryText}
+            onClick={() => {
+              setMenuOpen(!isMenuOpen)
+            }}
+          >
+            {isScrolling ? '' : getMenuText()}
+            <img
+              src={images.greenArrow}
+              alt="menu-icon"
+              className={classnames({
+                [styles.arrowUp]: isMenuOpen,
+                [styles.scrolling]: isScrolling
+              })}
+            />
+          </span>
+        </div>
 
         {isMenuOpen && (
           <DropdownMenu
@@ -96,28 +99,44 @@ const MenuByBar = ({
   )
 }
 
+const defaultMenuItems = [
+  {
+    id: 0,
+    name: 'All',
+    image: '',
+    tabs: [
+      {
+        id: 0,
+        name: 'All',
+        image:
+          'https://cu-product-media.s3.amazonaws.com/media/menu/all/all.svg'
+      }
+    ]
+  }
+]
+
 MenuByBar.propTypes = {
-  menuText: PropTypes.string,
-  menuTextSecondary: PropTypes.string,
   isOpen: PropTypes.bool,
   menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  menuSelected: PropTypes.object.isRequired,
+  tabSelected: PropTypes.object.isRequired,
+  setMenuSelected: PropTypes.func,
+  setTabSelected: PropTypes.func,
   isScrolling: PropTypes.bool,
-  handleTabClick: PropTypes.func
+  menuText: PropTypes.string,
+  menuTextSecondary: PropTypes.string
 }
 
 MenuByBar.defaultProps = {
-  menuText: 'Show menu',
-  menuTextSecondary: 'by',
   isOpen: false,
-  menuItems: [
-    {
-      id: 0,
-      name: 'All',
-      image: ''
-    }
-  ],
+  menuItems: defaultMenuItems,
+  menuSelected: defaultMenuItems[0],
+  tabSelected: defaultMenuItems[0].tabs[0],
+  setMenuSelected: () => {},
+  setTabSelected: () => {},
   isScrolling: false,
-  handleTabClick: () => {}
+  menuText: 'Show menu',
+  menuTextSecondary: 'by'
 }
 
 export default MenuByBar

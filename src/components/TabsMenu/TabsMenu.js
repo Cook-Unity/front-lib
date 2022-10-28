@@ -9,7 +9,11 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
 
   return (
     <div>
-      <div className={styles.tabsContainer}>
+      <div
+        className={classnames(styles.tabsContainer, {
+          [styles.scrolling]: isScrolling
+        })}
+      >
         <ul
           className={classnames(styles.tabs, {
             [styles.scrolling]: isScrolling
@@ -19,7 +23,8 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
             <li
               key={tabItem.id}
               className={classnames(styles.item, {
-                [styles.scrolling]: isScrolling
+                [styles.scrolling]: isScrolling,
+                [styles.selected]: isSelected(tabItem)
               })}
               data-testid="tab-item"
               onClick={() => handleOnClick(tabItem)}
@@ -31,12 +36,7 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
                   [styles.scrolling]: isScrolling
                 })}
               />
-              <span
-                data-testid="span-item"
-                className={classnames(styles.name, {
-                  [styles.selected]: isSelected(tabItem)
-                })}
-              >
+              <span data-testid="span-item" className={styles.name}>
                 {tabItem.name}
               </span>
             </li>

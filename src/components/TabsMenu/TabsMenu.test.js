@@ -2,7 +2,7 @@ import * as React from 'react'
 import {render} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import dataMock from './__mock__.json'
+import dataMock from './data.mock.json'
 import TabsMenu from './TabsMenu'
 
 const defaultProps = {
@@ -47,7 +47,7 @@ describe('TabsMenu component', () => {
         <TabsMenu {...defaultProps} selectedTab={dataMock.all[index]} />
       )
 
-      const items = renderResult.getAllByTestId('span-item')
+      const items = renderResult.getAllByTestId('tab-item')
       expect(items[index]).toHaveClass('selected')
     })
   })
