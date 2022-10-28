@@ -2,7 +2,7 @@ import * as React from 'react'
 import {render} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import props from './__mock__.json'
+import props from './data.mock.json'
 import MenuEmptyState from './MenuEmptyState'
 
 const defaultProps = {

@@ -1,5 +1,5 @@
 import React from 'react'
-import props from './__mock__'
+import props from './data.mock.json'
 
 import MenuEmptyState from './index'
 

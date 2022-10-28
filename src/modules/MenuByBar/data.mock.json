@@ -1,0 +1,294 @@
+{
+  "menuText": "Show menu",
+  "menuTextSecondary": "by",
+  "isOpen": false,
+  "menuItems": [
+    {
+      "id": 0,
+      "name": "All",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/all.png",
+      "tabs": [
+        {
+          "id": 0,
+          "name": "All",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/all.svg"
+        },
+        {
+          "id": 1,
+          "name": "You’ve Tried",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/youvetried.svg"
+        },
+        {
+          "id": 2,
+          "name": "Favorites",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/favorites.svg",
+          "isFavorite": true
+        },
+        {
+          "id": 3,
+          "name": "Your Top Rated",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/toprated.svg",
+          "isTopRated": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Cuisine",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/cuisine.png",
+      "tabs": [
+        {
+          "id": 0,
+          "name": "Mediterranean",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mediterranean.png"
+        },
+        {
+          "id": 1,
+          "name": "Asian",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/asian.png"
+        },
+        {
+          "id": 2,
+          "name": "Italian",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/italian.png"
+        },
+        {
+          "id": 3,
+          "name": "Indian",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/indian.png"
+        },
+        {
+          "id": 4,
+          "name": "Mexican",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mexican.png"
+        },
+        {
+          "id": 5,
+          "name": "American",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/american.png"
+        },
+        {
+          "id": 6,
+          "name": "Middle Eastern",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/middleEastern.png"
+        },
+        {
+          "id": 7,
+          "name": "African",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/african.png"
+        },
+        {
+          "id": 8,
+          "name": "Caribean",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/caribean.png"
+        },
+        {
+          "id": 9,
+          "name": "French",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/french.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Chef",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/chef.png",
+      "tabs": [
+        {
+          "id": 0,
+          "name": "Akhtar Nawab",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/akhtar-bw-headshot8282.jpg"
+        },
+        {
+          "id": 1,
+          "name": "Andres Mendez",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large40678.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Anthony Nichols",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Chef-Anthony-Nichols65079.png"
+        },
+        {
+          "id": 3,
+          "name": "Cacau da Rosa",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/chefcacau-bw31002.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Chris Massiah",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/chrismassiah43936.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Chris Ratel",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/chris-large1809123240.jpeg"
+        },
+        {
+          "id": 6,
+          "name": "Einat Admony",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Einat2937995585.png"
+        },
+        {
+          "id": 7,
+          "name": "Emily Peck",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/emilyown270552.jpg"
+        },
+        {
+          "id": 8,
+          "name": "Esther Choi",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/esther-choi-bw24437.jpg"
+        },
+        {
+          "id": 9,
+          "name": "Irvin Paredez",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/irvin20750.jpg"
+        },
+        {
+          "id": 10,
+          "name": "James Grody",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/chef-james-grody33652.jpg"
+        },
+        {
+          "id": 11,
+          "name": "John DeLucie",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/JD19855.jpeg"
+        },
+        {
+          "id": 12,
+          "name": "Jordan Andino",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Jordan-Andino-headshot91898.jpg"
+        },
+        {
+          "id": 13,
+          "name": "Jose Garces",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Jose-Garces83042.png"
+        },
+        {
+          "id": 14,
+          "name": "Kristy Flores",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/v395041.jpeg"
+        },
+        {
+          "id": 15,
+          "name": "Marc Forgione",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/lnm219890.jpg"
+        },
+        {
+          "id": 16,
+          "name": "Lena Elkousy",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/image-6734821611.jpeg"
+        },
+        {
+          "id": 17,
+          "name": "Maiko Kyogoku",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/chefmaiko68210.jpg"
+        },
+        {
+          "id": 18,
+          "name": "Marc Forgione",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Forgione10147.jpg"
+        },
+        {
+          "id": 19,
+          "name": "Meena Sreenivas",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/meena7163.PNG"
+        },
+        {
+          "id": 20,
+          "name": "Pat LaFrieda",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/patlafrieda45387.png"
+        },
+        {
+          "id": 21,
+          "name": "Pierre Thiam",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Pierre-Thiam9416.jpg"
+        },
+        {
+          "id": 22,
+          "name": "Raymundo Agrazal",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/chef58138.jpg"
+        },
+        {
+          "id": 23,
+          "name": "Ruben Garcia",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/garcia-th9590544098.jpg"
+        },
+        {
+          "id": 24,
+          "name": "Santiago Lopez",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/santiago-headshot54889.jpeg"
+        },
+        {
+          "id": 25,
+          "name": "Soulayphet Schwader",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/phet-schwader68000.png"
+        },
+        {
+          "id": 26,
+          "name": "Tony Perez",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/toni-perez60803.jpg"
+        },
+        {
+          "id": 27,
+          "name": "Wanting Zhang",
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/junzi74321.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Diets",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/diets.png",
+      "tabs": [
+        {
+          "id": 0,
+          "name": "Paleo",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/diets/paleo.svg"
+        },
+        {
+          "id": 1,
+          "name": "Vegetarian",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/diets/vegetarian.svg"
+        },
+        {
+          "id": 2,
+          "name": "Keto",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/diets/keto.svg"
+        },
+        {
+          "id": 3,
+          "name": "Vegan",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/diets/vegan.svg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Protein",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/protein.png",
+      "tabs": [
+        {
+          "id": 0,
+          "name": "Meat",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/protein/meat.svg"
+        },
+        {
+          "id": 1,
+          "name": "Seafood",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/protein/seafood.svg"
+        },
+        {
+          "id": 2,
+          "name": "Poultry",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/protein/poultry.svg"
+        },
+        {
+          "id": 3,
+          "name": "Plant-Based",
+          "image": "https://cu-product-media.s3.amazonaws.com/media/menu/protein/plantbased.svg"
+        }
+      ]
+    }
+  ]
+}

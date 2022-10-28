@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {render} from '@testing-library/react'
 
-import props from './__mock__'
+import props from './data.mock'
 import MessageModal from './MessageModal'
 
 const defaultProps = {

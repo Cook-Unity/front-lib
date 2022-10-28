@@ -1,7 +1,7 @@
 import React from 'react'
 
 import TabsMenu from './index'
-import data from './__mock__.json'
+import data from './data.mock.json'
 
 export default {
   title: 'TabsMenu',
