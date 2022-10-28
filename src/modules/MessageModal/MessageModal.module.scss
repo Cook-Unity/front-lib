@@ -73,10 +73,19 @@
 }
 
 .messageModalInner {
+  margin: 0 !important;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   @media (max-width: 720px) {
     position: absolute !important;
     bottom: 0 !important;
     border-radius: 10px 10px 0px 0px !important;
     padding: 24px 16px !important;
+    top: initial;
+    left: initial;
+    transform: initial;
   }
 }
