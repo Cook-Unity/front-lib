@@ -9,14 +9,14 @@ export const TooltipContent = styled.div`
   border-radius: 4px;
   right: 0;
   padding: 16px;
-  width: 250px;
+  width: 210px;
   margin-top: 12px;
   background-color: #4d4d4f;
   font-family: Roboto;
   font-size: 12px;
   line-height: 16px;
   color: #ffffff;
-  z-index: 2;
+  z-index: 4;
   &:after {
     content: '';
     position: absolute;
