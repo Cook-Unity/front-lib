@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import {bool, string, func, number, array, shape} from 'prop-types'
 import classnames from 'classnames'
 
@@ -179,7 +179,7 @@ const MealCardExperiment = ({
         />
 
         {showWarning && (
-          <>
+          <Fragment>
             <button
               type="button"
               className={styles.meal_card__warning_container}
@@ -197,7 +197,7 @@ const MealCardExperiment = ({
                 <span>{warning}</span>
               </div>
             )}
-          </>
+          </Fragment>
         )}
 
         {!showWarning && showUserRating ? (
