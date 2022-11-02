@@ -35,6 +35,11 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
                 className={classnames(styles.image, {
                   [styles.scrolling]: isScrolling
                 })}
+                onError={e => {
+                  if (e.target.src !== tabItem.fallbackImage) {
+                    e.target.src = tabItem.fallbackImage
+                  }
+                }}
               />
               <span data-testid="span-item" className={styles.name}>
                 {tabItem.name}
