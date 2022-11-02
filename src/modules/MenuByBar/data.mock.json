@@ -107,7 +107,8 @@
         {
           "id": 2,
           "name": "Anthony Nichols",
-          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Chef-Anthony-Nichols65079.png"
+          "image": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/bad_image.png",
+          "fallbackImage": "https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/Chef-Anthony-Nichols65079.png"
         },
         {
           "id": 3,
