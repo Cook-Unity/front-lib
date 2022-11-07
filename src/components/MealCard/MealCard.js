@@ -77,13 +77,17 @@ const MealCard = ({
     magentoId = null,
     price_plan = '',
     price = '',
-    weight = ''
+    weight = '',
+    secondary_image = null
   } = meal
 
   const [showCartControllers, setShowCartControllers] = useState(false)
   const [showWarningDescription, setShowWarningDescription] = useState(false)
   const [disabledLikeMeal, setDisabledLikeMeal] = useState(false)
   const [errorImage, setErrorImage] = useState(false)
+  const [primaryImage, setPrimaryImage] = useState()
+  const [secondaryImage, setSecondaryImage] = useState()
+  const [displayImage, setDisplayImage] = useState()
 
   const chefFullName = formatChefName(chef_firstname, chef_lastname)
   const mealRating = formatMealRating(stars)
@@ -136,6 +140,25 @@ const MealCard = ({
   }
 
   useEffect(() => {
+    if (imageComingSoon || errorImage) {
+      setPrimaryImage(images.noMealImage)
+      setDisplayImage(images.noMealImage)
+    } else {
+      setPrimaryImage(full_path_meal_image)
+      setDisplayImage(full_path_meal_image)
+    }
+    if (secondary_image) setSecondaryImage(secondary_image)
+  }, [imageComingSoon, errorImage, full_path_meal_image, secondary_image])
+
+  const handleImageMouseEnter = () => {
+    setDisplayImage(secondaryImage)
+  }
+
+  const handleImageMouseLeave = () => {
+    setDisplayImage(primaryImage)
+  }
+
+  useEffect(() => {
     const cartTimer = setTimeout(() => {
       setShowCartControllers(false)
     }, CONTROLLERS_OPENED_MS)
@@ -178,11 +201,9 @@ const MealCard = ({
           }`}
           onClick={() => onMealClick()}
           data-testid="meal-image"
-          src={`${
-            imageComingSoon || errorImage
-              ? images.noMealImage
-              : full_path_meal_image
-          }`}
+          src={displayImage}
+          onMouseEnter={() => secondaryImage && handleImageMouseEnter()}
+          onMouseLeave={() => secondaryImage && handleImageMouseLeave()}
           onError={handleOnErrorImage}
         />
 
