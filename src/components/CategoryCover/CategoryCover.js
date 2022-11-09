@@ -11,7 +11,8 @@ const CategoryCover = ({
   titleEnd,
   subtitle,
   coverImagePath,
-  isLoading
+  isLoading,
+  textOverlapped
 }) => {
   const [errorImage, setErrorImage] = useState(false)
 
@@ -23,6 +24,26 @@ const CategoryCover = ({
     setErrorImage(true)
   }
 
+  if (textOverlapped)
+    return (
+      <div className={styles.category_cover_overlapped}>
+        <div
+          className={styles.category_cover_overlapped__img_container}
+          style={{
+            backgroundImage: `url("${coverImagePath}")`
+          }}
+        >
+          <div className={styles.category_cover_overlapped__text}>
+            <div className={styles.category_cover_overlapped__text_title}>
+              <span>{title}</span>
+            </div>
+            <div className={styles.category_cover_overlapped__text_subtitle}>
+              {subtitle}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   return (
     <div className={styles.category_cover}>
       <div className={styles.category_cover__top}>
@@ -52,7 +73,8 @@ CategoryCover.propTypes = {
   titleEnd: string,
   subtitle: string,
   coverImagePath: string,
-  isLoading: bool
+  isLoading: bool,
+  textOverlapped: bool
 }
 
 CategoryCover.defaultProps = {
@@ -60,7 +82,8 @@ CategoryCover.defaultProps = {
   titleEnd: '',
   subtitle: '',
   coverImagePath: '',
-  isLoading: false
+  isLoading: false,
+  textOverlapped: false
 }
 
 export default CategoryCover

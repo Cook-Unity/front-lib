@@ -16,3 +16,12 @@ export const category_error_image = {
   coverImagePath:
     'https://d1ureao5dcqpo4.cloudfront.net/media/catalog/product/cache/x600/c/h/chef_nico_cook_1.jpg'
 }
+
+export const category_overlapped = {
+  title: 'Sauces & condiments for your pantry',
+  subtitle:
+    "The best condiments and most popular sauces tie a dish together. They fill flavor gaps and add to the dish's presentation. If you're missing a sweet or a sour, the right sauce can quickly and easily fill that void.",
+  coverImagePath:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/cover/sides-cover.jpg',
+  textOverlapped: true
+}
