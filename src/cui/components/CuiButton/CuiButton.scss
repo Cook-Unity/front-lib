@@ -76,6 +76,58 @@
             );
         }
     }
+    &-secondary {
+        &-solid {
+            @include build-button-state(hover, $cui-wine-color-700, $cui-wine-color-700, $cui-white-color);
+            @include build-button-state(focus, $cui-wine-color-500, $cui-wine-color-700, $cui-white-color);
+            @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
+
+            @include build-button(
+                // default
+                $cui-wine-color-500,
+                $cui-wine-color-500,
+                $cui-white-color,
+                // loading
+                $cui-black-color-400,
+                $cui-black-color-400,
+                $cui-white-color
+            );
+        }
+
+        &-outline {
+            @include build-button-state(hover, $cui-white-color, $cui-black-color-400, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-wine-color-700, $cui-black-color-400);
+            @include build-button-state(disabled, $cui-white-color, $cui-black-color-300, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color,
+                // loading
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color
+            );
+        }
+
+        &-clear {
+            @include build-button-state(hover, $cui-black-color-150, $cui-black-color-150, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-wine-color-700, $cui-black-color-400);
+            @include build-button-state(disabled, transparent, transparent, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                transparent,
+                transparent,
+                $cui-black-color,
+                // loading
+                transparent,
+                transparent,
+                $cui-black-color
+            );
+        }
+    }
 
     &-dark {
         &-solid {
