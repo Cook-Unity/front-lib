@@ -1,6 +1,10 @@
 @mixin font-build($font-family, $font-size, $line-height, $font-bold) {
-    font-family: $font-family;
-    font-size: $font-size;
-    line-height: $line-height;
-    font-weight: $font-bold;
-  }
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-bold;
+}
+
+@mixin font-secondary() {
+  font-family: $cui-font-family-secondary;
+}

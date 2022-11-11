@@ -1,5 +1,6 @@
 @import "../../assets/variables";
 @import "../../assets/mixins/buttons";
+@import "../../assets/mixins/fonts";
 
 .cui-button {
     appearance: none;
@@ -8,7 +9,7 @@
     border-style: solid;
     border-width: 1px;
     font-weight: $cui-font-bold;
-    font-family: $cui-font-family-secondary;
+    @include font-secondary();
 
     // Sizes
     &-small {
