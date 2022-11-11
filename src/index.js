@@ -22,4 +22,4 @@ export {default as MenuByBar} from './modules/MenuByBar'
 export {default as Breaker} from './components/Breaker'
 
 // Rebranding
-export {CuiButton} from './cui/components/CuiButton'
+export {default as CuiButton} from './cui/components/CuiButton/CuiButton'
