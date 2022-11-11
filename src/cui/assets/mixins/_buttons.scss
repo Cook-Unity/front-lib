@@ -14,6 +14,7 @@
 
         @include build-disabled-button();
 
+        &:disabled,
         &:active,
         &:focus,
         &:hover {
