@@ -1,0 +1,97 @@
+.mealCardsModal {
+  @media (max-width: 720px) {
+    height: 100%;
+    background-color: rgba(35, 31, 32, 0.7) !important;
+  }
+}
+
+.mealCardsModalInner {
+  margin: 0 !important;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px 32px !important;
+  width: 100% !important;
+  max-width: 948px !important;
+
+  @media (max-width: 720px) {
+    position: absolute !important;
+    bottom: 0 !important;
+    border-radius: 10px 10px 0px 0px !important;
+    padding: 24px 16px !important;
+    top: initial;
+    left: initial;
+    transform: initial;
+    overflow: auto;
+  }
+}
+
+.titlesContainer {
+  color: black;
+
+  h2 {
+    font-family: 'Gilroy';
+    font-size: 28px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    margin-block-start: 0;
+  }
+
+  h3 {
+    font-family: 'Gilroy Semibold', 'Roboto', sans-serif;
+    font-size: 28px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .buttonContainer {
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    display: initial;
+
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 16px;
+      padding: 0 10px 0 10px;
+    }
+  }
+}
+
+.cardsContainerOuter {
+  overflow-x: auto;
+
+  @media (max-width: 720px) {
+    overflow-x: hide;
+    overflow-y: auto;
+    max-height: 100px;
+  }
+
+  .cardsContainer {
+    display: grid;
+    column-gap: 34px;
+    grid-template-columns: 268px 268px 268px;
+    padding: 14px 0;
+
+    @media (max-width: 720px) {
+      display: initial;
+    }
+  }
+}
+
+.buttonsContainer {
+  padding-top: 24px;
+  float: right;
+
+  .primaryButton {
+    display: inline;
+    padding: 0 16px;
+  }
+}
