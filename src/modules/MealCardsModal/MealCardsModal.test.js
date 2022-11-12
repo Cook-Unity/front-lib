@@ -2,7 +2,7 @@ import * as React from 'react'
 import {render} from '@testing-library/react'
 
 import props from './data.mock'
-import MessageModal from './MealCardsModal'
+import MealCardsModal from './MealCardsModal'
 
 const defaultProps = {
   ...props,
@@ -15,18 +15,21 @@ describe('Message modal', () => {
     it(`should have the props sent`, () => {
       const renderResult = render(
         <div id="root">
-          <MessageModal {...defaultProps} />
+          <MealCardsModal {...defaultProps} />
         </div>
       )
 
       expect(renderResult.getByTestId('title')).toHaveTextContent(
         defaultProps.title.toString()
       )
-      expect(renderResult.getByTestId('text')).toHaveTextContent(
-        defaultProps.text
+      expect(renderResult.getByTestId('subtitle')).toHaveTextContent(
+        defaultProps.subtitle
       )
-      expect(renderResult.getByTestId('cu-button')).toHaveTextContent(
-        defaultProps.buttonText
+      expect(renderResult.getByTestId('cu-primary-button')).toHaveTextContent(
+        defaultProps.primaryButtonText
+      )
+      expect(renderResult.getByTestId('cu-secondary-button')).toHaveTextContent(
+        defaultProps.secondaryButtonText
       )
     })
   })
@@ -36,7 +39,7 @@ describe('Message modal', () => {
       const subtitle = 'Th!5 !5 4 5u8T!t13'
       const renderResult = render(
         <div id="root">
-          <MessageModal {...defaultProps} subtitle={subtitle} />
+          <MealCardsModal {...defaultProps} subtitle={subtitle} />
         </div>
       )
 
@@ -50,11 +53,13 @@ describe('Message modal', () => {
     it('should not render button', () => {
       const renderResult = render(
         <div id="root">
-          <MessageModal {...defaultProps} buttonText="" />
+          <MealCardsModal {...defaultProps} primaryButtonText="" />
         </div>
       )
 
-      expect(renderResult.queryByTestId('cu-button')).not.toBeInTheDocument()
+      expect(
+        renderResult.queryByTestId('cu-primary-button')
+      ).not.toBeInTheDocument()
     })
   })
 })
