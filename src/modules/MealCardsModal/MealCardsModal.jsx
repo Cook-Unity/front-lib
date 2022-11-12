@@ -33,48 +33,48 @@ const MealCardsModal = ({
       className={styles.mealCardsModalInner}
       mediumSize
     >
-      <div className={styles.titlesContainer}>
-        <h3 data-testid="title">{title}</h3>
-        {subtitle && <h2 data-testid="subtitle">{subtitle}</h2>}
-      </div>
+      <div className={styles.contentContainer}>
+        <div className={styles.titlesContainer}>
+          <h3 data-testid="title">{title}</h3>
+          {subtitle && <h2 data-testid="subtitle">{subtitle}</h2>}
+        </div>
 
-      <div className={styles.cardsContainerOuter}>
-        <div className={styles.cardsContainer}>
-          {meals.map(meal => {
-            return mealCardPriceExperimentEnabled ? (
-              <MealCardExperiment
-                key={meal.id}
-                meal={meal}
-                onAddItem={onAddItem}
-                onRemoveItem={onRemoveItem}
-                onClick={onClickMeal}
-              />
-            ) : (
-              <MealCard
-                key={meal.id}
-                meal={meal}
-                onAddItem={onAddItem}
-                onRemoveItem={onRemoveItem}
-                onClick={onClickMeal}
-              />
-            )
-          })}
+        <div className={styles.cardsContainerOuter}>
+          <div className={styles.cardsContainer}>
+            {meals.map(meal => {
+              return mealCardPriceExperimentEnabled ? (
+                <MealCardExperiment
+                  key={meal.id}
+                  meal={meal}
+                  onAddItem={onAddItem}
+                  onRemoveItem={onRemoveItem}
+                  onClick={onClickMeal}
+                />
+              ) : (
+                <MealCard
+                  key={meal.id}
+                  meal={meal}
+                  onAddItem={onAddItem}
+                  onRemoveItem={onRemoveItem}
+                  onClick={onClickMeal}
+                />
+              )
+            })}
+          </div>
         </div>
       </div>
 
       <div className={styles.buttonsContainer}>
         {!!primaryButtonText && (
-          <div className={styles.primaryButton}>
-            <CUButton
-              onClick={primaryButtonClick}
-              label={primaryButtonText}
-              size="large"
-              primary
-              data-testid="cu-primary-button"
-            >
-              {primaryButtonText}
-            </CUButton>
-          </div>
+          <CUButton
+            onClick={primaryButtonClick}
+            label={primaryButtonText}
+            size="large"
+            primary
+            data-testid="cu-primary-button"
+          >
+            {primaryButtonText}
+          </CUButton>
         )}
 
         {!!secondaryButtonText && (
