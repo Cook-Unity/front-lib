@@ -59,7 +59,7 @@
     text-align: center;
     width: 100%;
     overflow: hidden;
-    padding: 30px 0;
+    padding: 24px 16px;
     position: relative;
 
     @include mobile {
@@ -69,12 +69,9 @@
       background: $cookunity-white;
       width: 100%;
     }
-
-    &_title {
-      overflow: hidden;
+        &_title {
       font-style: normal;
       font-weight: 800;
-      height: 44px;
       font-size: 36px;
       margin-bottom: 3px;
       line-height: 44px;
@@ -98,6 +95,67 @@
       @include mobile {
         width: 90%;
       }
+    }
+  }
+}
+
+.category_cover_overlapped {
+  position: relative;
+  width: 100%;
+  min-width: 205px;
+  background: $cookunity-white;
+  box-sizing: border-box;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  height: max-content;
+
+  &__img_container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 352px;
+
+    @include mobile {
+      height: 190px;
+    }
+
+  }
+
+  @include mobile {
+    border-radius: 0 0 0 0;
+    height: 190px;
+  }
+
+  &.loading {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #eff1f3 4%, #e8e8e8 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    cursor: default;
+  }
+
+  &__text {
+    font-family: 'Gilroy', 'Roboto', sans-serif;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 24px;
+    position: absolute;
+    bottom: 24px;
+    color: #ffffff;
+
+    &_title {
+      overflow: hidden;
+      font-weight: 800;
+      font-size: 56px;
+      line-height: 64px;
+      max-width: 558px;
+    }
+
+    &_subtitle {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 16px;
     }
   }
 }
