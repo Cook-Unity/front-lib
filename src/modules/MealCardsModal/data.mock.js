@@ -9,6 +9,7 @@ export default {
   meals: [
     {id: 1, ...meal_new},
     {id: 2, ...meal_featured},
+    {id: 3, ...meal_new},
     {id: 3, ...meal_new}
   ]
 }
