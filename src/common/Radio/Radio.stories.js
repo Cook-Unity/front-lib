@@ -27,14 +27,6 @@ const Template = args => {
       >
         Test 2
       </Radio>
-      <Radio
-        {...args}
-        value={3}
-        checked={state === 3}
-        onClick={() => setState(3)}
-      >
-        Test 3
-      </Radio>
     </>
   )
 }
