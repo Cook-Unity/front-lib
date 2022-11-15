@@ -4,7 +4,10 @@ import styles from './Radio.module.scss'
 
 const Radio = ({name, checked, onClick, children}) => {
   return (
-    <div className={classnames(styles.cookunity__input_radio_container)} onClick={onClick}>
+    <div
+      className={classnames(styles.cookunity__input_radio_container)}
+      onClick={onClick}
+    >
       <div
         className={classnames(styles.cookunity__input_radio, {
           [styles.checked]: checked
