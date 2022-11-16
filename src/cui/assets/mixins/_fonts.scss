@@ -9,9 +9,10 @@
 
 @mixin font-source-serif-pro() {
   @font-face {
-    font-family: $cui-font-family-source-serif, sans-serif;
+    font-family: $cui-font-family-source-serif;
     font-weight: $cui-font-bold;
     font-style: normal;
+    font-display: swap;
     src: local($cui-font-family-source-serif),
       url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro/source-serif-pro-bold.woff2")
         format("woff2"),
@@ -24,9 +25,10 @@
 
 @mixin font-rossanova() {
   @font-face {
-    font-family: $cui-font-family-rossanova, sans-serif;
+    font-family: $cui-font-family-rossanova;
     font-weight: $cui-font-bold;
     font-style: normal;
+    font-display: swap;
     src: local($cui-font-family-rossanova),
       url("https://static.cookunity.com/cross/front-lib/fonts/rossanova/rossanova-bold.woff2") format("woff2"),
       url("https://static.cookunity.com/cross/front-lib/fonts/rossanova/rossanova-bold.woff") format("woff"),
@@ -36,9 +38,10 @@
 
 @mixin font-avallon() {
   @font-face {
-    font-family: $cui-font-family-avallon, sans-serif;
+    font-family: $cui-font-family-avallon;
     font-weight: $cui-font-bold;
     font-style: normal;
+    font-display: swap;
     src: local($cui-font-family-avallon),
       url("https://static.cookunity.com/cross/front-lib/fonts/avallon/avallon.woff2") format("woff2"),
       url("https://static.cookunity.com/cross/front-lib/fonts/avallon/avallon.woff") format("woff"),
@@ -48,18 +51,20 @@
 
 @mixin font-tt-norms() {
   @font-face {
-    font-family: $cui-font-family-tt-norms, sans-serif;
+    font-family: $cui-font-family-tt-norms;
     font-weight: $cui-font-normal;
     font-style: normal;
+    font-display: swap;
     src: local($cui-font-family-tt-norms),
       url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal.woff2") format("woff2"),
       url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal.woff") format("woff"),
       url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal.ttf") format("truetype");
   }
   @font-face {
-    font-family: $cui-font-family-tt-norms, sans-serif;
+    font-family: $cui-font-family-tt-norms;
     font-weight: $cui-font-normal;
     font-style: italic;
+    font-display: swap;
     src: local($cui-font-family-tt-norms),
       url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal-italic.woff2")
         format("woff2"),
@@ -69,9 +74,10 @@
         format("truetype");
   }
   @font-face {
-    font-family: $cui-font-family-tt-norms, sans-serif;
+    font-family: $cui-font-family-tt-norms;
     font-weight: $cui-font-bold;
     font-style: normal;
+    font-display: swap;
     src: local($cui-font-family-tt-norms),
       url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-bold.woff2") format("woff2"),
       url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-bold.woff") format("woff"),
