@@ -3,7 +3,7 @@ import React from 'react'
 import CuiButton from './CuiButton'
 
 export default {
-  title: 'CuiButton',
+  title: 'Cui / CuiButton',
   component: CuiButton,
   argTypes: {
     color: {

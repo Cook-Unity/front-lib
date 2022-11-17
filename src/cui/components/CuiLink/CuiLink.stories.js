@@ -3,7 +3,7 @@ import React from 'react'
 import CuiLink from './CuiLink'
 
 export default {
-  title: 'CuiLink',
+  title: 'Cui / CuiLink',
   component: CuiLink,
   argTypes: {
     color: {
