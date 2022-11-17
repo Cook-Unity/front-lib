@@ -55,7 +55,7 @@ Primary.args = {
 }
 export const Secondary = Template.bind({})
 Secondary.args = {
-  color: 'secondary',
+  color: 'secondary'
 }
 export const Tertiary = Template.bind({})
 Tertiary.args = {
