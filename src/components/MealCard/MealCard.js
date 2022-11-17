@@ -112,7 +112,7 @@ const MealCard = ({
   const handleAddItem = () => {
     if (hideCartControllers) return
     setShowCartControllers(true)
-    if (!disableAddItemBtn) onAddItem()
+    if (!disableAddItemBtn) onAddItem(meal)
   }
   const handleRemoveItem = () => {
     if (hideCartControllers) return
