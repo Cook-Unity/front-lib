@@ -8,6 +8,7 @@
     border-radius: 200px;
     border-style: solid;
     border-width: 1px;
+    content: 'testing';
 
     @include font-build(
         $cui-font-family-tt-norms,
