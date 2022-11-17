@@ -41,10 +41,11 @@ const MealCardsModal = ({
 
         <div className={styles.cardsContainerOuter}>
           <div className={styles.cardsContainer}>
-            {meals.map(meal => {
+            {meals.map((meal, index) => {
               return mealCardPriceExperimentEnabled ? (
                 <MealCardExperiment
                   key={meal.id}
+                  index={index}
                   meal={meal}
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
@@ -53,6 +54,7 @@ const MealCardsModal = ({
               ) : (
                 <MealCard
                   key={meal.id}
+                  index={index}
                   meal={meal}
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
