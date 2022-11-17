@@ -1,0 +1,54 @@
+@mixin build-button(
+    $background-color,
+    $border-color,
+    $color,
+    $loading-background-color,
+    $loading-border-color,
+    $loading-color
+) {
+    @include build-fill-button($background-color, $border-color, $color);
+
+    &-loading {
+        background-color: $loading-background-color;
+        border-color: $loading-border-color;
+
+        @include build-disabled-button();
+
+        &:disabled,
+        &:active,
+        &:focus,
+        &:hover {
+            @include build-fill-button($loading-background-color, $loading-border-color, $loading-color);
+        }
+    }
+}
+
+@mixin build-button-state($type, $background-color, $border-color, $color) {
+    @if ($type == hover) {
+        &:hover {
+            @include build-fill-button($background-color, $border-color, $color);
+        }
+    }
+    @if ($type == focus) {
+        &:focus {
+            @include build-fill-button($background-color, $border-color, $color);
+        }
+    }
+    @if ($type == disabled) {
+        &:disabled {
+            @include build-fill-button($background-color, $border-color, $color);
+        }
+    }
+}
+
+@mixin build-disabled-button() {
+    cursor: default;
+    user-select: none;
+}
+
+@mixin build-fill-button($background-color, $border-color, $color) {
+    background-color: $background-color;
+    color: $color;
+    border-color: $border-color;
+    outline-color: $border-color;
+}

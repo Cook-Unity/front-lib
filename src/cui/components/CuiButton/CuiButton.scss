@@ -1,0 +1,195 @@
+@import "../../assets/variables";
+@import "../../assets/mixins/buttons";
+@import "../../assets/mixins/fonts";
+
+.cui-button {
+    appearance: none;
+    cursor: pointer;
+    border-radius: 200px;
+    border-style: solid;
+    border-width: 1px;
+    content: 'testing';
+
+    @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-button-medium,
+        $cui-line-height-xl,
+        $cui-font-bold
+    );
+
+    // Sizes
+    &-small {
+        font-size: $cui-font-button-small;
+        padding: $cui-space-button-small;
+    }
+    &-medium {
+        padding: $cui-space-button-medium;
+    }
+    &-large {
+        font-size: $cui-font-button-large;
+        padding: $cui-space-button-large;
+    }
+
+    // Colors
+    &-primary {
+        &-solid {
+            @include build-button-state(hover, $cui-yellow-color-600, $cui-yellow-color-600, $cui-black-color);
+            @include build-button-state(focus, $cui-yellow-color-600, $cui-yellow-color-500, $cui-black-color);
+            @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
+
+            @include build-button(
+                // default
+                $cui-yellow-color-500,
+                $cui-yellow-color-500,
+                $cui-black-color,
+                // loading
+                $cui-yellow-color-500,
+                $cui-yellow-color-500,
+                $cui-black-color
+            );
+        }
+
+        &-outline {
+            @include build-button-state(hover, $cui-white-color, $cui-black-color-400, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-yellow-color-500, $cui-black-color-400);
+            @include build-button-state(disabled, $cui-white-color, $cui-black-color-300, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color,
+                // loading
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color
+            );
+        }
+
+        &-clear {
+            @include build-button-state(hover, $cui-black-color-150, $cui-black-color-150, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-yellow-color-500, $cui-black-color-400);
+            @include build-button-state(disabled, transparent, transparent, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                transparent,
+                transparent,
+                $cui-black-color,
+                // loading
+                transparent,
+                transparent,
+                $cui-black-color
+            );
+        }
+    }
+    &-secondary {
+        &-solid {
+            @include build-button-state(hover, $cui-wine-color-700, $cui-wine-color-700, $cui-white-color);
+            @include build-button-state(focus, $cui-wine-color-500, $cui-wine-color-700, $cui-white-color);
+            @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
+
+            @include build-button(
+                // default
+                $cui-wine-color-500,
+                $cui-wine-color-500,
+                $cui-white-color,
+                // loading
+                $cui-black-color-400,
+                $cui-black-color-400,
+                $cui-white-color
+            );
+        }
+
+        &-outline {
+            @include build-button-state(hover, $cui-white-color, $cui-black-color-400, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-wine-color-700, $cui-black-color-400);
+            @include build-button-state(disabled, $cui-white-color, $cui-black-color-300, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color,
+                // loading
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color
+            );
+        }
+
+        &-clear {
+            @include build-button-state(hover, $cui-black-color-150, $cui-black-color-150, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-wine-color-700, $cui-black-color-400);
+            @include build-button-state(disabled, transparent, transparent, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                transparent,
+                transparent,
+                $cui-black-color,
+                // loading
+                transparent,
+                transparent,
+                $cui-black-color
+            );
+        }
+    }
+
+    &-dark {
+        &-solid {
+            @include build-button-state(hover, $cui-black-color-400, $cui-black-color-400, $cui-white-color);
+            @include build-button-state(focus, $cui-black-color-400, $cui-black-color, $cui-white-color);
+            @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
+
+            @include build-button(
+                // default
+                $cui-black-color,
+                $cui-black-color,
+                $cui-white-color,
+                // loading
+                $cui-black-color-400,
+                $cui-black-color-400,
+                $cui-white-color
+            );
+        }
+
+        &-outline {
+            @include build-button-state(hover, $cui-white-color, $cui-black-color-400, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-black-color-400, $cui-black-color);
+            @include build-button-state(disabled, $cui-white-color, $cui-black-color-300, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color,
+                // loading
+                $cui-white-color,
+                $cui-black-color,
+                $cui-black-color
+            );
+        }
+
+        &-clear {
+            @include build-button-state(hover, $cui-black-color-150, $cui-black-color-150, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-black-color-400, $cui-black-color-400);
+            @include build-button-state(disabled, transparent, transparent, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                transparent,
+                transparent,
+                $cui-black-color,
+                // loading
+                transparent,
+                transparent,
+                $cui-black-color
+            );
+        }
+    }
+
+    &:disabled {
+        @include build-disabled-button();
+    }
+}
