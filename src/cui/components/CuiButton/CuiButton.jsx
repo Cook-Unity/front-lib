@@ -6,7 +6,7 @@ const CuiButton = ({
   type = 'button',
   fill = 'solid',
   size = 'medium',
-  color = 'accent',
+  color = 'primary',
   disabled = false,
   loading = false,
   children,

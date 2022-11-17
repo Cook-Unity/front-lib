@@ -5,7 +5,7 @@ import './CuiLink.scss'
 const CuiLink = ({
   fill = 'solid',
   size = 'medium',
-  color = 'accent',
+  color = 'primary',
   disabled = false,
   loading = false,
   children,

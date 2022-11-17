@@ -56,9 +56,9 @@
     font-style: normal;
     font-display: swap;
     src: local($cui-font-family-tt-norms),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal.woff2") format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal.woff") format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal.ttf") format("truetype");
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-normal.woff2") format("woff2"),
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-normal.woff") format("woff"),
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-normal.ttf") format("truetype");
   }
   @font-face {
     font-family: $cui-font-family-tt-norms;
@@ -66,11 +66,11 @@
     font-style: italic;
     font-display: swap;
     src: local($cui-font-family-tt-norms),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal-italic.woff2")
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-normal-italic.woff2")
         format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal-italic.woff")
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-normal-italic.woff")
         format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-normal-italic.ttf")
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-normal-italic.ttf")
         format("truetype");
   }
   @font-face {
@@ -79,8 +79,8 @@
     font-style: normal;
     font-display: swap;
     src: local($cui-font-family-tt-norms),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-bold.woff2") format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-bold.woff") format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro/tt-norms-pro-bold.ttf") format("truetype");
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-bold.woff2") format("woff2"),
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-bold.woff") format("woff"),
+      url("https://static.cookunity.com/cross/front-lib/fonts/tt-norms-pro-bold.ttf") format("truetype");
   }
 }
