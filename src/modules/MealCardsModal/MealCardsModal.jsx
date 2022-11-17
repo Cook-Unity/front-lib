@@ -49,7 +49,7 @@ const MealCardsModal = ({
                   meal={meal}
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
-                  onClick={onClickMeal}
+                  onMealClick={onClickMeal}
                 />
               ) : (
                 <MealCard
@@ -58,7 +58,7 @@ const MealCardsModal = ({
                   meal={meal}
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
-                  onClick={onClickMeal}
+                  onMealClick={onClickMeal}
                 />
               )
             })}
