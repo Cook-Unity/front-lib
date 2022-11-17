@@ -46,7 +46,7 @@ const MealCardsModal = ({
                 <MealCardExperiment
                   key={meal.id}
                   meal={meal}
-                  onAddItem={onAddItem}
+                  onAddItem={onAddItem(meal)}
                   onRemoveItem={onRemoveItem}
                   onClick={onClickMeal}
                 />
@@ -54,7 +54,7 @@ const MealCardsModal = ({
                 <MealCard
                   key={meal.id}
                   meal={meal}
-                  onAddItem={onAddItem}
+                  onAddItem={onAddItem(meal)}
                   onRemoveItem={onRemoveItem}
                   onClick={onClickMeal}
                 />
