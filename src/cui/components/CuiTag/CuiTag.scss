@@ -1,0 +1,88 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/tags";
+@import "../../styles/mixins/fonts";
+
+.cui-tag {
+    appearance: none;
+    cursor: pointer;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    & > *:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-tag-medium,
+        $cui-line-height-xl,
+        $cui-font-bold
+    );
+
+    // Sizes
+    &-small {
+        font-size: $cui-font-tag-small;
+        padding: $cui-space-tag-small;
+    }
+    &-medium {
+        font-size: $cui-font-tag-medium;
+        padding: $cui-space-tag-medium;
+    }
+    &-large {
+        font-size: $cui-font-tag-large;
+        padding: $cui-space-tag-large;
+    }
+
+    // Colors
+    &-white {
+        &-solid {
+            @include build-tag(
+                // default
+                $cui-white-color,
+                $cui-black-color-150,
+                $cui-black-color
+            );
+        }
+    }
+
+    &-wine {
+        &-solid {
+            @include build-tag(
+                // default
+                $cui-wine-color-500,
+                $cui-wine-color-500,
+                $cui-white-color
+            );
+        }
+    }
+
+    &-olive {
+        &-solid {
+            @include build-tag(
+                // default
+                $cui-olive-green-color-500,
+                $cui-olive-green-color-500,
+                $cui-white-color
+            );
+        }
+    }
+
+    &-dark {
+        &-solid {
+            @include build-tag(
+                // default
+                $cui-black-color,
+                $cui-black-color,
+                $cui-white-color
+            );
+        }
+    }
+
+    .cui-icon {
+        display: flex;
+    }
+}

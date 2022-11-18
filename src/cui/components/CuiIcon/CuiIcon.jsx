@@ -6,7 +6,9 @@ const imageUrl = filename =>
   `https://static.cookunity.com/cross/front-lib/images/${filename}`
 
 export const icons = {
-  heart: imageUrl('heart.svg')
+  heart: imageUrl('heart.svg'),
+  alert: imageUrl('alert-circle.svg'),
+  star: imageUrl('star.svg')
 }
 
 const CuiIcon = ({name, path, className, ...props}) => {
