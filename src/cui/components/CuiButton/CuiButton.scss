@@ -1,6 +1,6 @@
-@import "../../assets/variables";
-@import "../../assets/mixins/buttons";
-@import "../../assets/mixins/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixins/buttons";
+@import "../../styles/mixins/fonts";
 
 .cui-button {
     appearance: none;
@@ -8,7 +8,6 @@
     border-radius: 200px;
     border-style: solid;
     border-width: 1px;
-    content: 'testing';
 
     @include font-build(
         $cui-font-family-tt-norms,

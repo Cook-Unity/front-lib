@@ -31,7 +31,6 @@ const CuiIcon = ({name, path, className, ...props}) => {
         }`
       )}
       dangerouslySetInnerHTML={{__html: svg}}
-      {...props}
     />
   )
 }

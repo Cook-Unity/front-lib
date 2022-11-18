@@ -1,6 +1,6 @@
 {
   "name": "front-lib",
-  "version": "1.16.2",
+  "version": "1.16.3",
   "description": "CookUnity React Library",
   "author": "Luis Giribone",
   "license": "MIT",
@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
+    "postbuild": "cp -R src/cui dist/cui",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "npm run build",
     "lint": "eslint ./src",
