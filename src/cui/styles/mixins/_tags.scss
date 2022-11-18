@@ -1,0 +1,14 @@
+@mixin build-tag(
+    $background-color,
+    $border-color,
+    $color
+) {
+    @include build-fill-tag($background-color, $border-color, $color);
+}
+
+@mixin build-fill-tag($background-color, $border-color, $color) {
+    background-color: $background-color;
+    color: $color;
+    border-color: $border-color;
+    outline-color: $border-color;
+}
