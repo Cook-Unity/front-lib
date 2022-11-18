@@ -25,6 +25,7 @@ const TEXT_COMING_SOON = 'Image coming soon'
 
 const MealCard = ({
   meal,
+  index,
   quantity,
   noExtraFee,
   onAddItem,
@@ -112,12 +113,12 @@ const MealCard = ({
   const handleAddItem = () => {
     if (hideCartControllers) return
     setShowCartControllers(true)
-    if (!disableAddItemBtn) onAddItem()
+    if (!disableAddItemBtn) onAddItem(meal, index)
   }
   const handleRemoveItem = () => {
     if (hideCartControllers) return
     setShowCartControllers(true)
-    onRemoveItem()
+    onRemoveItem(meal, index)
   }
 
   const openWarning = () => {
@@ -199,7 +200,7 @@ const MealCard = ({
           ${
             noStock ? styles.no__stock : imageComingSoon ? styles.no_image : ''
           }`}
-          onClick={() => onMealClick()}
+          onClick={() => onMealClick(meal, index)}
           data-testid="meal-image"
           src={displayImage}
           onMouseEnter={() => secondaryImage && handleImageMouseEnter()}
@@ -342,7 +343,7 @@ const MealCard = ({
       <div
         className={styles.meal_card__title}
         onClick={() => {
-          onMealClick()
+          onMealClick(meal, index)
         }}
       >
         <div className={styles.meal_card__title_name}>{name}</div>
