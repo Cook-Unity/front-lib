@@ -4,6 +4,8 @@ import { DateBox, DateBoxWrapper, DateTitle, Description, Photo, Status, Subtitl
 import Button from '../../common/Buttons'
 import {MEAL_STATUS, ORDER_STATUS} from './constants'
 
+// DEPRECATE THIS COMPONENT.
+// NOT USE THIS COMPONENT -> SHOULD USE CUIADDMEALS
 const AddMeals = ({mealName, mealPhoto, weeks, subtitle, description, addCallback, unskipAndAddCallback}) => {
   return <Wrapper>
     <Header>
