@@ -1,0 +1,79 @@
+@import "../../styles/variables";
+
+.cui-select {
+    &__placeholder {
+        color: $cui-black-color-300 !important;
+        font-family: $cui-font-family-tt-norms !important;
+        font-weight: $cui-font-normal !important;
+    }
+
+    &__single-value {
+        color: $cui-black-color-300 !important;
+        font-family: $cui-font-family-tt-norms !important;
+        font-weight: $cui-font-normal !important;
+    }
+
+    &__control {
+        &--is-focused {
+            border: 1px solid $cui-black-color-200 !important;
+            box-shadow: none !important;
+        }
+
+        &--menu-is-open {
+            border: 1px solid $cui-black-color-200 !important;
+            box-shadow: none !important;
+        }
+    }
+
+    &__option {
+        color: $cui-black-color-300 !important;
+        font-family: $cui-font-family-tt-norms !important;
+        font-weight: $cui-font-normal !important;
+
+        &--is-focused {
+            background-color: $cui-black-color-200 !important;
+        }
+
+        &--is-selected {
+            background-color: $cui-black-color-200 !important;
+        }
+    }
+
+    &__multi-value {
+        display: flex;
+        align-items: center;
+        border: 1px solid $cui-black-color-200;
+        border-radius: 4px !important;
+
+        background-color: $cui-white-color !important;
+        
+        &--is_disabled {
+            background-color: $cui-black-color-200 !important;
+            border: 1px solid $cui-black-color-200;
+        }
+    }
+
+    &__input-container {
+        color: $cui-black-color-300 !important;
+        font-family: $cui-font-family-tt-norms !important;
+        font-weight: $cui-font-normal !important;
+    } 
+
+    &__multi-value__label {
+        padding-left: 0;
+
+        font-size: $cui-font-sm;
+        font-family: $cui-font-family-tt-norms;
+        font-weight: $cui-font-bold;
+    }
+
+    &__multi-value__remove {
+        color: $cui-black-color;
+        background-color: $cui-white-color;
+
+        &:hover {
+            color: $cui-black-color !important;
+            background-color: $cui-white-color !important;
+        }
+    }
+}
