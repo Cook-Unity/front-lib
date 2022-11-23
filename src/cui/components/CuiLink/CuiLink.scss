@@ -21,13 +21,16 @@
     &-small {
         font-size: $cui-font-button-small;
         padding: $cui-space-button-small;
+        max-height: $cui-height-button-small;
     }
     &-medium {
         padding: $cui-space-button-medium;
+        max-height: $cui-height-button-medium;
     }
     &-large {
         font-size: $cui-font-button-large;
         padding: $cui-space-button-large;
+        max-height: $cui-height-button-large;
     }
 
     // Colors
@@ -247,7 +250,7 @@
         @include build-disabled-button();
     }
 
-    &-underline:hover {
+    &-underline {
         text-decoration: underline;
     }
 }

@@ -8,6 +8,9 @@
     border-radius: 200px;
     border-style: solid;
     border-width: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 
     @include font-build(
         $cui-font-family-tt-norms,
@@ -20,13 +23,16 @@
     &-small {
         font-size: $cui-font-button-small;
         padding: $cui-space-button-small;
+        max-height: $cui-height-button-small;
     }
     &-medium {
         padding: $cui-space-button-medium;
+        max-height: $cui-height-button-medium;
     }
     &-large {
         font-size: $cui-font-button-large;
         padding: $cui-space-button-large;
+        max-height: $cui-height-button-large;
     }
 
     // Colors
@@ -231,11 +237,11 @@
             @include build-button(
                 // default
                 transparent,
-                $cui-white-color,
+                transparent,
                 $cui-white-color,
                 // loading
                 transparent,
-                $cui-white-color,
+                transparent,
                 $cui-white-color
             );
         }

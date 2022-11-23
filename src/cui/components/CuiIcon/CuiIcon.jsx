@@ -8,11 +8,12 @@ const imageUrl = filename =>
 export const icons = {
   alert: imageUrl('alert-circle.svg'),
   heart: imageUrl('heart.svg'),
+  needHelp: imageUrl('need-help.svg'),
   menu: imageUrl('menu.svg'),
   star: imageUrl('star.svg')
 }
 
-const CuiIcon = ({name, path, className}) => {
+const CuiIcon = ({name, path, role = 'icon', className, ...props}) => {
   const [svg, setSvg] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isErrored, setIsErrored] = useState(false)
@@ -31,9 +32,11 @@ const CuiIcon = ({name, path, className}) => {
         'cui-icon',
         `cui-icon-${isLoaded ? 'loaded' : 'loading'}`,
         isErrored && 'cui-icon-errored',
+        role,
         className
       )}
       dangerouslySetInnerHTML={{__html: svg}}
+      {...props}
     />
   )
 }

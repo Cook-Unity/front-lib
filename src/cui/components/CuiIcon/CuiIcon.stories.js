@@ -12,6 +12,13 @@ export default {
         options: ['alert', 'heart', 'menu', 'star']
       },
       defaultValue: 'heart'
+    },
+    role: {
+      control: {
+        type: 'select',
+        options: ['button', 'icon']
+      },
+      defaultValue: 'icon'
     }
   }
 }

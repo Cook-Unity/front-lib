@@ -1,30 +1,40 @@
 import classNames from 'classnames'
 import React from 'react'
 import CuiLink from '../CuiLink/CuiLink'
-import CuiIcon from '../CuiIcon/CuiIcon'
+import CuiButton from '../CuiButton/CuiButton'
+import CuiIcon, {icons} from '../CuiIcon/CuiIcon'
 import CuiLogo from '../CuiLogo/CuiLogo'
 import './CuiHeader.scss'
+import CuiAllyButton from '../CuiAllyButton/CuiAllyButton'
 
 const CuiHeader = ({
+  center,
+  end,
   className,
   color = 'dark',
-  showMenuIcon = true,
-  showLogin = true
+  showMenu = false,
+  showLogin = false,
+  showAllyButton = false,
+  showNeedHelp = false,
+  onClickHelp
 }) => {
+  const handleMenuClick = event => {
+    console.log('event', event)
+  }
   return (
-    <header className={classNames('cui-header', color)}>
+    <header className={classNames('cui-header', color, className)}>
       <div className="brand">
-        {showMenuIcon && <CuiIcon name="menu" />}
+        {showMenu && (
+          <CuiIcon name="menu" role="button" onClick={handleMenuClick} />
+        )}
         <CuiLogo />
       </div>
-      <div className="steps">
-        Stepers
-        {/* Breadcrumbs */}
-        {/* Mobile / Desktop */}
-      </div>
+      {center && <div className="center">{center}</div>}
       <div className="end">
+        {end}
         {showLogin && (
           <CuiLink
+            className="login"
             color="light"
             fill="outline"
             showUnderline="true"
@@ -32,6 +42,13 @@ const CuiHeader = ({
           >
             Login
           </CuiLink>
+        )}
+        {showAllyButton && <CuiAllyButton />}
+        {showNeedHelp && (
+          <CuiButton color="light" fill="clear" onClick={onClickHelp}>
+            <CuiIcon name="needHelp" />
+            Need Help?
+          </CuiButton>
         )}
       </div>
     </header>

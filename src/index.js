@@ -24,7 +24,9 @@ export {default as MealCardsModal} from './modules/MealCardsModal'
 export {default as Radio} from './common/Radio'
 
 // Rebranding
+export {default as CuiAllyButton} from './cui/components/CuiAllyButton/CuiAllyButton'
 export {default as CuiButton} from './cui/components/CuiButton/CuiButton'
+export {default as CuiHeader} from './cui/components/CuiHeader/CuiHeader'
 export {default as CuiIcon} from './cui/components/CuiIcon/CuiIcon'
 export {default as CuiLink} from './cui/components/CuiLink/CuiLink'
 export {default as CuiTag} from './cui/components/CuiTag/CuiTag'
