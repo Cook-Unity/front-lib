@@ -46,7 +46,6 @@ Login.args = {
   showLogin: true
 }
 
-
 const FunnelBreadcrumbs = <div>Breadcrumbs</div>
 export const Funnel = Template.bind({})
 Funnel.args = {
