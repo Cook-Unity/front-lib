@@ -187,6 +187,59 @@
             );
         }
     }
+    &-light {
+        // TODO: To be defined with UI
+        &-solid {
+            @include build-button-state(hover, $cui-white-color, $cui-white-color, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-400, $cui-white-color, $cui-white-color);
+            @include build-button-state(disabled, $cui-white-color, $cui-white-color, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                $cui-white-color,
+                $cui-white-color,
+                $cui-black-color,
+                // loading
+                $cui-white-color,
+                $cui-white-color,
+                $cui-black-color-400,
+            );
+        }
+
+        &-outline {
+            @include build-button-state(hover, $cui-black-color-400, $cui-white-color, $cui-white-color);
+            @include build-button-state(focus, $cui-black-color-150, $cui-black-color-400, $cui-black-color);
+            @include build-button-state(disabled, $cui-white-color, $cui-black-color-300, $cui-black-color-300);
+
+            @include build-button(
+                // default
+                $cui-black-color,
+                $cui-white-color,
+                $cui-white-color,
+                // loading
+                $cui-black-color,
+                $cui-white-color,
+                $cui-white-color
+            );
+        }
+
+        &-clear {
+            @include build-button-state(hover, $cui-black-color-150, $cui-black-color-150, $cui-black-color-400);
+            @include build-button-state(focus, $cui-black-color-150, $cui-white-color, $cui-black-color);
+            @include build-button-state(disabled, transparent, transparent, $cui-white-color);
+
+            @include build-button(
+                // default
+                transparent,
+                $cui-white-color,
+                $cui-white-color,
+                // loading
+                transparent,
+                $cui-white-color,
+                $cui-white-color
+            );
+        }
+    }
 
     &:disabled {
         @include build-disabled-button();

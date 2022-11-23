@@ -9,7 +9,7 @@ export default {
     name: {
       control: {
         type: 'select',
-        options: ['heart']
+        options: ['alert', 'heart', 'menu', 'star']
       },
       defaultValue: 'heart'
     }

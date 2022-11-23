@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.cui-header {
+    align-items: center;
+    height: $cui-header-height;
+    display: flex;
+    padding: 0 24px;
+    
+    &.dark {
+        color: $cui-white-color;
+        background-color: $cui-black-color;
+    }
+    .brand {
+        display: flex;
+        .cui-icon {
+            margin-right: $cui-gutter-large;
+        }
+    }
+    .end {
+        margin-left: auto;
+    }
+}

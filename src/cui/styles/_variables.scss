@@ -75,6 +75,10 @@ $cui-font-normal: 400; // normal = regular
 $cui-font-bold: 700;
 $cui-font-extrabold: 800;
 
+// Spaces
+$cui-gutter: 8px;
+$cui-gutter-large: 16px;
+
 // Buttons
 $cui-font-button-small: $cui-font-sm;
 $cui-space-button-small: 7px 16px;
@@ -94,3 +98,6 @@ $cui-space-tag-medium: 8px;
 
 $cui-font-tag-large: $cui-font-lg;
 $cui-space-tag-large: 12px;
+
+// Header
+$cui-header-height: 72px;
