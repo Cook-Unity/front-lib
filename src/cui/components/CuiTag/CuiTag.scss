@@ -82,6 +82,17 @@
         }
     }
 
+    &-grey {
+        &-solid {
+            @include build-tag(
+                // default
+                $cui-black-color-300,
+                $cui-black-color-300,
+                $cui-white-color
+            );
+        }
+    }
+
     .cui-icon {
         display: flex;
     }
