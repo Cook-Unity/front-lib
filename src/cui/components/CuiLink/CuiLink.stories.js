@@ -46,9 +46,6 @@ export default {
   }
 }
 
-
-
-
 const DefaultTemplate = args => <CuiLink {...args}>Button</CuiLink>
 
 export const Default = DefaultTemplate.bind({})
