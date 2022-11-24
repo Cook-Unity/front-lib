@@ -3,11 +3,14 @@
 @import "../../styles/mixins/fonts";
 
 .cui-link {
+    align-items: center;
     appearance: none;
-    cursor: pointer;
     border-radius: 200px;
     border-style: solid;
     border-width: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 6px;
     text-decoration: none;
 
     @include font-build(
