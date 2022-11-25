@@ -1,6 +1,7 @@
 import React from 'react'
 import CuiBreadcrumb from '../CuiBreadcrumb/CuiBreadcrumb'
 import CuiBreadcrumbs from '../CuiBreadcrumbs/CuiBreadcrumbs'
+import CuiFabButton from '../CuiFabButton/CuiFabButton'
 
 import CuiHeader from './CuiHeader'
 
@@ -70,7 +71,7 @@ Funnel.args = {
   center: FunnelBreadcrumbs
 }
 
-const SubscriptionItems = <div>Items</div>
+const SubscriptionItems = <CuiFabButton>AS</CuiFabButton>
 export const Subscription = Template.bind({})
 Subscription.args = {
   color: 'dark',

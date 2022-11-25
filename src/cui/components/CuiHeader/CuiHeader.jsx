@@ -31,7 +31,6 @@ const CuiHeader = ({
       </div>
       {center && <div className="center">{center}</div>}
       <div className="end">
-        {end}
         {showLogin && (
           <CuiLink
             className="login"
@@ -43,7 +42,6 @@ const CuiHeader = ({
             Login
           </CuiLink>
         )}
-        {showAllyButton && <CuiAllyButton />}
         {showNeedHelp && (
           <CuiButton
             className="need-help"
@@ -55,6 +53,8 @@ const CuiHeader = ({
             <span>Need Help?</span>
           </CuiButton>
         )}
+        {showAllyButton && <CuiAllyButton />}
+        {end}
       </div>
     </header>
   )
