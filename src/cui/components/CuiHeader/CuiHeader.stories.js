@@ -1,4 +1,6 @@
 import React from 'react'
+import CuiBreadcrumb from '../CuiBreadcrumb/CuiBreadcrumb'
+import CuiBreadcrumbs from '../CuiBreadcrumbs/CuiBreadcrumbs'
 
 import CuiHeader from './CuiHeader'
 
@@ -46,7 +48,19 @@ Login.args = {
   showLogin: true
 }
 
-const FunnelBreadcrumbs = <div>Breadcrumbs</div>
+const items = [
+  {label: 'Membership Plans', id: 1},
+  {label: 'Meals', id: 2},
+  {label: 'Checkout', id: 2}
+]
+const FunnelBreadcrumbs = (
+  <CuiBreadcrumbs color="light">
+    {items.map(item => (
+      <CuiBreadcrumb key={item.id}>{item.label}</CuiBreadcrumb>
+    ))}
+  </CuiBreadcrumbs>
+)
+
 export const Funnel = Template.bind({})
 Funnel.args = {
   color: 'dark',
@@ -63,5 +77,5 @@ Subscription.args = {
   showMenu: true,
   showLogin: false,
   showNeedHelp: true,
-  center: SubscriptionItems
+  end: SubscriptionItems
 }

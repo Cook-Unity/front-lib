@@ -29,9 +29,15 @@
         top: 0;
     }
     .end {
-        margin-left: auto;
+        align-items: center;
         display: flex;
         gap: $cui-gutter;
+        margin-left: auto;
         z-index: 1;
+    }
+    .need-help {
+        span {
+            display: none;
+        }
     }
 }

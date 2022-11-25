@@ -45,9 +45,14 @@ const CuiHeader = ({
         )}
         {showAllyButton && <CuiAllyButton />}
         {showNeedHelp && (
-          <CuiButton color="light" fill="clear" onClick={onClickHelp}>
-            <CuiIcon name="needHelp" />
-            Need Help?
+          <CuiButton
+            className="need-help"
+            color="light"
+            fill="clear"
+            onClick={onClickHelp}
+          >
+            <CuiIcon name="messageCircle" />
+            <span>Need Help?</span>
           </CuiButton>
         )}
       </div>

@@ -3,12 +3,13 @@ import React, {useEffect, useState} from 'react'
 import './CuiIcon.scss'
 
 const imageUrl = filename =>
-  `https://static.cookunity.com/cross/front-lib/images/${filename}`
+  `https://static.cookunity.com/cross/front-lib/icons/${filename}`
 
 export const icons = {
   alert: imageUrl('alert-circle.svg'),
+  chevronRight: imageUrl('chevron-right.svg'),
   heart: imageUrl('heart.svg'),
-  needHelp: imageUrl('need-help.svg'),
+  messageCircle: imageUrl('message-circle.svg'),
   menu: imageUrl('menu.svg'),
   star: imageUrl('star.svg')
 }

@@ -5,7 +5,7 @@ import './CuiAllyButton.scss'
 const CuiAllyButton = ({className, ...props}) => {
   return (
     <div className={classNames('cui-ally-button', className)} {...props}>
-      test
+      AllyButton
     </div>
   )
 }
