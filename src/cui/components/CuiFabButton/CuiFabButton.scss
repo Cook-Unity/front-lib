@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins/buttons";
 @import "../../styles/mixins/fonts";
 
 .cui-fab-button {
@@ -9,13 +10,9 @@
     justify-content: center;
     overflow: hidden;
     width: $cui-fab-size;
+    border-style: solid;
 
-    @include font-build(
-        $cui-font-family-tt-norms,
-        $cui-fab-font,
-        $cui-line-height-2xl,
-        $cui-font-bold
-    );
+    @include font-build($cui-font-family-tt-norms, $cui-fab-font, $cui-line-height-2xl, $cui-font-bold);
 
     &:hover {
         cursor: pointer;
@@ -26,11 +23,15 @@
         background-color: $cui-black-color;
         border-color: $cui-black-color;
         border-style: solid;
+        @include build-button-state(hover, $cui-black-color-400, $cui-black-color-400, $cui-white-color);
+        @include build-button-state(focus, $cui-black-color-400, $cui-black-color, $cui-white-color);
+        @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
+        @include build-fill-button($cui-black-color, $cui-black-color, $cui-white-color);
     }
     &-light {
-        color: $cui-black-color;
-        background-color: $cui-white-color;
-        border-color: $cui-white-color;
-        border-style: solid;
+        @include build-button-state(hover, $cui-white-color, $cui-white-color, $cui-black-color-400);
+        @include build-button-state(focus, $cui-black-color-400, $cui-white-color, $cui-white-color);
+        @include build-button-state(disabled, $cui-white-color, $cui-white-color, $cui-black-color-300);
+        @include build-fill-button($cui-white-color, $cui-white-color, $cui-black-color);
     }
 }
