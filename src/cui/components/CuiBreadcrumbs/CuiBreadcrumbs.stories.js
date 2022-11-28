@@ -20,7 +20,7 @@ export default {
 const items = [
   {label: 'Membership Plans', id: 1},
   {label: 'Meals', id: 2},
-  {label: 'Checkout', id: 2}
+  {label: 'Checkout', id: 3}
 ]
 const Template = args => (
   <CuiBreadcrumbs {...args}>

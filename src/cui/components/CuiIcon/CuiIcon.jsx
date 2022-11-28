@@ -7,10 +7,16 @@ const imageUrl = filename =>
 
 export const icons = {
   alert: imageUrl('alert-circle.svg'),
+  accessibility1: imageUrl('accessibility-1.svg'),
+  accessibility2: imageUrl('accessibility-2.svg'),
+  accessibilityChevron: imageUrl('accessibility-chevron.svg'),
+  checkmarkCircle2: imageUrl('checkmark-circle-2.svg'),
   chevronRight: imageUrl('chevron-right.svg'),
   heart: imageUrl('heart.svg'),
   messageCircle: imageUrl('message-circle.svg'),
   menu: imageUrl('menu.svg'),
+  plus: imageUrl('plus.svg'),
+  percent: imageUrl('percent.svg'),
   star: imageUrl('star.svg')
 }
 
