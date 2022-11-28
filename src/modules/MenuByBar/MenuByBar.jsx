@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
@@ -7,6 +7,8 @@ import TabsMenu from '../../components/TabsMenu'
 
 import images from '../../assets/images'
 import styles from './MenuByBar.module.scss'
+
+import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 const MenuByBar = ({
   isOpen,
@@ -17,9 +19,14 @@ const MenuByBar = ({
   setTabSelected,
   isScrolling,
   menuText,
-  menuTextSecondary
+  menuTextSecondary,
+  onMenuByClick
 }) => {
   const [isMenuOpen, setMenuOpen] = useState(isOpen)
+  const ref = useRef()
+  useOnClickOutside(ref, () => {
+    isMenuOpen && setMenuOpen(false)
+  })
 
   const handleMenuSelected = item => {
     setMenuOpen(false)
@@ -33,6 +40,11 @@ const MenuByBar = ({
     if (tab.id !== tabSelected.id) {
       setTabSelected(tab)
     }
+  }
+
+  const handleMenuClick = () => {
+    setMenuOpen(!isMenuOpen)
+    onMenuByClick(!isMenuOpen)
   }
 
   const getMenuText = () => {
@@ -54,12 +66,7 @@ const MenuByBar = ({
           >
             {menuText}
           </span>
-          <span
-            className={styles.secondaryText}
-            onClick={() => {
-              setMenuOpen(!isMenuOpen)
-            }}
-          >
+          <span className={styles.secondaryText} onClick={handleMenuClick}>
             {isScrolling ? '' : getMenuText()}
             <img
               src={images.greenArrow}
@@ -73,13 +80,15 @@ const MenuByBar = ({
         </div>
 
         {isMenuOpen && (
-          <DropdownMenu
-            menuItems={menuItems}
-            handleOnClick={handleMenuSelected}
-            handleClose={() => {
-              setMenuOpen(false)
-            }}
-          />
+          <div ref={ref}>
+            <DropdownMenu
+              menuItems={menuItems}
+              handleOnClick={handleMenuSelected}
+              handleClose={() => {
+                setMenuOpen(false)
+              }}
+            />
+          </div>
         )}
       </div>
 
@@ -124,7 +133,8 @@ MenuByBar.propTypes = {
   setTabSelected: PropTypes.func,
   isScrolling: PropTypes.bool,
   menuText: PropTypes.string,
-  menuTextSecondary: PropTypes.string
+  menuTextSecondary: PropTypes.string,
+  onMenuByClick: PropTypes.func
 }
 
 MenuByBar.defaultProps = {
@@ -136,7 +146,8 @@ MenuByBar.defaultProps = {
   setTabSelected: () => {},
   isScrolling: false,
   menuText: 'Show menu',
-  menuTextSecondary: 'by'
+  menuTextSecondary: 'by',
+  onMenuByClick: () => {}
 }
 
 export default MenuByBar
