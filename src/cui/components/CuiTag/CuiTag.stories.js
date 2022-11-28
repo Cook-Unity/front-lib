@@ -16,7 +16,7 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: ['olive', 'wine', 'dark', 'white']
+        options: ['olive', 'wine', 'dark', 'white', 'yellow']
       },
       defaultValue: 'olive'
     },
@@ -66,6 +66,11 @@ export const White = Template.bind({})
 White.args = {
   color: 'white',
   icon: 'star'
+}
+export const Yellow = Template.bind({})
+Yellow.args = {
+  color: 'yellow',
+  icon: ''
 }
 export const Alone = Template2.bind({})
 Alone.args = {
