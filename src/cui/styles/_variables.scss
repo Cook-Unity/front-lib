@@ -14,6 +14,7 @@ $cui-black-color-200:  #ddd;
 $cui-black-color-300:  #a8a8a8;
 $cui-black-color-350:  #707070;
 $cui-black-color-400:  #4d4d4f;
+$cui-black-color-500:  #231F20;
 
 $cui-white-color:  #fff;
 
@@ -37,6 +38,8 @@ $cui-pink-300: #f68ac6;
 $cui-pink-500: #da1884;
 
 $cui-gold-500: #c7b273;
+
+$cui-orange-color-500: #FFB156;
 
 // Font Families
 $cui-font-family-source-serif: 'Source Serif Pro';
@@ -109,3 +112,8 @@ $cui-space-tag-large: 12px;
 
 // Header
 $cui-header-height: 72px;
+
+// Inputs
+$cui-height-input-small: 40px;
+$cui-font-input-small: $cui-font-sm;
+$cui-space-input-small: 10px 12px;

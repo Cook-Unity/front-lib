@@ -1,0 +1,15 @@
+@mixin build-input(
+    $background-color,
+    $border-color,
+    $color
+) {
+    @include build-fill-input($background-color, $border-color, $color);
+}
+
+@mixin build-fill-input($background-color, $border-color, $color) {
+    background-color: $background-color;
+    color: $color;
+    border: 1px solid $border-color;
+    outline-color: $border-color;
+    border-radius: 4px;
+}

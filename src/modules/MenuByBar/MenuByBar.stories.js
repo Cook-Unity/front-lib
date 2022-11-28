@@ -8,7 +8,8 @@ export default {
   component: MenuByBar,
   argTypes: {
     setMenuSelected: {action: 'setMenuSelected clicked'},
-    setTabSelected: {action: 'setTabSelected clicked'}
+    setTabSelected: {action: 'setTabSelected clicked'},
+    onMenuByClick: {action: 'onMenuByClick clicked'}
   }
 }
 

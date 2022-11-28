@@ -27,6 +27,8 @@ const DropdownIndicator = props => {
 
 const IndicatorSeparator = props => null
 
+const ClearIndicator = props => null
+
 const CuiSelect = ({
   isDisabled = false,
   isSearchable = false,
@@ -46,7 +48,7 @@ const CuiSelect = ({
         classNames
       )}
       classNamePrefix="cui-select"
-      components={{DropdownIndicator, IndicatorSeparator}}
+      components={{DropdownIndicator, IndicatorSeparator, ClearIndicator}}
       isDisabled={isDisabled}
       isSearchable={isSearchable}
       isMulti={isMulti}
