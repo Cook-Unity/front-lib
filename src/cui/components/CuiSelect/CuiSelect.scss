@@ -42,14 +42,19 @@
     &__multi-value {
         display: flex;
         align-items: center;
-        border: 1px solid $cui-black-color-200;
+        border: 1px solid $cui-black-color-350;
         border-radius: 4px !important;
+        padding-inline-start: 4px;
 
         background-color: $cui-white-color !important;
         
-        &--is_disabled {
-            background-color: $cui-black-color-200 !important;
-            border: 1px solid $cui-black-color-200;
+        &--is-disabled {
+            background-color: $cui-black-color-100 !important;
+            border: 1px solid $cui-black-color-300;
+
+            div {
+                background-color: $cui-black-color-100;
+            }
         }
     }
 
