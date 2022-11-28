@@ -9,9 +9,16 @@ export default {
     name: {
       control: {
         type: 'select',
-        options: ['heart']
+        options: ['alert', 'heart', 'menu', 'star']
       },
       defaultValue: 'heart'
+    },
+    role: {
+      control: {
+        type: 'select',
+        options: ['button', 'icon']
+      },
+      defaultValue: 'icon'
     }
   }
 }

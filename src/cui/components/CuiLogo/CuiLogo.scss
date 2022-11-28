@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.cui-logo {
+    width: 130px;
+
+    &.light {
+        color: $cui-white-color;
+    }
+    &.dark {
+        color: $cui-black-color;
+    }
+}

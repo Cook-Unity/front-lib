@@ -1,4 +1,5 @@
 import React from 'react'
+import CuiIcon from '../CuiIcon/CuiIcon'
 
 import CuiLink from './CuiLink'
 
@@ -45,20 +46,22 @@ export default {
   }
 }
 
-const Template = args => <CuiLink {...args}>Link</CuiLink>
+const DefaultTemplate = args => <CuiLink {...args}>Button</CuiLink>
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Default = DefaultTemplate.bind({})
+Default.args = {
   color: 'primary',
   href: 'https://cookunity.com/',
   target: '_blank'
 }
-export const Secondary = Template.bind({})
-Secondary.args = {
-  color: 'secondary'
-}
-export const Tertiary = Template.bind({})
-Tertiary.args = {
+
+const WithIconTemplate = args => (
+  <CuiLink {...args}>
+    <CuiIcon name="heart" /> Button
+  </CuiLink>
+)
+export const WithIcon = WithIconTemplate.bind({})
+WithIcon.args = {
   color: 'tertiary',
   href: 'https://cookunity.com/',
   target: '_blank'

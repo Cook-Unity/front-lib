@@ -1,4 +1,5 @@
 import React from 'react'
+import CuiIcon from '../CuiIcon/CuiIcon'
 
 import CuiButton from './CuiButton'
 
@@ -9,7 +10,7 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: ['primary', 'secondary', 'dark']
+        options: ['primary', 'secondary', 'dark', 'light']
       },
       defaultValue: 'primary'
     },
@@ -45,17 +46,15 @@ export default {
   }
 }
 
-const Template = args => <CuiButton {...args}>Button</CuiButton>
+const DefaultTemplate = args => <CuiButton {...args}>Button</CuiButton>
 
-export const Primary = Template.bind({})
-Primary.args = {
-  color: 'primary'
-}
-export const Secondary = Template.bind({})
-Secondary.args = {
-  color: 'secondary'
-}
-export const Tertiary = Template.bind({})
-Tertiary.args = {
-  color: 'tertiary'
-}
+export const Default = DefaultTemplate.bind({})
+Default.args = {}
+
+const WithIconTemplate = args => (
+  <CuiButton {...args}>
+    <CuiIcon name="heart" /> Button
+  </CuiButton>
+)
+export const WithIcon = WithIconTemplate.bind({})
+WithIcon.args = {}

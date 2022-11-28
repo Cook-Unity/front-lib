@@ -78,15 +78,27 @@ $cui-font-normal: 400; // normal = regular
 $cui-font-bold: 700;
 $cui-font-extrabold: 800;
 
+// Spaces
+$cui-gutter: 8px;
+$cui-gutter-large: 16px;
+
 // Buttons
 $cui-font-button-small: $cui-font-sm;
 $cui-space-button-small: 7px 16px;
+$cui-height-button-small: 34px;
 
 $cui-font-button-medium: $cui-font-sm;
 $cui-space-button-medium: 9px 24px;
+$cui-height-button-medium: 38px;
 
 $cui-font-button-large: $cui-font-base;
 $cui-space-button-large: 12px 32px;
+$cui-height-button-large: 48px;
+
+// FAB Buttons
+$cui-fab-font: $cui-font-sm;
+$cui-fab-radius: 100%;
+$cui-fab-size: 32px;
 
 // Tags
 $cui-font-tag-small: $cui-font-sm;
@@ -97,6 +109,9 @@ $cui-space-tag-medium: 8px;
 
 $cui-font-tag-large: $cui-font-lg;
 $cui-space-tag-large: 12px;
+
+// Header
+$cui-header-height: 72px;
 
 // Inputs
 $cui-height-input-small: 40px;

@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+.cui-breadcrumb {
+    display: flex;
+    align-items: center;
+
+    @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-button-medium,
+        $cui-line-height-xl,
+        $cui-font-bold
+    );
+
+    span:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

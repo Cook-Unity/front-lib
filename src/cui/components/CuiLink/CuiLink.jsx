@@ -6,6 +6,7 @@ const CuiLink = ({
   fill = 'solid',
   size = 'medium',
   color = 'primary',
+  showUnderline = false,
   disabled = false,
   loading = false,
   children,
@@ -19,6 +20,7 @@ const CuiLink = ({
         `cui-link-${color}`,
         `cui-link-${color}-${fill}`,
         `cui-link-${size}`,
+        showUnderline && 'cui-link-underline',
         disabled && `cui-link-${color}-disabled`,
         loading && `cui-link-${color}-${fill}-loading`
       )}

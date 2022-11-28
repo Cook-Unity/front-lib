@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.cui-header {
+    align-items: center;
+    display: flex;
+    height: $cui-header-height;
+    padding: 0 24px;
+    position: relative;
+
+    &.dark {
+        color: $cui-white-color;
+        background-color: $cui-black-color;
+    }
+    .brand {
+        display: flex;
+        gap: $cui-gutter-large;
+        z-index: 1;
+    }
+    .center {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        right: 0;
+        padding-left: 200px;
+        padding-right: 200px;
+        position: absolute;
+        top: 0;
+    }
+    .end {
+        align-items: center;
+        display: flex;
+        gap: $cui-gutter;
+        margin-left: auto;
+        z-index: 1;
+    }
+    .need-help {
+        span {
+            display: none;
+        }
+    }
+}
