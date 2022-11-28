@@ -9,7 +9,7 @@ export default {
     icon: {
       control: {
         type: 'select',
-        options: ['alert', 'star']
+        options: ['none', 'alert', 'star']
       },
       defaultValue: 'star'
     },
@@ -71,4 +71,16 @@ export const Alone = Template2.bind({})
 Alone.args = {
   color: 'dark',
   icon: 'star'
+}
+
+export const NoIcon = Template.bind({})
+NoIcon.args = {
+  color: 'dark',
+  icon: ''
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  color: 'grey',
+  icon: ''
 }
