@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/inputs";
+@import "../../styles/mixins/fonts";
+
+.cui-input {
+    box-sizing: border-box;
+
+    @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-input-small,
+        $cui-font-normal,
+        $cui-font-normal
+    );
+
+    // Sizes
+    &-small {
+        height: $cui-height-input-small;
+        font-size: $cui-font-input-small;
+        padding: $cui-space-input-small;
+    }
+
+    // Colors
+    &-white {
+        &-solid {
+            @include build-input(
+                // default
+                $cui-white-color,
+                $cui-black-color-200,
+                $cui-black-color-350
+            );
+        }
+    }
+}
