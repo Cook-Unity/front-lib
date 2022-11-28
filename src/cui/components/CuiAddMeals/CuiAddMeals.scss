@@ -1,0 +1,134 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/tags";
+@import "../../styles/mixins/fonts";
+@import '../../styles/mixins/media';
+
+@mixin build-border-color(
+) {
+    &-available {
+        border-top: 3px solid $cui-orange-color-500;
+    }
+    &-notAvailable {
+        border-top: 3px solid $cui-black-color-300;
+    }
+    &-added {
+        border-top: 3px solid $cui-olive-green-color-500;
+    }
+}
+
+@mixin build-background-color(
+) {
+    &-available {
+        background-color: $cui-orange-color-500;
+    }
+    &-notAvailable {
+        background-color: $cui-black-color-300;
+    }
+    &-added {
+        background-color: $cui-olive-green-color-500;
+    }
+}
+
+.cui-addmeals {
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    padding: 60px;
+    @include mobile {
+        padding: 16px;
+    }
+
+    .cui-addmeals-header {
+        display: flex;
+        margin-bottom: 38px;
+        align-items: center;
+        .cui-addmeals-photo {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            position: relative;
+            max-height: 73px;
+            margin-right: 16px;
+            box-shadow: 0px 0px 6px rgba(35, 31, 32, 0.1), 0px 2px 6px rgba(35, 31, 32, 0.05);
+            border-radius: 12px;
+            height: 73px;
+            width: 30%;
+            max-width: 100px;
+        }
+
+        .cui-addmeals-title-wrapper {
+            .cui-addmeals-title {
+                @include font-build($cui-font-family-source-serif, $cui-font-4xl, $cui-line-height-4xl, $cui-font-bold);
+
+                color: $cui-black-color-500;
+                @include mobile {
+                  font-size: $cui-font-2xl;
+                  line-height: $cui-line-height-2xl;
+                }
+            }
+            .cui-addmeals-subtitle {
+                @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-base, $cui-font-normal);
+                color: $cui-black-color-500;
+                margin-bottom: 8px
+            }
+        }
+    }
+    .cui-addmeals-description {
+        @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-sm, $cui-font-normal);
+        padding-bottom: 22px;
+        @include mobile {
+          font-size: $cui-font-sm;
+          line-height: $cui-line-height-sm;
+        }
+    }
+    .cui-addmeals-date-wrapper {
+        display: flex;
+        & > *:not(:last-child) {
+          margin-right: 8px;
+        }
+        @include mobile {
+          flex-direction: column;
+          & > *:not(:last-child) {
+            margin-right: 0px;
+            margin-bottom: 20px;
+          }
+        }
+
+        .cui-addmeals-datebox {
+            border-radius: 0px 0px 8px 8px;
+            background: $cui-black-color-100;
+            padding: 20px 12px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            @include build-border-color();
+
+            @include mobile {
+              width: auto;
+            }
+
+            .cui-addmeals-date {
+                @include font-build($cui-font-family-source-serif, $cui-font-xl, $cui-line-height-3xl, $cui-font-bold);
+
+                color: $cui-black-color-500;
+                width: 100%;
+                padding-bottom: 8px;
+                text-align: center;
+                @include mobile {
+                  font-size: $cui-font-xl;
+                }
+            }
+
+            .cui-addmeals-status {
+                @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-sm, $cui-font-bold);
+                @include build-background-color();
+
+                border-radius: 2px;
+                padding: 4px 8px;
+                color: $cui-white-color;
+            }
+        }
+    }
+}
