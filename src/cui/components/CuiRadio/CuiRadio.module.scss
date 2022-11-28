@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+
+.cookunity__input_radio_container {
+  display: flex;
+  cursor: pointer;
+
+  .cookunity__input_radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid $cui-black-color-200;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+    .checkmark {
+      width: 10px;
+      height: 10px;
+      background-color: $cui-wine-color-700;
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    &.checked {
+      border: 1px solid $cui-wine-color-700;
+      .checkmark {
+        opacity: 1;
+      }
+    }
+
+    &[type='radio'] {
+      display: none;
+    }
+  }
+
+  .cookunity__input_label {
+    color: $cui-black-color;
+
+    @include font-build(
+      $cui-font-family-tt-norms,
+      $cui-font-sm,
+      $cui-line-height-xl,
+      $cui-font-normal
+    );
+  }
+}
