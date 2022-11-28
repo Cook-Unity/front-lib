@@ -1,0 +1,67 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fonts";
+
+.cui-collection-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cui-collection-icon__container {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.cui-collection-icon__img {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cui-collection-icon__title-large {
+  @include font-build(
+    $cui-font-family-source-serif,
+    $cui-font-3xl,
+    $cui-line-height-4xl,
+    $cui-font-bold
+  );
+}
+
+.cui-collection-icon__title-small {
+  @include font-build(
+    $cui-font-family-source-serif,
+    $cui-font-2xl,
+    $cui-line-height-3xl,
+    $cui-font-bold
+  );
+}
+
+.cui-collection-icon__view-all {
+  @include font-build(
+    $cui-font-family-tt-norms,
+    $cui-font-base,
+    $cui-line-height-2xl,
+    $cui-font-bold
+  );
+  cursor: pointer;
+  text-decoration: underline;
+  min-width: max-content;
+}
+
+.cui-collection-icon__tag {
+  font-size: $cui-font-xs;
+  line-height: $cui-line-height-base;
+  width: max-content;
+}
+
+.cui-collection-icon__details {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 4px;
+}

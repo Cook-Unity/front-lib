@@ -93,6 +93,17 @@
         }
     }
 
+    &-yellow {
+        &-solid {
+            @include build-tag(
+                // default
+                $cui-yellow-color-500,
+                $cui-yellow-color-500,
+                $cui-black-color
+            )
+        }
+    }
+
     .cui-icon {
         display: flex;
     }
