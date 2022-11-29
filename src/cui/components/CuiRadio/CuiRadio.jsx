@@ -1,9 +1,9 @@
 import React from 'react'
 import classnames from 'classnames'
-import styles from './Radio.module.scss'
 
-// TODO: this should be deleted after rebranding is finished
-const Radio = ({name, checked, onClick, children}) => {
+import styles from './CuiRadio.module.scss'
+
+const CuiRadio = ({name, checked, onClick, children}) => {
   return (
     <div
       className={classnames(styles.cookunity__input_radio_container)}
@@ -22,9 +22,11 @@ const Radio = ({name, checked, onClick, children}) => {
         name={name}
         checked={checked}
       />
-      {children}
+      <span className={classnames(styles.cookunity__input_label)}>
+        {children}
+      </span>
     </div>
   )
 }
 
-export default Radio
+export default CuiRadio
