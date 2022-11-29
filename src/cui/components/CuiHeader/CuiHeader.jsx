@@ -9,7 +9,8 @@ import CuiAllyButton from '../CuiAllyButton/CuiAllyButton'
 
 const CuiHeader = ({
   center,
-  end,
+  endPrimary,
+  endSecondary,
   className,
   color = 'dark',
   showMenu = false,
@@ -31,6 +32,7 @@ const CuiHeader = ({
       </div>
       {center && <div className="center">{center}</div>}
       <div className="end">
+        {endPrimary}
         {showLogin && (
           <CuiLink
             className="login"
@@ -54,7 +56,7 @@ const CuiHeader = ({
           </CuiButton>
         )}
         {showAllyButton && <CuiAllyButton />}
-        {end}
+        {endSecondary}
       </div>
     </header>
   )

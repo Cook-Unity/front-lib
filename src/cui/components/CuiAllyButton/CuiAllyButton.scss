@@ -1,4 +1,8 @@
+@import "../../styles/variables";
+
 .cui-ally-button {
-    align-items: center;
-    display: flex;
+   display: flex;
+   &.light {
+    filter: invert(1);
+   }
 }

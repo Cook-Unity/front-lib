@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CuiBreadcrumb from '../CuiBreadcrumb/CuiBreadcrumb'
 import CuiBreadcrumbs from '../CuiBreadcrumbs/CuiBreadcrumbs'
 import CuiFabButton from '../CuiFabButton/CuiFabButton'
-
+import CuiSegment from '../CuiSegment/CuiSegment'
+import CuiSegmentButton from '../CuiSegmentButton/CuiSegmentButton'
 import CuiHeader from './CuiHeader'
 
 export default {
@@ -35,7 +36,7 @@ export default {
   }
 }
 
-const Template = args => <CuiHeader {...args}>Link</CuiHeader>
+const Template = args => <CuiHeader {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
@@ -52,7 +53,7 @@ Login.args = {
 const items = [
   {label: 'Membership Plans', id: 1},
   {label: 'Meals', id: 2},
-  {label: 'Checkout', id: 2}
+  {label: 'Checkout', id: 3}
 ]
 const FunnelBreadcrumbs = (
   <CuiBreadcrumbs color="light">
@@ -71,12 +72,42 @@ Funnel.args = {
   center: FunnelBreadcrumbs
 }
 
-const SubscriptionItems = <CuiFabButton>AS</CuiFabButton>
-export const Subscription = Template.bind({})
+const subscriptionItems = [
+  {label: 'Orders', value: 1},
+  {label: 'Preferences', value: 2},
+  {label: 'Past Deliveries', value: 3},
+  {label: 'FAQs', value: 4},
+  {label: 'Messages', value: 5}
+]
+
+const SubscriptionMenu = () => {
+  const [activeButton, setActiveButton] = useState(1)
+
+  return (
+    <CuiSegment color="light">
+      {subscriptionItems.map(item => (
+        <CuiSegmentButton
+          key={item.value}
+          active={activeButton === item.value}
+          onClick={() => setActiveButton(item.value)}
+        >
+          {item.label}
+        </CuiSegmentButton>
+      ))}
+    </CuiSegment>
+  )
+}
+
+const SubscriptionEndSecondary = <CuiFabButton>AS</CuiFabButton>
+
+const TemplateSubscription = args => <CuiHeader {...args} />
+export const Subscription = TemplateSubscription.bind({})
 Subscription.args = {
   color: 'dark',
   showMenu: true,
   showLogin: false,
-  showNeedHelp: true,
-  end: SubscriptionItems
+  showNeedHelp: false,
+  showAllyButton: true,
+  endPrimary: <SubscriptionMenu />,
+  endSecondary: SubscriptionEndSecondary
 }
