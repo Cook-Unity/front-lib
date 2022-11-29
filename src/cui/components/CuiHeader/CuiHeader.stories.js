@@ -100,8 +100,8 @@ const SubscriptionMenu = () => {
 
 const SubscriptionEndSecondary = <CuiFabButton>AS</CuiFabButton>
 
-const TemplateB = args => <CuiHeader {...args} />
-export const Subscription = TemplateB.bind({})
+const TemplateSubscription = args => <CuiHeader {...args} />
+export const Subscription = TemplateSubscription.bind({})
 Subscription.args = {
   color: 'dark',
   showMenu: true,
