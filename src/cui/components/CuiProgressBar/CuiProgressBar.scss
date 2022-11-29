@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.cui-progress-bar {
+    display: flex;
+    align-items: center;
+    height: $cui-height-progress-bar;
+
+    &-item {
+        flex: 1;
+        height: $cui-height-progress-bar;
+    }
+    &-color {
+        &-primary {
+            .cui-progress-bar-item {
+                background-color: $cui-black-color-300;
+                &.active  {
+                    background-color: $cui-yellow-color-600;
+                }
+            }
+        }
+    }
+}
