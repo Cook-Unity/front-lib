@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+.cui-text-header {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-image: url("https://static.cookunity.com/cross/front-lib/images/brush.svg");
+   background-repeat: no-repeat;
+   min-height: $cui-height-text-header;
+
+   &-center {
+      align-items: center;
+      background-position: center;
+   }
+   &-start {
+      align-items: flex-start;
+      background-position: left;
+   }
+}

@@ -6,6 +6,10 @@
 // ##############################
 // ##############################
 
+// Screen Sizes
+$tablet: 768px !default;
+$desktop: 1024px !default;
+
 // Colors
 $cui-black-color:  #000;
 $cui-black-color-100:  #f5f5f5;
@@ -124,3 +128,6 @@ $cui-space-segment: 24px;
 
 // Progress Bar
 $cui-height-progress-bar: 6px;
+
+// Text Header
+$cui-height-text-header: 50px;

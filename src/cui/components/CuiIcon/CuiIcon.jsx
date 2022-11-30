@@ -7,9 +7,6 @@ const imageUrl = filename =>
 
 export const icons = {
   alert: imageUrl('alert-circle.svg'),
-  accessibility1: imageUrl('accessibility-1.svg'),
-  accessibility2: imageUrl('accessibility-2.svg'),
-  accessibilityChevron: imageUrl('accessibility-chevron.svg'),
   checkmarkCircle2: imageUrl('checkmark-circle-2.svg'),
   chevronRight: imageUrl('chevron-right.svg'),
   heart: imageUrl('heart.svg'),
@@ -22,7 +19,7 @@ export const icons = {
   trash: imageUrl('trash.svg')
 }
 
-const CuiIcon = ({name, path, role = 'icon', className, ...props}) => {
+const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
   const [svg, setSvg] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isErrored, setIsErrored] = useState(false)
@@ -35,6 +32,12 @@ const CuiIcon = ({name, path, role = 'icon', className, ...props}) => {
       .then(() => setIsLoaded(true))
   }, [name, path])
 
+  const onClickHandle = event => {
+    if (onClick) {
+      onClick(event)
+    }
+  }
+
   return (
     <div
       className={classNames(
@@ -44,6 +47,7 @@ const CuiIcon = ({name, path, role = 'icon', className, ...props}) => {
         role,
         className
       )}
+      onClick={onClickHandle}
       dangerouslySetInnerHTML={{__html: svg}}
     />
   )
