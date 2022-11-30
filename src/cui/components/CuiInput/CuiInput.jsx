@@ -5,10 +5,10 @@ import './CuiInput.scss'
 const CuiInput = ({
   fill = 'solid',
   loading = false,
+  size = 'small',
   children,
   className,
   color,
-  size,
   ...props
 }) => {
   return (
