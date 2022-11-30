@@ -6,9 +6,9 @@ const CuiImage = ({className, src, title, ...props}) => {
   return (
     <img
       className={classNames('cui-image', className)}
-      {...props}
       src={src}
       alt={title}
+      {...props}
     />
   )
 }
