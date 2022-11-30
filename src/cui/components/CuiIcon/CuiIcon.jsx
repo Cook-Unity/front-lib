@@ -30,6 +30,12 @@ const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
       .then(() => setIsLoaded(true))
   }, [name, path])
 
+  const onClickHandle = event => {
+    if (onClick) {
+      onClick(event)
+    }
+  }
+
   return (
     <div
       className={classNames(
@@ -39,8 +45,8 @@ const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
         role,
         className
       )}
+      onClick={onClickHandle}
       dangerouslySetInnerHTML={{__html: svg}}
-      onClick={onClick}
     />
   )
 }

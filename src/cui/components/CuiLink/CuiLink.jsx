@@ -13,6 +13,10 @@ const CuiLink = ({
   className,
   ...props
 }) => {
+  const onClickHandle = event => {
+    event.currentTarget.blur()
+  }
+
   return (
     <a
       className={classNames(
@@ -24,6 +28,7 @@ const CuiLink = ({
         disabled && `cui-link-${color}-disabled`,
         loading && `cui-link-${color}-${fill}-loading`
       )}
+      onClick={onClickHandle}
       {...props}
     >
       {children}

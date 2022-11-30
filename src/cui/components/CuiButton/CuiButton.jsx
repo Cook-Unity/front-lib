@@ -13,6 +13,10 @@ const CuiButton = ({
   className,
   ...props
 }) => {
+  const onClickHandle = event => {
+    event.currentTarget.blur()
+  }
+
   return (
     <button
       type={type}
@@ -25,6 +29,7 @@ const CuiButton = ({
         loading && `cui-button-${color}-${fill}-loading`
       )}
       disabled={disabled}
+      onClick={onClickHandle}
       {...props}
     >
       {children}
