@@ -33,6 +33,7 @@ export {default as CuiCollectionIcon} from './cui/components/CuiCollection/CuiCo
 export {default as CuiFabButton} from './cui/components/CuiFabButton/CuiFabButton'
 export {default as CuiHeader} from './cui/components/CuiHeader/CuiHeader'
 export {default as CuiIcon} from './cui/components/CuiIcon/CuiIcon'
+export {default as CuiImage} from './cui/components/CuiImage/CuiImage'
 export {default as CuiInput} from './cui/components/CuiInput/CuiInput'
 export {default as CuiLink} from './cui/components/CuiLink/CuiLink'
 export {default as CuiLogo} from './cui/components/CuiLogo/CuiLogo'

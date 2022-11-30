@@ -16,7 +16,7 @@ export default {
   }
 }
 
-const Template = args => <CuiAllyButton {...args}>Link</CuiAllyButton>
+const Template = args => <CuiAllyButton {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}
