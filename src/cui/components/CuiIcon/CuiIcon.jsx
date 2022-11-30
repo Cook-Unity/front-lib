@@ -7,9 +7,6 @@ const imageUrl = filename =>
 
 export const icons = {
   alert: imageUrl('alert-circle.svg'),
-  accessibility1: imageUrl('accessibility-1.svg'),
-  accessibility2: imageUrl('accessibility-2.svg'),
-  accessibilityChevron: imageUrl('accessibility-chevron.svg'),
   checkmarkCircle2: imageUrl('checkmark-circle-2.svg'),
   chevronRight: imageUrl('chevron-right.svg'),
   heart: imageUrl('heart.svg'),
@@ -20,7 +17,7 @@ export const icons = {
   star: imageUrl('star.svg')
 }
 
-const CuiIcon = ({name, path, role = 'icon', className, ...props}) => {
+const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
   const [svg, setSvg] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isErrored, setIsErrored] = useState(false)
@@ -43,7 +40,7 @@ const CuiIcon = ({name, path, role = 'icon', className, ...props}) => {
         className
       )}
       dangerouslySetInnerHTML={{__html: svg}}
-      {...props}
+      onClick={onClick}
     />
   )
 }

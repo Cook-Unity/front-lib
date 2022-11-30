@@ -1,18 +1,13 @@
 import React from 'react'
 
 import CuiIcon from './CuiIcon'
+import {CuiIconNames} from './icons'
 
 export default {
   title: 'Cui / CuiIcon',
   component: CuiIcon,
   argTypes: {
-    name: {
-      control: {
-        type: 'select',
-        options: ['alert', 'heart', 'menu', 'star']
-      },
-      defaultValue: 'heart'
-    },
+    name: CuiIconNames,
     role: {
       control: {
         type: 'select',

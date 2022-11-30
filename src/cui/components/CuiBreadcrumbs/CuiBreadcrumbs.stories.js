@@ -18,14 +18,16 @@ export default {
 }
 
 const items = [
-  {label: 'Membership Plans', id: 1},
-  {label: 'Meals', id: 2},
-  {label: 'Checkout', id: 3}
+  {id: 1, active: true, label: 'Membership Plans'},
+  {id: 2, active: true, label: 'Meals'},
+  {id: 3, active: false, label: 'Checkout'}
 ]
 const Template = args => (
   <CuiBreadcrumbs {...args}>
     {items.map(item => (
-      <CuiBreadcrumb key={item.id}>{item.label}</CuiBreadcrumb>
+      <CuiBreadcrumb key={item.id} active={item.active}>
+        {item.label}
+      </CuiBreadcrumb>
     ))}
   </CuiBreadcrumbs>
 )
