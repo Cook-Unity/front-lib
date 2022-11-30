@@ -26,7 +26,8 @@ const CuiButton = ({
         `cui-button-${color}-${fill}`,
         `cui-button-${size}`,
         disabled && `cui-button-${color}-disabled`,
-        loading && `cui-button-${color}-${fill}-loading`
+        loading && `cui-button-${color}-${fill}-loading`,
+        className
       )}
       disabled={disabled}
       onClick={onClickHandle}

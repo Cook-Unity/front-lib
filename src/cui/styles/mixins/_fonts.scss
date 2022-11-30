@@ -21,6 +21,19 @@
       url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-bold.ttf")
         format("truetype");
   }
+  @font-face {
+    font-family: $cui-font-family-source-serif;
+    font-weight: $cui-font-normal;
+    font-style: normal;
+    font-display: swap;
+    src: local($cui-font-family-source-serif),
+      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-regular.woff2")
+        format("woff2"),
+      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-regular.woff")
+        format("woff"),
+      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-regular.ttf")
+        format("truetype");
+  }
 }
 
 @mixin font-rossanova() {
