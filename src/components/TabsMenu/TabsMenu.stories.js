@@ -28,6 +28,15 @@ Cuisines.args = {
   }
 }
 
+export const Chefs = Template.bind({})
+Chefs.args = {
+  tabsItems: data.chefs,
+  selectedTab: data.chefs[5],
+  handleOnClick: () => {
+    console.log('Item click')
+  }
+}
+
 export const IsScrolling = Template.bind({})
 IsScrolling.args = {
   tabsItems: data.cuisines,

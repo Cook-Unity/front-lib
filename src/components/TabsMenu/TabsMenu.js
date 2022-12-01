@@ -1,11 +1,36 @@
-import React from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-
 import styles from './TabsMenu.module.scss'
+import ArrowCircle from '../../common/ArrowCircle'
 
-const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
+const TabsMenu = ({
+  tabsItems,
+  selectedTab,
+  isScrolling,
+  handleOnClick,
+  showNavigation
+}) => {
   const isSelected = item => item.id === selectedTab.id
+  const ref = useRef(null)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [scrollWidth, setScrollWidth] = useState(0)
+
+  const handleClickButton = val => {
+    if (val) ref.current.scrollLeft += ref.current.offsetWidth - 85
+    else ref.current.scrollLeft += -ref.current.offsetWidth + 85
+  }
+
+  const handleScroll = () => {
+    setScrollPosition(ref.current.scrollLeft)
+  }
+
+  const showLeftArrow = scrollPosition > 0
+  const showRightArrow = scrollPosition < scrollWidth
+
+  useEffect(() => {
+    setScrollWidth(ref.current.scrollWidth - ref.current.offsetWidth)
+  })
 
   return (
     <div>
@@ -14,10 +39,23 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
           [styles.scrolling]: isScrolling
         })}
       >
+        <div className={classnames(styles.navigation, styles.navigationLeft)}>
+          {showNavigation && showLeftArrow && (
+            <div
+              className={classnames(styles.button)}
+              onClick={() => handleClickButton(false)}
+            >
+              <ArrowCircle flip />
+            </div>
+          )}
+          <div className={classnames(styles.gradient, styles.gradientLeft)} />
+        </div>
         <ul
           className={classnames(styles.tabs, {
             [styles.scrolling]: isScrolling
           })}
+          onScroll={handleScroll}
+          ref={ref}
         >
           {tabsItems.map(tabItem => (
             <li
@@ -47,6 +85,17 @@ const TabsMenu = ({tabsItems, selectedTab, isScrolling, handleOnClick}) => {
             </li>
           ))}
         </ul>
+        <div className={classnames(styles.navigation, styles.navigationRight)}>
+          <div className={classnames(styles.gradient, styles.gradientRight)} />
+          {showNavigation && showRightArrow && (
+            <div
+              className={classnames(styles.button)}
+              onClick={() => handleClickButton(true)}
+            >
+              <ArrowCircle />
+            </div>
+          )}
+        </div>
       </div>
       <hr
         className={classnames(styles.divider, {
@@ -61,7 +110,8 @@ TabsMenu.propTypes = {
   tabsItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   selectedTab: PropTypes.object.isRequired,
   isScrolling: PropTypes.bool,
-  handleOnClick: PropTypes.func
+  handleOnClick: PropTypes.func,
+  showNavigation: PropTypes.bool
 }
 
 const tabsItems = [
@@ -76,7 +126,8 @@ TabsMenu.defaultProps = {
   tabsItems,
   selectedTab: tabsItems[0],
   isScrolling: false,
-  handleOnClick: null
+  handleOnClick: null,
+  showNavigation: false
 }
 
 export default TabsMenu
