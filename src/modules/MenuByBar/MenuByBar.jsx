@@ -20,7 +20,8 @@ const MenuByBar = ({
   isScrolling,
   menuText,
   menuTextSecondary,
-  onMenuByClick
+  onMenuByClick,
+  showNavigation
 }) => {
   const [isMenuOpen, setMenuOpen] = useState(isOpen)
   const ref = useRef()
@@ -102,6 +103,7 @@ const MenuByBar = ({
           tabsItems={menuSelected.tabs}
           handleOnClick={handleTabSelected}
           isScrolling={isScrolling}
+          showNavigation={showNavigation}
         />
       </div>
     </div>
@@ -134,7 +136,8 @@ MenuByBar.propTypes = {
   isScrolling: PropTypes.bool,
   menuText: PropTypes.string,
   menuTextSecondary: PropTypes.string,
-  onMenuByClick: PropTypes.func
+  onMenuByClick: PropTypes.func,
+  showNavigation: PropTypes.bool
 }
 
 MenuByBar.defaultProps = {
@@ -147,7 +150,8 @@ MenuByBar.defaultProps = {
   isScrolling: false,
   menuText: 'Show menu',
   menuTextSecondary: 'by',
-  onMenuByClick: () => {}
+  onMenuByClick: () => {},
+  showNavigation: true
 }
 
 export default MenuByBar
