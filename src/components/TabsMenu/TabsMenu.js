@@ -30,7 +30,7 @@ const TabsMenu = ({
 
   useEffect(() => {
     setScrollWidth(ref.current.scrollWidth - ref.current.offsetWidth)
-  })
+  }, [])
 
   return (
     <div>

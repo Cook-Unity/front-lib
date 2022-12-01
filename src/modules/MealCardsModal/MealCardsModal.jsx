@@ -29,16 +29,16 @@ const MealCardsModal = ({
       onRequestClose={handleClose}
       modalContainerId={modalContainerId}
       withCloseIcon={!!withCloseIcon}
+      closeIconRight
       overlayClassName={styles.mealCardsModal}
       className={styles.mealCardsModalInner}
       mediumSize
     >
+      <div className={styles.titlesContainer}>
+        <h3 data-testid="title">{title}</h3>
+        {subtitle && <h2 data-testid="subtitle">{subtitle}</h2>}
+      </div>
       <div className={styles.contentContainer}>
-        <div className={styles.titlesContainer}>
-          <h3 data-testid="title">{title}</h3>
-          {subtitle && <h2 data-testid="subtitle">{subtitle}</h2>}
-        </div>
-
         <div className={styles.cardsContainerOuter}>
           <div className={styles.cardsContainer}>
             {meals.map((meal, index) => {
@@ -51,6 +51,7 @@ const MealCardsModal = ({
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
                   onMealClick={onClickMeal}
+                  showPrice
                 />
               ) : (
                 <MealCard
@@ -61,6 +62,7 @@ const MealCardsModal = ({
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
                   onMealClick={onClickMeal}
+                  showPrice
                 />
               )
             })}
