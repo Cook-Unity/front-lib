@@ -10,7 +10,10 @@ export const CuiIconNames = {
       'menu',
       'plus',
       'percent',
-      'star'
+      'star',
+      'allDone',
+      'slickPrev',
+      'slickNext'
     ]
   },
   defaultValue: 'heart'

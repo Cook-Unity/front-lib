@@ -17,7 +17,10 @@ export const icons = {
   star: imageUrl('star.svg'),
   alertTriangle: imageUrl('alert-triangle.svg'),
   trash: imageUrl('trash.svg'),
-  info: imageUrl('info.svg')
+  info: imageUrl('info.svg'),
+  allDone: imageUrl('all-done.svg'),
+  slickPrev: imageUrl('slick-prev.svg'),
+  slickNext: imageUrl('slick-next.svg')
 }
 
 const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
