@@ -1,0 +1,116 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fonts";
+@import "../../../styles/mixins/media";
+
+.cui-collection-header {
+  width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+  flex-direction: column;
+}
+
+.cui-collection-header__cover-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  @include mobile {
+    display: none;
+  }
+}
+
+.cui-collection-header__content {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  max-width: 100%;
+  min-height: 220px;
+  background-color: $cui-black-color;
+  &.withMargin {
+    margin-top: 60px;
+  }
+  @include mobile {
+    flex-direction: column;
+    max-height: 100%;
+    align-items: center;
+    padding: 24px 16px;
+    text-align: center;
+  }
+}
+
+.cui-collection-header__img {
+  object-fit: cover;
+  width: 240px;
+  height: 240px;
+  top: -44px;
+  border-radius: 8px;
+  position: relative;
+  @include mobile {
+    height: 220px;
+    width: 220px;
+    top:0;
+  }
+}
+
+.cui-collection-header__title {
+  color: $cui-white-color;
+  width: 100%;
+  height: max-content;
+  margin: 26px 0 24px;
+  @include mobile {
+    margin: 0;
+  }
+  h1 {
+    @include font-build($cui-font-family-source-serif, $cui-font-6xl, $cui-line-height-8xl, $cui-font-bold);
+    margin: 0;
+    @include mobile {
+      display: none
+    }
+  }
+  p{
+    @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-normal);
+    margin:0;
+  }
+}
+
+.cui-collection-header__title-mobile {
+  display: none;
+  @include mobile {
+    display: block;
+    @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
+    color: $cui-white-color;
+  }
+}
+
+.cui-collection-header__cu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  align-items: flex-end;
+  @include mobile {
+    align-items: center;
+    margin-top: 0;
+  }
+}
+
+.cui-collection-header__cu-curated {
+  @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+  color: $cui-white-color;
+  margin-bottom: 5px;
+  min-width: max-content;
+}
+
+.cui-collection-header__cu-logo {
+  height: 24px;
+  max-width: max-content;
+  object-fit: cover;
+  padding-bottom: 8px;
+  color: $cui-white-color;
+  border-bottom: 1px solid $cui-white-color;
+  margin-bottom: 8px;
+}
+
+.cui-collection-header__cu-meals {
+  @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-normal);
+  color: $cui-white-color;
+}

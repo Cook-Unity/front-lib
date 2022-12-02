@@ -1,0 +1,224 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fonts";
+
+@keyframes expandCartControllers {
+  0% {
+    width: 30px;
+  }
+  100% {
+    width: 90px;
+  }
+}
+
+.cui-carrousel-card {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 290px;
+  width: 200px;
+  background-color: $cui-white-color;
+
+  &-in-cart {
+    border: 2px solid $cui-wine-color-500;
+  }
+}
+
+.cui-carrousel-card__top {
+  height: 170px;
+  position: relative;
+}
+
+.cui-carrousel-card__footer {
+  height: 120px;
+  background-color: $cui-white-color;
+  padding: 0 16px 16px;
+}
+
+.cui-carrousel-card__chef {
+  position: absolute;
+  width: 32px;
+  top: 10px;
+  left: 16px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cui-carrousel-card__warning {
+  position: absolute;
+  background: unset;
+  border-radius: 200px;
+  right: 17.5px;
+  top: 17.5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.cui-carrousel-card__warning-text {
+  width: 150px;
+  background: $cui-white-color;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  margin-left: 10px;
+  span {
+    @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+    color: $cui-black-color-500;
+  }
+}
+
+.cui-carrousel-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+}
+
+.cui-carrousel-card__action-wrapper {
+  display: flex;
+  margin-top: 8px;
+}
+
+.cui-carrousel-card__star-wrapper {
+  width: 65px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid $cui-black-color-150;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  img {
+    height: 13px;
+  }
+  span {
+    padding-left: 8px;
+    @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-bold);
+    color: $cui-black-color-500;
+    padding-top: 2px;
+  }
+}
+
+.cui-carrousel-card__price-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  &.large {
+    padding-left: 55px;
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 32px;
+    @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-bold);
+    color: $cui-black-color-500;
+    padding-right: 8px;
+    width: max-content;
+  }
+}
+
+.cui-carrousel-card__cart-actions {
+  display: flex;
+  border: 1px solid $cui-black-color;
+  border-radius: 50px;
+  width: 74px;
+  height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: expandCartControllers 200ms;
+  &-remove {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: $cui-white-color;
+    border: 0px solid;
+    margin: 0 2.5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+  }
+  img {
+    width: 11px;
+  }
+  &-quantity {
+    @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-bold);
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-add {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: $cui-white-color;
+    border: 0px solid;
+    margin: 0 2.5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+.cui-carrousel-card__cart-button {
+  box-sizing: revert;
+  background-color: $cui-black-color;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 0px solid;
+  cursor: pointer;
+  font-weight: bolder;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  padding-left: 6px;
+  img {
+    width: 11px;
+  }
+}
+
+.cui-carrousel-card__cart-button-quantity {
+  @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-bold);
+  color: $cui-white-color;
+  border: none;
+  background: $cui-wine-color-500;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 2.5px;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+}
+
+.cui-carrousel-card__details {
+  max-width: 155px;
+  &-title {
+    @include font-build($cui-font-family-source-serif, $cui-font-base, $cui-line-height-2xl, $cui-font-bold);
+    color: $cui-black-color-500;
+    width: 152px;
+    padding-top: 16px;
+    height: 48px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    cursor: pointer;
+  }
+}
