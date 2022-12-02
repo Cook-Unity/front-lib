@@ -1,18 +1,12 @@
 import React from 'react'
-
+import {CuiIconNames} from '../CuiIcon/icons'
 import CuiTag from './CuiTag'
 
 export default {
   title: 'Cui / CuiTag',
   component: CuiTag,
   argTypes: {
-    icon: {
-      control: {
-        type: 'select',
-        options: ['none', 'alert', 'star', 'trash']
-      },
-      defaultValue: 'star'
-    },
+    icon: CuiIconNames,
     color: {
       control: {
         type: 'select',
