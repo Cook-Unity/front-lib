@@ -32,8 +32,8 @@ export default {
 
 const Template = args => <CuiInput {...args} />
 
-export const Defatul = Template.bind({})
-Defatul.args = {
+export const Default = Template.bind({})
+Default.args = {
   name: 'template',
   placeholder: 'Eg. text here'
 }

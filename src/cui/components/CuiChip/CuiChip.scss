@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+
+.cui-chip {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 24px;
+    border: 1px solid $cui-black-color-400;
+    border-radius: 10px;
+    max-height: 34px;
+
+    color: $cui-black-color-400;
+    text-align: center;
+    background-color: $cui-white-color;
+
+    cursor: pointer;
+
+    @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-sm,
+        $cui-font-lg,
+        $cui-font-normal
+    );
+
+    &-disabled {
+        cursor: not-allowed !important;
+
+        color: $cui-black-color-300 !important;
+        border-color: $cui-black-color-300 !important;
+    }
+
+    &-selected {
+        cursor: pointer;
+
+        color: $cui-wine-color-500;
+        border-color: $cui-wine-color-500;
+    }
+}

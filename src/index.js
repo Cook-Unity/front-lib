@@ -44,3 +44,4 @@ export {default as CuiSegmentButton} from './cui/components/CuiSegmentButton/Cui
 export {default as CuiSelect} from './cui/components/CuiSelect/CuiSelect'
 export {default as CuiTag} from './cui/components/CuiTag/CuiTag'
 export {default as CuiTextHeader} from './cui/components/CuiTextHeader/CuiTextHeader'
+export {default as CuiChip} from './cui/components/CuiChip/CuiChip'
