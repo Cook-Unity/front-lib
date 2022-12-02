@@ -33,14 +33,14 @@ const TabsMenu = ({
   }, [])
 
   return (
-    <div>
-      <div
-        className={classnames(styles.tabsContainer, {
-          [styles.scrolling]: isScrolling
-        })}
-      >
+    <div
+      className={classnames(styles.tabsContainer, {
+        [styles.scrolling]: isScrolling
+      })}
+    >
+      {showLeftArrow && (
         <div className={classnames(styles.navigation, styles.navigationLeft)}>
-          {showNavigation && showLeftArrow && (
+          {showNavigation && (
             <div
               className={classnames(styles.button)}
               onClick={() => handleClickButton(false)}
@@ -50,44 +50,39 @@ const TabsMenu = ({
           )}
           <div className={classnames(styles.gradient, styles.gradientLeft)} />
         </div>
-        <ul
-          className={classnames(styles.tabs, {
-            [styles.scrolling]: isScrolling
-          })}
-          onScroll={handleScroll}
-          ref={ref}
-        >
-          {tabsItems.map(tabItem => (
-            <li
-              key={tabItem.id}
-              className={classnames(styles.item, {
-                [styles.scrolling]: isScrolling,
-                [styles.selected]: isSelected(tabItem)
+      )}
+      <ul className={classnames(styles.tabs)} onScroll={handleScroll} ref={ref}>
+        {tabsItems.map(tabItem => (
+          <li
+            key={tabItem.id}
+            className={classnames(styles.item, {
+              [styles.selected]: isSelected(tabItem)
+            })}
+            data-testid="tab-item"
+            onClick={() => handleOnClick(tabItem)}
+          >
+            <img
+              src={tabItem.image}
+              alt="tab-icon"
+              className={classnames(styles.image, {
+                [styles.scrolling]: isScrolling
               })}
-              data-testid="tab-item"
-              onClick={() => handleOnClick(tabItem)}
-            >
-              <img
-                src={tabItem.image}
-                alt="tab-icon"
-                className={classnames(styles.image, {
-                  [styles.scrolling]: isScrolling
-                })}
-                onError={e => {
-                  if (e.target.src !== tabItem.fallbackImage) {
-                    e.target.src = tabItem.fallbackImage
-                  }
-                }}
-              />
-              <span data-testid="span-item" className={styles.name}>
-                {tabItem.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+              onError={e => {
+                if (e.target.src !== tabItem.fallbackImage) {
+                  e.target.src = tabItem.fallbackImage
+                }
+              }}
+            />
+            <span data-testid="span-item" className={styles.name}>
+              {tabItem.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      {showRightArrow && (
         <div className={classnames(styles.navigation, styles.navigationRight)}>
           <div className={classnames(styles.gradient, styles.gradientRight)} />
-          {showNavigation && showRightArrow && (
+          {showNavigation && (
             <div
               className={classnames(styles.button)}
               onClick={() => handleClickButton(true)}
@@ -96,12 +91,7 @@ const TabsMenu = ({
             </div>
           )}
         </div>
-      </div>
-      <hr
-        className={classnames(styles.divider, {
-          [styles.scrolling]: isScrolling
-        })}
-      />
+      )}
     </div>
   )
 }
