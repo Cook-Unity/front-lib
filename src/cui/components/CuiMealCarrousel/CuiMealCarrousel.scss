@@ -1,0 +1,114 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+@import "../../styles/mixins/media";
+
+.cui-meal-carrousel {
+  background: $cui-black-color;
+  height: 330px;
+  max-width: 1296px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 8px;
+  display: flex;
+  &-premium {
+    background-image: url('https://cu-product-media.s3.amazonaws.com/media/merchandiseSets/bg_diamond.png');
+  }
+  &-sides {
+    background-image: url('https://static.cookunity.com/cross/front-lib/images/sidesbg.png');
+  }
+  .swiper-slide {
+    width: 200px !important;
+  }
+  @include mobile {
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    background-size: cover;
+    max-width: 100%;
+  }
+}
+
+.cui-meal-carrousel__content {
+  float: left;
+  min-width: 300px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 8px;
+  @include mobile {
+    padding: 8px;
+    height: max-content;
+  }
+}
+
+.cui-meal-carrousel__collection-name {
+  @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-xl, $cui-font-bold);
+  text-transform: uppercase;
+  color: $cui-white-color;
+  @include mobile {
+    display: none;
+  }
+}
+
+.cui-meal-carrousel__title {
+  @include font-build($cui-font-family-source-serif, $cui-font-4xl, $cui-line-height-5xl, $cui-font-bold);
+  color: $cui-white-color;
+  &-end {
+    color: $cui-yellow-color-500;
+  }
+  @include mobile {
+    @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
+  }
+}
+
+.cui-meal-carrousel__link {
+  @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-bold);
+  color: $cui-white-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cui-meal-carrousel__navigation {
+  margin: 24px 0;
+  .arrow-left {
+    padding-right: 12px;
+  }
+  .arrow {
+    cursor: pointer;
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+  @include mobile {
+    display: none;
+  }
+}
+
+.cui-meal-carrousel__slide {
+  padding-top: 24px;
+  margin-right: 20px;
+  overflow: hidden;
+  @include mobile {
+    margin-right: 0;
+  }
+}
+
+.cui-meal-carrousel__gradient {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  &-start {
+    left: 0;
+    width: 70px;
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+  &-end {
+    right: 0;
+    width: 60px;
+    background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
