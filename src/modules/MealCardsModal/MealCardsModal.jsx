@@ -51,7 +51,7 @@ const MealCardsModal = ({
                   onAddItem={onAddItem}
                   onRemoveItem={onRemoveItem}
                   onMealClick={onClickMeal}
-                  showPrice
+                  isExtra
                 />
               ) : (
                 <MealCard
