@@ -1,10 +1,12 @@
 import classNames from 'classnames'
 import React from 'react'
+
 import './CuiChip.scss'
 
 const CuiChip = ({
   disabled = false,
   selected = false,
+  onClick = () => {},
   className,
   children,
   props
@@ -17,6 +19,7 @@ const CuiChip = ({
         selected && 'cui-chip-selected',
         className
       )}
+      onClick={onClick}
       {...props}
     >
       {children}
