@@ -22,6 +22,7 @@ export {default as MenuByBar} from './modules/MenuByBar'
 export {default as Breaker} from './components/Breaker'
 export {default as MealCardsModal} from './modules/MealCardsModal'
 export {default as Radio} from './common/Radio'
+export {default as TabsMenu} from './components/TabsMenu'
 
 // Rebranding
 export {default as CuiAddMeals} from './cui/components/CuiAddMeals/CuiAddMeals'
