@@ -38,6 +38,22 @@
   }
 }
 
+.cui-collection-header__title-tag {
+  background-color: $cui-yellow-color-500;
+  @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-base, $cui-font-bold);
+  border-radius: 0px 8px;
+  width: max-content;
+  padding: 7px 8px;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: -44px;
+  text-transform: uppercase;
+  @include mobile {
+    top: 0;
+  }
+}
+
 .cui-collection-header__img {
   object-fit: cover;
   width: 240px;
@@ -113,4 +129,8 @@
 .cui-collection-header__cu-meals {
   @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-normal);
   color: $cui-white-color;
+}
+
+.cui-collection-header__img-container {
+  position: relative;
 }

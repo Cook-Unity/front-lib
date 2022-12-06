@@ -12,7 +12,7 @@ const CuiCollectionHeader = ({
   coverImage,
   countMeals,
   // backgroundColor,
-  // updatedWeekly,
+  updatedWeekly,
   imgAuthor,
   className
 }) => {
@@ -33,11 +33,19 @@ const CuiCollectionHeader = ({
           <br />
           {secondPhrase}
         </div>
-        <img
-          className="cui-collection-header__img"
-          src={image}
-          alt="collection"
-        />
+        <div className="cui-collection-header__img-container">
+          <img
+            className="cui-collection-header__img"
+            src={image}
+            alt="collection"
+          />
+
+          {updatedWeekly && (
+            <div className="cui-collection-header__title-tag">
+              Updated Weekly
+            </div>
+          )}
+        </div>
         <div className="cui-collection-header__title">
           <h1>
             {firstPhrase}

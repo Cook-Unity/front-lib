@@ -47,4 +47,5 @@ export {default as CuiTextHeader} from './cui/components/CuiTextHeader/CuiTextHe
 export {default as CuiMealCarrousel} from './cui/components/CuiMealCarrousel/CuiMealCarrousel'
 export {default as CuiCollectionHeader} from './cui/components/CuiCollection/CuiCollectionHeader/CuiCollectionHeader'
 export {default as CuiChip} from './cui/components/CuiChip/CuiChip'
+export {default as CuiCategoryCover} from './cui/components/CuiCategoryCover/CuiCategoryCover'
 export {default as CuiTextArea} from './cui/components/CuiTextArea/CuiTextArea'
