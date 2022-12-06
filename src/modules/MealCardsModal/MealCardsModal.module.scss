@@ -80,16 +80,16 @@
 
   .cardsContainerOuter {
     overflow-x: auto;
-    padding: 14px 32px 0 32px;
+    padding: 14px 32px 32px 32px;
 
     @media (max-width: 720px) {
       overflow: hidden;
-      padding: 24px 16px 0 16px;
+      padding: 24px 16px 32px 16px;
     }
 
     @media (max-width: 400px) {
       overflow: hidden;
-      padding: 16px 16px 0 16px;
+      padding: 16px 16px 32px 16px;
     }
 
     .cardsContainer {
