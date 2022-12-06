@@ -22,6 +22,7 @@ export {default as MenuByBar} from './modules/MenuByBar'
 export {default as Breaker} from './components/Breaker'
 export {default as MealCardsModal} from './modules/MealCardsModal'
 export {default as Radio} from './common/Radio'
+export {default as TabsMenu} from './components/TabsMenu'
 
 // Rebranding
 export {default as CuiAddMeals} from './cui/components/CuiAddMeals/CuiAddMeals'
@@ -47,4 +48,5 @@ export {default as CuiTextHeader} from './cui/components/CuiTextHeader/CuiTextHe
 export {default as CuiMealCarrousel} from './cui/components/CuiMealCarrousel/CuiMealCarrousel'
 export {default as CuiCollectionHeader} from './cui/components/CuiCollection/CuiCollectionHeader/CuiCollectionHeader'
 export {default as CuiChip} from './cui/components/CuiChip/CuiChip'
+export {default as CuiCategoryCover} from './cui/components/CuiCategoryCover/CuiCategoryCover'
 export {default as CuiTextArea} from './cui/components/CuiTextArea/CuiTextArea'

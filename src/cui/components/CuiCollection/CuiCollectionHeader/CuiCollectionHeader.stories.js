@@ -8,8 +8,11 @@ const IMAGE_COLLECTION =
 export default {
   title: 'Cui/CuiCollectionHeader',
   component: CuiCollectionHeader,
-  parameters: {
-    layout: 'fullscreen'
+  argTypes: {
+    updatedWeekly: {
+      control: 'boolean',
+      defaultValue: false
+    }
   }
 }
 
@@ -41,4 +44,15 @@ LongDescription.args = {
   description:
     'Every week we show you the new dishes made by our chefs. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Every week we show you the new dishes made by our chefs. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
   countMeals: 10
+}
+
+export const UpdatedWeekly = Template.bind({})
+UpdatedWeekly.args = {
+  title: 'New This Week',
+  image: IMAGE_COLLECTION,
+  coverImage: IMAGE_COLLECTION,
+  description:
+    'Every week we show you the new dishes made by our chefs. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  countMeals: 8,
+  updatedWeekly: true
 }

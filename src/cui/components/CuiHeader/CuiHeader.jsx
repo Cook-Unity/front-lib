@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import CuiLink from '../CuiLink/CuiLink'
 import CuiButton from '../CuiButton/CuiButton'
-import CuiIcon, {icons} from '../CuiIcon/CuiIcon'
+import CuiIcon from '../CuiIcon/CuiIcon'
 import CuiLogo from '../CuiLogo/CuiLogo'
 import './CuiHeader.scss'
 import CuiAllyButton from '../CuiAllyButton/CuiAllyButton'
@@ -17,10 +17,13 @@ const CuiHeader = ({
   showLogin = false,
   showAllyButton = false,
   showNeedHelp = false,
-  onClickHelp
+  onClickHelp,
+  onClickMenu
 }) => {
   const handleMenuClick = event => {
-    console.log('event', event)
+    if (onClickMenu) {
+      onClickMenu(event)
+    }
   }
   return (
     <header className={classNames('cui-header', color, className)}>
