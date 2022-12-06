@@ -33,6 +33,14 @@ WithCloseIcon.args = {
   withCloseIcon: true
 }
 
+export const WithMealCardExperiment = Template.bind({})
+WithMealCardExperiment.args = {
+  ...props,
+  primaryButtonText: 'See All Sauces',
+  mealCardPriceExperimentEnabled: true,
+  isOpen: true
+}
+
 export const Mobile = Template.bind({})
 Mobile.args = {
   ...props,
