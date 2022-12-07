@@ -1,5 +1,3 @@
-
-
 export const sortReviews = reviews => {
   return [...reviews].sort((a, b) => {
     const aDetail = a.detail && a.detail.replace('-', '').trim()
