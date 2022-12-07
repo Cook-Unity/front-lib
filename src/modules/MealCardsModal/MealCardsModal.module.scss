@@ -12,11 +12,12 @@
   left: 50%;
   padding: 0 !important;
   transform: translate(-50%, -50%);
-  height: 100%;
+  height: 100% !important;
   width: 100% !important;
   max-width: 948px !important;
 
   @media (max-width: 720px) {
+    height: 100% !important;
     position: absolute !important;
     bottom: 0 !important;
     border-radius: 10px 10px 0px 0px !important;
