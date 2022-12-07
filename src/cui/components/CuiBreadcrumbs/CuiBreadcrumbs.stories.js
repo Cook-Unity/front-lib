@@ -18,9 +18,9 @@ export default {
 }
 
 const items = [
-  {id: 1, active: true, label: 'Membership Plans'},
-  {id: 2, active: true, label: 'Meals'},
-  {id: 3, active: false, label: 'Checkout'}
+  {id: 1, active: true, underline: false, label: 'Membership Plans'},
+  {id: 2, active: true, underline: true, label: 'Meals'},
+  {id: 3, active: false, underline: false, label: 'Checkout'}
 ]
 const Template = args => (
   <CuiBreadcrumbs {...args}>
@@ -29,6 +29,7 @@ const Template = args => (
         key={item.id}
         active={item.active}
         isLast={index === items.length - 1}
+        underline={item.underline}
       >
         {item.label}
       </CuiBreadcrumb>

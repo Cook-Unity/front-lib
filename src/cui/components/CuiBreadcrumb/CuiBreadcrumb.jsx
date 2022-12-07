@@ -5,7 +5,8 @@ import './CuiBreadcrumb.scss'
 
 const CuiBreadcrumb = ({
   active = false,
-  isLast,
+  underline = false,
+  isLast = false,
   className,
   children,
   icon = 'chevronRight',
@@ -16,6 +17,7 @@ const CuiBreadcrumb = ({
       className={classNames(
         'cui-breadcrumb',
         `cui-breadcrumb-${active ? 'active' : 'inactive'}`,
+        underline && `cui-breadcrumb-underline`,
         className
       )}
       {...props}
