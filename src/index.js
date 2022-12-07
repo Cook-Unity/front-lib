@@ -50,3 +50,4 @@ export {default as CuiCollectionHeader} from './cui/components/CuiCollection/Cui
 export {default as CuiChip} from './cui/components/CuiChip/CuiChip'
 export {default as CuiCategoryCover} from './cui/components/CuiCategoryCover/CuiCategoryCover'
 export {default as CuiTextArea} from './cui/components/CuiTextArea/CuiTextArea'
+export {default as CuiDescription} from './cui/components/CuiDescription/CuiDescription'
