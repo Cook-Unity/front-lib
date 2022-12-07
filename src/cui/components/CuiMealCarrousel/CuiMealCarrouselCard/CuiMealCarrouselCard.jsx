@@ -85,7 +85,7 @@ const CuiMealCarrouselCard = ({
             className="cui-carrousel-card__warning"
             onClick={() => handleShowWarningMessage()}
           >
-            <img src="https://cu-product-media.s3.amazonaws.com/media/icons/info_white.png" />
+            <img src="https://static.cookunity.com/cross/front-lib/images/alert-circle.png" />
           </button>
         )}
         {showWarnings && (
