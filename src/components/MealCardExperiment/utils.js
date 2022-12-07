@@ -1,13 +1,12 @@
 import React from 'react'
-import Numeral from 'numeral'
 import classnames from 'classnames'
-
+import {currency, rounded} from '../../utils/number'
 import styles from './MealCardExperiment.module.scss'
 
 export const formatChefName = (firstName, lastName) =>
   `${firstName} ${lastName}`
 
-export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
+export const formatMealRating = stars => stars && rounded(stars, 1)
 
 export const formatMealReviews = reviews =>
   reviews && (reviews > 999 ? '999+' : `${reviews}`)
@@ -44,7 +43,7 @@ export const getLoadingContainer = () => (
   </div>
 )
 
-export const formatPrice = price => `${Numeral(price).format('$0,0.00')}`
+export const formatPrice = price => `${currency(price)}`
 
 export const getAddButtonText = (meal, planIsCompleted, isExtra) => {
   if (isExtra) {

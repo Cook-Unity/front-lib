@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import moment from 'moment'
 import StarReview from '../../../../common/StarReview'
 import MealImg from '../../../../common/MealImage'
 
@@ -9,6 +8,15 @@ import styles from './ReviewsList.module.scss'
 const SHOW = 5
 
 const ReviewsList = ({reviews, onLoadMore, max, loadMoreLabel}) => {
+  const formatTime = value => {
+    const date = value.replace(/ /g, 'T')
+
+    return new Intl.DateTimeFormat('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric'
+    }).format(new Date(date))
+  }
   return (
     <section className={styles.productReviews}>
       {reviews.slice(0, max).map((review, index) => (
@@ -26,9 +34,7 @@ const ReviewsList = ({reviews, onLoadMore, max, loadMoreLabel}) => {
             <p className={styles.detail}>{review.detail}</p>
             <p className={styles.signature}>
               {review.customer_name ? review.customer_name : review.nickname} ·{' '}
-              {moment(review.created_at, 'YYYY-MM-DD hh:m:s').format(
-                'MM/DD/YY'
-              )}
+              {formatTime(review.created_at)}
             </p>
           </div>
         </div>

@@ -1,5 +1,3 @@
-import moment from 'moment'
-
 export const sortReviews = reviews => {
   return [...reviews].sort((a, b) => {
     const aDetail = a.detail && a.detail.replace('-', '').trim()
@@ -9,11 +7,14 @@ export const sortReviews = reviews => {
       if (a.stars > b.stars) return -1
       if (a.stars < b.stars) return 1
 
-      const aTime = moment(a.created_at, 'YYYY-MM-DD')
-      const bTime = moment(b.created_at, 'YYYY-MM-DD')
+      a.created_at = a.created_at.replace(/ /g, 'T')
+      b.created_at = b.created_at.replace(/ /g, 'T')
 
-      if (aTime.isBefore(bTime)) return 1
-      if (bTime.isBefore(aTime)) return -1
+      const aTime = new Date(a.created_at)
+      const bTime = new Date(b.created_at)
+
+      if (aTime < bTime) return 1
+      if (bTime < aTime) return -1
 
       if (aDetail.length > bDetail.length) return -1
       if (bDetail.length > aDetail.length) return 1

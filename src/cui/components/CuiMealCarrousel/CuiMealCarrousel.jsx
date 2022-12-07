@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 import classnames from 'classnames'
 import CuiMealCarrouselCard from './CuiMealCarrouselCard/CuiMealCarrouselCard'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
 import './CuiMealCarrousel.scss'
 
 const CuiMealCarrousel = ({

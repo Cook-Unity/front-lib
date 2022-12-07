@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import images from '../../../../assets/images'
 import classnames from 'classnames'
-import Numeral from 'numeral'
+import React, {useEffect, useState} from 'react'
+import images from '../../../../assets/images'
+import {rounded} from '../../../../utils/number'
 import './CuiMealCarrouselCard.scss'
 
-export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
+export const formatMealRating = stars => stars && rounded(stars, 1)
 
 const CuiMealCarrouselCard = ({
   onAddTracking,
