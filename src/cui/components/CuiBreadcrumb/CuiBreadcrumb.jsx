@@ -5,6 +5,7 @@ import './CuiBreadcrumb.scss'
 
 const CuiBreadcrumb = ({
   active = false,
+  isLast,
   className,
   children,
   icon = 'chevronRight',
@@ -20,7 +21,7 @@ const CuiBreadcrumb = ({
       {...props}
     >
       <span>{children}</span>
-      <CuiIcon name={icon} />
+      {!isLast && <CuiIcon name={icon} />}
     </div>
   )
 }

@@ -24,8 +24,12 @@ const items = [
 ]
 const Template = args => (
   <CuiBreadcrumbs {...args}>
-    {items.map(item => (
-      <CuiBreadcrumb key={item.id} active={item.active}>
+    {items.map((item, index) => (
+      <CuiBreadcrumb
+        key={item.id}
+        active={item.active}
+        isLast={index === items.length - 1}
+      >
         {item.label}
       </CuiBreadcrumb>
     ))}
