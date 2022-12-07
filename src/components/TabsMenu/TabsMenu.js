@@ -39,19 +39,6 @@ const TabsMenu = ({
         [styles.scrolling]: isScrolling
       })}
     >
-      {showLeftArrow && (
-        <div className={classnames(styles.navigation, styles.navigationLeft)}>
-          {showNavigation && (
-            <div
-              className={classnames(styles.button)}
-              onClick={() => handleClickButton(false)}
-            >
-              <ArrowCircle flip />
-            </div>
-          )}
-          <div className={classnames(styles.gradient, styles.gradientLeft)} />
-        </div>
-      )}
       <ul className={classnames(styles.tabs)} onScroll={handleScroll} ref={ref}>
         {tabsItems.map(tabItem => (
           <li
@@ -80,6 +67,19 @@ const TabsMenu = ({
           </li>
         ))}
       </ul>
+      {showLeftArrow && (
+        <div className={classnames(styles.navigation, styles.navigationLeft)}>
+          {showNavigation && (
+            <div
+              className={classnames(styles.button)}
+              onClick={() => handleClickButton(false)}
+            >
+              <ArrowCircle flip />
+            </div>
+          )}
+          <div className={classnames(styles.gradient, styles.gradientLeft)} />
+        </div>
+      )}
       {showRightArrow && (
         <div className={classnames(styles.navigation, styles.navigationRight)}>
           <div className={classnames(styles.gradient, styles.gradientRight)} />
