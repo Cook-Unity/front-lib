@@ -1,16 +1,15 @@
 import React from 'react'
-import Numeral from 'numeral'
 import classnames from 'classnames'
-
+import {currency, rounded} from '../../utils/number'
 import styles from './MealCard.module.scss'
 
 export const formatFee = (premium_fee, fixed_price) =>
-  `${!fixed_price ? '+' : ''} ${Numeral(premium_fee).format('$0,0.00')}`
+  `${!fixed_price ? '+' : ''} ${currency(premium_fee)}`
 
 export const formatChefName = (firstName, lastName) =>
   `${firstName} ${lastName}`
 
-export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
+export const formatMealRating = stars => stars && rounded(stars, 1)
 
 export const formatMealReviews = reviews =>
   reviews && (reviews > 999 ? '999+' : `${reviews}`)

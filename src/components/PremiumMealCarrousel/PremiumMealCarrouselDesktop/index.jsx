@@ -15,8 +15,6 @@ import {
 
 import MealCard from '../MealCard'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
 
 const PremiumMealCarrouselDesktop = props => {
   const MODULE_NAME = 'premium-row'

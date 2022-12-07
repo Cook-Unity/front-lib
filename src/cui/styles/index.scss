@@ -1,6 +1,9 @@
 // Important: Only use this file in StoryBook.
 @import "./globals.scss";
 
+// @import 'swiper/swiper-bundle.min.css'
+// @import 'swiper/swiper.min.css'
+@import 'swiper/swiper.scss';
 @include font-source-serif-pro();
 @include font-rossanova();
 @include font-avallon();

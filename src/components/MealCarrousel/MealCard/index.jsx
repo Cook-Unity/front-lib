@@ -1,36 +1,36 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import images from '../../../assets/images'
-import Numeral from 'numeral'
+import {rounded} from '../../../utils/number'
 import {
-  Wrapper,
-  WrapperTop,
-  WrapperFooter,
-  WrapperContent,
-  WrapperAction,
-  MealPicture,
-  WarningMessage,
-  WarningImage,
-  MealTitle,
+  Button,
+  ButtonQuantity,
   ChefImage,
   ExtraPrice,
-  Button,
   ImagenCTA,
-  StarWrapper,
-  StarImg,
-  RatingText,
-  MealCartActionsWrapper,
-  MealCartActionRemove,
-  MealCartActionQuantity,
-  MealCartActionAdd,
   ImgMinus,
   ImgMore,
+  MealCartActionAdd,
+  MealCartActionQuantity,
+  MealCartActionRemove,
+  MealCartActionsWrapper,
+  MealPicture,
+  MealTitle,
   PriceActionsWrapper,
-  ButtonQuantity,
+  RatingText,
+  StarImg,
+  StarWrapper,
+  WarningImage,
+  WarningMessage,
+  WarningText,
   WarningTextWrapper,
-  WarningText
+  Wrapper,
+  WrapperAction,
+  WrapperContent,
+  WrapperFooter,
+  WrapperTop
 } from './styled'
 
-export const formatMealRating = stars => stars && Numeral(stars).format('0.0')
+export const formatMealRating = stars => stars && rounded(stars)
 
 const MealCard = props => {
   const [showActions, setShowActions] = useState(false)

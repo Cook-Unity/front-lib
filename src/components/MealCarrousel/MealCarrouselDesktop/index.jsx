@@ -18,8 +18,6 @@ import images from '../../../assets/images'
 
 import MealCard from '../MealCard'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
 
 const MealCarrouselDesktop = props => {
   const [showEndGradient, setShowEndGradient] = useState(true)
