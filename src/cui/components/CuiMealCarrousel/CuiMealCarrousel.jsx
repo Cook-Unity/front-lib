@@ -78,7 +78,7 @@ const CuiMealCarrousel = ({
         </div>
         <div className="cui-meal-carrousel__navigation">
           <img
-            className={classnames('arrow', 'arrow-left', {
+            className={classnames('arrow', {
               disabled: !showStartGradient
             })}
             alt="arrow left"
@@ -89,7 +89,7 @@ const CuiMealCarrousel = ({
             }}
           />
           <img
-            className={classnames('arrow', 'arrow-left', {
+            className={classnames('arrow', {
               disabled: !showEndGradient
             })}
             alt="arrow right"
