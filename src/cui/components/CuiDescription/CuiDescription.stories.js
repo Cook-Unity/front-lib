@@ -4,16 +4,7 @@ import CuiDescription from './CuiDescription'
 
 export default {
   title: 'Cui / Components / CuiDescription',
-  component: CuiDescription,
-  argTypes: {
-    color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'light']
-      },
-      defaultValue: 'dark'
-    }
-  }
+  component: CuiDescription
 }
 
 const Template = args => <CuiDescription {...args} />
