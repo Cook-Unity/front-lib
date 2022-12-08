@@ -1,102 +1,110 @@
-@import "../../styles/variables";
-@import "../../styles/mixins/tags";
-@import "../../styles/mixins/fonts";
+@import '../../styles/variables';
+@import '../../styles/mixins/tags';
+@import '../../styles/mixins/fonts';
 
 .cui-tag {
-    appearance: none;
-    border-radius: 4px;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-flex;
-    align-items: center;
-    text-transform: uppercase;
-    gap: 4px;
+  appearance: none;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 4px;
 
-    @include font-build(
-        $cui-font-family-tt-norms,
-        $cui-font-tag-medium,
-        $cui-line-height-xl,
-        $cui-font-bold
-    );
+  & > *:not(:last-child) {
+    margin-right: 4px;
+  }
 
-    // Sizes
-    &-small {
-        font-size: $cui-font-tag-small;
-        padding: $cui-space-tag-small;
-    }
-    &-medium {
-        font-size: $cui-font-tag-medium;
-        padding: $cui-space-tag-medium;
-    }
-    &-large {
-        font-size: $cui-font-tag-large;
-        padding: $cui-space-tag-large;
-    }
+  @include font-build(
+    $cui-font-family-tt-norms,
+    $cui-font-tag-medium,
+    $cui-line-height-xl,
+    $cui-font-bold
+  );
 
-    // Colors
-    &-white {
-        &-solid {
-            @include build-tag(
-                // default
-                $cui-white-color,
-                $cui-black-color-150,
-                $cui-black-color
-            );
-        }
-    }
+  // Sizes
+  &-small {
+    font-size: $cui-font-tag-small;
+    padding: $cui-space-tag-small;
+  }
+  &-medium {
+    font-size: $cui-font-tag-medium;
+    padding: $cui-space-tag-medium;
+  }
+  &-large {
+    font-size: $cui-font-tag-large;
+    padding: $cui-space-tag-large;
+  }
 
-    &-wine {
-        &-solid {
-            @include build-tag(
-                // default
-                $cui-wine-color-500,
-                $cui-wine-color-500,
-                $cui-white-color
-            );
-        }
+  // Colors
+  &-white {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-white-color,
+        $cui-black-color-150,
+        $cui-black-color
+      );
     }
+  }
 
-    &-olive {
-        &-solid {
-            @include build-tag(
-                // default
-                $cui-olive-green-color-500,
-                $cui-olive-green-color-500,
-                $cui-white-color
-            );
-        }
+  &-wine {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-wine-color-500,
+        $cui-wine-color-500,
+        $cui-white-color
+      );
     }
+  }
 
-    &-dark {
-        &-solid {
-            @include build-tag(
-                // default
-                $cui-black-color,
-                $cui-black-color,
-                $cui-white-color
-            );
-        }
+  &-olive {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-olive-green-color-500,
+        $cui-olive-green-color-500,
+        $cui-white-color
+      );
     }
+  }
 
-    &-grey {
-        &-solid {
-            @include build-tag(
-                // default
-                $cui-black-color-300,
-                $cui-black-color-300,
-                $cui-white-color
-            );
-        }
+  &-dark {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-black-color,
+        $cui-black-color,
+        $cui-white-color
+      );
     }
+  }
 
-    &-yellow {
-        &-solid {
-            @include build-tag(
-                // default
-                $cui-yellow-color-500,
-                $cui-yellow-color-500,
-                $cui-black-color
-            )
-        }
+  &-grey {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-black-color-300,
+        $cui-black-color-300,
+        $cui-white-color
+      );
     }
+  }
+
+  &-yellow {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-yellow-color-500,
+        $cui-yellow-color-500,
+        $cui-black-color
+      );
+    }
+  }
+
+  .cui-icon {
+    display: flex;
+  }
 }
