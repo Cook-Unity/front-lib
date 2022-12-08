@@ -14,9 +14,11 @@ const CuiHeader = ({
   className,
   color = 'dark',
   showMenu = false,
+  showLogo = true,
   showLogin = false,
   showAllyButton = false,
   showNeedHelp = false,
+  showNeedHelpTitle = false,
   onClickHelp,
   onClickMenu
 }) => {
@@ -31,7 +33,11 @@ const CuiHeader = ({
         {showMenu && (
           <CuiIcon name="menu" role="button" onClick={handleMenuClick} />
         )}
-        <CuiLogo />
+        {showLogo && (
+          <a className="logo" href="/">
+            <CuiLogo />
+          </a>
+        )}
       </div>
       {center && <div className="center">{center}</div>}
       <div className="end">
@@ -55,7 +61,7 @@ const CuiHeader = ({
             onClick={onClickHelp}
           >
             <CuiIcon name="messageCircle" />
-            <span>Need Help?</span>
+            {showNeedHelpTitle && <span>Need Help?</span>}
           </CuiButton>
         )}
         {showAllyButton && <CuiAllyButton />}

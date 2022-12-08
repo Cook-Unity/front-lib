@@ -10,11 +10,17 @@
     &.dark {
         color: $cui-white-color;
         background-color: $cui-black-color;
+        .logo {
+            color: $cui-white-color;
+        }
     }
     .brand {
         display: flex;
         gap: $cui-gutter-large;
         z-index: 1;
+    }
+    .logo {
+        color: $cui-black-color;
     }
     .center {
         align-items: center;
@@ -34,10 +40,5 @@
         gap: $cui-gutter;
         margin-left: auto;
         z-index: 1;
-    }
-    .need-help {
-        span {
-            display: none;
-        }
     }
 }
