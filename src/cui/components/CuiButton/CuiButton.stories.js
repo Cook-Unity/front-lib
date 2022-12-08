@@ -1,6 +1,6 @@
 import React from 'react'
 import CuiIcon from '../CuiIcon/CuiIcon'
-import { CuiIconNames } from '../CuiIcon/icons'
+import {CuiIconNames} from '../CuiIcon/icons'
 
 import CuiButton from './CuiButton'
 

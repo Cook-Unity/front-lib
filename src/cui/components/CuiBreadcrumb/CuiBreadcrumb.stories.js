@@ -1,5 +1,5 @@
 import React from 'react'
-import { CuiIconNames } from '../CuiIcon/icons'
+import {CuiIconNames} from '../CuiIcon/icons'
 
 import CuiBreadcrumb from './CuiBreadcrumb'
 
