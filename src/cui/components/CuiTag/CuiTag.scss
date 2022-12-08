@@ -11,10 +11,7 @@
     display: inline-flex;
     align-items: center;
     text-transform: uppercase;
-
-    & > *:not(:last-child) {
-        margin-right: 4px;
-    }
+    gap: 4px;
 
     @include font-build(
         $cui-font-family-tt-norms,
@@ -102,9 +99,5 @@
                 $cui-black-color
             )
         }
-    }
-
-    .cui-icon {
-        display: flex;
     }
 }

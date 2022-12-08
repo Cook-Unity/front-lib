@@ -3,7 +3,7 @@ import CuiMealCarrousel from './CuiMealCarrousel'
 import {meals, collections} from './__mock__'
 
 export default {
-  title: 'Cui/CuiMealCarrousel',
+  title: 'Cui / Modules / CuiMealCarrousel',
   component: CuiMealCarrousel
 }
 

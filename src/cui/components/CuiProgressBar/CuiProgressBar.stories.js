@@ -2,7 +2,7 @@ import React from 'react'
 import CuiProgressBar from '../CuiProgressBar/CuiProgressBar'
 
 export default {
-  title: 'Cui / CuiProgressBar',
+  title: 'Cui / Components / CuiProgressBar',
   component: CuiProgressBar,
   argTypes: {
     color: {

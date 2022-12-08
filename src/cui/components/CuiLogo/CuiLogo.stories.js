@@ -3,7 +3,7 @@ import React from 'react'
 import CuiLogo from './CuiLogo'
 
 export default {
-  title: 'Cui / CuiLogo',
+  title: 'Cui / Components / CuiLogo',
   component: CuiLogo,
   argTypes: {
     color: {

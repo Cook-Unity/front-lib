@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import CuiRadio from './CuiRadio'
 
 export default {
-  title: 'Cui / CuiRadio',
+  title: 'Cui / Components / CuiRadio',
   component: CuiRadio
 }
 

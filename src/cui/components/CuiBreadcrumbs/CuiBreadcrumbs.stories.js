@@ -4,7 +4,7 @@ import CuiBreadcrumb from '../CuiBreadcrumb/CuiBreadcrumb'
 import CuiBreadcrumbs from './CuiBreadcrumbs'
 
 export default {
-  title: 'Cui / CuiBreadcrumbs',
+  title: 'Cui / Components / CuiBreadcrumbs',
   component: CuiBreadcrumbs,
   argTypes: {
     color: {
@@ -38,4 +38,3 @@ const Template = args => (
 )
 
 export const Default = Template.bind({})
-Default.args = {}

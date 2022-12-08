@@ -9,7 +9,7 @@ import {
 } from './__mock__'
 
 export default {
-  title: 'Cui / CuiAddMeals',
+  title: 'Cui / Modules / CuiAddMeals',
   component: CuiAddMeals
 }
 

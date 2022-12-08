@@ -7,7 +7,7 @@ import CuiSegmentButton from '../CuiSegmentButton/CuiSegmentButton'
 import CuiHeader from './CuiHeader'
 
 export default {
-  title: 'Cui / CuiHeader',
+  title: 'Cui / Modules / CuiHeader',
   component: CuiHeader,
   argTypes: {
     color: {
@@ -77,6 +77,7 @@ Funnel.args = {
   showMenu: true,
   showLogin: false,
   showNeedHelp: true,
+  showNeedHelpTitle: true,
   center: FunnelBreadcrumbs
 }
 

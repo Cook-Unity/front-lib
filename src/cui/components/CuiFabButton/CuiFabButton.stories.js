@@ -3,7 +3,7 @@ import React from 'react'
 import CuiFabButton from './CuiFabButton'
 
 export default {
-  title: 'Cui / CuiFabButton',
+  title: 'Cui / Components / CuiFabButton',
   component: CuiFabButton,
   argTypes: {
     color: {
@@ -19,4 +19,3 @@ export default {
 const Template = args => <CuiFabButton {...args}>AS</CuiFabButton>
 
 export const Default = Template.bind({})
-Default.args = {}

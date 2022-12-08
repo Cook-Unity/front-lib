@@ -3,7 +3,7 @@ import React from 'react'
 import CuiCollectionIcon from './CuiCollectionIcon'
 
 export default {
-  title: 'Cui/CuiCollectionIcon',
+  title: 'Cui / Modules / CuiCollectionIcon',
   component: CuiCollectionIcon,
   argTypes: {
     size: {

@@ -47,6 +47,11 @@ $cui-gold-500: #c7b273;
 
 $cui-orange-color-500: #FFB156;
 
+
+// $cui-box-shadow-1: ?;
+// $cui-box-shadow-2: ?;
+$cui-box-shadow-3: 0px 0px 12px rgba(35, 31, 32, 0.1), 0px 12px 12px rgba(0, 0, 0, 0.07);
+
 // Font Families
 $cui-font-family-source-serif: 'Source Serif Pro';
 $cui-font-family-tt-norms: 'TT Norms Pro';
@@ -135,3 +140,6 @@ $cui-height-progress-bar: 6px;
 
 // Text Header
 $cui-height-text-header: 50px;
+
+// Cards
+$cui-card-border-radius: 8px;

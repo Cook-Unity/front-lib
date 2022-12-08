@@ -2,6 +2,7 @@
 @import "../../styles/mixins/fonts";
 
 .cui-segment-button {
+    display: inline-flex;
     @include font-build(
         $cui-font-family-tt-norms,
         $cui-font-button-medium,

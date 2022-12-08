@@ -3,7 +3,7 @@ import React from 'react'
 import CuiSelect from './CuiSelect'
 
 export default {
-  title: 'Cui / CuiSelect',
+  title: 'Cui / Components / CuiSelect',
   component: CuiSelect,
   argTypes: {
     isDisabled: {

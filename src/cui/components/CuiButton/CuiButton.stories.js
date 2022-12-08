@@ -1,10 +1,11 @@
 import React from 'react'
 import CuiIcon from '../CuiIcon/CuiIcon'
+import {CuiIconNames} from '../CuiIcon/icons'
 
 import CuiButton from './CuiButton'
 
 export default {
-  title: 'Cui / CuiButton',
+  title: 'Cui / Components / CuiButton',
   component: CuiButton,
   argTypes: {
     color: {
@@ -42,19 +43,19 @@ export default {
     loading: {
       control: 'boolean',
       defaultValue: false
+    },
+    icon: {
+      ...CuiIconNames,
+      defaultValue: null
     }
   }
 }
 
-const DefaultTemplate = args => <CuiButton {...args}>Button</CuiButton>
-
-export const Default = DefaultTemplate.bind({})
-Default.args = {}
-
-const WithIconTemplate = args => (
+const DefaultTemplate = args => (
   <CuiButton {...args}>
-    <CuiIcon name="heart" /> Button
+    {args.icon && <CuiIcon name={args.icon} />}
+    Button
   </CuiButton>
 )
-export const WithIcon = WithIconTemplate.bind({})
-WithIcon.args = {}
+
+export const Default = DefaultTemplate.bind({})
