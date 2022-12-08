@@ -1,3 +1,5 @@
+import mobileAndTabletCheck from './mobileAndTabletCheck'
+
 const size = {
   mobile: '414px',
   tablet: '720px',
@@ -11,3 +13,5 @@ export const device = {
   laptop: `(max-width: ${size.laptop})`,
   desktop: `(max-width: ${size.desktop})`
 }
+
+export const isMobileOrTabletDevice = () => mobileAndTabletCheck()
