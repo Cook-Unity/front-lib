@@ -25,11 +25,19 @@ export default {
       control: 'boolean',
       defaultValue: false
     },
+    showLogo: {
+      control: 'boolean',
+      defaultValue: true
+    },
     showMenu: {
       control: 'boolean',
       defaultValue: false
     },
     showNeedHelp: {
+      control: 'boolean',
+      defaultValue: false
+    },
+    showNeedHelpTitle: {
       control: 'boolean',
       defaultValue: false
     }
