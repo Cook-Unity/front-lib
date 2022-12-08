@@ -43,7 +43,7 @@
 }
 
 .cui-meal-carrousel__collection-name {
-  @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-xl, $cui-font-bold);
+  @include font-build($cui-font-family-tt-norms, $cui-font-base, 22px, $cui-font-bold);
   text-transform: uppercase;
   color: $cui-white-color;
   @include mobile {
@@ -71,11 +71,12 @@
 
 .cui-meal-carrousel__navigation {
   margin: 24px 0;
-  .arrow-left {
-    padding-right: 12px;
-  }
+  display: flex;
+  gap: 12px;
   .arrow {
     cursor: pointer;
+    width: 20px;
+    height: 20px;
     &.disabled {
       opacity: 0.5;
     }
