@@ -4,12 +4,15 @@ import './CuiAllyButton.scss'
 
 const CuiAllyButton = ({className, color = 'dark', ...props}) => {
   return (
-    <div
+    <a
       className={classNames(
         'cui-ally-button',
         `cui-ally-button-${color}`,
         className
       )}
+      href="https://www.essentialaccessibility.com/cookunity"
+      target="_blank"
+      rel="noreferrer"
       {...props}
     >
       <svg
@@ -72,7 +75,7 @@ const CuiAllyButton = ({className, color = 'dark', ...props}) => {
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </a>
   )
 }
 
