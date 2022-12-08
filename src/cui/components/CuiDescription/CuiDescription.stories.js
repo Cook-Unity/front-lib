@@ -3,8 +3,17 @@ import React from 'react'
 import CuiDescription from './CuiDescription'
 
 export default {
-  title: 'Cui / CuiDescription',
-  component: CuiDescription
+  title: 'Cui / Components / CuiDescription',
+  component: CuiDescription,
+  argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: ['dark', 'light']
+      },
+      defaultValue: 'dark'
+    }
+  }
 }
 
 const Template = args => <CuiDescription {...args} />
