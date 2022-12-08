@@ -1,12 +1,12 @@
 import React from 'react'
+import CuiIcon from '../CuiIcon/CuiIcon'
 import {CuiIconNames} from '../CuiIcon/icons'
 import CuiTag from './CuiTag'
 
 export default {
-  title: 'Cui / CuiTag',
+  title: 'Cui / Components / CuiTag',
   component: CuiTag,
   argTypes: {
-    icon: CuiIconNames,
     color: {
       control: {
         type: 'select',
@@ -34,58 +34,18 @@ export default {
         options: ['tag']
       },
       defaultValue: 'tag'
+    },
+    icon: {
+      ...CuiIconNames,
+      defaultValue: null
     }
   }
 }
 
-const Template = args => <CuiTag {...args}>Tag</CuiTag>
-const Template2 = args => <CuiTag {...args} />
-
-export const Olive = Template.bind({})
-Olive.args = {
-  color: 'olive',
-  icon: 'star'
-}
-export const Wine = Template.bind({})
-Wine.args = {
-  color: 'wine',
-  icon: 'star'
-}
-export const Dark = Template.bind({})
-Wine.args = {
-  color: 'dark',
-  icon: 'star'
-}
-export const White = Template.bind({})
-White.args = {
-  color: 'white',
-  icon: 'star'
-}
-export const Yellow = Template.bind({})
-Yellow.args = {
-  color: 'yellow',
-  icon: ''
-}
-export const Alone = Template2.bind({})
-Alone.args = {
-  color: 'dark',
-  icon: 'star'
-}
-
-export const NoIcon = Template.bind({})
-NoIcon.args = {
-  color: 'dark',
-  icon: ''
-}
-
-export const Disabled = Template.bind({})
-Disabled.args = {
-  color: 'grey',
-  icon: ''
-}
-
-export const Trash = Template2.bind({})
-Trash.args = {
-  color: 'dark',
-  icon: 'trash'
-}
+const DefaultTemplate = args => (
+  <CuiTag {...args}>
+    {args.icon && <CuiIcon name={args.icon} />}
+    Tag
+  </CuiTag>
+)
+export const Default = DefaultTemplate.bind({})

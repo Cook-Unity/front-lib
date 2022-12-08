@@ -9,7 +9,7 @@ const IMAGE_CATEGORY_2 =
   'https://d1ureao5dcqpo4.cloudfront.net/media/cover/sides-cover.jpg'
 
 export default {
-  title: 'Cui/CuiCategoryCover',
+  title: 'Cui / Modules / CuiCategoryCover',
   component: CuiCategoryCover,
   argTypes: {
     isNew: {

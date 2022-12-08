@@ -3,7 +3,7 @@ import React from 'react'
 import CuiAllyButton from './CuiAllyButton'
 
 export default {
-  title: 'Cui / CuiAllyButton',
+  title: 'Cui / Components / CuiAllyButton',
   component: CuiAllyButton,
   argTypes: {
     color: {
@@ -19,4 +19,3 @@ export default {
 const Template = args => <CuiAllyButton {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}

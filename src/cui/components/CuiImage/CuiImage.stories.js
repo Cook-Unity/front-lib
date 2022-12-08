@@ -3,7 +3,7 @@ import React from 'react'
 import CuiImage from './CuiImage'
 
 export default {
-  title: 'Cui / CuiImage',
+  title: 'Cui / Components / CuiImage',
   component: CuiImage,
   argTypes: {
     src: {
@@ -23,4 +23,3 @@ export default {
 const Template = args => <CuiImage {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}

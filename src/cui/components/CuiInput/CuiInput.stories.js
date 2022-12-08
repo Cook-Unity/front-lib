@@ -3,7 +3,7 @@ import React from 'react'
 import CuiInput from './CuiInput'
 
 export default {
-  title: 'Cui / CuiInput',
+  title: 'Cui / Components / CuiInput',
   component: CuiInput,
   argTypes: {
     color: {

@@ -11,7 +11,6 @@ export default {
 const Template = args => <RatingMeal {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
 
 export const NoUserRating = Template.bind({})
 NoUserRating.args = {

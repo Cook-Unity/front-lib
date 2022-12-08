@@ -1,10 +1,11 @@
 import React from 'react'
 import CuiIcon from '../CuiIcon/CuiIcon'
+import {CuiIconNames} from '../CuiIcon/icons'
 
 import CuiLink from './CuiLink'
 
 export default {
-  title: 'Cui / CuiLink',
+  title: 'Cui / Components / CuiLink',
   component: CuiLink,
   argTypes: {
     color: {
@@ -42,27 +43,24 @@ export default {
     loading: {
       control: 'boolean',
       defaultValue: false
+    },
+    icon: {
+      ...CuiIconNames,
+      defaultValue: null
     }
   }
 }
 
-const DefaultTemplate = args => <CuiLink {...args}>Button</CuiLink>
+const DefaultTemplate = args => (
+  <CuiLink {...args}>
+    {args.icon && <CuiIcon name={args.icon} />}
+    Button
+  </CuiLink>
+)
 
 export const Default = DefaultTemplate.bind({})
 Default.args = {
   color: 'primary',
-  href: 'https://cookunity.com/',
-  target: '_blank'
-}
-
-const WithIconTemplate = args => (
-  <CuiLink {...args}>
-    <CuiIcon name="heart" /> Button
-  </CuiLink>
-)
-export const WithIcon = WithIconTemplate.bind({})
-WithIcon.args = {
-  color: 'tertiary',
   href: 'https://cookunity.com/',
   target: '_blank'
 }

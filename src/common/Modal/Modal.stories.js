@@ -14,7 +14,6 @@ const Template = args => (
 )
 
 export const Default = Template.bind({})
-Default.args = {}
 
 export const PlusSize = Template.bind({})
 PlusSize.args = {

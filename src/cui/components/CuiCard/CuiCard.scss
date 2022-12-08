@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.cui-card {
+    background: $cui-white-color;
+    box-shadow: $cui-box-shadow-3;
+    border-radius: $cui-card-border-radius;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    &-row {
+        flex-direction: row;
+    }
+}

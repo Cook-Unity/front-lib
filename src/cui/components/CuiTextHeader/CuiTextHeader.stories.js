@@ -3,7 +3,7 @@ import React from 'react'
 import CuiTextHeader from './CuiTextHeader'
 
 export default {
-  title: 'Cui / CuiTextHeader',
+  title: 'Cui / Components / CuiTextHeader',
   component: CuiTextHeader,
   argTypes: {
     position: {
@@ -26,4 +26,3 @@ const Template = args => (
 )
 
 export const Default = Template.bind({})
-Default.args = {}

@@ -3,7 +3,7 @@ import React from 'react'
 import CuiSegmentButton from './CuiSegmentButton'
 
 export default {
-  title: 'Cui / CuiSegmentButton',
+  title: 'Cui / Components / CuiSegmentButton',
   component: CuiSegmentButton,
   argTypes: {
     active: {
@@ -16,4 +16,3 @@ export default {
 const Template = args => <CuiSegmentButton {...args}>Link</CuiSegmentButton>
 
 export const Default = Template.bind({})
-Default.args = {}

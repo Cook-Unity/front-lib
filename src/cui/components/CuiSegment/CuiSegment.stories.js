@@ -4,7 +4,7 @@ import CuiSegmentButton from '../CuiSegmentButton/CuiSegmentButton'
 import CuiSegment from './CuiSegment'
 
 export default {
-  title: 'Cui / CuiSegment',
+  title: 'Cui / Components / CuiSegment',
   component: CuiSegment,
   argTypes: {
     color: {
@@ -44,4 +44,3 @@ const Template = args => {
 }
 
 export const Default = Template.bind({})
-Default.args = {}

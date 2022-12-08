@@ -4,7 +4,7 @@ import CuiIcon from './CuiIcon'
 import {CuiIconNames} from './icons'
 
 export default {
-  title: 'Cui / CuiIcon',
+  title: 'Cui / Components / CuiIcon',
   component: CuiIcon,
   argTypes: {
     name: CuiIconNames,

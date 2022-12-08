@@ -3,7 +3,7 @@ import React from 'react'
 import CuiTextArea from './CuiTextArea'
 
 export default {
-  title: 'Cui / CuiTextArea',
+  title: 'Cui / Components / CuiTextArea',
   component: CuiTextArea,
   argTypes: {
     placeholder: {
@@ -20,4 +20,3 @@ export default {
 const Template = args => <CuiTextArea {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
