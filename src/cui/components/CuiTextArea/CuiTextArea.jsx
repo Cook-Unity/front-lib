@@ -3,11 +3,6 @@ import React from 'react'
 
 import './CuiTextArea.scss'
 
-// name
-// value
-// onChange
-// placeholder
-
 const CuiTextArea = ({disabled = false, className, ...props}) => {
   return (
     <textarea
