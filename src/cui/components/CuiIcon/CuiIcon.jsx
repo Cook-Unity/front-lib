@@ -25,7 +25,9 @@ export const icons = {
   allDone: imageUrl('all-done.svg'),
   slickPrev: imageUrl('slick-prev.svg'),
   slickNext: imageUrl('slick-next.svg'),
-  sync: imageUrl('sync.svg')
+  sync: imageUrl('sync.svg'),
+  retweet: imageUrl('retweet.svg'),
+  arrowLeft: imageUrl('arrow-left.svg')
 }
 
 const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
