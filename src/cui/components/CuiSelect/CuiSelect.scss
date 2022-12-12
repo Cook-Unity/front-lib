@@ -4,6 +4,7 @@
     &__placeholder {
         color: $cui-black-color-350 !important;
         font-family: $cui-font-family-tt-norms !important;
+        font-size: $cui-font-sm !important;
         font-weight: $cui-font-normal !important;
     }
 
@@ -59,7 +60,7 @@
     }
 
     &__input-container {
-        color: $cui-black-color-300 !important;
+        color: $cui-black-color-350 !important;
         font-family: $cui-font-family-tt-norms !important;
         font-weight: $cui-font-normal !important;
     } 
