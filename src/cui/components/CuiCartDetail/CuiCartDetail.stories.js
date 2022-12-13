@@ -3,7 +3,7 @@ import React from 'react'
 import CuiCartDetail from './CuiCartDetail'
 
 export default {
-  title: 'Cui / CuiCartDetail',
+  title: 'Cui / Modules / CuiCartDetail',
   component: CuiCartDetail,
   argTypes: {
     loading: {
