@@ -53,3 +53,4 @@ export {default as CuiCategoryCover} from './cui/components/CuiCategoryCover/Cui
 export {default as CuiTextArea} from './cui/components/CuiTextArea/CuiTextArea'
 export {default as CuiDescription} from './cui/components/CuiDescription/CuiDescription'
 export {default as CuiMenuByBar} from './cui/components/CuiMenuByBar/CuiMenuByBar'
+export {default as CuiCheckbox} from './cui/components/CuiCheckbox/CuiCheckbox'

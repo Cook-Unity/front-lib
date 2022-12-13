@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import React, {useEffect, useState} from 'react'
-import './CuiIcon.scss'
+
 import {icons} from './icons'
+import './CuiIcon.scss'
 
 const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
   const [svg, setSvg] = useState(null)
