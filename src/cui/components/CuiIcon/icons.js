@@ -3,6 +3,7 @@ export const CuiIconNames = {
     type: 'select',
     options: [
       'alert',
+      'edit',
       'checkmarkCircle2',
       'chevronRight',
       'heart',
@@ -16,6 +17,7 @@ export const CuiIconNames = {
       'slickNext',
       'retweet',
       'arrowLeft',
+      'arrowDown',
       // new icons
       'easyAndConvenient',
       'eggsAndDairy',
@@ -51,7 +53,7 @@ export const CuiIconNames = {
       'paleo',
       'plantBased',
       'pork',
-      'poultry1',
+      'poultry',
       'poultry2',
       'reviewStars1',
       'reviewStars2',
@@ -80,6 +82,7 @@ const imageUrl = filename =>
 
 export const icons = {
   alert: imageUrl('alert-circle.svg'),
+  edit: imageUrl('edit.svg'),
   checkmarkCircle2: imageUrl('checkmark-circle-2.svg'),
   chevronRight: imageUrl('chevron-right.svg'),
   heart: imageUrl('heart.svg'),
@@ -101,6 +104,7 @@ export const icons = {
   sync: imageUrl('sync.svg'),
   retweet: imageUrl('retweet.svg'),
   arrowLeft: imageUrl('arrow-left.svg'),
+  arrowDown: imageUrl('arrow-down.svg'),
   // new icons
   easyAndConvenient: imageUrl('easy-and-convenient.svg'),
   eggsAndDairy: imageUrl('eggs-and-dairy.svg'),
@@ -136,7 +140,7 @@ export const icons = {
   paleo: imageUrl('paleo.svg'),
   plantBased: imageUrl('plant-based.svg'),
   pork: imageUrl('pork.svg'),
-  poultry1: imageUrl('poultry-1.svg'),
+  poultry: imageUrl('poultry.svg'),
   poultry2: imageUrl('poultry-2.svg'),
   reviewStars1: imageUrl('review-stars-1.svg'),
   reviewStars2: imageUrl('review-stars-2.svg'),

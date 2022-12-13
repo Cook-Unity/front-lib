@@ -1,15 +1,17 @@
-@import '../../assets/styles/scss/mixins';
-@import '../../assets/styles/scss/variables';
+@import '../../../../styles/mixins/media';
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
 
-.tabsContainer {
+
+.cui-tabs-container {
   * {
     box-sizing: border-box;
   }
   
-  height: 103px;
+  height: 95px;
   padding: 0;
   position: relative;
-  border-bottom: 2px solid $cookunity-gray-3;
+  border-bottom: 2px solid $cui-black-color-200;
 
   &.scrolling{
     height: 73px;
@@ -17,24 +19,21 @@
     transform: translateY(-2px) ; 
   }
 
-  .navigation {
+  .cui-tabs-container__navigation {
     position: absolute;
     height: 100%;
     display: flex;
-  }
-
-  .navigationLeft {
-    left: 0;
+    &.left {
+      left: 0;
+      top: 2px;
+    }
+    &.right {
+      right: 0;
     top: 2px;
+    }
   }
 
-  .navigationRight {
-    right: 0;
-    top: 2px;
-    
-  }
-
-  .button {
+  .cui-tabs-container__button {
     background-color: white;
     width: 32px;
     height: 100%;
@@ -48,21 +47,19 @@
     }
   }
 
-  .gradient {
+  .cui-tabs-container__gradient {
     width: 40px;
     height: 100%;
     background: linear-gradient(270deg, #FFFFFF 21.42%, rgba(255, 255, 255, 0) 100%);
+    &.left {
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    &.right {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
   }
 
-  .gradientLeft {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-  }
-  
-  .gradientRight {
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-
-  .tabs {
+  .cui-tabs-container__tabs {
     -ms-overflow-style: none;
     scrollbar-width: none;
     &::-webkit-scrollbar {
@@ -77,7 +74,7 @@
     overflow: auto;
     scroll-behavior: smooth;
     
-    .item {
+    .cui-tabs-container__item {
       display: inline-grid;
       padding: 4px 8px 0px;
       margin: 0 2px;
@@ -86,25 +83,25 @@
       cursor: pointer;
       
       &:hover{
-        background-color: #f5f5f5;
+        background-color: $cui-black-color-100;
       }
       
       &.selected {
-        border-bottom: 2px solid $cookunity-black;
+        border-bottom: 2px solid $cui-black-color;
       }
 
-      .name {
-        font-family: 'Gilroy';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 12px;
-        line-height: 15px;
+      .cui-tabs-container__item-name {
+        @include font-build(
+          $cui-font-family-tt-norms,
+          $cui-font-sm,
+          $cui-font-xl,
+          $cui-font-bold
+        );
         text-align: center;
         margin-top: 4px;
-        margin-bottom: 8px;
       }
 
-      .image {
+      .cui-tabs-container__item-img {
         width: 62px;
         height: 62px;
         margin-left: auto;
