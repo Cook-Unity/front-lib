@@ -1,0 +1,115 @@
+@import "../../styles/mixins/media";
+@import "../../styles/variables";
+@import "../../styles/mixins/buttons";
+@import "../../styles/mixins/fonts";
+
+.cui-cart-detail {
+    display: grid;
+    padding: 22px 18px;
+    border-radius: 0px 0px 8px 8px;
+    grid-template-columns: 1fr auto;
+    grid-auto-rows: auto;
+    grid-template-areas:
+    "a b"
+    "c c";
+    background-color: $cui-black-color-100;
+
+    &-expanded {
+        grid-auto-rows: auto auto;
+        gap: 8px;
+    }
+    @include mobile {
+        grid-template-columns: auto;
+        grid-auto-rows: auto auto;
+        grid-template-areas:
+        "b"
+        "a";
+        gap: 16px;
+        &-expanded {
+            grid-auto-rows: auto auto auto;
+            grid-template-areas:
+            "b"
+            "a"
+            "c";
+        }
+    }
+    .cui-cart-detail-view {
+        grid-area: a;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &-title {
+            @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-sm, $cui-font-bold);
+        }
+        @include mobile {
+            grid-area: 2;
+            gap: 4px;
+            justify-self: center;
+        }
+    }
+    .cui-cart-detail-state {
+        grid-area: b;
+        display: grid;
+        grid-template-columns: 24px auto auto;
+        column-gap: 16px;
+        grid-auto-rows: auto auto;
+        grid-template-areas:
+        "a b d"
+        "a c d";
+
+        &-items-icon {
+            grid-area: a;
+            align-self: center;
+        }
+        &-items-selected {
+            grid-area: b;
+            color: $cui-black-color-500;
+            @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-base, $cui-font-bold);
+            @include mobile {
+                @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-sm, $cui-font-bold);
+                align-self: center;
+            }
+        }
+        &-items-add-more {
+            grid-area: c;
+            color: $cui-black-color-300;
+            @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-base, $cui-font-bold);
+            @include mobile {
+                @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-sm, $cui-font-bold);
+            }
+            text-align: right;
+        }
+        &-items-button {
+            grid-area: d;
+            align-self: center;
+        }
+        @include mobile {
+            grid-template-areas:
+            "a b d"
+            "c c d";
+            column-gap: 4px;
+            row-gap: 4px;
+        }
+    }
+    .cui-cart-detail-content {
+        grid-area: c;
+        display: flex;
+        &-items {
+            margin-right: 32px;
+            &-key {
+                @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-font-2xl, $cui-font-normal);
+            }
+            &-value {
+                @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-base, $cui-font-bold);
+            }
+            @include mobile {
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+        }
+        @include mobile {
+            grid-area: 3;
+            flex-direction: column;
+        }
+    }
+}

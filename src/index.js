@@ -45,6 +45,7 @@ export {default as CuiSegmentButton} from './cui/components/CuiSegmentButton/Cui
 export {default as CuiSelect} from './cui/components/CuiSelect/CuiSelect'
 export {default as CuiTag} from './cui/components/CuiTag/CuiTag'
 export {default as CuiTextHeader} from './cui/components/CuiTextHeader/CuiTextHeader'
+export {default as CuiCartDetail} from './cui/components/CuiCartDetail/CuiCartDetail'
 export {default as CuiMealCarrousel} from './cui/components/CuiMealCarrousel/CuiMealCarrousel'
 export {default as CuiCollectionHeader} from './cui/components/CuiCollection/CuiCollectionHeader/CuiCollectionHeader'
 export {default as CuiChip} from './cui/components/CuiChip/CuiChip'

@@ -64,3 +64,29 @@ Default.args = {
   href: 'https://cookunity.com/',
   target: '_blank'
 }
+
+const WithIconTemplate = args => (
+  <CuiLink {...args}>
+    <CuiIcon name="heart" /> Button
+  </CuiLink>
+)
+const WithIconTemplate2 = args => (
+  <CuiLink {...args}>
+    Button <CuiIcon name="chevronUp" />
+  </CuiLink>
+)
+export const WithIcon = WithIconTemplate.bind({})
+WithIcon.args = {
+  color: 'tertiary',
+  href: 'https://cookunity.com/',
+  target: '_blank'
+}
+
+export const Link = WithIconTemplate2.bind({})
+Link.args = {
+  showUnderline: false,
+  color: 'primary',
+  fill: 'outline',
+  href: 'https://cookunity.com/',
+  target: '_blank'
+}
