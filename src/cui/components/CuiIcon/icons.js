@@ -16,6 +16,7 @@ export const CuiIconNames = {
       'slickNext',
       'retweet',
       'arrowLeft',
+      'arrowDown',
       // new icons
       'easyAndConvenient',
       'eggsAndDairy',
@@ -101,6 +102,7 @@ export const icons = {
   sync: imageUrl('sync.svg'),
   retweet: imageUrl('retweet.svg'),
   arrowLeft: imageUrl('arrow-left.svg'),
+  arrowDown: imageUrl('arrow-down.svg'),
   // new icons
   easyAndConvenient: imageUrl('easy-and-convenient.svg'),
   eggsAndDairy: imageUrl('eggs-and-dairy.svg'),

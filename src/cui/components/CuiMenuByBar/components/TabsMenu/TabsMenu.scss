@@ -1,0 +1,119 @@
+@import '../../../../styles/mixins/media';
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+
+.cui-tabs-container {
+  * {
+    box-sizing: border-box;
+  }
+  
+  height: 95px;
+  padding: 0;
+  position: relative;
+  border-bottom: 2px solid $cui-black-color-200;
+
+  &.scrolling{
+    height: 73px;
+    border-bottom: 0;
+    transform: translateY(-2px) ; 
+  }
+
+  .cui-tabs-container__navigation {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    &.left {
+      left: 0;
+      top: 2px;
+    }
+    &.right {
+      right: 0;
+    top: 2px;
+    }
+  }
+
+  .cui-tabs-container__button {
+    background-color: white;
+    width: 32px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #f5f5f5;
+    }
+  }
+
+  .cui-tabs-container__gradient {
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(270deg, #FFFFFF 21.42%, rgba(255, 255, 255, 0) 100%);
+    &.left {
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    &.right {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+  }
+
+  .cui-tabs-container__tabs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    transform: translateY(2px);
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    white-space: nowrap;
+    overflow: auto;
+    scroll-behavior: smooth;
+    
+    .cui-tabs-container__item {
+      display: inline-grid;
+      padding: 4px 8px 0px;
+      margin: 0 2px;
+      height: 100%;
+      min-width: 78px;
+      cursor: pointer;
+      
+      &:hover{
+        background-color: $cui-black-color-100;
+      }
+      
+      &.selected {
+        border-bottom: 2px solid $cui-black-color;
+      }
+
+      .cui-tabs-container__item-name {
+        @include font-build(
+          $cui-font-family-tt-norms,
+          $cui-font-sm,
+          $cui-font-xl,
+          $cui-font-bold
+        );
+        text-align: center;
+        margin-top: 4px;
+      }
+
+      .cui-tabs-container__item-img {
+        width: 62px;
+        height: 62px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100px;
+        object-fit: cover;
+
+        &.scrolling{
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
