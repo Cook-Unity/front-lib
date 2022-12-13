@@ -15,7 +15,8 @@ export const CuiIconNames = {
       'slickPrev',
       'slickNext',
       'retweet',
-      'arrowLeft'
+      'arrowLeft',
+      'arrowDown'
     ]
   },
   defaultValue: 'heart'
