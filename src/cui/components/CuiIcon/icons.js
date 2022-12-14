@@ -20,6 +20,7 @@ export const CuiIconNames = {
       'arrowDown',
       // new icons
       'checkmark',
+      'close',
       'easyAndConvenient',
       'eggsAndDairy',
       'everChangingMenu',
