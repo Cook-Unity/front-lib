@@ -30,6 +30,7 @@
       margin-left: -5px;
       padding: 0 5px;
       display: flex;
+      align-items: center;
 
       &:hover, &:focus {
         background-color: $cui-black-color-100;
@@ -49,6 +50,11 @@
       }
     }
 
+    .cui-menu-by__select {
+      display: flex;
+      align-items: center;
+    }
+
     .cui-menu-by__text-secondary {
       @include font-build(
         $cui-font-family-tt-norms,
@@ -61,6 +67,7 @@
       cursor: pointer;
       text-decoration: underline;
       display: flex;
+      align-items: center;
 
       svg {
         path {
@@ -79,8 +86,12 @@
   }
 
   .cui-menu-by__tabs-container {
+    margin-top: 16px;
     &.scrolling {
       margin-left: 51px;
+    }
+    @include mobile {
+      margin-top: 8px;
     }
   }
 }
