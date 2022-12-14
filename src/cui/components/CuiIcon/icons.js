@@ -108,6 +108,7 @@ export const icons = {
   arrowDown: imageUrl('arrow-down.svg'),
   // new icons
   checkmark: imageUrl('checkmark.svg'),
+  close: imageUrl('close.svg'),
   easyAndConvenient: imageUrl('easy-and-convenient.svg'),
   eggsAndDairy: imageUrl('eggs-and-dairy.svg'),
   everChangingMenu: imageUrl('ever-changing-menu.svg'),
