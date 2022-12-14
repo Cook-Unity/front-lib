@@ -35,7 +35,7 @@ const MealCardsModal = ({
       mediumSize
     >
       <div className="cui-mealCardsModal__titles">
-        <h3 data-testid="title">{title}</h3>
+        <h2 data-testid="title">{title}</h2>
         {subtitle && <h2 data-testid="subtitle">{subtitle}</h2>}
       </div>
       <div className="cui-mealCardsModal__content">
@@ -76,8 +76,8 @@ const MealCardsModal = ({
             onClick={primaryButtonClick}
             label={primaryButtonText}
             fill="solid"
-            color="dark"
             size="large"
+            color="dark"
             data-testid="cu-primary-button"
           >
             {primaryButtonText}
@@ -88,8 +88,8 @@ const MealCardsModal = ({
           <CuiButton
             onClick={secondaryButtonClick}
             label={secondaryButtonText}
-            size="large"
             fill="outline"
+            size="large"
             color="dark"
             data-testid="cu-secondary-button"
           >
