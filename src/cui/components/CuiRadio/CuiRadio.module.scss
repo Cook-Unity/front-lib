@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins/fonts";
+@import '../../styles/variables';
+@import '../../styles/mixins/fonts';
 
 .cookunity__input_radio_container {
   display: flex;
@@ -19,13 +19,13 @@
     .checkmark {
       width: 10px;
       height: 10px;
-      background-color: $cui-wine-color-700;
+      background-color: $cui-wine-color-500;
       border-radius: 50%;
       opacity: 0;
     }
 
     &.checked {
-      border: 1px solid $cui-wine-color-700;
+      border: 1px solid $cui-wine-color-500;
       .checkmark {
         opacity: 1;
       }
