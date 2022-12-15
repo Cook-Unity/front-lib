@@ -22,3 +22,9 @@
         }
     }
 }
+
+.cui-color-dark .cui-breadcrumb {
+    &-inactive {
+        color: $cui-black-color-350;
+    }
+}

@@ -1,0 +1,25 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-meal-badge {
+   position: absolute;
+   z-index: $z-10;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 68px;
+
+   span {
+      z-index: 1;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 12px;
+      @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-bold);
+   }
+   .cui-icon {
+      height: auto;
+      width: 100%;
+      display: block;
+   }
+}

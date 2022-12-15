@@ -1,0 +1,6 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-meal-description {
+   @include font-build($cui-font-family-source-serif, $cui-font-base, $cui-line-height-xl, $cui-font-normal);
+}

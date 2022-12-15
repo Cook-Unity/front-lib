@@ -4,6 +4,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-actions',
-    '@storybook/preset-scss'
+    '@storybook/preset-scss',
+    '@storybook/addon-a11y'
   ]
 }

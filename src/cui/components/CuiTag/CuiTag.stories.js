@@ -42,10 +42,13 @@ export default {
   }
 }
 
-const DefaultTemplate = args => (
-  <CuiTag {...args}>
-    {args.icon && <CuiIcon name={args.icon} />}
-    Tag
-  </CuiTag>
-)
+const DefaultTemplate = args => {
+  const {icon, ...props} = args
+  return (
+    <CuiTag {...props}>
+      {icon && <CuiIcon name={icon} />}
+      Tag
+    </CuiTag>
+  )
+}
 export const Default = DefaultTemplate.bind({})

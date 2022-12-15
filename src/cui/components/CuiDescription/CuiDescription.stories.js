@@ -3,7 +3,7 @@ import React from 'react'
 import CuiDescription from './CuiDescription'
 
 export default {
-  title: 'Cui / Modules / CuiDescription',
+  title: 'Cui / Components / CuiDescription',
   component: CuiDescription
 }
 
