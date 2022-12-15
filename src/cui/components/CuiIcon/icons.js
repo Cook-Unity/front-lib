@@ -91,7 +91,7 @@ export const icons = {
   plus: imageUrl('plus.svg'),
   percent: imageUrl('percent.svg'),
   star: imageUrl('star.svg'),
-  starFull: imageUrl('star-full.svg'),
+  starFull: imageUrl('starfull.svg'),
   alertTriangle: imageUrl('alert-triangle.svg'),
   trash: imageUrl('trash.svg'),
   info: imageUrl('info.svg'),

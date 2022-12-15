@@ -1,0 +1,11 @@
+@import "../../../../styles/variables";
+
+.cui-meal-image {
+   position: relative;
+
+   .cui-meal-card-tags {
+      position: absolute;
+      bottom: $cui-gutter;
+      left: $cui-gutter-large;
+   }
+}

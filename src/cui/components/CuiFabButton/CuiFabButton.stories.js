@@ -12,6 +12,10 @@ export default {
         options: ['dark', 'light']
       },
       defaultValue: 'light'
+    },
+    fixed: {
+      control: 'boolean',
+      defaultValue: false
     }
   }
 }

@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.cui-avatar {
+   height: 32px;
+   width: 32px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: $cui-black-color-200;
+   border: 1px solid $cui-black-color-200;
+   overflow: hidden;
+   object-fit: cover;
+   &-rounded {
+      border-radius: 100%;
+   }
+}

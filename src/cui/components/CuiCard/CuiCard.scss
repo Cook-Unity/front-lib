@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins/fonts";
 
 .cui-card {
     background: $cui-white-color;
@@ -7,8 +8,12 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
-    &-row {
-        flex-direction: row;
-    }
+    position: relative;
+
+    @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-sm,
+        $cui-line-height-xl,
+        $cui-font-normal
+    );
 }

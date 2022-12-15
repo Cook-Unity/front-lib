@@ -9,6 +9,11 @@ const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
   const [isErrored, setIsErrored] = useState(false)
 
   useEffect(() => {
+    if (!(path || icons[name])) {
+      console.error('Icon not found')
+      return
+    }
+    // eslint-disable-next-line no-undef
     fetch(path || icons[name])
       .then(res => res.text())
       .then(setSvg)

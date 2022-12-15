@@ -2,21 +2,10 @@ import classNames from 'classnames'
 import React from 'react'
 import './CuiCard.scss'
 
-const CuiCard = ({
-  className,
-  children,
-  color = 'dark',
-  direction = 'column',
-  ...props
-}) => {
+const CuiCard = ({className, children, color = 'dark', ...props}) => {
   return (
     <div
-      className={classNames(
-        'cui-card',
-        direction === 'row' && 'cui-card-row',
-        `cui-color-${color}`,
-        className
-      )}
+      className={classNames('cui-card', `cui-color-${color}`, className)}
       {...props}
     >
       {children}

@@ -1,6 +1,9 @@
 .cui-icon {
-    width: 24px;
+    align-items: center;
+    display: flex;
     height: 24px;
+    justify-content: center;
+    width: 24px;
     &.button:hover {
         cursor: pointer;
     }
