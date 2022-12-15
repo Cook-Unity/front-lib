@@ -67,19 +67,21 @@ const CuiMenuByBar = ({
           >
             {menuText}
           </span>
-          <span
-            className="cui-menu-by__text-secondary"
-            onClick={handleMenuClick}
-          >
-            {isScrolling ? '' : getMenuText()}
-            <CuiIcon
-              name="arrowDown"
-              className={classnames({
-                arrowUp: isMenuOpen,
-                scrolling: isScrolling
-              })}
-            />
-          </span>
+          <div className="cui-menu-by__select">
+            <span
+              className="cui-menu-by__text-secondary"
+              onClick={handleMenuClick}
+            >
+              {isScrolling ? '' : getMenuText()}
+              <CuiIcon
+                name="arrowDown"
+                className={classnames({
+                  arrowUp: isMenuOpen,
+                  scrolling: isScrolling
+                })}
+              />
+            </span>
+          </div>
         </div>
 
         {isMenuOpen && (

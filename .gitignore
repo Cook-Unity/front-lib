@@ -23,6 +23,7 @@ yarn-error.log*
 
 #jetbrain editors
 .idea
+.vscode
 
 coverage/
 storybook-static

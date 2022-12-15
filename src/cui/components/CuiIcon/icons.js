@@ -19,6 +19,8 @@ export const CuiIconNames = {
       'arrowLeft',
       'arrowDown',
       // new icons
+      'checkmark',
+      'close',
       'easyAndConvenient',
       'eggsAndDairy',
       'everChangingMenu',
@@ -106,6 +108,8 @@ export const icons = {
   arrowLeft: imageUrl('arrow-left.svg'),
   arrowDown: imageUrl('arrow-down.svg'),
   // new icons
+  checkmark: imageUrl('checkmark.svg'),
+  close: imageUrl('close.svg'),
   easyAndConvenient: imageUrl('easy-and-convenient.svg'),
   eggsAndDairy: imageUrl('eggs-and-dairy.svg'),
   everChangingMenu: imageUrl('ever-changing-menu.svg'),

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
+
 import './CuiInput.scss'
 
 const CuiInput = ({
