@@ -2,6 +2,9 @@
 
 .cui-meal-image {
    position: relative;
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
+   overflow: hidden;
 
    .cui-meal-card-tags {
       position: absolute;
