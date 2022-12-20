@@ -2,7 +2,7 @@ import React from 'react'
 import CuiMenuImage from './CuiMenuImage'
 
 export default {
-  title: 'Cui / Modules / CuiMealCard / Components / CuiMealImage',
+  title: 'Cui / Modules / CuiMealCard / Components / CuiMenuImage',
   component: CuiMenuImage,
   argTypes: {
     primary_image: {
