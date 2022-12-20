@@ -2,6 +2,9 @@
 @import "../../styles/mixins/fonts";
 
 .cui-meal-card {
+    box-shadow: 0px 0px 12px rgba(35, 31, 32, 0.1), 0px 12px 12px rgba(35, 31, 32, 0.07);
+    border-radius: 8px;
+    
     &-row {
         flex-direction: row;
         .cui-meal-image {
@@ -38,6 +41,11 @@
         .calories {
             color: $cui-black-color-400;
         }
+    }
+
+    &-selected {
+        outline: 2px solid $cui-wine-color-500;
+        overflow: hidden;
     }
     
 }

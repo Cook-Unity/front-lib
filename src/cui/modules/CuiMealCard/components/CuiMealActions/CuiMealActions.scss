@@ -1,0 +1,88 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-meal-actions {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 9px;
+	margin-top: 16px;
+}
+
+.cui-meal-actions__control {
+	flex: 1;
+	img {
+		width: 11px;
+		padding: 0 8px;
+	}
+}
+
+.cui-meal-actions__control:hover {
+	background-color: $cui-black-color-100;
+	border-radius: 100px;
+}
+
+.cui-meal-actions__control-add {
+	text-align: right;
+}
+
+.cui-meal-actions__control-remove {
+	text-align: left;
+
+}
+
+.cui-meal-actions__control-qty {
+	width: 24px;
+	height: 24px;
+	background-color: $cui-wine-color-500;
+	border-radius: 100px;
+	@include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-bold);
+	color: $cui-white-color;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cui-meal-actions__button-add {
+	width: 100%;
+	padding: 4px 12px !important;
+	height: 36px !important;
+}
+
+.cui-meal-actions__button-add:focus {
+	background-color: $cui-white-color;
+}
+
+.cui-meal-actions__tooltip-info{
+	height: 15px;
+	opacity: 0.8;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.cui-meal-actions__tooltip {
+	display: inline-block;
+	position: relative;
+	.content {
+		@include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+		color: $cui-white-color;
+		position: absolute;
+		border-radius: 4px;
+		right: -13px;
+		padding: 8px;
+		width: 210px;
+		margin-top: 12px;
+		background-color: $cui-black-color;
+		z-index: 4;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			right: 12px;
+			margin-left: -8px;
+			border-width: 8px;
+			border-style: solid;
+			border-color: transparent transparent $cui-black-color transparent;
+		}
+	}
+}

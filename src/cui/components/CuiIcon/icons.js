@@ -18,6 +18,7 @@ export const CuiIconNames = {
       'retweet',
       'arrowLeft',
       'arrowDown',
+      'heartFilled',
       // new icons
       'checkmark',
       'close',
@@ -107,6 +108,7 @@ export const icons = {
   retweet: imageUrl('retweet.svg'),
   arrowLeft: imageUrl('arrow-left.svg'),
   arrowDown: imageUrl('arrow-down.svg'),
+  heartFilled: imageUrl('heart-filled.svg'),
   // new icons
   checkmark: imageUrl('checkmark.svg'),
   close: imageUrl('close.svg'),

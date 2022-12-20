@@ -11,6 +11,7 @@ const CuiMealCard = ({
   fabPosition = 'none',
   tagLabel,
   price,
+  selected = false,
   ...props
 }) => (
   <CuiCard
@@ -18,6 +19,7 @@ const CuiMealCard = ({
       'cui-meal-card',
       `cui-meal-card-${direction}`,
       `cui-color-${color}`,
+      {'cui-meal-card-selected': selected},
       className
     )}
     {...props}
