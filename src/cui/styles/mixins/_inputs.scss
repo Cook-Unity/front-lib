@@ -1,15 +1,25 @@
-@mixin build-input(
-    $background-color,
-    $border-color,
-    $color
-) {
+@mixin build-input($background-color, $border-color, $color) {
     @include build-fill-input($background-color, $border-color, $color);
 }
 
 @mixin build-fill-input($background-color, $border-color, $color) {
     background-color: $background-color;
-    color: $color;
-    border: 1px solid $border-color;
-    outline-color: $border-color;
     border-radius: 4px;
+    border: 1px solid $border-color;
+    color: $color;
+    outline-color: $border-color;
+}
+
+@mixin hide-number-controls() {
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    &[type="number"] {
+        -moz-appearance: textfield;
+    }
 }
