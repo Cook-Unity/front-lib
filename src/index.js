@@ -67,6 +67,5 @@ export {default as CuiTextHeader} from './cui/components/CuiTextHeader/CuiTextHe
 export {default as CuiMealFavorite} from './cui/modules/CuiMealCard/components/CuiMealFavorite/CuiMealFavorite'
 export {default as CuiMealPremiumTag} from './cui/modules/CuiMealCard/components/CuiMealPremiumTag/CuiMealPremiumTag'
 export {default as CuiMealActions} from './cui/modules/CuiMealCard/components/CuiMealActions/CuiMealActions'
-export {default as CuiCardContent} from './cui/components/CuiCardContent/CuiCardContent'
 export {default as CuiMenuImage} from './cui/modules/CuiMealCard/components/CuiMenuImage/CuiMenuImage'
 export {default as CuiMealCardLoading} from './cui/components/CuiMealCardLoading/CuiMealCardLoading'
