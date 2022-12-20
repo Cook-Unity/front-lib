@@ -1,0 +1,158 @@
+@import '../../../assets/styles/scss/mixins';
+@import '../../../assets/styles/scss/variables';
+@import '../../styles/mixins/fonts';
+
+@mixin full-screen {
+  width: 100%;
+  margin: 0;
+  padding-top: 64px;
+
+  border-radius: 0;
+  box-shadow: none;
+
+  > button.close {
+    display: flex;
+    justify-content: flex-start;
+    top: 20px;
+    left: 20px;
+
+    &.close_right {
+      justify-content: end;
+
+      img {
+        border-radius: 100%;
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  outline: 0;
+  z-index: 200;
+
+  overflow-y: auto;
+  color: $cui-black-color;
+
+  @include font-build(
+    $cui-font-family-tt-norms,
+    $cui-font-base,
+    $cui-line-height-base,
+    $cui-font-normal
+  );
+
+  background-color: rgba(35, 31, 32, 0.7);
+}
+
+.overlay > .content {
+  position: relative;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 40px auto;
+  padding: 40px 32px;
+  border-radius: 10px;
+
+  background: $cui-white-color;
+  box-shadow: 0 0 64px rgba(0, 67, 32, 0.16), 0 16px 32px rgba(0, 67, 32, 0.06),
+    0 8px 16px rgba(0, 67, 32, 0.04), 0 4px 8px rgba(0, 67, 32, 0.02);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+  .overlay > .content {
+    padding: 40px 20px;
+  }
+}
+
+.overlay > .content:focus {
+  outline: none;
+}
+
+.overlay > .content > button.close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  > img {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+  }
+}
+
+.overlay > .content > button.close:focus {
+  outline: none;
+}
+
+.overlay > .content.plus_size {
+  width: 966px;
+}
+
+@media screen and (max-width: 966px) {
+  .overlay.plus_size {
+    background-color: $cui-white-color;
+  }
+
+  .overlay > .content.plus_size {
+    @include full-screen;
+  }
+}
+
+.overlay > .content.large_size {
+  width: 768px;
+}
+
+@media screen and (max-width: 768px) {
+  .overlay.large_size {
+    background-color: $cui-white-color;
+  }
+
+  .overlay > .content.large_size {
+    @include full-screen;
+  }
+}
+
+.overlay > .content.medium_size {
+  width: 600px;
+}
+
+@media screen and (max-width: 600px) {
+  .overlay.medium_size {
+    background-color: $cui-white-color;
+  }
+
+  .overlay > .content.medium_size {
+    @include full-screen;
+  }
+}
+
+.overlay > .content.small_size {
+  width: 520px;
+}
+
+@media screen and (max-width: 520px) {
+  .overlay.small_size:not(.notificationOverlay) {
+    background-color: $cui-white-color;
+  }
+
+  .overlay > .content.small_size:not(.notificationContent) {
+    @include full-screen;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .overlay > .content.small_size.notificationContent {
+    width: 90%;
+    padding-top: 40px;
+  }
+}

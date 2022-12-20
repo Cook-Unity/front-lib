@@ -69,3 +69,5 @@ export {default as CuiMealPremiumTag} from './cui/modules/CuiMealCard/components
 export {default as CuiMealActions} from './cui/modules/CuiMealCard/components/CuiMealActions/CuiMealActions'
 export {default as CuiMenuImage} from './cui/modules/CuiMealCard/components/CuiMenuImage/CuiMenuImage'
 export {default as CuiMealCardLoading} from './cui/components/CuiMealCardLoading/CuiMealCardLoading'
+export {default as CuiModal} from './cui/components/CuiModal/CuiModal'
+export {default as CuiHPModal} from './cui/modules/CuiHPModal/CuiHPModal'
