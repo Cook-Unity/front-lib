@@ -13,12 +13,7 @@
     justify-content: center;
     gap: 6px;
 
-    @include font-build(
-        $cui-font-family-tt-norms,
-        $cui-font-button-medium,
-        $cui-line-height-xl,
-        $cui-font-bold
-    );
+    @include font-build($cui-font-family-tt-norms, $cui-font-button-medium, $cui-line-height-xl, $cui-font-bold);
 
     // Sizes
     &-small {
@@ -141,7 +136,6 @@
             );
         }
     }
-
     &-dark {
         &-solid {
             @include build-button-state(hover, $cui-black-color-400, $cui-black-color-400, $cui-white-color);
@@ -197,9 +191,9 @@
     &-light {
         // TODO: To be defined with UI
         &-solid {
-            @include build-button-state(hover, $cui-white-color, $cui-white-color, $cui-black-color-400);
-            @include build-button-state(focus, $cui-black-color-400, $cui-white-color, $cui-white-color);
-            @include build-button-state(disabled, $cui-white-color, $cui-white-color, $cui-black-color-300);
+            @include build-button-state(hover, $cui-black-color-100, $cui-black-color-100, $cui-black-color);
+            @include build-button-state(focus, $cui-black-color-100, $cui-black-color-200, $cui-black-color);
+            @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
 
             @include build-button(
                 // default
@@ -209,14 +203,14 @@
                 // loading
                 $cui-white-color,
                 $cui-white-color,
-                $cui-black-color-400,
+                $cui-black-color-400
             );
         }
 
         &-outline {
-            @include build-button-state(hover, $cui-black-color-400, $cui-white-color, $cui-white-color);
-            @include build-button-state(focus, $cui-black-color-150, $cui-black-color-400, $cui-black-color);
-            @include build-button-state(disabled, $cui-white-color, $cui-black-color-300, $cui-black-color-300);
+            @include build-button-state(hover, $cui-black-color, $cui-black-color-100, $cui-black-color-100);
+            @include build-button-state(focus, $cui-black-color, $cui-black-color-200, $cui-black-color-100);
+            @include build-button-state(disabled, $cui-black-color, $cui-black-color-300, $cui-black-color-300);
 
             @include build-button(
                 // default
@@ -231,9 +225,9 @@
         }
 
         &-clear {
-            @include build-button-state(hover, $cui-black-color-150, $cui-black-color-150, $cui-black-color-400);
-            @include build-button-state(focus, $cui-black-color-150, $cui-white-color, $cui-black-color);
-            @include build-button-state(disabled, transparent, transparent, $cui-white-color);
+            @include build-button-state(hover, transparent, transparent, $cui-white-color);
+            @include build-button-state(focus, transparent, $cui-black-color-100, $cui-black-color-100);
+            @include build-button-state(disabled, transparent, transparent, $cui-black-color-300);
 
             @include build-button(
                 // default

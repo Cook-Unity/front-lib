@@ -32,6 +32,7 @@ export {default as CuiBreadcrumb} from './cui/components/CuiBreadcrumb/CuiBreadc
 export {default as CuiBreadcrumbs} from './cui/components/CuiBreadcrumbs/CuiBreadcrumbs'
 export {default as CuiButton} from './cui/components/CuiButton/CuiButton'
 export {default as CuiCard} from './cui/components/CuiCard/CuiCard'
+export {default as CuiCardContent} from './cui/components/CuiCardContent/CuiCardContent'
 export {default as CuiCartDetail} from './cui/components/CuiCartDetail/CuiCartDetail'
 export {default as CuiCategoryCover} from './cui/components/CuiCategoryCover/CuiCategoryCover'
 export {default as CuiCheckbox} from './cui/components/CuiCheckbox/CuiCheckbox'

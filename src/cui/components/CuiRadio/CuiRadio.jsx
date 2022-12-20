@@ -9,19 +9,21 @@ const CuiRadio = ({name, checked, onClick, children}) => {
       className={classnames(styles.cookunity__input_radio_container)}
       onClick={onClick}
     >
-      <div
-        className={classnames(styles.cookunity__input_radio, {
-          [styles.checked]: checked
-        })}
-      >
-        <div className={classnames(styles.checkmark)} />
+      <div className={classnames(styles.cookunity__input_container)}>
+        <div
+          className={classnames(styles.cookunity__input_radio, {
+            [styles.checked]: checked
+          })}
+        >
+          <div className={classnames(styles.checkmark)} />
+        </div>
+        <input
+          className={classnames(styles.cookunity__input_radio)}
+          type="radio"
+          name={name}
+          checked={checked}
+        />
       </div>
-      <input
-        className={classnames(styles.cookunity__input_radio)}
-        type="radio"
-        name={name}
-        checked={checked}
-      />
       <span className={classnames(styles.cookunity__input_label)}>
         {children}
       </span>
