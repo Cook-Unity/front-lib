@@ -41,6 +41,7 @@ export {default as CuiCollectionHeader} from './cui/components/CuiCollection/Cui
 export {default as CuiCollectionIcon} from './cui/components/CuiCollection/CuiCollectionIcon/CuiCollectionIcon'
 export {default as CuiDescription} from './cui/components/CuiDescription/CuiDescription'
 export {default as CuiFabButton} from './cui/components/CuiFabButton/CuiFabButton'
+export {default as CuiGiftCard} from './cui/components/CuiGiftCard/CuiGiftCard'
 export {default as CuiHeader} from './cui/components/CuiHeader/CuiHeader'
 export {default as CuiIcon} from './cui/components/CuiIcon/CuiIcon'
 export {default as CuiImage} from './cui/components/CuiImage/CuiImage'

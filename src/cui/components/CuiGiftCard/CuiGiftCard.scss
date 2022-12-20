@@ -1,0 +1,74 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+@import "../../styles/mixins/inputs";
+
+.cui-gift-card {
+    background-color: $cui-black-color;
+    border-radius: $cui-card-border-radius;
+    color: $cui-white-color;
+    overflow: hidden;
+
+    @include font-build($cui-font-family-tt-norms, $cui-font-lg, $cui-line-height-xl, $cui-font-normal);
+
+    position: relative;
+    &:before {
+        content: "";
+        display: block;
+        padding-top: calc((101 / 167) * 100%);
+        width: 100%;
+    }
+    > .inner {
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        left: 0;
+        padding: 16px 24px 24px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    & .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        p {
+            margin: 0;
+            text-transform: uppercase;
+        }
+    }
+
+    & .price-input {
+        align-items: center;
+        background-color: $cui-white-color;
+        border-radius: 200px;
+        border: 1px solid $cui-black-color-350;
+        color: $cui-black-color-350;
+        display: flex;
+        flex-direction: row;
+        font-size: $cui-font-lg;
+        gap: 8px;
+        height: 44px;
+        margin-left: -6px;
+        padding: 0 20px;
+        width: 152px;
+
+        input {
+            @include hide-number-controls();
+            &:focus {
+                outline: none;
+            }
+
+            @include font-build($cui-font-family-tt-norms, $cui-font-lg, $cui-line-height-xl, $cui-font-normal);
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid $cui-black-color-350;
+            color: $cui-black-color-350;
+            width: 90px;
+        }
+    }
+}
