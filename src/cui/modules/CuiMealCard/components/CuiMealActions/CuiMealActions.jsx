@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import React, {useState, useEffect} from 'react'
-import CuiIcon from '../../../../components/CuiIcon/CuiIcon'
 import {CONTROLLERS_OPENED_MS} from './constants'
 import images from '../../../../../assets/images'
 import CuiButton from '../../../../components/CuiButton/CuiButton'
