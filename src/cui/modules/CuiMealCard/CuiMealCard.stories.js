@@ -11,6 +11,9 @@ import CuiItem from '../../components/CuiItem/CuiItem'
 import CuiMealImage from './components/CuiMealImage/CuiMealImage'
 import CuiMealPrice from './components/CuiMealPrice/CuiMealPrice'
 import CuiMealDescription from './components/CuiMealDescription/CuiMealDescription'
+import CuiMealFavorite from './components/CuiMealFavorite/CuiMealFavorite'
+import CuiMealPremiumTag from './components/CuiMealPremiumTag/CuiMealPremiumTag'
+import CuilMealActions from './components/CuiMealActions/CuiMealActions'
 
 export default {
   title: 'Cui / Modules / CuiMealCard',
@@ -45,6 +48,11 @@ export default {
     tagLabel: {
       control: {
         type: 'text'
+      }
+    },
+    selected: {
+      control: {
+        type: 'boolean'
       }
     }
   }
@@ -212,4 +220,62 @@ export const DefaultRow = TemplateRow.bind({})
 DefaultRow.args = {
   direction: 'row',
   fabPosition: 'bottom'
+}
+
+const menu_meal = {
+  chefImage:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg',
+  chefName: 'Akhtar Nawab',
+  mealImage:
+    'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg',
+  mealDescription: '<b>Braised Pork</b> with Butternut Squash and...',
+  stars: 4.8,
+  reviews: 351,
+  calories: 684,
+  isLikeMarked: false,
+  premium_special: true,
+  premium_title: 'Chef Special'
+}
+
+const TemplateMenu = args => (
+  <CuiMealCard {...args}>
+    <CuiMealFavorite checked={false} />
+    <CuiMealImage>
+      {args.tagLabel && <CuiMealBadge>{args.tagLabel}</CuiMealBadge>}
+      <CuiImage src={menu_meal.mealImage} title="image" />
+      <MealTags />
+    </CuiMealImage>
+    {menu_meal.premium_special && (
+      <CuiMealPremiumTag title={menu_meal.premium_title} />
+    )}
+    <CuiCardContent>
+      <CuiItem>
+        {meal.chefImage && (
+          <CuiAvatar
+            border="rounded"
+            src={menu_meal.chefImage}
+            title={menu_meal.chefName}
+          />
+        )}
+        <p>{menu_meal.chefName}</p>
+      </CuiItem>
+
+      <CuiMealDescription
+        dangerouslySetInnerHTML={{__html: menu_meal.mealDescription}}
+      />
+      <CuilMealActions
+        priceText="Add meal"
+        quantity={0}
+        tooltipText="Meal included in plan"
+      />
+    </CuiCardContent>
+  </CuiMealCard>
+)
+
+export const DefaultMenu = TemplateMenu.bind({})
+DefaultRow.args = {
+  direction: 'column',
+  fabPosition: 'none',
+  tagLabel: 'NEW',
+  selected: true
 }

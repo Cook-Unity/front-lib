@@ -1,0 +1,18 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-meal-premium-tag {
+   width: 100%;
+   background-color: $cui-black-color;
+   @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+   color: $cui-gold-500;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   padding: 4px 16px;
+   height: 24px;
+   img {
+      width: 18px;
+      height: 16px;
+   }
+}
