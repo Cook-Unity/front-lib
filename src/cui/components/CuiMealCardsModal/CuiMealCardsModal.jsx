@@ -3,9 +3,6 @@ import CuiButton from '../CuiButton/CuiButton'
 import Modal from '../../../common/Modal'
 import './CuiMealCardsModal.scss'
 
-import MealCard from '../../../components/MealCard/MealCard'
-import MealCardExperiment from '../../../components/MealCardExperiment/MealCardExperiment'
-
 const MealCardsModal = ({
   isOpen,
   title,
@@ -17,11 +14,8 @@ const MealCardsModal = ({
   secondaryButtonText = null,
   secondaryButtonClick,
   handleClose,
-  onAddItem,
-  onRemoveItem,
-  onClickMeal,
-  mealCardPriceExperimentEnabled = false,
-  modalContainerId = 'root'
+  modalContainerId = 'root',
+  children
 }) => {
   return (
     <Modal
@@ -40,33 +34,7 @@ const MealCardsModal = ({
       </div>
       <div className="cui-mealCardsModal__content">
         <div className="cardsContainerOuter">
-          <div className="cardsContainer">
-            {meals.map((meal, index) => {
-              return mealCardPriceExperimentEnabled ? (
-                <MealCardExperiment
-                  key={meal.id}
-                  index={index}
-                  meal={meal}
-                  quantity={meal.quantity || 0}
-                  onAddItem={onAddItem}
-                  onRemoveItem={onRemoveItem}
-                  onMealClick={onClickMeal}
-                  isExtra
-                />
-              ) : (
-                <MealCard
-                  key={meal.id}
-                  index={index}
-                  meal={meal}
-                  quantity={meal.quantity || 0}
-                  onAddItem={onAddItem}
-                  onRemoveItem={onRemoveItem}
-                  onMealClick={onClickMeal}
-                  showPrice
-                />
-              )
-            })}
-          </div>
+          <div className="cardsContainer">{children}</div>
         </div>
       </div>
 
