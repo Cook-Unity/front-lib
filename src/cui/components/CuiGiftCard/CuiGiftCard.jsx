@@ -9,6 +9,8 @@ const CuiGiftCard = ({
   min = 5,
   max = 500,
   children,
+  value,
+  onChange,
   ...props
 }) => {
   return (
@@ -23,7 +25,14 @@ const CuiGiftCard = ({
         </div>
         <div className="price-input">
           <span>$</span>
-          <input type="number" min={min} max={max} />
+          <input
+            type="number"
+            value={value}
+            onChange={onChange}
+            min={min}
+            max={max}
+            className="cui-gift-card--input"
+          />
         </div>
       </div>
     </div>
