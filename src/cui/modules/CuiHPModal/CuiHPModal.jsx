@@ -5,7 +5,7 @@ import CuiButton from '../../components/CuiButton/CuiButton'
 
 import './CuiHPModal.scss'
 
-const HPModal = ({
+const CuiHPModal = ({
   isOpen,
   handleClose,
   handleCancel = null,
@@ -58,4 +58,4 @@ const HPModal = ({
   )
 }
 
-export default HPModal
+export default CuiHPModal
