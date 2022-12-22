@@ -56,6 +56,8 @@ export {default as CuiMealCarrousel} from './cui/components/CuiMealCarrousel/Cui
 export {default as CuiMealDescription} from './cui/modules/CuiMealCard/components/CuiMealDescription/CuiMealDescription'
 export {default as CuiMealImage} from './cui/modules/CuiMealCard/components/CuiMealImage/CuiMealImage'
 export {default as CuiMealPrice} from './cui/modules/CuiMealCard/components/CuiMealPrice/CuiMealPrice'
+export {default as CuiMealQuantity} from './cui/modules/CuiMealCard/components/CuiMealQuantity/CuiMealQuantity'
+export {default as CuiMealSummary} from './cui/modules/CuiMealCard/components/CuiMealSummary/CuiMealSummary'
 export {default as CuiMenuByBar} from './cui/components/CuiMenuByBar/CuiMenuByBar'
 export {default as CuiProgressBar} from './cui/components/CuiProgressBar/CuiProgressBar'
 export {default as CuiRadio} from './cui/components/CuiRadio/CuiRadio'

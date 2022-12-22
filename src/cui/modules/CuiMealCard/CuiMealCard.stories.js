@@ -14,6 +14,7 @@ import CuiMealDescription from './components/CuiMealDescription/CuiMealDescripti
 import CuiMealFavorite from './components/CuiMealFavorite/CuiMealFavorite'
 import CuiMealPremiumTag from './components/CuiMealPremiumTag/CuiMealPremiumTag'
 import CuilMealActions from './components/CuiMealActions/CuiMealActions'
+import CuiMealSummary from './components/CuiMealSummary/CuiMealSummary'
 
 export default {
   title: 'Cui / Modules / CuiMealCard',
@@ -43,7 +44,14 @@ export default {
     price: {
       control: {
         type: 'text'
-      }
+      },
+      defaultValue: '9.99'
+    },
+    quantity: {
+      control: {
+        type: 'text'
+      },
+      defaultValue: '2'
     },
     tagLabel: {
       control: {
@@ -278,4 +286,44 @@ DefaultRow.args = {
   fabPosition: 'none',
   tagLabel: 'NEW',
   selected: true
+}
+
+const TemplateOnBoarding = args => (
+  <CuiMealCard {...args}>
+    <CuiMealFavorite checked={false} />
+    <CuiMealImage>
+      {args.tagLabel && <CuiMealBadge>{args.tagLabel}</CuiMealBadge>}
+      <CuiImage src={menu_meal.mealImage} title="image" />
+      <MealTags />
+    </CuiMealImage>
+    {menu_meal.premium_special && (
+      <CuiMealPremiumTag title={menu_meal.premium_title} />
+    )}
+    <CuiCardContent>
+      <CuiItem>
+        {meal.chefImage && (
+          <CuiAvatar
+            border="rounded"
+            src={menu_meal.chefImage}
+            title={menu_meal.chefName}
+          />
+        )}
+        <p>{menu_meal.chefName}</p>
+      </CuiItem>
+      <CuiMealDescription
+        dangerouslySetInnerHTML={{__html: menu_meal.mealDescription}}
+      />
+      <CuiMealSummary price={args.price} quantity={args.quantity} />
+    </CuiCardContent>
+  </CuiMealCard>
+)
+
+export const DefaultOnBoarding = TemplateOnBoarding.bind({})
+DefaultRow.args = {
+  direction: 'column',
+  fabPosition: 'none',
+  tagLabel: 'NEW',
+  selected: false,
+  price: '12.99',
+  quantity: 1
 }

@@ -1,0 +1,19 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins/fonts';
+
+.cui-meal-quantity {
+  width: 16px;
+  height: 16px;
+  padding: 8px;
+  border-radius: 50%;
+  background: $cui-wine-color-500;
+  color: $cui-white-color;
+  text-align: center;
+
+  @include font-build(
+    $cui-font-family-tt-norms,
+    $cui-font-sm,
+    $cui-line-height-lg,
+    $cui-font-bold
+  );
+}

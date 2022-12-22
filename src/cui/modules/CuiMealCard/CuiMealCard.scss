@@ -1,50 +1,55 @@
-@import "../../styles/variables";
-@import "../../styles/mixins/fonts";
+@import '../../styles/variables';
+@import '../../styles/mixins/fonts';
 
 .cui-meal-card {
-    box-shadow: 0px 0px 12px rgba(35, 31, 32, 0.1), 0px 12px 12px rgba(35, 31, 32, 0.07);
-    border-radius: 8px;
-    
-    &-row {
-        flex-direction: row;
-        .cui-meal-image {
-            .cui-image {
-                width: 158px;
-                height: 100%;
-            }
-        }
+  box-shadow: 0px 0px 12px rgba(35, 31, 32, 0.1),
+    0px 12px 12px rgba(35, 31, 32, 0.07);
+  border-radius: 8px;
+
+  &-row {
+    flex-direction: row;
+    .cui-meal-image {
+      .cui-image {
+        width: 158px;
+        height: 100%;
+      }
+    }
+  }
+
+  .cui-item {
+    gap: $cui-gutter;
+    margin-bottom: $cui-gutter-small;
+
+    p {
+      text-decoration: underline;
+      font-weight: $cui-font-bold;
+    }
+  }
+
+  & &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $cui-gutter-small;
+    margin-bottom: $cui-gutter-medium;
+
+    .cui-tag {
+      @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-xs,
+        normal,
+        $cui-font-bold
+      );
     }
 
-    .cui-item {
-        gap: $cui-gutter;
-        margin-bottom: $cui-gutter-small;
-
-        p {
-            text-decoration: underline;
-            font-weight: $cui-font-bold;
-        }
+    .reviews {
+      color: $cui-black-color-300;
     }
-
-    & &-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: $cui-gutter-small;
-        margin-bottom: $cui-gutter-medium;
-
-        .cui-tag {
-            @include font-build($cui-font-family-tt-norms, $cui-font-xs, normal, $cui-font-bold);
-        }
-
-        .reviews {
-            color: $cui-black-color-300;
-        }
-        .calories {
-            color: $cui-black-color-400;
-        }
+    .calories {
+      color: $cui-black-color-400;
     }
+  }
 
-    &-selected {
-        outline: 2px solid $cui-wine-color-500;
-    }
-    
+  &-selected {
+    outline: 2px solid $cui-wine-color-500;
+  }
 }

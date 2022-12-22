@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
+
 import CuiCard from '../../components/CuiCard/CuiCard'
 import './CuiMealCard.scss'
 
@@ -9,8 +10,6 @@ const CuiMealCard = ({
   color = 'dark',
   direction = 'column',
   fabPosition = 'none',
-  tagLabel,
-  price,
   selected = false,
   ...props
 }) => (

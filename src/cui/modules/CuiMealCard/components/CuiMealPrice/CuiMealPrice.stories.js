@@ -7,6 +7,6 @@ export default {
   component: CuiMealPrice
 }
 
-const Template = args => <CuiMealPrice {...args}>+ $9.99</CuiMealPrice>
+const Template = args => <CuiMealPrice {...args}>9.99</CuiMealPrice>
 
 export const Default = Template.bind({})

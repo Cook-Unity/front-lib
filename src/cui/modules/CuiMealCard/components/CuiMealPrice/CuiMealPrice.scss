@@ -1,7 +1,11 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/mixins/fonts";
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins/fonts';
 
 .cui-meal-price {
-   @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-bold);
-   margin: 0;
+  @include font-build(
+    $cui-font-family-tt-norms,
+    $cui-font-sm,
+    $cui-line-height-xl,
+    $cui-font-bold
+  );
 }
