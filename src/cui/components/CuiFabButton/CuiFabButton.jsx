@@ -5,6 +5,7 @@ import './CuiFabButton.scss'
 const CuiFabButton = ({
   className,
   color = 'light',
+  showBorder = false,
   fixed,
   children,
   ...props
@@ -18,6 +19,7 @@ const CuiFabButton = ({
       className={classNames(
         'cui-fab-button',
         `cui-fab-button-${color}`,
+        showBorder && `cui-fab-button-${color}-border`,
         fixed && 'cui-fab-button-fixed',
         className
       )}

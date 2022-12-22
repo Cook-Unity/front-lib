@@ -16,6 +16,10 @@ export default {
     fixed: {
       control: 'boolean',
       defaultValue: false
+    },
+    showBorder: {
+      control: 'boolean',
+      defaultValue: false
     }
   }
 }
