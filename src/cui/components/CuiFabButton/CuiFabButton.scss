@@ -6,10 +6,8 @@
   align-items: center;
   border-radius: $cui-fab-radius;
   display: flex;
-  height: $cui-fab-size;
   justify-content: center;
   overflow: hidden;
-  width: $cui-fab-size;
   border-style: solid;
 
   @include font-build(
@@ -28,29 +26,44 @@
     position: absolute;
   }
 
+  &-medium {
+    height: $cui-fab-size;
+    width: $cui-fab-size;
+  }
+
+  &-large {
+    width: $cui-fab-size-large;
+    height: $cui-fab-size-large;
+    font-size: $cui-fab-font-large;
+  }
+
   &-dark {
     color: $cui-white-color;
     background-color: $cui-black-color;
     border-color: $cui-black-color;
     border-style: solid;
+
     @include build-button-state(
       hover,
       $cui-black-color-400,
       $cui-black-color-400,
       $cui-white-color
     );
+
     @include build-button-state(
       focus,
       $cui-black-color-400,
       $cui-black-color,
       $cui-white-color
     );
+
     @include build-button-state(
       disabled,
       $cui-black-color-300,
       $cui-black-color-300,
       $cui-white-color
     );
+
     @include build-fill-button(
       $cui-black-color,
       $cui-black-color,
@@ -58,7 +71,7 @@
     );
 
     &-border {
-      border: 1.5px solid $cui-white-color;
+      border: 2px solid $cui-white-color;
 
       &:hover {
         border-color: $cui-white-color;
@@ -73,18 +86,21 @@
       $cui-white-color,
       $cui-black-color-400
     );
+
     @include build-button-state(
       focus,
       $cui-black-color-400,
       $cui-white-color,
       $cui-white-color
     );
+
     @include build-button-state(
       disabled,
       $cui-white-color,
       $cui-white-color,
       $cui-black-color-300
     );
+
     @include build-fill-button(
       $cui-white-color,
       $cui-white-color,
@@ -92,7 +108,7 @@
     );
 
     &-border {
-      border: 1.5px solid $cui-black-color;
+      border: 2px solid $cui-black-color;
 
       &:hover {
         border-color: $cui-black-color;

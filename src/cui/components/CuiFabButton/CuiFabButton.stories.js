@@ -13,6 +13,13 @@ export default {
       },
       defaultValue: 'light'
     },
+    size: {
+      control: {
+        type: 'select',
+        options: ['medium', 'large']
+      },
+      defaultValue: 'medium'
+    },
     fixed: {
       control: 'boolean',
       defaultValue: false

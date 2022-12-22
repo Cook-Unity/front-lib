@@ -6,6 +6,7 @@ const CuiFabButton = ({
   className,
   color = 'light',
   showBorder = false,
+  size = 'medium',
   fixed,
   children,
   ...props
@@ -19,6 +20,7 @@ const CuiFabButton = ({
       className={classNames(
         'cui-fab-button',
         `cui-fab-button-${color}`,
+        `cui-fab-button-${size}`,
         showBorder && `cui-fab-button-${color}-border`,
         fixed && 'cui-fab-button-fixed',
         className
