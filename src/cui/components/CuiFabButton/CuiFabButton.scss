@@ -58,7 +58,11 @@
     );
 
     &-border {
-      border: 2px solid $cui-white-color;
+      border: 1.5px solid $cui-white-color;
+
+      &:hover {
+        border-color: $cui-white-color;
+      }
     }
   }
 
@@ -88,7 +92,11 @@
     );
 
     &-border {
-      border: 2px solid $cui-black-color;
+      border: 1.5px solid $cui-black-color;
+
+      &:hover {
+        border-color: $cui-black-color;
+      }
     }
   }
 }
