@@ -56,13 +56,15 @@ const CuiCollectionHeader = ({
         </div>
         <div className="cui-collection-header__cu">
           <span className="cui-collection-header__cu-curated">CURATED BY</span>
-          {imgAuthor ? (
-            <img src={imgAuthor} className="cui-collection-header__cu-logo" />
-          ) : (
-            <CuiLogo className="cui-collection-header__cu-logo" />
-          )}
+          <div className="cui-collection-header__cu-logo">
+            {imgAuthor ? (
+              <img src={imgAuthor} className="cui-collection-header__cu-logo" />
+            ) : (
+              <CuiLogo />
+            )}
+          </div>
           <span className="cui-collection-header__cu-meals">
-            {countMeals} meals
+            {countMeals} Meals
           </span>
         </div>
       </div>
