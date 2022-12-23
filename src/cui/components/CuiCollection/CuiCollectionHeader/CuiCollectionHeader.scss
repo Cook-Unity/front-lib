@@ -19,7 +19,7 @@
 }
 
 .cui-collection-header__content {
-  padding: 0 40px;
+  padding: 0 40px 0 111px;
   display: flex;
   flex-direction: row;
   gap: 32px;
@@ -117,13 +117,15 @@
 }
 
 .cui-collection-header__cu-logo {
-  height: 24px;
-  max-width: max-content;
-  object-fit: cover;
   padding-bottom: 8px;
   color: $cui-white-color;
   border-bottom: 1px solid $cui-white-color;
   margin-bottom: 8px;
+  image, svg {
+    height: 16px;
+    width: max-content;
+    object-fit: cover;
+  }
 }
 
 .cui-collection-header__cu-meals {
@@ -133,4 +135,5 @@
 
 .cui-collection-header__img-container {
   position: relative;
+  height: 220px;
 }
