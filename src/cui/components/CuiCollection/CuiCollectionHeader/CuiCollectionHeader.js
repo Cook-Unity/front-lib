@@ -60,7 +60,7 @@ const CuiCollectionHeader = ({
             {imgAuthor ? (
               <img src={imgAuthor} className="cui-collection-header__cu-logo" />
             ) : (
-              <CuiLogo />
+              <CuiLogo color="light" />
             )}
           </div>
           <span className="cui-collection-header__cu-meals">
