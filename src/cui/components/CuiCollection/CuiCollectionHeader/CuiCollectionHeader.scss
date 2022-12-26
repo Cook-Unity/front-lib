@@ -121,10 +121,12 @@
   color: $cui-white-color;
   border-bottom: 1px solid $cui-white-color;
   margin-bottom: 8px;
+  width: max-content;
   image, svg {
     height: 16px;
-    width: max-content;
     object-fit: cover;
+    max-width: max-content;
+    width: auto;
   }
 }
 
