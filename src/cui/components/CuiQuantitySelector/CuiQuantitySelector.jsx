@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import CuiFabButton from '../CuiFabButton/CuiFabButton'
 import CuiIcon from '../CuiIcon/CuiIcon'
 import './CuiQuantitySelector.scss'
@@ -16,13 +16,19 @@ const CuiQuantitySelector = ({
   value,
   ...props
 }) => {
+  const [quantity, setQuantity] = useState(value)
+
+  useEffect(() => {
+    setQuantity(value)
+  }, [value])
+
   const handleAddItem = event => {
     event.currentTarget.blur()
-    onAddItem(value + 1)
+    onAddItem(quantity + 1)
   }
   const handleRemoveItem = event => {
     event.currentTarget.blur()
-    onRemoveItem(value - 1)
+    onRemoveItem(quantity - 1)
   }
 
   return (
@@ -38,15 +44,15 @@ const CuiQuantitySelector = ({
       <CuiFabButton
         color={color}
         onClick={handleRemoveItem}
-        disabled={min >= value}
+        disabled={min >= quantity}
       >
         <CuiIcon name="minus" />
       </CuiFabButton>
-      <span>{value}</span>
+      <span>{quantity}</span>
       <CuiFabButton
         color={color}
         onClick={handleAddItem}
-        disabled={max <= value}
+        disabled={max <= quantity}
       >
         <CuiIcon name="plus" />
       </CuiFabButton>
