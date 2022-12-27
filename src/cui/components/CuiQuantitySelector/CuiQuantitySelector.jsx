@@ -13,9 +13,10 @@ const CuiQuantitySelector = ({
   onAddItem,
   onRemoveItem,
   showBorder,
+  value,
   ...props
 }) => {
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(value)
 
   const handleAddItem = event => {
     event.currentTarget.blur()
@@ -62,7 +63,8 @@ CuiQuantitySelector.propTypes = {
   min: PropTypes.number,
   onAddItem: PropTypes.func,
   onRemoveItem: PropTypes.func,
-  showBorder: PropTypes.bool
+  showBorder: PropTypes.bool,
+  value: PropTypes.number
 }
 
 CuiQuantitySelector.defaultProps = {
@@ -70,7 +72,8 @@ CuiQuantitySelector.defaultProps = {
   min: 0,
   onAddItem: () => {},
   onRemoveItem: () => {},
-  showBorder: false
+  showBorder: false,
+  value: 0
 }
 
 export default CuiQuantitySelector
