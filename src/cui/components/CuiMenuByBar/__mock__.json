@@ -6,7 +6,7 @@
     {
       "id": 0,
       "name": "All",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/all.png",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/menuby-all.svg",
       "tabs": [
         {
           "id": 0,
@@ -35,7 +35,7 @@
     {
       "id": 1,
       "name": "Cuisine",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/cuisine.png",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/menuby-cuisine.svg",
       "tabs": [
         {
           "id": 0,
@@ -92,7 +92,7 @@
     {
       "id": 2,
       "name": "Chef",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/chef.png",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/menuby-chef.svg",
       "tabs": [
         {
           "id": 0,
@@ -240,7 +240,7 @@
     {
       "id": 3,
       "name": "Diets",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/diets.png",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/menuby-diets.svg",
       "tabs": [
         {
           "id": 0,
@@ -267,7 +267,7 @@
     {
       "id": 4,
       "name": "Protein",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/menu/protein.png",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/menuby-protein.svg",
       "tabs": [
         {
           "id": 0,
