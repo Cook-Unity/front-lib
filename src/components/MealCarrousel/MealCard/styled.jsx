@@ -138,7 +138,7 @@ export const Button = styled.button`
   line-height: 1.5;
   font-weight: 600;
   text-align: center;
-  padding-left: 6px;
+  //padding-left: 6px;
 `
 
 export const MealTitle = styled.div`
