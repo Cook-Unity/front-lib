@@ -1,6 +1,6 @@
-@import '../../styles/variables';
-@import '../../styles/mixins/buttons';
-@import '../../styles/mixins/fonts';
+@import "../../styles/variables";
+@import "../../styles/mixins/buttons";
+@import "../../styles/mixins/fonts";
 
 .cui-fab-button {
   align-items: center;
@@ -10,14 +10,9 @@
   overflow: hidden;
   border-style: solid;
 
-  @include font-build(
-    $cui-font-family-tt-norms,
-    $cui-fab-font,
-    $cui-line-height-2xl,
-    $cui-font-bold
-  );
+  @include font-build($cui-font-family-tt-norms, $cui-fab-font, $cui-line-height-2xl, $cui-font-bold);
 
-  &:hover {
+  &:hover:not(:disabled) {
     cursor: pointer;
   }
 
@@ -37,81 +32,86 @@
     font-size: $cui-fab-font-large;
   }
 
+  &-primary {
+    @include build-button-state(hover, $cui-yellow-color-600, $cui-yellow-color-600, $cui-black-color);
+    @include build-button-state(focus, $cui-yellow-color-600, $cui-yellow-color-500, $cui-black-color);
+    @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-yellow-color-600);
+
+    @include build-fill-button($cui-yellow-color-500, $cui-yellow-color-500, $cui-black-color);
+
+    &-border {
+      border: 2px solid $cui-yellow-color-600;
+
+      &:hover:not(:disabled) {
+        border-color: $cui-yellow-color-600;
+      }
+    }
+  }
+
+  &-secondary {
+    @include build-button-state(hover, $cui-wine-color-700, $cui-wine-color-700, $cui-white-color);
+    @include build-button-state(focus, $cui-wine-color-500, $cui-wine-color-700, $cui-white-color);
+    @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
+
+    @include build-fill-button($cui-wine-color-500, $cui-wine-color-500, $cui-white-color);
+
+    &-border {
+      border: 2px solid $cui-wine-color-700;
+
+      &:hover:not(:disabled) {
+        border-color: $cui-wine-color-700;
+      }
+    }
+  }
+
   &-dark {
-    color: $cui-white-color;
-    background-color: $cui-black-color;
-    border-color: $cui-black-color;
-    border-style: solid;
+    @include build-button-state(hover, $cui-black-color-400, $cui-black-color-400, $cui-white-color);
 
-    @include build-button-state(
-      hover,
-      $cui-black-color-400,
-      $cui-black-color-400,
-      $cui-white-color
-    );
+    @include build-button-state(focus, $cui-black-color-400, $cui-black-color, $cui-white-color);
 
-    @include build-button-state(
-      focus,
-      $cui-black-color-400,
-      $cui-black-color,
-      $cui-white-color
-    );
+    @include build-button-state(disabled, $cui-black-color-300, $cui-black-color-300, $cui-white-color);
 
-    @include build-button-state(
-      disabled,
-      $cui-black-color-300,
-      $cui-black-color-300,
-      $cui-white-color
-    );
-
-    @include build-fill-button(
-      $cui-black-color,
-      $cui-black-color,
-      $cui-white-color
-    );
+    @include build-fill-button($cui-black-color, $cui-black-color, $cui-white-color);
 
     &-border {
       border: 2px solid $cui-white-color;
 
-      &:hover {
+      &:hover:not(:disabled) {
         border-color: $cui-white-color;
       }
     }
   }
 
   &-light {
-    @include build-button-state(
-      hover,
-      $cui-white-color,
-      $cui-white-color,
-      $cui-black-color-400
-    );
+    @include build-button-state(hover, $cui-white-color, $cui-white-color, $cui-black-color-400);
 
-    @include build-button-state(
-      focus,
-      $cui-black-color-400,
-      $cui-white-color,
-      $cui-white-color
-    );
+    @include build-button-state(focus, $cui-black-color-400, $cui-white-color, $cui-white-color);
 
-    @include build-button-state(
-      disabled,
-      $cui-white-color,
-      $cui-white-color,
-      $cui-black-color-300
-    );
+    @include build-button-state(disabled, $cui-white-color, $cui-white-color, $cui-black-color-300);
 
-    @include build-fill-button(
-      $cui-white-color,
-      $cui-white-color,
-      $cui-black-color
-    );
+    @include build-fill-button($cui-white-color, $cui-white-color, $cui-black-color);
 
     &-border {
       border: 2px solid $cui-black-color;
 
-      &:hover {
+      &:hover:not(:disabled) {
         border-color: $cui-black-color;
+      }
+    }
+  }
+
+  &-gold {
+    @include build-button-state(hover, $cui-gold-500, $cui-gold-500, $cui-black-color);
+    @include build-button-state(focus, $cui-gold-500, $cui-gold-500, $cui-black-color);
+    @include build-button-state(disabled, $cui-black-color-200, $cui-black-color-200, $cui-black-color);
+
+    @include build-fill-button($cui-gold-500, $cui-gold-500, $cui-black-color);
+
+    &-border {
+      border: 2px solid $cui-gold-500;
+
+      &:hover:not(:disabled) {
+        border-color: $cui-gold-500;
       }
     }
   }
