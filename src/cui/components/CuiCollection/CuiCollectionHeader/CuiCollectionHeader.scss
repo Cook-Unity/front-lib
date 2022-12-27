@@ -28,6 +28,9 @@
   background-color: $cui-black-color;
   &.withMargin {
     margin-top: 60px;
+    @include mobile {
+      margin-top: 0;
+    }
   }
   @include mobile {
     flex-direction: column;

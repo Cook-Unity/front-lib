@@ -50,7 +50,7 @@
 
       .cui-dropdown-menu__item-name {
         @include font-build(
-          $cui-font-family-tt-norms,
+          $cui-font-family-source-serif,
           $cui-font-xl,
           $cui-font-3xl,
           $cui-font-bold
@@ -63,13 +63,15 @@
         margin-right: 16px;
         width: 52px;
         height: 52px;
+        border: 1px solid $cui-black-color-150;
+        border-radius: 8px;
       }
     }
 
     .item:hover {
       margin: 0;
       padding: 16px;
-      background-color: #f5f5f5;
+      background-color: $cui-black-color-100;
     }
 
     .cui-dropdown-menu__close {
