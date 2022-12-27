@@ -2,5 +2,5 @@
 @import "../../../../styles/mixins/fonts";
 
 .cui-meal-description {
-   @include font-build($cui-font-family-source-serif, $cui-font-base, $cui-line-height-xl, $cui-font-normal);
+   @include font-build($cui-font-family-source-serif, $cui-font-lg, $cui-line-height-2xl, $cui-font-normal);
 }

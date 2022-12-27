@@ -37,6 +37,7 @@
     @if ($type == disabled) {
         &:disabled {
             @include build-fill-button($background-color, $border-color, $color);
+            @include build-disabled-button();
         }
     }
 }

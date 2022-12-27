@@ -1,0 +1,21 @@
+.cui-tooltip {
+   position: absolute;
+   background-color: #292929;
+   color: #ffffff;
+   text-align: center;
+   padding: 2px 8px;
+   border-radius: 4px;
+   font-size: 10px;
+   display: flex;
+
+   &:after {
+      content: " ";
+      width: 6px;
+      height: 6px;
+      background-color: inherit;
+      position: absolute;
+      bottom: -3px;
+      left: calc(50% - 3px);
+      transform: rotate(45deg);
+   }
+}

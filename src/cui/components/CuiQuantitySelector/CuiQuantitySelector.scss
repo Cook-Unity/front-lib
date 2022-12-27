@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/buttons";
+@import "../../styles/mixins/fonts";
+
+.cui-quantity-selector {
+   align-items: center;
+   border-radius: 32px;
+   display: flex;
+   justify-content: space-between;
+   width: 96px;
+
+   @include font-build($cui-font-family-tt-norms, $cui-font-base, normal, $cui-font-bold);
+
+   &-primary {
+      &-border {
+         border: 1px solid $cui-yellow-color-600;
+      }
+   }
+
+   &-secondary {
+      &-border {
+         border: 1px solid $cui-wine-color-700;
+      }
+   }
+
+   &-dark {
+      &-border {
+         border: 1px solid $cui-white-color;
+      }
+   }
+
+   &-light {
+      &-border {
+         border: 1px solid $cui-black-color;
+      }
+   }
+
+   &-gold {
+      &-border {
+         border: 1px solid $cui-gold-500;
+      }
+   }
+}
