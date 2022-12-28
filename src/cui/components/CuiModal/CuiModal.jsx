@@ -11,6 +11,7 @@ const CuiModal = props => {
   const {
     overlayClassName,
     className,
+    iconClassName,
     children,
     style = {},
     mediumSize,
@@ -57,7 +58,7 @@ const CuiModal = props => {
           })}
           onClick={props.onRequestClose}
         >
-          <CuiIcon name="close" />
+          <CuiIcon className={iconClassName} name="close" />
         </button>
       )}
       {children}

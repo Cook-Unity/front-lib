@@ -2,6 +2,21 @@
 @import '../../styles/mixins/fonts';
 @import '../../styles/mixins/media';
 
+.cui-hp-icon {
+  svg {
+    path {
+      fill: $cui-black-color;
+    }
+
+    @include mobile {
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
 .cui-hp-modal {
   display: grid;
   justify-content: stretch;
@@ -71,7 +86,7 @@
       @include font-build(
         $cui-font-family-tt-norms,
         $cui-font-base,
-        $cui-line-height-xl,
+        $cui-line-height-2xl,
         $cui-font-normal
       );
 
@@ -79,7 +94,7 @@
         margin: 28px 0 42px;
 
         font-size: $cui-font-sm;
-        line-height: $cui-line-height-lg;
+        line-height: $cui-line-height-xl;
       }
     }
 

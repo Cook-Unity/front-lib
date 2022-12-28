@@ -31,6 +31,7 @@ const CuiHPModal = ({
       closeIconRight
       style={customStyles}
       mediumSize
+      iconClassName="cui-hp-icon"
     >
       <div className="cui-hp-modal">
         {image && (
