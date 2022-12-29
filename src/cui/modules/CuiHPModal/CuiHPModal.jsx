@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 
 import CuiModal from '../../components/CuiModal/CuiModal'
 import CuiButton from '../../components/CuiButton/CuiButton'
@@ -15,7 +16,8 @@ const CuiHPModal = ({
   title,
   description,
   btnConfirmText,
-  btnCancelText = null
+  btnCancelText = null,
+  titleClassName
 }) => {
   const customStyles = {
     content: {
@@ -43,7 +45,9 @@ const CuiHPModal = ({
           />
         )}
         <div className="cui-hp-content">
-          <h3 className="cui-hp-title">{title}</h3>
+          <h3 className={classnames('cui-hp-title', titleClassName)}>
+            {title}
+          </h3>
           <div className="cui-hp-description">{description}</div>
           <div className="cui-hp-action">
             {btnCancelText && (
