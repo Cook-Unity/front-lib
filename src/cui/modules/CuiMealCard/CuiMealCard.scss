@@ -36,6 +36,11 @@
 
         .cui-tag {
             @include font-build($cui-font-family-tt-norms, $cui-font-xs, normal, $cui-font-bold);
+
+            .cui-icon {
+                height: 20px;
+                width: 20px;
+            }
         }
 
         .reviews {

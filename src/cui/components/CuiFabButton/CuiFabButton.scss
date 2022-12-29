@@ -103,7 +103,7 @@
   &-gold {
     @include build-button-state(hover, $cui-gold-500, $cui-gold-500, $cui-black-color);
     @include build-button-state(focus, $cui-gold-500, $cui-gold-500, $cui-black-color);
-    @include build-button-state(disabled, $cui-black-color-200, $cui-black-color-200, $cui-black-color);
+    @include build-button-state(disabled, $cui-black-color-400, $cui-black-color-400, $cui-black-color);
 
     @include build-fill-button($cui-gold-500, $cui-gold-500, $cui-black-color);
 
