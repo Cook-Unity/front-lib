@@ -2,7 +2,7 @@
 @import '../../styles/mixins/fonts';
 
 .cui-message-container {
-  color: black;
+  color: $cui-black-color-500;
   display: grid;
   grid-template-columns: 180px 1fr;
   grid-template-rows: auto;
@@ -36,6 +36,10 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    button {
+      max-height: 52px !important;
+      height: 52px !important;
+    }
   }
 
   @media (max-width: 720px) {
