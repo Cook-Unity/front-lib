@@ -19,6 +19,7 @@ const CuiHeader = ({
   showAllyButton = false,
   showNeedHelp = false,
   showNeedHelpTitle = false,
+  homeLink = '/',
   onClickHelp,
   onClickMenu
 }) => {
@@ -34,7 +35,7 @@ const CuiHeader = ({
           <CuiIcon name="menu" role="button" onClick={handleMenuClick} />
         )}
         {showLogo && (
-          <a className="logo" href="/">
+          <a className="logo" href={homeLink}>
             <CuiLogo />
           </a>
         )}
