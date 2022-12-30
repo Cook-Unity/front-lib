@@ -75,3 +75,4 @@ export {default as CuiMealCardLoading} from './cui/components/CuiMealCardLoading
 export {default as CuiModal} from './cui/components/CuiModal/CuiModal'
 export {default as CuiQuantitySelector} from './cui/components/CuiQuantitySelector/CuiQuantitySelector'
 export {default as CuiHPModal} from './cui/modules/CuiHPModal/CuiHPModal'
+export {default as CuiMessageModal} from './cui/components/CuiMessageModal/CuiMessageModal'

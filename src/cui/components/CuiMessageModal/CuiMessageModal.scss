@@ -1,0 +1,91 @@
+@import '../../styles/variables';
+@import '../../styles/mixins/fonts';
+
+.cui-message-container {
+  color: $cui-black-color-500;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'image title' 'image desc' 'image button';
+  column-gap: 24px;
+
+  h2 {
+    grid-area: title;
+    @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
+    margin: 0 0 16px 0;
+    text-align: center;
+  }
+
+  img {
+    grid-area: image;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 15px;
+  }
+
+  p {
+    grid-area: desc;
+    @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-normal);
+    text-align: center;
+    margin: 0 0 16px 0;
+  }
+
+  .cui-message-container__button {
+    grid-area: button;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    button {
+      max-height: 52px !important;
+      height: 52px !important;
+    }
+  }
+
+  @media (max-width: 720px) {
+    display: initial;
+
+    h2 {
+      @include font-build($cui-font-family-source-serif, $cui-font-2xl, 32px, $cui-font-bold);
+      margin-bottom: 16px;
+      padding: 0 10px 0 10px;
+    }
+    img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      margin: 0 auto 10px auto;
+      position: initial;
+      object-position: top;
+    }
+
+    p {
+      line-height: 170%;
+    }
+  }
+}
+
+.cui-message-modal {
+  @media (max-width: 720px) {
+    height: 100%;
+    background-color: rgba(35, 31, 32, 0.7) !important;
+  }
+}
+
+.cui-message-modal-inner {
+  margin: 0 !important;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 720px) {
+    position: absolute !important;
+    bottom: 0 !important;
+    border-radius: 10px 10px 0px 0px !important;
+    padding: 24px 16px !important;
+    top: initial;
+    left: initial;
+    transform: initial;
+  }
+}
