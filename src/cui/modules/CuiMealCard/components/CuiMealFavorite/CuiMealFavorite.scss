@@ -12,6 +12,10 @@
 }
 
 .cui-meal-favorite-icon {
+   svg {
+      width: 24px;
+      height: 24px;
+   }
    path {
       fill: $cui-wine-color-500;
    }
