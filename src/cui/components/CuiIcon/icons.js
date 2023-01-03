@@ -22,6 +22,7 @@ export const CuiIconNames = {
       'heartFilled',
       // new icons
       'checkmark',
+      'clock',
       'close',
       'easyAndConvenient',
       'eggsAndDairy',
@@ -32,6 +33,7 @@ export const CuiIconNames = {
       'filter',
       'fire',
       'flexiblePlans',
+      'forbidden',
       'glutenFree',
       'handCrafted',
       'highCalories',
@@ -115,6 +117,7 @@ export const icons = {
   heartFilled: imageUrl('heart-filled.svg'),
   // new icons
   checkmark: imageUrl('checkmark.svg'),
+  clock: imageUrl('clock.svg'),
   close: imageUrl('close.svg'),
   easyAndConvenient: imageUrl('easy-and-convenient.svg'),
   eggsAndDairy: imageUrl('eggs-and-dairy.svg'),
@@ -125,6 +128,7 @@ export const icons = {
   filter: imageUrl('filter.svg'),
   fire: imageUrl('fire.svg'),
   flexiblePlans: imageUrl('flexible-plans.svg'),
+  forbidden: imageUrl('forbidden.svg'),
   glutenFree: imageUrl('gluten-free.svg'),
   handCrafted: imageUrl('hand-crafted.svg'),
   highCalories: imageUrl('high-calories.svg'),

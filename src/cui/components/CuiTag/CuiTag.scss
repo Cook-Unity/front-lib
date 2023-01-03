@@ -81,8 +81,8 @@
     &-solid {
       @include build-tag(
         // default
-        $cui-black-color-300,
-        $cui-black-color-300,
+        $cui-black-color-350,
+        $cui-black-color-350,
         $cui-white-color
       );
     }
@@ -95,6 +95,17 @@
         $cui-yellow-color-500,
         $cui-yellow-color-500,
         $cui-black-color
+      );
+    }
+  }
+
+  &-red {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-red-500,
+        $cui-red-500,
+        $cui-white-color
       );
     }
   }
