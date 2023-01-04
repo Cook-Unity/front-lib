@@ -21,11 +21,11 @@
   // Sizes
   &-small {
     font-size: $cui-font-tag-small;
-    padding: $cui-space-tag-small;
+    padding: $cui-space-tag-small $cui-space-tag-large;
   }
   &-medium {
     font-size: $cui-font-tag-medium;
-    padding: $cui-space-tag-medium;
+    padding: $cui-space-tag-medium $cui-space-tag-large;
   }
   &-large {
     font-size: $cui-font-tag-large;
