@@ -1,13 +1,13 @@
 import React from 'react'
 
-import CuiHPModal from './CuiHPModal'
+import CuiPopUp from './CuiPopUp'
 
 export default {
-  title: 'Cui / Modules / CuiHPModal',
-  component: CuiHPModal
+  title: 'Cui / Modules / CuiPopUp',
+  component: CuiPopUp
 }
 
-const Template = args => <CuiHPModal {...args} />
+const Template = args => <CuiPopUp {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

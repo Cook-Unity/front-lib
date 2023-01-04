@@ -2,7 +2,7 @@
 @import '../../styles/mixins/fonts';
 @import '../../styles/mixins/media';
 
-.cui-hp-icon {
+.cui-pop-up-icon {
   svg {
     path {
       fill: $cui-black-color;
@@ -17,7 +17,7 @@
   }
 }
 
-.cui-hp-modal {
+.cui-pop-up-modal {
   display: grid;
   justify-content: stretch;
   grid-template-columns: 30% 70%;
@@ -27,7 +27,7 @@
     grid-template-rows: 390px auto;
   }
 
-  .cui-hp-image {
+  .cui-pop-up-image {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
@@ -41,7 +41,7 @@
     }
   }
 
-  .cui-hp-content {
+  .cui-pop-up-content {
     padding: 71px 30px 47px;
 
     @include mobile {
@@ -53,7 +53,7 @@
       background-color: $cui-white-color;
     }
 
-    .cui-hp-title {
+    .cui-pop-up-title {
       margin: 0;
 
       text-align: center;
@@ -75,7 +75,7 @@
       }
     }
 
-    .cui-hp-description {
+    .cui-pop-up-description {
       margin: 21px auto 66px;
 
       text-align: center;
@@ -98,7 +98,7 @@
       }
     }
 
-    .cui-hp-action {
+    .cui-pop-up-action {
       display: flex;
       justify-content: center;
       gap: 1rem;

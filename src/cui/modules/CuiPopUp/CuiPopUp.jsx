@@ -4,14 +4,14 @@ import classnames from 'classnames'
 import CuiModal from '../../components/CuiModal/CuiModal'
 import CuiButton from '../../components/CuiButton/CuiButton'
 
-import './CuiHPModal.scss'
+import './CuiPopUp.scss'
 
-const CuiHPModal = ({
+const CuiPopUp = ({
   isOpen,
   handleClose,
   handleCancel = null,
   handleConfirm,
-  hpModalContainerId = 'root',
+  modalContainerId = 'root',
   image,
   title,
   description,
@@ -29,27 +29,27 @@ const CuiHPModal = ({
     <CuiModal
       isOpen={isOpen}
       onRequestClose={handleClose}
-      modalContainerId={hpModalContainerId}
+      modalContainerId={modalContainerId}
       closeIconRight
       style={customStyles}
       mediumSize
-      iconClassName="cui-hp-icon"
+      iconClassName="cui-pop-up-icon"
     >
-      <div className="cui-hp-modal">
+      <div className="cui-pop-up-modal">
         {image && (
           <div
-            className="cui-hp-image"
+            className="cui-pop-up-image"
             style={{
               backgroundImage: `url("${image}")`
             }}
           />
         )}
-        <div className="cui-hp-content">
-          <h3 className={classnames('cui-hp-title', titleClassName)}>
+        <div className="cui-pop-up-content">
+          <h3 className={classnames('cui-pop-up-title', titleClassName)}>
             {title}
           </h3>
-          <div className="cui-hp-description">{description}</div>
-          <div className="cui-hp-action">
+          <div className="cui-pop-up-description">{description}</div>
+          <div className="cui-pop-up-action">
             {btnCancelText && (
               <CuiButton fill="outline" onClick={handleCancel}>
                 {btnCancelText}
@@ -63,4 +63,4 @@ const CuiHPModal = ({
   )
 }
 
-export default CuiHPModal
+export default CuiPopUp
