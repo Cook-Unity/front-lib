@@ -21,7 +21,9 @@ Default.args = {
   btnCancelText: 'Continue Ordering',
   handleClose: () => console.log('closed!'),
   handleCancel: () => console.log('canceled!'),
-  handleConfirm: () => console.log('hi!')
+  handleConfirm: () => console.log('hi!'),
+  className: 'theclassname',
+  overlayClassName: 'theoverlayclassname'
 }
 
 export const CheckRecommendation = Template.bind({})

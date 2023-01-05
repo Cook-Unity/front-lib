@@ -17,7 +17,9 @@ const CuiPopUp = ({
   description,
   btnConfirmText,
   btnCancelText = null,
-  titleClassName
+  titleClassName,
+  overlayClassName,
+  className
 }) => {
   const customStyles = {
     content: {
@@ -34,6 +36,8 @@ const CuiPopUp = ({
       style={customStyles}
       mediumSize
       iconClassName="cui-pop-up-icon"
+      overlayClassName={overlayClassName}
+      className={className}
     >
       <div className="cui-pop-up-modal">
         {image && (
