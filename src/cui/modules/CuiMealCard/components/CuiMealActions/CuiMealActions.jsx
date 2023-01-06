@@ -55,7 +55,7 @@ const CuiMealActions = ({
           )}
           onClick={() => quantity && handleRemoveItem()}
         >
-          <img src={images.btnBlackMinus} alt="-" />
+          <span>-</span>
         </div>
         <span className="cui-meal-actions__control-qty">{quantity}</span>
         <div
@@ -65,7 +65,7 @@ const CuiMealActions = ({
           )}
           onClick={() => showAddButton && handleAddItem()}
         >
-          <img src={images.btnBlackPlus} alt="+" />
+          <span>+</span>
         </div>
       </CuiButton>
     )
