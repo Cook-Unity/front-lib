@@ -6,7 +6,7 @@
 }
 
 .cui-menu-image__text {
-   @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-bold);
+   @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-normal);
    text-transform: uppercase;
    position: absolute;
    top: 50%;
