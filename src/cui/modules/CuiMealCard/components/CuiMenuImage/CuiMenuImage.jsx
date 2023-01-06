@@ -24,8 +24,8 @@ const CuiMenuImage = ({
 
   useEffect(() => {
     if (imageComingSoon || errorImage) {
-      setPrimaryImage(images.noMealImage)
-      setDisplayImage(images.noMealImage)
+      setPrimaryImage(images.noMealImageRebranding)
+      setDisplayImage(images.noMealImageRebranding)
     } else {
       setPrimaryImage(primary_image)
       setDisplayImage(primary_image)

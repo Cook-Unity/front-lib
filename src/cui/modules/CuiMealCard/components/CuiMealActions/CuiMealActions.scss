@@ -11,10 +11,8 @@
 
 .cui-meal-actions__control {
 	flex: 1;
-	img {
-		height: 12px;
-		padding: 0 8px;
-	}
+	@include font-build($cui-font-family-tt-norms, $cui-font-xl, $cui-line-height-xl, $cui-font-bold);
+	color: $cui-black-color;
 }
 
 .cui-meal-actions__control:hover {
@@ -24,11 +22,12 @@
 
 .cui-meal-actions__control-add {
 	text-align: right;
+	padding-right: 8px;
 }
 
 .cui-meal-actions__control-remove {
 	text-align: left;
-
+	padding-left: 8px;
 }
 
 .cui-meal-actions__control-qty {

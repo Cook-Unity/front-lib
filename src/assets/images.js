@@ -32,6 +32,7 @@ export default {
   btnBlackPlus: imageUrl('btn-black-plus.png'),
   btnBlackMinus: imageUrl('btn-black-minus.png'),
   noMealImage: imageUrl('no-image-meal.jpg'),
+  noMealImageRebranding: imageUrl('rebranding-no-image-meal.jpg'),
   blackStar: imageUrl('black_star.png'),
   blackHeart: imageUrl('black_heart.png'),
   emptyHeart: imageUrl('empty_heart.png'),
