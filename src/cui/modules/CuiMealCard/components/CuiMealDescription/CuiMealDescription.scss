@@ -3,4 +3,5 @@
 
 .cui-meal-description {
    @include font-build($cui-font-family-source-serif, $cui-font-lg, $cui-line-height-2xl, $cui-font-normal);
+   text-align: left;
 }
