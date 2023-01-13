@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 import React from 'react'
-import './CuiLoader.scss'
+import Lottie from 'lottie-react'
+
 import animationData from './animation/data.json'
-import Lottie from 'react-lottie'
+import './CuiLoader.scss'
 
 const CuiLoader = ({fullscreen, className, ...props}) => {
   return (
