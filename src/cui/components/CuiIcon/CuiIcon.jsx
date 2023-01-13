@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import {icons} from './icons'
 import './CuiIcon.scss'
 
-export const ioniconContent = new Map()
+export const iconContent = new Map()
 const requests = new Map()
 
 export const getSvgContent = url => {
@@ -18,17 +18,17 @@ export const getSvgContent = url => {
       req = fetch(url).then(rsp => {
         if (rsp.ok) {
           return rsp.text().then(svgContent => {
-            ioniconContent.set(url, svgContent || '')
+            iconContent.set(url, svgContent || '')
           })
         }
-        ioniconContent.set(url, '')
+        iconContent.set(url, '')
       })
 
       // cache for the same requests
       requests.set(url, req)
     } else {
       // set to empty for ssr scenarios and resolve promise
-      ioniconContent.set(url, '')
+      iconContent.set(url, '')
       return Promise.resolve()
     }
   }
@@ -49,7 +49,7 @@ const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
     }
 
     getSvgContent(url)
-      .then(() => setSvg(ioniconContent.get(url)))
+      .then(() => setSvg(iconContent.get(url)))
       .catch(setIsErrored)
       .then(() => setIsLoaded(true))
   }, [name, path])
