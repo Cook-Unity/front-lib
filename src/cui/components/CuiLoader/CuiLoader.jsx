@@ -15,13 +15,11 @@ const CuiLoader = ({fullscreen, className, ...props}) => {
       )}
     >
       <Lottie
-        options={{
-          loop: true,
-          autoplay: true,
-          animationData: animationData,
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-          }
+        loop
+        autoplay
+        animationData={animationData}
+        rendererSettings={{
+          preserveAspectRatio: 'xMidYMid slice'
         }}
         isClickToPauseDisabled
         {...props}
