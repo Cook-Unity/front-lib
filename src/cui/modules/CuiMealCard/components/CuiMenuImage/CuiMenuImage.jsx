@@ -61,6 +61,7 @@ const CuiMenuImage = ({
       <img
         src={displayImage}
         alt="Meal"
+        loading="lazy"
         className={classnames('cui-menu-image__img', {
           'cui-menu-image__img-withText': !!text
         })}
