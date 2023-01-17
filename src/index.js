@@ -77,3 +77,4 @@ export {default as CuiQuantitySelector} from './cui/components/CuiQuantitySelect
 export {default as CuiPopUp} from './cui/modules/CuiPopUp/CuiPopUp'
 export {default as CuiMessageModal} from './cui/components/CuiMessageModal/CuiMessageModal'
 export {default as CuiTabsMenu} from './cui/components/CuiMenuByBar/components/TabsMenu/TabsMenu'
+export {default as CuiSmartAppBanner} from './cui/components/CuiSmartAppBanner/CuiSmartAppBanner'
