@@ -2,55 +2,40 @@
 @import '../../styles/mixins/fonts';
 @import '../../styles/mixins/media';
 
-.cui-pop-up-icon {
-  svg {
-    path {
-      fill: $cui-black-color;
-    }
-
-    @include mobile {
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.4);
-      width: 20px;
-      height: 20px;
-    }
-  }
-}
-
 .cui-pop-up-modal {
   display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 400px auto;
   justify-content: stretch;
-  grid-template-columns: 30% 70%;
 
-  @include mobile {
-    grid-template-columns: 100%;
-    grid-template-rows: 390px auto;
+  @include big-screen {
+    grid-template-columns: 30% 70%;
   }
 
   .cui-pop-up-image {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 0;
 
-    @include mobile {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+    @include big-screen {
+      border-radius: 8px 0 0 8px;
     }
   }
 
   .cui-pop-up-content {
-    padding: 71px 30px 47px;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+    border-radius: 8px 8px 0 0;
+    margin-top: -8px;
 
-    @include mobile {
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      padding: 36px 16px;
-      margin-top: -23px;
+    background-color: $cui-white-color;
 
-      background-color: $cui-white-color;
+    @include big-screen {
+      margin-top: 0;
+      padding: 64px 32px 48px;
+      border-radius: 0 8px 8px 0;
     }
 
     .cui-pop-up-title {
@@ -62,21 +47,19 @@
 
       @include font-build(
         $cui-font-family-source-serif,
-        $cui-font-4xl,
-        $cui-line-height-6xl,
+        $cui-font-3xl,
+        $cui-line-height-4xl,
         $cui-font-extrabold
       );
 
-      @include mobile {
-        margin-bottom: 0;
-
-        font-size: $cui-font-3xl;
-        line-height: $cui-line-height-4xl;
+      @include big-screen {
+        font-size: $cui-font-4xl;
+        line-height: $cui-line-height-6xl;
       }
     }
 
     .cui-pop-up-description {
-      margin: 21px auto 66px;
+      margin: 32px 0 40px;
 
       text-align: center;
       letter-spacing: -0.3px;
@@ -85,27 +68,62 @@
 
       @include font-build(
         $cui-font-family-tt-norms,
-        $cui-font-base,
-        $cui-line-height-2xl,
+        $cui-font-sm,
+        $cui-line-height-xl,
         $cui-font-normal
       );
 
-      @include mobile {
-        margin: 28px 0 42px;
+      @include big-screen {
+        margin: 24px auto 0;
 
-        font-size: $cui-font-sm;
-        line-height: $cui-line-height-xl;
+        font-size: $cui-font-base;
+        line-height: $cui-line-height-2xl;
       }
     }
 
     .cui-pop-up-action {
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      margin-top: auto;
       gap: 1rem;
 
-      @include mobile {
-        flex-direction: column;
+      @include big-screen {
+        flex-direction: row;
       }
+    }
+  }
+
+  .cui-pop-up-content--no-image {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px !important;
+  }
+}
+
+.cui-pop-up-modal--no-image {
+  display: grid;
+  grid-template-columns: 100% !important;
+  grid-template-rows: 400px auto;
+}
+
+.cui-pop-up-icon {
+  svg {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+
+    path {
+      fill: $cui-black-color;
+    }
+
+    @include big-screen {
+      width: 24px;
+      height: 24px;
+      border-radius: 0;
+
+      background: transparent;
     }
   }
 }

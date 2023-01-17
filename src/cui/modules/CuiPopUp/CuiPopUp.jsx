@@ -39,7 +39,12 @@ const CuiPopUp = ({
       overlayClassName={overlayClassName}
       className={className}
     >
-      <div className="cui-pop-up-modal">
+      <div
+        className={classnames(
+          'cui-pop-up-modal',
+          !image && 'cui-pop-up-modal--no-image'
+        )}
+      >
         {image && (
           <div
             className="cui-pop-up-image"
@@ -48,7 +53,12 @@ const CuiPopUp = ({
             }}
           />
         )}
-        <div className="cui-pop-up-content">
+        <div
+          className={classnames(
+            'cui-pop-up-content',
+            !image && 'cui-pop-up-content--no-image'
+          )}
+        >
           <h3 className={classnames('cui-pop-up-title', titleClassName)}>
             {title}
           </h3>
