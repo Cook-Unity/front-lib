@@ -47,7 +47,7 @@ const CuiSmartAppBanner = ({
         </div>
       </div>
       <CuiButton color="light" fill="clear" size={ isMobileOrTabletDevice() ? 'small' : 'medium' } onClick={onClik}>
-        Download
+        {textButton}
       </CuiButton>
     </div>
   ) : null
