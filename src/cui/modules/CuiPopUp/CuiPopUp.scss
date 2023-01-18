@@ -12,6 +12,16 @@
     grid-template-columns: 30% 70%;
   }
 
+  &--no-image {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @include big-screen {
+      height: auto;
+    }
+  }
+
   .cui-pop-up-image {
     background-position: center;
     background-repeat: no-repeat;
@@ -34,50 +44,69 @@
 
     @include big-screen {
       margin-top: 0;
-      padding: 64px 32px 48px;
+      padding: 32px;
       border-radius: 0 8px 8px 0;
     }
 
-    .cui-pop-up-title {
-      margin: 0;
-
-      text-align: center;
-      white-space: pre-wrap;
-      color: $cui-black-color;
-
-      @include font-build(
-        $cui-font-family-source-serif,
-        $cui-font-3xl,
-        $cui-line-height-4xl,
-        $cui-font-extrabold
-      );
+    &--no-image {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 8px !important;
 
       @include big-screen {
-        font-size: $cui-font-4xl;
-        line-height: $cui-line-height-6xl;
+        height: auto;
       }
     }
 
-    .cui-pop-up-description {
-      margin: 32px 0 40px;
+    .cui-pop-up-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-      text-align: center;
-      letter-spacing: -0.3px;
+      .cui-pop-up-title {
+        margin: 0;
 
-      color: $cui-black-color;
+        text-align: center;
+        white-space: pre-wrap;
+        color: $cui-black-color;
 
-      @include font-build(
-        $cui-font-family-tt-norms,
-        $cui-font-sm,
-        $cui-line-height-xl,
-        $cui-font-normal
-      );
+        @include font-build(
+          $cui-font-family-source-serif,
+          $cui-font-3xl,
+          $cui-line-height-4xl,
+          $cui-font-extrabold
+        );
 
-      @include big-screen {
-        margin: 24px auto 0;
+        @include big-screen {
+          font-size: $cui-font-4xl;
+          line-height: $cui-line-height-6xl;
+        }
+      }
 
-        font-size: $cui-font-base;
-        line-height: $cui-line-height-2xl;
+      .cui-pop-up-description {
+        margin: 32px 0 40px;
+
+        text-align: center;
+        letter-spacing: -0.3px;
+
+        color: $cui-black-color;
+
+        @include font-build(
+          $cui-font-family-tt-norms,
+          $cui-font-sm,
+          $cui-line-height-xl,
+          $cui-font-normal
+        );
+
+        @include big-screen {
+          margin: 24px auto 0;
+
+          font-size: $cui-font-base;
+          line-height: $cui-line-height-2xl;
+        }
       }
     }
 
@@ -85,26 +114,14 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      margin-top: auto;
       gap: 1rem;
 
       @include big-screen {
         flex-direction: row;
+        margin-top: 32px;
       }
     }
   }
-
-  .cui-pop-up-content--no-image {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px !important;
-  }
-}
-
-.cui-pop-up-modal--no-image {
-  display: grid;
-  grid-template-columns: 100% !important;
-  grid-template-rows: 400px auto;
 }
 
 .cui-pop-up-icon {

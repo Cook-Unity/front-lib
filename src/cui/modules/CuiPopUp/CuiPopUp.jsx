@@ -59,10 +59,12 @@ const CuiPopUp = ({
             !image && 'cui-pop-up-content--no-image'
           )}
         >
-          <h3 className={classnames('cui-pop-up-title', titleClassName)}>
-            {title}
-          </h3>
-          <div className="cui-pop-up-description">{description}</div>
+          <div className="cui-pop-up-text">
+            <h3 className={classnames('cui-pop-up-title', titleClassName)}>
+              {title}
+            </h3>
+            <div className="cui-pop-up-description">{description}</div>
+          </div>
           <div className="cui-pop-up-action">
             {btnCancelText && (
               <CuiButton fill="outline" onClick={handleCancel}>
