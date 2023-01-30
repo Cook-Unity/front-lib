@@ -1,34 +1,49 @@
-@import "../../styles/variables";
-@import "../../styles/mixins/inputs";
-@import "../../styles/mixins/fonts";
+@import '../../styles/variables';
+@import '../../styles/mixins/inputs';
+@import '../../styles/mixins/fonts';
 
 .cui-input {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    @include font-build(
-        $cui-font-family-tt-norms,
-        $cui-font-input-small,
-        $cui-line-height-input-small,
-        $cui-font-normal
-    );
+  @include font-build(
+    $cui-font-family-tt-norms,
+    $cui-font-input-small,
+    $cui-line-height-input-small,
+    $cui-font-normal
+  );
 
-    // Sizes
-    &-small {
-        height: $cui-height-input-small;
-        font-size: $cui-font-input-small;
-        padding: $cui-space-input-small;
-        max-height: $cui-height-input-small;
+  // Sizes
+  &-small {
+    height: $cui-height-input-small;
+    font-size: $cui-font-input-small;
+    padding: $cui-space-input-small;
+    max-height: $cui-height-input-small;
+  }
+
+  // Colors
+  &-white {
+    &-solid {
+      @include build-input(
+        // default
+        $cui-white-color,
+        $cui-black-color-200,
+        $cui-black-color-350
+      );
     }
+  }
 
-    // Colors
-    &-white {
-        &-solid {
-            @include build-input(
-                // default
-                $cui-white-color,
-                $cui-black-color-200,
-                $cui-black-color-350
-            );
-        }
+  &-black {
+    &-solid {
+      @include build-input(
+        // default
+        $cui-black-color,
+        $cui-white-color,
+        $cui-white-color
+      );
+
+      &::placeholder {
+        color: $cui-white-color;
+      }
     }
+  }
 }
