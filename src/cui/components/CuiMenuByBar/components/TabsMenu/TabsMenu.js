@@ -13,6 +13,7 @@ const TabsMenu = ({
 }) => {
   const isSelected = item => item.id === selectedTab.id
   const ref = useRef(null)
+  const selectedRef = useRef()
   const [scrollPosition, setScrollPosition] = useState(0)
   const [scrollWidth, setScrollWidth] = useState(0)
 
@@ -33,6 +34,19 @@ const TabsMenu = ({
     setScrollWidth(ref.current.scrollWidth - ref.current.offsetWidth)
   })
 
+  // to automatically scroll to the initial selected item by url
+  useEffect(() => {
+    setTimeout(() => {
+      if (selectedRef && selectedRef.current) {
+        selectedRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'nearest'
+        })
+      }
+    }, 1000)
+  }, [selectedTab])
+
   return (
     <div
       className={classnames('cui-tabs-container', {
@@ -52,6 +66,7 @@ const TabsMenu = ({
             })}
             data-testid="tab-item"
             onClick={() => handleOnClick(tabItem)}
+            ref={isSelected(tabItem) ? selectedRef : null}
           >
             <img
               src={tabItem.image}

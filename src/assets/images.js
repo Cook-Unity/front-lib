@@ -60,5 +60,6 @@ export default {
       youveTried: imageUrl('menu/all/youvetried.svg')
     }
   },
-  infoBlack: imageUrl('info-black.png')
+  infoBlack: imageUrl('info-black.png'),
+  cuShortLogo: imageUrl('cu-logo-short.svg')
 }

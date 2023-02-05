@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+@import "../../styles/mixins/media";
+
+.cui-smart-app-banner {
+  &.cui-container {
+    display: flex;
+    padding: 15px 25px 15px 25px;
+    box-shadow: 0px -8px 16px 0px #0000000F;
+    background-color: $cui-black-color;
+    opacity: 0.8;
+    align-items: center;
+    .cui-button-light-clear {
+      border-color: $cui-white-color;
+    }
+    @include mobile {
+      padding: 15px 5px 15px 5px;
+    }
+    .cui-icon-close {
+      height: 8px;
+      width: 8px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .cui-container-icon-text {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-left: 25px;
+      @include mobile {
+        padding-left: 5px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+      }
+
+      .cui-container-text {
+        display: flex;
+        flex-direction: column;
+
+        .cui-title {
+          @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-bold);
+          text-align: left;
+          color: $cui-white-color;
+        }
+    
+        .cui-subtitle {
+          @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-normal);
+          text-align: left;
+          color: $cui-white-color;
+        }
+      }
+    }
+  }
+}

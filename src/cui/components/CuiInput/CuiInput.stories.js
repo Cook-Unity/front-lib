@@ -9,7 +9,7 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: ['white']
+        options: ['white', 'black']
       },
       defaultValue: 'white'
     },

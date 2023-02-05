@@ -39,7 +39,12 @@ const CuiPopUp = ({
       overlayClassName={overlayClassName}
       className={className}
     >
-      <div className="cui-pop-up-modal">
+      <div
+        className={classnames(
+          'cui-pop-up-modal',
+          !image && 'cui-pop-up-modal--no-image'
+        )}
+      >
         {image && (
           <div
             className="cui-pop-up-image"
@@ -48,11 +53,18 @@ const CuiPopUp = ({
             }}
           />
         )}
-        <div className="cui-pop-up-content">
-          <h3 className={classnames('cui-pop-up-title', titleClassName)}>
-            {title}
-          </h3>
-          <div className="cui-pop-up-description">{description}</div>
+        <div
+          className={classnames(
+            'cui-pop-up-content',
+            !image && 'cui-pop-up-content--no-image'
+          )}
+        >
+          <div className="cui-pop-up-text">
+            <h3 className={classnames('cui-pop-up-title', titleClassName)}>
+              {title}
+            </h3>
+            <div className="cui-pop-up-description">{description}</div>
+          </div>
           <div className="cui-pop-up-action">
             {btnCancelText && (
               <CuiButton fill="outline" onClick={handleCancel}>

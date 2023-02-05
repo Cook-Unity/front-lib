@@ -7,9 +7,9 @@ const CuiInput = ({
   fill = 'solid',
   loading = false,
   size = 'small',
+  color = 'white',
   children,
   className,
-  color,
   ...props
 }) => {
   return (

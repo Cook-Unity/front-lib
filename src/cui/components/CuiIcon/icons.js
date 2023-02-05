@@ -22,6 +22,7 @@ export const CuiIconNames = {
       'heartFilled',
       // new icons
       'checkmark',
+      'checkmarkCircle',
       'clock',
       'close',
       'easyAndConvenient',
@@ -117,6 +118,7 @@ export const icons = {
   heartFilled: imageUrl('heart-filled.svg'),
   // new icons
   checkmark: imageUrl('checkmark.svg'),
+  checkmarkCircle: imageUrl('checkmark-circle.svg'),
   clock: imageUrl('clock.svg'),
   close: imageUrl('close.svg'),
   easyAndConvenient: imageUrl('easy-and-convenient.svg'),

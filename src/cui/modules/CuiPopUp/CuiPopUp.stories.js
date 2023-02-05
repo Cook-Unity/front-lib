@@ -67,3 +67,15 @@ Rating.args = {
   handleCancel: () => console.log('canceled!'),
   handleConfirm: () => console.log('hi!')
 }
+
+export const NoImage = Template.bind({})
+NoImage.args = {
+  title: 'Please confirm your preferences',
+  description:
+    'We recently updated our list of ingredients you can choose to avoid. Please review your preferences so we can make sure to only serve you meals you will enjoy.',
+  isOpen: true,
+  btnConfirmText: 'Review preferences now',
+  handleClose: () => console.log('closed!'),
+  handleCancel: () => console.log('canceled!'),
+  handleConfirm: () => console.log('hi!')
+}

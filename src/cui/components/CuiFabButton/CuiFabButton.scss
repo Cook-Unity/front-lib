@@ -9,6 +9,7 @@
   justify-content: center;
   overflow: hidden;
   border-style: solid;
+  padding: 0;
 
   @include font-build($cui-font-family-tt-norms, $cui-fab-font, $cui-line-height-2xl, $cui-font-bold);
 
