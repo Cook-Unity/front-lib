@@ -26,7 +26,8 @@ const CuiLink = ({
         `cui-link-${size}`,
         showUnderline && 'cui-link-underline',
         disabled && `cui-link-${color}-disabled`,
-        loading && `cui-link-${color}-${fill}-loading`
+        loading && `cui-link-${color}-${fill}-loading`,
+        className
       )}
       onClick={onClickHandle}
       {...props}
