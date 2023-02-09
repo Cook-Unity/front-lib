@@ -17,6 +17,7 @@ const CuiPopUp = ({
   description,
   btnConfirmText,
   btnCancelText = null,
+  btnClassName,
   titleClassName,
   overlayClassName,
   className
@@ -67,11 +68,17 @@ const CuiPopUp = ({
           </div>
           <div className="cui-pop-up-action">
             {btnCancelText && (
-              <CuiButton fill="outline" onClick={handleCancel}>
+              <CuiButton
+                fill="outline"
+                className={btnClassName}
+                onClick={handleCancel}
+              >
                 {btnCancelText}
               </CuiButton>
             )}
-            <CuiButton onClick={handleConfirm}>{btnConfirmText}</CuiButton>
+            <CuiButton className={btnClassName} onClick={handleConfirm}>
+              {btnConfirmText}
+            </CuiButton>
           </div>
         </div>
       </div>
