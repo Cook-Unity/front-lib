@@ -23,7 +23,8 @@ Default.args = {
   handleCancel: () => console.log('canceled!'),
   handleConfirm: () => console.log('hi!'),
   className: 'theclassname',
-  overlayClassName: 'theoverlayclassname'
+  overlayClassName: 'theoverlayclassname',
+  btnClassName: 'thebtnclassname'
 }
 
 export const CheckRecommendation = Template.bind({})
