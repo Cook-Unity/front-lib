@@ -79,3 +79,6 @@ export {default as CuiMessageModal} from './cui/components/CuiMessageModal/CuiMe
 export {default as CuiLoader} from './cui/components/CuiLoader/CuiLoader'
 export {default as CuiTabsMenu} from './cui/components/CuiMenuByBar/components/TabsMenu/TabsMenu'
 export {default as CuiSmartAppBanner} from './cui/components/CuiSmartAppBanner/CuiSmartAppBanner'
+
+// Utils
+export {urlParams} from './utils/urlParams'
