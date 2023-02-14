@@ -43,7 +43,8 @@ const CuiMenuByBar = ({
     }
   }
 
-  const handleMenuClick = () => {
+  const handleMenuClick = e => {
+    e.stopPropagation()
     setMenuOpen(!isMenuOpen)
     onMenuByClick(!isMenuOpen)
   }
