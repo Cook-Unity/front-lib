@@ -1,0 +1,138 @@
+{
+  "all": [
+    {
+      "id": 0,
+      "name": "All",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/menu-all.svg"
+    },
+    {
+      "id": 1,
+      "name": "You’ve Tried",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/you_ve-tried.svg"
+    },
+    {
+      "id": 2,
+      "name": "Favorites",
+      "image": "https://static.cookunity.com/cross/front-lib/icons/favorites.svg"
+    },
+    {
+      "id": 3,
+      "name": "Your Top Rated",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/toprated.svg"
+    }
+  ],
+  "cuisines": [
+    {
+      "id": 0,
+      "name": "Mediterranean",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mediterranean.png"
+    },
+    {
+      "id": 1,
+      "name": "Asian",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/asian.png"
+    },
+    {
+      "id": 2,
+      "name": "Italian",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/italian.png"
+    },
+    {
+      "id": 3,
+      "name": "Indian",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/indian.png"
+    },
+    {
+      "id": 4,
+      "name": "Mexican",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mexican.png"
+    },
+    {
+      "id": 5,
+      "name": "American",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/american.png"
+    },
+    {
+      "id": 6,
+      "name": "Middle Eastern",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/middleEastern.png"
+    },
+    {
+      "id": 7,
+      "name": "African",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/african.png"
+    },
+    {
+      "id": 8,
+      "name": "Caribean",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/caribean.png"
+    },
+    {
+      "id": 9,
+      "name": "French",
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/french.png"
+    }
+  ],
+  "chefs":[
+    {
+      "id":0,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":1,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":2,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":3,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":4,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":5,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":6,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":7,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":8,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":9,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":10,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    },
+    {
+      "id":11,
+      "image":"https://d1ureao5dcqpo4.cloudfront.net/media/avatar-small/thumbnail/andres-large48732.jpg",
+      "name":"Andres Mendez"
+    }  
+  ]
+}
