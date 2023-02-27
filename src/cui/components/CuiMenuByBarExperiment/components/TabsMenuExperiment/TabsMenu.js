@@ -69,25 +69,27 @@ const TabsMenuExperiment = ({
             onClick={() => handleOnClick(tabItem)}
             ref={isSelected(tabItem) ? selectedRef : null}
           >
-            {tabItem.image.endsWith('.svg') ? (
-              <CuiIcon
-                path={tabItem.image}
-                className="cui-tabs-container-exp__item-svg"
-              />
-            ) : (
-              <img
-                src={tabItem.image}
-                alt="tab-icon"
-                className={classnames('cui-tabs-container-exp__item-img', {
-                  scrolling: isScrolling
-                })}
-                onError={e => {
-                  if (e.target.src !== tabItem.fallbackImage) {
-                    e.target.src = tabItem.fallbackImage
-                  }
-                }}
-              />
-            )}
+            <div className="cui-tabs-container-exp__item-img-container">
+              {tabItem.image.endsWith('.svg') ? (
+                <CuiIcon
+                  path={tabItem.image}
+                  className="cui-tabs-container-exp__item-svg"
+                />
+              ) : (
+                <img
+                  src={tabItem.image}
+                  alt="tab-icon"
+                  className={classnames('cui-tabs-container-exp__item-img', {
+                    scrolling: isScrolling
+                  })}
+                  onError={e => {
+                    if (e.target.src !== tabItem.fallbackImage) {
+                      e.target.src = tabItem.fallbackImage
+                    }
+                  }}
+                />
+              )}
+            </div>
             <span
               data-testid="span-item"
               className="cui-tabs-container-exp__item-name"
