@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import CuiIcon from '../../../CuiIcon/CuiIcon'
 
 import './TabsMenu.scss'
+
+const images_url = 'https://static.cookunity.com/cross/front-lib/icons/'
 
 const TabsMenuExperiment = ({
   tabsItems,
@@ -70,25 +71,19 @@ const TabsMenuExperiment = ({
             ref={isSelected(tabItem) ? selectedRef : null}
           >
             <div className="cui-tabs-container-exp__item-img-container">
-              {tabItem.image.endsWith('.svg') ? (
-                <CuiIcon
-                  path={tabItem.image}
-                  className="cui-tabs-container-exp__item-svg"
-                />
-              ) : (
-                <img
-                  src={tabItem.image}
-                  alt="tab-icon"
-                  className={classnames('cui-tabs-container-exp__item-img', {
-                    scrolling: isScrolling
-                  })}
-                  onError={e => {
-                    if (e.target.src !== tabItem.fallbackImage) {
-                      e.target.src = tabItem.fallbackImage
-                    }
-                  }}
-                />
-              )}
+              <img
+                src={tabItem.image}
+                alt="tab-icon"
+                className={classnames('cui-tabs-container-exp__item-img', {
+                  scrolling: isScrolling,
+                  svg: tabItem.image.endsWith('.svg')
+                })}
+                onError={e => {
+                  if (e.target.src !== tabItem.fallbackImage) {
+                    e.target.src = tabItem.fallbackImage
+                  }
+                }}
+              />
             </div>
             <span
               data-testid="span-item"
@@ -107,7 +102,7 @@ const TabsMenuExperiment = ({
             className={classnames('cui-tabs-container-exp__button')}
             onClick={() => handleClickButton(false)}
           >
-            <CuiIcon name="chevronLeft" />
+            <img src={images_url + 'chevron-left.svg'} alt="chevron left" />
           </div>
         </div>
       )}
@@ -119,7 +114,7 @@ const TabsMenuExperiment = ({
             className={classnames('cui-tabs-container-exp__button')}
             onClick={() => handleClickButton(true)}
           >
-            <CuiIcon name="chevronRight" />
+            <img src={images_url + 'chevron-right.svg'} alt="chevron right" />
           </div>
         </div>
       )}
