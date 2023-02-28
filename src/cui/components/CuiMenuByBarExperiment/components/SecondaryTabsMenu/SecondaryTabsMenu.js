@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import CuiIcon from '../../../CuiIcon/CuiIcon'
-
 import './SecondaryTabsMenu.scss'
+
+const images_url = 'https://static.cookunity.com/cross/front-lib/icons/'
 
 const SecondaryTabsMenu = ({
   tabsItems,
@@ -69,25 +69,19 @@ const SecondaryTabsMenu = ({
             onClick={() => handleOnClick(tabItem)}
             ref={isSelected(tabItem) ? selectedRef : null}
           >
-            {tabItem.image.endsWith('.svg') ? (
-              <CuiIcon
-                path={tabItem.image}
-                className="cui-secondary-tabs__item-svg"
-              />
-            ) : (
-              <img
-                src={tabItem.image}
-                alt="tab-icon"
-                className={classnames('cui-secondary-tabs__item-img', {
-                  scrolling: isScrolling
-                })}
-                onError={e => {
-                  if (e.target.src !== tabItem.fallbackImage) {
-                    e.target.src = tabItem.fallbackImage
-                  }
-                }}
-              />
-            )}
+            <img
+              src={tabItem.image}
+              alt="tab-icon"
+              className={classnames('cui-secondary-tabs__item-img', {
+                scrolling: isScrolling,
+                svg: tabItem.image.endsWith('.svg')
+              })}
+              onError={e => {
+                if (e.target.src !== tabItem.fallbackImage) {
+                  e.target.src = tabItem.fallbackImage
+                }
+              }}
+            />
             <span
               data-testid="span-item"
               className="cui-secondary-tabs__item-name"
@@ -103,7 +97,7 @@ const SecondaryTabsMenu = ({
             className={classnames('cui-secondary-tabs__button')}
             onClick={() => handleClickButton(false)}
           >
-            <CuiIcon name="chevronLeft" />
+            <img src={images_url + 'chevron-left.svg'} alt="chevron left" />
           </div>
         </div>
       )}
@@ -113,7 +107,7 @@ const SecondaryTabsMenu = ({
             className={classnames('cui-secondary-tabs__button')}
             onClick={() => handleClickButton(true)}
           >
-            <CuiIcon name="chevronRight" />
+            <img src={images_url + 'chevron-right.svg'} alt="chevron right" />
           </div>
         </div>
       )}

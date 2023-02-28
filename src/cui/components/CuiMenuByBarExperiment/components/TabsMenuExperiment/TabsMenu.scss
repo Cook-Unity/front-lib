@@ -8,7 +8,7 @@
     box-sizing: border-box;
   }
 
-    height: 94px;
+  height: 94px;
   padding: 0;
   position: relative;
   border-bottom: 2px solid $cui-black-color-200;
@@ -29,6 +29,7 @@
     align-items: center;
     cursor: pointer;
     width: 32px;
+    justify-content: center;
 
     &.left {
       left: 0;
@@ -58,15 +59,10 @@
     &:hover {
       background-color: #f5f5f5;
     }
-  }
 
-
-  &__icon {
-    width: 48px;
-    height: 48px;
-
-    svg {
-      height: 100%;
+    img {
+      height: 32px;
+      width: 32px;
     }
   }
 
@@ -90,7 +86,7 @@
 
   &__item {
     display: inline-grid;
-    padding: 4px 8px 8px;
+    padding: 4px 8px;
     margin: 0 2px;
     height: 100%;
     min-width: 78px;
@@ -107,24 +103,16 @@
       background-color: $cui-white-color;
       color: $cui-wine-color-500;
 
-      svg path {
-        fill: $cui-wine-color-500;
+      .svg {
+        filter: invert(23%) sepia(32%) saturate(3320%) hue-rotate(300deg) brightness(89%) contrast(100%);
       }
     }
 
-    &-svg {
-      height: 48px;
-      width: 48px;
-
-      svg {
-        height: 100%;
-      }
+    &-img-container {
+      width: 100%;
+      justify-content: center;
+      display: flex;
     }
-                                                                &-img-container {
-                                                                  width: 100%;
-                                                                  justify-content: center;
-                                                                  display: flex;
-                                                                }
   }
 
   &__item:last-child {
@@ -141,8 +129,8 @@
   }
 
   &__item-img {
-    width: 62px;
-    height: 62px;
+    width: 48px;
+    height: 48px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 100px;
