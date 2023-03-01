@@ -10,7 +10,16 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: ['olive', 'wine', 'dark', 'white', 'yellow', 'red', 'grey']
+        options: [
+          'olive',
+          'wine',
+          'dark',
+          'white',
+          'yellow',
+          'red',
+          'grey',
+          'blue'
+        ]
       },
       defaultValue: 'olive'
     },

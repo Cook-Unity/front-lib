@@ -110,6 +110,17 @@
     }
   }
 
+  &-blue {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-light-blue-700,
+        $cui-light-blue-700,
+        $cui-white-color
+      );
+    }
+  }
+
   .cui-icon {
     display: flex;
   }
