@@ -1,3 +1,4 @@
+// @Deprecated
 export {default as Button} from './common/Buttons'
 export {default as MealCard} from './components/MealCard'
 export {default as MealCardExperiment} from './components/MealCardExperiment'

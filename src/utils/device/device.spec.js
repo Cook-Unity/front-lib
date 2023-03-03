@@ -1,4 +1,4 @@
-import {size, device, isMobileOrTablet} from './index'
+import {size, device, isMobileOrTablet} from '.'
 
 describe('size', () => {
   it('should have the correct values for each key', () => {
