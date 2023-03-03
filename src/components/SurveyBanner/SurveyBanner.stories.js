@@ -1,9 +1,9 @@
 import React from 'react'
 
 import SurveyBanner from './index'
-import mobileAndTabletCheck from '../../utils/mobileAndTabletCheck'
+import {isMobileOrTablet} from '../../utils/device'
 
-const isMobileDevice = () => mobileAndTabletCheck()
+const isMobileDevice = () => isMobileOrTablet()
 
 const props = {
   showSurvey: true,
