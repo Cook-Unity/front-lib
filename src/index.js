@@ -82,3 +82,5 @@ export {default as CuiSmartAppBanner} from './cui/components/CuiSmartAppBanner/C
 
 // Utils
 export {urlParams} from './utils/urlParams'
+export {stripHtml} from './utils/string'
+export {default as mobileAndTabletCheck} from './utils/mobileAndTabletCheck'
