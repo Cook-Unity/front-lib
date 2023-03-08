@@ -1,13 +1,25 @@
-import classNames from 'classnames'
-import React from 'react'
+import {useState} from 'react'
+import classnames from 'classnames'
 import './CuiTooltip.scss'
 
-const CuiTooltip = ({className, children, ...props}) => {
+export const CuiTooltip = ({children, tip}) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+    setIsOpen(prev => !prev)
+  }
+
   return (
-    <div className={classNames('cui-tooltip', className)} {...props}>
+    <div className="cui-tooltip" onClick={toggle}>
       {children}
+      <span
+        className={classnames('tip', {
+          open: isOpen,
+          close: !isOpen
+        })}
+      >
+        {tip}
+      </span>
     </div>
   )
 }
-
-export default CuiTooltip
