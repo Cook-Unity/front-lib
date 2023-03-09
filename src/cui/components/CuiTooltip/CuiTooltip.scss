@@ -20,6 +20,9 @@
     white-space: nowrap;
     margin-top: 12px;
     left: -3px;
+    a {
+      color: $cui-white-color;
+    }
     &:after {
       content: '';
       position: absolute;

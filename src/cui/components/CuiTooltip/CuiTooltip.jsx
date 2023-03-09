@@ -2,7 +2,7 @@ import {useState} from 'react'
 import classnames from 'classnames'
 import './CuiTooltip.scss'
 
-export const CuiTooltip = ({children, tip}) => {
+const CuiTooltip = ({children, tip}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const open = () => {
@@ -27,3 +27,5 @@ export const CuiTooltip = ({children, tip}) => {
     </div>
   )
 }
+
+export default CuiTooltip

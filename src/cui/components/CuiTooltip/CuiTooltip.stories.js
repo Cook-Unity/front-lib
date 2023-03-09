@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {CuiTooltip} from './CuiTooltip'
+import CuiTooltip from './CuiTooltip'
 import CuiIcon from '../CuiIcon/CuiIcon'
 import './story.scss'
 
@@ -16,7 +16,19 @@ const copy = 'Taxes, delivery\nand other fees'
 const Template = args => (
   <div className="container">
     <div>This is our story</div>&nbsp;&nbsp;
-    <CuiTooltip tip={<div>{copy}</div>} {...args}>
+    <CuiTooltip
+      tip={
+        <div>
+          {copy}{' '}
+          <div>
+            <a href="https://google.com" target="_blank" rel="noreferrer">
+              A link
+            </a>
+          </div>
+        </div>
+      }
+      {...args}
+    >
       {/* Children needs to be a block element like div, otherwise you have to override the margin-top attr */}
       <CuiIcon name="infoEmptyCircled" />
     </CuiTooltip>
