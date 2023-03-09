@@ -15,8 +15,9 @@ const copy = 'Taxes, delivery\nand other fees'
 
 const Template = args => (
   <div className="container">
-    <span>This is our story</span>&nbsp;&nbsp;
+    <div>This is our story</div>&nbsp;&nbsp;
     <CuiTooltip tip={<div>{copy}</div>} {...args}>
+      {/* Children needs to be a block element like div, otherwise you have to override the margin-top attr */}
       <CuiIcon name="infoEmptyCircled" />
     </CuiTooltip>
   </div>
