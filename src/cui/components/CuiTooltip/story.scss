@@ -1,10 +1,19 @@
-// This client override is necessary on the current implementation.
-// check FIXME message on src/cui/components/CuiTooltip/CuiTooltip.scss
-.cui-tooltip {
+@import '../../../assets/styles/scss/mixins';
+
+.container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+@include mobile {
+  .cui-tooltip { 
+    // Parent can't specify width because that will reserve space around the wrapped element, the one the user hover on.
     .tip {
-        right: -48px;
-        &:after {
-          right: 52px;
-        }
-      }
+      // This breaks the line on "\n"
+      white-space: pre-wrap;
+      // Since its an absolute positioned element and the parent didn't specify a width we need to set it manually.
+      width: 100px;
+    }
+  }
 }

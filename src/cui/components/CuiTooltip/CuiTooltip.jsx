@@ -5,12 +5,16 @@ import './CuiTooltip.scss'
 export const CuiTooltip = ({children, tip}) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggle = () => {
-    setIsOpen(prev => !prev)
+  const open = () => {
+    setIsOpen(true)
+  }
+
+  const close = () => {
+    setIsOpen(false)
   }
 
   return (
-    <div className="cui-tooltip" onMouseEnter={toggle} onMouseLeave={toggle}>
+    <div className="cui-tooltip" onMouseEnter={open} onMouseLeave={close}>
       {children}
       <span
         className={classnames('tip', {

@@ -19,7 +19,7 @@
     transition-duration: 150ms;
     white-space: nowrap;
     margin-top: 12px;
-    right: -120px;
+    left: -3px;
     &:after {
       content: '';
       position: absolute;
@@ -27,7 +27,7 @@
       border-width: 8px;
       border-style: solid;
       border-color: transparent transparent $cui-black-color transparent;
-      right: 125px;
+      left: 7px;
     }
     &.open {
       opacity: 1;
@@ -39,16 +39,6 @@
       transform: translateY(-10px);
       // Since the tooltip is always present this prevents clics on the invisible tooltip to open it.
       pointer-events: none;
-    }
-  }
-
-  // FIXME How to position automatically? Each client would need to adjust these values.
-  @include desktop {
-    .tip {
-      right: -8px;
-      &:after {
-        right: 12px;
-      }
     }
   }
 }

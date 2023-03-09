@@ -9,14 +9,17 @@ export default {
   component: CuiTooltip
 }
 
-const TipComponent = () => {
-  return <div>Hi there</div>
-}
+// "\n" combined with "white-space: pre-wrap;" allows to break the line.
+// Check ./story.scss to see the mobile breakline hack.
+const copy = 'Taxes, delivery\nand other fees'
 
 const Template = args => (
-  <CuiTooltip tip={<TipComponent />} {...args}>
-    <CuiIcon name="infoEmptyCircled" />
-  </CuiTooltip>
+  <div className="container">
+    <span>This is our story</span>&nbsp;&nbsp;
+    <CuiTooltip tip={<div>{copy}</div>} {...args}>
+      <CuiIcon name="infoEmptyCircled" />
+    </CuiTooltip>
+  </div>
 )
 
 export const Default = Template.bind({})
