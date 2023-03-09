@@ -1,0 +1,10 @@
+// This client override is necessary on the current implementation.
+// check FIXME message on src/cui/components/CuiTooltip/CuiTooltip.scss
+.cui-tooltip {
+    .tip {
+        right: -48px;
+        &:after {
+          right: 52px;
+        }
+      }
+}

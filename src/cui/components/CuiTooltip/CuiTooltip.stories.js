@@ -1,6 +1,8 @@
 import React from 'react'
 
 import {CuiTooltip} from './CuiTooltip'
+import CuiIcon from '../CuiIcon/CuiIcon'
+import './story.scss'
 
 export default {
   title: 'Cui / Components / CuiTooltip',
@@ -13,7 +15,7 @@ const TipComponent = () => {
 
 const Template = args => (
   <CuiTooltip tip={<TipComponent />} {...args}>
-    Cui Tooltip
+    <CuiIcon name="infoEmptyCircled" />
   </CuiTooltip>
 )
 
