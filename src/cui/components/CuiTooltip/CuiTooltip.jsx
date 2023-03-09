@@ -10,7 +10,7 @@ export const CuiTooltip = ({children, tip}) => {
   }
 
   return (
-    <div className="cui-tooltip" onClick={toggle}>
+    <div className="cui-tooltip" onMouseEnter={toggle} onMouseLeave={toggle}>
       {children}
       <span
         className={classnames('tip', {

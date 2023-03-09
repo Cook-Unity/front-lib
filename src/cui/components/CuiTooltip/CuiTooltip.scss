@@ -1,45 +1,54 @@
 @import '../../styles/variables';
+@import '../../../assets/styles/scss/mixins';
 
 .cui-tooltip {
-    display: inline-block;
-    position: relative;
-    .tip {
-      font-family: $cui-font-family-tt-norms;
-      font-weight: $cui-font-normal;
-      font-size: $cui-font-sm;
-      line-height: $cui-line-height-xl;
-      color: $cui-white-color;
+  display: inline-block;
+  position: relative;
+  .tip {
+    font-family: $cui-font-family-tt-norms;
+    font-weight: $cui-font-normal;
+    font-size: $cui-font-sm;
+    line-height: $cui-line-height-xl;
+    color: $cui-white-color;
+    position: absolute;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: $cui-black-color;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+    transition-duration: 150ms;
+    white-space: nowrap;
+    margin-top: 12px;
+    right: -120px;
+    &:after {
+      content: '';
       position: absolute;
-      border-radius: 4px;
-      padding: 16px;
-      background-color: $cui-black-color;
-      transition-property: transform, opacity;
-      transition-timing-function: cubic-bezier(.25, .8, .25, 1);
-      transition-duration: 150ms;
-      white-space: nowrap;
-      // FIXME How to position automatically? Each client would need to adjust these values.
+      bottom: 100%;
+      border-width: 8px;
+      border-style: solid;
+      border-color: transparent transparent $cui-black-color transparent;
+      right: 125px;
+    }
+    &.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    &.close {
+      opacity: 0;
+      transform: translateY(-10px);
+      // Since the tooltip is always present this prevents clics on the invisible tooltip to open it.
+      pointer-events: none;
+    }
+  }
+
+  // FIXME How to position automatically? Each client would need to adjust these values.
+  @include desktop {
+    .tip {
       right: -8px;
-      margin-top: 12px;
       &:after {
-        content: '';
-        position: absolute;
-        bottom: 100%;
-        border-width: 8px;
-        border-style: solid;
-        border-color: transparent transparent $cui-black-color transparent;
-        // FIXME How to position automatically? Each client would need to adjust this value.
         right: 12px;
       }
-      &.open {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: all;
-      }
-      &.close {
-        opacity: 0;
-        transform: translateY(-10px);
-        // Since the tooltip is always present this prevents clics on the invisible tooltip to open it.
-        pointer-events: none;
-      }
     }
+  }
 }
