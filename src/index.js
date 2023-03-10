@@ -1,3 +1,4 @@
+// @Deprecated
 export {default as Button} from './common/Buttons'
 export {default as MealCard} from './components/MealCard'
 export {default as MealCardExperiment} from './components/MealCardExperiment'
@@ -78,11 +79,14 @@ export {default as CuiPopUp} from './cui/modules/CuiPopUp/CuiPopUp'
 export {default as CuiMessageModal} from './cui/components/CuiMessageModal/CuiMessageModal'
 export {default as CuiLoader} from './cui/components/CuiLoader/CuiLoader'
 export {default as CuiTabsMenu} from './cui/components/CuiMenuByBar/components/TabsMenu/TabsMenu'
+export {default as CuiTooltip} from './cui/components/CuiTooltip/CuiTooltip'
 export {default as CuiSmartAppBanner} from './cui/components/CuiSmartAppBanner/CuiSmartAppBanner'
 export {default as CuiSecondaryTabsMenu} from './cui/components/CuiMenuByBarExperiment/components/SecondaryTabsMenu/SecondaryTabsMenu'
 export {default as CuiTabsMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/TabsMenuExperiment/TabsMenu'
 export {default as CuiDropdownMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/DropdownMenuExperiment/DropdownMenu'
-export {default as CuiTooltip} from './cui/components/CuiTooltip/CuiTooltip'
 
 // Utils
 export {urlParams} from './utils/urlParams'
+export {stripHtml} from './utils/string'
+export {sanitizeZipCode} from './utils/zipcode'
+export {device, size, isMobileOrTablet} from './utils/device'

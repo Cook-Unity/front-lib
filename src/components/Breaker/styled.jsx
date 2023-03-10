@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {device} from '../../utils/mediaQueries'
+import {device} from '../../utils/device'
 
 export const Wrapper = styled.div`
   display: flex;

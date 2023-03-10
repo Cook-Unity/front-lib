@@ -4,7 +4,7 @@ import images from '../../../assets/images'
 
 import './CuiSmartAppBanner.scss'
 import CuiButton from '../CuiButton/CuiButton'
-import { isMobileOrTabletDevice } from '../../../utils/mediaQueries'
+import {isMobileOrTablet} from '../../../utils/device'
 
 const CuiSmartAppBanner = ({
   icon,
@@ -46,7 +46,12 @@ const CuiSmartAppBanner = ({
           <span className="cui-subtitle">{subTitle}</span>
         </div>
       </div>
-      <CuiButton color="light" fill="clear" size={ isMobileOrTabletDevice() ? 'small' : 'medium' } onClick={onClik}>
+      <CuiButton
+        color="light"
+        fill="clear"
+        size={isMobileOrTablet() ? 'small' : 'medium'}
+        onClick={onClik}
+      >
         {textButton}
       </CuiButton>
     </div>

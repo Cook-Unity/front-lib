@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, {useState} from 'react'
-import {isMobileOrTabletDevice} from '../../../utils/mediaQueries'
+import {isMobileOrTablet} from '../../../utils/device'
 import CuiButton from '../CuiButton/CuiButton'
 import CuiIcon from '../CuiIcon/CuiIcon'
 import './CuiCartDetail.scss'
@@ -64,8 +64,8 @@ const CuiCartDetail = ({
           <CuiButton
             type="button"
             fill="solid"
-            size={isMobileOrTabletDevice() ? 'small' : 'medium'}
-            color={isMobileOrTabletDevice() ? 'dark' : 'primary'}
+            size={isMobileOrTablet() ? 'small' : 'medium'}
+            color={isMobileOrTablet() ? 'dark' : 'primary'}
             onClick={ctaClick}
           >
             {ctaText}
