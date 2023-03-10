@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import classnames from 'classnames'
 import './CuiTooltip.scss'
 
-const CuiTooltip = ({children, tip}) => {
+const CuiTooltip = ({children, tip, small}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const open = () => {
@@ -20,7 +20,7 @@ const CuiTooltip = ({children, tip}) => {
         className={classnames('tip', {
           open: isOpen,
           close: !isOpen
-        })}
+        }, small && 'small')}
       >
         {tip}
       </span>

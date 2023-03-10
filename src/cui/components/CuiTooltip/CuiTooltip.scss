@@ -19,6 +19,12 @@
     white-space: nowrap;
     margin-top: 12px;
     left: -3px;
+
+    &span.small {
+      font-size: $cui-font-xs;
+      line-height: $cui-line-height-base;
+    }
+    
     a {
       color: $cui-white-color;
     }
