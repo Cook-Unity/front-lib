@@ -12,6 +12,10 @@ export const device = {
   desktop: `(max-width: ${size.desktop}px)`
 }
 
+export const isMobile = () => {}
+export const isTablet = () => {}
+
+// TODO: Split to Mobile and Tablet detect.
 // http://detectmobilebrowsers.com/ and add to default code this fragment: |android|ipad|playbook|silk
 export const isMobileOrTablet = () => {
   let check = false
