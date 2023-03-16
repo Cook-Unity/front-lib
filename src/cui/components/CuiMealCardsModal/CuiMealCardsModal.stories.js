@@ -14,9 +14,14 @@ export default {
   }
 }
 
+
+const MockMenuCard = () => (
+  <div style={{height: 200 + 'px', backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}`, borderRadius: 8 + 'px' }}></div>
+);
+
 const Template = args => (
   <div>
-    <MealImage {...args} /> <CuiMealCardsModal {...args} />
+    <MealImage {...args} /> <CuiMealCardsModal {...args}>{Array(3).fill(null).map(() => <MockMenuCard></MockMenuCard>)}</CuiMealCardsModal>
   </div>
 )
 
