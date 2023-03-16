@@ -14,14 +14,26 @@ export default {
   }
 }
 
-
 const MockMenuCard = () => (
-  <div style={{height: 200 + 'px', backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}`, borderRadius: 8 + 'px' }}></div>
-);
+  <div
+    style={{
+      height: 200 + 'px',
+      backgroundColor: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+      borderRadius: 8 + 'px'
+    }}
+  />
+)
 
 const Template = args => (
   <div>
-    <MealImage {...args} /> <CuiMealCardsModal {...args}>{Array(3).fill(null).map(() => <MockMenuCard></MockMenuCard>)}</CuiMealCardsModal>
+    <MealImage {...args} />x
+    <CuiMealCardsModal {...args}>
+      {Array(3)
+        .fill(null)
+        .map((value, index) => (
+          <MockMenuCard key={index} />
+        ))}
+    </CuiMealCardsModal>
   </div>
 )
 
