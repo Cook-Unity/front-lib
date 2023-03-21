@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 import React from 'react'
-import './CuiLoader.scss'
+import Lottie from 'lottie-react'
+
 import animationData from './animation/data.json'
-import Lottie from 'react-lottie'
+import './CuiLoader.scss'
 
 const CuiLoader = ({fullscreen, className, ...props}) => {
   return (
@@ -14,13 +15,11 @@ const CuiLoader = ({fullscreen, className, ...props}) => {
       )}
     >
       <Lottie
-        options={{
-          loop: true,
-          autoplay: true,
-          animationData: animationData,
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-          }
+        loop
+        autoplay
+        animationData={animationData}
+        rendererSettings={{
+          preserveAspectRatio: 'xMidYMid slice'
         }}
         isClickToPauseDisabled
         {...props}
@@ -30,3 +29,4 @@ const CuiLoader = ({fullscreen, className, ...props}) => {
 }
 
 export default CuiLoader
+// empty commit.

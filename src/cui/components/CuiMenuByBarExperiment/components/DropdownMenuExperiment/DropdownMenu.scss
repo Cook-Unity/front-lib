@@ -1,0 +1,135 @@
+@import '../../../../styles/mixins/media';
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-dropdown-menu-exp {
+  position: relative;
+
+  &__button {
+    padding: 2px 8px;
+    border-radius: 200px;
+    cursor: pointer;
+    border: 1px solid $cui-black-color-300;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    max-height: 44px;
+    width: max-content;
+    @include font-build($cui-font-family-tt-norms,
+      $cui-font-base,
+      $cui-font-2xl,
+      $cui-font-bold );
+
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  &__button:hover {
+    background-color: $cui-black-color-100;
+  }
+
+  &__button-text,
+  &__button-icon {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__open {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    z-index: 10;
+
+    @include mobile {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgba(35, 31, 32, 0.7);
+    }
+  }
+
+  &__container {
+    display: grid;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: 315px;
+    background-color: $cui-white-color;
+    box-shadow: 0px 0px 12px rgba(35, 31, 32, 0.1), 0px 12px 12px rgba(35, 31, 32, 0.07);
+    border-radius: 8px;
+    max-height: 600px;
+    overflow: auto;
+
+    @include mobile {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      box-shadow: initial;
+      border-radius: 20px 20px 0px 0px;
+      padding-top: 24px;
+      max-height: 426px;
+      overflow: auto;
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    padding: 12px;
+    border-bottom: 0.5px solid $cui-black-color-150;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__item-name {
+    @include font-build($cui-font-family-source-serif,
+      $cui-font-xl,
+      $cui-font-3xl,
+      $cui-font-bold );
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-img {
+    margin-right: 16px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid $cui-black-color-150;
+    border-radius: 8px;
+  }
+
+  &__item:hover {
+    background-color: $cui-black-color-100;
+  }
+
+  &__close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+
+    >img {
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
+    }
+
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+}

@@ -81,9 +81,13 @@ export {default as CuiLoader} from './cui/components/CuiLoader/CuiLoader'
 export {default as CuiTabsMenu} from './cui/components/CuiMenuByBar/components/TabsMenu/TabsMenu'
 export {default as CuiTooltip} from './cui/components/CuiTooltip/CuiTooltip'
 export {default as CuiSmartAppBanner} from './cui/components/CuiSmartAppBanner/CuiSmartAppBanner'
+export {default as CuiSecondaryTabsMenu} from './cui/components/CuiMenuByBarExperiment/components/SecondaryTabsMenu/SecondaryTabsMenu'
+export {default as CuiTabsMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/TabsMenuExperiment/TabsMenu'
+export {default as CuiDropdownMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/DropdownMenuExperiment/DropdownMenu'
 
 // Utils
 export {urlParams} from './utils/urlParams'
 export {stripHtml} from './utils/string'
 export {sanitizeZipCode} from './utils/zipcode'
 export {device, size, isMobileOrTablet} from './utils/device'
+export {webpSupport} from './utils/images'

@@ -1,0 +1,102 @@
+@import '../../../../styles/mixins/media';
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-secondary-tabs {
+  position: relative;
+  max-width: 100%;
+  min-width: 0;
+
+  &__tabs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    gap: 6px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+      
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    
+  }
+
+  &__item {
+    padding: 0px 8px 0px 2px;
+    border-radius: 200px;
+    cursor: pointer;
+    scroll-margin: 100px;
+    color: $cui-black-color;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 44px;
+
+    &:hover {
+      background-color: $cui-black-color-100;
+    }
+
+    &.selected {
+      color: $cui-white-color;
+      background-color: $cui-wine-color-500;
+
+      .svg {
+        filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(93deg) brightness(109%) contrast(104%);
+      }
+    }
+  }
+
+  &__item:last-child {
+    margin-right: 32px;
+  }
+
+  &__item-name {
+    @include font-build($cui-font-family-tt-norms,
+      $cui-font-xs,
+      $cui-font-base,
+      $cui-font-bold );
+  }
+
+  &__item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    object-fit: cover;
+  }
+
+  &__navigation {
+    position: absolute;
+    background-color: $cui-white-color;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 32px;
+    justify-content: center;
+
+    img {
+      height: 24px;
+      width: 24px;
+    }
+
+    &.left {
+      left: 0;
+      top: 0;
+    }
+
+    &.right {
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__navigation:hover {
+    background-color: $cui-black-color-100;
+  }
+}
