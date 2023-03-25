@@ -91,7 +91,8 @@ export const CuiIconNames = {
       'verySpicy',
       'warning',
       'youVeTried',
-      'yourTopRated'
+      'yourTopRated',
+      'moreCircle'
     ]
   },
   defaultValue: 'heart'
@@ -199,5 +200,6 @@ export const icons = {
   verySpicy: imageUrl('very-spicy.svg'),
   warning: imageUrl('warning-icon.svg'),
   youVeTried: imageUrl('you_ve-tried.svg'),
-  yourTopRated: imageUrl('your-top-rated.svg')
+  yourTopRated: imageUrl('your-top-rated.svg'),
+  moreCircle: imageUrl('more-circle.svg')
 }
