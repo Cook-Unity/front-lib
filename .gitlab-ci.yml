@@ -61,5 +61,6 @@ publish-storybook:
   image: amazon/aws-cli:2.1.22
   script:
     - aws s3 sync --acl public-read --cache-control "max-age=0" ./storybook-static/ s3://cu-statics/cross/front-lib/storybook/
+    - aws s3 sync --acl public-read --cache-control "max-age=31536000" ./public/ s3://cu-front-lib-prd/
   only:
     - master
