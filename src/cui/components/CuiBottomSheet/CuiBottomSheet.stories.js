@@ -23,7 +23,7 @@ export default {
   }
 }
 
-const Template = ({withBackgroundImage, ...props}) => {
+const Template = ({withBackgroundImage, title, ...props}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -57,7 +57,7 @@ const Template = ({withBackgroundImage, ...props}) => {
         className={classnames({'with-background-image': withBackgroundImage})}
       >
         <CuiBottomSheet.Header onRequestClose={() => setIsOpen(false)}>
-          Recommendations
+          {title}
         </CuiBottomSheet.Header>
         <CuiBottomSheet.Body>
           <p>START</p>
