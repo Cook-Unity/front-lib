@@ -1,0 +1,17 @@
+button {
+  all: unset;
+  outline: revert;
+}
+
+// Example with background image
+.cui-bottom-sheet.with-background-image .cui-bottom-sheet__overlay {
+  background-image: url('https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg');
+  background-repeat: no-repeat;
+  background-size: 2500px;
+}
+
+.cui-bottom-sheet {
+  .body {
+    max-height: 60vh;
+  }
+}
