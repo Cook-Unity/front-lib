@@ -14,11 +14,11 @@
     font-style: normal;
     font-display: swap;
     src: local($cui-font-family-source-serif),
-      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-bold.woff2")
+      url("https://statics.cookunity.com/fonts/source-serif-pro/source-serif-pro-bold.woff2")
         format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-bold.woff")
+      url("https://statics.cookunity.com/fonts/source-serif-pro/source-serif-pro-bold.woff")
         format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-bold.ttf")
+      url("https://statics.cookunity.com/fonts/source-serif-pro/source-serif-pro-bold.ttf")
         format("truetype");
   }
   @font-face {
@@ -27,11 +27,11 @@
     font-style: normal;
     font-display: swap;
     src: local($cui-font-family-source-serif),
-      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-regular.woff2")
+      url("https://statics.cookunity.com/fonts/source-serif-pro/source-serif-pro-regular.woff2")
         format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-regular.woff")
+      url("https://statics.cookunity.com/fonts/source-serif-pro/source-serif-pro-regular.woff")
         format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/source-serif-pro-regular.ttf")
+      url("https://statics.cookunity.com/fonts/source-serif-pro/source-serif-pro-regular.ttf")
         format("truetype");
   }
 }
@@ -43,9 +43,9 @@
     font-style: normal;
     font-display: swap;
     src: local($cui-font-family-rossanova),
-      url("https://static.cookunity.com/cross/front-lib/fonts/rossanova-bold.woff2") format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/rossanova-bold.woff") format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/rossanova-bold.ttf") format("truetype");
+      url("https://statics.cookunity.com/fonts/rossanova/rossanova-bold.woff2") format("woff2"),
+      url("https://statics.cookunity.com/fonts/rossanova/rossanova-bold.woff") format("woff"),
+      url("https://statics.cookunity.com/fonts/rossanova/rossanova-bold.ttf") format("truetype");
   }
 }
 
@@ -56,9 +56,9 @@
     font-style: normal;
     font-display: swap;
     src: local($cui-font-family-avallon),
-      url("https://static.cookunity.com/cross/front-lib/fonts/avallon.woff2") format("woff2"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/avallon.woff") format("woff"),
-      url("https://static.cookunity.com/cross/front-lib/fonts/avallon.ttf") format("truetype");
+      url("https://statics.cookunity.com/fonts/avallon/avallon.woff2") format("woff2"),
+      url("https://statics.cookunity.com/fonts/avallon/avallon.woff") format("woff"),
+      url("https://statics.cookunity.com/fonts/avallon/avallon.ttf") format("truetype");
   }
 }
 
