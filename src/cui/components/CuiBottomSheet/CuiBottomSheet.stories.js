@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import classnames from 'classnames'
-import {CuiBottomSheet} from './CuiBottomSheet'
+import CuiBottomSheet from './CuiBottomSheet'
 import './CuiBottomSheet.stories.scss'
 
 export default {

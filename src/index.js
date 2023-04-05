@@ -84,6 +84,7 @@ export {default as CuiSmartAppBanner} from './cui/components/CuiSmartAppBanner/C
 export {default as CuiSecondaryTabsMenu} from './cui/components/CuiMenuByBarExperiment/components/SecondaryTabsMenu/SecondaryTabsMenu'
 export {default as CuiTabsMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/TabsMenuExperiment/TabsMenu'
 export {default as CuiDropdownMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/DropdownMenuExperiment/DropdownMenu'
+export {default as CuiBottomSheet} from './cui/components/CuiBottomSheet/CuiBottomSheet'
 
 // Utils
 export {urlParams} from './utils/urlParams'

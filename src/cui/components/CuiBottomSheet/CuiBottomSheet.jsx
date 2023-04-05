@@ -36,7 +36,7 @@ const BottomSheet = ({children, className = ''}) => {
   )
 }
 
-export const CuiBottomSheet = ({isOpen, ...props}) => {
+const CuiBottomSheet = ({isOpen, ...props}) => {
   const [delayedIsOpen, setIsOpen] = useState(isOpen)
 
   useLayoutEffect(() => {
@@ -65,3 +65,5 @@ export const CuiBottomSheet = ({isOpen, ...props}) => {
 
 CuiBottomSheet.Header = Header
 CuiBottomSheet.Body = Body
+
+export default CuiBottomSheet
