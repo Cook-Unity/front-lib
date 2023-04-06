@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cui-spinner {
+  animation: rotate 2s linear infinite;
+}
+
+.cui-spinner__circle {
+  fill: none;
+  stroke: $cui-black-color;
+  stroke-linecap: round;
+  stroke-width: 4;
+  animation: dash 1.5s ease-in-out infinite;
+}

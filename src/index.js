@@ -85,6 +85,7 @@ export {default as CuiSecondaryTabsMenu} from './cui/components/CuiMenuByBarExpe
 export {default as CuiTabsMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/TabsMenuExperiment/TabsMenu'
 export {default as CuiDropdownMenuExperiment} from './cui/components/CuiMenuByBarExperiment/components/DropdownMenuExperiment/DropdownMenu'
 export {default as CuiBottomSheet} from './cui/components/CuiBottomSheet/CuiBottomSheet'
+export {default as CuiSpinner} from './cui/components/CuiSpinner/CuiSpinner'
 
 // Utils
 export {urlParams} from './utils/urlParams'
