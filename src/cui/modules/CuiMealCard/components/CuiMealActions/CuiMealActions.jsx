@@ -18,16 +18,17 @@ const CuiMealActions = ({
 }) => {
   const [showTooltip, setShowTooltip] = useState(false)
   const [showCartControllers, setShowCartControllers] = useState(false)
-  const showAddButton = isEditable && quantity < meal.stock
+  const addButtonEnabled = isEditable && quantity < meal.stock
+  const removeButtonEnabled = isEditable && quantity > 0
   const selected = quantity > 0
 
   const handleAddItem = () => {
-    if (!isEditable) return
+    if (!addButtonEnabled) return
     setShowCartControllers(true)
-    if (showAddButton) add(meal, index)
+    add(meal, index)
   }
   const handleRemoveItem = () => {
-    if (!isEditable) return
+    if (!removeButtonEnabled) return
     setShowCartControllers(true)
     remove(meal, index)
   }
@@ -48,25 +49,29 @@ const CuiMealActions = ({
         color="dark"
         className="cui-meal-actions__button-add"
       >
-        <div
+        <button
           className={classNames(
             'cui-meal-actions__control',
-            'cui-meal-actions__control-remove'
+            'cui-meal-actions__control-remove',
+            {'cui-meal-actions__control-disabled': !removeButtonEnabled}
           )}
-          onClick={() => quantity && handleRemoveItem()}
+          disabled={!removeButtonEnabled}
+          onClick={() => handleRemoveItem()}
         >
           <span>-</span>
-        </div>
+        </button>
         <span className="cui-meal-actions__control-qty">{quantity}</span>
-        <div
+        <button
           className={classNames(
             'cui-meal-actions__control',
-            'cui-meal-actions__control-add'
+            'cui-meal-actions__control-add',
+            {'cui-meal-actions__control-disabled': quantity >= meal.stock}
           )}
-          onClick={() => showAddButton && handleAddItem()}
+          disabled={!addButtonEnabled}
+          onClick={() => handleAddItem()}
         >
           <span>+</span>
-        </div>
+        </button>
       </CuiButton>
     )
   }
