@@ -44,16 +44,16 @@ const CuiBottomSheet = ({isOpen, ...props}) => {
     if (isOpen) {
       setIsOpen(isOpen)
       timeout = setTimeout(() => {
-        document.body.classList.add('cui-bottom-sheet--open')
+        document.body.classList.add('cui-bottom-sheet--opened')
       }, 0)
     } else {
-      document.body.classList.remove('cui-bottom-sheet--open')
+      document.body.classList.remove('cui-bottom-sheet--opened')
       timeout = setTimeout(() => {
         setIsOpen(isOpen)
       }, 500)
     }
     return () => {
-      document.body.classList.remove('cui-bottom-sheet--open')
+      document.body.classList.remove('cui-bottom-sheet--opened')
       clearTimeout(timeout)
     }
   }, [isOpen])
