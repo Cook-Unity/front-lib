@@ -7,21 +7,24 @@ body.cui-bottom-sheet--open {
     filter: blur(4px);
   }
   
-  .cui-bottom-sheet {
-    .cui-bottom-sheet__sheet {
-      transform: translateY(0);
-    }
+  .cui-bottom-sheet__sheet.ReactModal__Content--after-open {
+    transform: translateY(0);
+  }
 
-    .cui-bottom-sheet__overlay {
-      opacity: 1;
-    }
+  .cui-bottom-sheet__overlay.ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+
+  .cui-bottom-sheet__sheet.ReactModal__Content--before-close {
+    transform: translateY(100%);
+  }
+
+  .cui-bottom-sheet__overlay.ReactModal__Overlay--before-close {
+    opacity: 0;
   }
 }
 
 .cui-bottom-sheet {
-  position: fixed;
-  inset: 0px;
-
   .cui-bottom-sheet__overlay {
     position: fixed;
     inset: 0px;
