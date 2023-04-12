@@ -1,0 +1,103 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+@import '../../styles/mixins/media';
+
+.category-header-desktop {
+	background-color: $cui-black-color-100;
+	color: $cui-black-color;
+	border-radius: 16px 16px 0px 0px;
+	padding: 16px;
+	display: flex;
+	align-items: flex-start;
+	gap: 24px;
+	@include mobile {
+		display: none;
+	}
+}
+
+.category-header-mobile {
+	background-color: $cui-black-color-100;
+	color: $cui-black-color;
+	border-radius: 24px 24px 0px 0px;;
+	padding: 16px;
+	flex-direction: column;
+	gap: 0px;
+	display: none;
+	@include mobile {
+		display: flex;
+	}
+}
+
+.category-header__img img{
+	width: 120px;
+	height: 120px;
+	border-radius: 8px;
+	object-fit: cover;
+	@include mobile {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+.category-header__details {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	@include mobile {
+		flex-direction: row;
+	}
+	&-name {
+		@include font-build(
+			$cui-font-family-source-serif,
+			$cui-font-xl,
+			$cui-line-height-3xl,
+			$cui-font-bold
+		);
+		@include mobile {
+			font-size: $cui-font-base;
+			line-height: 22px;
+		}
+	}
+	&-title {
+		@include font-build(
+			$cui-font-family-source-serif,
+			$cui-font-4xl,
+			$cui-line-height-5xl,
+			$cui-font-bold
+		);
+		@include mobile {
+			font-size: $cui-font-2xl;
+			line-height: 32px;
+			margin-bottom: 8px;
+		}
+	}
+	&-description {
+		@include font-build(
+			$cui-font-family-tt-norms,
+			$cui-font-base,
+			$cui-line-height-2xl,
+			$cui-font-normal
+		);
+		@include mobile {
+			font-size: $cui-font-xs;
+			line-height: $cui-line-height-base;
+		}
+	}
+	&-items {
+		@include font-build(
+			$cui-font-family-tt-norms,
+			$cui-font-xs,
+			$cui-line-height-base,
+			$cui-font-normal
+		);
+		@include mobile {
+			font-size: $cui-font-xxs;
+			line-height: $cui-line-height-xs;
+		}
+	}
+	&-section {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+}
