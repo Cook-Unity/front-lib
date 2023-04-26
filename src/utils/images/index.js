@@ -1,4 +1,4 @@
-export function webpSupport() {
+export const webpSupport = () => {
   return new Promise(resolve => {
     let hasWebP = false
     const img = new window.Image()
@@ -13,3 +13,6 @@ export function webpSupport() {
       'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAQAAAAfQ//73v/+BiOh/AAA='
   })
 }
+
+export const fullImagePath = filename =>
+  `https://static.cookunity.com/cross/front-lib/images/${filename}`
