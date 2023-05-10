@@ -14,10 +14,6 @@ export default {
         options: ['button', 'icon']
       },
       defaultValue: 'icon'
-    },
-    v2: {
-      control: 'boolean',
-      defaultValue: false
     }
   }
 }
