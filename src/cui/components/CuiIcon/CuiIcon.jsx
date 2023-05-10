@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, {useEffect, useState} from 'react'
 
-import {icons} from './icons'
+import {icons, iconsV2} from './icons'
 import './CuiIcon.scss'
 
 export const iconContent = new Map()
@@ -36,13 +36,20 @@ export const getSvgContent = url => {
   return req
 }
 
-const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
+const CuiIcon = ({
+  name,
+  path,
+  role = 'icon',
+  className,
+  onClick,
+  v2 = false
+}) => {
   const [svg, setSvg] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isErrored, setIsErrored] = useState(false)
 
   useEffect(() => {
-    const url = path || icons[name]
+    const url = path || (v2 ? iconsV2[name] : icons[name])
     if (!url) {
       console.error('Icon not found')
       return
@@ -52,7 +59,7 @@ const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
       .then(() => setSvg(iconContent.get(url)))
       .catch(setIsErrored)
       .then(() => setIsLoaded(true))
-  }, [name, path])
+  }, [name, path, v2])
 
   const onClickHandle = event => {
     if (onClick) {

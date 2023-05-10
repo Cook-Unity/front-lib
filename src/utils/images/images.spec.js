@@ -1,4 +1,5 @@
-import {webpSupport} from '.'
+import {fullIconPath, fullImagePath, webpSupport} from '.'
+
 describe('webpSupport', () => {
   const imgMock = {
     width: null,
@@ -31,5 +32,28 @@ describe('webpSupport', () => {
 
     const result = await resultPromise
     expect(result).toBe(false)
+  })
+})
+
+describe('fullImagePath', () => {
+  it('returns the full URL of an image', () => {
+    const filename = 'image.jpg'
+    const expectedURL =
+      'https://static.cookunity.com/cross/front-lib/images/image.jpg'
+
+    const result = fullImagePath(filename)
+
+    expect(result).toEqual(expectedURL)
+  })
+})
+
+describe('fullIconPath', () => {
+  it('returns the full URL of an icon', () => {
+    const filename = 'icon.svg'
+    const expectedURL = 'https://statics.cookunity.com/icons/icon.svg'
+
+    const result = fullIconPath(filename)
+
+    expect(result).toEqual(expectedURL)
   })
 })

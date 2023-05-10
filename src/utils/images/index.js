@@ -16,3 +16,6 @@ export const webpSupport = () => {
 
 export const fullImagePath = filename =>
   `https://static.cookunity.com/cross/front-lib/images/${filename}`
+
+export const fullIconPath = filename =>
+  `https://statics.cookunity.com/icons/${filename}`
