@@ -114,6 +114,7 @@ export const icons = {
   checkmarkCircle: fullIconPath('checkmark-circle.svg'),
   checkmarkCircle2: fullIconPath('checkmark-circle-2.svg'),
   chevronDown: fullIconPath('chevron-down.svg'),
+  chevronLeft: fullIconPath('chevron-left.svg'),
   chevronRight: fullIconPath('chevron-right.svg'),
   chevronUp: fullIconPath('chevron-up.svg'),
   clock: fullIconPath('clock.svg'),

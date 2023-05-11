@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import './TabsMenu.scss'
-
-const images_url = 'https://static.cookunity.com/cross/front-lib/icons/'
+import {fullIconPath} from '../../../../../utils/images'
 
 const TabsMenuExperiment = ({
   tabsItems,
@@ -28,8 +27,8 @@ const TabsMenuExperiment = ({
     setScrollPosition(ref.current.scrollLeft)
   }
 
-  const showLeftArrow = scrollPosition > 0
-  const showRightArrow = scrollPosition < scrollWidth
+  const showLeftArrow = true
+  const showRightArrow = true
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -102,7 +101,7 @@ const TabsMenuExperiment = ({
             className={classnames('cui-tabs-container-exp__button')}
             onClick={() => handleClickButton(false)}
           >
-            <img src={images_url + 'chevron-left.svg'} alt="chevron left" />
+            <img src={fullIconPath('chevron-left.svg')} alt="chevron left" />
           </div>
         </div>
       )}
@@ -114,7 +113,7 @@ const TabsMenuExperiment = ({
             className={classnames('cui-tabs-container-exp__button')}
             onClick={() => handleClickButton(true)}
           >
-            <img src={images_url + 'chevron-right.svg'} alt="chevron right" />
+            <img src={fullIconPath('chevron-right.svg')} alt="chevron right" />
           </div>
         </div>
       )}

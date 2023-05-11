@@ -2,8 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import './SecondaryTabsMenu.scss'
-
-const images_url = 'https://static.cookunity.com/cross/front-lib/icons/'
+import {fullIconPath} from '../../../../../utils/images'
 
 const SecondaryTabsMenu = ({
   tabsItems,
@@ -97,7 +96,7 @@ const SecondaryTabsMenu = ({
             className={classnames('cui-secondary-tabs__button')}
             onClick={() => handleClickButton(false)}
           >
-            <img src={images_url + 'chevron-left.svg'} alt="chevron left" />
+            <img src={fullIconPath('chevron-left.svg')} alt="chevron left" />
           </div>
         </div>
       )}
@@ -107,7 +106,7 @@ const SecondaryTabsMenu = ({
             className={classnames('cui-secondary-tabs__button')}
             onClick={() => handleClickButton(true)}
           >
-            <img src={images_url + 'chevron-right.svg'} alt="chevron right" />
+            <img src={fullIconPath('chevron-right.svg')} alt="chevron right" />
           </div>
         </div>
       )}
