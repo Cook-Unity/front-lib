@@ -27,8 +27,8 @@ const TabsMenuExperiment = ({
     setScrollPosition(ref.current.scrollLeft)
   }
 
-  const showLeftArrow = true
-  const showRightArrow = true
+  const showLeftArrow = scrollPosition > 0
+  const showRightArrow = scrollPosition < scrollWidth
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
