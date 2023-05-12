@@ -3,6 +3,7 @@
 .cui-tooltip {
   display: inline-block;
   position: relative;
+
   .tip {
     font-family: $cui-font-family-tt-norms;
     font-weight: $cui-font-normal;
@@ -14,7 +15,7 @@
     padding: 16px;
     background-color: $cui-black-color;
     transition-property: transform, opacity;
-    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 150ms;
     white-space: nowrap;
     margin-top: 12px;
@@ -24,7 +25,7 @@
       font-size: $cui-font-xs;
       line-height: $cui-line-height-base;
     }
-    
+
     a {
       color: $cui-white-color;
     }
@@ -39,14 +40,43 @@
     }
     &.open {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(-10px);
       pointer-events: all;
     }
     &.close {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(-10px);
       // Since the tooltip is always present this prevents clics on the invisible tooltip to open it.
       pointer-events: none;
+    }
+  }
+  &__left {
+    display: flex;
+
+    .tip {
+      top: -16px;
+      left: 34px;
+
+      &:after {
+        border-color: transparent #000 transparent  transparent;
+        left: -15px;
+        bottom: 18px;
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column-reverse;
+    .tip {
+      top: -68px;
+      left: 0px;
+
+      &:after {
+        border-color: #000 transparent transparent  transparent;
+        left: 12px;
+        bottom: -14px;
+      }
     }
   }
 }
