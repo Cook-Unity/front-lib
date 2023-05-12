@@ -35,4 +35,24 @@ const Template = args => (
   </div>
 )
 
+const Template2 = args => (
+  <div className="container">
+    <div>This is our story</div>&nbsp;&nbsp;
+    <CuiTooltip tip={<div>{copy} </div>} {...args}>
+      {/* Children needs to be a block element like div, otherwise you have to override the margin-top attr */}
+      <CuiIcon name="infoEmptyCircled" />
+    </CuiTooltip>
+  </div>
+)
+
 export const Default = Template.bind({})
+
+export const LeftMessage = Template2.bind({})
+LeftMessage.args = {
+  left: true
+}
+
+export const TopMessage = Template2.bind({})
+TopMessage.args = {
+  top: true
+}
