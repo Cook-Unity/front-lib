@@ -44,7 +44,7 @@
       pointer-events: all;
     }
     &.close {
-      opacity: 1;
+      opacity: 0;
       transform: translateY(-10px);
       // Since the tooltip is always present this prevents clics on the invisible tooltip to open it.
       pointer-events: none;
