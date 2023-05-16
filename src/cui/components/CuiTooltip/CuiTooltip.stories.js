@@ -49,7 +49,7 @@ export const Default = Template.bind({})
 
 export const LeftMessage = Template2.bind({})
 LeftMessage.args = {
-  left: true
+  right: true
 }
 
 export const TopMessage = Template2.bind({})
