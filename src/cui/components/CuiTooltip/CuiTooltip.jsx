@@ -7,7 +7,7 @@ const CuiTooltip = ({
   tip,
   small,
   startOpened = false,
-  left = false,
+  right = false,
   top = false
 }) => {
   const [isOpen, setIsOpen] = useState(startOpened)
@@ -22,9 +22,10 @@ const CuiTooltip = ({
 
   return (
     <div
-      className={`cui-tooltip ${left ? 'cui-tooltip__left' : ''} ${
-        top ? 'cui-tooltip__top' : ''
-      }`}
+      className={classnames('cui-tooltip', {
+        right,
+        top
+      })}
       onMouseEnter={open}
       onMouseLeave={close}
     >

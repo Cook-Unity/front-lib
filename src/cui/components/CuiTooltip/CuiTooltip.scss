@@ -4,6 +4,36 @@
   display: inline-block;
   position: relative;
 
+  &.right {
+    display: flex;
+
+    .tip {
+      top: -16px;
+      left: 34px;
+
+      &:after {
+        border-color: transparent #000 transparent transparent;
+        left: -15px;
+        bottom: 18px;
+      }
+    }
+  }
+
+  &.top {
+    display: flex;
+    flex-direction: column-reverse;
+    .tip {
+      top: -68px;
+      left: 0px;
+
+      &:after {
+        border-color: #000 transparent transparent transparent;
+        left: 12px;
+        bottom: -14px;
+      }
+    }
+  }
+
   .tip {
     font-family: $cui-font-family-tt-norms;
     font-weight: $cui-font-normal;
@@ -48,35 +78,6 @@
       transform: translateY(-10px);
       // Since the tooltip is always present this prevents clics on the invisible tooltip to open it.
       pointer-events: none;
-    }
-  }
-  &__left {
-    display: flex;
-
-    .tip {
-      top: -16px;
-      left: 34px;
-
-      &:after {
-        border-color: transparent #000 transparent  transparent;
-        left: -15px;
-        bottom: 18px;
-      }
-    }
-  }
-
-  &__top {
-    display: flex;
-    flex-direction: column-reverse;
-    .tip {
-      top: -68px;
-      left: 0px;
-
-      &:after {
-        border-color: #000 transparent transparent  transparent;
-        left: 12px;
-        bottom: -14px;
-      }
     }
   }
 }
