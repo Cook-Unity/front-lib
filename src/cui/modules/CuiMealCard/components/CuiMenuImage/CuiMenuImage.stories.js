@@ -20,6 +20,16 @@ export default {
       control: {
         type: 'text'
       }
+    },
+    primary_image_srcset: {
+      control: {
+        type: 'text'
+      }
+    },
+    secondary_image_srcset: {
+      control: {
+        type: 'text'
+      }
     }
   }
 }

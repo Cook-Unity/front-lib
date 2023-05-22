@@ -11,11 +11,14 @@ const CuiMenuImage = ({
   text,
   secondary_image,
   primary_image,
+  primary_image_srcset,
+  secondary_image_srcset,
   ...props
 }) => {
   const [primaryImage, setPrimaryImage] = useState()
   const [secondaryImage, setSecondaryImage] = useState()
   const [displayImage, setDisplayImage] = useState()
+  const [displaySrcSet, setDisplaySrcSet] = useState(primary_image_srcset)
   const [errorImage, setErrorImage] = useState(false)
 
   const imageComingSoon = /no_selection|no-image|null|undefined/.test(
@@ -42,10 +45,12 @@ const CuiMenuImage = ({
 
   const handleImageMouseEnter = () => {
     setDisplayImage(secondaryImage)
+    setDisplaySrcSet(secondary_image_srcset)
   }
 
   const handleImageMouseLeave = () => {
     setDisplayImage(primaryImage)
+    setDisplaySrcSet(primary_image_srcset)
   }
 
   const handleOnErrorImage = () => {
@@ -60,6 +65,7 @@ const CuiMenuImage = ({
       )}
       <img
         src={displayImage}
+        srcSet={displaySrcSet}
         alt="Meal"
         loading="lazy"
         className={classnames('cui-menu-image__img', {
