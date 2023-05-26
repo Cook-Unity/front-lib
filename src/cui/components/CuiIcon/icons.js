@@ -94,7 +94,10 @@ export const CuiIconNames = {
       'warning',
       'youVeTried',
       'yourTopRated',
-      'moreCircle'
+      'moreCircle',
+      'plusCircle',
+      'calendarArrowLeft',
+      'calendarArrowRight'
     ]
   },
   defaultValue: 'heart'
@@ -203,5 +206,8 @@ export const icons = {
   warning: fullIconPath('warning-icon.svg'),
   youVeTried: fullIconPath('you_ve-tried.svg'),
   yourTopRated: fullIconPath('your-top-rated.svg'),
-  moreCircle: fullIconPath('more-circle.svg')
+  moreCircle: fullIconPath('more-circle.svg'),
+  plusCircle: fullIconPath('plus-circle.svg'),
+  calendarArrowLeft: fullIconPath('calendar-arrow-left.svg'),
+  calendarArrowRight: fullIconPath('calendar-arrow-right.svg')
 }
