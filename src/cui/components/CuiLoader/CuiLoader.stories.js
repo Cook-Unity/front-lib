@@ -13,8 +13,18 @@ export default {
   }
 }
 
-const Template = args => <div style={{'display': 'flex', 'align-items': 'center', 'justify-content': 'center', 'width': '100%', 'height': '100vh'}}>
-  <CuiLoader  {...args} />
-</div>
+const Template = args => (
+  <div
+    style={{
+      display: 'flex',
+      'align-items': 'center',
+      'justify-content': 'center',
+      width: '100%',
+      height: '100vh'
+    }}
+  >
+    <CuiLoader {...args} />
+  </div>
+)
 
 export const Default = Template.bind({})
