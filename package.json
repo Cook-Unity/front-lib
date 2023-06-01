@@ -1,6 +1,6 @@
 {
   "name": "front-lib",
-  "version": "2.4.11",
+  "version": "2.5.3",
   "description": "CookUnity React Library",
   "author": "Luis Giribone",
   "license": "MIT",
@@ -84,7 +84,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "lottie-react": "^2.3.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.27.1",
     "react-copy-to-clipboard": "^5.1.0",
