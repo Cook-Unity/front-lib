@@ -172,6 +172,8 @@ export const icons = {
   orders4: fullIconPath('orders-4.svg'),
   paleo: fullIconPath('paleo.svg'),
   percent: fullIconPath('percent.svg'),
+  pescatarian: fullIconPath('pescatarianDiet.svg'),
+  pescatarianDiet: fullIconPath('pescatarianDiet.svg'),
   plantBased: fullIconPath('plant-based.svg'),
   plus: fullIconPath('plus.svg'),
   pork: fullIconPath('pork.svg'),
