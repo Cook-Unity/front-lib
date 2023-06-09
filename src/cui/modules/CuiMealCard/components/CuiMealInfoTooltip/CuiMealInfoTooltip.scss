@@ -1,0 +1,36 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/fonts";
+
+.cui-meal-actions__tooltip-info{
+	height: 15px;
+	opacity: 0.8;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.cui-meal-actions__tooltip {
+	display: inline-block;
+	position: relative;
+	.content {
+		@include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+		color: $cui-white-color;
+		position: absolute;
+		border-radius: 4px;
+		right: -13px;
+		padding: 8px;
+		width: 210px;
+		margin-top: 12px;
+		background-color: $cui-black-color;
+		z-index: 4;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			right: 12px;
+			margin-left: -8px;
+			border-width: 8px;
+			border-style: solid;
+			border-color: transparent transparent $cui-black-color transparent;
+		}
+	}
+}

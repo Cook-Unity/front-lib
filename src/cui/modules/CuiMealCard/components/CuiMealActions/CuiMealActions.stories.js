@@ -4,7 +4,12 @@ import CuiMealActions from './CuiMealActions'
 
 export default {
   title: 'Cui / Modules / CuiMealCard / Components / CuiMealActions',
-  component: CuiMealActions
+  component: CuiMealActions,
+  argTypes: {
+    tooltipText: {
+      defaultValue: 'ASD'
+    }
+  }
 }
 
 const Template = args => <CuiMealActions {...args} />
