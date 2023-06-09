@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 import React, {useState, useEffect} from 'react'
 import {CONTROLLERS_OPENED_MS} from './constants'
-import images from '../../../../../assets/images'
 import CuiButton from '../../../../components/CuiButton/CuiButton'
+import CuiMealInfoTooltip from '../CuiMealInfoTooltip/CuiMealInfoTooltip'
+
 import './CuiMealActions.scss'
 
 const CuiMealActions = ({
@@ -97,19 +98,7 @@ const CuiMealActions = ({
   return (
     <div className="cui-meal-actions" {...props}>
       {showCartControllers ? cartControllers() : cartAddButton()}
-      {tooltipText && (
-        <div
-          className="cui-meal-actions__tooltip"
-          onClick={() => setShowTooltip(showTooltip => !showTooltip)}
-        >
-          <img
-            src={images.infoBlack}
-            className="cui-meal-actions__tooltip-info"
-            alt="info"
-          />
-          {showTooltip && <div className="content">{tooltipText}</div>}
-        </div>
-      )}
+      {tooltipText && <CuiMealInfoTooltip tooltipText={tooltipText} />}
     </div>
   )
 }
