@@ -25,7 +25,12 @@
             text-decoration: underline;
             font-weight: $cui-font-bold;
             font-size: $cui-font-base;
+
         }
+    }
+
+    .cui-meal-description, .cui-meal-image, .cui-item {
+        cursor: pointer;
     }
 
     & &-tags {
