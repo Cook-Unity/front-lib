@@ -6,6 +6,7 @@
     border-radius: 8px;
     position: relative;
     z-index: $z-0;
+    cursor: pointer;
 
     &-row {
         flex-direction: row;
@@ -27,10 +28,6 @@
             font-size: $cui-font-base;
 
         }
-    }
-
-    .cui-meal-description, .cui-meal-image, .cui-item {
-        cursor: pointer;
     }
 
     & &-tags {
