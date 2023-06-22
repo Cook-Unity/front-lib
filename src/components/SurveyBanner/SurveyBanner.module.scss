@@ -1,5 +1,6 @@
 @import '../../assets/styles/scss/mixins';
 @import '../../assets/styles/scss/variables';
+@import '../../cui/styles/variables';
 
 .surveyCard {
   box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.06),
@@ -8,7 +9,7 @@
   padding: 16px;
 
   &.surveyStart {
-    background: $cookunity-secondary-blue;
+    background: $cui-light-blue-700;
     color: $cookunity-white;
   }
 
