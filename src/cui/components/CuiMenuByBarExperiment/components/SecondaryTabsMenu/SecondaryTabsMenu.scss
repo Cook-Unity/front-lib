@@ -50,6 +50,15 @@
         filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(93deg) brightness(109%) contrast(104%);
       }
     }
+
+    &.disabled {
+      color: $cui-black-color-300;
+      cursor: not-allowed;
+      .svg {
+        filter: invert(73%) sepia(1%) saturate(16%) hue-rotate(331deg) brightness(95%) contrast(82%);
+      }
+      
+    }
   }
 
   &__item:last-child {

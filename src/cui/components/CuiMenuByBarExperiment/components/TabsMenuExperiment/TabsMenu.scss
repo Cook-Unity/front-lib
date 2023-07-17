@@ -108,6 +108,15 @@
       }
     }
 
+    &.disabled {
+      color: $cui-black-color-300;
+      cursor: not-allowed;
+      .svg {
+        filter: invert(73%) sepia(1%) saturate(16%) hue-rotate(331deg) brightness(95%) contrast(82%);
+      }
+      
+    }
+
     &-img-container {
       width: 100%;
       justify-content: center;
