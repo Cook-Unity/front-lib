@@ -13,7 +13,8 @@
     {
       "id": 2,
       "name": "Favorites",
-      "image": "https://static.cookunity.com/cross/front-lib/icons/favorites.svg"
+      "image": "https://static.cookunity.com/cross/front-lib/icons/favorites.svg",
+      "disabled": true
     },
     {
       "id": 3,
@@ -25,7 +26,8 @@
     {
       "id": 0,
       "name": "Mediterranean",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mediterranean.png"
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mediterranean.png",
+      "disabled": true
     },
     {
       "id": 1,

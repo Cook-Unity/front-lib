@@ -4,7 +4,7 @@ import TabsMenu from './TabsMenu'
 import data from './data.mock.json'
 
 export default {
-  title: 'Cui / modules / CuiTabsMenu',
+  title: 'Cui / modules / CuiTabsMenuExperiment',
   component: TabsMenu
 }
 

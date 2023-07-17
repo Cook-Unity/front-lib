@@ -63,10 +63,11 @@ const TabsMenuExperiment = ({
           <li
             key={tabItem.id}
             className={classnames('cui-tabs-container-exp__item', {
-              selected: isSelected(tabItem)
+              selected: isSelected(tabItem),
+              disabled: tabItem.disabled
             })}
             data-testid="tab-item"
-            onClick={() => handleOnClick(tabItem)}
+            onClick={() => !tabItem.disabled && handleOnClick(tabItem)}
             ref={isSelected(tabItem) ? selectedRef : null}
           >
             <div className="cui-tabs-container-exp__item-img-container">
