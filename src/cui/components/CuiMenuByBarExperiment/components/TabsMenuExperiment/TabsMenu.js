@@ -10,7 +10,8 @@ const TabsMenuExperiment = ({
   selectedTab,
   isScrolling,
   handleOnClick,
-  showNavigation
+  showNavigation,
+  size = 'medium'
 }) => {
   const isSelected = item => item.id === selectedTab.id
   const ref = useRef(null)
@@ -50,9 +51,13 @@ const TabsMenuExperiment = ({
 
   return (
     <div
-      className={classnames('cui-tabs-container-exp', {
-        scrolling: isScrolling
-      })}
+      className={classnames(
+        'cui-tabs-container-exp',
+        `cui-tabs-container-exp-${size}`,
+        {
+          scrolling: isScrolling
+        }
+      )}
     >
       <ul
         className={classnames('cui-tabs-container-exp__tabs')}
@@ -62,10 +67,14 @@ const TabsMenuExperiment = ({
         {tabsItems.map(tabItem => (
           <li
             key={tabItem.id}
-            className={classnames('cui-tabs-container-exp__item', {
-              selected: isSelected(tabItem),
-              disabled: tabItem.disabled
-            })}
+            className={classnames(
+              'cui-tabs-container-exp__item',
+              `cui-tabs-container-exp__item-${size}`,
+              {
+                selected: isSelected(tabItem),
+                disabled: tabItem.disabled
+              }
+            )}
             data-testid="tab-item"
             onClick={() => !tabItem.disabled && handleOnClick(tabItem)}
             ref={isSelected(tabItem) ? selectedRef : null}
@@ -74,10 +83,14 @@ const TabsMenuExperiment = ({
               <img
                 src={tabItem.image}
                 alt="tab-icon"
-                className={classnames('cui-tabs-container-exp__item-img', {
-                  scrolling: isScrolling,
-                  svg: tabItem.image.endsWith('.svg')
-                })}
+                className={classnames(
+                  'cui-tabs-container-exp__item-img',
+                  `cui-tabs-container-exp__item-img-${size}`,
+                  {
+                    scrolling: isScrolling,
+                    svg: tabItem.image.endsWith('.svg')
+                  }
+                )}
                 onError={e => {
                   if (e.target.src !== tabItem.fallbackImage) {
                     e.target.src = tabItem.fallbackImage
