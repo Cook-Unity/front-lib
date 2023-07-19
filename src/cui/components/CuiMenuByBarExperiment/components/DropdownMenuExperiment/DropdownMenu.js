@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react'
 import PropTypes from 'prop-types'
 import images from '../../../../../assets/images'
-import CuiIcon from '../../../CuiIcon/CuiIcon'
 import useOnClickOutside from '../../../../../hooks/useOnClickOutside'
 import './DropdownMenu.scss'
 
@@ -40,10 +39,6 @@ const DropdownMenuExperiment = ({menuItems, handleOnClick, menuSelected}) => {
           <span className="cui-dropdown-menu-exp__button-text">
             {menuSelected.name}
           </span>
-          <CuiIcon
-            name="chevronDown"
-            className="cui-dropdown-menu-exp__button-icon"
-          />
         </div>
       </div>
 
