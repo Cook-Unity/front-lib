@@ -62,10 +62,11 @@ const SecondaryTabsMenu = ({
           <li
             key={tabItem.id}
             className={classnames('cui-secondary-tabs__item', {
-              selected: isSelected(tabItem)
+              selected: isSelected(tabItem),
+              disabled: tabItem.disabled
             })}
             data-testid="tab-item"
-            onClick={() => handleOnClick(tabItem)}
+            onClick={() => !tabItem.disabled && handleOnClick(tabItem)}
             ref={isSelected(tabItem) ? selectedRef : null}
           >
             <img

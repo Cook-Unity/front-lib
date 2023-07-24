@@ -15,6 +15,10 @@
   max-width: 100%;
   min-width: 0;
 
+  &-small {
+    height: 72px;
+  }
+
   &.scrolling {
     height: 73px;
     border-bottom: 0;
@@ -108,6 +112,19 @@
       }
     }
 
+    &.disabled {
+      color: $cui-black-color-300;
+      cursor: not-allowed;
+      .svg {
+        filter: invert(73%) sepia(1%) saturate(16%) hue-rotate(331deg) brightness(95%) contrast(82%);
+      } 
+    }
+
+    &-small {
+      padding: 0px 12px 8px;
+      margin: 0;
+    }
+
     &-img-container {
       width: 100%;
       justify-content: center;
@@ -137,6 +154,11 @@
     object-fit: cover;
 
     &.scrolling {
+      width: 40px;
+      height: 40px;
+    }
+
+    &-small {
       width: 40px;
       height: 40px;
     }

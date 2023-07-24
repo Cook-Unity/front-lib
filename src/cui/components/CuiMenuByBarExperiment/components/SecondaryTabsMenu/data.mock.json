@@ -13,7 +13,8 @@
     {
       "id": 2,
       "name": "Favorites",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/favorites.svg"
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/all/favorites.svg",
+      "disabled": true
     },
     {
       "id": 3,

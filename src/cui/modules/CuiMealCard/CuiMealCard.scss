@@ -6,6 +6,7 @@
     border-radius: 8px;
     position: relative;
     z-index: $z-0;
+    cursor: pointer;
 
     &-row {
         flex-direction: row;
@@ -25,6 +26,7 @@
             text-decoration: underline;
             font-weight: $cui-font-bold;
             font-size: $cui-font-base;
+
         }
     }
 
