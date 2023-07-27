@@ -211,5 +211,13 @@ export const icons = {
   moreCircle: fullIconPath('more-circle.svg'),
   plusCircle: fullIconPath('plus-circle.svg'),
   calendarArrowLeft: fullIconPath('calendar-arrow-left.svg'),
-  calendarArrowRight: fullIconPath('calendar-arrow-right.svg')
+  calendarArrowRight: fullIconPath('calendar-arrow-right.svg'),
+  treeNuts: fullIconPath('tree-nuts.svg'),
+  milk: fullIconPath('milk.svg'),
+  soybeans: fullIconPath('soy-free.svg'),
+  wheat: fullIconPath('wheat.svg'),
+  fish: fullIconPath('fish.svg'),
+  sesameSeeds: fullIconPath('sesame-seeds.svg'),
+  eggs: fullIconPath('eggs.svg'),
+  peanuts: fullIconPath('peanuts.svg')
 }
