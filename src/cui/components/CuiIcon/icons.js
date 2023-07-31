@@ -220,5 +220,5 @@ export const icons = {
   sesameSeeds: fullIconPath('sesame-seeds.svg'),
   eggs: fullIconPath('eggs.svg'),
   peanuts: fullIconPath('peanuts.svg'),
-  crustaceanShellfish: fullIconPath('crustacean-shellfish.svg')
+  crustaceanShellfish: fullIconPath('shellfish.svg')
 }
