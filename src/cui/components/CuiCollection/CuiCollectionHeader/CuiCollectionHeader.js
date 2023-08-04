@@ -33,19 +33,21 @@ const CuiCollectionHeader = ({
           <br />
           {secondPhrase}
         </div>
-        <div className="cui-collection-header__img-container">
-          <img
-            className="cui-collection-header__img"
-            src={image}
-            alt="collection"
-          />
+        {image && (
+          <div className="cui-collection-header__img-container">
+            <img
+              className="cui-collection-header__img"
+              src={image}
+              alt="collection"
+            />
 
-          {updatedWeekly && (
-            <div className="cui-collection-header__title-tag">
-              Updated Weekly
-            </div>
-          )}
-        </div>
+            {updatedWeekly && (
+              <div className="cui-collection-header__title-tag">
+                Updated Weekly
+              </div>
+            )}
+          </div>
+        )}
         <div className="cui-collection-header__title">
           <h1>
             {firstPhrase}
