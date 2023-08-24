@@ -24,7 +24,7 @@
     "test:coverage": "npm run test -- --coverage",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./ -p 6006",
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {

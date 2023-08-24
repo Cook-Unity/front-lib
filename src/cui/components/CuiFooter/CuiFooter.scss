@@ -1,0 +1,224 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fonts";
+@import "../../styles/mixins/media";
+
+.cui-footer {
+    color: $cui-white-color;
+    background-color: $cui-black-color;
+    padding: 55px 30px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+
+    @include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-bold);
+
+    @include big-screen {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr) 190px;
+        grid-template-rows: auto 1fr;
+        padding: 55px 64px 26px;
+    }
+
+    .headline {
+        grid-column: 1/3;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 0;
+
+            @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
+
+            @include big-screen {
+                text-align: left;
+                @include font-build($cui-font-family-source-serif, $cui-font-4xl, $cui-line-height-5xl, $cui-font-bold);
+                // font-family: $cui-font-family-source-serif;
+                & > span {
+                    margin-left: 45px;
+                }
+            }
+        }
+        .subtitle {
+            @include font-build($cui-font-family-avallon, $cui-font-4xl, $cui-line-height-5xl, $cui-font-normal);
+
+            margin-left: 0;
+            text-align: center;
+            margin-top: 16px;
+            transform: rotate(-3.5deg);
+
+            @include big-screen {
+                text-align: left;
+                margin-left: 6px;
+                transform: unset;
+            }
+        }
+    }
+
+    .nav-options {
+        grid-column: 4/6;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        width: 100%;
+        max-width: 230px;
+        margin-bottom: auto;
+        gap: $cui-gutter-medium;
+
+        @include big-screen {
+            gap: ($cui-gutter-medium * 2);
+            max-width: 100%;
+        }
+
+        .nav-option {
+            display: flex;
+            flex: 50%;
+        }
+    }
+
+    .cui-link,
+    .cui-link:hover,
+    .cui-link:focus {
+        padding: 0;
+        border: none;
+    }
+    .cui-link:hover,
+    .cui-link:focus {
+        text-decoration: underline;
+    }
+    a {
+        color: $cui-white-color;
+    }
+    .contact {
+        grid-column-start: 6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 68px;
+        margin-bottom: 48px;
+
+        @include big-screen {
+            align-items: flex-start;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .logo {
+            order: 2;
+            margin-top: $cui-gutter-large;
+
+            @include big-screen {
+                margin-bottom: $cui-gutter-large;
+                margin-top: 0;
+                order: initial;
+                align-items: flex-start;
+            }
+
+            .cui-logo {
+                width: 230px;
+                @include big-screen {
+                    width: 140px;
+                }
+            }
+        }
+
+        .social-networks {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            order: 3;
+
+            @include big-screen {
+                margin-top: 66px;
+            }
+
+            a {
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $cui-white-color;
+                border-radius: 100%;
+            }
+        }
+    }
+    .legals {
+        grid-column: 1/7;
+        grid-row-start: 2;
+        align-items: flex-start;
+
+        @include big-screen {
+            display: grid;
+            gap: 32px;
+            grid-template-columns: repeat(5, 1fr) 190px;
+            grid-template-rows: auto 1fr;
+        }
+    }
+    .stores-badges {
+        grid-column: 1/3;
+        display: flex;
+        flex: 100%;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 26px;
+
+        @include big-screen {
+            gap: 26px;
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+
+        .cui-icon {
+            height: auto;
+            width: 100px;
+        }
+    }
+    .copyright {
+        grid-row-start: 2;
+        grid-column: 1/3;
+        display: flex;
+        gap: 16px;
+        flex: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        @include big-screen {
+            gap: 26px;
+            flex: 1;
+            flex-direction: row;
+        }
+
+        p {
+            font-weight: $cui-font-normal;
+            margin: 0;
+            color: #9c9d9d;
+        }
+    }
+    .repatcha-legal {
+        grid-row-start: 2;
+        grid-column: 4/6;
+        flex: 1;
+        margin-top: 74px;
+        text-align: center;
+        @include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+
+        @include big-screen {
+            margin-top: 0;
+            text-align: left;
+        }
+
+        a {
+            font-weight: $cui-font-bold;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -17,6 +17,10 @@ export default {
       },
       defaultValue: 'dark'
     },
+    homeLink: {
+      control: 'text',
+      defaultValue: '/'
+    },
     showAllyButton: {
       control: 'boolean',
       defaultValue: false
