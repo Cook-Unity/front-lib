@@ -27,7 +27,6 @@ export {default as TabsMenu} from './components/TabsMenu'
 
 // Rebranding
 export {default as CuiAddMeals} from './cui/components/CuiAddMeals/CuiAddMeals'
-export {default as CuiAllyButton} from './cui/components/CuiAllyButton/CuiAllyButton'
 export {default as CuiAvatar} from './cui/components/CuiAvatar/CuiAvatar'
 export {default as CuiBreadcrumb} from './cui/components/CuiBreadcrumb/CuiBreadcrumb'
 export {default as CuiBreadcrumbs} from './cui/components/CuiBreadcrumbs/CuiBreadcrumbs'

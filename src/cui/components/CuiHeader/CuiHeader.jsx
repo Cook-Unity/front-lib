@@ -5,7 +5,6 @@ import CuiButton from '../CuiButton/CuiButton'
 import CuiIcon from '../CuiIcon/CuiIcon'
 import CuiLogo from '../CuiLogo/CuiLogo'
 import './CuiHeader.scss'
-import CuiAllyButton from '../CuiAllyButton/CuiAllyButton'
 
 const CuiHeader = ({
   center,
@@ -16,7 +15,6 @@ const CuiHeader = ({
   showMenu = false,
   showLogo = true,
   showLogin = false,
-  showAllyButton = false,
   showNeedHelp = false,
   showNeedHelpTitle = false,
   homeLink = '/',
@@ -35,7 +33,7 @@ const CuiHeader = ({
           <CuiIcon name="menu" role="button" onClick={handleMenuClick} />
         )}
         {showLogo && (
-          <a className="logo" href={homeLink}>
+          <a className="logo" href={homeLink} title="CookUnity">
             <CuiLogo />
           </a>
         )}
@@ -65,7 +63,6 @@ const CuiHeader = ({
             {showNeedHelpTitle && <span>Need Help?</span>}
           </CuiButton>
         )}
-        {showAllyButton && <CuiAllyButton />}
         {endSecondary}
       </div>
     </header>
