@@ -48,9 +48,7 @@ const socialNetworks = [
 ]
 
 const getHref = (value, baseUrl) =>
-  value.startsWith('http')
-    ? value
-    : `${baseUrl || window?.location?.href}${value}`
+  value.startsWith('http') ? value : `${baseUrl}${value}`
 
 const CuiFooter = ({className, homeLink = '/', baseUrl}) => {
   const year = new Date().getFullYear()
