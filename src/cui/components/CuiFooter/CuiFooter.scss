@@ -30,6 +30,10 @@
             flex-direction: column;
             text-align: center;
             margin: 0;
+            
+            span {
+                color: $cui-white-color;
+            }
 
             @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
 
@@ -195,6 +199,7 @@
         }
 
         p {
+            font-size: $cui-font-sm;
             font-weight: $cui-font-normal;
             margin: 0;
             color: #9c9d9d;

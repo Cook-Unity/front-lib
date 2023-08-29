@@ -18,7 +18,7 @@ export const fullImagePath = filename =>
   `https://static.cookunity.com/cross/front-lib/images/${filename}`
 
 export const fullIconPath = filename => {
-  if (window?.location?.host === 'localhost:6006') {
+  if (process.env.NODE_ENV === 'development') {
     return `http://localhost:6006/public/icons/${filename}`
   }
   return `https://statics.cookunity.com/icons/${filename}`
