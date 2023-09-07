@@ -59,6 +59,10 @@ const CuiImage = ({
   }, [])
 
   useEffect(() => {
+    imageRef.current.src = imageSrc
+  }, [imageSrc])
+
+  const handleErrorImage = () => {
     if (errorImage === false && noImageSrc) {
       if (noImageSrc.startsWith('/')) {
         setImageSrc(
@@ -71,15 +75,6 @@ const CuiImage = ({
         setImageSrc(noImageSrc)
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errorImage])
-
-  useEffect(() => {
-    imageRef.current.src = imageSrc
-  }, [imageSrc])
-
-  const handleErrorImage = () => {
-    setErrorImage(true)
   }
 
   return (
