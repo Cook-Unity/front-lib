@@ -59,7 +59,7 @@ const CuiImage = ({
   }, [])
 
   useEffect(() => {
-    if (errorImage === false && noImageSrc) {
+    if (imageSrc && errorImage === false && noImageSrc) {
       if (noImageSrc.startsWith('/')) {
         setImageSrc(
           buildImageUrl({
