@@ -7,19 +7,46 @@ export default {
   component: CuiImage,
   argTypes: {
     src: {
-      control: 'text',
-      required: true,
-      defaultValue:
-        'https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg'
+      control: 'text'
+    },
+    basePath: {
+      control: 'text'
     },
     title: {
       control: 'text',
       required: true,
       defaultValue: 'Healthy eating,environmentally conscious.'
+    },
+    lazyLoading: {
+      control: {
+        type: 'select',
+        options: ['lazy', 'eager']
+      },
+      defaultValue: 'lazy'
     }
   }
 }
 
 const Template = args => <CuiImage {...args} />
-
 export const Default = Template.bind({})
+Default.args = {
+  src: 'https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg'
+}
+
+const ImagixTemplate = args => <CuiImage {...args} />
+export const Imagix = ImagixTemplate.bind({})
+Imagix.args = {
+  basePath: 'https://cu-media.imgix.net',
+  relativePath:
+    '/media/catalog/product/cache/x1200/s/h/shrimpwithfreshcorngrits-chris-chi.jpg',
+  config: {
+    aspectRatio: '1:1',
+    extras: 'txt=hola!!&txt-align=center-middle&txt-size=100'
+  },
+  noImageSrc:
+    '/media/catalog/product/cache/x1200/g/a/garces-mission-style-beef-burrito.jpeg',
+  srcSetSizes: [
+    {width: 400, size: '2x'},
+    {width: 800, size: '3x'}
+  ]
+}

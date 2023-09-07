@@ -23,3 +23,47 @@ export const fullIconPath = filename => {
   // }
   return `https://statics.cookunity.com/icons/${filename}`
 }
+export const removeDoubleSlashes = str =>
+  str.replace(/(https:\/\/)|(\/{2,})/g, (_, p1) => p1 || '/')
+
+export const buildImageUrl = ({path, width, height, config = {}}) => {
+  const {aspectRatio = null, blur = false, fit = 'crop', extras = null} = config
+  let url = removeDoubleSlashes(path)
+  const params = []
+
+  if (width) {
+    params.push(`w=${width}`)
+  }
+
+  if (height && !aspectRatio) {
+    params.push(`h=${height}`)
+  }
+
+  if (aspectRatio && !height) {
+    params.push(`ar=${aspectRatio}&fit=${fit}`)
+  }
+
+  if (blur) {
+    params.push(`blur=${blur}`)
+  }
+
+  if (params) {
+    if (extras) {
+      params.push(extras + '&auto=format')
+    } else {
+      params.push('auto=format')
+    }
+
+    url = `${url}?${params.join('&')}`
+  }
+
+  if (extras && !params) {
+    url = `${url}?${extras}`
+  }
+
+  if (!extras && !params) {
+    url = `${url}?auto=format`
+  }
+
+  return url
+}
