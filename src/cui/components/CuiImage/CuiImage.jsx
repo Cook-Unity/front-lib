@@ -72,7 +72,7 @@ const CuiImage = ({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errorImage])
+  }, [errorImage, imageSrc])
 
   useEffect(() => {
     imageRef.current.src = imageSrc
