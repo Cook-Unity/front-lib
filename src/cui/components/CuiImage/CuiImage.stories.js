@@ -50,3 +50,20 @@ Imagix.args = {
     {width: 800, size: '3x'}
   ]
 }
+
+const ErrorImageTemplate = args => <CuiImage {...args} />
+export const ErrorImage = ErrorImageTemplate.bind({})
+ErrorImage.args = {
+  basePath: 'https://cu-media.imgix.net',
+  relativePath: '/media/catalog/product/error.jpg',
+  config: {
+    aspectRatio: '1:1',
+    extras: 'txt=Error!!&txt-align=center-middle&txt-size=100'
+  },
+  noImageSrc:
+    '/media/catalog/product/cache/x1200/g/a/garces-mission-style-beef-burrito.jpeg',
+  srcSetSizes: [
+    {width: 400, size: '2x'},
+    {width: 800, size: '3x'}
+  ]
+}

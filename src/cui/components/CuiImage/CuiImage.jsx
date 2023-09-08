@@ -33,6 +33,7 @@ const CuiImage = ({
   const [classStatus, setClassStatus] = useState('')
   const [status, setStatus] = useState(STATUS.IDLE)
   const [imageSrc, setImageSrc] = useState(null)
+  const [imageErrorSrc, setErrorImageSrc] = useState(null)
   const imageRef = useRef()
 
   useEffect(() => {
@@ -66,9 +67,12 @@ const CuiImage = ({
     }
     setStatus(STATUS.LOADING)
     setClassStatus('image-loading')
-    imageRef.current.src = imageSrc
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    imageRef.current.src = imageSrc
+  }, [imageSrc])
 
   const handleLoad = () => {
     if (status === STATUS.IDLE) {
@@ -83,21 +87,19 @@ const CuiImage = ({
 
   const handleError = () => {
     if (status === STATUS.LOADING && noImageSrc) {
-      setClassStatus('image-error')
-      setStatus(STATUS.ERROR)
-
       if (noImageSrc.startsWith('/')) {
-        setImageSrc(
+        setErrorImageSrc(
           buildImageUrl({
             config,
             path: basePath + noImageSrc
           })
         )
       } else {
-        setImageSrc(noImageSrc)
+        setErrorImageSrc(noImageSrc)
       }
 
-      imageRef.current.src = imageSrc
+      setClassStatus('image-error')
+      setStatus(STATUS.ERROR)
     }
 
     if (onError) {
@@ -106,20 +108,16 @@ const CuiImage = ({
   }
 
   return (
-    <>
-      {imageSrc && (
-        <img
-          ref={imageRef}
-          className={classNames('cui-image', className, classStatus)}
-          src={imageSrc}
-          alt={title}
-          onError={handleError}
-          onLoad={handleLoad}
-          loading={lazyLoading}
-          {...props}
-        />
-      )}
-    </>
+    <img
+      ref={imageRef}
+      className={classNames('cui-image', className, classStatus)}
+      src={STATUS.ERROR ? imageErrorSrc : imageSrc}
+      alt={title}
+      onError={handleError}
+      onLoad={handleLoad}
+      loading={lazyLoading}
+      {...props}
+    />
   )
 }
 
