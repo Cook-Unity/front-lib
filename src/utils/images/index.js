@@ -26,20 +26,20 @@ export const fullIconPath = filename => {
 export const removeDoubleSlashes = str =>
   str.replace(/(https:\/\/)|(\/{2,})/g, (_, p1) => p1 || '/')
 
-export const buildImageUrl = ({path, width, height, config = {}}) => {
+export const buildImageUrl = ({path, config = {}}) => {
   const {aspectRatio = null, blur = false, fit = 'crop', extras = null} = config
   let url = removeDoubleSlashes(path)
   const params = []
 
-  if (width) {
-    params.push(`w=${width}`)
+  if (config?.width) {
+    params.push(`w=${config?.width}`)
   }
 
-  if (height && !aspectRatio) {
-    params.push(`h=${height}`)
+  if (config?.height && !aspectRatio) {
+    params.push(`h=${config?.height}`)
   }
 
-  if (aspectRatio && !height) {
+  if (aspectRatio && !config?.height) {
     params.push(`ar=${aspectRatio}&fit=${fit}`)
   }
 

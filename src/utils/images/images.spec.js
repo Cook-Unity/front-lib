@@ -100,8 +100,8 @@ describe('buildImageUrl function', () => {
     const path = 'https://cookunity.com/image/path'
     const width = 400
     const height = 300
-    const config = {}
-    const result = buildImageUrl({path, width, height, config})
+    const config = {width, height}
+    const result = buildImageUrl({path, config})
     expect(result).toBe(
       'https://cookunity.com/image/path?w=400&h=300&auto=format'
     )
@@ -138,7 +138,8 @@ describe('buildImageUrl function', () => {
     const width = 400
     const config = {
       extras: 'q=80',
-      blur: true
+      blur: true,
+      width
     }
     const result = buildImageUrl({path, width, config})
     expect(result).toBe(

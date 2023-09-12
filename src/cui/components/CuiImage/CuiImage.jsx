@@ -40,7 +40,10 @@ const CuiImage = ({
     if (basePath && relativePath) {
       setImageSrc(
         buildImageUrl({
-          config,
+          config: {
+            ...config,
+            width: props?.width
+          },
           path: basePath + relativePath
         })
       )
@@ -54,9 +57,11 @@ const CuiImage = ({
       srcSetSizes.forEach(srcSize => {
         sizes.push(
           `${buildImageUrl({
-            config,
-            path: basePath + relativePath,
-            width: srcSize.width
+            config: {
+              ...config,
+              width: srcSize.width
+            },
+            path: basePath + relativePath
           })} ${srcSize.size}`
         )
       })
@@ -90,7 +95,10 @@ const CuiImage = ({
       if (noImageSrc.startsWith('/')) {
         setErrorImageSrc(
           buildImageUrl({
-            config,
+            config: {
+              ...config,
+              width: props?.width
+            },
             path: basePath + noImageSrc
           })
         )
