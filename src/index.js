@@ -94,4 +94,10 @@ export {urlParams} from './utils/urlParams'
 export {stripHtml} from './utils/string'
 export {sanitizeZipCode} from './utils/zipcode'
 export {device, size, isMobileOrTablet} from './utils/device'
-export {webpSupport, fullImagePath} from './utils/images'
+export {
+  webpSupport,
+  fullImagePath,
+  fullIconPath,
+  removeDoubleSlashes,
+  buildImageUrl
+} from './utils/images'
