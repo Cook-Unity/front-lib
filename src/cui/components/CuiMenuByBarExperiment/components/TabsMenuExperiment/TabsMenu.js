@@ -104,6 +104,14 @@ const TabsMenuExperiment = ({
             >
               {tabItem.name}
             </span>
+            {tabItem.tags &&
+              tabItem.tags.map(tag => (
+                <div className="tab-item-tag-container" key={tag.label}>
+                  <div className="tab-item-tag" style={tag.styles}>
+                    {tag.label}
+                  </div>
+                </div>
+              ))}
           </li>
         ))}
       </ul>

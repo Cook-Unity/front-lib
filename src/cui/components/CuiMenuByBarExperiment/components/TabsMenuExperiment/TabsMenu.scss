@@ -78,6 +78,21 @@
       display: none;
     }
 
+    .tab-item-tag-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      .tab-item-tag {
+        padding: 2px;
+        border-radius: 2px;
+        font-weight: 700;
+        font-family: TT Norms Pro;
+        font-size: 10px;
+      }
+    }
+
     transform: translateY(2px);
     position: relative;
     padding: 0;
