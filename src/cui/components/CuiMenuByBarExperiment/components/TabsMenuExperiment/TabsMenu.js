@@ -100,7 +100,9 @@ const TabsMenuExperiment = ({
             </div>
             <span
               data-testid="span-item"
-              className="cui-tabs-container-exp__item-name"
+              className={`cui-tabs-container-exp__item-name ${
+                tabItem.tags ? '-no-line-height' : ''
+              }`}
             >
               {tabItem.name}
             </span>
