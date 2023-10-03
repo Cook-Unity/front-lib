@@ -47,7 +47,20 @@
     {
       "id": 4,
       "name": "Mexican",
-      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mexican.png"
+      "image": "https://cu-product-media.s3.amazonaws.com/media/menu/cuisines/mexican.png",
+      "tags": [
+        {
+          "label": "20% off",
+          "styles": {
+            "background-color": "#3939D8",
+            "font-size": "10px",
+            "font-style": "normal",
+            "font-weight": 700,
+            "line-height": 10,
+            "color": "#fff"
+          }
+        }
+      ]
     },
     {
       "id": 5,
