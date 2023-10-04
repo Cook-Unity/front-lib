@@ -19,6 +19,10 @@
   );
 
   // Sizes
+  &-xsmall {
+    font-size: $cui-font-tag-xsmall;
+    padding: $cui-space-tag-xsmall $cui-space-tag-small;
+  }
   &-small {
     font-size: $cui-font-tag-small;
     padding: $cui-space-tag-small $cui-space-tag-large;
