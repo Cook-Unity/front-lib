@@ -9,6 +9,7 @@ import './CuiMealActions.scss'
 const CuiMealActions = ({
   priceText,
   tooltipText,
+  strikethroughPrice,
   quantity = 0,
   add,
   remove,
@@ -88,6 +89,7 @@ const CuiMealActions = ({
         }}
       >
         {priceText}
+        {strikethroughPrice && <span className='cui-meal-actions__button___strikethrough__price__text'>{strikethroughPrice}</span>}
         {quantity > 0 && (
           <span className="cui-meal-actions__control-qty">{quantity}</span>
         )}

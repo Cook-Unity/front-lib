@@ -9,6 +9,12 @@
 	margin-top: 16px;
 }
 
+.cui-meal-actions__button___strikethrough__price__text {
+	@include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
+	color: $cui-black-color-400;
+	text-decoration-line: line-through;
+}
+
 .cui-meal-actions__control {
 	flex: 1;
 	@include font-build($cui-font-family-tt-norms, $cui-font-xl, $cui-line-height-xl, $cui-font-bold);
