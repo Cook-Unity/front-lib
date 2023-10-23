@@ -88,6 +88,7 @@ export {default as CuiDropdownMenuExperiment} from './cui/components/CuiMenuByBa
 export {default as CuiBottomSheet} from './cui/components/CuiBottomSheet/CuiBottomSheet'
 export {default as CuiSpinner} from './cui/components/CuiSpinner/CuiSpinner'
 export {default as CuiCategoryHeader} from './cui/components/CuiCategoryHeader/CuiCategoryHeader'
+export {default as CuiRegularMealCard } from './cui/modules/CuiRegularMealCard/CuiRegularMealcard'
 
 // Utils
 export {urlParams} from './utils/urlParams'
