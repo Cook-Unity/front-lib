@@ -1,6 +1,12 @@
+import React from 'react'
 import './CuiRegularMealCardTitle.scss'
 
-const CuiRegularMealCardTitle = ({ title, subtitle, onClick, size = 'medium' }) => {
+const CuiRegularMealCardTitle = ({
+  title,
+  subtitle,
+  onClick,
+  size = 'medium'
+}) => {
   return (
     <div onClick={onClick}>
       <p className={`card-title card-title--${size}`}>{title}</p>
