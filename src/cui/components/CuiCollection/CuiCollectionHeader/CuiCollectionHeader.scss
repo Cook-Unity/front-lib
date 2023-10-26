@@ -80,7 +80,7 @@
     margin: 0;
   }
   h1 {
-    @include font-build($cui-font-family-source-serif, $cui-font-6xl, $cui-line-height-8xl, $cui-font-bold);
+    @include font-build($cui-font-family-rossanova, $cui-font-6xl, $cui-line-height-8xl, $cui-font-bold);
     margin: 0;
     @include mobile {
       display: none
@@ -96,7 +96,7 @@
   display: none;
   @include mobile {
     display: block;
-    @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
+    @include font-build($cui-font-family-tt-norms, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
     color: $cui-white-color;
   }
 }

@@ -45,7 +45,7 @@
   }
 
   h2 {
-    @include font-build($cui-font-family-source-serif, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
+    @include font-build($cui-font-family-tt-norms, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
     display: flex;
     align-items: center;
     margin: 0;
