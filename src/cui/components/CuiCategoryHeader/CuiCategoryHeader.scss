@@ -48,7 +48,7 @@
 	}
 	&-name {
 		@include font-build(
-			$cui-font-family-source-serif,
+			$cui-font-family-tt-norms,
 			$cui-font-xl,
 			$cui-line-height-3xl,
 			$cui-font-bold
@@ -60,7 +60,7 @@
 	}
 	&-title {
 		@include font-build(
-			$cui-font-family-source-serif,
+			$cui-font-family-rossanova,
 			$cui-font-4xl,
 			$cui-line-height-5xl,
 			$cui-font-bold

@@ -63,7 +63,7 @@
 }
 
 .cui-category__title-start {
-  @include font-build($cui-font-family-source-serif, $cui-font-8xl, 75px, $cui-font-bold);
+  @include font-build($cui-font-family-rossanova, $cui-font-8xl, 75px, $cui-font-bold);
   color: $cui-white-color;
 }
 

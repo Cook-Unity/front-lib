@@ -25,7 +25,7 @@
 
 .cui-collection-icon__title-large {
   @include font-build(
-    $cui-font-family-source-serif,
+    $cui-font-family-tt-norms,
     $cui-font-3xl,
     $cui-line-height-4xl,
     $cui-font-bold
@@ -34,7 +34,7 @@
 
 .cui-collection-icon__title-small {
   @include font-build(
-    $cui-font-family-source-serif,
+    $cui-font-family-tt-norms,
     $cui-font-2xl,
     $cui-line-height-3xl,
     $cui-font-bold
