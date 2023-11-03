@@ -63,14 +63,13 @@
 }
 
 .cui-category__title-start {
-  @include font-build($cui-font-family-rossanova, $cui-font-8xl, 75px, $cui-font-bold);
+  @include font-build($cui-font-family-rossanova, $cui-font-6xl, 52px, $cui-font-bold);
   color: $cui-white-color;
 }
 
 .cui-category__title-end {
-  @include font-build($cui-font-family-avallon, $cui-font-9xl, $cui-line-height-9xl, $cui-font-bold);
+  @include font-build($cui-font-family-rossanova, $cui-font-6xl, 52px, $cui-font-bold);
   color: $cui-yellow-color-500;
-  margin-top: -16px;
 }
 
 .cui-category__title-description {
