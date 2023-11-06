@@ -119,7 +119,7 @@ const CuiImage = ({
     <img
       ref={imageRef}
       className={classNames('cui-image', className, classStatus)}
-      src={STATUS.ERROR ? imageErrorSrc : imageSrc}
+      src={status === STATUS.ERROR ? imageErrorSrc : imageSrc}
       alt={title}
       onError={handleError}
       onLoad={handleLoad}
