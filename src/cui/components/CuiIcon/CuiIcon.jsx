@@ -61,7 +61,7 @@ const CuiIcon = ({name, path, role = 'icon', className, onClick}) => {
   }
 
   return (
-    <div
+    <span
       className={classNames(
         'cui-icon',
         `cui-icon-${isLoaded ? 'loaded' : 'loading'}`,
