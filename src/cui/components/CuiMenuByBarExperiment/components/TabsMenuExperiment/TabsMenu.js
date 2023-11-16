@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import './TabsMenu.scss'
-import {fullIconPath} from '../../../../../utils/images'
+import { fullIconPath } from '../../../../../utils/images'
 
 const TabsMenuExperiment = ({
   tabsItems,
@@ -100,10 +100,9 @@ const TabsMenuExperiment = ({
             </div>
             <span
               data-testid="span-item"
-              className={classnames(
-                'cui-tabs-container-exp__item-name',
-                tabItem.tags ? '-no-line-height' : ''
-              )}
+              className={classnames('cui-tabs-container-exp__item-name', {
+                '-no-line-height': tabItem.tags
+              })}
             >
               {tabItem.name}
             </span>
