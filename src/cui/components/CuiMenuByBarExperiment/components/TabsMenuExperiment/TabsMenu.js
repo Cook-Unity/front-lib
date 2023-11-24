@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import './TabsMenu.scss'
-import { fullIconPath } from '../../../../../utils/images'
+import {fullIconPath} from '../../../../../utils/images'
 
 const TabsMenuExperiment = ({
   tabsItems,
