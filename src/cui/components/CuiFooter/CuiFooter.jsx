@@ -22,6 +22,10 @@ const items = [
   {
     label: 'Business Subscription Inquiry ',
     href: 'cookunity-for-organizations'
+  },
+  {
+    label: 'GovX benefits ',
+    href: 'lp/govxverification'
   }
 ]
 const socialNetworks = [
