@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {string, func} from 'prop-types'
-import images from '../../../assets/images'
-
+import images from '../../assets/images/images'
 import './CuiSmartAppBanner.scss'
 import CuiButton from '../CuiButton/CuiButton'
 import {isMobileOrTablet} from '../../../utils/device'

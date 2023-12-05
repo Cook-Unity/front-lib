@@ -1,4 +1,5 @@
-import images from '../../../assets/images'
+// import images from ''
+import images from '../../assets/images/images'
 
 // mealName, mealName, weeks
 

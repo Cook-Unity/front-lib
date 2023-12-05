@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import images from '../../../../../assets/images'
 import './DropdownMenu.scss'
+import images from '../../../../assets/images/images'
 
 const DropdownMenu = ({menuItems, handleOnClick, handleClose}) => {
   const onClickItem = item => {

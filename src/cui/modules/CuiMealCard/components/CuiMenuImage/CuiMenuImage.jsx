@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import React, {useState, useEffect} from 'react'
-import images from '../../../../../assets/images'
 import './CuiMenuImage.scss'
+import images from '../../../../assets/images/images'
 
 const TEXT_COMING_SOON = 'Image coming soon'
 

@@ -1,8 +1,8 @@
 import classnames from 'classnames'
 import React, {useEffect, useState} from 'react'
-import images from '../../../../assets/images'
 import {rounded} from '../../../../utils/number'
 import './CuiMealCarrouselCard.scss'
+import images from '../../../assets/images/images'
 
 export const formatMealRating = stars => stars && rounded(stars, 1)
 

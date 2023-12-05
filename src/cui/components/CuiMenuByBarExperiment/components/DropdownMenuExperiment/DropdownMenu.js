@@ -1,8 +1,8 @@
 import React, {useState, useRef} from 'react'
 import PropTypes from 'prop-types'
-import images from '../../../../../assets/images'
 import useOnClickOutside from '../../../../../hooks/useOnClickOutside'
 import './DropdownMenu.scss'
+import images from '../../../../assets/images/images'
 
 const DropdownMenuExperiment = ({menuItems, handleOnClick, menuSelected}) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
