@@ -4,7 +4,7 @@ import DropdownMenu from './index'
 import data from './__mock__.json'
 
 export default {
-  title: 'DropdownMenu',
+  title: 'Cui / Components / DropdownMenu',
   component: DropdownMenu
 }
 

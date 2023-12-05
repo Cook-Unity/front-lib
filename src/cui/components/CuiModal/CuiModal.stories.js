@@ -3,7 +3,7 @@ import React from 'react'
 import CuiModal from './CuiModal'
 
 export default {
-  title: 'CuiModal',
+  title: 'Cui / Components / CuiModal',
   component: CuiModal
 }
 

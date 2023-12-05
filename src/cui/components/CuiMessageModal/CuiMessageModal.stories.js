@@ -1,7 +1,5 @@
 import React from 'react'
 import CuiMessageModal from './CuiMessageModal'
-import MealImage from '../../../common/MealImage'
-
 import props from './data.mock.js'
 
 export default {
@@ -11,7 +9,7 @@ export default {
 
 const Template = args => (
   <div>
-    <MealImage {...args} /> <CuiMessageModal {...args} />
+    <CuiMessageModal {...args} />
   </div>
 )
 

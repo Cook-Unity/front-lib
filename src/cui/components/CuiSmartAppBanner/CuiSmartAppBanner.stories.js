@@ -3,7 +3,7 @@ import React from 'react'
 import CuiSmartAppBanner from './CuiSmartAppBanner'
 
 export default {
-  title: 'CuiSmartAppBanner',
+  title: 'Cui / Components / CuiSmartAppBanner',
   component: CuiSmartAppBanner
 }
 

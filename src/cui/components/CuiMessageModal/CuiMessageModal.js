@@ -1,7 +1,7 @@
 import React from 'react'
-import Modal from '../../../common/Modal'
 import CuiButton from '../CuiButton/CuiButton'
 import './CuiMessageModal.scss'
+import CuiModal from '../CuiModal/CuiModal'
 
 const CuiMessageModal = ({
   isOpen,
@@ -15,7 +15,7 @@ const CuiMessageModal = ({
   modalContainerId = 'root'
 }) => {
   return (
-    <Modal
+    <CuiModal
       isOpen={isOpen}
       onRequestClose={handleButtonClick}
       modalContainerId={modalContainerId}
@@ -45,7 +45,7 @@ const CuiMessageModal = ({
           </div>
         )}
       </div>
-    </Modal>
+    </CuiModal>
   )
 }
 

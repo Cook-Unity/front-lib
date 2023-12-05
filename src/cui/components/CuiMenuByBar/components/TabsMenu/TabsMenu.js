@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import './TabsMenu.scss'
-import ArrowCircle from '../../../../../common/ArrowCircle'
+import CuiIcon from '../../../CuiIcon/CuiIcon'
 
 const TabsMenu = ({
   tabsItems,
@@ -96,7 +96,7 @@ const TabsMenu = ({
               className={classnames('cui-tabs-container__button')}
               onClick={() => handleClickButton(false)}
             >
-              <ArrowCircle flip />
+              <CuiIcon name="chevronLeft" />
             </div>
           )}
           <div className={classnames('cui-tabs-container__gradient', 'left')} />
@@ -112,7 +112,7 @@ const TabsMenu = ({
               className={classnames('cui-tabs-container__button')}
               onClick={() => handleClickButton(true)}
             >
-              <ArrowCircle />
+              <CuiIcon name="chevronRight" />
             </div>
           )}
         </div>

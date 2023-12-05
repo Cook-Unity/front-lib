@@ -1,6 +1,5 @@
 import React from 'react'
 import CuiMealCardsModal from './CuiMealCardsModal'
-import MealImage from '../../../common/MealImage'
 
 import props from './data.mock.js'
 
@@ -26,7 +25,6 @@ const MockMenuCard = () => (
 
 const Template = args => (
   <div>
-    <MealImage {...args} />x
     <CuiMealCardsModal {...args}>
       {Array(3)
         .fill(null)

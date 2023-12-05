@@ -2,7 +2,7 @@ import {
   meal_new,
   meal_featured,
   meal_basic
-} from '../../../components/MealCard/__mock__'
+} from '../../modules/CuiMealCard/data.mock'
 
 export default {
   title: 'One more thing...',
