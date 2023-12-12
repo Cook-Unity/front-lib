@@ -24,6 +24,15 @@
       opacity: 0;
     }
 
+    &.large {
+      width: 24px;
+      height: 24px;
+      .checkmark {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
     &.checked {
       border: 1px solid $cui-wine-color-500;
       .checkmark {

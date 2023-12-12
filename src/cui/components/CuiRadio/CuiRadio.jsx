@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import styles from './CuiRadio.module.scss'
 
-const CuiRadio = ({name, checked, onClick, children}) => {
+const CuiRadio = ({name, checked, onClick, children, size = 'medium'}) => {
   return (
     <div
       className={classnames(styles.cookunity__input_radio_container)}
@@ -12,7 +12,9 @@ const CuiRadio = ({name, checked, onClick, children}) => {
       <div className={classnames(styles.cookunity__input_container)}>
         <div
           className={classnames(styles.cookunity__input_radio, {
-            [styles.checked]: checked
+            [styles.checked]: checked,
+            [styles.medium]: size === 'medium',
+            [styles.large]: size === 'large'
           })}
         >
           <div className={classnames(styles.checkmark)} />
