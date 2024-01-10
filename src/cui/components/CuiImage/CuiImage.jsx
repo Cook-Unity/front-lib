@@ -91,17 +91,18 @@ const CuiImage = ({
   }
 
   const handleError = () => {
+    let newImageErrorSrc
     if (status === STATUS.LOADING && noImageSrc) {
       if (noImageSrc.startsWith('/')) {
-        setErrorImageSrc(
-          buildImageUrl({
-            config: {
-              ...config,
-              width: props?.width
-            },
-            path: basePath + noImageSrc
-          })
-        )
+        newImageErrorSrc = buildImageUrl({
+          config: {
+            ...config,
+            width: props?.width
+          },
+          path: basePath + noImageSrc
+        })
+
+        setErrorImageSrc(newImageErrorSrc)
       } else {
         setErrorImageSrc(noImageSrc)
       }
@@ -111,7 +112,13 @@ const CuiImage = ({
     }
 
     if (onError) {
-      onError({src, basePath, relativePath, status, imageSrc, imageErrorSrc})
+      onError({
+        src,
+        basePath,
+        relativePath,
+        imageSrc,
+        imageErrorSrc: newImageErrorSrc || noImageSrc
+      })
     }
   }
 
