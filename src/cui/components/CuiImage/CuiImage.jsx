@@ -111,7 +111,7 @@ const CuiImage = ({
     }
 
     if (onError) {
-      onError({imgSrc: imageSrc})
+      onError({src, basePath, relativePath, status, imageSrc, imageErrorSrc})
     }
   }
 
