@@ -1,14 +1,14 @@
 import classNames from 'classnames'
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useState} from 'react'
 import './CuiImage.scss'
 import {buildImageUrl} from '../../../utils/images'
 
 const STATUS = {
-  IDLE: 'IDLE',
   LOADING: 'LOADING',
   LOADED: 'LOADED',
   ERROR: 'ERROR'
 }
+
 const CuiImage = ({
   className,
   src,
@@ -28,88 +28,73 @@ const CuiImage = ({
   },
   onError,
   onLoad,
+  loading,
   ...props
 }) => {
-  const [classStatus, setClassStatus] = useState('')
-  const [status, setStatus] = useState(STATUS.IDLE)
-  const [imageSrc, setImageSrc] = useState(null)
-  const [imageErrorSrc, setErrorImageSrc] = useState(null)
-  const imageRef = useRef()
+  const [status, setStatus] = useState(STATUS.LOADING)
 
-  useEffect(() => {
-    if (basePath && relativePath) {
-      setImageSrc(
-        buildImageUrl({
+  let imageSrc
+  let imageErrorSrc
+  let imageSrcSet
+
+  if (basePath && relativePath) {
+    imageSrc = buildImageUrl({
+      config: {
+        ...config,
+        width: props?.width
+      },
+      path: basePath + relativePath
+    })
+  } else {
+    imageSrc = src
+  }
+
+  if (noImageSrc) {
+    if (noImageSrc.startsWith('/')) {
+      imageErrorSrc = buildImageUrl({
+        config: {
+          ...config,
+          width: props?.width
+        },
+        path: basePath + noImageSrc
+      })
+    } else {
+      imageErrorSrc = noImageSrc
+    }
+  }
+
+  if (srcSetSizes && srcSetSizes.length > 0) {
+    const sizes = []
+
+    srcSetSizes.forEach(srcSize => {
+      sizes.push(
+        `${buildImageUrl({
           config: {
             ...config,
-            width: props?.width
+            width: srcSize.width
           },
           path: basePath + relativePath
-        })
+        })} ${srcSize.size}`
       )
-    } else {
-      setImageSrc(src)
+    })
+
+    if (sizes.length > 0) {
+      imageSrcSet = sizes.join(',')
     }
-
-    if (srcSetSizes && srcSetSizes.length > 0) {
-      const sizes = []
-
-      srcSetSizes.forEach(srcSize => {
-        sizes.push(
-          `${buildImageUrl({
-            config: {
-              ...config,
-              width: srcSize.width
-            },
-            path: basePath + relativePath
-          })} ${srcSize.size}`
-        )
-      })
-
-      if (sizes.length > 0) {
-        imageRef.current.srcset = sizes.join(',')
-      }
-    }
-    setStatus(STATUS.LOADING)
-    setClassStatus('image-loading')
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    imageRef.current.src = imageSrc
-  }, [imageSrc])
+  }
 
   const handleLoad = () => {
-    if (status === STATUS.IDLE) {
+    if (status !== STATUS.ERROR) {
       setStatus(STATUS.LOADED)
-      setClassStatus('image-loaded')
-    }
 
-    if (onLoad) {
-      onLoad()
+      if (onLoad) {
+        onLoad()
+      }
     }
   }
 
   const handleError = () => {
-    let newImageErrorSrc
-    if (status === STATUS.LOADING && noImageSrc) {
-      if (noImageSrc.startsWith('/')) {
-        newImageErrorSrc = buildImageUrl({
-          config: {
-            ...config,
-            width: props?.width
-          },
-          path: basePath + noImageSrc
-        })
-
-        setErrorImageSrc(newImageErrorSrc)
-      } else {
-        setErrorImageSrc(noImageSrc)
-      }
-
-      setClassStatus('image-error')
-      setStatus(STATUS.ERROR)
-    }
+    setStatus(STATUS.ERROR)
 
     if (onError) {
       onError({
@@ -117,20 +102,28 @@ const CuiImage = ({
         basePath,
         relativePath,
         imageSrc,
-        imageErrorSrc: newImageErrorSrc || noImageSrc
+        imageErrorSrc
       })
     }
   }
 
+  if (!imageSrc && status !== STATUS.ERROR) {
+    handleError()
+  }
+
   return (
     <img
-      ref={imageRef}
-      className={classNames('cui-image', className, classStatus)}
+      loading={loading || lazyLoading}
+      className={classNames('cui-image', className, {
+        'image-loading': status === STATUS.LOADING,
+        'image-error': status === STATUS.ERROR,
+        'image-loaded': status === STATUS.LOADED
+      })}
       src={status === STATUS.ERROR ? imageErrorSrc : imageSrc}
       alt={title}
       onError={handleError}
       onLoad={handleLoad}
-      loading={lazyLoading}
+      srcSet={imageSrcSet}
       {...props}
     />
   )
