@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import CuiIcon from '../CuiIcon/CuiIcon'
 import CuiLink from '../CuiLink/CuiLink'
 import CuiLogo from '../CuiLogo/CuiLogo'
@@ -22,10 +22,6 @@ const items = [
   {
     label: 'Business Subscription Inquiry ',
     href: 'cookunity-for-organizations'
-  },
-  {
-    label: 'GovX benefits ',
-    href: 'lp/govxverification'
   }
 ]
 const socialNetworks = [
@@ -56,8 +52,25 @@ const getHref = (value, baseUrl) =>
     ? value
     : `${baseUrl || 'https://cookunity.com/'}${value}`
 
-const CuiFooter = ({className, homeLink = '/', baseUrl}) => {
+const CuiFooter = ({
+  className,
+  homeLink = '/',
+  baseUrl,
+  isGovXEnabled = false
+}) => {
+  const [footerItems, setFooterItems] = useState([])
   const year = new Date().getFullYear()
+
+  useEffect(() => {
+    if (isGovXEnabled) {
+      setFooterItems([
+        ...items,
+        {label: 'GovX benefits', href: 'lp/govxverification'}
+      ])
+    } else {
+      setFooterItems(items)
+    }
+  }, [])
 
   return (
     <footer className={classNames('cui-footer', className)}>
@@ -69,7 +82,7 @@ const CuiFooter = ({className, homeLink = '/', baseUrl}) => {
         <h4 className="subtitle">Nothing boring.</h4>
       </div>
       <ul className="nav-options">
-        {items.map(({label, href, attrs = {}}, index) => (
+        {footerItems.map(({label, href, attrs = {}}, index) => (
           <li key={index} className="nav-option">
             <CuiLink
               color="light"
