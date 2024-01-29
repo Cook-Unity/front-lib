@@ -1,24 +1,24 @@
 import classNames from 'classnames'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import CuiIcon from '../CuiIcon/CuiIcon'
 import CuiLink from '../CuiLink/CuiLink'
 import CuiLogo from '../CuiLogo/CuiLogo'
 import './CuiFooter.scss'
 
 const items = [
-  {label: 'How it works', href: 'how-it-works'},
-  {label: 'Careers', href: 'careers'},
-  {label: 'Why CookUnity', href: 'why-cookunity'},
-  {label: 'Delivery Map', href: 'delivery-map'},
+  { label: 'How it works', href: 'how-it-works' },
+  { label: 'Careers', href: 'careers' },
+  { label: 'Why CookUnity', href: 'why-cookunity' },
+  { label: 'Delivery Map', href: 'delivery-map' },
   {
     label: 'FAQs ',
     href: 'https://support.cookunity.com',
-    attrs: {target: '_blank', rel: 'noopener noreferrer'}
+    attrs: { target: '_blank', rel: 'noopener noreferrer' }
   },
-  {label: 'Gift Card', href: 'gift-cards'},
-  {label: 'Become a chef', href: 'become-a-chef'},
-  {label: 'Sustainability', href: 'sustainability'},
-  {label: 'Blog', href: 'blog'},
+  { label: 'Gift Card', href: 'gift-cards' },
+  { label: 'Become a chef', href: 'become-a-chef' },
+  { label: 'Sustainability', href: 'sustainability' },
+  { label: 'Blog', href: 'blog' },
   {
     label: 'Business Subscription Inquiry ',
     href: 'cookunity-for-organizations'
@@ -82,7 +82,7 @@ const CuiFooter = ({
         <h4 className="subtitle">Nothing boring.</h4>
       </div>
       <ul className="nav-options">
-        {footerItems.map(({label, href, attrs = {}}, index) => (
+        {footerItems.map(({ label, href, attrs = {} }, index) => (
           <li key={index} className="nav-option">
             <CuiLink
               color="light"
@@ -137,10 +137,14 @@ const CuiFooter = ({
         </div>
         <div className="copyright">
           <p>© Copyright {year} CookUnity</p>
-          <CuiLink color="light" fill="clear" href="terms">
+          <CuiLink color="light" fill="clear" href={getHref('terms', baseUrl)}>
             Terms & Conditions
           </CuiLink>
-          <CuiLink color="light" fill="clear" href="privacy-policy">
+          <CuiLink
+            color="light"
+            fill="clear"
+            href={getHref('privacy-policy', baseUrl)}
+          >
             Privacy Policy
           </CuiLink>
         </div>
