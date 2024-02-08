@@ -39,11 +39,14 @@ const TabsMenuExperiment = ({
   // to automatically scroll to the initial selected item by url
   useEffect(() => {
     setTimeout(() => {
-      if (selectedRef && selectedRef.current) {
-        selectedRef.current.scrollIntoView(false)
+      if (ref && ref.current && selectedRef && selectedRef.current) {
+        ref.current.scrollTo({
+          behavior: 'smooth',
+          left: selectedRef.current.offsetLeft - 32
+        })
       }
     }, 1000)
-  }, [selectedTab])
+  }, [selectedTab.id])
 
   return (
     <div
