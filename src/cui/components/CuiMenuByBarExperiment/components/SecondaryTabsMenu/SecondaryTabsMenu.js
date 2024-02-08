@@ -38,11 +38,7 @@ const SecondaryTabsMenu = ({
   useEffect(() => {
     setTimeout(() => {
       if (selectedRef && selectedRef.current) {
-        selectedRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'nearest'
-        })
+        selectedRef.current.scrollIntoView(false)
       }
     }, 1000)
   }, [selectedTab])
