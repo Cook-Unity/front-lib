@@ -34,4 +34,13 @@
       $cui-font-normal
     );
   }
+
+  &-disabled {
+    input[type='checkbox'] {
+      border: 1px solid $cui-black-color-300;
+    }
+    .cui-checkbox-label {
+      color: $cui-black-color-300;
+    }
+  }
 }

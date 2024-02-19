@@ -10,10 +10,17 @@ const CuiCheckbox = ({
   value,
   onChange,
   className,
+  disabled = false,
   children
 }) => {
   return (
-    <div className={classNames('cui-checkbox', className)}>
+    <div
+      className={classNames(
+        'cui-checkbox',
+        {'cui-checkbox-disabled': disabled},
+        className
+      )}
+    >
       <input
         type="checkbox"
         id={id}
@@ -21,6 +28,7 @@ const CuiCheckbox = ({
         value={value}
         checked={checked}
         onChange={onChange}
+        disabled={disabled}
       />
       <span className="cui-checkbox-label">{children}</span>
     </div>
