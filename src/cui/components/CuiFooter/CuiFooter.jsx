@@ -20,7 +20,7 @@ const items = [
   { label: 'Sustainability', href: 'sustainability' },
   { label: 'Blog', href: 'blog' },
   {
-    label: 'Business Subscription Inquiry ',
+    label: 'CookUnity for Business',
     href: 'cookunity-for-organizations'
   }
 ]
