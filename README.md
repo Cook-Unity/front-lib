@@ -149,3 +149,26 @@ Whenever a MR is created the library's pipeline runs the following two jobs:
 - Unit tests
 
 When the pipeline fails, you can retry any failed jobs, or push new commits to fix the failure. Only after the pipeline runs successfully the MR becomes mergeable.
+
+
+## Icons
+
+If you need to upload a new icon, follow these steps:
+
+1. Minify the .svg, ensuring the presence of the `fill` and `viewBox` properties.
+    ```svg
+    fill="currentColor"
+    viewBox="0 0 16 16"
+    ```
+
+2. To test the icon locally, uncomment the following lines in the file `src/utils/images/index.js`. Remember to comment them out again before merging the MR.
+    ```javascript
+    export const fullIconPath = filename => {
+      // if (process.env.NODE_ENV === 'development') {
+      //   return `http://localhost:6006/public/icons/${filename}`
+      // }
+      return `https://statics.cookunity.com/icons/${filename}`
+    }
+    ```
+
+3. Merge the MR and generate a new release to upload the icon.
