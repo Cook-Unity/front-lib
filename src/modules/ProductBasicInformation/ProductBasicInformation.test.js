@@ -12,9 +12,9 @@ import {
 } from '../../components/RatingMeal/RatingMeal'
 
 const defaultProps = {
-  productData: {
-    ...defaultPropsMock.meal,
-    chefId: +defaultPropsMock.meal
+  product: {
+    ...defaultPropsMock,
+    chefId: +defaultPropsMock.chef?.id
   },
   isOrdering: true,
   onClickReviewCount: jest.fn()
@@ -22,27 +22,27 @@ const defaultProps = {
 
 describe('ProductBasicInformation component', () => {
   describe('Checking Product title with correct text', () => {
-    it(`Check than ${defaultProps.productData.name} is contain in the component`, () => {
+    it(`Check than ${defaultProps.product.name} is contain in the component`, () => {
       const renderResult = render(<ProductBasicInformation {...defaultProps} />)
 
       expect(
-        renderResult.queryByText(defaultProps.productData.name)
+        renderResult.queryByText(defaultProps.product.name)
       ).toBeInTheDocument()
     })
 
-    it(`Check than ${defaultProps.productData.stars} stars is contain in the component`, () => {
+    it(`Check than ${defaultProps.product.stars} stars is contain in the component`, () => {
       const renderResult = render(<ProductBasicInformation {...defaultProps} />)
 
-      const parsedStars = parseStartToFloat(defaultProps.productData.stars)
+      const parsedStars = parseStartToFloat(defaultProps.product.stars)
 
       expect(renderResult.queryByText(parsedStars)).toBeInTheDocument()
     })
 
-    it(`Check than ${defaultProps.productData.reviews_count} review counts is contain in the component`, () => {
+    it(`Check than ${defaultProps.product.reviewsCount} review counts is contain in the component`, () => {
       const renderResult = render(<ProductBasicInformation {...defaultProps} />)
 
       const reviewCountText = showTextCountedReviews(
-        defaultProps.productData.reviews_count
+        defaultProps.product.reviewsCount
       )
 
       expect(renderResult.queryByText(reviewCountText)).toBeInTheDocument()
@@ -50,10 +50,10 @@ describe('ProductBasicInformation component', () => {
   })
 
   describe('Checking ProductBasicInformation click actions', () => {
-    it(`Check than ${defaultProps.productData.reviews_count} review counts is clickable`, () => {
+    it(`Check than ${defaultProps.product.reviews_count} review counts is clickable`, () => {
       const renderResult = render(<ProductBasicInformation {...defaultProps} />)
       const reviewCountText = showTextCountedReviews(
-        defaultProps.productData.reviews_count
+        defaultProps.product.reviewsCount
       )
       const optionComponent = renderResult.queryByText(reviewCountText)
 

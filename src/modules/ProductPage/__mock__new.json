@@ -1,0 +1,422 @@
+{
+  "meal": {
+    "url": "https://www.cookunity.com/meals/3153",
+    "urlPath": "sweet-potato-curry",
+    "name": "Sweet Potato Coconut Curry",
+    "image": "https://cu-media.imgix.net/media/catalog/product/cache/x1200/3/6/3635.jpeg",
+    "imagePath": "/media/catalog/product/cache/x600/",
+    "primaryImageUrl": "https://cu-media.imgix.net/media/catalog/product/cache/x1200/3/6/3635.jpeg",
+    "mealStory": "This vegetarian sweet potato curry is absolutely packed with flavor. Chef Marc teamed up with spice master Lior of La Boite to create the curry blend for this dish. Roasted sweet potatoes and farm vegetables in a vibrant coconut curry are served over lemongrass-garlic Jasmine rice with a burst of fresh herbs on top.",
+    "ingredients": [
+      {
+        "componentCode": "blended-oil",
+        "id": 1345,
+        "name": "Blended Oil",
+        "value": "blended-oil"
+      },
+      {
+        "componentCode": "canola-oil",
+        "id": 88,
+        "name": "Canola Oil",
+        "value": "canola-oil"
+      },
+      {
+        "componentCode": "cardamom",
+        "id": 109,
+        "name": "Cardamom",
+        "value": "cardamom"
+      },
+      {
+        "componentCode": "chili-pepper",
+        "id": 1117,
+        "name": "Chili Pepper",
+        "value": "chili-pepper"
+      },
+      {
+        "componentCode": "cilantro",
+        "id": 99,
+        "name": "Cilantro",
+        "value": "cilantro"
+      },
+      {
+        "componentCode": "citric-acid",
+        "id": 841,
+        "name": "Citric Acid",
+        "value": "citric-acid"
+      },
+      {
+        "componentCode": null,
+        "id": 0,
+        "name": "Coconut Extract",
+        "value": "coconut-extract"
+      },
+      {
+        "componentCode": "coconut-milk",
+        "id": 870,
+        "name": "Coconut Milk",
+        "value": "coconut-milk"
+      },
+      {
+        "componentCode": "coriander",
+        "id": 48,
+        "name": "Coriander",
+        "value": "coriander"
+      },
+      {
+        "componentCode": "cumin",
+        "id": 46,
+        "name": "Cumin",
+        "value": "cumin"
+      },
+      {
+        "componentCode": null,
+        "id": 0,
+        "name": "Curry Paste",
+        "value": "curry-paste"
+      },
+      {
+        "componentCode": null,
+        "id": 0,
+        "name": "Galanga",
+        "value": "galanga"
+      },
+      {
+        "componentCode": "galangal",
+        "id": 2298,
+        "name": "Galangal",
+        "value": "galangal"
+      },
+      {
+        "componentCode": "garlic",
+        "id": 31,
+        "name": "Garlic",
+        "value": "garlic"
+      },
+      {
+        "componentCode": "garlic-powder",
+        "id": 247,
+        "name": "Garlic Powder",
+        "value": "garlic-powder"
+      },
+      {
+        "componentCode": "ginger",
+        "id": 111,
+        "name": "Ginger",
+        "value": "ginger"
+      },
+      {
+        "componentCode": "green-beans",
+        "id": 613,
+        "name": "Green Beans",
+        "value": "green-beans"
+      },
+      {
+        "componentCode": "ground-black-pepper",
+        "id": 1254,
+        "name": "Ground Black Pepper",
+        "value": "ground-black-pepper"
+      },
+      {
+        "componentCode": "heavy-cream",
+        "id": 63,
+        "name": "Heavy Cream",
+        "value": "heavy-cream"
+      },
+      {
+        "componentCode": "jasmine-rice",
+        "id": 1498,
+        "name": "Jasmine Rice",
+        "value": "jasmine-rice"
+      },
+      {
+        "componentCode": "kaffir-lime-leaf",
+        "id": 1026,
+        "name": "Kaffir Lime Leaf",
+        "value": "kaffir-lime-leaf"
+      },
+      {
+        "componentCode": "kosher-salt",
+        "id": 36,
+        "name": "Kosher Salt",
+        "value": "kosher-salt"
+      },
+      {
+        "componentCode": "lemon-grass",
+        "id": 872,
+        "name": "Lemon Grass",
+        "value": "lemon-grass"
+      },
+      {
+        "componentCode": "lemongrass",
+        "id": 121,
+        "name": "Lemongrass",
+        "value": "lemongrass"
+      },
+      {
+        "componentCode": "lime-juice",
+        "id": 587,
+        "name": "Lime Juice",
+        "value": "lime-juice"
+      },
+      {
+        "componentCode": "mint",
+        "id": 815,
+        "name": "Mint",
+        "value": "mint"
+      },
+      {
+        "componentCode": "onion-powder",
+        "id": 864,
+        "name": "Onion Powder",
+        "value": "onion-powder"
+      },
+      {
+        "componentCode": "onions",
+        "id": 52,
+        "name": "Onions",
+        "value": "onions"
+      },
+      {
+        "componentCode": null,
+        "id": 0,
+        "name": "Plum Wine",
+        "value": "plum-wine"
+      },
+      {
+        "componentCode": "red-onions",
+        "id": 122,
+        "name": "Red Onions",
+        "value": "red-onions"
+      },
+      {
+        "componentCode": "red-peppers",
+        "id": 221,
+        "name": "Red Peppers",
+        "value": "red-peppers"
+      },
+      {
+        "componentCode": "salt",
+        "id": 207,
+        "name": "Salt",
+        "value": "salt"
+      },
+      {
+        "componentCode": "scallions",
+        "id": 704,
+        "name": "Scallions",
+        "value": "scallions"
+      },
+      {
+        "componentCode": "shallots",
+        "id": 339,
+        "name": "Shallots",
+        "value": "shallots"
+      },
+      {
+        "componentCode": null,
+        "id": 0,
+        "name": "Sodium Metabisulfite",
+        "value": "sodium-metabisulfite"
+      },
+      {
+        "componentCode": null,
+        "id": 0,
+        "name": "Soybean Oil",
+        "value": "soybean-oil"
+      },
+      {
+        "componentCode": "spanish-onions",
+        "id": 1533,
+        "name": "Spanish Onions",
+        "value": "spanish-onions"
+      },
+      {
+        "componentCode": "spices",
+        "id": 1350,
+        "name": "Spices",
+        "value": "spices"
+      },
+      {
+        "componentCode": "sugar",
+        "id": 1343,
+        "name": "Sugar",
+        "value": "sugar"
+      },
+      {
+        "componentCode": "sunflower-oil",
+        "id": 2287,
+        "name": "Sunflower Oil",
+        "value": "sunflower-oil"
+      },
+      {
+        "componentCode": "sweet-potatoes",
+        "id": 934,
+        "name": "Sweet Potatoes",
+        "value": "sweet-potatoes"
+      },
+      {
+        "componentCode": "water",
+        "id": 1352,
+        "name": "Water",
+        "value": "water"
+      },
+      {
+        "componentCode": "zucchini",
+        "id": 429,
+        "name": "Zucchini",
+        "value": "zucchini"
+      }
+    ],
+    "cookingSteps": {
+      "ovenSteps": "1. Preheat oven to 350°F.\n2. Remove sleeve and film.\n3. Heat up for 18-20 mins or until heated thoroughly. Enjoy!\nPro tip: Cover with aluminum foil before heating for best results",
+      "microwaveSteps": "1. Remove sleeve and peel corner of film to vent.\n2. Microwave for 2-3 mins, or until heated thoroughly.\n3. Remove film and enjoy!"
+    },
+    "nutritionalFacts": {
+      "calories": "490",
+      "carbs": "82",
+      "fat": "13",
+      "fiber": "15",
+      "protein": "8",
+      "saturatedFat": "9",
+      "servingSize": "412",
+      "sodium": "1450",
+      "sugar": "26"
+    },
+    "specificationsDetails": [
+      {
+        "image": "https://d3ablwj32fbndj.cloudfront.net/skin/frontend/rwd/default/images/icons/tags/less-than-600-calories.svg",
+        "label": "Less Than 600 calories"
+      },
+      {
+        "image": "https://d3ablwj32fbndj.cloudfront.net/skin/frontend/rwd/default/images/icons/tags/vegan.svg",
+        "label": "Vegan"
+      },
+      {
+        "image": "https://d3ablwj32fbndj.cloudfront.net/skin/frontend/rwd/default/images/icons/tags/soy-free.svg",
+        "label": "Soy Free"
+      },
+      {
+        "image": "https://d3ablwj32fbndj.cloudfront.net/skin/frontend/rwd/default/images/icons/tags/contains-nuts.svg",
+        "label": "Contains Nuts"
+      },
+      {
+        "image": "https://d3ablwj32fbndj.cloudfront.net/skin/frontend/rwd/default/images/icons/tags/gluten-free.svg",
+        "label": "Gluten Free"
+      },
+      {
+        "image": "https://d3ablwj32fbndj.cloudfront.net/skin/frontend/rwd/default/images/icons/tags/dairy-free.svg",
+        "label": "Dairy Free"
+      }
+    ],
+    "userReviews": [
+      {
+        "feedback": null,
+        "createdAt": "2023-08-02T13:37:42.404Z",
+        "customerFirstName": "Fer",
+        "customerLastName": "Cal",
+        "rating": "4"
+      },
+      {
+        "feedback": null,
+        "createdAt": "2023-08-02T13:37:41.313Z",
+        "customerFirstName": "Fer",
+        "customerLastName": "Cal",
+        "rating": "4"
+      },
+      {
+        "feedback": "Amet voluptatem quaerat porro.",
+        "createdAt": "2021-11-03T13:29:45.000Z",
+        "customerFirstName": "Togtev",
+        "customerLastName": "Lanrun",
+        "rating": "4"
+      },
+      {
+        "feedback": "Modi labore quiquia aliquam adipisci aliquam labore etincidunt.",
+        "createdAt": "2021-11-05T13:27:28.000Z",
+        "customerFirstName": "Pitten",
+        "customerLastName": "von Hanmes",
+        "rating": "4"
+      },
+      {
+        "feedback": "Magnam quisquam quisquam est quiquia quaerat velit.",
+        "createdAt": "2021-11-07T01:05:25.000Z",
+        "customerFirstName": "Panben",
+        "customerLastName": "Dinnum",
+        "rating": "4"
+      },
+      {
+        "feedback": "Porro quaerat consectetur aliquam.",
+        "createdAt": "2021-10-25T23:25:13.000Z",
+        "customerFirstName": "Sarryx",
+        "customerLastName": "von Dinmes",
+        "rating": "4"
+      },
+      {
+        "feedback": "Est quaerat sed dolorem voluptatem.",
+        "createdAt": "2021-11-07T01:20:29.000Z",
+        "customerFirstName": "Rillys",
+        "customerLastName": "Tidfer",
+        "rating": "4"
+      },
+      {
+        "feedback": "Dolorem eius aliquam neque est quaerat modi.",
+        "createdAt": "2021-11-03T16:40:08.000Z",
+        "customerFirstName": "Hatbyt",
+        "customerLastName": "Ricluc",
+        "rating": "4"
+      },
+      {
+        "feedback": "Quisquam eius eius non adipisci dolor.",
+        "createdAt": "2021-10-30T23:00:52.000Z",
+        "customerFirstName": "Monweg",
+        "customerLastName": "deHalref",
+        "rating": "4"
+      },
+      {
+        "feedback": "Modi est dolorem etincidunt sed.",
+        "createdAt": "2021-11-16T07:21:14.000Z",
+        "customerFirstName": "Pagnes",
+        "customerLastName": "Molsyr",
+        "rating": "4"
+      },
+      {
+        "feedback": "Dolore quaerat ut aliquam non dolorem amet.",
+        "createdAt": "2021-12-03T22:41:09.000Z",
+        "customerFirstName": "Famseg",
+        "customerLastName": "Hodbes",
+        "rating": "4"
+      },
+      {
+        "feedback": "Quisquam sed adipisci magnam quisquam labore ut tempora.",
+        "createdAt": "2021-12-03T01:18:06.000Z",
+        "customerFirstName": "Magped",
+        "customerLastName": "Harwyt",
+        "rating": "4"
+      },
+      {
+        "feedback": "Modi aliquam quisquam magnam magnam.",
+        "createdAt": "2021-12-27T04:17:28.000Z",
+        "customerFirstName": "Mosrec",
+        "customerLastName": "de la Misryp",
+        "rating": "4"
+      },
+      {
+        "feedback": "Velit ut quaerat eius.",
+        "createdAt": "2021-12-13T21:27:59.000Z",
+        "customerFirstName": "Podres",
+        "customerLastName": "Figteb",
+        "rating": "4"
+      }
+    ],
+    "stars": 4.317,
+    "reviews": 1392,
+    "userRating": null,
+    "chef": {
+      "id": 78459,
+      "lastName": "Forgione",
+      "firstName": "Larry and Marc",
+      "labelImageUrl": "https://chef-service-qa.s3.amazonaws.com/chef-service/chef-brands/26/medias/labels/1704999667501-LABEL.jpeg"
+    },
+    "id": 3153
+  }
+}

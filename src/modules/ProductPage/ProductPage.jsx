@@ -52,6 +52,40 @@ const ProductPage = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const product = {
+    name: productData.name,
+    imageFullUrl:
+      productData.image_full_url ||
+      productData.image ||
+      productData.primaryImageUrl,
+    url: productData.url_path || productData.url,
+    stars: productData.stars,
+    userRating: productData.user_rating || productData.userRating,
+    mealStory: productData.meal_story || productData.mealStory,
+    nutritionalFacts: productData.nutritional_facts,
+    specificationsDetails:
+      productData.specifications_details || productData.specificationsDetail,
+    ingredientsData: productData.ingredients_data || productData.ingredients,
+    cookingSteps: {
+      microwaveSteps:
+        productData.cooking_steps?.microwave_steps ||
+        productData.cookingSteps?.microwaveSteps,
+      ovenSteps:
+        productData.cooking_steps?.oven_steps ||
+        productData.cookingSteps?.ovenSteps
+    },
+    chef: {
+      labelImageUrl:
+        productData.chef_image_url || productData.chef?.labelImageUrl,
+      firstName: productData.chef_firstname || productData.chef?.firstName,
+      lastName: productData.chef_lastname || productData.chef?.lastName,
+      id: productData.chef_id || productData.chef?.id
+    },
+    reviewsCount: productData.reviews_count || productData.reviews,
+    reviewsData: productData.reviews_data || productData.userReviews,
+    ...productData
+  }
+
   const header = () => (
     <div className={styles.header}>
       {modalIsOpen && (
@@ -74,8 +108,8 @@ const ProductPage = ({
       {!isLoading && !isOrdering && (
         <div className={styles.share_container}>
           <Share
-            url={productData.url_path}
-            title={`Enjoy ${productData.name}`}
+            url={product.url}
+            title={`Enjoy ${product.name}`}
             customStyles={{
               socialLinks: styles.socialLinks
             }}
@@ -87,22 +121,19 @@ const ProductPage = ({
 
   const body = () => {
     const ingredients = (
-      <Ingredients
-        ingredients={productData.ingredients_data}
-        withDetails={false}
-      />
+      <Ingredients ingredients={product.ingredientsData} withDetails={false} />
     )
     const finalSteps = (() => {
       const fastInstructions = pathOr(
         null,
-        ['cooking_steps', 'microwave_steps'],
-        productData
+        ['cookingSteps', 'microwaveSteps'],
+        product
       )
 
       const chefInstructions = pathOr(
         null,
-        ['cooking_steps', 'oven_steps'],
-        productData
+        ['cookingSteps', 'ovenSteps'],
+        product
       )
 
       return (
@@ -114,13 +145,13 @@ const ProductPage = ({
     })()
 
     const nutrition = (
-      <NutritionalFacts nutritionalFacts={productData.nutritional_facts} />
+      <NutritionalFacts nutritionalFacts={product.nutritionalFacts} />
     )
 
     const macronutrients = (
       <Macronutrients
-        nutritionalFacts={productData.nutritional_facts}
-        calories={productData.calories}
+        nutritionalFacts={product.nutritionalFacts}
+        calories={product.nutritionalFacts.calories}
       />
     )
 
@@ -129,15 +160,13 @@ const ProductPage = ({
     return (
       <Fragment>
         <ProductBasicInformation
-          productData={productData}
+          product={product}
           onClickReviewCount={handleReviews}
           onChefClick={onChefClick}
           isOrdering={isOrdering}
         />
 
-        <Specifications
-          specificationsDetail={productData.specifications_detail}
-        />
+        <Specifications specificationsDetail={product.specificationsDetails} />
 
         <div className={styles.board}>
           <div className={styles.column}>
@@ -165,9 +194,9 @@ const ProductPage = ({
         </div>
 
         <Reviews
-          product={productData}
-          reviews={productData.reviews_data}
-          quantity={productData.reviews_count}
+          product={product}
+          reviews={product.reviewsData}
+          quantity={product.reviewsCount}
           showReviewsModal={showReviewsModal}
           toggleReviewsModal={handleReviews}
           reviewModalContainerId={modalContainer}
