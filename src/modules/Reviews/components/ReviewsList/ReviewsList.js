@@ -7,8 +7,7 @@ import styles from './ReviewsList.module.scss'
 
 const SHOW = 5
 
-const ReviewsList = ({product, reviews, onLoadMore, max, loadMoreLabel}) => {
-  console.log('reviewsList', product)
+const ReviewsList = ({reviews, onLoadMore, max, loadMoreLabel}) => {
   const formatTime = value => {
     const date = value.replace(/ /g, 'T')
 
@@ -23,9 +22,8 @@ const ReviewsList = ({product, reviews, onLoadMore, max, loadMoreLabel}) => {
       {reviews.slice(0, max).map((review, index) => {
         const reviewFormatted = {
           stars: review.stars,
-          productImage:
-            review.product_image || product.image || product.primaryImageUrl,
-          productName: review.product_name || product.name, // TODO
+          productImage: review.product_image,
+          productName: review.product_name,
           detail: review.detail || review.feedback,
           customerName: review.customer_name || review.customerFirstName,
           nickname:
@@ -75,7 +73,6 @@ const ReviewsList = ({product, reviews, onLoadMore, max, loadMoreLabel}) => {
 }
 
 ReviewsList.propTypes = {
-  product: PropTypes.object,
   reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
   onLoadMore: PropTypes.func,
   max: PropTypes.number,
@@ -83,7 +80,6 @@ ReviewsList.propTypes = {
 }
 
 ReviewsList.defaultProps = {
-  product: {},
   reviews: [],
   onLoadMore: () => {},
   max: SHOW,

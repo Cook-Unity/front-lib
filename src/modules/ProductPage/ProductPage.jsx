@@ -86,8 +86,6 @@ const ProductPage = ({
     ...productData
   }
 
-  console.log('product', product)
-
   const header = () => (
     <div className={styles.header}>
       {modalIsOpen && (

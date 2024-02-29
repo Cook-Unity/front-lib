@@ -76,7 +76,6 @@ const Content = ({onRequestClose, quantity, product, reviews, handleClick}) => {
         <ReviewsSummary quantity={quantity} product={product} />
 
         <ReviewsList
-          product={product}
           reviews={reviews}
           max={reviewsToShow}
           onLoadMore={loadMore}
