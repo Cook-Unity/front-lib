@@ -64,7 +64,7 @@ const ProductPage = ({
     mealStory: productData.meal_story || productData.mealStory,
     nutritionalFacts: productData.nutritional_facts,
     specificationsDetails:
-      productData.specifications_details || productData.specificationsDetail,
+      productData.specifications_detail || productData.specificationsDetail,
     ingredientsData: productData.ingredients_data || productData.ingredients,
     cookingSteps: {
       microwaveSteps:
