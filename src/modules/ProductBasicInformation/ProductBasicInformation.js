@@ -11,37 +11,40 @@ import OrderButtons from '../../components/OrderButtons'
 import styles from './ProductBasicInformation.module.scss'
 
 const ProductBasicInformation = ({
-  productData,
+  product,
   isLoading,
   onChefClick,
   onClickReviewCount,
   hideStars,
   isOrdering
 }) => {
+  const {name, stars, reviewsCount, userRating, imageFullUrl, mealStory, chef} =
+    product
+
   return (
     <div className={`${styles.productDetails} ${isLoading && styles.loading}`}>
       <div className={styles.productDescription}>
-        <ProductTitle name={productData.name} />
+        <ProductTitle name={name} />
         <RatingMeal
           hideStars={hideStars}
-          stars={productData.stars}
-          reviewsCount={productData.reviews_count}
-          userRating={productData.user_rating}
+          stars={stars}
+          reviewsCount={reviewsCount}
+          userRating={userRating}
           onClickReviewCount={onClickReviewCount}
         />
       </div>
 
       <div className={styles.productImage}>
-        <MealImage imageUrl={productData.image_full_url} />
+        <MealImage imageUrl={imageFullUrl} />
       </div>
 
-      <ProductDescription mealStory={productData.meal_story} />
+      <ProductDescription mealStory={mealStory} />
 
       <ChefProfile
-        img={productData.chef_image_url}
-        firstname={productData.chef_firstname}
-        lastname={productData.chef_lastname}
-        chefId={+productData.chef_id}
+        img={chef.labelImageUrl}
+        firstname={chef.firstName}
+        lastname={chef.lastName}
+        chefId={+chef.id}
         onClick={onChefClick}
       />
 
@@ -55,7 +58,7 @@ const ProductBasicInformation = ({
 ProductBasicInformation.propTypes = {
   onChefClick: PropTypes.func,
   onClickReviewCount: PropTypes.func,
-  productData: PropTypes.object,
+  product: PropTypes.object,
   isLoading: PropTypes.bool,
   isOrdering: PropTypes.object
 }
@@ -63,7 +66,7 @@ ProductBasicInformation.propTypes = {
 ProductBasicInformation.defaultProps = {
   onChefClick: null,
   onClickReviewCount: null,
-  productData: null,
+  product: null,
   isLoading: false,
   isOrdering: null
 }

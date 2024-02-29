@@ -7,7 +7,8 @@ import styles from './ReviewsList.module.scss'
 
 const SHOW = 5
 
-const ReviewsList = ({reviews, onLoadMore, max, loadMoreLabel}) => {
+const ReviewsList = ({product, reviews, onLoadMore, max, loadMoreLabel}) => {
+  console.log('reviewsList', product)
   const formatTime = value => {
     const date = value.replace(/ /g, 'T')
 
@@ -19,26 +20,50 @@ const ReviewsList = ({reviews, onLoadMore, max, loadMoreLabel}) => {
   }
   return (
     <section className={styles.productReviews}>
-      {reviews.slice(0, max).map((review, index) => (
-        <div className={styles.review} key={`reviewId-${index}`}>
-          <div className={styles.info}>
-            <div className={styles.stars}>
-              <StarReview name="rate" starCount={5} value={review.stars} />
-            </div>
-            {review.product_image && (
-              <div className={styles.dish}>
-                <MealImg imageUrl={review.product_image} withoutText />
-                <p>{review.product_name}</p>
+      {reviews.slice(0, max).map((review, index) => {
+        const reviewFormatted = {
+          stars: review.stars,
+          productImage:
+            review.product_image || product.image || product.primaryImageUrl,
+          productName: review.product_name || product.name, // TODO
+          detail: review.detail || review.feedback,
+          customerName: review.customer_name || review.customerFirstName,
+          nickname:
+            review.nickname ||
+            review.customerFirstName + review.customerLastName,
+          createdAt: review.created_at || review.createdAt
+        }
+
+        return (
+          <div className={styles.review} key={`reviewId-${index}`}>
+            <div className={styles.info}>
+              <div className={styles.stars}>
+                <StarReview
+                  name="rate"
+                  starCount={5}
+                  value={reviewFormatted.stars}
+                />
               </div>
-            )}
-            <p className={styles.detail}>{review.detail}</p>
-            <p className={styles.signature}>
-              {review.customer_name ? review.customer_name : review.nickname} ·{' '}
-              {formatTime(review.created_at)}
-            </p>
+              {reviewFormatted.productImage && (
+                <div className={styles.dish}>
+                  <MealImg
+                    imageUrl={reviewFormatted.productImage}
+                    withoutText
+                  />
+                  <p>{reviewFormatted.productName}</p>
+                </div>
+              )}
+              <p className={styles.detail}>{reviewFormatted.detail}</p>
+              <p className={styles.signature}>
+                {reviewFormatted.customerName
+                  ? reviewFormatted.customerName
+                  : reviewFormatted.nickname}{' '}
+                · {formatTime(reviewFormatted.createdAt)}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
 
       {reviews && reviews.length > max && (
         <p className={styles.viewAll} onClick={onLoadMore}>
@@ -50,6 +75,7 @@ const ReviewsList = ({reviews, onLoadMore, max, loadMoreLabel}) => {
 }
 
 ReviewsList.propTypes = {
+  product: PropTypes.object,
   reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
   onLoadMore: PropTypes.func,
   max: PropTypes.number,
@@ -57,6 +83,7 @@ ReviewsList.propTypes = {
 }
 
 ReviewsList.defaultProps = {
+  product: {},
   reviews: [],
   onLoadMore: () => {},
   max: SHOW,

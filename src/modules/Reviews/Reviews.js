@@ -46,6 +46,7 @@ const Reviews = props => {
             />
 
             <ReviewsList
+              product={product}
               reviews={_reviews}
               max={PREVIEW_MAX}
               onLoadMore={toggleReviewsModal}
