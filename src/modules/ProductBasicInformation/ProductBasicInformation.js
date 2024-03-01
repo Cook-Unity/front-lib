@@ -19,7 +19,7 @@ const ProductBasicInformation = ({
   isOrdering
 }) => {
   const {name, stars, reviewsCount, userRating, imageFullUrl, mealStory, chef} =
-    product
+    product || {}
 
   return (
     <div className={`${styles.productDetails} ${isLoading && styles.loading}`}>
@@ -41,10 +41,10 @@ const ProductBasicInformation = ({
       <ProductDescription mealStory={mealStory} />
 
       <ChefProfile
-        img={chef.labelImageUrl}
-        firstname={chef.firstName}
-        lastname={chef.lastName}
-        chefId={+chef.id}
+        img={chef?.labelImageUrl}
+        firstname={chef?.firstName}
+        lastname={chef?.lastName}
+        chefId={+chef?.id}
         onClick={onChefClick}
       />
 
