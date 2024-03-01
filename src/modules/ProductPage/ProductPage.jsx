@@ -151,7 +151,7 @@ const ProductPage = ({
     const macronutrients = (
       <Macronutrients
         nutritionalFacts={product.nutritionalFacts}
-        calories={product.nutritionalFacts.calories}
+        calories={product.nutritionalFacts?.calories}
       />
     )
 
