@@ -12,6 +12,10 @@ export default {
     baseUrl: {
       control: 'text',
       defaultValue: null
+    },
+    email: {
+      control: 'text',
+      defaultValue: undefined
     }
   }
 }

@@ -47,6 +47,7 @@ const socialNetworks = [
   }
 ]
 
+
 const getHref = (value, baseUrl) =>
   value.startsWith('http')
     ? value
@@ -56,11 +57,11 @@ const CuiFooter = ({
   className,
   homeLink = '/',
   baseUrl,
-  isGovXEnabled = false
+  isGovXEnabled = false,
+  email = 'support@cookunity.com'
 }) => {
   const [footerItems, setFooterItems] = useState([])
   const year = new Date().getFullYear()
-
   useEffect(() => {
     if (isGovXEnabled) {
       setFooterItems([
@@ -99,8 +100,8 @@ const CuiFooter = ({
         <a className="logo" href={homeLink} title="CookUnity">
           <CuiLogo />
         </a>
-        <CuiLink color="light" fill="clear" href="mailto:support@cookunity.com">
-          support@cookunity.com
+        <CuiLink color="light" fill="clear" href={`mailto:${email}`}>
+          {email}
         </CuiLink>
         <div className="social-networks">
           {socialNetworks.map(value => (
