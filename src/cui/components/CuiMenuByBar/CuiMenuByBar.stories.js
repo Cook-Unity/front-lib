@@ -1,4 +1,6 @@
 import React from 'react'
+import {fn} from '@storybook/test'
+
 import data from './__mock__.json'
 
 import MenuByBar from './CuiMenuByBar'
@@ -10,6 +12,11 @@ export default {
     setMenuSelected: {action: 'setMenuSelected clicked'},
     setTabSelected: {action: 'setTabSelected clicked'},
     onMenuByClick: {action: 'onMenuByClick clicked'}
+  },
+  args: {
+    setMenuSelected: fn(),
+    setTabSelected: fn(),
+    onMenuByClick: fn()
   }
 }
 

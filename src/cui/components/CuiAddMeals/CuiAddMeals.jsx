@@ -41,9 +41,9 @@ const CuiAddMeals = ({
       <div className="cui-addmeals-date-wrapper">
         {weeks.map(week => {
           const {date, orderStatus, mealStatus} = week
-
           return (
             <div
+              key={date}
               className={`cui-addmeals-datebox cui-addmeals-datebox-${mealStatus}`}
             >
               <div className="cui-addmeals-date">{date}</div>

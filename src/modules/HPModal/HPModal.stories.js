@@ -1,13 +1,23 @@
 import React from 'react'
+import {fn} from '@storybook/test'
 
 import HPModal from './index'
 
 export default {
   title: 'HPModal',
-  component: HPModal
+  component: HPModal,
+  args: {
+    handleClose: fn(),
+    handleCancel: fn(),
+    handleConfirm: fn()
+  }
 }
 
-const Template = args => <HPModal {...args} />
+const Template = args => (
+  <div id="root" style={{height: '650px'}}>
+    <HPModal {...args} />
+  </div>
+)
 
 export const Default = Template.bind({})
 Default.args = {
@@ -18,10 +28,7 @@ Default.args = {
     'Set your preferences so we know what you love — and what you don’t. We’ll use your info to offer recommendations based on the foods you actually want.',
   isOpen: true,
   btnConfirmText: 'Set preferences',
-  btnCancelText: 'Continue Ordering',
-  handleClose: () => console.log('closed!'),
-  handleCancel: () => console.log('canceled!'),
-  handleConfirm: () => console.log('hi!')
+  btnCancelText: 'Continue Ordering'
 }
 
 export const CheckRecommendation = Template.bind({})
@@ -32,8 +39,7 @@ CheckRecommendation.args = {
   description:
     'Your ordering window is closing soon, so we filled your cart for you. You can still edit and confirm your order until <time>. Happy eating!',
   isOpen: true,
-  btnConfirmText: 'View cart ',
-  handleConfirm: () => console.log('hi!')
+  btnConfirmText: 'View cart '
 }
 
 export const Flexibility = Template.bind({})
@@ -45,10 +51,7 @@ Flexibility.args = {
     'Our weekly plans are flexible and easy to change. Just head to your account settings to make changes anytime you need to.',
   isOpen: true,
   btnConfirmText: 'My account ',
-  btnCancelText: 'Continue Ordering',
-  handleClose: () => console.log('closed!'),
-  handleCancel: () => console.log('canceled!'),
-  handleConfirm: () => console.log('hi!')
+  btnCancelText: 'Continue Ordering'
 }
 
 export const Rating = Template.bind({})
@@ -60,8 +63,5 @@ Rating.args = {
     'Our chefs rely on your feedback to make their meals exceptional. Go ahead and tell them how they did. They’re chefs — they can take the heat.',
   isOpen: true,
   btnConfirmText: 'Rate your meals',
-  btnCancelText: 'Continue Ordering',
-  handleClose: () => console.log('closed!'),
-  handleCancel: () => console.log('canceled!'),
-  handleConfirm: () => console.log('hi!')
+  btnCancelText: 'Continue Ordering'
 }

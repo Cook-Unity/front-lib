@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {action} from '@storybook/addon-actions'
 import CuiInput from './CuiInput'
 
 export default {
@@ -7,26 +7,27 @@ export default {
   component: CuiInput,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['white', 'black']
-      },
-      defaultValue: 'white'
+      control: 'select',
+      options: ['white', 'black']
     },
     size: {
-      control: {
-        type: 'select',
-        options: ['small']
-      },
-      defaultValue: 'small'
+      control: 'select',
+      options: ['small']
     },
     fill: {
-      control: {
-        type: 'select',
-        options: ['solid']
-      },
-      defaultValue: 'solid'
-    }
+      control: 'select',
+      options: ['solid']
+    },
+    loading: {
+      control: 'boolean'
+    },
+    onChange: action('onChange'),
+    onBlur: action('onBlur')
+  },
+  args: {
+    color: 'white',
+    size: 'small',
+    fill: 'solid'
   }
 }
 
@@ -35,5 +36,7 @@ const Template = args => <CuiInput {...args} />
 export const Default = Template.bind({})
 Default.args = {
   name: 'template',
-  placeholder: 'Eg. text here'
+  placeholder: 'Eg. text here',
+  onChange: action('onChange'),
+  onBlur: action('onBlur')
 }

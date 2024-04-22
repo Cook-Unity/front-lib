@@ -21,48 +21,37 @@ export default {
   component: CuiMealCard,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'light']
-      },
-      defaultValue: 'dark'
+      control: 'select',
+      options: ['dark', 'light']
     },
     fabPosition: {
-      control: {
-        type: 'select',
-        options: ['none', 'bottom', 'top']
-      },
-      defaultValue: 'none'
+      control: 'select',
+      options: ['none', 'bottom', 'top']
     },
     direction: {
-      control: {
-        type: 'select',
-        options: ['column', 'row']
-      },
-      defaultValue: 'column'
+      control: 'select',
+      options: ['column', 'row']
     },
     price: {
-      control: {
-        type: 'text'
-      },
-      defaultValue: '9.99'
+      control: 'text'
     },
     quantity: {
-      control: {
-        type: 'text'
-      },
-      defaultValue: '2'
+      control: 'text'
     },
     tagLabel: {
-      control: {
-        type: 'text'
-      }
+      control: 'text'
     },
     selected: {
-      control: {
-        type: 'boolean'
-      }
+      control: 'boolean'
     }
+  },
+  args: {
+    color: 'dark',
+    fabPosition: 'none',
+    direction: 'column',
+    price: '9.99',
+    quantity: '2',
+    tagLabel: 'text'
   }
 }
 

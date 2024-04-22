@@ -8,12 +8,12 @@ export default {
   component: CuiBreadcrumbs,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'light']
-      },
-      defaultValue: 'dark'
+      control: 'select',
+      options: ['dark', 'light']
     }
+  },
+  args: {
+    color: 'dark'
   }
 }
 

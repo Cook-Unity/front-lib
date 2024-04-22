@@ -1,4 +1,5 @@
 import React from 'react'
+import {fn} from '@storybook/test'
 
 import CuiCollectionIcon from './CuiCollectionIcon'
 
@@ -7,16 +8,17 @@ export default {
   component: CuiCollectionIcon,
   argTypes: {
     size: {
-      control: {
-        type: 'select',
-        options: ['small', 'large']
-      },
-      defaultValue: 'large'
+      control: 'select',
+      options: ['small', 'large']
     },
     updatedWeekly: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    size: 'large',
+    updatedWeekly: false,
+    handleOnClick: fn()
   }
 }
 

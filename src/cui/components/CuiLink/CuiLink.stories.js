@@ -9,45 +9,39 @@ export default {
   component: CuiLink,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['primary', 'secondary', 'dark']
-      },
-      defaultValue: 'primary'
+      control: 'select',
+      options: ['primary', 'secondary', 'dark']
     },
     size: {
-      control: {
-        type: 'select',
-        options: ['small', 'medium', 'large']
-      },
-      defaultValue: 'medium'
+      control: 'select',
+      options: ['small', 'medium', 'large']
     },
     fill: {
-      control: {
-        type: 'select',
-        options: ['clear', 'outline', 'solid']
-      },
-      defaultValue: 'solid'
+      control: 'select',
+      options: ['clear', 'outline', 'solid']
     },
     type: {
-      control: {
-        type: 'select',
-        options: ['button', 'submit', 'reset']
-      },
-      defaultValue: 'button'
+      control: 'select',
+      options: ['button', 'submit', 'reset']
     },
     disabled: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     loading: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     icon: {
-      ...CuiIconNames,
-      defaultValue: null
+      ...CuiIconNames
     }
+  },
+  args: {
+    color: 'primary',
+    size: 'medium',
+    fill: 'solid',
+    type: 'button',
+    disabled: false,
+    loading: false,
+    icon: null
   }
 }
 

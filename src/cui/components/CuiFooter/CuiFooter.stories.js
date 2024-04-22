@@ -6,17 +6,19 @@ export default {
   component: CuiFooter,
   argTypes: {
     homeLink: {
-      control: 'text',
-      defaultValue: '/'
+      control: 'text'
     },
     baseUrl: {
-      control: 'text',
-      defaultValue: null
+      control: 'text'
     },
     email: {
-      control: 'text',
-      defaultValue: undefined
+      control: 'text'
     }
+  },
+  args: {
+    homeLink: '/',
+    baseUrl: null,
+    email: undefined
   }
 }
 

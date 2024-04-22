@@ -7,22 +7,18 @@ export default {
   component: CuiGiftCard,
   argTypes: {
     backgroundImage: {
-      control: {
-        type: 'text'
-      }
+      control: 'text'
     },
     min: {
-      control: {
-        type: 'number'
-      },
-      defaultValue: 5
+      control: 'number'
     },
     max: {
-      control: {
-        type: 'number'
-      },
-      defaultValue: 500
+      control: 'number'
     }
+  },
+  args: {
+    min: 5,
+    max: 500
   }
 }
 

@@ -9,12 +9,12 @@ export default {
   component: CuiCard,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'light']
-      },
-      defaultValue: 'dark'
+      control: 'select',
+      options: ['dark', 'light']
     }
+  },
+  args: {
+    color: 'dark'
   }
 }
 

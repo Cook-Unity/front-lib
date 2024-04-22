@@ -1,10 +1,23 @@
 import React from 'react'
+import {fn} from '@storybook/test'
+
 import CuiMealCarrousel from './CuiMealCarrousel'
 import {meals, collections} from './__mock__'
 
 export default {
   title: 'Cui / Modules / CuiMealCarrousel',
-  component: CuiMealCarrousel
+  component: CuiMealCarrousel,
+  args: {
+    onAddItem: fn(),
+    onRemoveItem: fn(),
+    onMealClick: fn(),
+    onSeeAllClick: fn(),
+    onShowTracking: fn(),
+    onClickTracking: fn(),
+    onAddTracking: fn(),
+    onSwipeTracking: fn(),
+    onSeeAllTracking: fn()
+  }
 }
 
 const Template = args => <CuiMealCarrousel {...args} />
@@ -19,16 +32,7 @@ Premium.args = {
   type: 'premium',
   moduleName: 'premium-row',
   moduleId: 1,
-  collections,
-  onAddItem: () => {},
-  onRemoveItem: () => {},
-  onMealClick: () => {},
-  onSeeAllClick: () => {},
-  onShowTracking: () => {},
-  onClickTracking: () => {},
-  onAddTracking: () => {},
-  onSwipeTracking: () => {},
-  onSeeAllTracking: () => {}
+  collections
 }
 
 export const Sides = Template.bind({})
@@ -40,14 +44,5 @@ Sides.args = {
   type: 'sides',
   moduleName: 'sides-row',
   moduleId: 2,
-  collections,
-  onAddItem: () => {},
-  onRemoveItem: () => {},
-  onMealClick: () => {},
-  onSeeAllClick: () => {},
-  onShowTracking: () => {},
-  onClickTracking: () => {},
-  onAddTracking: () => {},
-  onSwipeTracking: () => {},
-  onSeeAllTracking: () => {}
+  collections
 }

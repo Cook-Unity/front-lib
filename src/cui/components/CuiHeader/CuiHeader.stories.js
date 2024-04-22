@@ -11,40 +11,40 @@ export default {
   component: CuiHeader,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'transparent']
-      },
-      defaultValue: 'dark'
+      control: 'select',
+      options: ['dark', 'transparent']
     },
     homeLink: {
-      control: 'text',
-      defaultValue: '/'
+      control: 'text'
     },
     showAllyButton: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     showLogin: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     showLogo: {
-      control: 'boolean',
-      defaultValue: true
+      control: 'boolean'
     },
     showMenu: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     showNeedHelp: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     showNeedHelpTitle: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    color: 'dark',
+    homeLink: '/',
+    showAllyButton: false,
+    showLogin: false,
+    showLogo: true,
+    showMenu: false,
+    showNeedHelp: false,
+    showNeedHelpTitle: false
   }
 }
 

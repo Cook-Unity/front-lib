@@ -4,13 +4,21 @@ import Modal from './index'
 
 export default {
   title: 'Modal',
-  component: Modal
+  component: Modal,
+  argTypes: {
+    plusSize: {control: 'boolean'},
+    mediumSize: {control: 'boolean'},
+    smallSize: {control: 'boolean'},
+    notification: {control: 'boolean'}
+  }
 }
 
 const Template = args => (
-  <Modal isOpen {...args}>
-    <div>hello world!</div>
-  </Modal>
+  <div id="root" style={{height: '200px'}}>
+    <Modal isOpen {...args}>
+      <div>hello world!</div>
+    </Modal>
+  </div>
 )
 
 export const Default = Template.bind({})

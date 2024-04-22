@@ -1,4 +1,6 @@
 import React from 'react'
+import {fn} from '@storybook/test'
+
 import CuiMealCardsModal from './CuiMealCardsModal'
 import MealImage from '../../../common/MealImage'
 
@@ -11,6 +13,11 @@ export default {
     primaryButtonClick: {action: 'primaryButtonClick clicked'},
     secondaryButtonClick: {action: 'secondaryButtonClick clicked'},
     handleClose: {action: 'handleClose clicked'}
+  },
+  args: {
+    primaryButtonClick: fn(),
+    secondaryButtonClick: fn(),
+    handleClose: fn()
   }
 }
 
@@ -25,8 +32,8 @@ const MockMenuCard = () => (
 )
 
 const Template = args => (
-  <div>
-    <MealImage {...args} />x
+  <div id="root">
+    <MealImage {...args} />
     <CuiMealCardsModal {...args}>
       {Array(3)
         .fill(null)

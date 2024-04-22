@@ -5,10 +5,8 @@ import CuiMealInfoTooltip from './CuiMealInfoTooltip'
 export default {
   title: 'Cui / Modules / CuiMealCard / Components / CuiMealInfoTooltip',
   component: CuiMealInfoTooltip,
-  argTypes: {
-    tooltipText: {
-      defaultValue: 'ASD'
-    }
+  args: {
+    tooltipText: 'ASD'
   }
 }
 

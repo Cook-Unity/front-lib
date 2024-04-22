@@ -10,9 +10,11 @@ export default {
   component: CuiCollectionHeader,
   argTypes: {
     updatedWeekly: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    updatedWeekly: false
   }
 }
 

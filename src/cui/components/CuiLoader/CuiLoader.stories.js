@@ -7,9 +7,11 @@ export default {
   component: CuiLoader,
   argTypes: {
     fullscreen: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    fullscreen: false
   }
 }
 

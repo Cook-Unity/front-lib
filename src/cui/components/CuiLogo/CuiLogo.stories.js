@@ -7,16 +7,26 @@ export default {
   component: CuiLogo,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'light']
-      },
-      defaultValue: 'light'
+      control: 'select',
+      options: ['dark', 'light']
     }
+  },
+  args: {
+    color: 'light'
   }
 }
 
-const Template = args => <CuiLogo {...args}>Link</CuiLogo>
+const Template = args => (
+  <div
+    style={{
+      padding: '20px',
+      borderRadius: '5px',
+      backgroundColor: args.color === 'dark' ? 'white' : 'black'
+    }}
+  >
+    <CuiLogo {...args} />
+  </div>
+)
 
 export const Default = Template.bind({})
 Default.args = {

@@ -7,7 +7,11 @@ export default {
   component: ReviewsModal
 }
 
-const Template = args => <ReviewsModal {...args} />
+const Template = args => (
+  <div id="root" style={{height: '400px'}}>
+    <ReviewsModal {...args} />
+  </div>
+)
 
 export const Default = Template.bind({})
 Default.args = {

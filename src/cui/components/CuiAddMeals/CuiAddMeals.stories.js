@@ -1,4 +1,6 @@
 import React from 'react'
+import {fn} from '@storybook/test'
+
 import CuiAddMeals from './CuiAddMeals'
 
 import {
@@ -10,7 +12,11 @@ import {
 
 export default {
   title: 'Cui / Modules / CuiAddMeals',
-  component: CuiAddMeals
+  component: CuiAddMeals,
+  args: {
+    addCallback: fn(),
+    unskipAndAddCallback: fn()
+  }
 }
 
 const Template = args => {

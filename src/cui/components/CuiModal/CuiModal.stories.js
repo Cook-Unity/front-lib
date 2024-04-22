@@ -8,9 +8,11 @@ export default {
 }
 
 const Template = args => (
-  <CuiModal isOpen {...args}>
-    <div>Hello world!</div>
-  </CuiModal>
+  <div id="root" style={{height: '300px'}}>
+    <CuiModal isOpen {...args}>
+      <div>Hello world!</div>
+    </CuiModal>
+  </div>
 )
 
 export const Default = Template.bind({})

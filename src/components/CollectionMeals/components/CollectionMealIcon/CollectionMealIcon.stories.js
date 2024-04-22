@@ -1,11 +1,14 @@
 import React from 'react'
-
+import {fn} from '@storybook/test'
 import CollectionMealIcon from './index'
 import {IMAGE_COLLECTION} from '../../constants'
 
 export default {
   title: 'CollectionMeals/CollectionMealIcon',
-  component: CollectionMealIcon
+  component: CollectionMealIcon,
+  args: {
+    handleOnClick: fn()
+  }
 }
 
 const Template = args => <CollectionMealIcon {...args} />

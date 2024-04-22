@@ -7,13 +7,15 @@ export default {
   component: CuiTextArea,
   argTypes: {
     placeholder: {
-      control: 'text',
-      defaultValue: 'Please add a comment...'
+      control: 'text'
     },
     disabled: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    placeholder: 'Please add a comment...',
+    disabled: false
   }
 }
 

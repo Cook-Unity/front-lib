@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import CuiQuantitySelector from './CuiQuantitySelector'
 
@@ -7,31 +7,45 @@ export default {
   component: CuiQuantitySelector,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['primary', 'secondary', 'dark', 'light', 'gold']
-      },
-      defaultValue: 'light'
+      control: 'select',
+      options: ['primary', 'secondary', 'dark', 'light', 'gold']
     },
     max: {
       control: 'number'
     },
     min: {
-      control: 'number',
-      defaultValue: 0
+      control: 'number'
     },
-    onAddItem: {action: 'onAddItem clicked'},
-    onRemoveItem: {action: 'onRemoveItem clicked'},
     showBorder: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    color: 'light',
+    min: 0,
+    showBorder: false
   }
 }
 
-const Template = args => (
-  <CuiQuantitySelector {...args}>Cui Tooltip</CuiQuantitySelector>
-)
+const Template = args => {
+  const [quantity, setQuantity] = useState(0)
+
+  const addItemHandler = () => {
+    setQuantity(quantity + 1)
+  }
+  const removeItemHandler = () => {
+    setQuantity(quantity - 1)
+  }
+
+  return (
+    <CuiQuantitySelector
+      {...args}
+      value={quantity}
+      onAddItem={addItemHandler}
+      onRemoveItem={removeItemHandler}
+    />
+  )
+}
 
 export const Default = Template.bind({})
 

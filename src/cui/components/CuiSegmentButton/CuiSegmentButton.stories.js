@@ -7,9 +7,11 @@ export default {
   component: CuiSegmentButton,
   argTypes: {
     active: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    active: false
   }
 }
 
