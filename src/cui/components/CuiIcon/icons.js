@@ -53,6 +53,7 @@ export const CuiIconNames = {
       'history',
       'hundreds',
       'infoEmptyCircled',
+      'info',
       'infoIcon',
       'instagram',
       'keto',
