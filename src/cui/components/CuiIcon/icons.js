@@ -52,6 +52,7 @@ export const CuiIconNames = {
     'history',
     'hundreds',
     'infoEmptyCircled',
+    'info',
     'infoIcon',
     'instagram',
     'keto',
@@ -118,7 +119,8 @@ export const CuiIconNames = {
     'warning',
     'yourTopRated',
     'youVeTried'
-  ]
+  ],
+  defaultValue: 'heart'
 }
 
 export const icons = {
