@@ -8,7 +8,11 @@ export default {
   component: IngredientsModal
 }
 
-const Template = args => <IngredientsModal {...args} />
+const Template = args => (
+  <div id="root" style={{height: '300px'}}>
+    <IngredientsModal {...args} />
+  </div>
+)
 
 export const Default = Template.bind({})
 Default.args = {

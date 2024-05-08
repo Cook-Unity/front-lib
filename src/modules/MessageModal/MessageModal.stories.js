@@ -1,4 +1,6 @@
 import React from 'react'
+import {fn} from '@storybook/test'
+
 import MessageModal from '.'
 import MealImage from '../../common/MealImage'
 
@@ -6,12 +8,16 @@ import props from './data.mock.js'
 
 export default {
   title: 'MenuBy/MessageModal',
-  component: MessageModal
+  component: MessageModal,
+  args: {
+    handleButtonClick: fn()
+  }
 }
 
 const Template = args => (
-  <div>
-    <MealImage {...args} /> <MessageModal {...args} />
+  <div id="root">
+    <MealImage />
+    <MessageModal {...args} />
   </div>
 )
 

@@ -13,9 +13,11 @@ export default {
   component: CuiCategoryCover,
   argTypes: {
     isNew: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    isNew: false
   }
 }
 const Template = args => <CuiCategoryCover {...args} />

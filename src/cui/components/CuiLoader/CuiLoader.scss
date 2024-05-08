@@ -1,121 +1,115 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .cui-loader {
-    justify-content: center;
-    align-items: center;
-    z-index: $z-50;
+  justify-content: center;
+  align-items: center;
+  z-index: $z-50;
 
-    .column-wrapper { 
-        position: relative;
-        transform-origin: 50% 50%;
-        animation: spin 2s infinite;
-        height: 280px;
-        width: 150px;
+  .column-wrapper {
+    position: relative;
+    transform-origin: 50% 50%;
+    animation: spin 2s infinite;
+    height: 280px;
+    width: 150px;
 
-        @media (min-width: 1024px) {
-            scale: 1.5;
-        }
+    @media (min-width: 1024px) {
+      scale: 1.5;
     }
+  }
 
-    .left-block, .right-block {
-        position: absolute;
-        top: 0;
+  .left-block,
+  .right-block {
+    position: absolute;
+    top: 0;
+  }
+
+  .left-block {
+    animation: loading-left 2s infinite;
+    animation-fill-mode: forwards;
+    left: 0;
+  }
+
+  .right-block {
+    animation: loading-right 2s infinite;
+    animation-delay: 0s, 1s;
+    right: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .svg-fill-color {
+    animation: svg-color 2s infinite;
+    fill: #f3bf25;
+  }
+
+  @keyframes svg-color {
+    0% {
+      fill: rgb(186, 190, 191);
     }
-
-    .left-block {
-        animation: loading-left 2s infinite;
-        animation-fill-mode: forwards;
-        left: 0;
+    20% {
+      fill: rgb(186, 190, 191);
     }
-
-    .right-block {
-        animation: loading-right 2s infinite;
-        animation-delay: 0s, 1s;
-        right: 0;
-        animation-fill-mode: forwards;
-        
+    21% {
+      fill: #f3bf25;
     }
-
-    .svg-fill-color {
-        animation: svg-color 2s infinite;
-        fill: #F3BF25;
+    59% {
+      fill: #f3bf25;
     }
-
-    @keyframes svg-color {
-        0% {
-            fill: rgb(186, 190, 191);
-        }
-        20% {
-            fill: rgb(186, 190, 191);
-        }
-        21% {
-            fill: #F3BF25;
-        }
-        59% {
-            fill: #F3BF25;
-        }
-        60% {
-            fill: rgb(186, 190, 191);
-        }
-        100% {
-            fill: rgb(186, 190, 191);
-        }
+    60% {
+      fill: rgb(186, 190, 191);
     }
+    100% {
+      fill: rgb(186, 190, 191);
+    }
+  }
 
-    @keyframes loading-left {
-        0% {
-            transform: rotate(0);
-        }
+  @keyframes loading-left {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
 
-        25%  {
-            transform: rotate(45deg);
-        }
-        50%  {
-            transform: rotate(45deg);
-        } 
-        50%  {
-            transform: rotate(45deg);
-        }     
-        100%  {
-            transform: rotate(0);
-        }
-        // 100% {background-color: green;}
-      }
+  @keyframes loading-right {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(-45deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
 
-      @keyframes loading-right {
-        0%   {
-            transform: rotate(0);
-        }
-
-        25%  {
-            transform: rotate(-45deg);
-        }
-        50%  {
-            transform: rotate(-45deg);
-        } 
-        100%  {
-            transform: rotate(0);
-        }
-      }
-
-      @keyframes spin {
-        0% {
-            transform: rotate(0);
-        }
-        25%  {
-            width: 60px;
-            transform: rotate(0);
-        }
-        50% {
-            transform: rotate(720deg);
-        }
-        60% {
-            width: 60px;
-            transform: rotate(720deg);
-        }
-        100%  {
-            width: 150px;
-            transform: rotate(720deg);
-        }
-      }      
+  @keyframes spin {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      width: 60px;
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(720deg);
+    }
+    60% {
+      width: 60px;
+      transform: rotate(720deg);
+    }
+    100% {
+      width: 150px;
+      transform: rotate(720deg);
+    }
+  }
 }

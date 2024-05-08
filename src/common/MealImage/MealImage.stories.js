@@ -1,10 +1,13 @@
 import React from 'react'
-
+import {fn} from '@storybook/test'
 import MealImage from './index'
 
 export default {
   title: 'MealImage',
-  component: MealImage
+  component: MealImage,
+  args: {
+    onMealClick: fn()
+  }
 }
 
 const Template = args => <MealImage {...args} />

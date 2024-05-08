@@ -6,30 +6,20 @@ export default {
   component: CuiMenuImage,
   argTypes: {
     primary_image: {
-      control: {
-        type: 'text',
-        required: true
-      }
+      control: 'text',
+      required: true
     },
     secondary_image: {
-      control: {
-        type: 'text'
-      }
+      control: 'text'
     },
     text: {
-      control: {
-        type: 'text'
-      }
+      control: 'text'
     },
     primary_image_srcset: {
-      control: {
-        type: 'text'
-      }
+      control: 'text'
     },
     secondary_image_srcset: {
-      control: {
-        type: 'text'
-      }
+      control: 'text'
     }
   }
 }

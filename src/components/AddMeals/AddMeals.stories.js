@@ -1,5 +1,6 @@
 import React from 'react'
 import AddMeals from './AddMeals'
+import {fn} from '@storybook/test'
 import {
   add_meals_added,
   add_meals_basic,
@@ -9,7 +10,11 @@ import {
 
 export default {
   title: 'AddMeals',
-  component: AddMeals
+  component: AddMeals,
+  args: {
+    addCallback: fn(),
+    unskipAndAddCallback: fn()
+  }
 }
 
 const Template = args => {

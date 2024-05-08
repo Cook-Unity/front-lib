@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {fn} from '@storybook/test'
 import CuiChip from './CuiChip'
 
 export default {
@@ -7,13 +7,16 @@ export default {
   component: CuiChip,
   argTypes: {
     disabled: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     selected: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    disabled: false,
+    selected: false,
+    onClick: fn()
   }
 }
 

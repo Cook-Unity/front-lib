@@ -15,7 +15,7 @@ export default {
 }
 
 const Template = args => (
-  <div>
+  <div id="root">
     <MealImage {...args} /> <MealCardsModal {...args} />
   </div>
 )

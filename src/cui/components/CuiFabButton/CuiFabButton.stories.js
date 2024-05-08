@@ -7,27 +7,25 @@ export default {
   component: CuiFabButton,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['primary', 'secondary', 'dark', 'light', 'gold']
-      },
-      defaultValue: 'light'
+      control: 'select',
+      options: ['primary', 'secondary', 'dark', 'light', 'gold']
     },
     size: {
-      control: {
-        type: 'select',
-        options: ['medium', 'large']
-      },
-      defaultValue: 'medium'
+      control: 'select',
+      options: ['medium', 'large']
     },
     fixed: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     showBorder: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    color: 'light',
+    size: 'medium',
+    fixed: false,
+    showBorder: false
   }
 }
 

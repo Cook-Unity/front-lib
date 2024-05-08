@@ -7,20 +7,10 @@ import CuiMealImage from './CuiMealImage'
 export default {
   title: 'Cui / Modules / CuiMealCard / Components / CuiMealImage',
   component: CuiMealImage,
-  argTypes: {
-    mealImage: {
-      control: {
-        type: 'text',
-        required: true
-      },
-      defaultValue:
-        'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg'
-    },
-    tagLabel: {
-      control: {
-        type: 'text'
-      }
-    }
+  args: {
+    mealImage:
+      'https://d1ureao5dcqpo4.cloudfront.net/media/merchandiseSets/chef-akhtar-chicken-tinga-tacos.jpg',
+    tagLabel: 'New'
   }
 }
 

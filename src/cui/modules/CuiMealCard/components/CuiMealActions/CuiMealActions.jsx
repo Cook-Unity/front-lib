@@ -18,7 +18,6 @@ const CuiMealActions = ({
   index,
   ...props
 }) => {
-  const [showTooltip, setShowTooltip] = useState(false)
   const [showCartControllers, setShowCartControllers] = useState(false)
   const addButtonEnabled = isEditable && quantity < meal.stock
   const removeButtonEnabled = isEditable && quantity > 0
@@ -89,7 +88,11 @@ const CuiMealActions = ({
         }}
       >
         {priceText}
-        {strikethroughPrice && <span className='cui-meal-actions__button___strikethrough__price__text'>{strikethroughPrice}</span>}
+        {strikethroughPrice && (
+          <span className="cui-meal-actions__button___strikethrough__price__text">
+            {strikethroughPrice}
+          </span>
+        )}
         {quantity > 0 && (
           <span className="cui-meal-actions__control-qty">{quantity}</span>
         )}

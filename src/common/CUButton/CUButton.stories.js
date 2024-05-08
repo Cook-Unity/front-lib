@@ -1,10 +1,14 @@
 import React from 'react'
+import {fn} from '@storybook/test'
 
 import CUButton from './index'
 
 export default {
   title: 'CUButton',
   component: CUButton,
+  args: {
+    onClick: fn()
+  },
   argTypes: {
     backgroundColor: {control: 'color'},
     borderColor: {control: 'color'}

@@ -14,11 +14,7 @@ const ChefProfile = ({chefId, firstname, lastname, img, onClick}) => {
         </p>
         {onClick && (
           <a
-            onClick={() => {
-              if (onClick) {
-                onClick(chefId)
-              }
-            }}
+            onClick={() => onClick(chefId)}
             className={`${!onClick && styles.aWithoutTextDecoration}`}
           >
             {' '}

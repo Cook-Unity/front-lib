@@ -7,21 +7,19 @@ export default {
   component: CuiTextHeader,
   argTypes: {
     position: {
-      control: {
-        type: 'select',
-        options: ['center', 'start']
-      },
-      defaultValue: 'center'
+      control: 'select',
+      options: ['center', 'start']
     }
+  },
+  args: {
+    position: 'center'
   }
 }
 
 const Template = args => (
   <CuiTextHeader {...args}>
-    <>
-      <b>25% OFF</b>
-      <span>THE FIRST WEEK</span>
-    </>
+    <b>25% OFF</b>
+    <span>THE FIRST WEEK</span>
   </CuiTextHeader>
 )
 

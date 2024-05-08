@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {fn} from '@storybook/test'
 import CuiSelect from './CuiSelect'
 
 export default {
@@ -7,30 +7,28 @@ export default {
   component: CuiSelect,
   argTypes: {
     isDisabled: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     isSearchable: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     isMulti: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     placeholder: {
-      control: 'text',
-      defaultValue: ''
+      control: 'text'
     },
     options: {
       control: 'select',
-      options: [],
-      defaultValue: {}
+      options: []
+    },
+    args: {
+      onChange: fn()
     }
   }
 }
 
-const Template = args => <CuiSelect {...args}>CuiSelect</CuiSelect>
+const Template = args => <CuiSelect {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

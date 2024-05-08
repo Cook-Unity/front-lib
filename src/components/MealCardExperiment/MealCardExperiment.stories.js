@@ -1,4 +1,5 @@
 import React from 'react'
+import {fn} from '@storybook/test'
 import MealCardExperiment from '.'
 import {MealCardCase} from './MealCardCase'
 import {
@@ -19,7 +20,17 @@ import {
 
 export default {
   title: 'MealCardExperiment',
-  component: MealCardExperiment
+  component: MealCardExperiment,
+  args: {
+    onClick: fn(),
+    onAddItem: fn(),
+    onRemoveItem: fn(),
+    onLikeMeal: fn(),
+    onMealClick: fn(),
+    onChefClick: fn(),
+    onShareClick: fn(),
+    handleAddMealToCart: fn()
+  }
 }
 
 const Template = args => {

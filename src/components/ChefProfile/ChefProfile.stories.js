@@ -1,11 +1,14 @@
 import React from 'react'
 import mealDetail from '../../test/mocks/mealDetail'
-
+import {fn} from '@storybook/test'
 import ChefProfile from './index'
 
 export default {
   title: 'ChefProfile',
-  component: ChefProfile
+  component: ChefProfile,
+  args: {
+    onClick: fn()
+  }
 }
 
 const Template = args => <ChefProfile {...args} />

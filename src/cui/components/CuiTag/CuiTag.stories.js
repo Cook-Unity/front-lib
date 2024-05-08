@@ -8,46 +8,40 @@ export default {
   component: CuiTag,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: [
-          'olive',
-          'wine',
-          'dark',
-          'white',
-          'yellow',
-          'red',
-          'grey',
-          'blue'
-        ]
-      },
-      defaultValue: 'olive'
+      control: 'select',
+      options: [
+        'olive',
+        'wine',
+        'dark',
+        'white',
+        'yellow',
+        'red',
+        'grey',
+        'blue'
+      ]
     },
     size: {
-      control: {
-        type: 'select',
-        options: ['xsmall', 'small', 'medium', 'large']
-      },
-      defaultValue: 'small'
+      control: 'select',
+      options: ['xsmall', 'small', 'medium', 'large']
     },
     fill: {
-      control: {
-        type: 'select',
-        options: ['solid']
-      },
-      defaultValue: 'solid'
+      control: 'select',
+      options: ['solid']
     },
     type: {
-      control: {
-        type: 'select',
-        options: ['tag']
-      },
-      defaultValue: 'tag'
+      control: 'select',
+      options: ['tag']
     },
     icon: {
-      ...CuiIconNames,
-      defaultValue: null
+      ...CuiIconNames
     }
+  },
+  args: {
+    color: 'olive',
+    size: 'small',
+    fill: 'solid',
+    type: 'tag',
+    icon: null
   }
 }
 

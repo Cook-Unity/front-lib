@@ -8,21 +8,21 @@ export default {
   argTypes: {
     src: {
       control: 'text',
-      required: true,
-      defaultValue:
-        'https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg'
+      required: true
     },
     title: {
       control: 'text',
-      required: true,
-      defaultValue: 'Healthy eating,environmentally conscious.'
+      required: true
     },
     border: {
-      control: {
-        type: 'select',
-        options: ['rounded']
-      }
+      control: 'radio',
+      options: ['', 'rounded']
     }
+  },
+  args: {
+    border: 'rounded',
+    title: 'Healthy eating, environmentally conscious.',
+    src: 'https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg'
   }
 }
 

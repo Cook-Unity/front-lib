@@ -1,5 +1,6 @@
 import React from 'react'
 import MealCarrousel from './index'
+import {fn} from '@storybook/test'
 import {meals} from './__mock__'
 
 export default {
@@ -18,15 +19,15 @@ Premium.args = {
   type: 'premium',
   moduleName: 'premium-row',
   moduleId: 1,
-  onAddItem: () => {},
-  onRemoveItem: () => {},
-  onMealClick: () => {},
-  onSeeAllClick: () => {},
-  onShowTracking: () => {},
-  onClickTracking: () => {},
-  onAddTracking: () => {},
-  onSwipeTracking: () => {},
-  onSeeAllTracking: () => {}
+  onAddItem: fn(),
+  onRemoveItem: fn(),
+  onMealClick: fn(),
+  onSeeAllClick: fn(),
+  onShowTracking: fn(),
+  onClickTracking: fn(),
+  onAddTracking: fn(),
+  onSwipeTracking: fn(),
+  onSeeAllTracking: fn()
 }
 
 export const Sides = Template.bind({})
@@ -38,13 +39,13 @@ Sides.args = {
   type: 'sides',
   moduleName: 'sides-row',
   moduleId: 2,
-  onAddItem: () => {},
-  onRemoveItem: () => {},
-  onMealClick: () => {},
-  onSeeAllClick: () => {},
-  onShowTracking: () => {},
-  onClickTracking: () => {},
-  onAddTracking: () => {},
-  onSwipeTracking: () => {},
-  onSeeAllTracking: () => {}
+  onAddItem: fn(),
+  onRemoveItem: fn(),
+  onMealClick: fn(),
+  onSeeAllClick: fn(),
+  onShowTracking: fn(),
+  onClickTracking: fn(),
+  onAddTracking: fn(),
+  onSwipeTracking: fn(),
+  onSeeAllTracking: fn()
 }

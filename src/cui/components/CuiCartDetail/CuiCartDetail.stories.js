@@ -7,9 +7,11 @@ export default {
   component: CuiCartDetail,
   argTypes: {
     loading: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    loading: false
   }
 }
 

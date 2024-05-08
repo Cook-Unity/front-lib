@@ -6,12 +6,12 @@ export default {
   component: CuiProgressBar,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['primary']
-      },
-      defaultValue: 'primary'
+      control: 'select',
+      options: ['primary']
     }
+  },
+  args: {
+    color: 'primary'
   }
 }
 

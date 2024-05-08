@@ -8,12 +8,12 @@ export default {
   component: CuiSegment,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['dark', 'light']
-      },
-      defaultValue: 'dark'
+      control: 'select',
+      options: ['dark', 'light']
     }
+  },
+  args: {
+    color: 'dark'
   }
 }
 
@@ -29,17 +29,25 @@ const Template = args => {
   const [activeButton, setActiveButton] = useState(1)
 
   return (
-    <CuiSegment {...args}>
-      {items.map(item => (
-        <CuiSegmentButton
-          key={item.value}
-          active={activeButton === item.value}
-          onClick={() => setActiveButton(item.value)}
-        >
-          {item.label}
-        </CuiSegmentButton>
-      ))}
-    </CuiSegment>
+    <div
+      style={{
+        padding: '20px',
+        background: args.color === 'dark' ? 'white' : 'black',
+        borderRadius: '5px'
+      }}
+    >
+      <CuiSegment {...args}>
+        {items.map(item => (
+          <CuiSegmentButton
+            key={item.value}
+            active={activeButton === item.value}
+            onClick={() => setActiveButton(item.value)}
+          >
+            {item.label}
+          </CuiSegmentButton>
+        ))}
+      </CuiSegment>
+    </div>
   )
 }
 

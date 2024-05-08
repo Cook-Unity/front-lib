@@ -1,4 +1,5 @@
 import React from 'react'
+import {fn} from '@storybook/test'
 
 import CuiImage from './CuiImage'
 
@@ -14,16 +15,18 @@ export default {
     },
     title: {
       control: 'text',
-      required: true,
-      defaultValue: 'Healthy eating,environmentally conscious.'
+      required: true
     },
     lazyLoading: {
-      control: {
-        type: 'select',
-        options: ['lazy', 'eager']
-      },
-      defaultValue: 'lazy'
+      control: 'select',
+      options: ['lazy', 'eager']
     }
+  },
+  args: {
+    title: 'Healthy eating,environmentally conscious.',
+    lazyLoading: 'lazy',
+    onError: fn(),
+    onLoad: fn()
   }
 }
 

@@ -1,9 +1,14 @@
 import React from 'react'
+import {fn} from '@storybook/test'
+
 import CollectionBanner from './CollectionBanner'
 
 export default {
   title: 'CollectionMeals/CollectionBanner',
-  component: CollectionBanner
+  component: CollectionBanner,
+  args: {
+    onClick: fn()
+  }
 }
 
 const Template = args => <CollectionBanner {...args} />

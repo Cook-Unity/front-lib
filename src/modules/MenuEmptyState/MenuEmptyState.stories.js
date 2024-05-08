@@ -1,11 +1,15 @@
 import React from 'react'
+import {fn} from '@storybook/test'
 import props from './data.mock.json'
 
 import MenuEmptyState from './index'
 
 export default {
   title: 'MenuBy/MenuEmptyState',
-  component: MenuEmptyState
+  component: MenuEmptyState,
+  args: {
+    handleButtonClick: fn()
+  }
 }
 
 const Template = args => (

@@ -8,13 +8,15 @@ export default {
   component: CuiBreadcrumb,
   argTypes: {
     active: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     },
     icon: {
-      ...CuiIconNames,
-      defaultValue: 'chevronRight'
+      ...CuiIconNames
     }
+  },
+  args: {
+    active: false,
+    icon: 'chevronRight'
   }
 }
 

@@ -8,18 +8,19 @@ export default {
   component: CuiBottomSheet,
   argTypes: {
     src: {
-      control: 'text',
-      defaultValue:
-        'https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg'
+      control: 'text'
     },
     title: {
-      control: 'text',
-      defaultValue: 'Recommendations'
+      control: 'text'
     },
     withBackgroundImage: {
-      control: 'boolean',
-      defaultValue: false
+      control: 'boolean'
     }
+  },
+  args: {
+    src: 'https://static.cookunity.com/cross/front-lib/images/cui-demo-banner-image.jpeg',
+    title: 'Recommendations',
+    withBackgroundImage: false
   }
 }
 
