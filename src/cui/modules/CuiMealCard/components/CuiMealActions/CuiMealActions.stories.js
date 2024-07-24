@@ -13,5 +13,6 @@ export const Default = Template.bind({})
 Default.args = {
   priceText: 'Add extra for $19.99',
   strikethroughPrice: '$30.99',
-  tooltipText: 'ASD'
+  tooltipText: 'ASD',
+  reachedPlanSize: false
 }
