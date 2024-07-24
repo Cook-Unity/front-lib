@@ -16,10 +16,12 @@ const CuiMealActions = ({
   isEditable,
   meal,
   index,
+  reachedPlanSize = false,
   ...props
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
-  const addButtonEnabled = isEditable && quantity < meal.stock
+  const addButtonEnabled =
+    isEditable && quantity < meal.stock && !reachedPlanSize
   const removeButtonEnabled = isEditable && quantity > 0
   const selected = quantity > 0
 
@@ -66,7 +68,7 @@ const CuiMealActions = ({
           className={classNames(
             'cui-meal-actions__control',
             'cui-meal-actions__control-add',
-            {'cui-meal-actions__control-disabled': quantity >= meal.stock}
+            {'cui-meal-actions__control-disabled': !addButtonEnabled}
           )}
           disabled={!addButtonEnabled}
           onClick={() => handleAddItem()}
