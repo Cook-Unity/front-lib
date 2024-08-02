@@ -9,8 +9,8 @@
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
-    "node": "^18.19.0",
-    "npm": "^10.2.0"
+    "node": "^18 || ^20",
+    "npm": ">=10"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
