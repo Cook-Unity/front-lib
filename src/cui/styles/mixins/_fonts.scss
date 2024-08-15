@@ -41,6 +41,16 @@
       url("https://statics.cookunity.com/fonts/rossanova/rossanova-bold.woff") format("woff"),
       url("https://statics.cookunity.com/fonts/rossanova/rossanova-bold.ttf") format("truetype");
   }
+  @font-face {
+    font-family: $cui-font-family-rossanova;
+    font-weight: $cui-font-normal;
+    font-style: normal;
+    font-display: swap;
+    src: local($cui-font-family-rossanova),
+      url("https://statics.cookunity.com/fonts/rossanova/rossanova-medium.woff2") format("woff2"),
+      url("https://statics.cookunity.com/fonts/rossanova/rossanova-medium.woff") format("woff"),
+      url("https://statics.cookunity.com/fonts/rossanova/rossanova-medium.ttf") format("truetype");
+  }
 }
 
 @mixin font-avallon() {
