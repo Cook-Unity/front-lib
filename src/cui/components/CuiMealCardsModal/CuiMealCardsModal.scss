@@ -3,7 +3,6 @@
 @import "../../styles/mixins/media";
 
 .cui-mealCardsModal {
-  background-color: $cui-black-color-100;
   @media (max-width: 768px) {
     height: 100%;
   }
@@ -18,6 +17,7 @@
   transform: translate(-50%, -50%);
   width: 100% !important;
   max-width: 948px !important;
+  background-color: $cui-black-color-100 !important;
 
   @media (max-width: 768px) {
     height: 100% !important;
