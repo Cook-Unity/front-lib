@@ -3,9 +3,9 @@
 @import "../../styles/mixins/media";
 
 .cui-mealCardsModal {
-  @media (max-width: 720px) {
+  background-color: $cui-black-color-100;
+  @media (max-width: 768px) {
     height: 100%;
-    background-color: rgba(35, 31, 32, 0.7) !important;
   }
 }
 
@@ -19,7 +19,7 @@
   width: 100% !important;
   max-width: 948px !important;
 
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     height: 100% !important;
     position: absolute !important;
     bottom: 0 !important;
@@ -39,7 +39,7 @@
   color: $cui-black-color;
   padding: 32px;
 
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     display: block;
     padding: 47px 32px 26px;
   }
@@ -53,13 +53,12 @@
 }
 
 .cui-mealCardsModal__content {
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     overflow: auto;
     height: -webkit-calc(100% - 214px);
     height: -moz-calc(100% - 214px);
     height: calc(100% - 214px);
-    background-color: $cui-white-color;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
   }
 
   @media (max-width: 400px) {
@@ -73,7 +72,7 @@
     overflow-x: auto;
     padding: 0px 32px 40px 32px;
 
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       overflow: hidden;
       padding: 24px 16px 32px 16px;
     }
@@ -89,7 +88,7 @@
       grid-template-columns: 268px 268px 268px;
       grid-auto-flow: column;
 
-      @media (max-width: 720px) {
+      @media (max-width: 768px) {
         display: grid;
         grid-template-columns: auto;
         row-gap: 20px;
@@ -106,7 +105,7 @@
   padding: 0 32px 32px 0px;
   float: right;
 
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -114,13 +113,13 @@
     border-top: 1px solid $cui-black-color-200;
     float: none;
     padding: 24px 35px;
-    background-color: $cui-white-color;
+    background-color: $cui-black-color-100;
+    box-shadow: 0px 0px 12px 0px rgba(35, 31, 32, 0.15), 0px -12px 12px 0px rgba(35, 31, 32, 0.10);
   }
 
   @media (max-width: 400px) {
     border-top: 1px solid $cui-black-color-200;
     float: none;
     padding: 24px 12px;
-    background-color: $cui-white-color;
   }
 }
