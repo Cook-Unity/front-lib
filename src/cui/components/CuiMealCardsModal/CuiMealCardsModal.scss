@@ -59,6 +59,7 @@
     
     h2 {
       font-size: $cui-font-2xl;
+      line-height: $cui-line-height-2xl;
     }
   }
 }
@@ -85,24 +86,19 @@
 
     @media (max-width: 768px) {
       overflow: hidden;
-      padding: 24px 16px 32px 16px;
+      padding: 0px 16px 32px 16px;
     }
 
     @media (max-width: 400px) {
       overflow: hidden;
-      padding: 16px 16px 32px 16px;
+      padding: 0px 16px 32px 16px;
     }
 
     .cardsContainer {
-      display: inline-grid;
-      column-gap: 34px;
-      grid-template-columns: 268px 268px 268px;
-      grid-auto-flow: column;
-
       @media (max-width: 768px) {
         display: grid;
         grid-template-columns: auto;
-        row-gap: 20px;
+        row-gap: 8px;
         grid-auto-flow: row;
       }
     }
