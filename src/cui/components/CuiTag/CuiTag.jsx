@@ -7,6 +7,7 @@ const CuiTag = ({
   fill = 'solid',
   size = 'small',
   color = 'primary',
+  weight = 'bold',
   children,
   className,
   ...props
@@ -19,6 +20,7 @@ const CuiTag = ({
         `cui-tag-${color}`,
         `cui-tag-${color}-${fill}`,
         `cui-tag-${size}`,
+        `cui-tag-${weight}`,
         className
       )}
       {...props}

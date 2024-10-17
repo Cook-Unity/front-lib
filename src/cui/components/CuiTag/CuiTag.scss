@@ -18,6 +18,19 @@
     $cui-font-bold
   );
 
+  // Font weight
+  &-normal {
+    font-weight: $cui-font-normal;
+  }
+
+  &-bold {
+    font-weight: $cui-font-bold;
+  }
+
+  &-extrabold {
+    font-weight: $cui-font-extrabold;
+  }
+
   // Sizes
   &-xsmall {
     font-size: $cui-font-tag-xsmall;
@@ -121,6 +134,17 @@
         $cui-light-blue-700,
         $cui-light-blue-700,
         $cui-white-color
+      );
+    }
+  }
+
+  &-gold {
+    &-solid {
+      @include build-tag(
+        // default
+        $cui-gold-500,
+        $cui-gold-500,
+        $cui-black-color
       );
     }
   }
