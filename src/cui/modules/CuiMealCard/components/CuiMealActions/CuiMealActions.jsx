@@ -17,6 +17,8 @@ const CuiMealActions = ({
   meal,
   index,
   reachedPlanSize = false,
+  color = 'dark',
+  fill = 'outline',
   ...props
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
@@ -48,8 +50,8 @@ const CuiMealActions = ({
   const cartControllers = () => {
     return (
       <CuiButton
-        fill="outline"
-        color="dark"
+        fill={fill}
+        color={color}
         className="cui-meal-actions__button-add"
       >
         <button
@@ -82,8 +84,8 @@ const CuiMealActions = ({
   const cartAddButton = () => {
     return (
       <CuiButton
-        fill="outline"
-        color="dark"
+        fill={fill}
+        color={color}
         className="cui-meal-actions__button-add"
         onClick={() => {
           !selected ? handleAddItem() : setShowCartControllers(true)
