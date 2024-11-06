@@ -1,64 +1,94 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/mixins/fonts";
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins/fonts';
 
 .cui-meal-actions {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	gap: 9px;
-	margin-top: 16px;
-}
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 9px;
+  margin-top: 16px;
 
-.cui-meal-actions__button___strikethrough__price__text {
-	@include font-build($cui-font-family-tt-norms, $cui-font-xs, $cui-line-height-base, $cui-font-normal);
-	color: $cui-black-color-400;
-	text-decoration-line: line-through;
-}
+  &__button___strikethrough__price__text {
+    @include font-build(
+      $cui-font-family-tt-norms,
+      $cui-font-xs,
+      $cui-line-height-base,
+      $cui-font-normal
+    );
+    color: $cui-black-color-400;
+    text-decoration-line: line-through;
+  }
 
-.cui-meal-actions__control {
-	flex: 1;
-	@include font-build($cui-font-family-tt-norms, $cui-font-xl, $cui-line-height-xl, $cui-font-bold);
-	color: $cui-black-color;
-}
+  &__control {
+    flex: 1;
+    @include font-build(
+      $cui-font-family-tt-norms,
+      $cui-font-xl,
+      $cui-line-height-xl,
+      $cui-font-bold
+    );
+    color: $cui-black-color;
+    border-radius: 100px;
+    border: none;
 
-.cui-meal-actions__control:hover {
-	background-color: $cui-black-color-100;
-	border-radius: 100px;
-}
+    &:hover {
+      background-color: $cui-black-color-100;
+    }
 
-.cui-meal-actions__control-disabled {
-	color: $cui-black-color-300;
-	cursor: not-allowed;
-}
+    &-primary {
+      color: $cui-black-color;
+      background-color: lighten($cui-yellow-color-500, 20%);
 
-.cui-meal-actions__control-add {
-	text-align: right;
-	padding-right: 8px;
-}
+      &:hover {
+        background-color: lighten($cui-yellow-color-500, 10%) !important;
+      }
+    }
 
-.cui-meal-actions__control-remove {
-	text-align: left;
-	padding-left: 8px;
-}
+    &-disabled {
+      color: darken($cui-black-color-150, 20%);
+      background-color: $cui-black-color-150;
+      cursor: not-allowed;
 
-.cui-meal-actions__control-qty {
-	width: 24px;
-	height: 24px;
-	background-color: $cui-wine-color-500;
-	border-radius: 100px;
-	@include font-build($cui-font-family-tt-norms, $cui-font-sm, $cui-line-height-xl, $cui-font-bold);
-	color: $cui-white-color;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+      &:hover {
+        background-color: $cui-black-color-150 !important;
+      }
+    }
 
-.cui-meal-actions__button-add {
-	width: 100%;
-	padding: 4px 12px !important;
-	height: 36px !important;
-}
+    &-add {
+      text-align: right;
+      padding-right: 8px;
+    }
 
-.cui-meal-actions__button-add:focus {
-	background-color: $cui-white-color;
+    &-remove {
+      text-align: left;
+      padding-left: 8px;
+    }
+
+    &-qty {
+      width: 24px;
+      height: 24px;
+      background-color: $cui-wine-color-500;
+      border-radius: 100px;
+      @include font-build(
+        $cui-font-family-tt-norms,
+        $cui-font-sm,
+        $cui-line-height-xl,
+        $cui-font-bold
+      );
+      color: $cui-white-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__button-add {
+    width: 100%;
+    padding: 4px 12px !important;
+    height: 36px !important;
+
+    &:focus {
+      background-color: $cui-white-color !important;
+    }
+  }
 }
