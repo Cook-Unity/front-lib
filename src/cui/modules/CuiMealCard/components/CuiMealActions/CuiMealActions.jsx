@@ -57,6 +57,7 @@ const CuiMealActions = ({
         <button
           className={classNames(
             'cui-meal-actions__control',
+            `cui-meal-actions__control-${color}`,
             'cui-meal-actions__control-remove',
             {'cui-meal-actions__control-disabled': !removeButtonEnabled}
           )}
@@ -69,6 +70,7 @@ const CuiMealActions = ({
         <button
           className={classNames(
             'cui-meal-actions__control',
+            `cui-meal-actions__control-${color}`,
             'cui-meal-actions__control-add',
             {'cui-meal-actions__control-disabled': !addButtonEnabled}
           )}
