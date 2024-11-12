@@ -21,7 +21,7 @@ const items = [
   {label: 'Blog', href: 'blog'},
   {
     label: 'CookUnity for Business',
-    href: 'cookunity-for-organizations'
+    href: 'https://business.cookunity.com'
   }
 ]
 const socialNetworks = [
