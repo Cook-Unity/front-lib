@@ -13,6 +13,7 @@ const MealCardsModal = ({
   primaryButtonClick,
   secondaryButtonText = null,
   secondaryButtonClick,
+  disableSecondaryBtn = false,
   handleClose,
   modalContainerId = 'root',
   children
@@ -60,6 +61,7 @@ const MealCardsModal = ({
             size="large"
             color="dark"
             data-testid="cu-secondary-button"
+            disabled={disableSecondaryBtn}
           >
             {secondaryButtonText}
           </CuiButton>

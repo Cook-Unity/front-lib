@@ -19,6 +19,7 @@ const CuiMealActions = ({
   reachedPlanSize = false,
   color = 'dark',
   fill = 'outline',
+  disableAllButtons = false,
   ...props
 }) => {
   const [showCartControllers, setShowCartControllers] = useState(false)
@@ -53,6 +54,7 @@ const CuiMealActions = ({
         fill={fill}
         color={color}
         className="cui-meal-actions__button-add"
+        disabled={disableAllButtons}
       >
         <button
           className={classNames(
@@ -92,6 +94,7 @@ const CuiMealActions = ({
         onClick={() => {
           !selected ? handleAddItem() : setShowCartControllers(true)
         }}
+        disabled={disableAllButtons}
       >
         {priceText}
         {strikethroughPrice && (
