@@ -120,7 +120,8 @@ export const CuiIconNames = {
     'yourTopRated',
     'youVeTried',
     'xLogo',
-    'topSellers'
+    'topSellers',
+    'glp1'
   ],
   defaultValue: 'heart'
 }
@@ -261,5 +262,6 @@ export const icons = {
   yourTopRated: fullIconPath('your-top-rated.svg'),
   youVeTried: fullIconPath('you_ve-tried.svg'),
   xLogo: fullIconPath('x-logo.svg'),
-  topSellers: fullIconPath('top-sellers.svg')
+  topSellers: fullIconPath('top-sellers.svg'),
+  glp1: fullIconPath('glp-1.svg')
 }
