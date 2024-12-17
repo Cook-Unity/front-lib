@@ -40,7 +40,7 @@
   padding: 32px;
 
   h2 {
-    @include font-build($cui-font-family-tt-norms, $cui-font-3xl, $cui-line-height-2xl, $cui-font-bold);
+    @include font-build($cui-font-family-tt-norms, $cui-font-3xl, $cui-line-height-4xl, $cui-font-bold);
     display: flex;
     align-items: center;
     margin: 0;
@@ -50,14 +50,14 @@
     @include font-build($cui-font-family-tt-norms, $cui-font-base, $cui-line-height-2xl, $cui-font-normal);
     display: flex;
     align-items: center;
-    margin: 0;
+    margin: 0 0 4px 0;
     color: $cui-black-color-400;
   }
 
   @media (max-width: 768px) {
     display: block;
     padding: 47px 16px 26px;
-    
+
     h2 {
       font-size: $cui-font-2xl;
       line-height: $cui-line-height-2xl;
